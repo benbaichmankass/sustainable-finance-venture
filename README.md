@@ -13,7 +13,7 @@ Research and venture-building project exploring how financing and risk-managemen
 
 ## Related resources
 
-- Master Reference Tracker (Google Sheet): _link TBD_
+- **Master Reference Tracker (Google Sheet):** https://docs.google.com/spreadsheets/d/1Q8m8MaQ_wUzpjABRYTvIqeFTrgkDGskBJ-RGBOky2DY/edit — canonical living tracker with tabs: README, Open Questions, Lit Matrix, Synthesis Memos, Partner Tracker, PhD Programs
 - Working planning doc: see `/docs/working-doc.md`
 
 ## Status
