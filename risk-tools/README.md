@@ -48,3 +48,12 @@ Every tool document carries a version history table with date, version, change a
 1. Add a row to `data/risk-tools.csv` with the next `RT-N`.
 2. Add `risk-tools/rt-N-slug.md` following the structure of the existing docs: purpose, design, inputs/outputs, versioning, tests, open questions.
 3. Rebuild the dashboard.
+
+## Built so far
+
+| | What exists | Where |
+|---|---|---|
+| RT-1 | 57-field origination schema (v0.1) + validator | [`schema/`](schema/), [`tools/validate_schema.py`](tools/validate_schema.py) |
+| RT-5 | Synthetic portfolio simulator + waterfall + 6 stress scenarios | [`tools/simulate_portfolio.py`](tools/simulate_portfolio.py), [`rt-5-simulator.md`](rt-5-simulator.md) |
+
+RT-2, RT-3 and RT-4 remain at specification stage. RT-1 is not field-tested and RT-5 is not calibrated — both say so in their own docs rather than relying on the reader to infer it.

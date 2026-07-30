@@ -32,6 +32,8 @@ TABLES = {
     "macroSnapshot": "data/macro-snapshot.csv",
     "macroHistory": "data/macro-history.csv",
     "macroLog": "data/macro-log.csv",
+    "macroScenarios": "data/macro-scenarios.csv",
+    "rt5Results": "data/rt5-scenario-results.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
     "milestones": "data/milestones.csv",

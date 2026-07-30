@@ -68,6 +68,11 @@ jobs:
           git commit -m "macro: refresh snapshot ($(date -u +%Y-%m-%d))"
           git push
 
+      # Cheap correctness gate on the two things that are now code rather than
+      # prose. Both are stdlib-only and run in about a second.
+      - name: Validate RT-1 schema
+        run: python3 risk-tools/tools/validate_schema.py
+
       - name: Build public dashboard data
         run: python3 dashboard/build.py --public
 

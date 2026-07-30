@@ -1,5 +1,7 @@
 # The private overlay
 
+> **Full onboarding guide: [`docs/private-overlay.md`](../docs/private-overlay.md)** — setup, what happens when the overlay is absent, and a worked example of adding a private field. This file is the quick reference.
+
 This directory is **gitignored**. Nothing in it except this file and the `*.example.csv` templates is ever committed.
 
 It exists so the repo can be public without losing the private half of the picture. The public CSVs in `data/` hold the parts of each tracker that are safe to publish — organizations, categories, criteria, research reasoning. The files here hold the parts that aren't: named individuals, relationship status, negotiation notes, deal terms, and links into the Drive Vault.
