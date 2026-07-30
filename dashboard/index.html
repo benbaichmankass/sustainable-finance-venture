@@ -424,6 +424,28 @@ function statusBreakdown(obj) {
 function scholarUrl(citation) {
   return "https://scholar.google.com/scholar?q=" + encodeURIComponent(citation || "");
 }
+function searchUrl(q) {
+  return "https://duckduckgo.com/?q=" + encodeURIComponent(q || "");
+}
+function extLink(url, text) {
+  return '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(text) + " ↗</a>";
+}
+/* Renders a name as a link when a URL is recorded. When it isn't, falls back to
+   a search rather than inventing one — the repo's rule is that a URL is either
+   verified or absent. `hint` distinguishes "not recorded" from "withheld". */
+function nameLink(text, url, searchTerms, hint) {
+  if (url) return extLink(url, text);
+  if (hint) return esc(text) + ' <span class="hint">(' + esc(hint) + ")</span>";
+  return esc(text) + " " + '<a class="hint" href="' + esc(searchUrl(searchTerms || text)) +
+    '" target="_blank" rel="noopener noreferrer">search ↗</a>';
+}
+/* Free-text fields often carry extra URLs (a second org, a sub-department).
+   Turn them into links rather than leaving raw text the user has to copy. */
+function autoLink(text) {
+  return esc(text).replace(/https?:\/\/[^\s<>"')]+/g, function (u) {
+    return '<a href="' + u + '" target="_blank" rel="noopener noreferrer">' + u + "</a>";
+  });
+}
 
 /* Sortable/filterable table with expandable detail rows. */
 function buildTable(rows, cols, detailFn, opts) {
@@ -469,6 +491,8 @@ var TABS = [
   { id: "library",   label: "Library",        count: function () { return (D.docs || []).length; } },
   { id: "research",  label: "Research plan",  count: function () { return (D.literature || []).length; } },
   { id: "products",  label: "Product lines",  count: function () { return (D.productLines || []).length; } },
+  { id: "risktools", label: "Risk tools",     count: function () { return (D.riskTools || []).length; } },
+  { id: "macro",     label: "Macro watch",    count: function () { return (D.macroIndicators || []).length; } },
   { id: "business",  label: "Business plan",  count: null },
   { id: "questions", label: "Open questions", count: function () { return (D.openQuestions || []).length; } },
   { id: "partners",  label: "Partners",       count: function () { return (D.partners || []).length; } },
@@ -498,6 +522,8 @@ function renderOverview() {
       tile("Open questions", oq.length, answered + " partially answered or better") +
       tile("Milestones done", done + " / " + ms.length, "60/90-day plan") +
       tile("Product lines", (D.productLines || []).length, "PL-1 leads, PL-2 closer to revenue") +
+      tile("Risk tools", (D.riskTools || []).length, "all at spec stage, none built") +
+      tile("Macro watchlist", (D.macroIndicators || []).length, (D.macroLog || []).length + " log entries") +
       tile("Partners tracked", (D.partners || []).length,
         hasPrivate ? contacted + " contacted" : "status in private overlay") +
       tile("PhD programs", (D.phdPrograms || []).length,
@@ -720,6 +746,114 @@ function renderProducts() {
   return html + "</section>";
 }
 
+function renderRiskTools() {
+  var tools = D.riskTools || [];
+  var docs = (D.docs || []).filter(function (d) { return d.path.indexOf("risk-tools/") === 0; });
+  var readme = docs.filter(function (d) { return d.path === "risk-tools/README.md"; })[0];
+  var toolDocs = docs.filter(function (d) { return d.path !== "risk-tools/README.md"; });
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Name", label: "Tool", cls: "wrap-cell" },
+    { key: "Product_Lines", label: "Lines" },
+    { key: "Version", label: "Version" },
+    { label: "Status", render: function (r) { return pill(r.Status); } },
+    { key: "Blocked_By", label: "Blocked by" }
+  ];
+  function detail(r) {
+    return fields([
+      ["Purpose", esc(r.Purpose)],
+      ["Notes", esc(r.Notes)],
+      ["Stack", esc(r.Stack)],
+      ["Tests", esc(r.Tests)],
+      ["Document", '<code>' + esc(r.Path) + "</code>"]
+    ]);
+  }
+
+  var html = '<section class="panel"><h2>Risk management tools</h2>' +
+    '<p class="lede">The toolkit that makes community-originated cash flows underwritable. Each tool carries its own ' +
+    'specification, versioning policy and test strategy. <strong>None are built yet</strong> — every one is at ' +
+    'specification stage, which the registry states plainly rather than dressing up as progress.</p>' +
+    '<div id="rt-tbl"></div>';
+
+  if (readme) {
+    html += '<h3 class="sub">Conventions</h3><div class="card"><div class="md">' + renderMd(readme.body) + "</div></div>";
+  }
+  toolDocs.forEach(function (d) {
+    html += '<h3 class="sub">' + esc(d.title) + '</h3><div class="card"><div class="md">' + renderMd(d.body) + "</div></div>";
+  });
+
+  setTimeout(function () { var h = by("rt-tbl"); h.innerHTML = buildTable(tools, cols, detail); wireTable(h); }, 0);
+  return html + "</section>";
+}
+
+function renderMacro() {
+  var ind = D.macroIndicators || [], log = D.macroLog || [];
+  var cats = [];
+  ind.forEach(function (r) { if (cats.indexOf(r.Category) < 0) cats.push(r.Category); });
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    {
+      label: "Indicator", cls: "wrap-cell", render: function (r) {
+        return nameLink(r.Indicator, r.URL, r.Indicator + " " + r.Source);
+      }
+    },
+    { key: "Category", label: "Category" },
+    { key: "Product_Lines", label: "Lines" },
+    { key: "Cadence", label: "Cadence" }
+  ];
+  function detail(r) {
+    return fields([
+      ["Why it matters here", esc(r.Why_It_Matters_Here)],
+      ["Source", r.URL ? extLink(r.URL, r.Source) : esc(r.Source)]
+    ]);
+  }
+
+  var logCols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Date", label: "Date" },
+    { key: "Indicator_Refs", label: "Refs", cls: "id" },
+    { key: "Observation", label: "Observation", cls: "wrap-cell" },
+    { key: "So_What", label: "So what", cls: "wrap-cell" }
+  ];
+
+  var html = '<section class="panel"><h2>Macro watch</h2>' +
+    '<p class="lede">What is going on in the world that bears on this project — cost of capital, risk appetite, market ' +
+    'depth, borrower shocks, project economics and funding availability. Each row says why it matters <em>here</em>, ' +
+    'and links straight to the authoritative source.</p>' +
+
+    '<div class="card" style="margin-bottom:18px;border-color:var(--warning)">' +
+    '<strong>These are links, not live numbers — deliberately.</strong>' +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
+    'A static page can only show a number by baking in a snapshot, and a stale rate displayed without a visible ' +
+    '"as of" date is worse than no rate — it invites a decision on a figure that may be months old. So this tab gives ' +
+    'you the fastest path to the real number instead of a copy that rots. Live snapshots via a scheduled build are ' +
+    'buildable; see <code>docs/macro-watch.md</code>.</p></div>' +
+
+    '<div class="filters"><select class="pickr" id="mac-cat"><option value="">All categories</option>' +
+    cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
+    '</select><span class="hint">Click a row for why it matters to this project.</span></div>' +
+    '<div id="mac-tbl"></div>' +
+
+    '<h3 class="sub">Observation log</h3>' +
+    '<p class="lede">The part that compounds. The watchlist tells you where to look; the log records what you saw and ' +
+    'what it changed — so the reasoning behind a decision is still recoverable in two years.</p>' +
+    '<div id="mac-log"></div></section>';
+
+  setTimeout(function () {
+    var cat = by("mac-cat"), host = by("mac-tbl");
+    function draw() {
+      var rows = ind.filter(function (r) { return !cat.value || r.Category === cat.value; });
+      host.innerHTML = buildTable(rows, cols, detail);
+      wireTable(host);
+    }
+    cat.addEventListener("change", draw); draw();
+    by("mac-log").innerHTML = buildTable(log, logCols, null);
+  }, 0);
+  return html;
+}
+
 function renderQuestions() {
   var oq = D.openQuestions || [];
   var cols = [
@@ -760,7 +894,11 @@ function renderPartners() {
   var hasPrivate = p.some(function (r) { return r.Contact_Status; });
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
-    { key: "Partner_Name", label: "Partner", cls: "wrap-cell" },
+    {
+      label: "Partner", cls: "wrap-cell", render: function (r) {
+        return nameLink(r.Partner_Name, r.URL, r.Partner_Name);
+      }
+    },
     { key: "Type", label: "Type" },
     { key: "Geography", label: "Geography" }
   ];
@@ -769,7 +907,8 @@ function renderPartners() {
   function detail(r) {
     return fields([
       ["Role", esc(r.Role)],
-      ["Why this partner", esc(r.Why_This_Partner)],
+      ["Why this partner", autoLink(r.Why_This_Partner)],
+      ["Website", r.URL ? extLink(r.URL, r.URL) : '<span class="hint">none recorded — see notes</span>'],
       ["Contact person", esc(r.Contact_Person)],
       ["Private notes", esc(r.Private_Notes)]
     ]);
@@ -791,7 +930,11 @@ function renderPhd() {
   var hasPrivate = p.some(function (r) { return r.Application_Status; });
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
-    { key: "University", label: "University", cls: "wrap-cell" },
+    {
+      label: "University", cls: "wrap-cell", render: function (r) {
+        return nameLink(r.University, r.URL, r.University + " " + r.Department_Program);
+      }
+    },
     { key: "Department_Program", label: "Department", cls: "wrap-cell" },
     { key: "Country", label: "Country" }
   ];
@@ -799,7 +942,8 @@ function renderPhd() {
 
   function detail(r) {
     return fields([
-      ["Fit", esc(r.Fit_Notes)],
+      ["Fit", autoLink(r.Fit_Notes)],
+      ["Site", r.URL ? extLink(r.URL, r.URL) : '<span class="hint">none recorded</span>'],
       ["Candidate supervisors", esc(r.Candidate_Supervisors)],
       ["Next step", esc(r.Outreach_Plan)],
       ["Private notes", esc(r.Private_Notes)]
@@ -822,14 +966,16 @@ function renderResources() {
     { key: "ID", label: "ID", cls: "id" },
     {
       label: "Resource", cls: "wrap-cell", render: function (r) {
-        return r.URL
-          ? '<a href="' + esc(r.URL) + '" target="_blank" rel="noopener noreferrer">' + esc(r.Title) + " ↗</a>"
-          : esc(r.Title);
+        /* A blank URL on a Vault or tracker row means the link is deliberately
+           withheld from the public tier, not that it is missing. Say which. */
+        return nameLink(r.Title, r.URL, r.Title,
+          r.URL ? "" : (r.Category === "Vault" || r.Category === "Tracker"
+            ? "link in private overlay" : ""));
       }
     },
     { key: "Category", label: "Category" },
     { key: "Type", label: "Type" },
-    { key: "Notes", label: "Notes", cls: "wrap-cell" }
+    { label: "Notes", cls: "wrap-cell", render: function (r) { return autoLink(r.Notes); } }
   ];
   var html = '<section class="panel"><h2>Resources</h2>' +
     '<p class="lede">Links, reference libraries, and the Drive vault where artifacts that do not belong in git are kept — ' +
@@ -851,7 +997,8 @@ function renderResources() {
 
 var RENDER = {
   overview: renderOverview, library: renderLibrary, research: renderResearch,
-  products: renderProducts, business: renderBusiness, questions: renderQuestions,
+  products: renderProducts, risktools: renderRiskTools, macro: renderMacro,
+  business: renderBusiness, questions: renderQuestions,
   partners: renderPartners, phd: renderPhd, resources: renderResources
 };
 

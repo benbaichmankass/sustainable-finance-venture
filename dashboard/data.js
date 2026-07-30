@@ -351,6 +351,205 @@ window.SFV_DATA = {
    "Notes": "Cleaner and more legible asset than PL-1 (one creditworthy offtaker, standard contracts), so may produce the first pooled structure. Main structural weakness is offtaker concentration - many small projects but one utility and one regulator."
   }
  ],
+ "riskTools": [
+  {
+   "ID": "RT-1",
+   "Name": "Origination data schema",
+   "Purpose": "Defines every field captured at loan/policy origination so a pool is ABS-data-tape-ready from day one rather than retrofitted.",
+   "Product_Lines": "PL-1; PL-2",
+   "Status": "Specified - not built",
+   "Version": "0.0 (draft spec)",
+   "Stack": "CSV/JSON Schema",
+   "Tests": "None yet - schema validation suite planned",
+   "Path": "risk-tools/rt-1-origination-schema.md",
+   "Blocked_By": "OQ-3",
+   "Notes": "The critical-path item. Every other tool consumes its output, so its field list is a hard dependency for RT-2, RT-3 and RT-5."
+  },
+  {
+   "ID": "RT-2",
+   "Name": "Underwriting engine",
+   "Purpose": "Scores a borrower or group from origination data plus community signals; produces a decision, a limit and a price.",
+   "Product_Lines": "PL-1",
+   "Status": "Specified - not built",
+   "Version": "0.0 (draft spec)",
+   "Stack": "Python",
+   "Tests": "None yet - backtest harness planned",
+   "Path": "risk-tools/rt-2-underwriting-engine.md",
+   "Blocked_By": "RT-1; pilot data",
+   "Notes": "Rules-based first. No ML until there is a repayment history to train and validate on - a model fitted on borrowed priors would be a confident guess, not underwriting."
+  },
+  {
+   "ID": "RT-3",
+   "Name": "Monitoring and early-warning system",
+   "Purpose": "Tracks DPD, delinquency and claim patterns against expectation; raises alerts before losses crystallise.",
+   "Product_Lines": "PL-1; PL-2",
+   "Status": "Specified - not built",
+   "Version": "0.0 (draft spec)",
+   "Stack": "Python",
+   "Tests": "None yet - synthetic-portfolio replay planned",
+   "Path": "risk-tools/rt-3-monitoring-early-warning.md",
+   "Blocked_By": "RT-1",
+   "Notes": "Also the mechanism by which the first-loss provider is kept informed - a documented monitoring regime is part of what makes a junior tranche fundable (LIT-013)."
+  },
+  {
+   "ID": "RT-4",
+   "Name": "Impact evaluation module",
+   "Purpose": "Randomisation infrastructure and pre-registered analysis for pilot evaluation with an academic partner.",
+   "Product_Lines": "PL-1",
+   "Status": "Specified - not built",
+   "Version": "0.0 (draft spec)",
+   "Stack": "R or Python",
+   "Tests": "None yet - simulation-based power checks planned",
+   "Path": "risk-tools/rt-4-impact-evaluation.md",
+   "Blocked_By": "OQ-4; OQ-5; OQ-7",
+   "Notes": "Design must be fixed and pre-registered before enrolment. Choosing the estimator after seeing outcomes is how impact claims lose credibility."
+  },
+  {
+   "ID": "RT-5",
+   "Name": "Securitisation cash-flow model",
+   "Purpose": "Waterfall model with loss and prepayment simulation; sizes tranches and tests the first-loss layer.",
+   "Product_Lines": "PL-1; PL-2",
+   "Status": "Specified - not built",
+   "Version": "0.0 (draft spec)",
+   "Stack": "Python",
+   "Tests": "None yet - deterministic golden-case tests planned",
+   "Path": "risk-tools/rt-5-securitisation-model.md",
+   "Blocked_By": "RT-1",
+   "Notes": "Needed for the OQ-2 pool-size question and the OQ-6 first-loss sizing. Can be built against synthetic portfolios before real data exists."
+  }
+ ],
+ "macroIndicators": [
+  {
+   "ID": "MAC-01",
+   "Indicator": "US federal funds target rate",
+   "Category": "Cost of capital",
+   "Why_It_Matters_Here": "Sets the global risk-free anchor. Every senior tranche we ever price is quoted as a spread over something that moves with this. Rising rates raise the return a private investor demands and make the concessional layer work harder for the same mobilisation.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "FRED (St Louis Fed)",
+   "URL": "https://fred.stlouisfed.org/series/DFEDTARU",
+   "Cadence": "Per meeting"
+  },
+  {
+   "ID": "MAC-02",
+   "Indicator": "ECB key interest rates",
+   "Category": "Cost of capital",
+   "Why_It_Matters_Here": "Relevant if senior notes are placed with EU investors - which also triggers the risk-retention and qualified-investor rules in LIT-010.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "European Central Bank",
+   "URL": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html",
+   "Cadence": "Per meeting"
+  },
+  {
+   "ID": "MAC-03",
+   "Indicator": "Bank of Israel policy rate",
+   "Category": "Cost of capital",
+   "Why_It_Matters_Here": "Local funding cost for the Israel pilot site and the discount rate on any shekel-denominated structure.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "Bank of Israel",
+   "URL": "https://www.boi.org.il/en/",
+   "Cadence": "Per meeting"
+  },
+  {
+   "ID": "MAC-04",
+   "Indicator": "EM high-yield corporate spreads",
+   "Category": "Risk appetite",
+   "Why_It_Matters_Here": "The cleanest available proxy for whether investors are currently paid to take emerging-market credit risk. When spreads blow out, an unproven asset class does not get placed at any price - it is a go/no-go signal for issuance timing, not a pricing input.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "FRED (ICE BofA EM HY index OAS)",
+   "URL": "https://fred.stlouisfed.org/series/BAMLEMHBHYCRPIOAS",
+   "Cadence": "Daily"
+  },
+  {
+   "ID": "MAC-05",
+   "Indicator": "Securitisation issuance volumes",
+   "Category": "Market depth",
+   "Why_It_Matters_Here": "Whether the ABS market is open at all, and at what size. Directly informs the OQ-2 timing question - a technically viable pool still needs a functioning market to be placed into.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "SIFMA (US) and AFME (Europe)",
+   "URL": "https://www.sifma.org/resources/research/",
+   "Cadence": "Monthly / quarterly"
+  },
+  {
+   "ID": "MAC-06",
+   "Indicator": "FAO Food Price Index",
+   "Category": "Borrower shock driver",
+   "Why_It_Matters_Here": "The single most direct macro link to PL-1 repayment. Food price spikes hit exactly the households in our target cohort, and they hit a whole region at once - which is correlated default risk, the parameter RT-5 is most sensitive to.",
+   "Product_Lines": "PL-1",
+   "Source": "FAO",
+   "URL": "https://www.fao.org/worldfoodsituation/foodpricesindex/en/",
+   "Cadence": "Monthly"
+  },
+  {
+   "ID": "MAC-07",
+   "Indicator": "ENSO / El Nino-La Nina status",
+   "Category": "Borrower shock driver",
+   "Why_It_Matters_Here": "Leading indicator for drought and flood in East and Southern Africa, months ahead of the harvest failure it causes. If parametric insurance triggers are ever built (PL-1), this is the class of signal they key off.",
+   "Product_Lines": "PL-1",
+   "Source": "NOAA Climate Prediction Center",
+   "URL": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/",
+   "Cadence": "Monthly"
+  },
+  {
+   "ID": "MAC-08",
+   "Indicator": "Food security early warning",
+   "Category": "Borrower shock driver",
+   "Why_It_Matters_Here": "Sub-national famine and food-insecurity outlooks. More actionable than a global price index because it is geographic - it tells you which cohort is about to come under stress.",
+   "Product_Lines": "PL-1",
+   "Source": "FEWS NET",
+   "URL": "https://fews.net/",
+   "Cadence": "Monthly"
+  },
+  {
+   "ID": "MAC-09",
+   "Indicator": "Energy prices and electricity demand",
+   "Category": "Project economics",
+   "Why_It_Matters_Here": "PL-2 revenue is PPA-contracted, so spot prices do not hit revenue directly - but they move the tariff environment, the political appetite for renewables procurement, and the utility's own credit standing, which is the concentrated counterparty risk in that line.",
+   "Product_Lines": "PL-2",
+   "Source": "US EIA (and IEA for global outlooks)",
+   "URL": "https://www.eia.gov/",
+   "Cadence": "Weekly / monthly"
+  },
+  {
+   "ID": "MAC-10",
+   "Indicator": "Remittance flows to LMICs",
+   "Category": "Household resilience",
+   "Why_It_Matters_Here": "A major income source for exactly the migrant-worker communities in the Israel pilot. A remittance disruption is a group-level shock and a candidate parametric trigger - one that is not weather-driven, which matters because weather triggers carry basis risk (LIT-007).",
+   "Product_Lines": "PL-1",
+   "Source": "World Bank KNOMAD",
+   "URL": "https://www.knomad.org/",
+   "Cadence": "Semi-annual"
+  },
+  {
+   "ID": "MAC-11",
+   "Indicator": "ODA and development finance flows",
+   "Category": "Funding availability",
+   "Why_It_Matters_Here": "Determines whether concessional first-loss capital exists to be asked for. The whole structure in Memo 3 assumes a junior tranche someone is willing to fund; aid budget contraction is an existential input, not a background variable.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "OECD DAC",
+   "URL": "https://www.oecd.org/en/topics/official-development-assistance-oda.html",
+   "Cadence": "Annual"
+  },
+  {
+   "ID": "MAC-12",
+   "Indicator": "Inflation and FX in target markets",
+   "Category": "Currency risk",
+   "Why_It_Matters_Here": "Local-currency receivables against any hard-currency tranche is an unhedged mismatch. This is listed as a live risk in the business plan and is the input to whether local-currency tranches or DFI FX guarantees are needed.",
+   "Product_Lines": "PL-1; PL-2",
+   "Source": "World Bank Open Data",
+   "URL": "https://data.worldbank.org/",
+   "Cadence": "Monthly / quarterly"
+  }
+ ],
+ "macroLog": [
+  {
+   "ID": "MLOG-001",
+   "Date": "2026-07-30",
+   "Indicator_Refs": "",
+   "Observation": "Log started. No observations recorded yet - this row exists to establish the format rather than to assert anything about current conditions.",
+   "So_What": "Each entry should say what was observed, on what date, from which source, and what it changes about a decision. An entry that does not change a decision is probably not worth logging.",
+   "Source_Checked": "-"
+  }
+ ],
  "partners": [
   {
    "ID": "PT-01",
@@ -358,6 +557,7 @@ window.SFV_DATA = {
    "Type": "Originator (Local MFI/NGO)",
    "Geography": "Israel",
    "Role": "Origination - VSLA/microloan distribution",
+   "URL": "https://www.visionfund.org/",
    "Why_This_Partner": "Potential local pilot partner; need to confirm VSLA-style group lending presence in Israel or adapt to local microenterprise lending model."
   },
   {
@@ -366,7 +566,8 @@ window.SFV_DATA = {
    "Type": "Originator (Local NGO)",
    "Geography": "Israel",
    "Role": "Origination - community lending / financial inclusion",
-   "Why_This_Partner": "Screen for existing group-lending or microenterprise loan programs to pilot securitizable product structure."
+   "URL": "",
+   "Why_This_Partner": "Screen for existing group-lending or microenterprise loan programs to pilot securitizable product structure. No single canonical URL - this row covers a category to be narrowed to named organisations."
   },
   {
    "ID": "PT-03",
@@ -374,7 +575,8 @@ window.SFV_DATA = {
    "Type": "Originator (Africa VSLA network)",
    "Geography": "Africa (multi-country)",
    "Role": "Origination - VSLA aggregation and data collection",
-   "Why_This_Partner": "Largest established VSLA methodology network; potential access to a 20-50 VSLA pilot cohort with existing MIS infrastructure."
+   "URL": "https://www.vsla.net/",
+   "Why_This_Partner": "Largest established VSLA methodology network; potential access to a 20-50 VSLA pilot cohort with existing MIS infrastructure. CARE's savings-group programme: https://www.care.org/our-work/education-and-work/microsavings/"
   },
   {
    "ID": "PT-04",
@@ -382,6 +584,7 @@ window.SFV_DATA = {
    "Type": "Research/Standards body",
    "Geography": "Global",
    "Role": "Data standards, sector research, intros to MFI partners",
+   "URL": "https://www.cgap.org/",
    "Why_This_Partner": "Open-access research; may offer intros to vetted MFI/VSLA partners and underwriting data standards. Direct relevance to OQ-3 via LIT-014."
   },
   {
@@ -390,6 +593,7 @@ window.SFV_DATA = {
    "Type": "Verification / RCT partner",
    "Geography": "Global (Africa + MENA offices)",
    "Role": "Independent RCT design + verification",
+   "URL": "https://www.povertyactionlab.org/",
    "Why_This_Partner": "Potential academic verification partner for cluster RCT / stepped-wedge design; check regional office coverage for target African country."
   },
   {
@@ -398,7 +602,8 @@ window.SFV_DATA = {
    "Type": "Verification / Academic partner",
    "Geography": "Israel",
    "Role": "Independent data verification, IRB support",
-   "Why_This_Partner": "Linked to PhD supervisor outreach; could double as verification partner and academic home."
+   "URL": "https://en.huji.ac.il/",
+   "Why_This_Partner": "Linked to PhD supervisor outreach; could double as verification partner and academic home. See also PHD-01 and PHD-02."
   },
   {
    "ID": "PT-07",
@@ -406,7 +611,8 @@ window.SFV_DATA = {
    "Type": "Funder - First-loss / anchor investor",
    "Geography": "Global",
    "Role": "First-loss tranche or anchor investment for pilot securitization",
-   "Why_This_Partner": "Explore blended-finance windows for microfinance/VSLA securitization pilots; align with Memo 3 and LIT-013/LIT-015."
+   "URL": "https://www.ifc.org/",
+   "Why_This_Partner": "Explore blended-finance windows for microfinance/VSLA securitization pilots; align with Memo 3 and LIT-013/LIT-015. FMO: https://www.fmo.nl/"
   },
   {
    "ID": "PT-08",
@@ -414,7 +620,8 @@ window.SFV_DATA = {
    "Type": "Funder - Senior debt / structuring",
    "Geography": "Global",
    "Role": "Potential senior tranche investor or structuring advisor",
-   "Why_This_Partner": "Established microfinance debt fund managers; benchmark their deal structures for pilot SPV design. Also the right party to raise OQ-8 (blended vs homogeneous pools) with."
+   "URL": "https://www.responsability.com/",
+   "Why_This_Partner": "Established microfinance debt fund managers; benchmark their deal structures for pilot SPV design. Also the right party to raise OQ-8 (blended vs homogeneous pools) with. BlueOrchard: https://www.blueorchard.com/"
   },
   {
    "ID": "PT-09",
@@ -422,14 +629,16 @@ window.SFV_DATA = {
    "Type": "Legal / Regulatory",
    "Geography": "Israel + target African country",
    "Role": "SPV structuring, cross-border regulatory compliance",
-   "Why_This_Partner": "Needed to close out OQ-1 (cross-border SPV framework) and OQ-6 (first-loss structure). Bring the LIT-009 legal checklist to the first call."
+   "URL": "",
+   "Why_This_Partner": "Needed to close out OQ-1 (cross-border SPV framework) and OQ-6 (first-loss structure). Bring the LIT-009 legal checklist to the first call. Firms not yet shortlisted - no URL until named."
   },
   {
    "ID": "PT-10",
-   "Partner_Name": "FINDevGateway / World Bank Financial Inclusion team",
+   "Partner_Name": "FinDev Gateway / World Bank Financial Inclusion team",
    "Type": "Research/Standards body",
    "Geography": "Global",
    "Role": "Open-access data, sector benchmarking",
+   "URL": "https://www.findevgateway.org/",
    "Why_This_Partner": "Use for ongoing literature anchors and market-sizing data for the 90-day gap analysis."
   }
  ],
@@ -439,20 +648,23 @@ window.SFV_DATA = {
    "University": "Hebrew University of Jerusalem",
    "Department_Program": "Economics / Business School (finance, risk)",
    "Country": "Israel",
+   "URL": "https://en.huji.ac.il/",
    "Fit_Notes": "Local pilot access; development economics plus finance"
   },
   {
    "ID": "PHD-02",
    "University": "Tel Aviv University",
-   "Department_Program": "New Environmental School / Coller School",
+   "Department_Program": "Coller School of Management / environmental and sustainability programmes",
    "Country": "Israel",
-   "Fit_Notes": "Sustainability + finance interdisciplinary"
+   "URL": "https://english.tau.ac.il/",
+   "Fit_Notes": "Sustainability + finance interdisciplinary. Coller School: https://coller.tau.ac.il/"
   },
   {
    "ID": "PHD-03",
    "University": "Ben-Gurion University",
    "Department_Program": "Public Policy and Management / Economics",
    "Country": "Israel",
+   "URL": "https://www.bgu.ac.il/en/",
    "Fit_Notes": "Development and behavioral economics"
   },
   {
@@ -460,13 +672,15 @@ window.SFV_DATA = {
    "University": "University of Oxford",
    "Department_Program": "Smith School / Oxford Sustainable Finance Group",
    "Country": "UK",
-   "Fit_Notes": "World-leading sustainable finance, strong DFI links"
+   "URL": "https://www.smithschool.ox.ac.uk/",
+   "Fit_Notes": "World-leading sustainable finance, strong DFI links. Sustainable finance research: https://www.smithschool.ox.ac.uk/research/sustainable-finance"
   },
   {
    "ID": "PHD-05",
    "University": "London School of Economics",
    "Department_Program": "Finance / International Development",
    "Country": "UK",
+   "URL": "https://www.lse.ac.uk/finance",
    "Fit_Notes": "Deep risk + development finance expertise"
   },
   {
@@ -474,13 +688,15 @@ window.SFV_DATA = {
    "University": "University of Cambridge",
    "Department_Program": "Judge Business School / CISL",
    "Country": "UK",
-   "Fit_Notes": "Quant finance + sustainability practitioner network"
+   "URL": "https://www.jbs.cam.ac.uk/",
+   "Fit_Notes": "Quant finance + sustainability practitioner network. CISL: https://www.cisl.cam.ac.uk/"
   },
   {
    "ID": "PHD-07",
    "University": "Geneva Finance Research Institute",
    "Department_Program": "PhD in Finance (SFI)",
    "Country": "Switzerland",
+   "URL": "https://www.unige.ch/gsem/gfri/",
    "Fit_Notes": "Highly quantitative, sustainable finance research"
   },
   {
@@ -488,6 +704,7 @@ window.SFV_DATA = {
    "University": "IESEG / University of Lille",
    "Department_Program": "Sustainable Finance and Circular Economy",
    "Country": "France",
+   "URL": "https://www.ieseg.fr/en/",
    "Fit_Notes": "Applied focus, may allow more fieldwork flexibility"
   },
   {
@@ -495,6 +712,7 @@ window.SFV_DATA = {
    "University": "Loughborough Business School",
    "Department_Program": "Sustainable Development, Economic Growth and Finance",
    "Country": "UK",
+   "URL": "https://www.lboro.ac.uk/business-school/",
    "Fit_Notes": "Financial systems + inclusive growth focus"
   }
  ],
@@ -640,24 +858,96 @@ window.SFV_DATA = {
   },
   {
    "ID": "RES-02",
-   "Title": "Drive Vault",
+   "Title": "Vault - root folder",
    "Category": "Vault",
    "Type": "Drive folder",
    "Location": "Google Drive",
    "URL": "",
-   "Notes": "Private artifacts that do not belong in a public repo: literature PDFs, applications, correspondence, partner materials, raw data, legal drafts. Folder links live in the private overlay (private/pointers.csv), not here. See docs/drive-vault.md."
+   "Notes": "Private artifacts that do not belong in a public repo. Link resolves from the private overlay. See docs/drive-vault.md."
   },
   {
    "ID": "RES-03",
+   "Title": "Vault - 00 private overlay",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Canonical copies of the gitignored CSVs in private/. Download these into private/ when setting up on a new machine."
+  },
+  {
+   "ID": "RES-04",
+   "Title": "Vault - 01 literature PDFs",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Full-text PDFs for lit-matrix entries. Name as LIT-0NN - short-title.pdf"
+  },
+  {
+   "ID": "RES-05",
+   "Title": "Vault - 02 applications and PhD",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Applications, CVs, statements of purpose, transcripts, supervisor correspondence"
+  },
+  {
+   "ID": "RES-06",
+   "Title": "Vault - 03 communications",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Partner and funder correspondence, meeting notes, call transcripts"
+  },
+  {
+   "ID": "RES-07",
+   "Title": "Vault - 04 partner materials",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Materials received from partners: NGO reports, portfolio summaries, decks"
+  },
+  {
+   "ID": "RES-08",
+   "Title": "Vault - 05 raw data",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Raw pilot data and anything containing personal data. Never commit to the repo."
+  },
+  {
+   "ID": "RES-09",
+   "Title": "Vault - 06 legal and regulatory",
+   "Category": "Vault",
+   "Type": "Drive folder",
+   "Location": "Google Drive",
+   "URL": "",
+   "Notes": "Counsel memos, jurisdiction scans, draft term sheets"
+  },
+  {
+   "ID": "RES-10",
    "Title": "Master Reference Tracker",
    "Category": "Tracker",
    "Type": "Google Sheet",
    "Location": "Google Drive",
    "URL": "",
-   "Notes": "Legacy collaborative tracker, now mirrored into the repo - the repo is canonical. Link in the private overlay. Archived verbatim at archive/google-drive/master-reference-tracker.md"
+   "Notes": "Legacy collaborative tracker, now mirrored into the repo - the repo is canonical. Archived verbatim at archive/google-drive/master-reference-tracker.md"
   },
   {
-   "ID": "RES-10",
+   "ID": "RES-11",
+   "Title": "Live dashboard (GitHub Pages)",
+   "Category": "Dashboard",
+   "Type": "Website",
+   "Location": "Web",
+   "URL": "https://benbaichmankass.github.io/sustainable-finance-venture/",
+   "Notes": "Published public tier of this dashboard. Rebuilt on every push to main."
+  },
+  {
+   "ID": "RES-20",
    "Title": "CGAP",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -666,7 +956,7 @@ window.SFV_DATA = {
    "Notes": "Savings-group and financial-inclusion research; standards body. Also a partner candidate (PT-04)."
   },
   {
-   "ID": "RES-11",
+   "ID": "RES-21",
    "Title": "FinDev Gateway",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -675,7 +965,7 @@ window.SFV_DATA = {
    "Notes": "Microfinance and inclusive-finance literature repository"
   },
   {
-   "ID": "RES-12",
+   "ID": "RES-22",
    "Title": "J-PAL",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -684,7 +974,7 @@ window.SFV_DATA = {
    "Notes": "RCT methodology and evaluation evidence; verification partner candidate (PT-05)"
   },
   {
-   "ID": "RES-13",
+   "ID": "RES-23",
    "Title": "OECD blended finance",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -693,7 +983,7 @@ window.SFV_DATA = {
    "Notes": "Blended finance principles, surveys and evaluation guidance"
   },
   {
-   "ID": "RES-14",
+   "ID": "RES-24",
    "Title": "Convergence",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -702,7 +992,7 @@ window.SFV_DATA = {
    "Notes": "Blended finance deal database and market reports"
   },
   {
-   "ID": "RES-15",
+   "ID": "RES-25",
    "Title": "FSD Africa",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -711,7 +1001,7 @@ window.SFV_DATA = {
    "Notes": "African capital markets development, including securitisation work"
   },
   {
-   "ID": "RES-16",
+   "ID": "RES-26",
    "Title": "World Bank Open Knowledge Repository",
    "Category": "Reference source",
    "Type": "Open-access library",
@@ -720,16 +1010,16 @@ window.SFV_DATA = {
    "Notes": "Working papers, legal/regulatory studies, impact evaluations"
   },
   {
-   "ID": "RES-17",
+   "ID": "RES-27",
    "Title": "IFC blended finance",
    "Category": "Reference source",
    "Type": "Open-access library",
    "Location": "Web",
-   "URL": "https://www.ifc.org/en/what-we-do/sector-expertise/blended-finance",
+   "URL": "https://www.ifc.org/",
    "Notes": "First-loss instrument menu and DFI practice"
   },
   {
-   "ID": "RES-18",
+   "ID": "RES-28",
    "Title": "European DataWarehouse",
    "Category": "Reference source",
    "Type": "Data standard",
@@ -738,7 +1028,7 @@ window.SFV_DATA = {
    "Notes": "ABS loan-level reporting templates - the benchmark for the OQ-3 data schema"
   },
   {
-   "ID": "RES-19",
+   "ID": "RES-29",
    "Title": "Google Scholar",
    "Category": "Reference source",
    "Type": "Search",
@@ -747,13 +1037,22 @@ window.SFV_DATA = {
    "Notes": "Forward/backward citation tracking from anchor papers"
   },
   {
-   "ID": "RES-20",
-   "Title": "IRENA / IEA agrivoltaics and distributed solar",
+   "ID": "RES-30",
+   "Title": "IRENA",
    "Category": "Reference source",
    "Type": "Open-access library",
    "Location": "Web",
    "URL": "https://www.irena.org/",
-   "Notes": "Sector data for PL-2 (agrivoltaic project finance) - capacity, cost curves, PPA structures"
+   "Notes": "Renewable energy capacity, cost curves and PPA structures - sector data for PL-2"
+  },
+  {
+   "ID": "RES-31",
+   "Title": "SAVIX / savings group data",
+   "Category": "Reference source",
+   "Type": "Data",
+   "Location": "Web",
+   "URL": "https://www.thesavix.org/",
+   "Notes": "Savings-group management information system data - benchmark for the PL-1 origination schema"
   }
  ],
  "docs": [
@@ -862,6 +1161,14 @@ window.SFV_DATA = {
    "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n## The rule\n\n| Put it in the **repo** | Put it in the **Vault** |\n|---|---|\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n|---|---|\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.\n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.\n"
   },
   {
+   "path": "docs/macro-watch.md",
+   "category": "Planning",
+   "title": "Macro watch — how this tab works, and why it has no live numbers",
+   "summary": "",
+   "words": 674,
+   "body": "# Macro watch — how this tab works, and why it has no live numbers\n\n**Created:** 2026-07-30\n\n## What this is\n\nA standing watchlist of the macro conditions that bear on this project, each with why it matters *here* and a link to the authoritative source — plus a dated log of what was actually observed and what it changed.\n\nTwo files:\n\n- `data/macro-indicators.csv` — the watchlist. Twelve indicators across cost of capital, risk appetite, market depth, borrower shocks, project economics and funding availability.\n- `data/macro-log.csv` — dated observations. What was seen, from where, and what it changes.\n\n## Why there are no live numbers on the page\n\nThis was a deliberate choice and it is worth being explicit about, because \"what are rates doing right now\" is the obvious thing to want.\n\nThe dashboard is a static page generated from the repo. To show a current interest rate it would have to either (a) fetch from an API in the browser, or (b) bake a snapshot in at build time. Both are worse than they look:\n\n- **Client-side fetching** breaks the property that makes this dashboard durable — it opens from `file://`, works offline, and will still work in five years with no dependency on anyone's API still existing at the same URL with the same auth model.\n- **Build-time snapshots go stale silently.** A page showing \"Fed funds 4.25%\" with no visible staleness is worse than a page showing nothing, because it invites decisions on a number that may be months old. And this repo's own standard is that we never state a number the source doesn't currently state (`CLAUDE.md` §6).\n\nSo the tab gives you the **fastest possible path to the real number** — one click to the authoritative source — rather than a copy of it that rots.\n\n**If you want live numbers, that is buildable** and the honest way to do it is a scheduled build: a cron trigger on the Pages workflow fetches a handful of open APIs (ECB and FRED both serve JSON without a key), writes a snapshot with an explicit \"as of\" timestamp, and the page renders the timestamp as prominently as the value. That is a real piece of work — error handling, rate limits, a stale-data indicator — and it should be a deliberate decision rather than something bolted on. Say the word.\n\n## What the log is for\n\nThe watchlist tells you where to look. The log is the part that compounds.\n\nA research project makes decisions over years, and the reasoning behind a decision is only recoverable if you wrote down what the world looked like at the time. \"We sized the first-loss layer at 15% in Q3 2026 when EM spreads were wide and aid budgets were contracting\" is a defensible record. \"We sized it at 15%\" is not — and in two years nobody, including you, will remember which it was.\n\nLog an entry when something moves that would change a decision. Skip the rest — a log of everything is a log nobody reads.\n\nEach entry records:\n\n| Field | |\n|---|---|\n| `Date` | when observed |\n| `Indicator_Refs` | which `MAC-NN` it relates to |\n| `Observation` | what the source actually said, with no embellishment |\n| `So_What` | what it changes — the reason the entry exists |\n| `Source_Checked` | where it came from |\n\n## The discipline\n\nThe same rule as the literature matrix applies: **never state a number the source doesn't state.** If a figure is an inference or a recollection, mark it as such. The value of this log is that it can be trusted later; a single made-up number destroys that for every entry.\n\n## Adding an indicator\n\n1. Add a row to `data/macro-indicators.csv` with the next `MAC-NN`.\n2. Fill in `Why_It_Matters_Here` properly — not what the indicator is, but what it changes for *this* project. If you can't write that sentence, the indicator probably doesn't belong on the list.\n3. Verify the URL resolves.\n4. Rebuild the dashboard.\n"
+  },
+  {
    "path": "docs/milestone-plan.md",
    "category": "Planning",
    "title": "60/90-Day Milestone Plan",
@@ -922,8 +1229,8 @@ window.SFV_DATA = {
    "category": "Project",
    "title": "Working in this repo",
    "summary": "",
-   "words": 1222,
-   "body": "# Working in this repo\n\nThis repository is the **single source of truth** for the Sustainable Finance Venture project — a research and venture-building effort on structuring community-originated financial assets (VSLA loans, microinsurance) into standardized, verifiable, poolable instruments.\n\nRead this file before making changes. It is short on purpose.\n\n---\n\n## 1. The SSOT rule\n\n**If it isn't in the repo, it isn't real.** Google Docs, Sheets, chat threads and notebooks are inputs; the repo is the record. When you learn something from an external source, write it into the repo in the same session — don't leave it in the conversation.\n\nTwo exceptions, both deliberate:\n\n- **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.\n- **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.\n\n## 1b. This repo is intended to be public\n\nWritten accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.\n\n**The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.\n\nCommercial strategy is deliberately on the public side. The thesis isn't the moat; relationships and execution are.\n\nThe private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.\n\nBefore any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.\n\n**Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.\n\n## 2. Repo structure\n\n```\nREADME.md                        Project index and status — start here\nCLAUDE.md                        This file\ndocs/\n  working-doc.md                 Main planning doc — thesis, design principles, hypotheses\n  research-agenda.md             Literature review plan, reading lists, workflow\n  milestone-plan.md              60/90-day plan narrative\n  dashboard-design.md            Dashboard design decisions and how to extend it\n  drive-vault.md                 What lives in Drive instead of git, and why\n  publishing.md                  Public/private boundary, pre-publish checklist\nliterature/\n  lit-matrix.csv                 THE literature matrix — one row per source\n  notes/memo-*.md                Synthesis memos\nproduct-design/\n  business-plan.md               Venture-level plan\n  product-lines/                 One doc per product line (PL-1, PL-2)\ndata/                            Structured trackers — the dashboard reads these\n  milestones.csv                 M-NN   60/90-day milestones\n  open-questions.csv             OQ-N   unresolved decisions\n  product-lines.csv              PL-N   product lines\n  partner-tracker.csv            PT-NN  candidate partners (public tier)\n  phd-programs.csv               PHD-NN target programs (public tier)\n  synthesis-memos.csv            MEMO-N memo status index\n  resources.csv                  RES-NN external links\nprivate/                         GITIGNORED overlay — see §1b and docs/publishing.md\narchive/google-drive/            Verbatim exports of superseded source docs\ndashboard/                       Static dashboard — see §5\n.claude/skills/                  Task-specific working procedures\n```\n\n## 3. Where things go\n\n| You have… | It goes in… |\n|---|---|\n| A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |\n| A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |\n| An unresolved decision | a row in `data/open-questions.csv` |\n| An org worth talking to, and why | a row in `data/partner-tracker.csv` |\n| A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |\n| A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |\n| A dated commitment | a row in `data/milestones.csv` |\n| A link worth keeping | a row in `data/resources.csv` |\n| A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |\n| Narrative reasoning or a plan | a markdown doc in `docs/` |\n\n**Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.\n\n## 4. Data file conventions\n\n- All CSVs: **every field quoted**, header row required, UTF-8, LF line endings.\n- No commas-as-decimals, no smart quotes, no em-dashes inside CSV fields (they survive but make diffs noisy).\n- Cross-references go in dedicated columns (`Evidence_Refs`, `Linked_Refs`) as semicolon-separated IDs: `\"LIT-009; LIT-010\"`.\n- Status vocabularies are fixed. Use exactly these:\n  - Literature `Status`: `To read` · `Reading` · `Reviewed` · `Superseded`\n  - Open question `Status`: `Open` · `Partially answered` · `Answered` · `Dropped`\n  - Milestone `Status`: `Not started` · `In progress` · `Done` · `Blocked`\n  - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`\n  - Memo `Status`: `Outline` · `Drafted` · `Reviewed`\n\n## 5. The dashboard\n\n`dashboard/index.html` is a static, dependency-free page. It reads `dashboard/data.js`, which is **generated** — never hand-edit it.\n\nAfter changing anything in `data/`, `literature/`, `docs/` or `product-design/`:\n\n```bash\npython3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)\npython3 dashboard/build.py --public   # before pushing: → data.js (committed)\n```\n\nCommit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.\n\n## 6. Research standards\n\nThis project's credibility rests on the literature matrix being trustworthy. Accordingly:\n\n- **Never invent a citation, URL, author, year, or finding.** If you haven't read the source, say so. A row with `Status: To read` and an honest gap is worth more than a plausible-sounding summary.\n- **Never state a number the source doesn't state.** If a figure is your inference, mark it as such in the text.\n- **Record limitations as carefully as findings.** The `Limitations` column is not a formality — the design decisions downstream depend on knowing where the evidence is thin.\n- **Distinguish \"the literature says\" from \"we assume.\"** Working assumptions in `product-design/business-plan.md` carry a source column for this reason.\n- Prefer open-access sources (World Bank, CGAP, J-PAL, FinDev Gateway, OECD, IFC, FSD Africa). They're citable by anyone reading this repo later.\n\n## 7. Working style\n\n- **Ask before committing** when the change is substantive (new literature anchors, a changed conclusion, a restructure). Mechanical changes — regenerating the dashboard, fixing a typo, adding a pointer row — don't need a check-in.\n- **Small commits with real messages.** `literature: add LIT-009..LIT-015 (SPV law, ABS scale, first-loss)` beats `update files`.\n- **Update the dashboard in the same commit** as the data change that requires it.\n- **Don't silently narrow scope.** If part of a task is blocked, do the rest and say what you skipped.\n- When a memo's conclusions change, update the memo, the `synthesis-memos.csv` row, and any open question that cited it. These three drift apart easily.\n\n## 8. Privacy\n\nRow-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't.\n\nSince the repo is meant to be public, professional contacts are private too: a person's name attached to *our* outreach status belongs in `private/`, not in git. A public academic listed with their published research interests is fine — that's what any research proposal contains. The difference is whether we're publishing a fact about them or a fact about our relationship with them.\n"
+   "words": 1362,
+   "body": "# Working in this repo\n\nThis repository is the **single source of truth** for the Sustainable Finance Venture project — a research and venture-building effort on structuring community-originated financial assets (VSLA loans, microinsurance) into standardized, verifiable, poolable instruments.\n\nRead this file before making changes. It is short on purpose.\n\n---\n\n## 1. The SSOT rule\n\n**If it isn't in the repo, it isn't real.** Google Docs, Sheets, chat threads and notebooks are inputs; the repo is the record. When you learn something from an external source, write it into the repo in the same session — don't leave it in the conversation.\n\nTwo exceptions, both deliberate:\n\n- **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.\n- **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.\n\n## 1b. This repo is intended to be public\n\nWritten accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.\n\n**The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.\n\nCommercial strategy is deliberately on the public side. The thesis isn't the moat; relationships and execution are.\n\nThe private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.\n\nBefore any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.\n\n**Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.\n\n## 2. Repo structure\n\n```\nREADME.md                        Project index and status — start here\nCLAUDE.md                        This file\ndocs/\n  working-doc.md                 Main planning doc — thesis, design principles, hypotheses\n  research-agenda.md             Literature review plan, reading lists, workflow\n  milestone-plan.md              60/90-day plan narrative\n  dashboard-design.md            Dashboard design decisions and how to extend it\n  drive-vault.md                 What lives in Drive instead of git, and why\n  publishing.md                  Public/private boundary, pre-publish checklist\n  macro-watch.md                 Macro watchlist rationale and logging discipline\nliterature/\n  lit-matrix.csv                 THE literature matrix — one row per source\n  notes/memo-*.md                Synthesis memos\nproduct-design/\n  business-plan.md               Venture-level plan\n  product-lines/                 One doc per product line (PL-1, PL-2)\nrisk-tools/                      One doc per risk tool (RT-1..RT-5) + conventions\ndata/                            Structured trackers — the dashboard reads these\n  milestones.csv                 M-NN   60/90-day milestones\n  open-questions.csv             OQ-N   unresolved decisions\n  product-lines.csv              PL-N   product lines\n  risk-tools.csv                 RT-N   risk management tools\n  macro-indicators.csv           MAC-NN macro watchlist\n  macro-log.csv                  MLOG-N dated macro observations\n  partner-tracker.csv            PT-NN  candidate partners (public tier)\n  phd-programs.csv               PHD-NN target programs (public tier)\n  synthesis-memos.csv            MEMO-N memo status index\n  resources.csv                  RES-NN external links\nprivate/                         GITIGNORED overlay — see §1b and docs/publishing.md\narchive/google-drive/            Verbatim exports of superseded source docs\ndashboard/                       Static dashboard — see §5\n.claude/skills/                  Task-specific working procedures\n```\n\n## 3. Where things go\n\n| You have… | It goes in… |\n|---|---|\n| A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |\n| A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |\n| An unresolved decision | a row in `data/open-questions.csv` |\n| An org worth talking to, and why | a row in `data/partner-tracker.csv` |\n| A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |\n| A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |\n| A dated commitment | a row in `data/milestones.csv` |\n| A link worth keeping | a row in `data/resources.csv` |\n| A new risk/analysis tool | a row in `data/risk-tools.csv` + a doc in `risk-tools/` |\n| A macro condition worth tracking | a row in `data/macro-indicators.csv` |\n| Something you noticed about the macro environment | a row in `data/macro-log.csv` |\n| A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |\n| Narrative reasoning or a plan | a markdown doc in `docs/` |\n\n**Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.\n\n## 4. Data file conventions\n\n- All CSVs: **every field quoted**, header row required, UTF-8, LF line endings.\n- No commas-as-decimals, no smart quotes, no em-dashes inside CSV fields (they survive but make diffs noisy).\n- Cross-references go in dedicated columns (`Evidence_Refs`, `Linked_Refs`) as semicolon-separated IDs: `\"LIT-009; LIT-010\"`.\n- Status vocabularies are fixed. Use exactly these:\n  - Literature `Status`: `To read` · `Reading` · `Reviewed` · `Superseded`\n  - Open question `Status`: `Open` · `Partially answered` · `Answered` · `Dropped`\n  - Milestone `Status`: `Not started` · `In progress` · `Done` · `Blocked`\n  - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`\n  - Memo `Status`: `Outline` · `Drafted` · `Reviewed`\n  - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`\n\n**URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.\n\n## 5. The dashboard\n\n`dashboard/index.html` is a static, dependency-free page. It reads `dashboard/data.js`, which is **generated** — never hand-edit it.\n\nAfter changing anything in `data/`, `literature/`, `docs/` or `product-design/`:\n\n```bash\npython3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)\npython3 dashboard/build.py --public   # before pushing: → data.js (committed)\n```\n\nCommit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.\n\n## 6. Research standards\n\nThis project's credibility rests on the literature matrix being trustworthy. Accordingly:\n\n- **Never invent a citation, URL, author, year, or finding.** If you haven't read the source, say so. A row with `Status: To read` and an honest gap is worth more than a plausible-sounding summary.\n- **Never state a number the source doesn't state.** If a figure is your inference, mark it as such in the text.\n- **Record limitations as carefully as findings.** The `Limitations` column is not a formality — the design decisions downstream depend on knowing where the evidence is thin.\n- **Distinguish \"the literature says\" from \"we assume.\"** Working assumptions in `product-design/business-plan.md` carry a source column for this reason.\n- Prefer open-access sources (World Bank, CGAP, J-PAL, FinDev Gateway, OECD, IFC, FSD Africa). They're citable by anyone reading this repo later.\n\n## 7. Working style\n\n- **Ask before committing** when the change is substantive (new literature anchors, a changed conclusion, a restructure). Mechanical changes — regenerating the dashboard, fixing a typo, adding a pointer row — don't need a check-in.\n- **Small commits with real messages.** `literature: add LIT-009..LIT-015 (SPV law, ABS scale, first-loss)` beats `update files`.\n- **Update the dashboard in the same commit** as the data change that requires it.\n- **Don't silently narrow scope.** If part of a task is blocked, do the rest and say what you skipped.\n- When a memo's conclusions change, update the memo, the `synthesis-memos.csv` row, and any open question that cited it. These three drift apart easily.\n\n## 8. Privacy\n\nRow-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't.\n\nSince the repo is meant to be public, professional contacts are private too: a person's name attached to *our* outreach status belongs in `private/`, not in git. A public academic listed with their published research interests is fine — that's what any research proposal contains. The difference is whether we're publishing a fact about them or a fact about our relationship with them.\n"
   },
   {
    "path": "LICENSE-CONTENT.md",
@@ -938,8 +1245,56 @@ window.SFV_DATA = {
    "category": "Project",
    "title": "Sustainable Finance Venture",
    "summary": "",
-   "words": 876,
-   "body": "# Sustainable Finance Venture\n\nResearch and venture-building project exploring how financing and risk-management tools can unlock capital for proven, economically viable sustainable-development solutions that remain underfunded due to structural gaps (not technical ones).\n\n**Core hypothesis:** Community-based financial structures (e.g., VSLAs) manage idiosyncratic risk well enough to support scalable lending/insurance products, and these products can be designed from origination to be standardized, verifiable, and eventually pooled into securitizable, investment-grade assets.\n\n**Project stage:** research framing + literature review (pre-pilot).\n\n---\n\n## Start here\n\n**Open `dashboard/index.html` in a browser.** It's a self-contained page — no server, no build step, no dependencies — showing project status, the full document library, the literature matrix, the milestone tracker and every tracker in this repo. Everything on it is generated from the files below, so it can't drift out of date.\n\nRebuild it after changing anything:\n\n```bash\npython3 dashboard/build.py            # local view, merges the private overlay\npython3 dashboard/build.py --public   # public tier — run this before pushing\n```\n\nWorking here with an AI agent? Read `CLAUDE.md` first — it holds the conventions, and `.claude/skills/` holds the procedures for recurring tasks.\n\n## This repo is the source of truth\n\nIf it isn't in the repo, it isn't real. Google Docs and Sheets are inputs; this repo is the record. Two deliberate exceptions:\n\n- **The Drive Vault** holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the pointer. See `docs/drive-vault.md`.\n- **The Master Reference Tracker Sheet** still exists for collaborator access, but it's now a mirror. If it disagrees with the repo, the repo wins.\n\n## Structure\n\n```\nCLAUDE.md                  How to work in this repo — conventions, standards, where things go\ndashboard/                 Generated status dashboard (open index.html)\ndocs/\n  working-doc.md           Thesis, design principles, working hypotheses, PhD framing\n  research-agenda.md       Literature review plan, reading lists, workflow\n  milestone-plan.md        60/90-day plan narrative\n  dashboard-design.md      Dashboard design decisions\n  drive-vault.md           What lives in Drive instead of git, and why\n  publishing.md            Public/private boundary and pre-publish checklist\nliterature/\n  lit-matrix.csv           15 anchors (LIT-001 … LIT-015)\n  notes/memo-*.md          3 synthesis memos, all Reviewed\nproduct-design/\n  business-plan.md         Venture-level plan, structuring assumptions, risks\n  product-lines/           One doc per product line (PL-1 community, PL-2 agrivoltaic)\ndata/                      Structured trackers — the dashboard reads these\n  milestones.csv           M-NN    60/90-day milestones\n  open-questions.csv       OQ-N    unresolved decisions\n  product-lines.csv        PL-N    product lines\n  partner-tracker.csv      PT-NN   candidate partners (public tier)\n  phd-programs.csv         PHD-NN  target programs (public tier)\n  synthesis-memos.csv      MEMO-N  memo status index\n  resources.csv            RES-NN  external links\nprivate/                   GITIGNORED private overlay — see docs/publishing.md\narchive/google-drive/      Verbatim exports of superseded source docs\n.claude/skills/            Task procedures for AI agents\n```\n\nEvery record has a stable ID. IDs are never reused or renumbered — cross-references depend on them.\n\n## Where things stand\n\n| | |\n|---|---|\n| Literature anchors | 15, all reviewed |\n| Synthesis memos | 3, all reviewed |\n| Open questions | 8 — 4 partially answered, 4 open |\n| Milestones | 2 done, 1 in progress, 8 not started |\n| Product lines | 2 — community credit/insurance, agrivoltaic project finance |\n| Partners | 10 tracked (contact status in the private overlay) |\n| PhD programs | 9 shortlisted |\n\n**The critical path:**\n\n1. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape.\n2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.\n3. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item.\n4. Choose the first instrument — loan, insurance, or bundled.\n\n## Open by default\n\nThis repo is meant to be public. It holds the thinking, the methods, the evidence base and the tools — none of which is better for being secret. A short private tier stays out of git, and it's private because it's about **people**, not because it's commercially precious.\n\nThe test: does it name a person and say something about them? Private. Does it name an organization and explain why it's relevant? Public.\n\nThe two connect by ID at build time — `data/partner-tracker.csv` holds who a partner is and why they matter; `private/partner-contacts.csv` (gitignored) holds status and contact person. Locally you see both; a published build shows the public tier. Same pattern for research: public tooling, private inputs, publishable conclusions.\n\nFull policy and the pre-publish checklist: `docs/publishing.md`.\n\n## Licence\n\nSplit, because the repo holds two different kinds of thing:\n\n| | Licence | |\n|---|---|---|\n| **Code** — `dashboard/build.py`, `dashboard/index.html`, future analysis and modelling tools | [Apache-2.0](LICENSE) | Permissive, with an express patent grant |\n| **Writing and data** — docs, literature matrix, memos, business plan, trackers | [CC BY 4.0](LICENSE-CONTENT.md) | Reuse freely, including commercially, with attribution |\n\nCC BY matches how this project's own reference sources publish — World Bank, OECD, CGAP — so their material and ours are mutually compatible.\n\n**Cited sources are not licensed by us.** The literature matrix contains our summaries and analysis; the underlying papers and reports remain their publishers' property under their own terms, and their full texts are not distributed here. See `NOTICE`.\n\n## Resuming a session\n\n1. Open the dashboard for current state.\n2. Check the Open Questions tab for what's undecided and why.\n3. Check Partners and PhD pipeline before any new outreach — avoiding duplicate contact is the point of those trackers.\n"
+   "words": 920,
+   "body": "# Sustainable Finance Venture\n\nResearch and venture-building project exploring how financing and risk-management tools can unlock capital for proven, economically viable sustainable-development solutions that remain underfunded due to structural gaps (not technical ones).\n\n**Core hypothesis:** Community-based financial structures (e.g., VSLAs) manage idiosyncratic risk well enough to support scalable lending/insurance products, and these products can be designed from origination to be standardized, verifiable, and eventually pooled into securitizable, investment-grade assets.\n\n**Project stage:** research framing + literature review (pre-pilot).\n\n---\n\n## Start here\n\n**Open `dashboard/index.html` in a browser.** It's a self-contained page — no server, no build step, no dependencies — showing project status, the full document library, the literature matrix, the milestone tracker and every tracker in this repo. Everything on it is generated from the files below, so it can't drift out of date.\n\nRebuild it after changing anything:\n\n```bash\npython3 dashboard/build.py            # local view, merges the private overlay\npython3 dashboard/build.py --public   # public tier — run this before pushing\n```\n\nWorking here with an AI agent? Read `CLAUDE.md` first — it holds the conventions, and `.claude/skills/` holds the procedures for recurring tasks.\n\n## This repo is the source of truth\n\nIf it isn't in the repo, it isn't real. Google Docs and Sheets are inputs; this repo is the record. Two deliberate exceptions:\n\n- **The Drive Vault** holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the pointer. See `docs/drive-vault.md`.\n- **The Master Reference Tracker Sheet** still exists for collaborator access, but it's now a mirror. If it disagrees with the repo, the repo wins.\n\n## Structure\n\n```\nCLAUDE.md                  How to work in this repo — conventions, standards, where things go\ndashboard/                 Generated status dashboard (open index.html)\ndocs/\n  working-doc.md           Thesis, design principles, working hypotheses, PhD framing\n  research-agenda.md       Literature review plan, reading lists, workflow\n  milestone-plan.md        60/90-day plan narrative\n  dashboard-design.md      Dashboard design decisions\n  drive-vault.md           What lives in Drive instead of git, and why\n  publishing.md            Public/private boundary and pre-publish checklist\n  macro-watch.md           Macro watchlist rationale and logging discipline\nliterature/\n  lit-matrix.csv           15 anchors (LIT-001 … LIT-015)\n  notes/memo-*.md          3 synthesis memos, all Reviewed\nproduct-design/\n  business-plan.md         Venture-level plan, structuring assumptions, risks\n  product-lines/           One doc per product line (PL-1 community, PL-2 agrivoltaic)\nrisk-tools/                RT-1..RT-5 specs, versioning policy, test strategy\ndata/                      Structured trackers — the dashboard reads these\n  milestones.csv           M-NN    60/90-day milestones\n  open-questions.csv       OQ-N    unresolved decisions\n  product-lines.csv        PL-N    product lines\n  risk-tools.csv           RT-N    risk management tools\n  macro-indicators.csv     MAC-NN  macro watchlist\n  macro-log.csv            MLOG-N  dated macro observations\n  partner-tracker.csv      PT-NN   candidate partners (public tier)\n  phd-programs.csv         PHD-NN  target programs (public tier)\n  synthesis-memos.csv      MEMO-N  memo status index\n  resources.csv            RES-NN  external links\nprivate/                   GITIGNORED private overlay — see docs/publishing.md\narchive/google-drive/      Verbatim exports of superseded source docs\n.claude/skills/            Task procedures for AI agents\n```\n\nEvery record has a stable ID. IDs are never reused or renumbered — cross-references depend on them.\n\n## Where things stand\n\n| | |\n|---|---|\n| Literature anchors | 15, all reviewed |\n| Synthesis memos | 3, all reviewed |\n| Open questions | 8 — 4 partially answered, 4 open |\n| Milestones | 2 done, 1 in progress, 8 not started |\n| Product lines | 2 — community credit/insurance, agrivoltaic project finance |\n| Risk tools | 5 specified, 0 built |\n| Macro watchlist | 12 indicators |\n| Partners | 10 tracked (contact status in the private overlay) |\n| PhD programs | 9 shortlisted |\n\n**The critical path:**\n\n1. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape.\n2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.\n3. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item.\n4. Choose the first instrument — loan, insurance, or bundled.\n\n## Open by default\n\nThis repo is meant to be public. It holds the thinking, the methods, the evidence base and the tools — none of which is better for being secret. A short private tier stays out of git, and it's private because it's about **people**, not because it's commercially precious.\n\nThe test: does it name a person and say something about them? Private. Does it name an organization and explain why it's relevant? Public.\n\nThe two connect by ID at build time — `data/partner-tracker.csv` holds who a partner is and why they matter; `private/partner-contacts.csv` (gitignored) holds status and contact person. Locally you see both; a published build shows the public tier. Same pattern for research: public tooling, private inputs, publishable conclusions.\n\nFull policy and the pre-publish checklist: `docs/publishing.md`.\n\n## Licence\n\nSplit, because the repo holds two different kinds of thing:\n\n| | Licence | |\n|---|---|---|\n| **Code** — `dashboard/build.py`, `dashboard/index.html`, future analysis and modelling tools | [Apache-2.0](LICENSE) | Permissive, with an express patent grant |\n| **Writing and data** — docs, literature matrix, memos, business plan, trackers | [CC BY 4.0](LICENSE-CONTENT.md) | Reuse freely, including commercially, with attribution |\n\nCC BY matches how this project's own reference sources publish — World Bank, OECD, CGAP — so their material and ours are mutually compatible.\n\n**Cited sources are not licensed by us.** The literature matrix contains our summaries and analysis; the underlying papers and reports remain their publishers' property under their own terms, and their full texts are not distributed here. See `NOTICE`.\n\n## Resuming a session\n\n1. Open the dashboard for current state.\n2. Check the Open Questions tab for what's undecided and why.\n3. Check Partners and PhD pipeline before any new outreach — avoiding duplicate contact is the point of those trackers.\n"
+  },
+  {
+   "path": "risk-tools/README.md",
+   "category": "Risk tools",
+   "title": "Risk management tools",
+   "summary": "",
+   "words": 516,
+   "body": "# Risk management tools\n\nThe toolkit that makes community-originated cash flows underwritable. Registry: `data/risk-tools.csv`; one document per tool in this directory.\n\n**Nothing here is built yet.** Every tool is at specification stage. That's stated honestly in the registry rather than dressed up as \"in progress\" — the specs exist so that when data arrives the build is a matter of execution, not design.\n\n## The tools\n\n| ID | Tool | Consumes | Blocked by |\n|---|---|---|---|\n| RT-1 | Origination data schema | — | OQ-3 |\n| RT-2 | Underwriting engine | RT-1 | RT-1, pilot data |\n| RT-3 | Monitoring & early-warning | RT-1 | RT-1 |\n| RT-4 | Impact evaluation module | RT-1 | OQ-4/5/7 |\n| RT-5 | Securitisation cash-flow model | RT-1 | RT-1 |\n\n**RT-1 is the critical path.** Everything consumes its output. Get the field list wrong and every downstream tool inherits the error — and unlike code, an origination schema cannot be fixed retroactively, because the data you failed to capture is simply gone.\n\n## Why these five\n\nThey map to the venture's position in the stack. We sit in the risk layer (`product-design/business-plan.md` §3): origination partners handle disbursement and collection, we handle underwriting rules, monitoring, tranching and evidence. These five are that layer made concrete.\n\nRT-5 is the one that can be built first with no real data — waterfall mechanics can be exercised against synthetic portfolios, and it answers OQ-2 and OQ-6, which are currently blocking decisions.\n\n## Conventions\n\n**Versioning.** Semantic, per tool, recorded in the tool's document and in `data/risk-tools.csv`:\n\n- **Major** — a change that invalidates comparison with prior output. A removed schema field, a changed scoring scale, a different waterfall convention. Requires a migration note.\n- **Minor** — additive and backward-compatible. A new optional field, a new alert type.\n- **Patch** — fixes that don't change the interface.\n\nEvery tool document carries a version history table with date, version, change and rationale. `0.x` means specification only, nothing implemented.\n\n**Schema changes are special.** RT-1 is a data contract with origination partners in the field. A major version bump means retraining people and possibly reprinting forms. Batch changes; don't drip them.\n\n**Tests.** Each tool states its test strategy in its own document. The standing requirements:\n\n- Deterministic golden cases for anything doing arithmetic on money.\n- Property-based tests for invariants (a waterfall must distribute exactly what it receives; a score must stay in range).\n- Backtests against held-out data for anything predictive — and no predictive model ships without one.\n- Synthetic-data tests so tools are testable before real portfolios exist.\n\n**No model without a backtest** is the rule that matters most. The temptation with thin data is to ship a plausible-looking scorecard. A model that has never been validated out-of-sample is a guess wearing a number, and it would be used to price other people's risk.\n\n## Adding a tool\n\n1. Add a row to `data/risk-tools.csv` with the next `RT-N`.\n2. Add `risk-tools/rt-N-slug.md` following the structure of the existing docs: purpose, design, inputs/outputs, versioning, tests, open questions.\n3. Rebuild the dashboard.\n"
+  },
+  {
+   "path": "risk-tools/rt-1-origination-schema.md",
+   "category": "Risk tools",
+   "title": "RT-1 — Origination data schema",
+   "summary": "",
+   "words": 920,
+   "body": "# RT-1 — Origination data schema\n\n**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3\n\n## Purpose\n\nDefine every field captured at the moment a loan is disbursed or a policy is written, so that a pool of these assets is legible to a rating agency and an investor without retrofitting.\n\nThis is the tool that decides whether the venture works. The securitisation literature is unanimous that a standardisation layer is a precondition, not a nice-to-have (LIT-004, LIT-006, LIT-008). And unlike every other tool here, **a schema failure cannot be repaired later** — data not captured at origination is gone. A field added in year two produces a portfolio with two years of nulls, which for a rating agency is a portfolio with no history.\n\n## Design constraints\n\nThree constraints pull in different directions, and the schema has to satisfy all three.\n\n**1. ABS legibility.** The end state is a loan-level data tape a rating agency will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they represent a settled answer to \"what does an investor need to know about each loan.\"\n\n**2. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised group records, delegated to local authorities, NGOs and federations. A schema that only works inside a supervised financial institution will not reach the groups we need. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already receives.\n\n**3. Privacy.** Personal data lives in the Vault's `05-raw-data`, never the repo (`CLAUDE.md` §8). The schema must therefore separate a **stable pseudonymous ID** from the identifying record, so analysis and pooling can run on the pseudonymous layer alone.\n\nConstraint 2 is the binding one. It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting.\n\n## Structure\n\nFour tables, joined on IDs.\n\n| Table | Grain | Holds |\n|---|---|---|\n| `group` | one row per VSLA / originating unit | formation date, size, cycle length, governance model, location tag, federation |\n| `member` | one row per member | pseudonymous ID, join date, role, coarse demographics; **no name, no contact** |\n| `loan` | one row per loan | amount, disbursement date, term, rate/fee, purpose code, guarantee structure, schedule |\n| `event` | one row per repayment, arrears, claim, restructure, write-off | loan ID, date, type, amount, balance after |\n\nThe `event` table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.\n\nFor PL-2 the same shape applies with `project` replacing `group` and PPA settlement events replacing repayments — the structural analogy is deliberate and is what lets one toolkit serve both lines.\n\n## Field-level rules\n\n- **Every field has a defined domain.** Enumerations, not free text, wherever a category is meant. Free text is unpoolable.\n- **Money carries a currency code and a date.** No bare amounts.\n- **Dates are ISO 8601.** No local formats.\n- **Nulls are distinguishable from zeros.** \"No repayment recorded\" and \"repayment of zero\" are different facts.\n- **Every row carries `schema_version`.** Without it a mixed-vintage portfolio is uninterpretable.\n\n## Versioning\n\n`data/risk-tools.csv` holds the current version. This schema is a **data contract with people in the field**, so version changes are more expensive than code changes:\n\n| Bump | Means | Cost |\n|---|---|---|\n| Major | Field removed, domain changed, meaning changed | Retraining, possibly reprinted forms, migration note required |\n| Minor | Optional field added | New field is null for prior vintages — acceptable, must be documented |\n| Patch | Clarified description, corrected typo | None |\n\n**Batch changes.** A major bump every quarter destroys field trust. Accumulate and release deliberately.\n\nEvery version records: what changed, why, which vintages are affected, and how to interpret the join across the boundary.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-07-30 | 0.0 | Initial specification. No fields fixed yet — structure and constraints only. |\n\n## Tests\n\nNot yet written. Planned:\n\n- **Validation suite** — every field checked against its domain; a malformed record is rejected at entry, not at analysis time.\n- **Referential integrity** — no orphan loans, no events without loans, no members without groups.\n- **Round-trip** — export to the ABS tape format and back without loss.\n- **Adversarial field data** — the suite must include the messy cases that actually occur: a member leaving mid-cycle, a loan repaid by someone else, a group splitting, a cycle ending early.\n- **Cross-version join** — records at two schema versions must be joinable, or the migration note is wrong.\n\n## Open questions\n\n- Which fields are genuinely required versus nice-to-have? Every required field is a tax on the group secretary, and the schema fails if the tax is too high.\n- Can we align with SAVIX (RES-31) so existing savings-group MIS data maps in without re-collection? This could be the difference between a pilot cohort of 20 and a pool of hundreds.\n- What does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record? (Open in Memo 3.)\n- PL-2: does a utility PPA permit assignment of receivables at all? That is the LIT-009 true-sale checklist applied to this asset, and it may be the binding constraint on the whole product line.\n"
+  },
+  {
+   "path": "risk-tools/rt-2-underwriting-engine.md",
+   "category": "Risk tools",
+   "title": "RT-2 — Underwriting engine",
+   "summary": "",
+   "words": 689,
+   "body": "# RT-2 — Underwriting engine\n\n**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1 · **Blocked by:** RT-1, pilot data\n\n## Purpose\n\nTurn origination data plus community signals into a decision, a limit and a price.\n\n## Design\n\n**Rules first, model later.** The engine ships as a deterministic rule set. It does not ship a learned scorecard until there is repayment history to fit and — critically — to validate against out-of-sample.\n\nThis is not conservatism for its own sake. A scorecard fitted on borrowed priors or on a few hundred loans produces confident numbers with no evidential basis, and those numbers would be used to price other people's risk and to size a first-loss tranche someone else funds. **No model ships without a backtest** is the hard rule.\n\n### What the rules operate on\n\nThe distinctive signal here is that the group has already done the underwriting. VSLAs screen, monitor and enforce socially, which is precisely why small-ticket lending works there and fails under atomised individual assessment (Memo 1). The engine's job is to read that, not to replace it.\n\n| Layer | Examples |\n|---|---|\n| Group-level | cycle completion history, attendance regularity, savings consistency, internal loan performance, governance stability, size and tenure |\n| Member-level | tenure in group, internal borrowing and repayment record, role |\n| Loan-level | size relative to member's savings, size relative to group fund, purpose, term against cycle timing |\n| Context | seasonality, local shock indicators (see the macro watchlist) |\n\nGroup-level signals are likely to carry more weight than member-level ones, because the group's track record is longer and harder to game than any individual's. That is a hypothesis to test, not an assumption to build in permanently.\n\n### Output\n\nA decision, a limit, a price, and — non-negotiably — **a reason**. Every decision records which rules fired. An unexplainable decline is unacceptable both ethically and practically: origination partners have to be able to explain it to a member, and the reason codes are the raw material for improving the rules.\n\n## Versioning\n\n| Bump | Means |\n|---|---|\n| Major | Scoring scale changes, a factor is removed, decision boundaries move materially — prior decisions are no longer comparable |\n| Minor | New factor added, threshold tuned within the existing scale |\n| Patch | Bug fix with no decision-boundary movement |\n\n**Every decision persists the engine version that produced it.** Without that, portfolio performance analysis silently mixes vintages scored on different logic and the resulting loss curves are meaningless.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-07-30 | 0.0 | Initial specification. Rules-first architecture; no model until backtest is possible. |\n\n## Tests\n\nNot yet written. Planned:\n\n- **Golden cases** — a fixed set of applications with expected decisions; any change to output is deliberate or it is a bug.\n- **Boundary tests** — applicants sitting exactly on each threshold.\n- **Monotonicity properties** — improving a good-direction factor must never worsen a decision. Violations are almost always rule-interaction bugs and are invisible without property testing.\n- **Backtest harness** — required before any learned component. Train on early vintages, test on later ones, report discrimination and calibration. A model that discriminates well but is miscalibrated will misprice the whole pool.\n- **Fairness review** — check decision rates across groups where the data permits. This lends to poor people, largely women; a rule that proxies for something it shouldn't is a real risk and needs looking for deliberately.\n- **Reason-code coverage** — no decision path may terminate without a reason.\n\n## Open questions\n\n- Which group-level signals actually predict repayment? Unknown until pilot data exists. The pilot should be designed to answer it — see RT-4.\n- How much weight should group history carry relative to member history?\n- Can the engine price, or only decide? Pricing needs a loss curve, which needs a track record.\n- What happens when the group's own judgement and the engine disagree? The group is usually better informed. An override path with recorded reasons is probably right, and is itself a valuable data source.\n"
+  },
+  {
+   "path": "risk-tools/rt-3-monitoring-early-warning.md",
+   "category": "Risk tools",
+   "title": "RT-3 — Monitoring and early-warning system",
+   "summary": "",
+   "words": 622,
+   "body": "# RT-3 — Monitoring and early-warning system\n\n**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1, PL-2 · **Blocked by:** RT-1\n\n## Purpose\n\nTrack portfolio performance against expectation and raise alerts early enough to act.\n\nTwo audiences, and they need different things:\n\n- **Operations** — which groups need attention this week.\n- **The first-loss provider** — is the junior tranche performing as underwritten. LIT-013 makes documented monitoring part of what a DFI evaluates when deciding whether to fund a junior layer, so this tool is partly a fundraising instrument.\n\n## Design\n\n### Levels\n\n| Level | Watching for |\n|---|---|\n| Loan | days past due, partial payment, restructure, claim |\n| Group | arrears concentration, attendance decline, cycle disruption, savings falling off |\n| Portfolio | vintage curves against expectation, geographic concentration, delinquency migration |\n| Environment | shocks that move whole cohorts at once — see the macro watchlist |\n\n**Group level is where the early signal lives.** By the time a loan is 30 days past due, the information is old. Attendance dropping or savings contributions thinning are visible earlier and are observable in data the group already produces.\n\n### Alerts\n\nEvery alert carries: what fired, the threshold crossed, the trend that led to it, and a suggested action. An alert that only says \"group 14 is deteriorating\" transfers work rather than reducing it.\n\n**Alert fatigue is the failure mode to design against.** A system that fires constantly gets ignored, and an ignored monitoring system is worse than none because it creates false confidence. Thresholds should start deliberately conservative and be tuned against observed false-positive rates.\n\n### Environmental layer\n\nCommunity portfolios fail in correlated ways. A drought, a price spike, a remittance disruption hits every group in a region simultaneously — which is exactly the risk that diversification within a single product line does not address. The monitoring system should ingest the indicators tracked in `data/macro-indicators.csv` so that a regional cluster of alerts is interpreted as one shock rather than fifteen unrelated problems.\n\n## Versioning\n\n| Bump | Means |\n|---|---|\n| Major | Alert definitions change so that historical alert rates are no longer comparable |\n| Minor | New alert type, new data source |\n| Patch | Threshold tuning within an existing definition |\n\nAlert history retains the version that produced it, for the same reason RT-2 decisions do.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-07-30 | 0.0 | Initial specification. |\n\n## Tests\n\nNot yet written. Planned:\n\n- **Synthetic-portfolio replay** — construct portfolios with known deterioration patterns and assert the right alerts fire at the right time. This is how the tool gets tested before a real portfolio exists.\n- **Known-shock replay** — replay a historical shock (a drought season, a currency move) and check the environmental layer catches it.\n- **False-positive rate** — measured against a stable synthetic portfolio; a healthy portfolio must stay quiet.\n- **Lead-time measurement** — for each alert type, how far ahead of the loss does it fire? An alert with zero lead time is a report, not a warning.\n- **Threshold-boundary tests** — no flapping when a metric sits on the line.\n\n## Open questions\n\n- What lead time is achievable? Unknown until there is real data. It determines whether the tool is genuinely preventive or merely diagnostic.\n- Which group-level signals degrade first? Testable in the pilot and worth designing the pilot to answer.\n- How do alerts reach the field — and who acts on them? A system that alerts head office about a group nobody visits changes nothing.\n- What does the first-loss provider need to see, and how often? Worth asking PT-07 directly rather than guessing.\n"
+  },
+  {
+   "path": "risk-tools/rt-4-impact-evaluation.md",
+   "category": "Risk tools",
+   "title": "RT-4 — Impact evaluation module",
+   "summary": "",
+   "words": 736,
+   "body": "# RT-4 — Impact evaluation module\n\n**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1 · **Blocked by:** OQ-4, OQ-5, OQ-7\n\n## Purpose\n\nRandomisation infrastructure and pre-registered analysis, so that impact claims about the pilot are credible to an academic supervisor, a DFI and a sceptical reader.\n\n## Why this is a tool and not a report\n\nThe project's credibility rests on the evidence being trustworthy (`CLAUDE.md` §6). The literature is full of microfinance impact claims that did not survive scrutiny — Memo 2 exists because average effects on income turn out small and heterogeneous while the marketing rarely says so.\n\nThe way to not repeat that is procedural, and the procedure has to be built before enrolment starts:\n\n1. **Design fixed and pre-registered before anyone is enrolled.** Choosing an estimator after seeing outcomes is the single most common way impact claims lose credibility.\n2. **Randomisation mechanised, not manual.** A documented, reproducible, seeded assignment. Hand-assignment invites well-meaning interference — the field officer who moves a struggling group into treatment destroys the comparison.\n3. **Analysis code written against simulated data first.** If the analysis only gets written after outcomes are visible, every specification choice is contaminated.\n\n## Design\n\n| Component | Does |\n|---|---|\n| Assignment | Seeded, reproducible randomisation at the level OQ-4 settles on; records the seed, the strata and the assignment log |\n| Balance checks | Automatic covariate balance report post-assignment |\n| Power analysis | Simulation-based, run *before* enrolment to state the minimum detectable effect |\n| Pre-registration artefact | Generated from the design config, timestamped, committed, filed publicly |\n| Analysis | Pre-specified primary and secondary outcomes, estimator, and multiple-comparison handling |\n\n**Outcomes follow the evidence, not the pitch.** Per Memo 2, the primary outcomes should be resilience and consumption smoothing — where the evidence base is strongest and the measurement most defensible — with income and business investment as secondary and clearly labelled as such.\n\n### Design choice still open\n\nOQ-4 and OQ-5 both ask cluster randomisation versus stepped-wedge. They interact with partner acceptability: NGO partners often resist withholding treatment, which pushes toward stepped-wedge, while cluster randomisation gives a cleaner comparison. This must be settled with the verification partner (OQ-7) before the module is built, because it determines the assignment component's entire shape.\n\n## Ethics\n\n- Consent basis, retention period and access must be stated before any participant data is collected. Tracked as part of M-08.\n- Row-level participant data lives in the Vault's `05-raw-data` and never enters the repo — not as a CSV, a summary, or a dashboard row.\n- IRB or equivalent review via the academic partner (PT-05, PT-06).\n- Aggregate results come back to the repo. Individual records do not.\n\n## Versioning\n\n| Bump | Means |\n|---|---|\n| Major | Design or primary outcome changes — **requires an amended pre-registration with the change and its rationale stated** |\n| Minor | Additional secondary outcome or robustness check added |\n| Patch | Code fix with no change to specification |\n\nA major bump after enrolment begins is a serious event and must be visible as one. The version history is part of the evidentiary record, not just changelog hygiene.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-07-30 | 0.0 | Initial specification. Design pending OQ-4/OQ-5 resolution with the verification partner. |\n\n## Tests\n\nNot yet written. Planned:\n\n- **Assignment reproducibility** — same seed and inputs produce identical assignment, always.\n- **Randomisation quality** — many simulated assignments; check balance holds on average and the procedure is unbiased.\n- **Power simulation** — recover a known injected effect at the stated power; confirms the analysis code can find what it claims to be able to find.\n- **Null test** — run the full pipeline on data with no true effect. It must not produce a significant result more often than chance. This is the test that catches an analysis pipeline that manufactures findings.\n- **Pre-registration diff** — assert the executed analysis matches the registered specification, and flag every deviation.\n\n## Open questions\n\n- Cluster randomisation or stepped-wedge? (OQ-4, OQ-5)\n- Which verification partner, and what are their data-sharing and IRB requirements? (OQ-7)\n- What is the minimum detectable effect at realistic pilot scale — and if the honest answer is \"larger than the effect we expect,\" what does the pilot actually establish? Better to know that before enrolling than after.\n"
+  },
+  {
+   "path": "risk-tools/rt-5-securitisation-model.md",
+   "category": "Risk tools",
+   "title": "RT-5 — Securitisation cash-flow model",
+   "summary": "",
+   "words": 805,
+   "body": "# RT-5 — Securitisation cash-flow model\n\n**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1, PL-2 · **Blocked by:** RT-1 (for real data; buildable now against synthetic portfolios)\n\n## Purpose\n\nModel the waterfall: take a pool of receivables, apply loss and prepayment assumptions, and distribute cash through the tranche structure. Size the tranches. Test whether the first-loss layer is adequate.\n\n## Build this one first\n\nRT-5 is the only tool here that does not need real data to be useful. Waterfall mechanics can be exercised against synthetic portfolios today, and doing so answers two questions that are currently blocking decisions:\n\n- **OQ-2** — minimum viable pool size. The current working band (tens of millions warehoused, ≥USD 100m for issuance) comes from observed central tendencies across deals that do not resemble our asset class (LIT-011, LIT-012). A model with our own cost assumptions would replace a borrowed benchmark with a derived one.\n- **OQ-6** — first-loss sizing. The 10–20% working range comes from the same borrowed source (LIT-013, LIT-015). Modelling it against plausible loss distributions would tell us what *our* structure needs.\n\nBoth numbers are currently placeholders taken from other people's deals. That is honest but weak, and this tool is how it gets fixed.\n\n## Design\n\n| Component | Does |\n|---|---|\n| Pool generator | Builds synthetic portfolios with controllable size, tenor, loss and correlation characteristics |\n| Loss model | Applies default timing and severity; **correlation is the parameter that matters most** |\n| Prepayment model | Early repayment behaviour — significant for short-tenor PL-1 assets |\n| Waterfall | Distributes collections through fees, senior, mezzanine, junior per the structure |\n| Tranche sizer | Given a target rating or loss coverage, sizes the layers |\n| Cost model | Legal, rating, listing, structuring, servicing — fixed and variable |\n\n**Correlation is the crux.** Community loan portfolios do not default independently: a drought or a price shock moves a whole region together. A model assuming independence will size the first-loss tranche far too thin and will look reassuring while doing it. Correlation assumptions must be explicit inputs, stress-tested across a wide range, and reported alongside every result.\n\nThe cost model is what actually answers OQ-2 — minimum viable pool size is a fixed-cost problem, not a risk problem.\n\n### Both product lines\n\nThe same engine serves PL-1 and PL-2 with different parameters: short-tenor, many-obligor, socially-enforced versus long-tenor, single-offtaker, contracted. Running a blended pool through it is the concrete way to test OQ-8 — whether combining the lines improves the structure or contaminates the legible asset with the unproven one.\n\n## Versioning\n\n| Bump | Means |\n|---|---|\n| Major | Waterfall convention or loss-model methodology changes — prior outputs are not comparable |\n| Minor | New tranche type, new stress scenario, additional cost component |\n| Patch | Numerical fix with no methodology change |\n\nEvery model run persists its version, inputs and assumptions alongside its outputs. **A tranche size without its assumptions is not a result** — and this is the tool whose outputs are most likely to be quoted in a conversation with an investor months later.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-07-30 | 0.0 | Initial specification. |\n\n## Tests\n\nNot yet written. Planned:\n\n- **Conservation property** — the waterfall must distribute exactly what it receives, to the cent, under every scenario. This is the single most important test; a leak here invalidates everything.\n- **Ordering property** — senior is never paid after junior in the same period; subordination must hold by construction.\n- **Golden cases** — hand-calculated small structures with known correct answers.\n- **Degenerate cases** — zero losses, total losses, single-loan pool, all prepaid at once. These are where waterfall code breaks.\n- **Monotonicity** — more losses must never improve a senior tranche's outcome.\n- **Correlation sweep** — run the same pool from independence to near-perfect correlation and report the range. If the recommended first-loss size is not robust across that sweep, the recommendation is not usable.\n- **Cost-model sensitivity** — vary fixed costs and report how the minimum viable pool size moves.\n\n## Open questions\n\n- What loss and correlation assumptions are defensible with no track record? Probably a wide sensitivity range rather than a point estimate — and the honest output is a range, not a number.\n- Should the model target a rating-agency methodology, and if so which? Depends on whether an agency will engage pre-track-record, which is still open in Memo 3.\n- For PL-2, does a utility PPA permit assignment of receivables at all? If it does not, there is no waterfall to model on that line.\n- What servicing cost is realistic for community-originated assets? Likely higher per dollar than any comparable deal, and that goes straight into the minimum-viable-scale answer.\n"
   },
   {
    "path": "literature/notes/memo-1-vslas.md",
@@ -994,7 +1349,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 19161
+   "totalWords": 24307
   }
  }
 };

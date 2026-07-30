@@ -41,16 +41,21 @@ docs/
   dashboard-design.md            Dashboard design decisions and how to extend it
   drive-vault.md                 What lives in Drive instead of git, and why
   publishing.md                  Public/private boundary, pre-publish checklist
+  macro-watch.md                 Macro watchlist rationale and logging discipline
 literature/
   lit-matrix.csv                 THE literature matrix — one row per source
   notes/memo-*.md                Synthesis memos
 product-design/
   business-plan.md               Venture-level plan
   product-lines/                 One doc per product line (PL-1, PL-2)
+risk-tools/                      One doc per risk tool (RT-1..RT-5) + conventions
 data/                            Structured trackers — the dashboard reads these
   milestones.csv                 M-NN   60/90-day milestones
   open-questions.csv             OQ-N   unresolved decisions
   product-lines.csv              PL-N   product lines
+  risk-tools.csv                 RT-N   risk management tools
+  macro-indicators.csv           MAC-NN macro watchlist
+  macro-log.csv                  MLOG-N dated macro observations
   partner-tracker.csv            PT-NN  candidate partners (public tier)
   phd-programs.csv               PHD-NN target programs (public tier)
   synthesis-memos.csv            MEMO-N memo status index
@@ -73,6 +78,9 @@ dashboard/                       Static dashboard — see §5
 | A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |
 | A dated commitment | a row in `data/milestones.csv` |
 | A link worth keeping | a row in `data/resources.csv` |
+| A new risk/analysis tool | a row in `data/risk-tools.csv` + a doc in `risk-tools/` |
+| A macro condition worth tracking | a row in `data/macro-indicators.csv` |
+| Something you noticed about the macro environment | a row in `data/macro-log.csv` |
 | A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |
 | Narrative reasoning or a plan | a markdown doc in `docs/` |
 
@@ -89,6 +97,9 @@ dashboard/                       Static dashboard — see §5
   - Milestone `Status`: `Not started` · `In progress` · `Done` · `Blocked`
   - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`
   - Memo `Status`: `Outline` · `Drafted` · `Reviewed`
+  - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`
+
+**URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.
 
 ## 5. The dashboard
 

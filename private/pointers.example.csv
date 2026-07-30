@@ -1,4 +1,4 @@
-"ID","Title","Category","Type","URL","Notes"
-"PRV-01","Vault - root folder","Vault","Drive folder","https://drive.google.com/drive/folders/EXAMPLE_ID","Root of the Drive Vault"
-"PRV-02","Vault - literature PDFs","Vault","Drive folder","https://drive.google.com/drive/folders/EXAMPLE_ID","Full texts for lit-matrix entries"
-"PRV-03","Master Reference Tracker","Tracker","Google Sheet","https://docs.google.com/spreadsheets/d/EXAMPLE_ID/edit","Legacy collaborative tracker, now mirrored into the repo"
+"ID","URL"
+"RES-02","https://drive.google.com/drive/folders/EXAMPLE_ID"
+"RES-04","https://drive.google.com/drive/folders/EXAMPLE_ID"
+"RES-10","https://docs.google.com/spreadsheets/d/EXAMPLE_ID/edit"

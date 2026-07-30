@@ -1,0 +1,2 @@
+"ID","Date","Indicator_Refs","Observation","So_What","Source_Checked"
+"MLOG-001","2026-07-30","","Log started. No observations recorded yet - this row exists to establish the format rather than to assert anything about current conditions.","Each entry should say what was observed, on what date, from which source, and what it changes about a decision. An entry that does not change a decision is probably not worth logging.","-"
