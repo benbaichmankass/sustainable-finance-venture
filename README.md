@@ -52,7 +52,8 @@ product-design/
 risk-tools/
   rt-*.md                  One spec per tool (RT-1..RT-5)
   schema/                  RT-1 origination schema (CSV) + design philosophy
-  tools/                   RT-1 validator, RT-5 synthetic portfolio simulator
+  tools/                   Runnable toolchain: data generator, schema validator,
+                           RT-2 scorecard, RT-3 monitor, RT-5 simulator, e2e tests
 data/                      Structured trackers — the dashboard reads these
   milestones.csv           M-NN    60/90-day milestones
   open-questions.csv       OQ-N    unresolved decisions

@@ -54,6 +54,21 @@ Every tool document carries a version history table with date, version, change a
 | | What exists | Where |
 |---|---|---|
 | RT-1 | 57-field origination schema (v0.1) + validator | [`schema/`](schema/), [`tools/validate_schema.py`](tools/validate_schema.py) |
+| RT-2 | Rules-based scorecard: band, limit, reasons both ways | [`tools/score_loans.py`](tools/score_loans.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |
+| RT-3 | Portfolio monitor: PAR, arrears concentration, alerts | [`tools/monitor_portfolio.py`](tools/monitor_portfolio.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |
 | RT-5 | Synthetic portfolio simulator + waterfall + 6 stress scenarios | [`tools/simulate_portfolio.py`](tools/simulate_portfolio.py), [`rt-5-simulator.md`](rt-5-simulator.md) |
 
-RT-2, RT-3 and RT-4 remain at specification stage. RT-1 is not field-tested and RT-5 is not calibrated — both say so in their own docs rather than relying on the reader to infer it.
+RT-4 remains at specification stage — it is gated on a pre-registered design with an academic partner, not on code.
+
+## Running the chain
+
+```bash
+python3 risk-tools/tools/generate_dataset.py --out /tmp/synth   # RT-1-conformant synthetic data
+python3 risk-tools/tools/validate_schema.py --data /tmp/synth   # proves schema and generator agree
+python3 risk-tools/tools/score_loans.py     --data /tmp/synth   # RT-2
+python3 risk-tools/tools/monitor_portfolio.py --data /tmp/synth # RT-3
+python3 risk-tools/tools/simulate_portfolio.py                  # RT-5
+python3 risk-tools/tools/test_toolchain.py                      # end-to-end checks (CI)
+```
+
+**Nothing here is calibrated and nothing is field-tested.** Every tool says so in its own output and its own doc, rather than relying on the reader to infer it. None of these outputs should be shown to a partner or an investor as a result.
