@@ -1,7 +1,7 @@
 # Archive — Web3 VSLA Business Plan (Google Doc)
 
 > **Provenance.** Verbatim export of the Google Doc *"Web3 VSLA Business Plan"*, created 2025-02-06, last modified 2025-02-19, captured 2026-07-30.
-> Source: https://docs.google.com/document/d/1km7HTNwOjxb4y5mgkr1VztQYnbGbIgyGlX9XDDJfspU/edit
+> Source: Google Drive — link in `private/pointers.csv` (kept out of the public repo; the archive below is the content)
 >
 > **Status: superseded, retained for lineage.** This is the earlier Web3/DAO framing of the venture. The current thesis (see `docs/working-doc.md` and `product-design/business-plan.md`) keeps the community-finance and structured-product core but drops the blockchain/DAO delivery mechanism. Sections that survived the shift are flagged in `product-design/business-plan.md`.
 

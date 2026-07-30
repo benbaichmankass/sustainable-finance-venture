@@ -1,7 +1,7 @@
 # Archive — Sustainable Development Securities Work Plan (Google Doc)
 
 > **Provenance.** Verbatim export of the Google Doc *"SDS Work Plan"*, created 2024-11-03, last modified 2025-01-27, captured 2026-07-30.
-> Source: https://docs.google.com/document/d/1B__yMff_8AY0Ij5hTLYIA4CCF0Cloh_UW-zJYAtB-Yk/edit
+> Source: Google Drive — link in `private/pointers.csv` (kept out of the public repo; the archive below is the content)
 >
 > **Status: predecessor thinking, retained for lineage.** This is the infrastructure/energy-project framing that preceded the community-finance thesis. Its structural ideas — pooling projects with uncorrelated idiosyncratic risk, designing projects to capture induced growth, public-market distribution — carry directly into the current securitization design and are reflected in `product-design/business-plan.md`.
 

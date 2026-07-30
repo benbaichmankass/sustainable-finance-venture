@@ -1,7 +1,7 @@
 # Archive — Master Reference Tracker (Google Sheet)
 
 > **Provenance.** Verbatim export of the Google Sheet *"Sustainable Finance Venture — Master Reference Tracker"*, captured 2026-07-30.
-> Source: https://docs.google.com/spreadsheets/d/1Q8m8MaQ_wUzpjABRYTvIqeFTrgkDGskBJ-RGBOky2DY/edit
+> Source: Google Drive — link in `private/pointers.csv` (kept out of the public repo; the archive below is the content)
 >
 > **This file is an archive, not the source of truth.** The live content has been split into the repo files listed under "Where this content now lives". Edit those; this file exists so the original wording is recoverable.
 
@@ -14,8 +14,10 @@
 | Open Questions | `data/open-questions.csv` |
 | Lit Matrix | `literature/lit-matrix.csv` |
 | Synthesis Memos | `data/synthesis-memos.csv` + `literature/notes/*.md` |
-| Partner Tracker | `data/partner-tracker.csv` |
-| PhD Programs | `data/phd-programs.csv` |
+| Partner Tracker | `data/partner-tracker.csv` (public tier) + `private/partner-contacts.csv` (contact status) |
+| PhD Programs | `data/phd-programs.csv` (public tier) + `private/phd-applications.csv` (supervisors, status) |
+
+The partner and PhD tabs were split when the repo was made publishable: who an organization is and why it matters is public; a named individual and our relationship status with them is not. See `docs/publishing.md`.
 
 ---
 
