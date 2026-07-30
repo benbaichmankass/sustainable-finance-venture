@@ -256,6 +256,7 @@ footer.foot {
       <p id="subtitle">Structuring community-originated financial assets into poolable, verifiable instruments</p>
     </div>
     <div class="top-meta">
+      <span class="chip" id="tier-chip" hidden></span>
       <span class="chip" id="gen-chip">—</span>
       <button class="ghost" id="theme-btn" type="button">Theme</button>
     </div>
@@ -267,7 +268,12 @@ footer.foot {
   <footer class="foot" id="foot"></footer>
 </div>
 
+<!-- data.js is the committed public tier. data.private.js is gitignored and
+     overrides it when present, so a local build shows the full picture and a
+     published build shows only what is safe to publish. A missing private
+     file simply 404s and leaves the public data in place. -->
 <script src="data.js"></script>
+<script src="data.private.js"></script>
 <script>
 "use strict";
 var D = window.SFV_DATA || {};
@@ -462,6 +468,7 @@ var TABS = [
   { id: "overview",  label: "Overview",       count: null },
   { id: "library",   label: "Library",        count: function () { return (D.docs || []).length; } },
   { id: "research",  label: "Research plan",  count: function () { return (D.literature || []).length; } },
+  { id: "products",  label: "Product lines",  count: function () { return (D.productLines || []).length; } },
   { id: "business",  label: "Business plan",  count: null },
   { id: "questions", label: "Open questions", count: function () { return (D.openQuestions || []).length; } },
   { id: "partners",  label: "Partners",       count: function () { return (D.partners || []).length; } },
@@ -476,7 +483,10 @@ function renderOverview() {
   var done = ms.filter(function (m) { return m.Status === "Done"; }).length;
   var answered = oq.filter(function (q) { return q.Status !== "Open"; }).length;
   var reviewed = (D.memos || []).filter(function (m) { return m.Status === "Reviewed"; }).length;
-  var contacted = (D.partners || []).filter(function (p) { return p.Contact_Status !== "Not contacted"; }).length;
+  var hasPrivate = (D.partners || []).some(function (p) { return p.Contact_Status; });
+  var contacted = (D.partners || []).filter(function (p) {
+    return p.Contact_Status && p.Contact_Status !== "Not contacted";
+  }).length;
 
   var html =
     '<section class="panel"><h2>Where the project stands</h2>' +
@@ -487,8 +497,11 @@ function renderOverview() {
       tile("Synthesis memos", (D.memos || []).length, reviewed + " reviewed") +
       tile("Open questions", oq.length, answered + " partially answered or better") +
       tile("Milestones done", done + " / " + ms.length, "60/90-day plan") +
-      tile("Partners tracked", (D.partners || []).length, contacted + " contacted") +
-      tile("PhD programs", (D.phdPrograms || []).length, "0 applications started") +
+      tile("Product lines", (D.productLines || []).length, "PL-1 leads, PL-2 closer to revenue") +
+      tile("Partners tracked", (D.partners || []).length,
+        hasPrivate ? contacted + " contacted" : "status in private overlay") +
+      tile("PhD programs", (D.phdPrograms || []).length,
+        hasPrivate ? "" : "status in private overlay") +
       tile("Documents", (D.docs || []).length, (c.totalWords || 0).toLocaleString() + " words") +
       tile("Resources", (D.resources || []).length, "incl. Drive vault") +
     "</div>" +
@@ -675,6 +688,38 @@ function renderBusiness() {
   return html;
 }
 
+function renderProducts() {
+  var lines = D.productLines || [];
+  var docs = D.docs || [];
+
+  var html = '<section class="panel"><h2>Product lines</h2>' +
+    '<p class="lede">The venture runs more than one product line because the thesis is layer-agnostic: it says that cash flows ' +
+    'designed at origination to be standardized, verifiable and transferable can be pooled and sold. That applies to a community ' +
+    'loan book and to a portfolio of solar PPAs alike. The lines share the toolkit, and they are close to uncorrelated.</p>' +
+
+    '<div class="grid g2">' + lines.map(function (l) {
+      return '<div class="card">' +
+        '<div style="display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap">' +
+        '<strong>' + esc(l.ID) + " — " + esc(l.Name) + "</strong>" + pill(l.Status) + "</div>" +
+        '<div class="detail-grid" style="padding-top:12px">' +
+        [["Origination layer", l.Origination_Layer], ["Underlying asset", l.Underlying_Asset],
+         ["Tenor", l.Tenor], ["Evidence base", l.Evidence_Base], ["Precedents", l.Precedent_Refs]]
+          .filter(function (p) { return p[1]; })
+          .map(function (p) {
+            return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + esc(p[1]) + "</div></div>";
+          }).join("") + "</div>" +
+        '<p style="margin:12px 0 0;font-size:13.5px;color:var(--text-2)">' + esc(l.Notes) + "</p>" +
+        '<p class="hint" style="margin:8px 0 0"><code>' + esc(l.Path) + "</code></p></div>";
+    }).join("") + "</div>";
+
+  var lineDocs = docs.filter(function (d) { return d.path.indexOf("product-design/product-lines/") === 0; });
+  lineDocs.forEach(function (d) {
+    html += '<h3 class="sub">' + esc(d.title) + '</h3><div class="card"><div class="md">' + renderMd(d.body) + "</div></div>";
+  });
+
+  return html + "</section>";
+}
+
 function renderQuestions() {
   var oq = D.openQuestions || [];
   var cols = [
@@ -699,23 +744,43 @@ function renderQuestions() {
   return html;
 }
 
+/* Banner shown where a tab's contact/status columns live in the private overlay
+   and that overlay is not loaded. */
+function privateNotice(what) {
+  return '<div class="card" style="margin-bottom:16px;border-color:var(--warning)">' +
+    "<strong>" + esc(what) + " is in the private overlay.</strong>" +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
+    "This build shows the public tier only. Named individuals and relationship status live in " +
+    "<code>private/</code>, which is gitignored — see <code>docs/publishing.md</code>. " +
+    "Pull the overlay from the Drive Vault and rebuild to see the full picture.</p></div>";
+}
+
 function renderPartners() {
   var p = D.partners || [];
+  var hasPrivate = p.some(function (r) { return r.Contact_Status; });
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
     { key: "Partner_Name", label: "Partner", cls: "wrap-cell" },
     { key: "Type", label: "Type" },
-    { key: "Geography", label: "Geography" },
-    { label: "Contact", render: function (r) { return pill(r.Contact_Status); } }
+    { key: "Geography", label: "Geography" }
   ];
+  if (hasPrivate) cols.push({ label: "Contact", render: function (r) { return pill(r.Contact_Status); } });
+
   function detail(r) {
-    return fields([["Role", esc(r.Role)], ["Contact person", esc(r.Contact_Person)], ["Notes", esc(r.Notes)]]);
+    return fields([
+      ["Role", esc(r.Role)],
+      ["Why this partner", esc(r.Why_This_Partner)],
+      ["Contact person", esc(r.Contact_Person)],
+      ["Private notes", esc(r.Private_Notes)]
+    ]);
   }
   var byStatus = (D.meta && D.meta.counts && D.meta.counts.partnersByStatus) || {};
   var html = '<section class="panel"><h2>Partners</h2>' +
-    '<p class="lede">Candidate originators, verification partners, funders and counsel. Check this before any new approach — ' +
-    'avoiding duplicate cold contact is the whole point of the tracker.</p>' +
-    '<div class="card" style="margin-bottom:16px">' + statusBreakdown(byStatus) + "</div>" +
+    '<p class="lede">Candidate originators, verification partners, funders and counsel — who they are and why they matter to ' +
+    'this project. Check here before any new approach; avoiding duplicate cold contact is the point of the tracker.</p>' +
+    (hasPrivate
+      ? '<div class="card" style="margin-bottom:16px">' + statusBreakdown(byStatus) + "</div>"
+      : privateNotice("Contact status")) +
     '<div id="pt-tbl"></div></section>';
   setTimeout(function () { var h = by("pt-tbl"); h.innerHTML = buildTable(p, cols, detail); wireTable(h); }, 0);
   return html;
@@ -723,23 +788,28 @@ function renderPartners() {
 
 function renderPhd() {
   var p = D.phdPrograms || [];
+  var hasPrivate = p.some(function (r) { return r.Application_Status; });
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
     { key: "University", label: "University", cls: "wrap-cell" },
     { key: "Department_Program", label: "Department", cls: "wrap-cell" },
-    { key: "Country", label: "Country" },
-    { label: "Status", render: function (r) { return pill(r.Application_Status); } }
+    { key: "Country", label: "Country" }
   ];
+  if (hasPrivate) cols.push({ label: "Status", render: function (r) { return pill(r.Application_Status); } });
+
   function detail(r) {
     return fields([
       ["Fit", esc(r.Fit_Notes)],
       ["Candidate supervisors", esc(r.Candidate_Supervisors)],
-      ["Next step", esc(r.Outreach_Plan)]
+      ["Next step", esc(r.Outreach_Plan)],
+      ["Private notes", esc(r.Private_Notes)]
     ]);
   }
   var html = '<section class="panel"><h2>PhD pipeline</h2>' +
-    '<p class="lede">Target programs and supervisors, with the outreach plan for each. Application materials live in the ' +
-    'Drive vault, not the repo.</p><div id="phd-tbl"></div></section>';
+    '<p class="lede">Target programs and why each fits. Named supervisors, application status and outreach plans are personal ' +
+    'and live in the private overlay; application materials live in the Drive Vault, not the repo.</p>' +
+    (hasPrivate ? "" : privateNotice("Supervisor targeting and application status")) +
+    '<div id="phd-tbl"></div></section>';
   setTimeout(function () { var h = by("phd-tbl"); h.innerHTML = buildTable(p, cols, detail); wireTable(h); }, 0);
   return html;
 }
@@ -781,8 +851,8 @@ function renderResources() {
 
 var RENDER = {
   overview: renderOverview, library: renderLibrary, research: renderResearch,
-  business: renderBusiness, questions: renderQuestions, partners: renderPartners,
-  phd: renderPhd, resources: renderResources
+  products: renderProducts, business: renderBusiness, questions: renderQuestions,
+  partners: renderPartners, phd: renderPhd, resources: renderResources
 };
 
 /* ------------------------------------------------------------------- boot */
@@ -811,6 +881,21 @@ function boot() {
 
   var m = D.meta || {};
   by("gen-chip").textContent = "Built " + (m.generated || "—");
+
+  /* Make it unmistakable which tier is on screen — otherwise it is far too easy
+     to screenshot or share the private view believing it is the public one. */
+  var tier = by("tier-chip");
+  tier.hidden = false;
+  if (m.private) {
+    tier.textContent = "Private view";
+    tier.style.borderColor = "var(--warning)";
+    tier.style.color = "var(--text)";
+    tier.title = "Includes the private overlay (" + (m.overlays || []).join(", ") +
+      "). Do not share screenshots of this view.";
+  } else {
+    tier.textContent = "Public view";
+    tier.title = "Public tier only — no private overlay loaded.";
+  }
   by("foot").innerHTML = "Generated from <code>" + esc(m.repo || "") + "</code> by <code>dashboard/build.py</code> on " +
     esc(m.generated || "") + ". This page has no state of its own — to change what it shows, change the source files " +
     "and rebuild.";

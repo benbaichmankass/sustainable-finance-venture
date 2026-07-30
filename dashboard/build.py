@@ -19,18 +19,31 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "dashboard", "data.js")
+OUT_PRIVATE = os.path.join(ROOT, "dashboard", "data.private.js")
 
 # --- structured trackers -----------------------------------------------------
 # key -> path relative to repo root
 TABLES = {
     "literature": "literature/lit-matrix.csv",
     "openQuestions": "data/open-questions.csv",
+    "productLines": "data/product-lines.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
     "milestones": "data/milestones.csv",
     "memos": "data/synthesis-memos.csv",
     "resources": "data/resources.csv",
 }
+
+# --- private overlay ---------------------------------------------------------
+# Gitignored files that add the columns a public repo must not carry: named
+# individuals, relationship status, Vault links. Merged by ID when present, so
+# a local build shows the whole picture and a public build shows only the
+# public tier. See docs/publishing.md.
+OVERLAYS = {
+    "partners": "private/partner-contacts.csv",
+    "phdPrograms": "private/phd-applications.csv",
+}
+POINTERS = "private/pointers.csv"
 
 # --- document library --------------------------------------------------------
 # directory -> display category. Files are picked up recursively.
@@ -123,6 +136,32 @@ def collect_docs():
     return docs
 
 
+def merge_overlay(rows, relpath):
+    """Merge a private overlay onto public rows, matching on ID.
+
+    Returns (rows, applied). Missing overlay is the normal case for a public
+    build - not an error. Overlay rows whose ID isn't in the public table are
+    reported, since that usually means an ID was renamed on one side only.
+    """
+    path = os.path.join(ROOT, relpath)
+    if not os.path.exists(path):
+        return rows, False
+    overlay = {r["ID"]: r for r in read_table(relpath) if r.get("ID")}
+    seen = set()
+    for row in rows:
+        extra = overlay.get(row.get("ID"))
+        if extra:
+            seen.add(row["ID"])
+            for key, value in extra.items():
+                if key != "ID":
+                    row[key] = value
+    orphans = set(overlay) - seen
+    if orphans:
+        print("  ! overlay %s has IDs not in the public table: %s"
+              % (relpath, ", ".join(sorted(orphans))), file=sys.stderr)
+    return rows, True
+
+
 def counts(rows, field):
     out = {}
     for row in rows:
@@ -132,12 +171,22 @@ def counts(rows, field):
 
 
 def main():
-    print("Building dashboard data...")
+    private = "--public" not in sys.argv
+    print("Building dashboard data%s..." % ("" if private else " (public tier only)"))
     data = {}
+    applied = []
     for key, relpath in TABLES.items():
         rows = read_table(relpath)
+        if private and key in OVERLAYS:
+            rows, did = merge_overlay(rows, OVERLAYS[key])
+            if did:
+                applied.append(OVERLAYS[key])
         data[key] = rows
         print("  %-14s %3d rows  (%s)" % (key, len(rows), relpath))
+
+    if private and os.path.exists(os.path.join(ROOT, POINTERS)):
+        data["resources"] = data["resources"] + read_table(POINTERS)
+        applied.append(POINTERS)
 
     docs = collect_docs()
     data["docs"] = docs
@@ -146,7 +195,8 @@ def main():
     data["meta"] = {
         "generated": date.today().isoformat(),
         "repo": "benbaichmankass/sustainable-finance-venture",
-        "vaultUrl": "https://drive.google.com/drive/folders/1OteXpvFVKBrk-SH1QKGYzpv50JhoHI9r",
+        "private": bool(applied),
+        "overlays": applied,
         "counts": {
             "literatureByAxis": counts(data["literature"], "Axis"),
             "literatureByStatus": counts(data["literature"], "Status"),
@@ -157,14 +207,23 @@ def main():
         },
     }
 
+    out = OUT_PRIVATE if applied else OUT
     payload = json.dumps(data, indent=1, ensure_ascii=False)
-    with open(OUT, "w", encoding="utf-8") as fh:
+    with open(out, "w", encoding="utf-8") as fh:
         fh.write("// GENERATED FILE - do not edit by hand.\n")
         fh.write("// Regenerate with: python3 dashboard/build.py\n")
+        if applied:
+            fh.write("// Contains private overlay data. Gitignored - never commit.\n")
         fh.write("window.SFV_DATA = %s;\n" % payload)
 
-    size = os.path.getsize(OUT)
-    print("Wrote %s (%.1f KB)" % (os.path.relpath(OUT, ROOT), size / 1024.0))
+    size = os.path.getsize(out)
+    print("Wrote %s (%.1f KB)" % (os.path.relpath(out, ROOT), size / 1024.0))
+    if applied:
+        print("  merged private overlay: %s" % ", ".join(applied))
+        print("  NOTE: this file is gitignored. Run with --public to refresh the")
+        print("        committed dashboard/data.js before pushing.")
+    else:
+        print("  public tier only - safe to commit.")
 
 
 if __name__ == "__main__":

@@ -15,6 +15,18 @@ Two exceptions, both deliberate:
 - **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.
 - **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.
 
+## 1b. This repo is intended to be public
+
+Written accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.
+
+**The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.
+
+Commercial strategy is deliberately on the public side. The thesis isn't the moat; relationships and execution are.
+
+The private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.
+
+Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
+
 ## 2. Repo structure
 
 ```
@@ -26,18 +38,22 @@ docs/
   milestone-plan.md              60/90-day plan narrative
   dashboard-design.md            Dashboard design decisions and how to extend it
   drive-vault.md                 What lives in Drive instead of git, and why
+  publishing.md                  Public/private boundary, pre-publish checklist
 literature/
   lit-matrix.csv                 THE literature matrix — one row per source
   notes/memo-*.md                Synthesis memos
 product-design/
-  business-plan.md               Current business plan
+  business-plan.md               Venture-level plan
+  product-lines/                 One doc per product line (PL-1, PL-2)
 data/                            Structured trackers — the dashboard reads these
   milestones.csv                 M-NN   60/90-day milestones
   open-questions.csv             OQ-N   unresolved decisions
-  partner-tracker.csv            PT-NN  candidate partners
-  phd-programs.csv               PHD-NN target programs
+  product-lines.csv              PL-N   product lines
+  partner-tracker.csv            PT-NN  candidate partners (public tier)
+  phd-programs.csv               PHD-NN target programs (public tier)
   synthesis-memos.csv            MEMO-N memo status index
-  resources.csv                  RES-NN external links and Vault folders
+  resources.csv                  RES-NN external links
+private/                         GITIGNORED overlay — see §1b and docs/publishing.md
 archive/google-drive/            Verbatim exports of superseded source docs
 dashboard/                       Static dashboard — see §5
 .claude/skills/                  Task-specific working procedures
@@ -50,7 +66,9 @@ dashboard/                       Static dashboard — see §5
 | A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |
 | A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |
 | An unresolved decision | a row in `data/open-questions.csv` |
-| A person or org to talk to | a row in `data/partner-tracker.csv` |
+| An org worth talking to, and why | a row in `data/partner-tracker.csv` |
+| A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |
+| A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |
 | A dated commitment | a row in `data/milestones.csv` |
 | A link worth keeping | a row in `data/resources.csv` |
 | A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |
@@ -77,10 +95,11 @@ dashboard/                       Static dashboard — see §5
 After changing anything in `data/`, `literature/`, `docs/` or `product-design/`:
 
 ```bash
-python3 dashboard/build.py
+python3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)
+python3 dashboard/build.py --public   # before pushing: → data.js (committed)
 ```
 
-Then commit both the source change and the regenerated `dashboard/data.js`. Details in `docs/dashboard-design.md`.
+Commit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.
 
 ## 6. Research standards
 
@@ -102,4 +121,6 @@ This project's credibility rests on the literature matrix being trustworthy. Acc
 
 ## 8. Privacy
 
-Row-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't. Partner and supervisor names in trackers are professional contacts and are fine to keep in git.
+Row-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't.
+
+Since the repo is meant to be public, professional contacts are private too: a person's name attached to *our* outreach status belongs in `private/`, not in git. A public academic listed with their published research interests is fine — that's what any research proposal contains. The difference is whether we're publishing a fact about them or a fact about our relationship with them.

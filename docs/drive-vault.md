@@ -4,7 +4,9 @@
 
 Some project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.
 
-**Vault root:** https://drive.google.com/drive/folders/1OteXpvFVKBrk-SH1QKGYzpv50JhoHI9r
+This matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.
+
+**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.
 
 ## The rule
 
@@ -17,18 +19,23 @@ Some project material should not live in git: copyrighted PDFs, large binaries, 
 | Public-facing text | Correspondence with named individuals |
 | Links and citations | Signed documents, term sheets, legal drafts |
 
-**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else.
+**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.
+
+**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.
 
 ## Folder structure
 
-| Folder | Holds | Link |
-|---|---|---|
-| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. | [open](https://drive.google.com/drive/folders/1xRfUEqDAyPbXgQVMhE8iPASwV6F5QHHr) |
-| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. | [open](https://drive.google.com/drive/folders/1Qy73klJhfFCzkkygBBCXv00dtrC-OUn4) |
-| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. | [open](https://drive.google.com/drive/folders/1Tuu2fAujmfgtjMElXrFsfBqqSqvASCgv) |
-| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. | [open](https://drive.google.com/drive/folders/1w12EUceIKvkaWMJ-QOg82fSCllUnqvLN) |
-| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. | [open](https://drive.google.com/drive/folders/1cMeHmNottCBvJC5xKDJ7fC4SNTR92k7x) |
-| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. | [open](https://drive.google.com/drive/folders/1dKCr1UEm4aLpzfDsW5ij06dQapePxCyy) |
+| Folder | Holds |
+|---|---|
+| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |
+| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |
+| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |
+| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |
+| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |
+| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |
+| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |
+
+Links in `private/pointers.csv`.
 
 ## Naming convention
 

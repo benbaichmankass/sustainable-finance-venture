@@ -15,7 +15,8 @@ Research and venture-building project exploring how financing and risk-managemen
 Rebuild it after changing anything:
 
 ```bash
-python3 dashboard/build.py
+python3 dashboard/build.py            # local view, merges the private overlay
+python3 dashboard/build.py --public   # public tier — run this before pushing
 ```
 
 Working here with an AI agent? Read `CLAUDE.md` first — it holds the conventions, and `.claude/skills/` holds the procedures for recurring tasks.
@@ -38,18 +39,22 @@ docs/
   milestone-plan.md        60/90-day plan narrative
   dashboard-design.md      Dashboard design decisions
   drive-vault.md           What lives in Drive instead of git, and why
+  publishing.md            Public/private boundary and pre-publish checklist
 literature/
   lit-matrix.csv           15 anchors (LIT-001 … LIT-015)
   notes/memo-*.md          3 synthesis memos, all Reviewed
 product-design/
-  business-plan.md         Current business plan, structuring assumptions, risks
+  business-plan.md         Venture-level plan, structuring assumptions, risks
+  product-lines/           One doc per product line (PL-1 community, PL-2 agrivoltaic)
 data/                      Structured trackers — the dashboard reads these
   milestones.csv           M-NN    60/90-day milestones
   open-questions.csv       OQ-N    unresolved decisions
-  partner-tracker.csv      PT-NN   candidate partners
-  phd-programs.csv         PHD-NN  target programs
+  product-lines.csv        PL-N    product lines
+  partner-tracker.csv      PT-NN   candidate partners (public tier)
+  phd-programs.csv         PHD-NN  target programs (public tier)
   synthesis-memos.csv      MEMO-N  memo status index
-  resources.csv            RES-NN  external links and Vault folders
+  resources.csv            RES-NN  external links
+private/                   GITIGNORED private overlay — see docs/publishing.md
 archive/google-drive/      Verbatim exports of superseded source docs
 .claude/skills/            Task procedures for AI agents
 ```
@@ -62,10 +67,11 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 |---|---|
 | Literature anchors | 15, all reviewed |
 | Synthesis memos | 3, all reviewed |
-| Open questions | 7 — 4 partially answered, 3 open |
+| Open questions | 8 — 4 partially answered, 4 open |
 | Milestones | 2 done, 1 in progress, 8 not started |
-| Partners | 10 tracked, 0 contacted |
-| PhD programs | 9 shortlisted, 0 applications started |
+| Product lines | 2 — community credit/insurance, agrivoltaic project finance |
+| Partners | 10 tracked (contact status in the private overlay) |
+| PhD programs | 9 shortlisted |
 
 **The critical path:**
 
@@ -74,10 +80,15 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 3. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item.
 4. Choose the first instrument — loan, insurance, or bundled.
 
-## Related resources
+## Open by default
 
-- **Drive Vault:** https://drive.google.com/drive/folders/1OteXpvFVKBrk-SH1QKGYzpv50JhoHI9r
-- **Master Reference Tracker (Sheet, now mirrored):** https://docs.google.com/spreadsheets/d/1Q8m8MaQ_wUzpjABRYTvIqeFTrgkDGskBJ-RGBOky2DY/edit
+This repo is meant to be public. It holds the thinking, the methods, the evidence base and the tools — none of which is better for being secret. A short private tier stays out of git, and it's private because it's about **people**, not because it's commercially precious.
+
+The test: does it name a person and say something about them? Private. Does it name an organization and explain why it's relevant? Public.
+
+The two connect by ID at build time — `data/partner-tracker.csv` holds who a partner is and why they matter; `private/partner-contacts.csv` (gitignored) holds status and contact person. Locally you see both; a published build shows the public tier. Same pattern for research: public tooling, private inputs, publishable conclusions.
+
+Full policy and the pre-publish checklist: `docs/publishing.md`.
 
 ## Resuming a session
 
