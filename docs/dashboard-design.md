@@ -1,0 +1,79 @@
+# Dashboard — design plan
+
+**Status:** v1 implemented · **Last updated:** 2026-07-30
+
+## The problem
+
+Project state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering "what's the current status of X" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.
+
+## The core decision: generated, not authored
+
+The dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.
+
+This is the whole design. It means:
+
+- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.
+- Status changes happen in one place, in a diffable file, under version control.
+- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.
+
+The cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.
+
+## Architecture
+
+```
+data/*.csv  ─┐
+literature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html
+docs/*.md    │                                                    (opened in a browser)
+product-design/
+archive/     ─┘
+```
+
+- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.
+- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.
+- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.
+
+### Why no framework
+
+The whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.
+
+## Tabs
+
+| Tab | Answers |
+|---|---|
+| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |
+| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. |
+| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |
+| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |
+| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |
+| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |
+| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |
+| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |
+
+## Visual design rules
+
+The dashboard follows the data-visualisation conventions the project uses everywhere:
+
+- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.
+- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The "sources by axis" bars compare quantities, so they're a sequential encoding.
+- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.
+- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.
+- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.
+- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.
+
+## Extending it
+
+Adding a tracker:
+
+1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.
+2. Register it in `build.py`'s `TABLES` dict.
+3. Add a `TABS` entry and a `render*()` function in `index.html`.
+4. Rebuild, open, check both colour schemes.
+
+The `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.
+
+## Deliberately not built
+
+- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.
+- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.
+- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.
+- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.
