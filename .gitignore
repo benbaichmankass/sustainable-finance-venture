@@ -1,0 +1,16 @@
+# Private overlay — never committed. See docs/publishing.md.
+# These files hold the things that keep this repo publishable: named
+# individuals, relationship status, deal terms, Vault links, raw data.
+# The canonical copies live in the Drive Vault; this directory is a local
+# working copy that the dashboard build merges in if present.
+private/*
+!private/README.md
+!private/*.example.csv
+
+# Generated dashboard payload built from private data.
+# The public build (dashboard/data.js) is committed; this one is not.
+dashboard/data.private.js
+
+.DS_Store
+__pycache__/
+*.pyc

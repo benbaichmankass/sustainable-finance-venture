@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustainable Finance Venture — Project Dashboard</title>
+<style>
+:root {
+  color-scheme: light;
+  --surface:      #fcfcfb;
+  --page:         #f9f9f7;
+  --raised:       #ffffff;
+  --text:         #0b0b0b;
+  --text-2:       #52514e;
+  --muted:        #898781;
+  --grid:         #e1e0d9;
+  --border:       rgba(11,11,11,0.10);
+  --accent:       #2a78d6;
+  --accent-soft:  rgba(42,120,214,0.10);
+  --series-2:     #eb6834;
+  --series-3:     #1baf7a;
+  --good:         #0ca30c;
+  --warning:      #fab219;
+  --serious:      #ec835a;
+  --critical:     #d03b3b;
+  --neutral:      #898781;
+  --radius:       10px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --surface:     #1a1a19;
+    --page:        #0d0d0d;
+    --raised:      #212120;
+    --text:        #ffffff;
+    --text-2:      #c3c2b7;
+    --muted:       #898781;
+    --grid:        #2c2c2a;
+    --border:      rgba(255,255,255,0.10);
+    --accent:      #3987e5;
+    --accent-soft: rgba(57,135,229,0.16);
+    --series-2:    #d95926;
+    --series-3:    #199e70;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface:     #1a1a19;
+  --page:        #0d0d0d;
+  --raised:      #212120;
+  --text:        #ffffff;
+  --text-2:      #c3c2b7;
+  --muted:       #898781;
+  --grid:        #2c2c2a;
+  --border:      rgba(255,255,255,0.10);
+  --accent:      #3987e5;
+  --accent-soft: rgba(57,135,229,0.16);
+  --series-2:    #d95926;
+  --series-3:    #199e70;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--page);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ---------- shell ---------- */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 72px; }
+header.top {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky; top: 0; z-index: 20;
+}
+.top-inner {
+  max-width: 1180px; margin: 0 auto; padding: 18px 20px 0;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start;
+}
+.brand { flex: 1 1 320px; min-width: 0; }
+.brand h1 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -0.01em; }
+.brand p { margin: 3px 0 0; color: var(--text-2); font-size: 13.5px; }
+.top-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; padding-top: 2px; }
+.chip {
+  font-size: 12px; color: var(--text-2); border: 1px solid var(--border);
+  padding: 4px 9px; border-radius: 999px; background: var(--page);
+}
+button.ghost {
+  font-family: inherit; font-size: 12px; color: var(--text-2);
+  border: 1px solid var(--border); background: var(--page);
+  padding: 4px 10px; border-radius: 999px; cursor: pointer;
+}
+button.ghost:hover { border-color: var(--muted); color: var(--text); }
+
+nav.tabs {
+  max-width: 1180px; margin: 0 auto; padding: 12px 20px 0;
+  display: flex; gap: 2px; overflow-x: auto; scrollbar-width: thin;
+}
+nav.tabs button {
+  font-family: inherit; font-size: 13.5px; white-space: nowrap;
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--text-2); padding: 8px 13px 10px; cursor: pointer; border-radius: 6px 6px 0 0;
+}
+nav.tabs button:hover { color: var(--text); background: var(--page); }
+nav.tabs button[aria-selected="true"] {
+  color: var(--text); border-bottom-color: var(--accent); font-weight: 600;
+}
+nav.tabs .tcount { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 5px; }
+
+/* ---------- blocks ---------- */
+section.panel { padding-top: 26px; }
+.panel > h2 {
+  margin: 0 0 4px; font-size: 17px; font-weight: 650; letter-spacing: -0.01em;
+}
+.panel > p.lede { margin: 0 0 18px; color: var(--text-2); font-size: 14px; max-width: 74ch; }
+h3.sub {
+  margin: 30px 0 12px; font-size: 13px; font-weight: 650; color: var(--text-2);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 18px;
+}
+.grid { display: grid; gap: 12px; }
+.g4 { grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+/* stat tiles */
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.tile .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.tile .v { font-size: 30px; font-weight: 640; letter-spacing: -0.02em; margin-top: 2px; line-height: 1.1; }
+.tile .s { font-size: 12.5px; color: var(--text-2); margin-top: 3px; }
+
+/* meters */
+.meter { margin-bottom: 11px; }
+.meter:last-child { margin-bottom: 0; }
+.meter-top { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 4px; }
+.meter-top .lbl { color: var(--text-2); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.meter-top .num { color: var(--text); font-variant-numeric: tabular-nums; flex-shrink: 0; }
+.track { height: 8px; background: var(--grid); border-radius: 999px; overflow: hidden; }
+.fill { height: 100%; border-radius: 999px; background: var(--accent); }
+.fill.good { background: var(--good); }
+.fill.warning { background: var(--warning); }
+.fill.critical { background: var(--critical); }
+.fill.neutral { background: var(--neutral); }
+
+/* status pills — always icon + label, never colour alone */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+  padding: 2px 9px 2px 7px; border-radius: 999px; white-space: nowrap;
+  border: 1px solid var(--border); color: var(--text-2); background: var(--page);
+}
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--neutral); flex-shrink: 0; }
+.pill.good .dot { background: var(--good); }
+.pill.warning .dot { background: var(--warning); }
+.pill.critical .dot { background: var(--critical); }
+.pill.serious .dot { background: var(--serious); }
+
+/* filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+input.search, select.pickr {
+  font-family: inherit; font-size: 13.5px; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 7px 11px; border-radius: 8px;
+}
+input.search { flex: 1 1 260px; min-width: 0; }
+input.search:focus, select.pickr:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.hint { font-size: 12.5px; color: var(--muted); }
+
+/* tables */
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th {
+  text-align: left; font-weight: 600; font-size: 11.5px; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--muted); padding: 10px 14px;
+  border-bottom: 1px solid var(--border); white-space: nowrap; background: var(--surface);
+}
+td { padding: 11px 14px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tbody tr.clickable { cursor: pointer; }
+tbody tr.clickable:hover { background: var(--accent-soft); }
+td.id { font-family: var(--mono); font-size: 12px; color: var(--text-2); white-space: nowrap; }
+td.wrap-cell { min-width: 240px; }
+
+/* detail rows */
+tr.detail > td { background: var(--page); padding: 0 14px 16px; }
+.detail-grid { display: grid; gap: 10px 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding-top: 12px; }
+.field .fk { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 2px; }
+.field .fv { font-size: 13.5px; color: var(--text); }
+
+/* doc library */
+.doc { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin-bottom: 8px; overflow: hidden; }
+.doc-head { display: flex; gap: 12px; align-items: baseline; padding: 13px 16px; cursor: pointer; }
+.doc-head:hover { background: var(--accent-soft); }
+.doc-head .dt { font-weight: 600; font-size: 14.5px; flex: 1 1 auto; min-width: 0; }
+.doc-head .ds { font-weight: 400; font-size: 12.5px; color: var(--text-2); margin-top: 2px; line-height: 1.45; }
+.doc-head .dp { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.doc-head .dw { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.doc-body { padding: 4px 20px 22px; border-top: 1px solid var(--grid); }
+
+/* rendered markdown */
+.md { font-size: 14px; line-height: 1.62; color: var(--text); overflow-wrap: break-word; }
+.md h1 { font-size: 19px; margin: 22px 0 8px; font-weight: 650; }
+.md h2 { font-size: 16px; margin: 24px 0 8px; font-weight: 640; }
+.md h3 { font-size: 14.5px; margin: 20px 0 6px; font-weight: 640; }
+.md h4 { font-size: 13.5px; margin: 16px 0 5px; font-weight: 640; color: var(--text-2); }
+.md p { margin: 9px 0; }
+.md ul, .md ol { margin: 9px 0; padding-left: 22px; }
+.md li { margin: 4px 0; }
+.md blockquote {
+  margin: 12px 0; padding: 2px 0 2px 14px; border-left: 3px solid var(--grid); color: var(--text-2);
+}
+.md hr { border: none; border-top: 1px solid var(--grid); margin: 20px 0; }
+.md table { margin: 12px 0; font-size: 13px; }
+.md th, .md td { border: 1px solid var(--grid); padding: 7px 10px; }
+.md th { background: var(--page); }
+.md pre {
+  background: var(--page); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 14px; overflow-x: auto; font-family: var(--mono); font-size: 12.5px; line-height: 1.5;
+}
+.md pre code { background: none; padding: 0; font-size: inherit; }
+.md-scroll { overflow-x: auto; }
+
+.empty { color: var(--muted); font-size: 13.5px; padding: 22px 0; }
+footer.foot {
+  border-top: 1px solid var(--border); margin-top: 40px; padding-top: 16px;
+  font-size: 12.5px; color: var(--muted);
+}
+@media (max-width: 620px) {
+  .top-inner { padding-top: 14px; }
+  .tile .v { font-size: 25px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <h1>Sustainable Finance Venture</h1>
+      <p id="subtitle">Structuring community-originated financial assets into poolable, verifiable instruments</p>
+    </div>
+    <div class="top-meta">
+      <span class="chip" id="tier-chip" hidden></span>
+      <span class="chip" id="gen-chip">—</span>
+      <button class="ghost" id="theme-btn" type="button">Theme</button>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+</header>
+
+<div class="wrap"><main id="view"></main>
+  <footer class="foot" id="foot"></footer>
+</div>
+
+<!-- data.js is the committed public tier. data.private.js is gitignored and
+     overrides it when present, so a local build shows the full picture and a
+     published build shows only what is safe to publish. A missing private
+     file simply 404s and leaves the public data in place. -->
+<script src="data.js"></script>
+<script src="data.private.js"></script>
+<script>
+"use strict";
+var D = window.SFV_DATA || {};
+
+/* ------------------------------------------------------------------ utils */
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function el(html) { var t = document.createElement("template"); t.innerHTML = html.trim(); return t.content; }
+function by(id) { return document.getElementById(id); }
+
+/* Status vocabularies -> visual class. Colour never carries meaning alone:
+   every pill ships with its text label. */
+var STATUS_CLASS = {
+  "done": "good", "reviewed": "good", "answered": "good", "committed": "good",
+  "in progress": "warning", "partially answered": "warning", "reading": "warning",
+  "contacted": "warning", "in conversation": "warning", "drafted": "warning",
+  "blocked": "critical", "declined": "critical",
+  "not started": "", "open": "", "to read": "", "not contacted": "",
+  "superseded": "", "dropped": "", "outline": ""
+};
+function statusClass(v) { return STATUS_CLASS[String(v || "").toLowerCase().trim()] || ""; }
+function pill(v) {
+  if (!v) return '<span class="hint">—</span>';
+  return '<span class="pill ' + statusClass(v) + '"><span class="dot"></span>' + esc(v) + "</span>";
+}
+
+/* ------------------------------------------------- minimal markdown render */
+function inlineMd(s) {
+  s = s.replace(/`([^`]+)`/g, function (m, c) { return "<code>" + c + "</code>"; });
+  s = s.replace(/\[([^\]]*)\]\(([^)\s]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  s = s.replace(/~~([^~]+)~~/g, "<del>$1</del>");
+  s = s.replace(/(^|[\s(])\*([^*\n]+)\*/g, "$1<em>$2</em>");
+  s = s.replace(/(^|[\s(])_([^_\n]+)_/g, "$1<em>$2</em>");
+  return s;
+}
+function splitRow(line) {
+  return line.replace(/^\s*\|/, "").replace(/\|\s*$/, "").split("|").map(function (c) { return c.trim(); });
+}
+function renderMd(src) {
+  var lines = String(src || "").replace(/\r\n/g, "\n").split("\n");
+  var out = [], i = 0, para = [], listBuf = null, listType = null;
+
+  function flushPara() {
+    if (para.length) { out.push("<p>" + inlineMd(esc(para.join(" "))) + "</p>"); para = []; }
+  }
+  function flushList() {
+    if (listBuf) {
+      out.push("<" + listType + ">" + listBuf.map(function (t) {
+        return "<li>" + inlineMd(esc(t)) + "</li>";
+      }).join("") + "</" + listType + ">");
+      listBuf = null; listType = null;
+    }
+  }
+  function flushAll() { flushPara(); flushList(); }
+
+  while (i < lines.length) {
+    var line = lines[i];
+
+    if (/^```/.test(line)) {                                    // fenced code
+      flushAll();
+      var buf = []; i++;
+      while (i < lines.length && !/^```/.test(lines[i])) { buf.push(lines[i]); i++; }
+      i++;
+      out.push("<pre><code>" + esc(buf.join("\n")) + "</code></pre>");
+      continue;
+    }
+    if (/^\s*$/.test(line)) { flushAll(); i++; continue; }      // blank
+    if (/^\s{0,3}(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) {        // rule
+      flushAll(); out.push("<hr>"); i++; continue;
+    }
+    var h = /^(#{1,6})\s+(.*)$/.exec(line);                     // heading
+    if (h) {
+      flushAll();
+      var lvl = Math.min(h[1].length, 4);
+      out.push("<h" + lvl + ">" + inlineMd(esc(h[2])) + "</h" + lvl + ">");
+      i++; continue;
+    }
+    if (/^\s*\|.*\|\s*$/.test(line) && i + 1 < lines.length &&
+        /^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1])) {            // table
+      flushAll();
+      var head = splitRow(line); i += 2;
+      var body = [];
+      while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) { body.push(splitRow(lines[i])); i++; }
+      out.push('<div class="md-scroll"><table><thead><tr>' +
+        head.map(function (c) { return "<th>" + inlineMd(esc(c)) + "</th>"; }).join("") +
+        "</tr></thead><tbody>" +
+        body.map(function (r) {
+          return "<tr>" + r.map(function (c) { return "<td>" + inlineMd(esc(c)) + "</td>"; }).join("") + "</tr>";
+        }).join("") + "</tbody></table></div>");
+      continue;
+    }
+    if (/^\s*>\s?/.test(line)) {                                // blockquote
+      flushAll();
+      var q = [];
+      while (i < lines.length && /^\s*>\s?/.test(lines[i])) { q.push(lines[i].replace(/^\s*>\s?/, "")); i++; }
+      out.push("<blockquote>" + renderMd(q.join("\n")) + "</blockquote>");
+      continue;
+    }
+    var ul = /^\s*[-*+]\s+(.*)$/.exec(line);
+    var ol = /^\s*\d+[.)]\s+(.*)$/.exec(line);
+    if (ul || ol) {                                             // list item
+      flushPara();
+      var want = ul ? "ul" : "ol";
+      if (listType && listType !== want) flushList();
+      listType = want; listBuf = listBuf || [];
+      listBuf.push((ul || ol)[1]);
+      i++; continue;
+    }
+    flushList();
+    para.push(line.trim());
+    i++;
+  }
+  flushAll();
+  return out.join("\n");
+}
+
+/* --------------------------------------------------------------- fragments */
+function tile(label, value, sub) {
+  return '<div class="tile"><div class="k">' + esc(label) + '</div><div class="v">' +
+    esc(value) + '</div>' + (sub ? '<div class="s">' + sub + "</div>" : "") + "</div>";
+}
+function meter(label, value, total, cls, numText) {
+  var pct = total > 0 ? Math.round((value / total) * 100) : 0;
+  return '<div class="meter"><div class="meter-top"><span class="lbl">' + esc(label) +
+    '</span><span class="num">' + (numText != null ? numText : value + " / " + total) + '</span></div>' +
+    '<div class="track"><div class="fill ' + (cls || "") + '" style="width:' + pct + '%"></div></div></div>';
+}
+/* Magnitude comparison -> one hue, not a categorical rainbow. Bars are scaled to
+   the largest value; the label is the raw count, not a fraction of anything. */
+function magnitudeBars(obj) {
+  var keys = Object.keys(obj).sort(function (a, b) { return obj[b] - obj[a]; });
+  var max = keys.reduce(function (m, k) { return Math.max(m, obj[k]); }, 0);
+  return keys.map(function (k) { return meter(k, obj[k], max, "", String(obj[k])); }).join("");
+}
+/* Status shares. States that mean "no work done yet" get the neutral grey, not the
+   accent — blue would read as more progress than the green "done" bar beside it. */
+function statusBreakdown(obj) {
+  var keys = Object.keys(obj).sort(function (a, b) { return obj[b] - obj[a]; });
+  var total = keys.reduce(function (s, k) { return s + obj[k]; }, 0);
+  return keys.map(function (k) {
+    return meter(k, obj[k], total, statusClass(k) || "neutral");
+  }).join("");
+}
+function scholarUrl(citation) {
+  return "https://scholar.google.com/scholar?q=" + encodeURIComponent(citation || "");
+}
+
+/* Sortable/filterable table with expandable detail rows. */
+function buildTable(rows, cols, detailFn, opts) {
+  opts = opts || {};
+  if (!rows.length) return '<p class="empty">Nothing here yet.</p>';
+  var thead = "<tr>" + cols.map(function (c) { return "<th>" + esc(c.label) + "</th>"; }).join("") + "</tr>";
+  var body = rows.map(function (r, idx) {
+    var tds = cols.map(function (c) {
+      var v = c.render ? c.render(r) : esc(r[c.key] || "");
+      return '<td class="' + (c.cls || "") + '">' + v + "</td>";
+    }).join("");
+    var main = '<tr class="' + (detailFn ? "clickable" : "") + '" data-row="' + idx + '">' + tds + "</tr>";
+    var det = detailFn
+      ? '<tr class="detail" data-detail="' + idx + '" hidden><td colspan="' + cols.length + '">' +
+        detailFn(r) + "</td></tr>"
+      : "";
+    return main + det;
+  }).join("");
+  return '<div class="tbl-wrap"><table><thead>' + thead + "</thead><tbody>" + body + "</tbody></table></div>";
+}
+function wireTable(root) {
+  root.querySelectorAll("tr.clickable").forEach(function (tr) {
+    tr.addEventListener("click", function () {
+      var d = root.querySelector('tr.detail[data-detail="' + tr.dataset.row + '"]');
+      if (d) d.hidden = !d.hidden;
+    });
+  });
+}
+function fields(pairs) {
+  return '<div class="detail-grid">' + pairs.filter(function (p) { return p[1]; }).map(function (p) {
+    return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + p[1] + "</div></div>";
+  }).join("") + "</div>";
+}
+function matches(row, q) {
+  if (!q) return true;
+  q = q.toLowerCase();
+  return Object.keys(row).some(function (k) { return String(row[k] || "").toLowerCase().indexOf(q) > -1; });
+}
+
+/* ------------------------------------------------------------------- tabs */
+var TABS = [
+  { id: "overview",  label: "Overview",       count: null },
+  { id: "library",   label: "Library",        count: function () { return (D.docs || []).length; } },
+  { id: "research",  label: "Research plan",  count: function () { return (D.literature || []).length; } },
+  { id: "products",  label: "Product lines",  count: function () { return (D.productLines || []).length; } },
+  { id: "business",  label: "Business plan",  count: null },
+  { id: "questions", label: "Open questions", count: function () { return (D.openQuestions || []).length; } },
+  { id: "partners",  label: "Partners",       count: function () { return (D.partners || []).length; } },
+  { id: "phd",       label: "PhD pipeline",   count: function () { return (D.phdPrograms || []).length; } },
+  { id: "resources", label: "Resources",      count: function () { return (D.resources || []).length; } }
+];
+
+/* ---------------------------------------------------------------- renders */
+function renderOverview() {
+  var c = (D.meta && D.meta.counts) || {};
+  var lit = D.literature || [], ms = D.milestones || [], oq = D.openQuestions || [];
+  var done = ms.filter(function (m) { return m.Status === "Done"; }).length;
+  var answered = oq.filter(function (q) { return q.Status !== "Open"; }).length;
+  var reviewed = (D.memos || []).filter(function (m) { return m.Status === "Reviewed"; }).length;
+  var hasPrivate = (D.partners || []).some(function (p) { return p.Contact_Status; });
+  var contacted = (D.partners || []).filter(function (p) {
+    return p.Contact_Status && p.Contact_Status !== "Not contacted";
+  }).length;
+
+  var html =
+    '<section class="panel"><h2>Where the project stands</h2>' +
+    '<p class="lede">Stage: research framing and literature review, pre-pilot. Everything below is generated from the repo — ' +
+    'the trackers in <code>data/</code>, the literature matrix, and the docs. Nothing on this page is edited by hand.</p>' +
+    '<div class="grid g4">' +
+      tile("Literature anchors", lit.length, lit.filter(function (r) { return r.Status === "Reviewed"; }).length + " reviewed") +
+      tile("Synthesis memos", (D.memos || []).length, reviewed + " reviewed") +
+      tile("Open questions", oq.length, answered + " partially answered or better") +
+      tile("Milestones done", done + " / " + ms.length, "60/90-day plan") +
+      tile("Product lines", (D.productLines || []).length, "PL-1 leads, PL-2 closer to revenue") +
+      tile("Partners tracked", (D.partners || []).length,
+        hasPrivate ? contacted + " contacted" : "status in private overlay") +
+      tile("PhD programs", (D.phdPrograms || []).length,
+        hasPrivate ? "" : "status in private overlay") +
+      tile("Documents", (D.docs || []).length, (c.totalWords || 0).toLocaleString() + " words") +
+      tile("Resources", (D.resources || []).length, "incl. Drive vault") +
+    "</div>" +
+
+    '<h3 class="sub">Milestone progress</h3><div class="grid g2">' +
+      '<div class="card">' + statusBreakdown(c.milestonesByStatus || {}) + "</div>" +
+      '<div class="card">' + statusBreakdown(c.questionsByStatus || {}) +
+      '<p class="hint" style="margin:12px 0 0">Open-question status. "Partially answered" is the honest ceiling for anything ' +
+      'that needs counsel, a partner, or field data to close.</p></div>' +
+    "</div>" +
+
+    '<h3 class="sub">Evidence base by review axis</h3>' +
+    '<div class="card">' + magnitudeBars(c.literatureByAxis || {}) + "</div>" +
+
+    '<h3 class="sub">The critical path right now</h3><div class="card"><div class="md">' +
+    renderMd(
+      "1. **Draft the canonical data schema** (OQ-3) — blocks the underwriting engine, the pilot design and the eventual ABS data tape.\n" +
+      "2. **Jurisdiction scan with counsel** (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.\n" +
+      "3. **Begin partner outreach** (M-03) — 10 candidates logged, none contacted. This is the longest-lead item.\n" +
+      "4. **Choose the first instrument** — loan, insurance, or bundled."
+    ) + "</div></section>";
+  return html;
+}
+
+function renderLibrary() {
+  var docs = D.docs || [];
+  var cats = [];
+  docs.forEach(function (d) { if (cats.indexOf(d.category) < 0) cats.push(d.category); });
+
+  var html = '<section class="panel"><h2>Library</h2>' +
+    '<p class="lede">Every document in the repo, in full. Click a title to read it inline. Search covers the complete text ' +
+    'of all ' + docs.length + ' documents, not just titles.</p>' +
+    '<div class="filters">' +
+      '<input class="search" id="lib-q" type="search" placeholder="Search full text of every document…">' +
+      '<select class="pickr" id="lib-cat"><option value="">All categories</option>' +
+      cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
+      "</select>" +
+      '<span class="hint" id="lib-count"></span>' +
+    '</div><div id="lib-list"></div></section>';
+
+  setTimeout(function () {
+    var q = by("lib-q"), cat = by("lib-cat"), list = by("lib-list"), cnt = by("lib-count");
+    function draw() {
+      var term = q.value.trim().toLowerCase(), cv = cat.value;
+      var shown = docs.filter(function (d) {
+        if (cv && d.category !== cv) return false;
+        if (!term) return true;
+        return (d.title + " " + d.path + " " + (d.summary || "") + " " + d.body).toLowerCase().indexOf(term) > -1;
+      });
+      cnt.textContent = shown.length + " of " + docs.length + " documents";
+      list.innerHTML = shown.length ? shown.map(function (d) {
+        var i = docs.indexOf(d);
+        return '<div class="doc"><div class="doc-head" data-doc="' + i + '">' +
+          '<span class="dt">' + esc(d.title) +
+            (d.summary ? '<div class="ds">' + esc(d.summary) + "</div>" : "") + "</span>" +
+          '<span class="dp">' + esc(d.path) + '</span>' +
+          '<span class="dw">' + d.words.toLocaleString() + " words</span></div>" +
+          '<div class="doc-body" data-body="' + i + '" hidden><div class="md">' + renderMd(d.body) + "</div></div></div>";
+      }).join("") : '<p class="empty">No documents match that search.</p>';
+      list.querySelectorAll(".doc-head").forEach(function (h) {
+        h.addEventListener("click", function () {
+          var b = list.querySelector('[data-body="' + h.dataset.doc + '"]');
+          if (b) b.hidden = !b.hidden;
+        });
+      });
+    }
+    q.addEventListener("input", draw); cat.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
+function renderResearch() {
+  var lit = D.literature || [], memos = D.memos || [];
+  var axes = [];
+  lit.forEach(function (r) { if (axes.indexOf(r.Axis) < 0) axes.push(r.Axis); });
+  axes.sort();
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Axis", label: "Axis" },
+    { key: "Method", label: "Method" },
+    { key: "Link_Citation", label: "Source", cls: "wrap-cell" },
+    { key: "Geography", label: "Geography" },
+    { label: "Status", render: function (r) { return pill(r.Status); } }
+  ];
+  function detail(r) {
+    var link = r.URL
+      ? '<a href="' + esc(r.URL) + '" target="_blank" rel="noopener noreferrer">Open source ↗</a>'
+      : '<a href="' + esc(scholarUrl(r.Link_Citation)) + '" target="_blank" rel="noopener noreferrer">Search on Scholar ↗</a>' +
+        ' <span class="hint">(no direct link recorded)</span>';
+    return fields([
+      ["Key findings", esc(r.Key_Findings)],
+      ["Limitations", esc(r.Limitations)],
+      ["Population / context", esc(r.Population_Context)],
+      ["Relevance", "Product: <strong>" + esc(r.Relevance_Product) + "</strong> · Risk: <strong>" +
+        esc(r.Relevance_Risk) + "</strong> · Impact: <strong>" + esc(r.Relevance_Impact) + "</strong>"],
+      ["What it makes answerable next", esc(r.Open_Questions)],
+      ["Link", link]
+    ]);
+  }
+
+  var html = '<section class="panel"><h2>Research plan</h2>' +
+    '<p class="lede">The literature matrix, the synthesis memos built on it, and the review workflow. ' +
+    'Click any row to see findings, limitations and links.</p>' +
+
+    '<h3 class="sub">Synthesis memos</h3><div class="grid g2">' +
+    memos.map(function (m) {
+      return '<div class="card"><div style="display:flex;gap:10px;align-items:baseline;justify-content:space-between">' +
+        "<strong>Memo " + esc(m.Memo_No) + " — " + esc(m.Title) + "</strong>" + pill(m.Status) + "</div>" +
+        '<p style="margin:8px 0 0;font-size:13.5px;color:var(--text-2)">' + esc(m.Key_Takeaways) + "</p>" +
+        '<p class="hint" style="margin:8px 0 0"><code>' + esc(m.Path) + "</code> · " + esc(m.Covers_Axis) + "</p></div>";
+    }).join("") + "</div>" +
+
+    '<h3 class="sub">Literature matrix</h3>' +
+    '<div class="filters">' +
+      '<input class="search" id="lit-q" type="search" placeholder="Search findings, limitations, sources…">' +
+      '<select class="pickr" id="lit-axis"><option value="">All axes</option>' +
+      axes.map(function (a) { return '<option value="' + esc(a) + '">' + esc(a) + "</option>"; }).join("") +
+      "</select><span class=\"hint\" id=\"lit-count\"></span></div>" +
+    '<div id="lit-tbl"></div></section>';
+
+  setTimeout(function () {
+    var q = by("lit-q"), ax = by("lit-axis"), host = by("lit-tbl"), cnt = by("lit-count");
+    function draw() {
+      var rows = lit.filter(function (r) {
+        return (!ax.value || r.Axis === ax.value) && matches(r, q.value.trim());
+      });
+      cnt.textContent = rows.length + " of " + lit.length + " sources";
+      host.innerHTML = buildTable(rows, cols, detail);
+      wireTable(host);
+    }
+    q.addEventListener("input", draw); ax.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
+function renderBusiness() {
+  var docs = D.docs || [];
+  var plan = docs.filter(function (d) { return d.path.indexOf("product-design/") === 0; });
+  var ms = D.milestones || [];
+  var phases = [];
+  ms.forEach(function (m) { if (phases.indexOf(m.Phase) < 0) phases.push(m.Phase); });
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Phase", label: "Phase" },
+    { key: "Milestone", label: "Milestone", cls: "wrap-cell" },
+    { label: "Status", render: function (r) { return pill(r.Status); } },
+    { key: "Owner", label: "Owner" }
+  ];
+  function detail(r) {
+    return fields([["Detail", esc(r.Detail)], ["Linked records", esc(r.Linked_Refs)]]);
+  }
+
+  var html = '<section class="panel"><h2>Business plan &amp; tracker</h2>' +
+    '<p class="lede">The current plan, the 60/90-day milestone tracker, and the structuring assumptions the plan rests on.</p>' +
+
+    '<h3 class="sub">Milestone tracker</h3>' +
+    '<div class="grid g2" style="margin-bottom:16px">' +
+    phases.map(function (p) {
+      var inPhase = ms.filter(function (m) { return m.Phase === p; });
+      var done = inPhase.filter(function (m) { return m.Status === "Done"; }).length;
+      return '<div class="card"><div style="font-weight:600;margin-bottom:10px">' + esc(p) + "</div>" +
+        meter("Complete", done, inPhase.length, done === inPhase.length ? "good" : "warning") +
+        '<div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">' +
+        inPhase.map(function (m) {
+          return '<div style="display:flex;gap:8px;align-items:baseline;font-size:13px">' + pill(m.Status) +
+            '<span style="color:var(--text-2);min-width:0">' + esc(m.Milestone) + "</span></div>";
+        }).join("") + "</div></div>";
+    }).join("") + "</div>" +
+    '<div id="ms-tbl"></div>' +
+
+    '<h3 class="sub">The plan</h3>' +
+    plan.map(function (d) {
+      return '<div class="card" style="margin-bottom:10px"><div class="md">' + renderMd(d.body) + "</div></div>";
+    }).join("") +
+    "</section>";
+
+  setTimeout(function () {
+    var host = by("ms-tbl");
+    host.innerHTML = buildTable(ms, cols, detail);
+    wireTable(host);
+  }, 0);
+  return html;
+}
+
+function renderProducts() {
+  var lines = D.productLines || [];
+  var docs = D.docs || [];
+
+  var html = '<section class="panel"><h2>Product lines</h2>' +
+    '<p class="lede">The venture runs more than one product line because the thesis is layer-agnostic: it says that cash flows ' +
+    'designed at origination to be standardized, verifiable and transferable can be pooled and sold. That applies to a community ' +
+    'loan book and to a portfolio of solar PPAs alike. The lines share the toolkit, and they are close to uncorrelated.</p>' +
+
+    '<div class="grid g2">' + lines.map(function (l) {
+      return '<div class="card">' +
+        '<div style="display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap">' +
+        '<strong>' + esc(l.ID) + " — " + esc(l.Name) + "</strong>" + pill(l.Status) + "</div>" +
+        '<div class="detail-grid" style="padding-top:12px">' +
+        [["Origination layer", l.Origination_Layer], ["Underlying asset", l.Underlying_Asset],
+         ["Tenor", l.Tenor], ["Evidence base", l.Evidence_Base], ["Precedents", l.Precedent_Refs]]
+          .filter(function (p) { return p[1]; })
+          .map(function (p) {
+            return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + esc(p[1]) + "</div></div>";
+          }).join("") + "</div>" +
+        '<p style="margin:12px 0 0;font-size:13.5px;color:var(--text-2)">' + esc(l.Notes) + "</p>" +
+        '<p class="hint" style="margin:8px 0 0"><code>' + esc(l.Path) + "</code></p></div>";
+    }).join("") + "</div>";
+
+  var lineDocs = docs.filter(function (d) { return d.path.indexOf("product-design/product-lines/") === 0; });
+  lineDocs.forEach(function (d) {
+    html += '<h3 class="sub">' + esc(d.title) + '</h3><div class="card"><div class="md">' + renderMd(d.body) + "</div></div>";
+  });
+
+  return html + "</section>";
+}
+
+function renderQuestions() {
+  var oq = D.openQuestions || [];
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Question", label: "Question", cls: "wrap-cell" },
+    { key: "Category", label: "Category" },
+    { label: "Status", render: function (r) { return pill(r.Status); } },
+    { key: "Owner", label: "Owner" }
+  ];
+  function detail(r) {
+    return fields([
+      ["Where it stands", esc(r.Notes)],
+      ["Linked area", esc(r.Linked_Area)],
+      ["Evidence", esc(r.Evidence_Refs) || '<span class="hint">none logged yet</span>']
+    ]);
+  }
+  var html = '<section class="panel"><h2>Open questions</h2>' +
+    '<p class="lede">Decisions the project cannot yet make. Each row records what the evidence establishes and — the part that ' +
+    'matters — what remains and who can supply it. Click for detail.</p>' +
+    '<div id="oq-tbl"></div></section>';
+  setTimeout(function () { var h = by("oq-tbl"); h.innerHTML = buildTable(oq, cols, detail); wireTable(h); }, 0);
+  return html;
+}
+
+/* Banner shown where a tab's contact/status columns live in the private overlay
+   and that overlay is not loaded. */
+function privateNotice(what) {
+  return '<div class="card" style="margin-bottom:16px;border-color:var(--warning)">' +
+    "<strong>" + esc(what) + " is in the private overlay.</strong>" +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
+    "This build shows the public tier only. Named individuals and relationship status live in " +
+    "<code>private/</code>, which is gitignored — see <code>docs/publishing.md</code>. " +
+    "Pull the overlay from the Drive Vault and rebuild to see the full picture.</p></div>";
+}
+
+function renderPartners() {
+  var p = D.partners || [];
+  var hasPrivate = p.some(function (r) { return r.Contact_Status; });
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Partner_Name", label: "Partner", cls: "wrap-cell" },
+    { key: "Type", label: "Type" },
+    { key: "Geography", label: "Geography" }
+  ];
+  if (hasPrivate) cols.push({ label: "Contact", render: function (r) { return pill(r.Contact_Status); } });
+
+  function detail(r) {
+    return fields([
+      ["Role", esc(r.Role)],
+      ["Why this partner", esc(r.Why_This_Partner)],
+      ["Contact person", esc(r.Contact_Person)],
+      ["Private notes", esc(r.Private_Notes)]
+    ]);
+  }
+  var byStatus = (D.meta && D.meta.counts && D.meta.counts.partnersByStatus) || {};
+  var html = '<section class="panel"><h2>Partners</h2>' +
+    '<p class="lede">Candidate originators, verification partners, funders and counsel — who they are and why they matter to ' +
+    'this project. Check here before any new approach; avoiding duplicate cold contact is the point of the tracker.</p>' +
+    (hasPrivate
+      ? '<div class="card" style="margin-bottom:16px">' + statusBreakdown(byStatus) + "</div>"
+      : privateNotice("Contact status")) +
+    '<div id="pt-tbl"></div></section>';
+  setTimeout(function () { var h = by("pt-tbl"); h.innerHTML = buildTable(p, cols, detail); wireTable(h); }, 0);
+  return html;
+}
+
+function renderPhd() {
+  var p = D.phdPrograms || [];
+  var hasPrivate = p.some(function (r) { return r.Application_Status; });
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "University", label: "University", cls: "wrap-cell" },
+    { key: "Department_Program", label: "Department", cls: "wrap-cell" },
+    { key: "Country", label: "Country" }
+  ];
+  if (hasPrivate) cols.push({ label: "Status", render: function (r) { return pill(r.Application_Status); } });
+
+  function detail(r) {
+    return fields([
+      ["Fit", esc(r.Fit_Notes)],
+      ["Candidate supervisors", esc(r.Candidate_Supervisors)],
+      ["Next step", esc(r.Outreach_Plan)],
+      ["Private notes", esc(r.Private_Notes)]
+    ]);
+  }
+  var html = '<section class="panel"><h2>PhD pipeline</h2>' +
+    '<p class="lede">Target programs and why each fits. Named supervisors, application status and outreach plans are personal ' +
+    'and live in the private overlay; application materials live in the Drive Vault, not the repo.</p>' +
+    (hasPrivate ? "" : privateNotice("Supervisor targeting and application status")) +
+    '<div id="phd-tbl"></div></section>';
+  setTimeout(function () { var h = by("phd-tbl"); h.innerHTML = buildTable(p, cols, detail); wireTable(h); }, 0);
+  return html;
+}
+
+function renderResources() {
+  var res = D.resources || [];
+  var cats = [];
+  res.forEach(function (r) { if (cats.indexOf(r.Category) < 0) cats.push(r.Category); });
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    {
+      label: "Resource", cls: "wrap-cell", render: function (r) {
+        return r.URL
+          ? '<a href="' + esc(r.URL) + '" target="_blank" rel="noopener noreferrer">' + esc(r.Title) + " ↗</a>"
+          : esc(r.Title);
+      }
+    },
+    { key: "Category", label: "Category" },
+    { key: "Type", label: "Type" },
+    { key: "Notes", label: "Notes", cls: "wrap-cell" }
+  ];
+  var html = '<section class="panel"><h2>Resources</h2>' +
+    '<p class="lede">Links, reference libraries, and the Drive vault where artifacts that do not belong in git are kept — ' +
+    'PDFs, applications, correspondence and raw data. The repo always holds the pointer.</p>' +
+    '<div class="filters"><select class="pickr" id="res-cat"><option value="">All categories</option>' +
+    cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
+    '</select><span class="hint">See <code>docs/drive-vault.md</code> for what goes where.</span></div>' +
+    '<div id="res-tbl"></div></section>';
+  setTimeout(function () {
+    var cat = by("res-cat"), host = by("res-tbl");
+    function draw() {
+      var rows = res.filter(function (r) { return !cat.value || r.Category === cat.value; });
+      host.innerHTML = buildTable(rows, cols, null);
+    }
+    cat.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
+var RENDER = {
+  overview: renderOverview, library: renderLibrary, research: renderResearch,
+  products: renderProducts, business: renderBusiness, questions: renderQuestions,
+  partners: renderPartners, phd: renderPhd, resources: renderResources
+};
+
+/* ------------------------------------------------------------------- boot */
+function show(id) {
+  by("view").innerHTML = (RENDER[id] || renderOverview)();
+  Array.prototype.forEach.call(by("tabs").children, function (b) {
+    b.setAttribute("aria-selected", b.dataset.tab === id ? "true" : "false");
+  });
+  if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
+  window.scrollTo(0, 0);
+}
+function boot() {
+  if (!window.SFV_DATA) {
+    by("view").innerHTML = '<section class="panel"><h2>No data loaded</h2>' +
+      '<p class="lede">Run <code>python3 dashboard/build.py</code> from the repo root, then reload.</p></section>';
+    return;
+  }
+  by("tabs").innerHTML = TABS.map(function (t) {
+    var n = t.count ? t.count() : null;
+    return '<button role="tab" data-tab="' + t.id + '" aria-selected="false">' + esc(t.label) +
+      (n != null ? '<span class="tcount">' + n + "</span>" : "") + "</button>";
+  }).join("");
+  Array.prototype.forEach.call(by("tabs").children, function (b) {
+    b.addEventListener("click", function () { show(b.dataset.tab); });
+  });
+
+  var m = D.meta || {};
+  by("gen-chip").textContent = "Built " + (m.generated || "—");
+
+  /* Make it unmistakable which tier is on screen — otherwise it is far too easy
+     to screenshot or share the private view believing it is the public one. */
+  var tier = by("tier-chip");
+  tier.hidden = false;
+  if (m.private) {
+    tier.textContent = "Private view";
+    tier.style.borderColor = "var(--warning)";
+    tier.style.color = "var(--text)";
+    tier.title = "Includes the private overlay (" + (m.overlays || []).join(", ") +
+      "). Do not share screenshots of this view.";
+  } else {
+    tier.textContent = "Public view";
+    tier.title = "Public tier only — no private overlay loaded.";
+  }
+  by("foot").innerHTML = "Generated from <code>" + esc(m.repo || "") + "</code> by <code>dashboard/build.py</code> on " +
+    esc(m.generated || "") + ". This page has no state of its own — to change what it shows, change the source files " +
+    "and rebuild.";
+
+  var btn = by("theme-btn");
+  btn.addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : cur === "light" ? "" : "dark";
+    if (next) document.documentElement.setAttribute("data-theme", next);
+    else document.documentElement.removeAttribute("data-theme");
+    btn.textContent = next ? (next === "dark" ? "Dark" : "Light") : "Theme";
+  });
+
+  var start = location.hash.slice(1);
+  show(RENDER[start] ? start : "overview");
+}
+boot();
+</script>
+</body>
+</html>
