@@ -70,7 +70,7 @@ Run through this before flipping the repo to public, and before enabling Pages.
 - [ ] `grep -rn "drive.google.com\|docs.google.com" --include="*.md" --include="*.csv" .` returns nothing outside `private/` and `docs/publishing.md`
 - [ ] No file in `data/` has a `Contact_Person`, `Contact_Status`, `Application_Status` or `Private_Notes` column
 - [ ] `git ls-files private/` shows only `README.md` and the `.example.csv` templates
-- [ ] `dashboard/data.js` was built with `--public` (check: `grep -c "Private_Notes" dashboard/data.js` returns 0)
+- [ ] `dashboard/data.js` was built with `--public` (check: `grep -c '"Private_Notes":' dashboard/data.js` returns 0)
 - [ ] No personal data of any research participant anywhere in the tree
 - [ ] `git log -p | grep -i` spot-check for anything sensitive in history — **history is public too**
 - [ ] Named individuals appearing anywhere public would be comfortable seeing it there
@@ -89,9 +89,17 @@ The `publish-check` skill runs most of this.
 
 Flipping a repo to public publishes **every commit ever made**, not just the current tree. Removing something in a new commit does not unpublish it.
 
-For this repo that's been checked. The one item that was ever committed and shouldn't be public is the set of Drive Vault folder URLs, which are access-controlled anyway — someone with the link still has to request access and be denied. It's untidy rather than dangerous.
+For this repo that's been checked. The one item ever committed that shouldn't be public is the set of Drive Vault folder URLs, which are access-controlled anyway — someone with a link still has to request access and be refused. Untidy rather than dangerous.
 
-If you want it genuinely clean, the fix is to squash-merge PR #1 so `main` only ever contains the final tree. That's the recommended path and costs nothing.
+PR #1 was squash-merged, so **`main` carries only the final tree** — a fresh clone contains no Vault IDs.
+
+**But squash-merge does not erase the pull request.** GitHub keeps a merged PR's individual commits reachable under `refs/pull/1/*`, and those are visible to anyone who can see the repo. On a public repo, browsing PR #1's commit list still surfaces the Vault folder IDs. Squashing cleans the branch history, not the PR record.
+
+Three ways to handle it, in ascending order of effort:
+
+1. **Accept it.** The IDs are useless without Drive permissions. This is the proportionate response and the current position.
+2. **Rotate the Vault.** Create new folders, move contents, update `private/pointers.csv`, delete the old folders. Cheapest to do while the Vault is nearly empty — the leaked IDs then point at nothing.
+3. **Ask GitHub Support to purge the PR refs.** Only worth it if something genuinely sensitive is involved. Nothing here meets that bar.
 
 ## Enabling GitHub Pages
 
