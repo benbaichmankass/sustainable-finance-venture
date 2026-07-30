@@ -27,6 +27,8 @@ The private overlay merges onto the public trackers by ID at build time — `dat
 
 Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
 
+**Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.
+
 ## 2. Repo structure
 
 ```

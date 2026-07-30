@@ -1,0 +1,28 @@
+Sustainable Finance Venture
+Copyright 2026 Ben Baichman-Kass
+
+This product includes software developed for the Sustainable Finance Venture
+project (https://github.com/benbaichmankass/sustainable-finance-venture).
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+--------------------------------------------------------------------------
+
+Documentation, research notes, the literature matrix and other written and
+tabular content in this repository are licensed separately under the Creative
+Commons Attribution 4.0 International licence. See LICENSE-CONTENT.md.
+
+--------------------------------------------------------------------------
+
+Third-party sources
+
+The literature matrix (literature/lit-matrix.csv) and the synthesis memos in
+literature/notes/ describe, summarise and cite works published by third
+parties. Those underlying works are the property of their respective authors
+and publishers and are governed by their own licence terms, not by the
+licences in this repository. What is licensed here is our summary, coding and
+analysis of them.
+
+Full texts of cited sources are deliberately not distributed with this
+repository. The matrix links to the publisher's copy where a public one
+exists.

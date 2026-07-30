@@ -74,8 +74,16 @@ Run through this before flipping the repo to public, and before enabling Pages.
 - [ ] No personal data of any research participant anywhere in the tree
 - [ ] `git log -p | grep -i` spot-check for anything sensitive in history — **history is public too**
 - [ ] Named individuals appearing anywhere public would be comfortable seeing it there
+- [ ] New files are covered by one of the two licences, and anything third-party is flagged in `NOTICE`
 
 The `publish-check` skill runs most of this.
+
+## Remaining steps to go public
+
+1. ~~Add a licence~~ — done: Apache-2.0 + CC BY 4.0.
+2. **Squash-merge the open PR** so `main` carries only the final tree. Git history is published too, and the Vault folder IDs appear in earlier commits on that branch.
+3. **Flip repo visibility** to public. Owner action — irreversible in practice, since anything public may be cloned or indexed immediately.
+4. **Enable Pages**: Settings → Pages → Source: GitHub Actions. `.github/workflows/pages.yml` takes over from there.
 
 ## About git history
 
@@ -97,4 +105,18 @@ Published URL will be `https://benbaichmankass.github.io/sustainable-finance-ven
 
 - The Vault stays exactly as private as it is now — it's a separate system with its own permissions.
 - Nothing about how you work day to day; the local dashboard still shows everything.
-- Nothing about the licence question, which is still open. An open repo with no licence is technically "all rights reserved" — worth adding one if the intent is genuinely open (MIT or Apache-2.0 for the code, CC BY 4.0 for the writing is a common split).
+
+## Licensing
+
+Settled: **Apache-2.0 for code** (`LICENSE`), **CC BY 4.0 for writing and data** (`LICENSE-CONTENT.md`), with `NOTICE` carrying the copyright line and the third-party caveat.
+
+Why this pair rather than the alternatives:
+
+- **Apache-2.0 over MIT.** Almost identical in permissiveness, but Apache adds an express patent grant and patent-retaliation clause. Today the code is a dashboard; the toolkit this project intends to build — origination schema, underwriting engine, waterfall models — is exactly the kind of work where a patent question can surface later, from us or from a contributor. Apache settles it up front at no practical cost.
+- **CC BY over CC BY-SA.** Share-alike would force anyone incorporating the data schema or matrix into their own materials to open-license those materials too. For a project whose whole strategy is getting NGOs, DFIs and regulators to adopt a standard, that's a barrier pointed the wrong way.
+- **CC BY over CC0.** Attribution is worth keeping for a project with a PhD attached to it. CC0 gives up the citation.
+- **CC BY specifically** also matches how this project's own sources publish — World Bank, OECD and CGAP all use it — so their material and ours are mutually compatible rather than in tension.
+
+**What CC BY on the business plan actually means:** anyone may take the thesis, the product design and the structuring logic and build on them commercially, provided they credit the source. That is the intended consequence, not an oversight — the moat here is execution, relationships and field data, none of which is in this repo.
+
+**What is not licensed by us:** cited sources. The matrix holds our summaries and analysis; the underlying papers remain their publishers' property and their full texts stay in the Vault. See `NOTICE`.

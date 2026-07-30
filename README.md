@@ -90,6 +90,19 @@ The two connect by ID at build time — `data/partner-tracker.csv` holds who a p
 
 Full policy and the pre-publish checklist: `docs/publishing.md`.
 
+## Licence
+
+Split, because the repo holds two different kinds of thing:
+
+| | Licence | |
+|---|---|---|
+| **Code** — `dashboard/build.py`, `dashboard/index.html`, future analysis and modelling tools | [Apache-2.0](LICENSE) | Permissive, with an express patent grant |
+| **Writing and data** — docs, literature matrix, memos, business plan, trackers | [CC BY 4.0](LICENSE-CONTENT.md) | Reuse freely, including commercially, with attribution |
+
+CC BY matches how this project's own reference sources publish — World Bank, OECD, CGAP — so their material and ours are mutually compatible.
+
+**Cited sources are not licensed by us.** The literature matrix contains our summaries and analysis; the underlying papers and reports remain their publishers' property under their own terms, and their full texts are not distributed here. See `NOTICE`.
+
 ## Resuming a session
 
 1. Open the dashboard for current state.

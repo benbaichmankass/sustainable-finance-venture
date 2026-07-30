@@ -45,6 +45,15 @@ Greps catch structure. These need judgement:
 - **Raw or participant data.** Should never be in the repo at all, in any form, aggregate or otherwise, if it derives from identifiable individuals.
 - **Anything under `archive/`.** Imported docs can carry contact details, pricing, or personal material that wasn't obvious when they were archived.
 
+## Licence coverage
+
+Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`), `NOTICE` for the copyright line and third-party caveat.
+
+New files fall under one or the other by kind and need no per-file header. Two things do need a check:
+
+- **Third-party material.** Never commit the full text of a copyrighted source — PDFs go in the Vault, and the matrix holds our summary plus a link. If you add anything authored elsewhere, flag it in `NOTICE`.
+- **Vendored code or data.** Anything copied in from another project carries its own licence; record it in `NOTICE` rather than silently absorbing it.
+
 ## Git history
 
 Flipping a repo public publishes **every commit**, not the current tree. Removing something in a new commit does not unpublish it.
