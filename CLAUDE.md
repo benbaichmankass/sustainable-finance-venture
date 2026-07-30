@@ -55,6 +55,7 @@ data/                            Structured trackers — the dashboard reads the
   product-lines.csv              PL-N   product lines
   risk-tools.csv                 RT-N   risk management tools
   macro-indicators.csv           MAC-NN macro watchlist
+  macro-snapshot.csv             GENERATED daily by dashboard/fetch_macro.py
   macro-log.csv                  MLOG-N dated macro observations
   partner-tracker.csv            PT-NN  candidate partners (public tier)
   phd-programs.csv               PHD-NN target programs (public tier)
@@ -108,6 +109,7 @@ dashboard/                       Static dashboard — see §5
 After changing anything in `data/`, `literature/`, `docs/` or `product-design/`:
 
 ```bash
+python3 dashboard/fetch_macro.py      # optional: refresh live macro values
 python3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)
 python3 dashboard/build.py --public   # before pushing: → data.js (committed)
 ```

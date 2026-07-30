@@ -29,6 +29,7 @@ TABLES = {
     "productLines": "data/product-lines.csv",
     "riskTools": "data/risk-tools.csv",
     "macroIndicators": "data/macro-indicators.csv",
+    "macroSnapshot": "data/macro-snapshot.csv",
     "macroLog": "data/macro-log.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
