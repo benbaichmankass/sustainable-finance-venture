@@ -44,10 +44,14 @@ jobs:
       - name: Build public dashboard data
         run: python3 dashboard/build.py --public
 
+      # Match the JSON key form, with the colon. A bare column name also appears
+      # in the prose of docs/publishing.md and the publish-check skill, both of
+      # which are baked into data.js as document text - so a loose pattern
+      # matches the policy that describes the check, not a real leak.
       - name: Fail if private columns leaked into the build
         run: |
           set -e
-          if grep -qE '"(Private_Notes|Contact_Person|Contact_Status|Application_Status)"' dashboard/data.js; then
+          if grep -qE '"(Private_Notes|Contact_Person|Contact_Status|Application_Status)":' dashboard/data.js; then
             echo "::error::Private columns present in dashboard/data.js."
             exit 1
           fi

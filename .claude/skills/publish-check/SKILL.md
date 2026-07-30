@@ -26,8 +26,11 @@ grep -l "Contact_Person\|Contact_Status\|Application_Status\|Private_Notes" data
 # 3. Nothing under private/ is tracked except the README and templates
 git ls-files private/
 
-# 4. The committed dashboard payload is the public tier
-grep -c "Private_Notes" dashboard/data.js        # expect 0
+# 4. The committed dashboard payload is the public tier.
+#    Match the JSON KEY form, with the colon. A bare column name also matches
+#    this very file once its text is baked into data.js, so the loose pattern
+#    reports a hit against itself and the check becomes meaningless.
+grep -c '"Private_Notes":' dashboard/data.js     # expect 0
 git ls-files dashboard/data.private.js           # expect empty
 
 # 5. Rebuild the public tier so it isn't stale
