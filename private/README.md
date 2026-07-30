@@ -12,7 +12,9 @@ It exists so the repo can be public without losing the private half of the pictu
 |---|---|---|
 | `partner-contacts.csv` | `data/partner-tracker.csv` on `ID` | `Contact_Status`, `Contact_Person`, `Private_Notes` |
 | `phd-applications.csv` | `data/phd-programs.csv` on `ID` | `Candidate_Supervisors`, `Application_Status`, `Outreach_Plan`, `Private_Notes` |
-| `pointers.csv` | standalone | Drive Vault folder URLs and other private links |
+| `pointers.csv` | `data/resources.csv` on `ID` | `URL` for the Vault and tracker rows |
+
+All three are ID-keyed overlays — they fill in columns on rows that already exist publicly, they don't add rows. That matters for `pointers.csv`: the public tier keeps the Vault row and its description, so a reader can see the Vault exists and what it holds, and only the link itself is withheld. `pointers.csv` is therefore just two columns, `ID` and `URL`.
 
 Each has a committed `.example.csv` showing the schema with dummy rows.
 

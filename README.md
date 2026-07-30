@@ -40,16 +40,21 @@ docs/
   dashboard-design.md      Dashboard design decisions
   drive-vault.md           What lives in Drive instead of git, and why
   publishing.md            Public/private boundary and pre-publish checklist
+  macro-watch.md           Macro watchlist rationale and logging discipline
 literature/
   lit-matrix.csv           15 anchors (LIT-001 … LIT-015)
   notes/memo-*.md          3 synthesis memos, all Reviewed
 product-design/
   business-plan.md         Venture-level plan, structuring assumptions, risks
   product-lines/           One doc per product line (PL-1 community, PL-2 agrivoltaic)
+risk-tools/                RT-1..RT-5 specs, versioning policy, test strategy
 data/                      Structured trackers — the dashboard reads these
   milestones.csv           M-NN    60/90-day milestones
   open-questions.csv       OQ-N    unresolved decisions
   product-lines.csv        PL-N    product lines
+  risk-tools.csv           RT-N    risk management tools
+  macro-indicators.csv     MAC-NN  macro watchlist
+  macro-log.csv            MLOG-N  dated macro observations
   partner-tracker.csv      PT-NN   candidate partners (public tier)
   phd-programs.csv         PHD-NN  target programs (public tier)
   synthesis-memos.csv      MEMO-N  memo status index
@@ -70,6 +75,8 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 | Open questions | 8 — 4 partially answered, 4 open |
 | Milestones | 2 done, 1 in progress, 8 not started |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
+| Risk tools | 5 specified, 0 built |
+| Macro watchlist | 12 indicators |
 | Partners | 10 tracked (contact status in the private overlay) |
 | PhD programs | 9 shortlisted |
 

@@ -27,6 +27,9 @@ TABLES = {
     "literature": "literature/lit-matrix.csv",
     "openQuestions": "data/open-questions.csv",
     "productLines": "data/product-lines.csv",
+    "riskTools": "data/risk-tools.csv",
+    "macroIndicators": "data/macro-indicators.csv",
+    "macroLog": "data/macro-log.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
     "milestones": "data/milestones.csv",
@@ -42,8 +45,11 @@ TABLES = {
 OVERLAYS = {
     "partners": "private/partner-contacts.csv",
     "phdPrograms": "private/phd-applications.csv",
+    # Fills in the blank URL on the Vault/tracker rows of data/resources.csv.
+    # Keyed by ID like the others, so the public tier keeps the row and its
+    # description and only the link is withheld.
+    "resources": "private/pointers.csv",
 }
-POINTERS = "private/pointers.csv"
 
 # --- document library --------------------------------------------------------
 # directory -> display category. Files are picked up recursively.
@@ -52,6 +58,7 @@ DOC_DIRS = [
     ("docs", "Planning", True),
     ("literature/notes", "Synthesis memos", True),
     ("product-design", "Product & business", True),
+    ("risk-tools", "Risk tools", True),
     ("archive/google-drive", "Archive", True),
     (".claude/skills", "AI skills", True),
 ]
@@ -183,10 +190,6 @@ def main():
                 applied.append(OVERLAYS[key])
         data[key] = rows
         print("  %-14s %3d rows  (%s)" % (key, len(rows), relpath))
-
-    if private and os.path.exists(os.path.join(ROOT, POINTERS)):
-        data["resources"] = data["resources"] + read_table(POINTERS)
-        applied.append(POINTERS)
 
     docs = collect_docs()
     data["docs"] = docs
