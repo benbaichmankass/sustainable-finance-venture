@@ -73,6 +73,12 @@ jobs:
       - name: Validate RT-1 schema
         run: python3 risk-tools/tools/validate_schema.py
 
+      # End-to-end: the generator's output must satisfy the schema, the
+      # validator must reject corrupt data, the scorecard must stay monotone,
+      # and the waterfall must conserve cash. All stdlib, a few seconds.
+      - name: RT toolchain end-to-end check
+        run: python3 risk-tools/tools/test_toolchain.py
+
       - name: Build public dashboard data
         run: python3 dashboard/build.py --public
 
