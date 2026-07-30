@@ -132,6 +132,18 @@ This project's credibility rests on the literature matrix being trustworthy. Acc
 - **Small commits with real messages.** `literature: add LIT-009..LIT-015 (SPV law, ABS scale, first-loss)` beats `update files`.
 - **Update the dashboard in the same commit** as the data change that requires it.
 - **Don't silently narrow scope.** If part of a task is blocked, do the rest and say what you skipped.
+
+### Finish the job — don't leave work in a draft PR
+
+**Ship it.** Open the PR ready for review, merge it once the work is verified, and confirm the deploy landed. Do not park finished work behind a review gate nobody asked for.
+
+The failure this prevents: work gets built, tested, screenshotted and written up as done, while the published dashboard still shows the old thing — because the PR was never merged. Local verification proves nothing to the person looking at the site.
+
+- **Squash-merge**, keeping `main` a clean sequence of whole changes.
+- **Then verify the deploy**, not the branch. Fetch the live page and check the thing you changed is actually in it. `dashboard/data.js` is separately cached, so check that too when data changed.
+- **"Done" means visible.** Never report a change as complete on the strength of a local build.
+
+Only hold something back when it is genuinely ambiguous, hard to reverse, or the user asked to review it first. Repo visibility is still never yours to change.
 - When a memo's conclusions change, update the memo, the `synthesis-memos.csv` row, and any open question that cited it. These three drift apart easily.
 
 ## 8. Privacy
