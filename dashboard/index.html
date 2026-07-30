@@ -236,6 +236,28 @@ tr.detail > td { background: var(--page); padding: 0 14px 16px; }
 .md pre code { background: none; padding: 0; font-size: inherit; }
 .md-scroll { overflow-x: auto; }
 
+/* charts */
+.spark { display: block; overflow: visible; }
+.chart { position: relative; margin: 6px 0 2px; }
+.chart svg { width: 100%; height: 200px; display: block; overflow: visible; }
+.chart text.ax { font-size: 10px; fill: var(--muted); font-family: var(--sans); }
+.chart .tip {
+  position: absolute; top: 0; transform: translateX(-50%);
+  background: var(--raised); border: 1px solid var(--border); border-radius: 6px;
+  padding: 3px 8px; font-size: 12px; color: var(--text); white-space: nowrap;
+  pointer-events: none; font-variant-numeric: tabular-nums;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+}
+.chart-foot {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  font-size: 11.5px; color: var(--muted); margin-top: 2px;
+}
+.chart-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+.chart-card .ct { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.chart-card .ct strong { font-size: 13.5px; }
+.chart-card .cv { font-size: 19px; font-weight: 640; letter-spacing: -0.01em; }
+
 .empty { color: var(--muted); font-size: 13.5px; padding: 22px 0; }
 footer.foot {
   border-top: 1px solid var(--border); margin-top: 40px; padding-top: 16px;
@@ -421,6 +443,128 @@ function statusBreakdown(obj) {
     return meter(k, obj[k], total, statusClass(k) || "neutral");
   }).join("");
 }
+/* ---------------------------------------------------------------- charting
+   Time series get a line, per the form heuristic: the job is trend over time,
+   one series per chart, so there is no categorical encoding to get wrong and
+   no legend to carry - the row or the panel heading names the series.
+   Everything is inline SVG against CSS custom properties, so both colour
+   schemes come for free and nothing is fetched.                             */
+
+function seriesFor(id) { return (D.macroSeries || {})[id] || []; }
+
+function extent(points) {
+  var lo = Infinity, hi = -Infinity;
+  points.forEach(function (p) { if (p[1] < lo) lo = p[1]; if (p[1] > hi) hi = p[1]; });
+  if (!isFinite(lo)) { lo = 0; hi = 1; }
+  if (lo === hi) { lo -= 1; hi += 1; }          // flat series still needs a band
+  return [lo, hi];
+}
+
+/* Compact trend mark for a table row. No axes, no labels: at this size they
+   would be unreadable, and the number it sits beside already carries the value.
+   Its job is shape only. */
+function sparkline(id, w, h) {
+  var pts = seriesFor(id);
+  if (pts.length < 2) return '<span class="hint">—</span>';
+  w = w || 104; h = h || 26;
+  var pad = 2, ex = extent(pts), lo = ex[0], hi = ex[1];
+  var dx = (w - pad * 2) / (pts.length - 1);
+  var y = function (v) { return pad + (hi - v) / (hi - lo) * (h - pad * 2); };
+  var d = pts.map(function (p, i) {
+    return (i ? "L" : "M") + (pad + i * dx).toFixed(1) + " " + y(p[1]).toFixed(1);
+  }).join(" ");
+  var last = pts[pts.length - 1];
+  return '<svg class="spark" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h +
+    '" aria-hidden="true">' +
+    '<path d="' + d + '" fill="none" stroke="var(--accent)" stroke-width="1.5" ' +
+    'stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<circle cx="' + (pad + (pts.length - 1) * dx).toFixed(1) + '" cy="' + y(last[1]).toFixed(1) +
+    '" r="2.4" fill="var(--accent)"/></svg>';
+}
+
+/* Full chart: recessive gridlines, 2px line, direct end-label, hover crosshair.
+   Rendered at a fixed viewBox and scaled by CSS so it stays sharp and responsive
+   without needing a resize observer. */
+function lineChart(id, label, unit) {
+  var pts = seriesFor(id);
+  if (pts.length < 2) {
+    return '<p class="hint">No history recorded for this indicator yet.</p>';
+  }
+  var W = 720, H = 200, L = 46, R = 14, T = 12, B = 26;
+  var ex = extent(pts), lo = ex[0], hi = ex[1];
+  var pad = (hi - lo) * 0.08; lo -= pad; hi += pad;
+  var x = function (i) { return L + i * (W - L - R) / (pts.length - 1); };
+  var y = function (v) { return T + (hi - v) / (hi - lo) * (H - T - B); };
+
+  var ticks = [lo, (lo + hi) / 2, hi];
+  var grid = ticks.map(function (t) {
+    return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(t).toFixed(1) +
+      '" y2="' + y(t).toFixed(1) + '" stroke="var(--grid)" stroke-width="1"/>' +
+      '<text x="' + (L - 7) + '" y="' + (y(t) + 3.5).toFixed(1) +
+      '" text-anchor="end" class="ax">' + fmtNum(t.toFixed(Math.abs(hi) < 10 ? 2 : 0)) + "</text>";
+  }).join("");
+
+  var line = pts.map(function (p, i) {
+    return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(p[1]).toFixed(1);
+  }).join(" ");
+  var area = line + " L" + x(pts.length - 1).toFixed(1) + " " + (H - B) +
+    " L" + x(0).toFixed(1) + " " + (H - B) + " Z";
+
+  /* Date labels at first, middle and last only. One label per point would be
+     unreadable and the hover layer covers the in-between cases. */
+  var xlabels = [0, Math.floor((pts.length - 1) / 2), pts.length - 1].map(function (i) {
+    var anchor = i === 0 ? "start" : i === pts.length - 1 ? "end" : "middle";
+    return '<text x="' + x(i).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="' + anchor +
+      '" class="ax">' + esc(pts[i][0]) + "</text>";
+  }).join("");
+
+  var last = pts[pts.length - 1];
+  return '<div class="chart" data-series="' + esc(id) + '">' +
+    '<svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="none" role="img" ' +
+    'aria-label="' + esc(label) + ' over time">' +
+      grid + xlabels +
+      '<path d="' + area + '" fill="var(--accent)" opacity="0.07"/>' +
+      '<path d="' + line + '" fill="none" stroke="var(--accent)" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>' +
+      '<circle cx="' + x(pts.length - 1).toFixed(1) + '" cy="' + y(last[1]).toFixed(1) +
+      '" r="3.5" fill="var(--accent)"/>' +
+      '<line class="cross" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) +
+      '" stroke="var(--muted)" stroke-width="1" opacity="0"/>' +
+    "</svg>" +
+    '<div class="tip" hidden></div>' +
+    '<div class="chart-foot"><span>' + esc(label) + (unit ? " · " + esc(unit) : "") + "</span>" +
+    "<span>" + esc(pts[0][0]) + " – " + esc(last[0]) + " · " + pts.length + " points</span></div>" +
+    "</div>";
+}
+
+/* One delegated handler per rendered chart. Hit-testing is done in viewBox
+   coordinates so it stays correct whatever width the SVG is scaled to. */
+function wireCharts(root) {
+  root.querySelectorAll(".chart").forEach(function (box) {
+    var svg = box.querySelector("svg"), tip = box.querySelector(".tip");
+    var cross = box.querySelector(".cross");
+    var pts = seriesFor(box.dataset.series);
+    if (!svg || pts.length < 2) return;
+    var W = 720, L = 46, R = 14;
+    function move(ev) {
+      var rect = svg.getBoundingClientRect();
+      var vx = (ev.clientX - rect.left) / rect.width * W;
+      var i = Math.round((vx - L) / ((W - L - R) / (pts.length - 1)));
+      i = Math.max(0, Math.min(pts.length - 1, i));
+      var px = L + i * (W - L - R) / (pts.length - 1);
+      cross.setAttribute("x1", px); cross.setAttribute("x2", px);
+      cross.setAttribute("opacity", "1");
+      tip.hidden = false;
+      tip.textContent = pts[i][0] + " · " + fmtNum(pts[i][1]);
+      tip.style.left = Math.min(Math.max(px / W * rect.width, 4), rect.width - 4) + "px";
+    }
+    svg.addEventListener("mousemove", move);
+    svg.addEventListener("mouseleave", function () {
+      cross.setAttribute("opacity", "0"); tip.hidden = true;
+    });
+  });
+}
+
 function scholarUrl(citation) {
   return "https://scholar.google.com/scholar?q=" + encodeURIComponent(citation || "");
 }
@@ -853,6 +997,7 @@ function renderMacro() {
     },
     { label: "3m", render: function (r) { var s = snapByPid[r.ID]; return s ? chg(s.Chg_3m) : '<span class="hint">—</span>'; } },
     { label: "12m", render: function (r) { var s = snapByPid[r.ID]; return s ? chg(s.Chg_12m) : '<span class="hint">—</span>'; } },
+    { label: "Trend", render: function (r) { return sparkline(r.ID); } },
     { key: "Category", label: "Category" },
     { key: "Cadence", label: "Cadence" }
   ];
@@ -866,11 +1011,15 @@ function renderMacro() {
         (s.Note ? '<br><span class="hint">' + esc(s.Note) + "</span>" : "") +
         (s.Source_URL ? "<br>" + extLink(s.Source_URL, "raw series") : "")
       : '<span class="hint">No machine-readable keyless source wired up — follow the link and read the current value at source.</span>';
-    return fields([
+    var body = fields([
       ["Why it matters here", esc(r.Why_It_Matters_Here)],
       ["Live value", live],
       ["Source", r.URL ? extLink(r.URL, r.Source) : esc(r.Source)]
     ]);
+    if (seriesFor(r.ID).length > 1) {
+      body += lineChart(r.ID, r.Indicator, s ? s.Unit : "");
+    }
+    return body;
   }
 
   var logCols = [
@@ -884,7 +1033,7 @@ function renderMacro() {
   var html = '<section class="panel"><h2>Macro watch</h2>' +
     '<p class="lede">What is going on in the world that bears on this project — cost of capital, risk appetite, market ' +
     'depth, borrower shocks, project economics and funding availability. Each row says why it matters <em>here</em>. ' +
-    'Five indicators carry a live value refreshed daily; the rest link straight to the source.</p>' +
+    'Eleven indicators carry a live value and a charted history, refreshed daily; the rest link straight to the source.</p>' +
 
     (function () {
       var snap = D.macroSnapshot || [];
@@ -904,6 +1053,29 @@ function renderMacro() {
         "machine-readable source; follow the link for those. See <code>docs/macro-watch.md</code>.</p></div>";
     })() +
 
+    /* Chart wall. One panel per live series - separate charts rather than one
+       overlaid axis, because these are different units (percent, index, ILS,
+       USD/bbl) and putting two scales on one frame is the single most
+       misleading thing a chart can do. */
+    (function () {
+      var live = ind.filter(function (r) { return seriesFor(r.ID).length > 1; });
+      if (!live.length) return "";
+      return '<h3 class="sub">Trends</h3>' +
+        '<p class="lede" style="margin-bottom:14px">Each live series over the last twelve years, monthly. Separate ' +
+        'panels rather than one overlaid chart: these are different units, and a shared axis across percent, index ' +
+        'points and exchange rates would imply comparisons that do not exist. Hover any chart for the value at a date.</p>' +
+        '<div class="chart-grid">' + live.map(function (r) {
+          var s = snapByPid[r.ID] || {};
+          return '<div class="chart-card"><div class="ct"><strong>' + esc(r.Indicator) + "</strong>" +
+            '<span class="cv">' + fmtNum(s.Value) + ' <span class="hint" style="font-size:11.5px">' +
+            esc(s.Unit || "") + "</span></span></div>" +
+            '<div class="hint" style="margin:2px 0 4px">' + esc(r.Category) +
+            " · 3m " + chg(s.Chg_3m) + " · 12m " + chg(s.Chg_12m) + "</div>" +
+            lineChart(r.ID, r.Indicator, s.Unit) + "</div>";
+        }).join("") + "</div>";
+    })() +
+
+    '<h3 class="sub">Watchlist</h3>' +
     '<div class="filters"><select class="pickr" id="mac-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
     '</select><span class="hint">Click a row for why it matters to this project.</span></div>' +
@@ -920,9 +1092,11 @@ function renderMacro() {
       var rows = ind.filter(function (r) { return !cat.value || r.Category === cat.value; });
       host.innerHTML = buildTable(rows, cols, detail);
       wireTable(host);
+      wireCharts(host);          // charts live inside the (initially hidden) detail rows
     }
     cat.addEventListener("change", draw); draw();
     by("mac-log").innerHTML = buildTable(log, logCols, null);
+    wireCharts(by("view"));      // the chart wall above the table
   }, 0);
   return html;
 }
