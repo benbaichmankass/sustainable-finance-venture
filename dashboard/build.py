@@ -30,6 +30,7 @@ TABLES = {
     "riskTools": "data/risk-tools.csv",
     "macroIndicators": "data/macro-indicators.csv",
     "macroSnapshot": "data/macro-snapshot.csv",
+    "macroHistory": "data/macro-history.csv",
     "macroLog": "data/macro-log.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
@@ -191,6 +192,21 @@ def main():
                 applied.append(OVERLAYS[key])
         data[key] = rows
         print("  %-14s %3d rows  (%s)" % (key, len(rows), relpath))
+
+    # Reshape the macro history from one row per observation into
+    # {ID: [[date, value], ...]}. As flat dicts it is ~1200 records that repeat
+    # the column names on every one; as arrays it is a third of the size and is
+    # what the charting code wants anyway.
+    series = {}
+    for row in data.pop("macroHistory", []):
+        try:
+            value = float(row["Value"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        series.setdefault(row["ID"], []).append([row["Date"], value])
+    data["macroSeries"] = series
+    print("  %-14s %3d series, %d points"
+          % ("macroSeries", len(series), sum(len(v) for v in series.values())))
 
     docs = collect_docs()
     data["docs"] = docs
