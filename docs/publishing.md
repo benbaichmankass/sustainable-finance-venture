@@ -43,6 +43,8 @@ So the repo carries the *structure* and the Vault carries the *instances*. Run t
 
 The same pattern works for the research use case you'd actually want: the analysis code, the schema and the methodology are in the repo; you point them at a dataset in the Vault's `05-raw-data`; the aggregate result comes back into the repo. The tooling is public, the inputs are private, the conclusions are publishable.
 
+**Setting up the overlay, and adding new private fields:** `docs/private-overlay.md` — the operational how-to for this policy.
+
 ## Building each tier
 
 ```bash

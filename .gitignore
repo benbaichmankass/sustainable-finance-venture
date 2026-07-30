@@ -14,3 +14,6 @@ dashboard/data.private.js
 .DS_Store
 __pycache__/
 *.pyc
+
+# RT-5 synthetic loan tape - regenerable from the seed, not worth committing.
+risk-tools/tools/output/

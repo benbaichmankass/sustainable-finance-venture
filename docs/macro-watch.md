@@ -100,3 +100,52 @@ The same rule as the literature matrix applies: **never state a number the sourc
 2. Fill in `Why_It_Matters_Here` properly — not what the indicator is, but what it changes for *this* project. If you can't write that sentence, the indicator probably doesn't belong on the list.
 3. Verify the URL resolves.
 4. Rebuild the dashboard.
+
+## Stress scenarios
+
+`data/macro-scenarios.csv` turns the watchlist from monitoring into something the venture can be reasoned about *under stress*. Six scenarios, each a small set of deterministic multipliers applied to the RT-5 portfolio model.
+
+| | Scenario | Drives |
+|---|---|---|
+| SC-0 | Base | No shock — the comparator |
+| SC-1 | Rates up | Policy and long rates +300bp |
+| SC-2 | Food price shock | Staple prices spike, correlation raised to 0.45 |
+| SC-3 | Energy shock | Sustained oil spike, hits both product lines |
+| SC-4 | FX shock | Local currency −25% against the note currency |
+| SC-5 | Combined stress | Rates, food and FX together — a coherence test |
+
+### How a scenario transforms the model
+
+Each row carries five levers, applied multiplicatively to the base portfolio assumptions in `risk-tools/tools/portfolio-config.csv`:
+
+| Column | Effect |
+|---|---|
+| `Rate_Shock_Pp` | Added in percentage points to the senior and mezzanine coupons due |
+| `Default_Multiplier` | Multiplies the baseline annual default probability |
+| `Recovery_Multiplier` | Multiplies the recovery rate on defaulted principal |
+| `Prepay_Multiplier` | Multiplies the annual prepayment rate |
+| `Correlation_Override` | Replaces the base default correlation outright, where a shock is regional rather than idiosyncratic |
+
+`Correlation_Override` is the one that matters. A food-price shock is not a higher independent default rate — it hits a whole region at once. SC-2 raises the default multiplier 2.2× *and* pushes correlation from 0.20 to 0.45, and it is the correlation term that drives the tail. A scenario that only raised the default rate would understate the damage and look reassuring while doing it.
+
+### Deliberately simple
+
+These are readable deterministic rules, not a model. A transparent multiplier that a reader can check beats a calibrated-looking transformation that nobody can audit — particularly when the underlying portfolio parameters are themselves placeholders.
+
+They are **not forecasts** and not probability-weighted. SC-5 is not a prediction; it is a test of whether the structure survives correlated adversity, since rate-hiking cycles, commodity spikes and EM currency pressure have historically arrived together.
+
+### Running them
+
+```bash
+python3 risk-tools/tools/simulate_portfolio.py            # all scenarios
+python3 risk-tools/tools/simulate_portfolio.py --sweep    # pool size vs fixed costs
+```
+
+Results land in `data/rt5-scenario-results.csv` and surface on the Risk tools tab. Every row is labelled `SYNTHETIC`. See `risk-tools/rt-5-simulator.md` for what the outputs are and are not good for.
+
+### Adding a scenario
+
+1. Add a row to `data/macro-scenarios.csv` with the next `SC-N`.
+2. Fill `Rationale` properly — why these multipliers, and which macro indicators justify them. A scenario without a stated rationale is a made-up number with a label.
+3. Reference the relevant `MAC-NN` IDs in `Macro_Refs` so the scenario is traceable to something observed.
+4. Re-run the simulator and rebuild the dashboard.

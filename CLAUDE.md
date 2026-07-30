@@ -25,7 +25,7 @@ Commercial strategy is deliberately on the public side. The thesis isn't the moa
 
 The private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.
 
-Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
+Setup and worked examples for the overlay: `docs/private-overlay.md`. Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
 
 **Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.
 

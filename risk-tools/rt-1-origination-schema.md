@@ -1,6 +1,7 @@
 # RT-1 — Origination data schema
 
-**Status:** Specified, not built · **Version:** 0.0 (draft spec) · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3
+**Status:** v0 built, not field-tested · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3
+**Schema:** [`schema/rt-1-origination-schema.csv`](schema/rt-1-origination-schema.csv) — 57 fields, 5 entities · **Philosophy:** [`schema/README.md`](schema/README.md) · **Validator:** `risk-tools/tools/validate_schema.py`
 
 ## Purpose
 
@@ -22,14 +23,17 @@ Constraint 2 is the binding one. It is easy to design a schema that satisfies 1 
 
 ## Structure
 
-Four tables, joined on IDs.
+Five tables, joined on IDs. Field counts are as built in v0.1.
 
-| Table | Grain | Holds |
-|---|---|---|
-| `group` | one row per VSLA / originating unit | formation date, size, cycle length, governance model, location tag, federation |
-| `member` | one row per member | pseudonymous ID, join date, role, coarse demographics; **no name, no contact** |
-| `loan` | one row per loan | amount, disbursement date, term, rate/fee, purpose code, guarantee structure, schedule |
-| `event` | one row per repayment, arrears, claim, restructure, write-off | loan ID, date, type, amount, balance after |
+| Table | Fields | Grain | Holds |
+|---|---|---|---|
+| `originator` | 4 | one row per originating institution | type, country, regulated status |
+| `group` | 15 | one row per VSLA / originating unit | formation date, cycle number and length, size, governance, meeting cadence, savings balance, coarse geography, SAVIX link |
+| `member` | 9 | one row per member | pseudonymous ID, join date, role, banded demographics, livelihood, prior cycles; **no name, no contact, no exact DOB** |
+| `loan` | 19 | one row per loan | principal, disbursement date, term, charge rate and basis, purpose, guarantee structure, borrower savings, prior-loan count |
+| `event` | 10 | one row per repayment, arrears, restructure, write-off, claim | loan ID, date, type, amount, balance after, DPD, who recorded it |
+
+**48 of 57 fields are required; 45 are critical path** — meaning they cannot be reconstructed after origination. That ratio is high deliberately: a field that *can* be rebuilt later does not belong in a v0 schema.
 
 The `event` table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.
 
@@ -61,21 +65,25 @@ Every version records: what changed, why, which vintages are affected, and how t
 
 | Date | Version | Change |
 |---|---|---|
-| 2026-07-30 | 0.0 | Initial specification. No fields fixed yet — structure and constraints only. |
+| 2026-07-30 | 0.0 | Initial specification. Structure and constraints only. |
+| 2026-07-30 | 0.1 | First concrete field list: 57 fields across 5 entities, with validator. Not yet field-tested — see `schema/README.md` for what would move it to v1. |
 
 ## Tests
 
-Not yet written. Planned:
+**Built** (`risk-tools/tools/validate_schema.py`, runs in CI):
 
-- **Validation suite** — every field checked against its domain; a malformed record is rejected at entry, not at analysis time.
-- **Referential integrity** — no orphan loans, no events without loans, no members without groups.
+- **Schema self-check** — field IDs are unique lower_snake_case; every entity, type, requiredness, capture mode and privacy class is in its allowed set; enums actually declare values; derived fields carry a formula; every entity has a `schema_version` field. It also enforces that every field explains why it exists — a rationale under 60 characters fails the build, which caught five lazy entries on the first run.
+- **Dataset validation** (`--data <dir>`) — required fields present, enums respected, ISO dates, referential integrity across all five tables.
+
+Still planned:
+
 - **Round-trip** — export to the ABS tape format and back without loss.
 - **Adversarial field data** — the suite must include the messy cases that actually occur: a member leaving mid-cycle, a loan repaid by someone else, a group splitting, a cycle ending early.
 - **Cross-version join** — records at two schema versions must be joinable, or the migration note is wrong.
 
 ## Open questions
 
-- Which fields are genuinely required versus nice-to-have? Every required field is a tax on the group secretary, and the schema fails if the tax is too high.
+- Which fields are genuinely required versus nice-to-have? Every required field is a tax on the group secretary, and the schema fails if the tax is too high. v0.1 puts 48 fields in the required column; that number is a proposal and should be argued down, not up, once a real secretary has used it.
 - Can we align with SAVIX (RES-31) so existing savings-group MIS data maps in without re-collection? This could be the difference between a pilot cohort of 20 and a pool of hundreds.
 - What does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record? (Open in Memo 3.)
 - PL-2: does a utility PPA permit assignment of receivables at all? That is the LIT-009 true-sale checklist applied to this asset, and it may be the binding constraint on the whole product line.

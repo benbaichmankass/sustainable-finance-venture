@@ -914,11 +914,41 @@ function renderRiskTools() {
     ]);
   }
 
+  var built = tools.filter(function (t) { return t.Status !== "Specified - not built"; }).length;
   var html = '<section class="panel"><h2>Risk management tools</h2>' +
     '<p class="lede">The toolkit that makes community-originated cash flows underwritable. Each tool carries its own ' +
-    'specification, versioning policy and test strategy. <strong>None are built yet</strong> — every one is at ' +
-    'specification stage, which the registry states plainly rather than dressing up as progress.</p>' +
+    'specification, versioning policy and test strategy. <strong>' + built + ' of ' + tools.length +
+    ' are partially built</strong> — RT-1 has a concrete field list and a validator, RT-5 runs against synthetic ' +
+    'portfolios. The rest are at specification stage, which the registry states plainly rather than dressing up ' +
+    'as progress.</p>' +
     '<div id="rt-tbl"></div>';
+
+  /* RT-5 scenario results. Every number here is synthetic, so the banner says so
+     before the table rather than in a footnote after it. */
+  var rt5 = D.rt5Results || [], scen = D.macroScenarios || [];
+  if (rt5.length) {
+    var byId = {};
+    scen.forEach(function (s) { byId[s.ID] = s; });
+    var worst = rt5.reduce(function (a, b) {
+      return parseFloat(b.Mean_Junior_Loss_Pct) > parseFloat(a.Mean_Junior_Loss_Pct) ? b : a;
+    });
+    html += '<h3 class="sub">RT-5 stress scenarios</h3>' +
+      '<div class="card" style="margin-bottom:14px;border-color:var(--warning)">' +
+      "<strong>Every figure below is synthetic and uncalibrated.</strong>" +
+      '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">No field data exists yet. Default, recovery ' +
+      'and correlation are placeholders chosen to be plausible. These outputs describe the <em>model</em>, not this ' +
+      'asset class — useful for structural questions (how sensitive is the junior tranche to correlation, where does ' +
+      'the fixed-cost floor sit) and not usable as evidence. See <code>risk-tools/rt-5-simulator.md</code>.</p></div>' +
+
+      '<div class="grid g4" style="margin-bottom:14px">' +
+        tile("Pool modelled", "$" + Math.round(parseFloat(rt5[0].Pool_Principal_USD) / 1e6) + "m",
+             Number(rt5[0].Loans).toLocaleString() + " synthetic loans") +
+        tile("Scenarios", rt5.length, "base + " + (rt5.length - 1) + " stresses") +
+        tile("Worst junior loss", worst.Mean_Junior_Loss_Pct + "%", esc(worst.Scenario)) +
+        tile("Fixed-cost drag", rt5[0].Fixed_Cost_Pct_Of_Pool + "%", "of pool notional") +
+      "</div>" +
+      '<div id="rt5-tbl"></div>';
+  }
 
   if (readme) {
     html += '<h3 class="sub">Conventions</h3><div class="card"><div class="md">' + renderMd(readme.body) + "</div></div>";
@@ -927,7 +957,39 @@ function renderRiskTools() {
     html += '<h3 class="sub">' + esc(d.title) + '</h3><div class="card"><div class="md">' + renderMd(d.body) + "</div></div>";
   });
 
-  setTimeout(function () { var h = by("rt-tbl"); h.innerHTML = buildTable(tools, cols, detail); wireTable(h); }, 0);
+  setTimeout(function () {
+    var h = by("rt-tbl"); h.innerHTML = buildTable(tools, cols, detail); wireTable(h);
+
+    var host = by("rt5-tbl");
+    if (host && rt5.length) {
+      var sByID = {};
+      scen.forEach(function (s) { sByID[s.ID] = s; });
+      var rcols = [
+        { key: "Scenario_ID", label: "ID", cls: "id" },
+        { key: "Scenario", label: "Scenario" },
+        { label: "Mean loss", render: function (r) { return r.Mean_Loss_Rate_Pct + "%"; } },
+        { label: "p95 loss", render: function (r) { return r.P95_Loss_Rate_Pct + "%"; } },
+        { label: "Junior loss", render: function (r) { return "<strong>" + r.Mean_Junior_Loss_Pct + "%</strong>"; } },
+        { label: "Junior wipeout", render: function (r) { return r.Junior_Wipeout_Prob_Pct + "%"; } },
+        { label: "Senior shortfall", render: function (r) { return r.Senior_Shortfall_Prob_Pct + "%"; } },
+        { label: "Corr", render: function (r) { return r.Correlation_Used; } }
+      ];
+      host.innerHTML = buildTable(rt5, rcols, function (r) {
+        var s = sByID[r.Scenario_ID] || {};
+        return fields([
+          ["What the scenario is", esc(s.Shock_Description)],
+          ["Why these multipliers", esc(s.Rationale)],
+          ["Macro indicators", esc(s.Macro_Refs) || '<span class="hint">none — base case</span>'],
+          ["Levers", "default ×" + esc(r.Default_Multiplier) +
+            " · recovery ×" + esc(s.Recovery_Multiplier || "1.0") +
+            " · rate shock " + esc(s.Rate_Shock_Pp || "0") + "pp" +
+            " · correlation " + esc(r.Correlation_Used)],
+          ["Basis", '<span class="pill warning"><span class="dot"></span>' + esc(r.Basis) + "</span>"]
+        ]);
+      });
+      wireTable(host);
+    }
+  }, 0);
   return html + "</section>";
 }
 

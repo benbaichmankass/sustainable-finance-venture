@@ -1,0 +1,7 @@
+"Scenario_ID","Scenario","Pool_Principal_USD","Loans","Mean_Loss_Rate_Pct","P95_Loss_Rate_Pct","P99_Loss_Rate_Pct","Cost_Drag_Pct_Of_Pool","Fixed_Cost_Pct_Of_Pool","Mean_Junior_Loss_Pct","Junior_Wipeout_Prob_Pct","Senior_Shortfall_Prob_Pct","Correlation_Used","Default_Multiplier","Model_Version","Basis"
+"SC-0","Base","18708720.93","35966","1.356","2.49","2.99","4.336","1.336","18.96","0.0","0.0","0.2","1.0","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
+"SC-1","Rates up","18708720.93","35966","1.611","2.764","3.6","4.336","1.336","37.82","0.0","0.0","0.2","1.15","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
+"SC-2","Food price shock","18708720.93","35966","3.666","7.028","8.87","4.336","1.336","36.08","0.0","0.0","0.45","2.2","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
+"SC-3","Energy shock","18708720.93","35966","2.041","3.768","4.742","4.336","1.336","26.85","0.0","0.0","0.3","1.4","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
+"SC-4","FX shock","18708720.93","35966","2.068","3.648","5.272","4.336","1.336","24.28","0.0","0.0","0.25","1.3","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
+"SC-5","Combined stress","18708720.93","35966","5.061","10.076","13.906","4.336","1.336","57.4","3.5","0.0","0.55","2.8","0.1","SYNTHETIC - illustrative only, not calibrated to field data"
