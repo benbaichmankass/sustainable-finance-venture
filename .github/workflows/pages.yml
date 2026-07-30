@@ -8,10 +8,14 @@ name: Publish dashboard to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Daily macro refresh. Off-the-hour minute deliberately: GitHub's scheduler
+    # is congested at :00 and drops or delays runs queued there.
+    - cron: '17 6 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # needed to commit the refreshed macro snapshot
   pages: write
   id-token: write
 
@@ -40,6 +44,29 @@ jobs:
             echo "::error::dashboard/data.private.js is committed. It must stay gitignored."
             exit 1
           fi
+
+      # Only on scheduled/manual runs. A push build must not commit back to main -
+      # that would create a second commit for every push and, since GITHUB_TOKEN
+      # pushes don't retrigger workflows, a confusing half-deployed state.
+      # The fetcher never exits non-zero, so a flaky upstream API cannot block
+      # the deploy; it keeps the last good value and marks the row stale.
+      - name: Refresh macro snapshot
+        if: github.event_name != 'push'
+        run: python3 dashboard/fetch_macro.py
+
+      - name: Commit refreshed snapshot
+        if: github.event_name != 'push'
+        run: |
+          set -e
+          if git diff --quiet -- data/macro-snapshot.csv; then
+            echo "No change to the snapshot - nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/macro-snapshot.csv
+          git commit -m "macro: refresh snapshot ($(date -u +%Y-%m-%d))"
+          git push
 
       - name: Build public dashboard data
         run: python3 dashboard/build.py --public

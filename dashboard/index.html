@@ -787,8 +787,36 @@ function renderRiskTools() {
   return html + "</section>";
 }
 
+/* Age of an observation in days. Handles the ISO dates the APIs return and the
+   "2026 AMJ" season labels NOAA uses; returns null when it can't tell, which
+   the caller must treat as "unknown", never as "fresh". */
+function ageDays(asOf) {
+  if (!asOf) return null;
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(asOf);
+  if (!m) return null;
+  var then = Date.parse(asOf + "T00:00:00Z");
+  if (isNaN(then)) return null;
+  return Math.floor((Date.now() - then) / 86400000);
+}
+function fmtNum(v) {
+  var n = parseFloat(v);
+  if (isNaN(n)) return esc(v);
+  return (Math.abs(n) >= 100 ? n.toFixed(1) : n.toFixed(2)).replace(/\.00$/, "");
+}
+/* Signed change with an arrow. Direction only — no red/green, because "rates up"
+   is not good or bad in itself and colouring it would assert a view we don't hold. */
+function chg(v) {
+  if (v === "" || v == null) return '<span class="hint">—</span>';
+  var n = parseFloat(v);
+  if (isNaN(n)) return '<span class="hint">—</span>';
+  if (Math.abs(n) < 1e-9) return '<span class="hint">→ 0</span>';
+  return (n > 0 ? "↑ +" : "↓ ") + n.toFixed(2);
+}
+
 function renderMacro() {
   var ind = D.macroIndicators || [], log = D.macroLog || [];
+  var snapByPid = {};
+  (D.macroSnapshot || []).forEach(function (s) { snapByPid[s.ID] = s; });
   var cats = [];
   ind.forEach(function (r) { if (cats.indexOf(r.Category) < 0) cats.push(r.Category); });
 
@@ -799,13 +827,48 @@ function renderMacro() {
         return nameLink(r.Indicator, r.URL, r.Indicator + " " + r.Source);
       }
     },
+    {
+      label: "Latest", render: function (r) {
+        var s = snapByPid[r.ID];
+        if (!s || !s.Value) return '<span class="hint">link only</span>';
+        return '<strong>' + fmtNum(s.Value) + "</strong> " +
+          '<span class="hint">' + esc(s.Unit) + "</span>";
+      }
+    },
+    {
+      label: "As of", render: function (r) {
+        var s = snapByPid[r.ID];
+        if (!s || !s.As_Of) return '<span class="hint">—</span>';
+        var age = ageDays(s.As_Of);
+        /* Staleness is judged against the indicator's own cadence: 45 days is
+           fine for an annual series and alarming for a daily one. */
+        var limit = /Daily/i.test(r.Cadence) ? 7
+          : /Monthly|meeting/i.test(r.Cadence) ? 60
+          : /quarter/i.test(r.Cadence) ? 180 : 400;
+        var stale = s.Status !== "ok" || (age != null && age > limit);
+        return '<span class="pill ' + (stale ? "warning" : "") + '">' +
+          '<span class="dot"></span>' + esc(s.As_Of) +
+          (age != null ? " · " + age + "d" : "") + "</span>";
+      }
+    },
+    { label: "3m", render: function (r) { var s = snapByPid[r.ID]; return s ? chg(s.Chg_3m) : '<span class="hint">—</span>'; } },
+    { label: "12m", render: function (r) { var s = snapByPid[r.ID]; return s ? chg(s.Chg_12m) : '<span class="hint">—</span>'; } },
     { key: "Category", label: "Category" },
-    { key: "Product_Lines", label: "Lines" },
     { key: "Cadence", label: "Cadence" }
   ];
   function detail(r) {
+    var s = snapByPid[r.ID];
+    var live = s
+      ? "Value <strong>" + fmtNum(s.Value) + " " + esc(s.Unit) + "</strong> as of " +
+        esc(s.As_Of) + ". Change: 1m " + chg(s.Chg_1m) + " · 3m " + chg(s.Chg_3m) +
+        " · 12m " + chg(s.Chg_12m) + ".<br>Fetched " + esc(s.Fetched_At) +
+        " · status <strong>" + esc(s.Status) + "</strong>" +
+        (s.Note ? '<br><span class="hint">' + esc(s.Note) + "</span>" : "") +
+        (s.Source_URL ? "<br>" + extLink(s.Source_URL, "raw series") : "")
+      : '<span class="hint">No machine-readable keyless source wired up — follow the link and read the current value at source.</span>';
     return fields([
       ["Why it matters here", esc(r.Why_It_Matters_Here)],
+      ["Live value", live],
       ["Source", r.URL ? extLink(r.URL, r.Source) : esc(r.Source)]
     ]);
   }
@@ -820,16 +883,26 @@ function renderMacro() {
 
   var html = '<section class="panel"><h2>Macro watch</h2>' +
     '<p class="lede">What is going on in the world that bears on this project — cost of capital, risk appetite, market ' +
-    'depth, borrower shocks, project economics and funding availability. Each row says why it matters <em>here</em>, ' +
-    'and links straight to the authoritative source.</p>' +
+    'depth, borrower shocks, project economics and funding availability. Each row says why it matters <em>here</em>. ' +
+    'Five indicators carry a live value refreshed daily; the rest link straight to the source.</p>' +
 
-    '<div class="card" style="margin-bottom:18px;border-color:var(--warning)">' +
-    '<strong>These are links, not live numbers — deliberately.</strong>' +
-    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
-    'A static page can only show a number by baking in a snapshot, and a stale rate displayed without a visible ' +
-    '"as of" date is worse than no rate — it invites a decision on a figure that may be months old. So this tab gives ' +
-    'you the fastest path to the real number instead of a copy that rots. Live snapshots via a scheduled build are ' +
-    'buildable; see <code>docs/macro-watch.md</code>.</p></div>' +
+    (function () {
+      var snap = D.macroSnapshot || [];
+      if (!snap.length) return "";
+      var fetched = snap[0].Fetched_At || "";
+      var bad = snap.filter(function (s) { return s.Status !== "ok"; });
+      return '<div class="card" style="margin-bottom:18px' +
+        (bad.length ? ";border-color:var(--warning)" : "") + '">' +
+        "<strong>Snapshot refreshed daily by scheduled build.</strong> " +
+        '<span class="hint">Last run ' + esc(fetched) + " · " +
+        (snap.length - bad.length) + " of " + snap.length + " series current" +
+        (bad.length ? ", " + bad.length + " stale" : "") + ".</span>" +
+        '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
+        "Every value shows the observation date from the source and its age, because a number without a date is " +
+        "worse than no number. A stale row keeps its last good value rather than showing a blank — the " +
+        '<strong>As of</strong> column is the one to trust. Indicators marked <em>link only</em> have no keyless ' +
+        "machine-readable source; follow the link for those. See <code>docs/macro-watch.md</code>.</p></div>";
+    })() +
 
     '<div class="filters"><select class="pickr" id="mac-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
