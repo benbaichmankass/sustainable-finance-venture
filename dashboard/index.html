@@ -687,6 +687,35 @@ function renderOverview() {
       'that needs counsel, a partner, or field data to close.</p></div>' +
     "</div>" +
 
+    '<h3 class="sub">Active now &amp; awaiting a call</h3>' +
+    '<p class="lede" style="margin-bottom:14px">The work in flight and the decisions that need you — the quick-glance ' +
+    'version of the milestone tracker and open questions, so a review can start here. Click any item to jump to it.</p>' +
+    '<div class="grid g2">' +
+      '<div class="card"><div style="font-weight:600;margin-bottom:10px">In progress</div>' +
+      (function () {
+        var live = ms.filter(function (m) { return m.Status === "In progress"; });
+        if (!live.length) return '<p class="hint">Nothing in progress.</p>';
+        return live.map(function (m) {
+          return '<div style="display:flex;gap:8px;align-items:baseline;margin:7px 0;font-size:13px">' +
+            pill(m.Status) + '<span><a href="#business"><code>' + esc(m.ID) + "</code></a> " +
+            '<span style="color:var(--text-2)">' + esc(m.Milestone) + "</span></span></div>";
+        }).join("");
+      })() + "</div>" +
+      '<div class="card"><div style="font-weight:600;margin-bottom:10px">Awaiting a decision</div>' +
+      (function () {
+        var order = { "Open": 0, "Partially answered": 1 };
+        var pending = oq.filter(function (q) {
+          return q.Status === "Open" || q.Status === "Partially answered";
+        }).sort(function (a, b) { return order[a.Status] - order[b.Status]; });
+        if (!pending.length) return '<p class="hint">Nothing awaiting a decision.</p>';
+        return pending.map(function (q) {
+          return '<div style="display:flex;gap:8px;align-items:baseline;margin:7px 0;font-size:13px">' +
+            pill(q.Status) + '<span><a href="#questions"><code>' + esc(q.ID) + "</code></a> " +
+            '<span style="color:var(--text-2)">' + esc(q.Question) + "</span></span></div>";
+        }).join("");
+      })() + "</div>" +
+    "</div>" +
+
     '<h3 class="sub">Evidence base by review axis</h3>' +
     '<div class="card">' + magnitudeBars(c.literatureByAxis || {}) + "</div>" +
 
@@ -833,9 +862,7 @@ function renderBusiness() {
   var html = '<section class="panel"><h2>Business plan &amp; tracker</h2>' +
     '<p class="lede">The current plan, the 60/90-day milestone tracker, and the structuring assumptions the plan rests on.</p>' +
 
-    decisionsCallout([
-      { id: "OQ-10", text: "the internal go/no-go economics threshold — what blended return, over what horizon, at what deal count counts as a viable business (needed before the unit-economics model can produce an actionable answer)" }
-    ]) +
+    decisionsCallout(["OQ-10"]) +
 
     '<h3 class="sub">Milestone tracker</h3>' +
     '<div class="grid g2" style="margin-bottom:16px">' +
@@ -1312,15 +1339,25 @@ function renderResources() {
   return html;
 }
 
-/* Surfaces the decisions a tab raises, linking each to its open-question row.
-   The #questions hrefs work because boot() listens for hashchange. */
-function decisionsCallout(items) {
-  return '<div class="card" style="margin-bottom:16px;border-color:var(--accent)">' +
-    "<strong>Decisions this needs — open, and yours to make.</strong> " +
-    '<span class="hint">Each is logged on the <a href="#questions">Open questions</a> tab.</span>' +
-    '<ul style="margin:8px 0 0;padding-left:20px;font-size:13.5px;color:var(--text-2)">' +
-    items.map(function (it) {
-      return '<li><a href="#questions"><code>' + esc(it.id) + "</code></a> — " + esc(it.text) + "</li>";
+/* Surfaces the decisions a tab raises, with each one's LIVE status pulled from the
+   open-questions tracker — so a decision that has since been made shows as resolved
+   rather than still "to make". The #questions hrefs work because boot() listens for
+   hashchange. */
+function oqById(id) {
+  return (D.openQuestions || []).filter(function (q) { return q.ID === id; })[0];
+}
+function decisionsCallout(ids) {
+  var rows = ids.map(oqById).filter(Boolean);
+  if (!rows.length) return "";
+  var anyOpen = rows.some(function (q) { return q.Status !== "Answered"; });
+  return '<div class="card" style="margin-bottom:16px;border-color:' +
+    (anyOpen ? "var(--accent)" : "var(--grid)") + '">' +
+    "<strong>Key decisions</strong> " +
+    '<span class="hint">live status — full context on the <a href="#questions">Open questions</a> tab.</span>' +
+    '<ul style="margin:8px 0 0;padding-left:0;list-style:none;font-size:13.5px;color:var(--text-2)">' +
+    rows.map(function (q) {
+      return '<li style="margin:6px 0">' + pill(q.Status) +
+        ' <a href="#questions"><code>' + esc(q.ID) + "</code></a> — " + esc(q.Question) + "</li>";
     }).join("") + "</ul></div>";
 }
 
@@ -1352,10 +1389,7 @@ function renderExperiments() {
     'a financial product that could address it, and how the venture toolkit fits. These are ideas at concept stage — the raw ' +
     'material the opportunity-mapping methodology scores and narrows to a flagship shortlist. See ' +
     '<code>docs/research-proposal.md</code> and <code>docs/methodology-opportunity-mapping.md</code>.</p>' +
-    decisionsCallout([
-      { id: "OQ-9", text: "the criteria and weights that score these (opportunity size vs toolbox capacity)" },
-      { id: "OQ-11", text: "which 2-3 of these become the flagship pilots taken into field design" }
-    ]) +
+    decisionsCallout(["OQ-9", "OQ-11"]) +
     '<div class="filters"><select class="pickr" id="exp-geo"><option value="">All geographies</option>' +
     geos.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +
     '</select><span class="hint">Click a row for the product concept and toolbox fit.</span></div>' +
