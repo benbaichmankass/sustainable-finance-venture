@@ -1554,6 +1554,206 @@ window.SFV_DATA = {
    "Notes": "Savings-group management information system data - benchmark for the PL-1 origination schema"
   }
  ],
+ "experiments": [
+  {
+   "ID": "EXP-01",
+   "Theme": "Climate + Poverty",
+   "Geography": "Sahel / East Africa",
+   "Community_Context": "Rainfed smallholder farmers organised in VSLAs",
+   "Problem": "Rainfall variability destroys harvests and repayment capacity, pushing families deeper into poverty; climate shocks go uninsured.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 13",
+   "Product_Concept": "Parametric drought-index insurance bundled into VSLA crop loans, with the premium financed into the loan principal so cover is automatic rather than opt-in.",
+   "Toolbox_Fit": "RT-1 schema captures agro-climate and geospatial tags; RT-3 monitor watches rainfall-index triggers; impact module measures consumption smoothing through shocks.",
+   "Linked_Refs": "PL-1; OQ-3",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-02",
+   "Theme": "Climate + Poverty",
+   "Geography": "East / West Africa (off-grid rural)",
+   "Community_Context": "Off-grid rural households reached through VSLAs",
+   "Problem": "Energy poverty and biomass-cooking emissions; households cannot finance solar home systems or clean cookstoves.",
+   "SDG_Refs": "SDG 1; SDG 7; SDG 13",
+   "Product_Concept": "PAYGO-style clean-energy asset loan originated through the VSLA under a group guarantee, with repayment data standardised for later pooling.",
+   "Toolbox_Fit": "Underwriting engine uses group repayment signals; securitization modelling on the clean-energy receivables pool.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-03",
+   "Theme": "Climate + Poverty",
+   "Geography": "North Africa / MENA (water-scarce)",
+   "Community_Context": "Smallholder cooperatives on water- and land-constrained plots",
+   "Problem": "Climate stress on land and water; smallholders lack capital for climate-smart dual-use solar-plus-agriculture.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 7; SDG 13",
+   "Product_Concept": "Cooperative project-finance vehicle blending PPA revenue and crop revenue, with a DFI first-loss layer to attract senior capital.",
+   "Toolbox_Fit": "Waterfall modelling and PPA cash-flow verification carried over from PL-2; schema extended to cooperative membership.",
+   "Linked_Refs": "PL-2; OQ-8",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-04",
+   "Theme": "Climate + Poverty",
+   "Geography": "East Africa",
+   "Community_Context": "Grain-farming households aggregated through savings groups",
+   "Problem": "Climate-driven price volatility and post-harvest loss force distress sales at the bottom of the market, entrenching poverty.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 13",
+   "Product_Concept": "Warehouse-receipt-backed lending via VSLA aggregation, with cover against storage loss, letting farmers borrow against stored grain and sell when prices recover.",
+   "Toolbox_Fit": "Standardised warehouse receipts become poolable receivables; monitoring tracks storage conditions and price triggers.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-05",
+   "Theme": "Climate + Poverty",
+   "Geography": "Horn of Africa",
+   "Community_Context": "Pastoralist communities whose livestock is their primary store of wealth",
+   "Problem": "Drought kills livestock, the main asset of the poor, driving recurrent poverty traps.",
+   "SDG_Refs": "SDG 1; SDG 13",
+   "Product_Concept": "Index-based livestock insurance bundled with savings-group credit, paying out on satellite-measured forage scarcity before animals die (building on the index-based livestock insurance precedent).",
+   "Toolbox_Fit": "Index triggers, monitoring and impact-evaluation modules; schema captures herd and geospatial data.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-06",
+   "Theme": "Climate + Poverty",
+   "Geography": "Coastal West Africa / MENA",
+   "Community_Context": "Urban poor in flood-exposed informal settlements",
+   "Problem": "Recurrent flooding destroys the productive assets of low-income households, resetting them into poverty each season.",
+   "SDG_Refs": "SDG 1; SDG 11; SDG 13",
+   "Product_Concept": "Resilience-retrofit microloan paired with parametric flood cover, financed through community groups.",
+   "Toolbox_Fit": "Schema plus parametric flood triggers; RT-3 monitor doubles as an early-warning signal.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-07",
+   "Theme": "Climate + Poverty",
+   "Geography": "MENA remittance corridors (Gulf to North / East Africa)",
+   "Community_Context": "Remittance-dependent households in climate-vulnerable home regions",
+   "Problem": "Households reliant on migrant remittances hold no formal savings or climate cover, so a shock abroad or at home cascades into poverty.",
+   "SDG_Refs": "SDG 1; SDG 10; SDG 13",
+   "Product_Concept": "Remittance-linked savings-and-microinsurance product anchored to a home-side community group, converting part of each transfer into resilience cover.",
+   "Toolbox_Fit": "Data schema extended to remittance inflows; underwriting on transfer regularity.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-08",
+   "Theme": "Climate + Poverty",
+   "Geography": "West Africa / MENA",
+   "Community_Context": "Women-led micro-enterprises in the clean-energy value chain",
+   "Problem": "Energy-access SMEs (solar distributors, clean-cooking retailers) lack working capital, throttling both clean-energy diffusion and poverty-reducing income.",
+   "SDG_Refs": "SDG 1; SDG 5; SDG 7; SDG 8",
+   "Product_Concept": "Revolving receivables-backed working-capital facility for a pool of clean-energy micro-enterprises.",
+   "Toolbox_Fit": "Underwriting engine and securitization modelling on trade receivables.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  }
+ ],
+ "funders": [
+  {
+   "ID": "FUND-01",
+   "Funder_Name": "IDRC (International Development Research Centre)",
+   "Type": "Research funder (bilateral)",
+   "Geography": "Global South (incl. Africa / MENA)",
+   "Grant_Focus": "Development research, climate adaptation, inclusive economies",
+   "URL": "",
+   "Why_This_Funder": "Funds Southern-led development research including climate adaptation and financial inclusion; a natural home for the experiment-design and impact-measurement workstream. Programs and open calls to be researched.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-02",
+   "Funder_Name": "3ie (International Initiative for Impact Evaluation)",
+   "Type": "Impact-evaluation funder",
+   "Geography": "Global South",
+   "Grant_Focus": "Rigorous impact evaluations (RCTs and quasi-experimental)",
+   "URL": "",
+   "Why_This_Funder": "Funds and supports impact evaluations directly aligned with the causal-measurement methodology; potential match for the experiment-design deliverable. Verify current thematic windows.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-03",
+   "Funder_Name": "J-PAL King Climate Action Initiative (K-CAI)",
+   "Type": "Research funder / lab initiative",
+   "Geography": "Global (Africa + MENA offices)",
+   "Grant_Focus": "RCTs at the climate-poverty intersection",
+   "URL": "",
+   "Why_This_Funder": "Funds randomized evaluations at exactly the climate-and-poverty intersection this proposal targets; J-PAL is also the standing verification-partner candidate (PT-05). Confirm eligibility and cycle.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-04",
+   "Funder_Name": "FSD Africa",
+   "Type": "Financial-sector development funder",
+   "Geography": "Africa",
+   "Grant_Focus": "Financial markets, green finance, capital-market development",
+   "URL": "",
+   "Why_This_Funder": "Backs financial-market and green-finance development in Africa, including securitization and capital-market deepening; relevant to both the research and the structuring thesis. Research active facilities.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-05",
+   "Funder_Name": "Mastercard Foundation",
+   "Type": "Foundation",
+   "Geography": "Africa",
+   "Grant_Focus": "Livelihoods, financial inclusion, youth and women's economic opportunity",
+   "URL": "",
+   "Why_This_Funder": "Large Africa-focused funder of financial inclusion and livelihoods; potential support for pilot origination and inclusion outcomes. Confirm research vs programme funding fit.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-06",
+   "Funder_Name": "IKEA Foundation",
+   "Type": "Foundation",
+   "Geography": "Global South (incl. Africa)",
+   "Grant_Focus": "Climate action and poverty-reduction livelihoods",
+   "URL": "",
+   "Why_This_Funder": "Funds the climate-plus-livelihoods intersection, including renewable energy and smallholder agriculture; possible fit for energy-access and climate-resilience experiments. Research grant mechanism.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-07",
+   "Funder_Name": "Shell Foundation",
+   "Type": "Corporate foundation",
+   "Geography": "Africa / Asia",
+   "Grant_Focus": "Energy access enterprises, climate-resilient livelihoods",
+   "URL": "",
+   "Why_This_Funder": "Backs early-stage energy-access enterprises and models; relevant to the clean-energy financing experiments (EXP-02, EXP-08). Confirm whether it funds research or only ventures.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-08",
+   "Funder_Name": "Green Climate Fund (GCF)",
+   "Type": "Multilateral climate fund",
+   "Geography": "Developing countries",
+   "Grant_Focus": "Climate adaptation and mitigation, incl. private-sector facility",
+   "URL": "",
+   "Why_This_Funder": "Largest dedicated climate fund; more project- than research-oriented, but its readiness and private-sector windows may support blended-structure design. Requires an accredited entity - research the access route.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-09",
+   "Funder_Name": "Rockefeller Foundation",
+   "Type": "Foundation",
+   "Geography": "Global",
+   "Grant_Focus": "Innovative finance, climate and poverty",
+   "URL": "",
+   "Why_This_Funder": "History of funding innovative and blended finance at the climate-poverty intersection; potential design/convening support. Research current initiatives and entry point.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-10",
+   "Funder_Name": "AFD / Proparco",
+   "Type": "DFI (bilateral)",
+   "Geography": "Africa / MENA",
+   "Grant_Focus": "Development research, blended finance, climate",
+   "URL": "",
+   "Why_This_Funder": "French DFI group active across Africa and MENA with both research and blended-finance windows; relevant to structuring as well as study funding. Identify the research vs investment desk.",
+   "Status": "Not researched"
+  }
+ ],
  "macroSeries": {
   "MAC-01": [
    [

@@ -634,12 +634,14 @@ var TABS = [
   { id: "overview",  label: "Overview",       count: null },
   { id: "library",   label: "Library",        count: function () { return (D.docs || []).length; } },
   { id: "research",  label: "Research plan",  count: function () { return (D.literature || []).length; } },
+  { id: "experiments", label: "Experiments", count: function () { return (D.experiments || []).length; } },
   { id: "products",  label: "Product lines",  count: function () { return (D.productLines || []).length; } },
   { id: "risktools", label: "Risk tools",     count: function () { return (D.riskTools || []).length; } },
   { id: "macro",     label: "Macro watch",    count: function () { return (D.macroIndicators || []).length; } },
   { id: "business",  label: "Business plan",  count: null },
   { id: "questions", label: "Open questions", count: function () { return (D.openQuestions || []).length; } },
   { id: "partners",  label: "Partners",       count: function () { return (D.partners || []).length; } },
+  { id: "funders",   label: "Funders",        count: function () { return (D.funders || []).length; } },
   { id: "phd",       label: "PhD pipeline",   count: function () { return (D.phdPrograms || []).length; } },
   { id: "resources", label: "Resources",      count: function () { return (D.resources || []).length; } }
 ];
@@ -672,6 +674,8 @@ function renderOverview() {
         hasPrivate ? contacted + " contacted" : "status in private overlay") +
       tile("PhD programs", (D.phdPrograms || []).length,
         hasPrivate ? "" : "status in private overlay") +
+      tile("Experiment ideas", (D.experiments || []).length, "climate + poverty, Africa/MENA") +
+      tile("Funders tracked", (D.funders || []).length, "grant pipeline") +
       tile("Documents", (D.docs || []).length, (c.totalWords || 0).toLocaleString() + " words") +
       tile("Resources", (D.resources || []).length, "incl. Drive vault") +
     "</div>" +
@@ -828,6 +832,10 @@ function renderBusiness() {
 
   var html = '<section class="panel"><h2>Business plan &amp; tracker</h2>' +
     '<p class="lede">The current plan, the 60/90-day milestone tracker, and the structuring assumptions the plan rests on.</p>' +
+
+    decisionsCallout([
+      { id: "OQ-10", text: "the internal go/no-go economics threshold — what blended return, over what horizon, at what deal count counts as a viable business (needed before the unit-economics model can produce an actionable answer)" }
+    ]) +
 
     '<h3 class="sub">Milestone tracker</h3>' +
     '<div class="grid g2" style="margin-bottom:16px">' +
@@ -1304,11 +1312,122 @@ function renderResources() {
   return html;
 }
 
+/* Surfaces the decisions a tab raises, linking each to its open-question row.
+   The #questions hrefs work because boot() listens for hashchange. */
+function decisionsCallout(items) {
+  return '<div class="card" style="margin-bottom:16px;border-color:var(--accent)">' +
+    "<strong>Decisions this needs — open, and yours to make.</strong> " +
+    '<span class="hint">Each is logged on the <a href="#questions">Open questions</a> tab.</span>' +
+    '<ul style="margin:8px 0 0;padding-left:20px;font-size:13.5px;color:var(--text-2)">' +
+    items.map(function (it) {
+      return '<li><a href="#questions"><code>' + esc(it.id) + "</code></a> — " + esc(it.text) + "</li>";
+    }).join("") + "</ul></div>";
+}
+
+function renderExperiments() {
+  var xs = D.experiments || [];
+  var geos = [];
+  xs.forEach(function (r) { if (geos.indexOf(r.Geography) < 0) geos.push(r.Geography); });
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Community_Context", label: "Community", cls: "wrap-cell" },
+    { key: "Problem", label: "Problem", cls: "wrap-cell" },
+    { key: "SDG_Refs", label: "SDGs" },
+    { key: "Geography", label: "Geography" },
+    { label: "Status", render: function (r) { return pill(r.Status); } }
+  ];
+  function detail(r) {
+    return fields([
+      ["Problem", esc(r.Problem)],
+      ["Product concept", esc(r.Product_Concept)],
+      ["Toolbox fit", esc(r.Toolbox_Fit)],
+      ["Theme", esc(r.Theme)],
+      ["SDG references", esc(r.SDG_Refs)],
+      ["Linked records", esc(r.Linked_Refs)]
+    ]);
+  }
+  var html = '<section class="panel"><h2>Research experiments</h2>' +
+    '<p class="lede">Candidate experiments for the research proposal: a community with a specified climate-or-poverty problem, ' +
+    'a financial product that could address it, and how the venture toolkit fits. These are ideas at concept stage — the raw ' +
+    'material the opportunity-mapping methodology scores and narrows to a flagship shortlist. See ' +
+    '<code>docs/research-proposal.md</code> and <code>docs/methodology-opportunity-mapping.md</code>.</p>' +
+    decisionsCallout([
+      { id: "OQ-9", text: "the criteria and weights that score these (opportunity size vs toolbox capacity)" },
+      { id: "OQ-11", text: "which 2-3 of these become the flagship pilots taken into field design" }
+    ]) +
+    '<div class="filters"><select class="pickr" id="exp-geo"><option value="">All geographies</option>' +
+    geos.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +
+    '</select><span class="hint">Click a row for the product concept and toolbox fit.</span></div>' +
+    '<div id="exp-tbl"></div></section>';
+  setTimeout(function () {
+    var geo = by("exp-geo"), host = by("exp-tbl");
+    function draw() {
+      var rows = xs.filter(function (r) { return !geo.value || r.Geography === geo.value; });
+      host.innerHTML = buildTable(rows, cols, detail);
+      wireTable(host);
+    }
+    geo.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
+function renderFunders() {
+  var f = D.funders || [];
+  var types = [];
+  f.forEach(function (r) { if (types.indexOf(r.Type) < 0) types.push(r.Type); });
+
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    {
+      label: "Funder", cls: "wrap-cell", render: function (r) {
+        return nameLink(r.Funder_Name, r.URL, r.Funder_Name);
+      }
+    },
+    { key: "Type", label: "Type", cls: "wrap-cell" },
+    { key: "Geography", label: "Geography" },
+    { label: "Status", render: function (r) { return pill(r.Status); } }
+  ];
+  function detail(r) {
+    return fields([
+      ["Grant focus", esc(r.Grant_Focus)],
+      ["Why this funder", autoLink(r.Why_This_Funder)],
+      ["Website", r.URL
+        ? extLink(r.URL, r.URL)
+        : '<span class="hint">not verified yet — pending the funder-research pass (M-19). URLs stay blank until checked.</span>'],
+      ["Status", pill(r.Status)]
+    ]);
+  }
+  var html = '<section class="panel"><h2>Funders</h2>' +
+    '<p class="lede">The grant pipeline for the research experiments — money that buys evidence, kept separate from the ' +
+    'blended/DFI capital that funds the investment structures. Organised into four lanes (impact-evaluation funders, ' +
+    'development-research desks, climate + poverty foundations, climate funds). Strategy in ' +
+    '<code>docs/funding-pipeline.md</code>. Contact people live in the private overlay, never here.</p>' +
+    '<div class="card" style="margin-bottom:16px;border-color:var(--warning)">' +
+    "<strong>Every row is at " + esc((f[0] || {}).Status || "Not researched") + " stage.</strong> " +
+    '<span class="hint">URLs, live calls, deadlines and grant sizes are pending the funder-research pass (M-19). ' +
+    "Nothing here is a verified program yet.</span></div>" +
+    '<div class="filters"><select class="pickr" id="fund-type"><option value="">All types</option>' +
+    types.map(function (t) { return '<option value="' + esc(t) + '">' + esc(t) + "</option>"; }).join("") +
+    '</select><span class="hint">Click a row for grant focus and why it fits.</span></div>' +
+    '<div id="fund-tbl"></div></section>';
+  setTimeout(function () {
+    var typ = by("fund-type"), host = by("fund-tbl");
+    function draw() {
+      var rows = f.filter(function (r) { return !typ.value || r.Type === typ.value; });
+      host.innerHTML = buildTable(rows, cols, detail);
+      wireTable(host);
+    }
+    typ.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
 var RENDER = {
   overview: renderOverview, library: renderLibrary, research: renderResearch,
-  products: renderProducts, risktools: renderRiskTools, macro: renderMacro,
-  business: renderBusiness, questions: renderQuestions,
-  partners: renderPartners, phd: renderPhd, resources: renderResources
+  experiments: renderExperiments, products: renderProducts, risktools: renderRiskTools,
+  macro: renderMacro, business: renderBusiness, questions: renderQuestions,
+  partners: renderPartners, funders: renderFunders, phd: renderPhd, resources: renderResources
 };
 
 /* ------------------------------------------------------------------- boot */
@@ -1333,6 +1452,14 @@ function boot() {
   }).join("");
   Array.prototype.forEach.call(by("tabs").children, function (b) {
     b.addEventListener("click", function () { show(b.dataset.tab); });
+  });
+
+  /* In-content links like the decisions callout use #tab hrefs. show() itself
+     only syncs the hash via replaceState (which never fires hashchange), so this
+     listener is what lets those anchors switch tabs without a reload loop. */
+  window.addEventListener("hashchange", function () {
+    var id = location.hash.slice(1);
+    if (RENDER[id]) show(id);
   });
 
   var m = D.meta || {};
