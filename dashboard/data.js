@@ -2428,6 +2428,24 @@ window.SFV_DATA = {
    "Status": "Done",
    "Owner": "BB",
    "Linked_Refs": "OQ-10; OQ-2; RT-6; LIT-016; LIT-017; LIT-018; LIT-019"
+  },
+  {
+   "ID": "M-24",
+   "Phase": "Days 31-60",
+   "Milestone": "Calibrate RT-6 against partner MIS and counsel (replace the two stubborn assumed drivers)",
+   "Detail": "The RT-6 OQ-10 answer is conditional because 18/23 drivers are assumed; two swing the verdict most and are the priority. (1) Fixed structuring cost per deal - no open-access benchmark exists, so get a real quote from securities counsel alongside the OQ-1 jurisdiction scan (PT-09). (2) Origination layer's share of the spread - get it from partner MIS during originator screening (M-04, PT-03/PT-04). Feed both back into economics-config.csv, re-run, and update OQ-10. Moves RT-6 from illustrative toward evidential.",
+   "Status": "Not started",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-10; OQ-1; RT-6; PT-03; PT-04; PT-09; M-04"
+  },
+  {
+   "ID": "M-25",
+   "Phase": "Days 61-90",
+   "Milestone": "RT-6 v0.2: tie the loss assumption to RT-5 and model a revolving warehouse",
+   "Detail": "Two model extensions flagged in rt-6-economics-model.md. (1) Wire RT-6's expected-loss driver to read an RT-5 scenario's mean/p95 loss directly, so the credit and economics tools share one loss view instead of a hand-set config value. (2) Model a revolving warehouse that recycles principal several times per year - the current single-life treatment understates the fee base for short-tenor VSLA assets. Depends on the warehouse design firming up (M-22).",
+   "Status": "Not started",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-10; RT-5; RT-6; M-22"
   }
  ],
  "memos": [
@@ -9130,7 +9148,7 @@ window.SFV_DATA = {
    },
    "milestonesByStatus": {
     "Done": 7,
-    "Not started": 12,
+    "Not started": 14,
     "In progress": 4
    },
    "partnersByStatus": {
