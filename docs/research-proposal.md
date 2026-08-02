@@ -24,8 +24,11 @@ rejected, just not this proposal.
 
 **Direction decided (2026-08-02).** Working through OQ-9/10/11 landed four choices that shape the rest:
 
-- **Win condition — research / evidence-first.** The opportunity map is weighted toward impact and clean
-  measurement; the asset/structuring side is a feasibility filter (OQ-9, resolved).
+- **Win condition — research / evidence-first, with commercial viability an explicit co-goal.** The
+  opportunity map is weighted toward impact and clean measurement (OQ-9, resolved), and the asset/structuring
+  side is kept as a feasibility filter precisely so the flagship assets stay structurable. Commercial
+  viability is to be *proven during the research stage, not after it* — which is why the blended-structure
+  design (OQ-6, M-22) and the go/no-go economics (OQ-10) run in parallel with the pilots rather than waiting.
 - **Flagship portfolio — three uncorrelated experiments** (OQ-11, resolved): **EXP-01** crop drought-index
   (rural smallholders), **EXP-02** clean-energy PAYGO (energy / enterprise), **EXP-06** multi-peril
   parametric climate cover (urban informal settlements).
