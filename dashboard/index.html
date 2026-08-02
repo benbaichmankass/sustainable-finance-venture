@@ -323,6 +323,14 @@ function pill(v) {
   if (!v) return '<span class="hint">—</span>';
   return '<span class="pill ' + statusClass(v) + '"><span class="dot"></span>' + esc(v) + "</span>";
 }
+/* Fit tier -> reuse existing status hues (never a new palette slot):
+   1 = best combined fit (good), 2 = strong with a caveat (warning), 3 = supporting (neutral). */
+function tierPill(v) {
+  v = String(v || "").trim();
+  if (!v) return '<span class="hint">—</span>';
+  var cls = v === "1" ? "good" : v === "2" ? "warning" : "";
+  return '<span class="pill ' + cls + '"><span class="dot"></span>Tier ' + esc(v) + "</span>";
+}
 
 /* ------------------------------------------------- minimal markdown render */
 function inlineMd(s) {
@@ -1245,13 +1253,22 @@ function renderPhd() {
       }
     },
     { key: "Department_Program", label: "Department", cls: "wrap-cell" },
-    { key: "Country", label: "Country" }
+    { key: "Region", label: "Region" },
+    { key: "Country", label: "Country" },
+    { label: "Fit", render: function (r) { return tierPill(r.Tier); } }
   ];
   if (hasPrivate) cols.push({ label: "Status", render: function (r) { return pill(r.Application_Status); } });
 
   function detail(r) {
     return fields([
       ["Fit", autoLink(r.Fit_Notes)],
+      ["Format", autoLink(r.Format)],
+      ["Funding", autoLink(r.Funding_Summary)],
+      ["Key supervisors", autoLink(r.Key_Supervisors)],
+      ["Advantages", autoLink(r.Advantages)],
+      ["Disadvantages", autoLink(r.Disadvantages)],
+      ["Venture & pilot fit", autoLink(r.Venture_Pilot_Fit)],
+      ["Verification", esc(r.Verification_Status)],
       ["Site", r.URL ? extLink(r.URL, r.URL) : '<span class="hint">none recorded</span>'],
       ["Candidate supervisors", esc(r.Candidate_Supervisors)],
       ["Next step", esc(r.Outreach_Plan)],
@@ -1259,8 +1276,9 @@ function renderPhd() {
     ]);
   }
   var html = '<section class="panel"><h2>PhD pipeline</h2>' +
-    '<p class="lede">Target programs and why each fits. Named supervisors, application status and outreach plans are personal ' +
-    'and live in the private overlay; application materials live in the Drive Vault, not the repo.</p>' +
+    '<p class="lede">Target programs and why each fits, with format, funding, publicly-listed supervisors, advantages, ' +
+    'disadvantages and a fit tier (1 best combined fit, 2 strong with a caveat, 3 supporting). Click a row for the detail. ' +
+    'Application status and outreach plans are personal and live in the private overlay; application materials live in the Drive Vault, not the repo.</p>' +
     (hasPrivate ? "" : privateNotice("Supervisor targeting and application status")) +
     '<div id="phd-tbl"></div></section>';
   setTimeout(function () { var h = by("phd-tbl"); h.innerHTML = buildTable(p, cols, detail); wireTable(h); }, 0);
