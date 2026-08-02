@@ -1301,8 +1301,8 @@ window.SFV_DATA = {
    "ID": "M-18",
    "Phase": "Week of 2026-08-02",
    "Milestone": "Wire the experiments and funders trackers into the dashboard",
-   "Detail": "New CSVs data/experiments.csv and data/funders.csv are not yet read by dashboard/build.py; add tables and tabs so they render. Build work, deferred from the scaffold pass.",
-   "Status": "Not started",
+   "Detail": "build.py reads both CSVs; index.html has Experiments and Funders tabs with filters and detail rows, plus decisions callouts (OQ-9/OQ-11 on Experiments, OQ-10 on Business) and overview tiles.",
+   "Status": "Done",
    "Owner": "BB",
    "Linked_Refs": "EXP-01..EXP-08; FUND-01..FUND-10"
   },
@@ -7997,8 +7997,8 @@ window.SFV_DATA = {
     "Open": 7
    },
    "milestonesByStatus": {
-    "Done": 3,
-    "Not started": 10,
+    "Done": 4,
+    "Not started": 9,
     "In progress": 6
    },
    "partnersByStatus": {
