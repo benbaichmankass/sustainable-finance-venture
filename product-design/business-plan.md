@@ -41,7 +41,7 @@ Tracked in `data/product-lines.csv`.
 
 And they are close to uncorrelated. A community loan book and a portfolio of utility PPAs have almost no shared risk driver: different obligors, different macro exposure, different failure modes. That is exactly the diversification the SDS plan argued for, and neither line achieves it alone — PL-2 in particular is only superficially diversified, since many small projects still face one offtaker and one regulator.
 
-Whether that means they should share a *vehicle* is a separate and open question — investors and rating agencies generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one. Recorded as OQ-8.
+Whether that means they should share a *vehicle* is a separate question — investors and rating agencies generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one. **Resolved (OQ-8, 2026-08-02): keep separate homogeneous pools**, and capture the PL-1/PL-2 diversification at the fund/investor level rather than inside one pool.
 
 **Sequencing.** PL-1 leads, because it carries the research programme and the PhD, and because its evidence base is real. PL-2 is closer to revenue and has a cleaner asset, so it may well produce the first pooled structure. They are not competing for the same milestone.
 
