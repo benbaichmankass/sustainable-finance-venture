@@ -30,8 +30,12 @@ impact. The distinction is the whole point of the methodology.
 
 ## 2. Identified how — causal design
 
-Builds directly on the open questions already logged (OQ-4, OQ-5). The proposal does not commit to
-a single design across all sites; it commits to a *hierarchy of preference* and picks per pilot.
+Builds directly on the open questions already logged (OQ-4, OQ-5). **Direction set (2026-08-02): the
+flagship portfolio is 2–3 parallel, lean, pre-registered RCTs sharing a single verification
+partner** — so the partner (OQ-7, PT-05) and an anchor evaluation grant become gating prerequisites,
+not parallel nice-to-haves. Sharing one partner favors experiments with a *common measurement
+architecture*, which is one reason two of the three flagships are parametric (see the portfolio
+note below). The proposal still commits to a *hierarchy of preference* per pilot:
 
 1. **Cluster-randomized rollout** — preferred where ethically and operationally feasible
    (randomize at the savings-group / village level). Cleanest identification. OQ-4 notes this is
@@ -47,6 +51,14 @@ Cross-cutting design requirements:
   without knowing treatment status).
 - **Powered for the resilience effect**, not just the mean effect — the interesting outcomes are
   in the tails (what happens in a shock), which drives sample size.
+
+**The flagship portfolio (OQ-11):** EXP-01 crop drought-index (rural smallholders), EXP-02
+clean-energy PAYGO (energy / enterprise), EXP-06 multi-peril parametric climate cover (urban
+informal settlements). The two parametric lines (EXP-01, EXP-06) share a trigger → payout →
+loss-avoided measurement design, which is what makes running them in parallel under one partner
+affordable. EXP-06 spans several perils (flood, drought/heat, storm), but that raises *product*
+complexity, not *identification* complexity: access to the cover is randomized and resilience
+outcomes are measured whatever peril actually strikes.
 
 ## 3. Verified by whom — independence
 

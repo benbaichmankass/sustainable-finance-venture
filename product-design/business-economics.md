@@ -85,11 +85,24 @@ The **[assumed]** rows are the shopping list. Each maps to a partner or source t
 guess with a number — which is precisely how the research phase produces the benchmarks the user
 asked for.
 
-## 5. What "profitable business" means here (to define)
+## 5. What "profitable business" means here (decided)
 
-Before the model can answer go/no-go, we need a threshold: what blended return, over what horizon,
-at what minimum deal count, counts as "this works"? That definition is a decision, not an output —
-logged as **OQ-10**. Without it the model produces numbers no one can act on.
+**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do
+the unit economics show a defensible route to the structuring layer covering its costs plus a target
+margin, at a scale we can realistically reach, with the key assumptions named and testable? Three
+deliberate choices around it:
+
+- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is
+  from covering itself and what would close the gap — but a pilot failing to break even is expected and
+  is not a "no".
+- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the
+  question between the pilot floor and the path to scale.
+- **Gate on our own P&L; investor returns are a constraint.** "Is this a business for us" is judged on the
+  structuring company's economics; the tranche returns to junior / senior investors are a binding
+  constraint (if they do not clear, there is no deal to structure), not the primary gate.
+
+What remains is calibration: the concrete benchmark numbers (the **[assumed]** rows in §4), now anchored
+on the flagship assets chosen in OQ-11.
 
 ## 6. Sequence
 
@@ -101,5 +114,6 @@ logged as **OQ-10**. Without it the model produces numbers no one can act on.
 
 ## Deliverable state
 
-Plan + benchmark skeleton. Remaining work: OQ-10 (threshold), then build the model (candidate new
-risk-tool). Feeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6.
+Plan + benchmark skeleton; OQ-10 framing now locked (§5). Remaining work: calibrate the [assumed]
+benchmark rows against the flagship assets (OQ-11), then build the model (candidate new risk-tool).
+Feeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6.

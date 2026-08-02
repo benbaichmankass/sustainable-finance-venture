@@ -22,6 +22,20 @@ rejected, just not this proposal.
 | 4. 5–10 experiment ideas | `data/experiments.csv` (EXP-01…) | Populated |
 | 5. Grant / funding plan | `docs/funding-pipeline.md` + `data/funders.csv` | Plan + tracker |
 
+**Direction decided (2026-08-02).** Working through OQ-9/10/11 landed four choices that shape the rest:
+
+- **Win condition — research / evidence-first.** The opportunity map is weighted toward impact and clean
+  measurement; the asset/structuring side is a feasibility filter (OQ-9, resolved).
+- **Flagship portfolio — three uncorrelated experiments** (OQ-11, resolved): **EXP-01** crop drought-index
+  (rural smallholders), **EXP-02** clean-energy PAYGO (energy / enterprise), **EXP-06** multi-peril
+  parametric climate cover (urban informal settlements).
+- **Field design — 2–3 parallel, lean, pre-registered RCTs sharing one verification partner.** This makes the
+  verification partner (OQ-7, PT-05) and an anchor evaluation grant (FUND-02/03) *gating prerequisites*,
+  reordering the near-term critical path: lock the trio → verification partner co-designs the shared
+  measurement → anchor grant application (M-20 → M-21).
+- **Go/no-go economics — a credible path to at-scale profitability is the gate**, with pilot-breakeven as a
+  companion yardstick and no fixed-scale anchor (OQ-10, framing locked; numbers pending).
+
 ---
 
 ## 0. Research question
