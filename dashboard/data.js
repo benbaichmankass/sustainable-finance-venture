@@ -279,9 +279,9 @@ window.SFV_DATA = {
    "Question": "Which RCT design (cluster randomization vs. stepped-wedge) is most feasible given VSLA group structures and ethical/operational constraints in Israel vs. Africa pilots?",
    "Category": "Research Design",
    "Linked_Area": "PhD Programs / Pilot Design",
-   "Status": "Open",
+   "Status": "Partially answered",
    "Owner": "BB",
-   "Notes": "Cluster randomization likely cleaner for Israel (smaller, controlled pilot); stepped-wedge may be more acceptable to African NGO partners who resist withholding treatment - confirm with prospective supervisors and verification partners.",
+   "Notes": "Direction set 2026-08-02: the flagship portfolio is 2-3 parallel, lean, pre-registered RCTs sharing a single verification partner (Africa/MENA focus). Cluster randomization at the group/village level is the default; stepped-wedge where a partner resists withholding treatment. The specific design per experiment is to be co-developed with the verification partner (OQ-7). Cluster randomization likely cleaner where the pilot is smaller and controlled.",
    "Evidence_Refs": "LIT-001; LIT-002"
   },
   {
@@ -311,8 +311,8 @@ window.SFV_DATA = {
    "Linked_Area": "Partner Tracker",
    "Status": "Open",
    "Owner": "BB",
-   "Notes": "Shortlist candidates from J-PAL affiliated field offices, CGAP, and local university research centers in Israel and target African country; confirm data-sharing and IRB requirements.",
-   "Evidence_Refs": ""
+   "Notes": "NOW GATING (2026-08-02): the chosen field design - 2-3 parallel lean RCTs sharing one partner (OQ-4, OQ-11) - makes securing this partner a prerequisite for the flagship portfolio, not a parallel task. Shortlist from J-PAL affiliated field offices (PT-05), CGAP, and university research centres in the target Africa/MENA countries; confirm data-sharing and IRB requirements. Feeds the anchor grant application (FUND-02/FUND-03) and milestone M-20.",
+   "Evidence_Refs": "EXP-01; EXP-02; EXP-06"
   },
   {
    "ID": "OQ-8",
@@ -323,6 +323,36 @@ window.SFV_DATA = {
    "Owner": "BB",
    "Notes": "The case for blending: the two lines are close to uncorrelated (different obligors, macro exposure and failure modes), which is exactly the diversification the SDS work plan argued for. Neither achieves it alone - PL-2 in particular is only superficially diversified, since many small projects still face one offtaker and one regulator. The case against: investors and rating agencies generally prefer homogeneous pools, and mixing an unproven asset class with a legible one risks contaminating the legible one rather than lifting the other. Likely resolved by structuring advice rather than literature - raise with PT-08 (impact asset managers) and PT-09 (counsel).",
    "Evidence_Refs": "LIT-008; LIT-011; LIT-012"
+  },
+  {
+   "ID": "OQ-9",
+   "Question": "What criteria and weights define the SDG opportunity-mapping score - how do we weight opportunity size versus toolbox capacity, and the sub-criteria within each?",
+   "Category": "Research Design",
+   "Linked_Area": "Research Proposal / Methodology",
+   "Status": "Answered",
+   "Owner": "BB",
+   "Notes": "Resolved 2026-08-02: research/evidence-first. Axis X (opportunity) is scored with impact leverage and measurability/RCT-feasibility weighted High, depth of need and precedent Medium, gap magnitude/neglectedness Low. Axis Y (toolbox) is demoted to a minimum-bar filter plus a light tie-breaker rather than a heavily weighted score, so the poolable-asset thesis stays alive without overriding the cleanest study. Scheme written into docs/methodology-opportunity-mapping.md. Still open: the Axis-X evidence anchors (climate-financing-gap sizing, resilience-metric literature).",
+   "Evidence_Refs": "EXP-01..EXP-08"
+  },
+  {
+   "ID": "OQ-10",
+   "Question": "What internal go/no-go economics threshold defines this as a viable business during the research phase - target blended return, over what horizon, at what minimum deal count and break-even notional?",
+   "Category": "Business Economics",
+   "Linked_Area": "Business Plan / Product Design",
+   "Status": "Partially answered",
+   "Owner": "BB",
+   "Notes": "Framing locked 2026-08-02: the go/no-go GATE is a credible path to at-scale profitability at a scale we can realistically reach (assumptions named and testable); pilot-level breakeven rides alongside as a concrete near-term yardstick, not the gate; no single fixed-scale target is assumed. Gate on our own structuring-company P&L, with investor-return hurdles as a binding constraint (if the tranches do not clear, there is no deal). Remaining work: set the concrete benchmark numbers (the [assumed] rows in business-economics.md), which depend on the flagship assets now chosen in OQ-11.",
+   "Evidence_Refs": "OQ-2"
+  },
+  {
+   "ID": "OQ-11",
+   "Question": "Which 2-3 of the logged experiments (EXP-01..EXP-08) should become the flagship candidates taken into pilot and PhD field design?",
+   "Category": "Research Design",
+   "Linked_Area": "Research Proposal / Pilot Design",
+   "Status": "Answered",
+   "Owner": "BB",
+   "Notes": "Resolved 2026-08-02 from the research-first scoring pass (OQ-9). Flagship trio: EXP-01 (crop drought-index, rural smallholders), EXP-02 (clean-energy PAYGO, energy/enterprise), EXP-06 (multi-peril parametric climate cover, urban informal settlements). Chosen for three uncorrelated risk drivers (the pooling thesis) plus clean measurability; EXP-01 and EXP-06 share a parametric measurement design, making parallel RCTs under one verification partner affordable. Selection is subject to the verification partner confirming design feasibility (OQ-7).",
+   "Evidence_Refs": "EXP-01; EXP-02; EXP-06"
   }
  ],
  "productLines": [
@@ -1914,6 +1944,96 @@ window.SFV_DATA = {
    "Status": "Not started",
    "Owner": "BB",
    "Linked_Refs": "PHD-01..PHD-09"
+  },
+  {
+   "ID": "M-12",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Stand up the research-proposal framework spine",
+   "Detail": "docs/research-proposal.md assembled: research question narrowed to climate + poverty in Africa/MENA, five deliverables mapped to their homes, lit-review section framed from existing memos with gaps flagged. Deep drafting is the follow-on.",
+   "Status": "In progress",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-9; OQ-10; OQ-11"
+  },
+  {
+   "ID": "M-13",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Opportunity-mapping methodology: weights resolved and first scoring pass run",
+   "Detail": "docs/methodology-opportunity-mapping.md now carries the resolved research-first weighting (OQ-9) and the first scoring pass produced the flagship trio EXP-01/EXP-02/EXP-06 (OQ-11). Axis-X evidence anchors still to fill.",
+   "Status": "Done",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-9; OQ-11"
+  },
+  {
+   "ID": "M-14",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Draft the impact-measurement methodology skeleton",
+   "Detail": "docs/methodology-impact-measurement.md: outcome metrics (climate resilience + poverty), causal-design hierarchy (builds on OQ-4/OQ-5) and independent verification (OQ-7). Metric selection per experiment follows OQ-11.",
+   "Status": "In progress",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-4; OQ-5; OQ-7"
+  },
+  {
+   "ID": "M-15",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Log 5-10 research experiment ideas",
+   "Detail": "data/experiments.csv populated with EXP-01..EXP-08: community + specified climate/poverty problem + candidate financial product + toolbox fit, all Africa/MENA.",
+   "Status": "Done",
+   "Owner": "BB",
+   "Linked_Refs": "EXP-01..EXP-08"
+  },
+  {
+   "ID": "M-16",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Draft the grant / funding-raising plan",
+   "Detail": "docs/funding-pipeline.md plus data/funders.csv (FUND-01..FUND-10): four funder lanes, cost buckets and a sequenced ask. Funder-research pass (verify live, calls, deadlines, URLs) is the follow-on.",
+   "Status": "In progress",
+   "Owner": "BB",
+   "Linked_Refs": "FUND-01..FUND-10"
+  },
+  {
+   "ID": "M-17",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Draft the business-economics analysis plan and benchmark skeleton",
+   "Detail": "product-design/business-economics.md: deal cost stack, revenue lines, unit-economics model spec and a benchmark table splitting [sourced] from [assumed]. Fills business-plan.md section 10. Model build follows OQ-10.",
+   "Status": "In progress",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-2; OQ-6; OQ-10"
+  },
+  {
+   "ID": "M-18",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Wire the experiments and funders trackers into the dashboard",
+   "Detail": "build.py reads both CSVs; index.html has Experiments and Funders tabs with filters and detail rows, plus decisions callouts (OQ-9/OQ-11 on Experiments, OQ-10 on Business) and overview tiles.",
+   "Status": "Done",
+   "Owner": "BB",
+   "Linked_Refs": "EXP-01..EXP-08; FUND-01..FUND-10"
+  },
+  {
+   "ID": "M-19",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Funder-research pass: verify and populate data/funders.csv",
+   "Detail": "Confirm each funder is live, find current calls/deadlines/typical grant size, and verify a URL before committing it (blank until verified, per the repo rule).",
+   "Status": "Not started",
+   "Owner": "BB",
+   "Linked_Refs": "FUND-01..FUND-10"
+  },
+  {
+   "ID": "M-20",
+   "Phase": "Days 31-60",
+   "Milestone": "Secure the verification partner and co-design the 3-experiment measurement",
+   "Detail": "Gating prerequisite for the flagship portfolio: the chosen field design (2-3 parallel lean RCTs sharing one partner) needs a committed verification partner. Take the EXP-01/EXP-02/EXP-06 design to PT-05 (J-PAL) and co-develop the shared parametric measurement architecture.",
+   "Status": "Not started",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-7; PT-05; EXP-01; EXP-02; EXP-06"
+  },
+  {
+   "ID": "M-21",
+   "Phase": "Days 31-60",
+   "Milestone": "Anchor impact-evaluation grant application",
+   "Detail": "Once the 3-experiment design is co-developed with the verification partner, apply to a lane-1 impact-evaluation funder (FUND-02 3ie or FUND-03 J-PAL K-CAI) to fund the parallel RCTs. Grant is the second gating prerequisite for the portfolio.",
+   "Status": "Not started",
+   "Owner": "BB",
+   "Linked_Refs": "FUND-02; FUND-03; M-20"
   }
  ],
  "memos": [
@@ -2152,6 +2272,206 @@ window.SFV_DATA = {
    "Location": "Web",
    "URL": "https://www.thesavix.org/",
    "Notes": "Savings-group management information system data - benchmark for the PL-1 origination schema"
+  }
+ ],
+ "experiments": [
+  {
+   "ID": "EXP-01",
+   "Theme": "Climate + Poverty",
+   "Geography": "Sahel / East Africa",
+   "Community_Context": "Rainfed smallholder farmers organised in VSLAs",
+   "Problem": "Rainfall variability destroys harvests and repayment capacity, pushing families deeper into poverty; climate shocks go uninsured.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 13",
+   "Product_Concept": "Parametric drought-index insurance bundled into VSLA crop loans, with the premium financed into the loan principal so cover is automatic rather than opt-in.",
+   "Toolbox_Fit": "RT-1 schema captures agro-climate and geospatial tags; RT-3 monitor watches rainfall-index triggers; impact module measures consumption smoothing through shocks.",
+   "Linked_Refs": "PL-1; OQ-3; OQ-11",
+   "Status": "Selected"
+  },
+  {
+   "ID": "EXP-02",
+   "Theme": "Climate + Poverty",
+   "Geography": "East / West Africa (off-grid rural)",
+   "Community_Context": "Off-grid rural households reached through VSLAs",
+   "Problem": "Energy poverty and biomass-cooking emissions; households cannot finance solar home systems or clean cookstoves.",
+   "SDG_Refs": "SDG 1; SDG 7; SDG 13",
+   "Product_Concept": "PAYGO-style clean-energy asset loan originated through the VSLA under a group guarantee, with repayment data standardised for later pooling.",
+   "Toolbox_Fit": "Underwriting engine uses group repayment signals; securitization modelling on the clean-energy receivables pool.",
+   "Linked_Refs": "PL-1; OQ-11",
+   "Status": "Selected"
+  },
+  {
+   "ID": "EXP-03",
+   "Theme": "Climate + Poverty",
+   "Geography": "North Africa / MENA (water-scarce)",
+   "Community_Context": "Smallholder cooperatives on water- and land-constrained plots",
+   "Problem": "Climate stress on land and water; smallholders lack capital for climate-smart dual-use solar-plus-agriculture.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 7; SDG 13",
+   "Product_Concept": "Cooperative project-finance vehicle blending PPA revenue and crop revenue, with a DFI first-loss layer to attract senior capital.",
+   "Toolbox_Fit": "Waterfall modelling and PPA cash-flow verification carried over from PL-2; schema extended to cooperative membership.",
+   "Linked_Refs": "PL-2; OQ-8",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-04",
+   "Theme": "Climate + Poverty",
+   "Geography": "East Africa",
+   "Community_Context": "Grain-farming households aggregated through savings groups",
+   "Problem": "Climate-driven price volatility and post-harvest loss force distress sales at the bottom of the market, entrenching poverty.",
+   "SDG_Refs": "SDG 1; SDG 2; SDG 13",
+   "Product_Concept": "Warehouse-receipt-backed lending via VSLA aggregation, with cover against storage loss, letting farmers borrow against stored grain and sell when prices recover.",
+   "Toolbox_Fit": "Standardised warehouse receipts become poolable receivables; monitoring tracks storage conditions and price triggers.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-05",
+   "Theme": "Climate + Poverty",
+   "Geography": "Horn of Africa",
+   "Community_Context": "Pastoralist communities whose livestock is their primary store of wealth",
+   "Problem": "Drought kills livestock, the main asset of the poor, driving recurrent poverty traps.",
+   "SDG_Refs": "SDG 1; SDG 13",
+   "Product_Concept": "Index-based livestock insurance bundled with savings-group credit, paying out on satellite-measured forage scarcity before animals die (building on the index-based livestock insurance precedent).",
+   "Toolbox_Fit": "Index triggers, monitoring and impact-evaluation modules; schema captures herd and geospatial data.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-06",
+   "Theme": "Climate + Poverty",
+   "Geography": "Coastal West Africa / MENA",
+   "Community_Context": "Urban and peri-urban poor in climate-exposed informal settlements",
+   "Problem": "Recurrent climate shocks - flooding, but also drought/heat and storms - destroy the productive assets of low-income households, resetting them into poverty.",
+   "SDG_Refs": "SDG 1; SDG 11; SDG 13",
+   "Product_Concept": "Multi-peril parametric climate cover (flood, drought/heat, storm) paired with a resilience-retrofit microloan, financed through community groups. Access to the cover is randomised, so the impact design stays clean even though the product spans several triggers.",
+   "Toolbox_Fit": "Schema plus multi-peril parametric triggers; RT-3 monitor doubles as an early-warning signal. Shares a trigger to payout to loss-avoided measurement design with EXP-01.",
+   "Linked_Refs": "PL-1; OQ-11",
+   "Status": "Selected"
+  },
+  {
+   "ID": "EXP-07",
+   "Theme": "Climate + Poverty",
+   "Geography": "MENA remittance corridors (Gulf to North / East Africa)",
+   "Community_Context": "Remittance-dependent households in climate-vulnerable home regions",
+   "Problem": "Households reliant on migrant remittances hold no formal savings or climate cover, so a shock abroad or at home cascades into poverty.",
+   "SDG_Refs": "SDG 1; SDG 10; SDG 13",
+   "Product_Concept": "Remittance-linked savings-and-microinsurance product anchored to a home-side community group, converting part of each transfer into resilience cover.",
+   "Toolbox_Fit": "Data schema extended to remittance inflows; underwriting on transfer regularity.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  },
+  {
+   "ID": "EXP-08",
+   "Theme": "Climate + Poverty",
+   "Geography": "West Africa / MENA",
+   "Community_Context": "Women-led micro-enterprises in the clean-energy value chain",
+   "Problem": "Energy-access SMEs (solar distributors, clean-cooking retailers) lack working capital, throttling both clean-energy diffusion and poverty-reducing income.",
+   "SDG_Refs": "SDG 1; SDG 5; SDG 7; SDG 8",
+   "Product_Concept": "Revolving receivables-backed working-capital facility for a pool of clean-energy micro-enterprises.",
+   "Toolbox_Fit": "Underwriting engine and securitization modelling on trade receivables.",
+   "Linked_Refs": "PL-1",
+   "Status": "Idea"
+  }
+ ],
+ "funders": [
+  {
+   "ID": "FUND-01",
+   "Funder_Name": "IDRC (International Development Research Centre)",
+   "Type": "Research funder (bilateral)",
+   "Geography": "Global South (incl. Africa / MENA)",
+   "Grant_Focus": "Development research, climate adaptation, inclusive economies",
+   "URL": "",
+   "Why_This_Funder": "Funds Southern-led development research including climate adaptation and financial inclusion; a natural home for the experiment-design and impact-measurement workstream. Programs and open calls to be researched.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-02",
+   "Funder_Name": "3ie (International Initiative for Impact Evaluation)",
+   "Type": "Impact-evaluation funder",
+   "Geography": "Global South",
+   "Grant_Focus": "Rigorous impact evaluations (RCTs and quasi-experimental)",
+   "URL": "",
+   "Why_This_Funder": "Funds and supports impact evaluations directly aligned with the causal-measurement methodology; potential match for the experiment-design deliverable. Verify current thematic windows.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-03",
+   "Funder_Name": "J-PAL King Climate Action Initiative (K-CAI)",
+   "Type": "Research funder / lab initiative",
+   "Geography": "Global (Africa + MENA offices)",
+   "Grant_Focus": "RCTs at the climate-poverty intersection",
+   "URL": "",
+   "Why_This_Funder": "Funds randomized evaluations at exactly the climate-and-poverty intersection this proposal targets; J-PAL is also the standing verification-partner candidate (PT-05). Confirm eligibility and cycle.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-04",
+   "Funder_Name": "FSD Africa",
+   "Type": "Financial-sector development funder",
+   "Geography": "Africa",
+   "Grant_Focus": "Financial markets, green finance, capital-market development",
+   "URL": "",
+   "Why_This_Funder": "Backs financial-market and green-finance development in Africa, including securitization and capital-market deepening; relevant to both the research and the structuring thesis. Research active facilities.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-05",
+   "Funder_Name": "Mastercard Foundation",
+   "Type": "Foundation",
+   "Geography": "Africa",
+   "Grant_Focus": "Livelihoods, financial inclusion, youth and women's economic opportunity",
+   "URL": "",
+   "Why_This_Funder": "Large Africa-focused funder of financial inclusion and livelihoods; potential support for pilot origination and inclusion outcomes. Confirm research vs programme funding fit.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-06",
+   "Funder_Name": "IKEA Foundation",
+   "Type": "Foundation",
+   "Geography": "Global South (incl. Africa)",
+   "Grant_Focus": "Climate action and poverty-reduction livelihoods",
+   "URL": "",
+   "Why_This_Funder": "Funds the climate-plus-livelihoods intersection, including renewable energy and smallholder agriculture; possible fit for energy-access and climate-resilience experiments. Research grant mechanism.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-07",
+   "Funder_Name": "Shell Foundation",
+   "Type": "Corporate foundation",
+   "Geography": "Africa / Asia",
+   "Grant_Focus": "Energy access enterprises, climate-resilient livelihoods",
+   "URL": "",
+   "Why_This_Funder": "Backs early-stage energy-access enterprises and models; relevant to the clean-energy financing experiments (EXP-02, EXP-08). Confirm whether it funds research or only ventures.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-08",
+   "Funder_Name": "Green Climate Fund (GCF)",
+   "Type": "Multilateral climate fund",
+   "Geography": "Developing countries",
+   "Grant_Focus": "Climate adaptation and mitigation, incl. private-sector facility",
+   "URL": "",
+   "Why_This_Funder": "Largest dedicated climate fund; more project- than research-oriented, but its readiness and private-sector windows may support blended-structure design. Requires an accredited entity - research the access route.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-09",
+   "Funder_Name": "Rockefeller Foundation",
+   "Type": "Foundation",
+   "Geography": "Global",
+   "Grant_Focus": "Innovative finance, climate and poverty",
+   "URL": "",
+   "Why_This_Funder": "History of funding innovative and blended finance at the climate-poverty intersection; potential design/convening support. Research current initiatives and entry point.",
+   "Status": "Not researched"
+  },
+  {
+   "ID": "FUND-10",
+   "Funder_Name": "AFD / Proparco",
+   "Type": "DFI (bilateral)",
+   "Geography": "Africa / MENA",
+   "Grant_Focus": "Development research, blended finance, climate",
+   "URL": "",
+   "Why_This_Funder": "French DFI group active across Africa and MENA with both research and blended-finance windows; relevant to structuring as well as study funding. Identify the research vs investment desk.",
+   "Status": "Not researched"
   }
  ],
  "macroSeries": {
@@ -8144,12 +8464,36 @@ window.SFV_DATA = {
    "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n## The rule\n\n| Put it in the **repo** | Put it in the **Vault** |\n|---|---|\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n|---|---|\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.\n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.\n"
   },
   {
+   "path": "docs/funding-pipeline.md",
+   "category": "Planning",
+   "title": "Grant & Funding Plan for Research Experiments",
+   "summary": "",
+   "words": 619,
+   "body": "# Grant & Funding Plan for Research Experiments\n\n**Status:** Plan (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §5\n\nThis is the plan for raising the non-dilutive funding that pays for the research experiments —\nthe field pilots and impact evaluations, distinct from the blended/DFI capital that funds the\n*investment* structures themselves (that is the business-economics workstream and OQ-6). Grants\nhere buy evidence; investor capital buys assets. Keep them separate in the ask.\n\nFunder candidates are tracked in **`data/funders.csv`** (FUND-01 … FUND-10). This document holds\nthe strategy around that tracker.\n\n## What we are raising for\n\n| Cost bucket | What it pays for | Rough stage |\n|---|---|---|\n| Study design & pre-registration | Methodology, IRB, pre-analysis plan | Before pilot |\n| Baseline & endline data collection | Independent field team (verification partner) | Pilot |\n| Randomization / evaluation infrastructure | Sampling, survey instruments, monitoring | Pilot |\n| Small pilot capital (revolving) | The actual loans/premiums under test | Pilot |\n| Analysis & dissemination | Synthesis, publication, investor-facing evidence | Post-pilot |\n\nDollar figures are deliberately absent until the business-economics analysis sizes a pilot —\nputting numbers here before that would be guessing. This plan fixes the *structure* of the ask.\n\n## Funder landscape (four lanes)\n\nThe tracker sorts into four kinds of money, each with a different pitch:\n\n1. **Impact-evaluation funders** (FUND-02 3ie, FUND-03 J-PAL K-CAI) — the cleanest fit. They fund\n   exactly the causal-measurement work in `methodology-impact-measurement.md`. Lead with the\n   research design, not the venture.\n2. **Development-research funders / DFI research desks** (FUND-01 IDRC, FUND-10 AFD/Proparco) —\n   fund the research program broadly; can bridge to the structuring thesis.\n3. **Climate + poverty foundations** (FUND-05 Mastercard, FUND-06 IKEA, FUND-07 Shell,\n   FUND-09 Rockefeller) — fund the *outcome*, not the method. Lead with the climate-resilience /\n   poverty-reduction story and the community, not the securitization.\n4. **Climate funds** (FUND-08 GCF) — project- and readiness-oriented; usually need an accredited\n   entity, so more likely accessed *through* a partner than applied to directly.\n\n## Sequencing\n\n1. **Now — research the tracker.** Each FUND row is `Not researched`. First pass: confirm each\n   funder is live, find current calls, deadlines and typical grant size, and verify a URL before\n   committing it (blank until then — the repo rule). → milestone.\n2. **Match to lane and stage.** Tag each funder with which cost bucket(s) it credibly covers.\n3. **Anchor on lane 1.** An impact-evaluation grant (3ie / K-CAI type) is the highest-fit,\n   highest-credibility first ask because the deliverable *is* the research. It also pulls in a\n   verification partner (PT-05), doing double duty.\n4. **Sequence foundations behind a flagship.** Foundation asks land better once there is a named\n   flagship experiment (OQ-11) and a community partner, not a menu of eight ideas.\n5. **Keep climate funds as partner-routed** rather than direct applications in the near term.\n\n## Coordination with the rest of the repo\n\n- Contact *people* at these funders — names, warm intros, who said what — go to the private\n  overlay, never to `data/funders.csv` (CLAUDE.md §8 and the publishing rule). The tracker holds\n  the org and why it matters; the relationship is private.\n- The PhD route is a parallel, complementary funding lane: a funded PhD covers the researcher's\n  own time in a way none of these grants do. Kept in `data/phd-programs.csv`; noted here so the\n  two pipelines are not double-counted.\n- Grant asks must be sized by the business-economics analysis (`product-design/business-economics.md`)\n  before submission — that is the dependency, and why no numbers appear above yet.\n\n## Deliverable state\n\nPlan + populated tracker. Remaining work: the funder-research pass (verify each is live, find\ncalls/deadlines/sizes, add verified URLs), then lane/stage tagging and a first anchor application\nonce a flagship experiment is chosen.\n"
+  },
+  {
    "path": "docs/macro-watch.md",
    "category": "Planning",
    "title": "Macro watch — live values, the watchlist, and the observation log",
    "summary": "",
    "words": 1715,
    "body": "# Macro watch — live values, the watchlist, and the observation log\n\n**Created:** 2026-07-30\n\n## What this is\n\nA standing watchlist of the macro conditions that bear on this project, each with why it matters *here* and a link to the authoritative source — plus a dated log of what was actually observed and what it changed.\n\nThree files:\n\n- `data/macro-indicators.csv` — the watchlist. Sixteen indicators across cost of capital, risk appetite, market depth, borrower shocks, project economics and funding availability.\n- `data/macro-snapshot.csv` — **generated**, refreshed daily by scheduled build. Current values for the indicators that have a keyless public API. Committed, so it accumulates into a record of conditions over the life of the project.\n- `data/macro-history.csv` — **generated**. Up to twelve years of monthly observations per live series. This is what the charts read.\n- `data/macro-log.csv` — dated observations you write by hand. What was seen, from where, and what it changes.\n\n## Live values — what is fetched, and what isn't\n\nEleven of the sixteen indicators carry a live value and a charted history, refreshed daily by a scheduled build:\n\n| | Indicator | Source | Frequency |\n|---|---|---|---|\n| MAC-01 | US federal funds target rate (upper) | FRED `DFEDTARU` | daily |\n| MAC-02 | ECB main refinancing operations rate | ECB Data Portal | daily |\n| MAC-03 | Bank of Israel policy rate | BOI SDMX `BR` / `MNT_RIB_BOI_D` | daily |\n| MAC-04 | ICE BofA EM high-yield corporate OAS | FRED `BAMLEMHBHYCRPIOAS` | daily |\n| MAC-06 | FAO Food Price Index | FAO monthly CSV | monthly |\n| MAC-07 | ENSO / Oceanic Nino Index | NOAA CPC | monthly |\n| MAC-12 | EUR/ILS reference rate | ECB Data Portal | daily |\n| MAC-13 | USD/ILS representative rate | BOI SDMX `EXR` / `RER_USD_ILS` | daily |\n| MAC-14 | FAO Cereals Price Index | FAO monthly CSV | monthly |\n| MAC-15 | US 10-year Treasury yield | FRED `DGS10` | daily |\n| MAC-16 | Brent crude oil price | FRED `DCOILBRENTEU` | daily |\n\nThe remaining five are **link-only** and the dashboard says so on each row. SIFMA/AFME issuance volumes, FEWS NET food-security outlooks, EIA energy demand, KNOMAD remittances and OECD ODA either need an API key, publish only as PDFs or spreadsheets, or have no stable machine-readable endpoint. Rather than scrape something fragile, those rows link to the source and you read the number there.\n\n**Only keyless sources are used.** An API key would have to live in repository secrets, which makes the build unreproducible for anyone else who clones this and adds a rotation burden a research project does not need.\n\n## Charts\n\nEvery live series gets a panel on the Macro watch tab and a sparkline in its watchlist row. Three rules govern them:\n\n- **One series per chart, never a shared axis.** These are percentages, index points, exchange rates and dollars a barrel. Putting two of them on one frame would imply a comparison that does not exist — the most misleading thing a chart can do.\n- **Each panel states its own date range and point count.** Sources do not all offer the same history: FRED serves the EM spread series from 2023 only, whatever start date is requested, so that panel is a three-year window sitting beside twelve-year ones. The footer is how you tell.\n- **Monthly resolution, twelve years.** Daily series are downsampled to the last observation of each month. A daily point is below one pixel at this width, and keeping them would make the committed file large and its diffs unreadable — which would defeat the reason for committing it.\n\n## How the refresh works\n\n`.github/workflows/pages.yml` runs on a daily cron. On a scheduled or manual run it executes `dashboard/fetch_macro.py`, commits `data/macro-snapshot.csv` and `data/macro-history.csv` if they changed, rebuilds and deploys. On an ordinary push it skips the fetch — a push build must not commit back to `main`.\n\nRun it locally any time:\n\n```bash\npython3 dashboard/fetch_macro.py\npython3 dashboard/build.py\n```\n\n### The two rules the fetcher is built around\n\n**1. It never breaks the build.** Any upstream can fail — APIs go down, formats drift, rate limits bite. A failed fetch keeps the previous value, marks the row `stale`, and exits 0. A flaky API cannot take the dashboard down with it. This is tested by simulating upstream failures.\n\n**2. It never silently shows a stale number.** Every row carries `As_Of` (the observation date from the source) and `Fetched_At` (when we asked). The dashboard renders the observation date and its age next to every value, and flags it against that indicator's own cadence — 45 days is unremarkable for an annual series and alarming for a daily one.\n\nThat second rule is why the numbers are trustworthy. A dashboard that shows \"3.75%\" with no date is worse than one showing nothing, because it invites a decision on a figure that might be from last year. **The `As of` column is the one to trust.**\n\n### Change columns\n\n`1m`, `3m` and `12m` are differences in the series' own units, computed from observation counts appropriate to the series frequency — business-day offsets for daily series, month offsets for monthly ones. Getting this wrong is not cosmetic: applying business-day offsets to a monthly series reads 66 *months* back and labels it a 3-month change.\n\nNo colour is applied to direction. \"Rates up\" is not good or bad in itself, and colouring it would assert a view this project does not hold.\n\n### Adding a live source\n\nAdd an entry to `SOURCES` in `dashboard/fetch_macro.py` with its `MAC-NN` id, a fetch function returning `[(date, value)]` ascending, and its `freq`. The existing fetch helpers cover FRED CSV, ECB SDMX-JSON, NOAA fixed-width text, Bank of Israel SDMX-JSON and the FAO monthly CSV. Keyless sources only.\n\n## What the log is for\n\nThe watchlist tells you where to look. The log is the part that compounds.\n\nA research project makes decisions over years, and the reasoning behind a decision is only recoverable if you wrote down what the world looked like at the time. \"We sized the first-loss layer at 15% in Q3 2026 when EM spreads were wide and aid budgets were contracting\" is a defensible record. \"We sized it at 15%\" is not — and in two years nobody, including you, will remember which it was.\n\nLog an entry when something moves that would change a decision. Skip the rest — a log of everything is a log nobody reads.\n\nEach entry records:\n\n| Field | |\n|---|---|\n| `Date` | when observed |\n| `Indicator_Refs` | which `MAC-NN` it relates to |\n| `Observation` | what the source actually said, with no embellishment |\n| `So_What` | what it changes — the reason the entry exists |\n| `Source_Checked` | where it came from |\n\n## The discipline\n\nThe same rule as the literature matrix applies: **never state a number the source doesn't state.** If a figure is an inference or a recollection, mark it as such. The value of this log is that it can be trusted later; a single made-up number destroys that for every entry.\n\n## Adding an indicator\n\n1. Add a row to `data/macro-indicators.csv` with the next `MAC-NN`.\n2. Fill in `Why_It_Matters_Here` properly — not what the indicator is, but what it changes for *this* project. If you can't write that sentence, the indicator probably doesn't belong on the list.\n3. Verify the URL resolves.\n4. Rebuild the dashboard.\n\n## Stress scenarios\n\n`data/macro-scenarios.csv` turns the watchlist from monitoring into something the venture can be reasoned about *under stress*. Six scenarios, each a small set of deterministic multipliers applied to the RT-5 portfolio model.\n\n| | Scenario | Drives |\n|---|---|---|\n| SC-0 | Base | No shock — the comparator |\n| SC-1 | Rates up | Policy and long rates +300bp |\n| SC-2 | Food price shock | Staple prices spike, correlation raised to 0.45 |\n| SC-3 | Energy shock | Sustained oil spike, hits both product lines |\n| SC-4 | FX shock | Local currency −25% against the note currency |\n| SC-5 | Combined stress | Rates, food and FX together — a coherence test |\n\n### How a scenario transforms the model\n\nEach row carries five levers, applied multiplicatively to the base portfolio assumptions in `risk-tools/tools/portfolio-config.csv`:\n\n| Column | Effect |\n|---|---|\n| `Rate_Shock_Pp` | Added in percentage points to the senior and mezzanine coupons due |\n| `Default_Multiplier` | Multiplies the baseline annual default probability |\n| `Recovery_Multiplier` | Multiplies the recovery rate on defaulted principal |\n| `Prepay_Multiplier` | Multiplies the annual prepayment rate |\n| `Correlation_Override` | Replaces the base default correlation outright, where a shock is regional rather than idiosyncratic |\n\n`Correlation_Override` is the one that matters. A food-price shock is not a higher independent default rate — it hits a whole region at once. SC-2 raises the default multiplier 2.2× *and* pushes correlation from 0.20 to 0.45, and it is the correlation term that drives the tail. A scenario that only raised the default rate would understate the damage and look reassuring while doing it.\n\n### Deliberately simple\n\nThese are readable deterministic rules, not a model. A transparent multiplier that a reader can check beats a calibrated-looking transformation that nobody can audit — particularly when the underlying portfolio parameters are themselves placeholders.\n\nThey are **not forecasts** and not probability-weighted. SC-5 is not a prediction; it is a test of whether the structure survives correlated adversity, since rate-hiking cycles, commodity spikes and EM currency pressure have historically arrived together.\n\n### Running them\n\n```bash\npython3 risk-tools/tools/simulate_portfolio.py            # all scenarios\npython3 risk-tools/tools/simulate_portfolio.py --sweep    # pool size vs fixed costs\n```\n\nResults land in `data/rt5-scenario-results.csv` and surface on the Risk tools tab. Every row is labelled `SYNTHETIC`. See `risk-tools/rt-5-simulator.md` for what the outputs are and are not good for.\n\n### Adding a scenario\n\n1. Add a row to `data/macro-scenarios.csv` with the next `SC-N`.\n2. Fill `Rationale` properly — why these multipliers, and which macro indicators justify them. A scenario without a stated rationale is a made-up number with a label.\n3. Reference the relevant `MAC-NN` IDs in `Macro_Refs` so the scenario is traceable to something observed.\n4. Re-run the simulator and rebuild the dashboard.\n"
+  },
+  {
+   "path": "docs/methodology-impact-measurement.md",
+   "category": "Planning",
+   "title": "Methodology: Measuring the SDG Impact of the Financial Products",
+   "summary": "",
+   "words": 778,
+   "body": "# Methodology: Measuring the SDG Impact of the Financial Products\n\n**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §3\n\n## Purpose\n\nThe venture's credibility rests on a claim it must be able to *prove*: that the financial\nproducts it structures actually improve the climate-resilience and poverty outcomes they target —\nnot just that loans were disbursed or premiums collected. This document is the skeleton of the\nresearch methodology for measuring that impact, so it is designed *before* any product is in the\nfield, not reconstructed afterward.\n\nIt answers three questions: **impact on what**, **identified how**, and **verified by whom**.\n\n## 1. Impact on what — outcome metrics\n\nMetrics are chosen to map onto the two SDG frames the proposal commits to. Each candidate product\nin `data/experiments.csv` will select from this menu; the menu is deliberately outcome-side, not\noutput-side.\n\n| Frame | Primary outcomes | Notes |\n|---|---|---|\n| **Poverty reduction** | Consumption / consumption smoothing; asset retention through shocks; income stability; food security | Memo 2 is clear the defensible microfinance claim is *resilience and smoothing*, not income transformation — metrics reflect that |\n| **Climate resilience** | Losses avoided in a climate shock; speed of recovery; adoption of climate-smart inputs / assets; reduced distress sales | For parametric products (EXP-01/05/06) the mechanism is payout-on-trigger; measure whether payouts actually protect assets |\n| **Climate mitigation (where relevant)** | Clean-energy adoption; biomass / emissions displaced | Applies to the energy-access experiments (EXP-02, EXP-08) |\n| **Financial (paired)** | Repayment / loss curves, claims ratios, cost-to-serve | Paired with impact so the analysis can speak to *both* SDG and investor theses at once |\n\n**Discipline:** output metrics (loans made, people reached) are logged but never reported *as*\nimpact. The distinction is the whole point of the methodology.\n\n## 2. Identified how — causal design\n\nBuilds directly on the open questions already logged (OQ-4, OQ-5). **Direction set (2026-08-02): the\nflagship portfolio is 2–3 parallel, lean, pre-registered RCTs sharing a single verification\npartner** — so the partner (OQ-7, PT-05) and an anchor evaluation grant become gating prerequisites,\nnot parallel nice-to-haves. Sharing one partner favors experiments with a *common measurement\narchitecture*, which is one reason two of the three flagships are parametric (see the portfolio\nnote below). The proposal still commits to a *hierarchy of preference* per pilot:\n\n1. **Cluster-randomized rollout** — preferred where ethically and operationally feasible\n   (randomize at the savings-group / village level). Cleanest identification. OQ-4 notes this is\n   likely most feasible in a smaller, controlled site.\n2. **Stepped-wedge** — where partners resist withholding treatment; every cluster is eventually\n   treated, order randomized. Often more acceptable to NGO partners (OQ-4).\n3. **Strong quasi-experimental** — matched difference-in-differences, regression discontinuity on\n   an eligibility threshold — where randomization is impossible.\n\nCross-cutting design requirements:\n- **Pre-registration** of hypotheses and analysis plan before rollout.\n- **Blinded outcome assessment** where feasible (the verification partner collects outcomes\n  without knowing treatment status).\n- **Powered for the resilience effect**, not just the mean effect — the interesting outcomes are\n  in the tails (what happens in a shock), which drives sample size.\n\n**The flagship portfolio (OQ-11):** EXP-01 crop drought-index (rural smallholders), EXP-02\nclean-energy PAYGO (energy / enterprise), EXP-06 multi-peril parametric climate cover (urban\ninformal settlements). The two parametric lines (EXP-01, EXP-06) share a trigger → payout →\nloss-avoided measurement design, which is what makes running them in parallel under one partner\naffordable. EXP-06 spans several perils (flood, drought/heat, storm), but that raises *product*\ncomplexity, not *identification* complexity: access to the cover is randomized and resilience\noutcomes are measured whatever peril actually strikes.\n\n## 3. Verified by whom — independence\n\nImpact the venture measures on its own products is not credible. The design separates the party\nthat *structures* from the party that *measures*:\n\n- An **independent verification partner** (academic field team / RCT lab) runs outcome\n  measurement — this is OQ-7, and PT-05 (J-PAL) is the standing candidate.\n- **IRB / ethics approval** and a **data-sharing agreement** are preconditions, not afterthoughts.\n- Row-level participant data stays in the Vault (`05-raw-data`), never in the repo — only\n  aggregate results come back (CLAUDE.md §8).\n\n## 4. Integration with the toolkit\n\nThe impact module is one of the five risk-tools, not a bolt-on. The same RT-1 origination schema\nthat makes receivables poolable also carries the baseline covariates the causal design needs;\nthe RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing\nimpact measurement and securitization-readiness together is design principle 2 of the venture\n(`docs/working-doc.md`).\n\n## Deliverable state\n\nSkeleton only. Remaining work: pick the outcome metrics per flagship experiment (after OQ-11),\nresolve OQ-4/OQ-5 with a prospective supervisor and verification partner, and draft the\npre-registration template. Feeds milestone M-08 (pilot design doc).\n"
+  },
+  {
+   "path": "docs/methodology-opportunity-mapping.md",
+   "category": "Planning",
+   "title": "Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity",
+   "summary": "",
+   "words": 787,
+   "body": "# Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity\n\n**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §2\n\n## Purpose\n\nDecide *where to point the research program first*. There are many climate-and-poverty problems\nwhere finance is the binding constraint; we can only pilot a few. This methodology is a\nrepeatable way to rank candidate problems so the choice is defensible rather than intuitive.\n\nIt is a **two-axis** map:\n\n- **Axis X — Opportunity size / potential.** How large and how unmet is the financing gap behind\n  this problem, and how much climate-resilience / poverty-reduction impact would closing it\n  unlock?\n- **Axis Y — Toolbox capacity.** How well can *our* toolkit (RT-1…RT-5, the structuring layer)\n  actually turn this problem into a feasible, poolable investment?\n\nA problem that is huge but that our tools cannot make investable is a policy question, not our\nquestion. A problem our tools fit perfectly but that barely moves any SDG outcome is a rounding\nerror. The interesting shortlist sits high on **both** axes.\n\n```\n Toolbox      high │  build the tools,        │  FLAGSHIP —\n capacity          │  small prize (park)      │  pilot these first\n (Axis Y)          │--------------------------+--------------------------\n             low   │  not ours                │  big prize, wrong layer\n                   │  (refer out)             │  (watch / partner)\n                   └──────────────────────────┴──────────────────────────\n                        low  ── Opportunity size / potential (Axis X) ──  high\n```\n\n## Axis X — scoring the opportunity\n\n**Weighting resolved (OQ-9, 2026-08-02): research / evidence-first.** The score is dominated by how\nmuch credible impact evidence a pilot can produce, not by market size. Each sub-criterion is scored\n1–5 and multiplied by the weight below.\n\n| Sub-criterion | Weight | Question | Candidate source of evidence |\n|---|---|---|---|\n| Impact leverage | **High** | How much resilience / poverty reduction per dollar deployed? | Impact literature (Memo 2 + climate-resilience anchors) |\n| Measurability / RCT-feasibility | **High** | Can the effect be identified cleanly with a lean randomized design? | Impact-measurement methodology; precedent studies |\n| Depth of need | Medium | How concentrated is the problem among the poor / climate-exposed? | Poverty and vulnerability data |\n| Precedent signal | Medium | Has *anything* like this worked — enough to be feasible, not so much it is already settled? | Experiment `Linked_Refs`, lit matrix |\n| Gap magnitude / neglectedness | Low | How large / how capital-starved is the need? | Adaptation-finance-gap and energy-access-gap literature (to anchor — see proposal §1) |\n\n*Measurability was promoted here from the toolbox axis (it was \"verifiability\"): under a\nresearch-first win condition it is the criterion that most reorders the ranking.*\n\n## Axis Y — toolbox capacity (a filter, not a scored axis)\n\n**Resolved (OQ-9): under research-first, the toolbox axis is a minimum-bar filter plus a light\ntie-breaker, not a heavily weighted score.** A candidate must clear a plausible-enough bar on the\ncriteria below to stay in the running; among those that pass, toolbox fit only breaks ties. This\nkeeps the poolable-asset thesis alive — nothing structurally hopeless can win — without letting\nasset economics override the cleanest study. (Verifiability has moved to Axis X as \"measurability\".)\n\n| Sub-criterion (filter) | Question | Tie to the toolkit |\n|---|---|---|\n| Data capturability | Can the cash flows be standardized at origination? | RT-1 schema (OQ-3) |\n| Underwritability | Do community signals let us price the risk? | Underwriting engine (RT-2) |\n| Monitorability | Can we detect trouble early enough to act? | Monitoring / early-warning (RT-3) |\n| Poolability | Are the receivables homogeneous and transferable enough to aggregate? | Securitization modelling (RT-5); OQ-2, OQ-8 |\n| De-riskability | Is there a plausible first-loss / blended structure? | Blended-finance design; OQ-6 |\n\n## Method\n\n1. **Candidates in.** Start from `data/experiments.csv` (EXP-01…). Add others as they surface.\n2. **Score** each candidate on both axes using the sub-criteria above.\n3. **Weight and combine** — apply the resolved research-first weights (OQ-9): the Axis-X score leads,\n   Axis-Y acts as a filter plus tie-breaker.\n4. **Plot** onto the 2x2 and read the top-right quadrant.\n5. **Shortlist** 2–3 flagship candidates → OQ-11 → feed the pilot / PhD field design.\n\n## What this is not\n\n- Not a claim that the un-shortlisted problems don't matter — only that they aren't the best fit\n  for *this* toolkit *first*.\n- Not a finished evidence base. The weighting (OQ-9) is resolved, but several Axis-X evidence\n  anchors (climate-financing-gap sizing, resilience-metric literature) are still gaps to fill.\n\n## Deliverable state\n\nWeighting resolved and a first scoring pass run (2026-08-02): flagship trio **EXP-01** (crop\ndrought-index), **EXP-02** (clean-energy PAYGO), **EXP-06** (multi-peril parametric climate cover) —\nthree uncorrelated risk drivers, recorded as OQ-11. Remaining work: fill the Axis-X evidence anchors\n(proposal §1 gaps) and firm the scores with the verification partner.\n"
   },
   {
    "path": "docs/milestone-plan.md",
@@ -8184,12 +8528,28 @@ window.SFV_DATA = {
    "body": "# Research Agenda: Literature Review Plan\n\n## Objective\n\nBuild a structured, reusable literature base supporting: (1) a PhD proposal, (2) product and pilot design, and (3) an eventual investor-grade thesis for securitizing community-based financial products.\n\n## Review axes\n\n1. **Community-based finance / VSLAs / savings groups** -- impact, governance, risk, scaling limits\n2. **Microfinance outcomes & impact evaluation** -- what RCTs and systematic reviews actually say\n3. **Securitization & blended finance for development** -- how microfinance assets have been securitized, challenges, best practices\n4. **Impact-focused structured finance / SDG financing** -- how DFIs/OECD conceptualize risk-sharing and capital mobilization\n\n## Prioritized reading lists\n\n### Axis 1 -- VSLAs / savings groups\n**Tier 1**\n- Ksoll et al., \"Impact of Village Savings and Loan Associations\" (2016)\n- Brannen, \"Evaluation of the impact of VSLAs\" (2016)\n- Hatlebakk (2024) evidence review on VSLAs\n- Anyango et al. VSLA case study (Microsave / FindevGateway)\n\n**Tier 2**\n- Beyene, \"Assessment on the Effects of VSLAs\"\n- Other geography-specific microfinance diagnostics\n\n### Axis 2 -- Microfinance outcomes & RCT methods\n**Tier 1**\n- World Bank, \"Impact Evaluation for Microfinance\"\n- Karlan et al., methodological reviews / RCT applications\n- Stewart et al. / Duvendack et al., systematic reviews on microfinance impact\n- J-PAL-type intro notes on RCTs for microfinance\n\n**Tier 2**\n- Ribeiro (2022), scientometric analysis and systematic review of microfinance outcomes\n- Van Rooyen et al., \"Impact of Microfinance in Sub-Saharan Africa\"\n- World Bank, \"Microfinance: A Critical Literature Survey\"\n- Brau & Woller, comprehensive review\n\n### Axis 3 -- Microfinance securitization & ABS\n**Tier 1**\n- \"Securitization and the Challenges Faced in Micro Finance\"\n- FSD Africa / BII reports on microfinance ABS and African securitization\n- ABS primers / rating criteria (Fitch structured finance criteria, GCR trade receivables, S&P methodology)\n\n**Tier 2**\n- Milken Institute / other reports on accelerating securitization in Africa\n- Academic/policy papers on DFIs and private-sector mobilization\n\n### Axis 4 -- Blended finance & SDG capital\n**Tier 1**\n- IFC, \"Role of blended finance in an evolving global context\"\n- Convergence, \"Advancing Development Through Blended Finance\"\n- OECD, \"Scaling up blended finance in developing countries\"\n- Blended finance best-practice guides\n\n**Tier 2**\n- Climate/nature blended finance reports (LSE/Grantham, Amundi)\n- UN / World Bank SDG financing reports\n\n## Workflow\n\n### Step 1 -- Literature matrix\nMaintained in `/literature/lit-matrix.csv` (mirrored in the Master Reference Tracker Google Sheet). Fields: ID, Axis, Geography, Method, Population/Context, Key Findings, Limitations, Relevance (Product/Risk/Impact), Open Questions, Link/Citation.\n\n### Step 2 -- First pass: breadth (target ~2-3 weeks)\nScan Tier 1 sources per axis: abstract, intro, conclusion, methods/limitations. Log each as a matrix row. Target: 30-50 entries.\n\n### Step 3 -- Second pass: targeted deep dives (~10-15 anchor pieces)\n- 3-4 on VSLAs / community finance\n- 3-4 on microfinance RCTs / impact\n- 2-3 on microfinance securitization / ABS\n- 2-3 on blended finance / institutional capital\n\nCapture detailed notes on design, assumptions, context; identify where this project can improve on prior design.\n\n### Step 4 -- Synthesis memos\n1. What VSLAs and similar structures actually achieve (and where they fail)\n2. What microfinance RCTs and reviews say about impact and design\n3. How securitization/blended finance has been applied to microfinance and what structural constraints remain\n\nEach memo: 2-4 pages, with an explicit \"implications for this project\" section. Store in `/literature/notes/`.\n\n## Resource access notes\n\n- Many key sources are open access: World Bank, OECD, IFC, FindevGateway, J-PAL, CGAP.\n- Paywalled sources (ScienceDirect, Springer, Taylor & Francis) require institutional access -- use university/library credentials and Zotero to manage and export references.\n- Google Scholar recommended for citation tracking (forward/backward citation search from anchor papers).\n\n## Status tracking\n\n- [ ] Axis 1 Tier 1 scanned\n- [ ] Axis 2 Tier 1 scanned\n- [ ] Axis 3 Tier 1 scanned\n- [ ] Axis 4 Tier 1 scanned\n- [ ] Anchor pieces selected for deep dive\n- [ ] Synthesis memo 1 drafted\n- [ ] Synthesis memo 2 drafted\n- [ ] Synthesis memo 3 drafted\n"
   },
   {
+   "path": "docs/research-proposal.md",
+   "category": "Planning",
+   "title": "Research Proposal Framework",
+   "summary": "",
+   "words": 1024,
+   "body": "# Research Proposal Framework\n\n**Status:** Scaffold (week of 2026-08-02) · **Owner:** BB\n\nThis is the spine of the research proposal. It holds the argument and links out to the\npieces that live in their own files. It is deliberately a *framework* first: each section\nstates what the finished proposal will contain and points at the artifact where that work\nis done, so the structure is fixed before the drafting.\n\n**Scope decision (2026-08-02).** The proposal is anchored, for now, on goals related to\n**climate change** and **global poverty reduction**, with field sites in **Africa / MENA**\nfirst. Other SDG domains and geographies are deliberately out of the initial frame — not\nrejected, just not this proposal.\n\n**How this maps to the five deliverables:**\n\n| Deliverable | Lives in | State |\n|---|---|---|\n| 1. Literature review | §1 below + `literature/` (matrix + memos) | Anchors + memos exist; proposal-grade synthesis section drafted here |\n| 2. Opportunity-mapping methodology | `docs/methodology-opportunity-mapping.md` | Skeleton |\n| 3. Impact-measurement methodology | `docs/methodology-impact-measurement.md` | Skeleton |\n| 4. 5–10 experiment ideas | `data/experiments.csv` (EXP-01…) | Populated |\n| 5. Grant / funding plan | `docs/funding-pipeline.md` + `data/funders.csv` | Plan + tracker |\n\n**Direction decided (2026-08-02).** Working through OQ-9/10/11 landed four choices that shape the rest:\n\n- **Win condition — research / evidence-first.** The opportunity map is weighted toward impact and clean\n  measurement; the asset/structuring side is a feasibility filter (OQ-9, resolved).\n- **Flagship portfolio — three uncorrelated experiments** (OQ-11, resolved): **EXP-01** crop drought-index\n  (rural smallholders), **EXP-02** clean-energy PAYGO (energy / enterprise), **EXP-06** multi-peril\n  parametric climate cover (urban informal settlements).\n- **Field design — 2–3 parallel, lean, pre-registered RCTs sharing one verification partner.** This makes the\n  verification partner (OQ-7, PT-05) and an anchor evaluation grant (FUND-02/03) *gating prerequisites*,\n  reordering the near-term critical path: lock the trio → verification partner co-designs the shared\n  measurement → anchor grant application (M-20 → M-21).\n- **Go/no-go economics — a credible path to at-scale profitability is the gate**, with pilot-breakeven as a\n  companion yardstick and no fixed-scale anchor (OQ-10, framing locked; numbers pending).\n\n---\n\n## 0. Research question\n\nCarried from `docs/working-doc.md`, narrowed to the climate + poverty frame:\n\n> How can community-based lending and insurance arrangements in climate-exposed, low-income\n> communities in Africa and MENA be structured into standardized, verifiable, poolable assets\n> that mobilize private capital — and under what conditions do those structures measurably\n> improve both climate resilience / poverty outcomes and risk-adjusted returns?\n\nThe proposal defends three claims in sequence:\n\n1. **There is a mappable set of climate-and-poverty problems** where the binding constraint is\n   financial-product design, not the absence of a solution (→ §2, opportunity mapping).\n2. **A specific toolkit can convert some of those into investable assets** (→ the venture's\n   risk-tools RT-1…RT-5 and the business-economics analysis).\n3. **The impact of those products on the underlying SDG outcomes is measurable** with credible\n   causal methods (→ §3, impact measurement).\n\n## 1. Literature review\n\nThe evidence base already exists in this repo and does not need rebuilding — it needs\n*framing* for a proposal. The proposal's literature review is assembled from:\n\n- **`literature/lit-matrix.csv`** — 15 reviewed anchors across four axes (community finance /\n  VSLAs; microfinance impact & RCT methods; microfinance securitization & ABS; blended finance\n  & SDG capital).\n- **The three synthesis memos** in `literature/notes/` (all Reviewed):\n  - Memo 1 — what VSLAs and savings groups actually achieve, and where they fail.\n  - Memo 2 — what microfinance RCTs and reviews say about impact and design.\n  - Memo 3 — how securitization / blended finance has been applied to microfinance, and the\n    structural constraints that remain.\n\n**What the proposal adds on top:** a single narrative that walks from \"the financing gap is a\nrisk-allocation problem, not a capital shortage\" to \"here is the specific gap this research\nfills.\" That narrative is the connective tissue between the four axes, and it is drafted in the\nproposal document itself (not in the matrix).\n\n**Gaps that need new anchors before the proposal is submission-ready** (each becomes a row via\nthe `add-literature` skill; none fabricated here):\n\n- **Climate-risk / index-insurance evidence** — the current matrix is thin on parametric and\n  index-based insurance outcomes (e.g. index-based livestock insurance, weather-index crop\n  cover). This axis underpins EXP-01, EXP-05, EXP-06.\n- **SDG / climate financing-gap sizing** — authoritative gap estimates (adaptation finance gap,\n  energy-access financing gap) to ground the opportunity map's \"gap size\" axis.\n- **Impact-measurement methods for climate resilience** — outcome-metric literature specific to\n  resilience and consumption-smoothing, beyond the general microfinance-RCT canon.\n\nThese are logged as gaps, not filled with guesses — see the milestone tracker.\n\n## 2. Opportunity-mapping methodology (skeleton)\n\nFull skeleton in **`docs/methodology-opportunity-mapping.md`**.\n\nIn one line: a two-axis prioritization that scores candidate climate-and-poverty problems by\n**(a) the size / potential of the unmet-financing gap** against **(b) our toolkit's capacity to\nturn that problem into a feasible investment**. The output is a ranked shortlist that tells the\nresearch program *where to point first*. The experiment ideas in `data/experiments.csv` are the\nraw candidates this methodology is designed to score.\n\n## 3. Impact-measurement methodology (skeleton)\n\nFull skeleton in **`docs/methodology-impact-measurement.md`**.\n\nIn one line: how the research measures whether the financial products actually move the SDG\noutcomes they target — the causal-identification strategy (building on OQ-4 / OQ-5), the outcome\nmetrics tied to specific climate and poverty goals, and the verification arrangement (OQ-7) that\nkeeps the measurement independent.\n\n## 4. Experiment ideas\n\nHeld as a tracker: **`data/experiments.csv`** (EXP-01 … EXP-08). Each row is a community with a\nspecified climate-or-poverty problem and a candidate financial product to address it, plus how\nthe venture's toolkit fits. These are the inputs to §2 and the seedbed for the pilot / PhD field\ndesign. See §2 of the mapping methodology for how they get narrowed to a flagship shortlist.\n\n## 5. Grant / funding plan\n\nFull plan in **`docs/funding-pipeline.md`**, tracker in **`data/funders.csv`** (FUND-01…). Covers\nthe grantmaker landscape for climate-and-poverty research experiments (impact-evaluation funders,\nclimate funds, foundations, DFI research windows) and a sequenced ask strategy that fits the\nresearch timeline.\n\n## Open questions this framework raises\n\nLogged in `data/open-questions.csv`: OQ-9 (mapping-score criteria and weights), OQ-10 (the\ninternal go/no-go economics threshold), OQ-11 (which experiments become the flagship pilots).\n"
+  },
+  {
    "path": "docs/working-doc.md",
    "category": "Planning",
    "title": "Sustainable Finance Product Research and Venture Working Document",
    "summary": "",
    "words": 985,
    "body": "# Sustainable Finance Product Research and Venture Working Document\n\n## Purpose\n\nThis document is a living planning artifact for a project focused on identifying sustainable-development solutions that remain underfunded because financing, insurance, and risk-management structures are missing or misaligned. The working hypothesis is that community-based financial structures such as Village Savings and Loan Associations (VSLAs) may help manage idiosyncratic risk well enough to support scalable lending and insurance products, which could later be aggregated into securitizable assets.\n\nThe project is being shaped around three explicit design constraints. First, product families should be designed with eventual pooling and securitization in mind. Second, the research program should be empirical and verification-heavy, using rigorous impact evaluation methods and external research partners. Third, the operating role should initially focus on analytics, structuring, and project management, while local partners manage regulated operations, customer relationships, and compliance.\n\n## Current project thesis\n\nThe central thesis is that some sustainable-development problems persist not because solutions are absent, but because the market lacks the right financial product design, underwriting logic, distribution mechanisms, and de-risking structures to channel capital toward them.\n\nCommunity-based finance is a promising starting point because VSLAs and related informal savings systems already create governance, monitoring, and social-enforcement mechanisms at the local level.\n\n## Design principles\n\n### 1. Securitization-readiness\nAny pilot product should be designed as a future underlying asset for an asset-backed structure: standardized contracts, digital audit trails, consistent data fields, predictable cash flows, and legal transferability.\n\nTwo-layer architecture: local origination layer (VSLAs, NGOs, MFIs, worker networks) and an aggregation layer (liquidity pools, SPVs) that pools receivables for outside investors.\n\n### 2. Verification-first research design\nTreat product design, impact evaluation, and risk verification as one integrated system. Realistic standard: cluster-randomized rollout, blinded outcome assessment where feasible, and strong quasi-experimental methods when full randomization is not practical.\n\n### 3. Role specialization\nInitial role sits in the structuring layer, not the licensed operating layer: analytics, underwriting logic, monitoring systems, partner coordination, and risk-sharing/first-loss structure design. Regulated entities handle origination, claims, collections, compliance.\n\n## Preliminary literature themes (see /literature/lit-matrix.csv for full detail)\n\n### Well established\n- Persistent sustainable-development financing gap (risk allocation & intermediation problem, not just capital shortage)\n- Community-based savings/lending structures (VSLAs, susu, ekub) can work and are durable\n- Microfinance impact evaluation methods are mature (RCTs, pipeline designs)\n- Securitization and blended finance are established financial technologies\n\n### Partially explored\n- Microfinance securitization exists but is limited/uneven, especially in Africa\n- Microfinance outcomes are mixed, not uniformly positive\n- Insurance integration into group-based models is recognized but under-mapped\n\n### Likely clearest gaps\n1. From community trust to investor-grade data\n2. Product design for securitization-readiness at origination (not retrofitted later)\n3. Integrated causal testing across the full product lifecycle (origination -> repayment/claims -> structuring -> investor suitability)\n4. A partner-based model for analytics-driven de-risking (asset-light intermediary layer)\n\n## Candidate pilot directions\n\n### Africa-focused pilots\nDeep traditions of community-based finance, high financial exclusion, aligns with blended finance/SDG capital mobilization narrative. Securitization markets still nascent -> potential first-mover advantage in standard-setting.\n\n### Israel migrant-worker pilot\nLogistical proximity, easier hands-on PM, existing regulatory environment around foreign-worker insurance. Good controlled environment to develop research protocol and tooling before African expansion.\n\n**Working decision:** Consider anchoring PhD/pilot methodology development in Israel (migrant worker communities) first, then replicate in an African country as a second field site once framework is proven.\n\n## Working hypotheses\n\n1. Community-based groups reduce screening/monitoring costs enough to improve economics of small-ticket lending/insurance vs. atomized individual underwriting.\n2. The bottleneck is not raw demand for finance but the absence of standardized, verifiable, poolable product structures institutional capital can price.\n3. Investment-grade structures are unlikely to emerge from raw community portfolios without credit enhancement, first-loss protection, and high-quality servicing data.\n4. The most defensible business position is a structuring/verification layer, not a retail financial institution.\n\n## PhD framing\n\n**Candidate research question:** How can community-based lending and insurance arrangements be structured into standardized, securitizable assets that mobilize private capital for sustainable development, and under what conditions do these structures improve risk-adjusted returns and development impact?\n\n**Design constraints:** empirical-heavy, RCT/quasi-experimental where possible, double-blind where feasible, academic/research institutions as formal \"research and verification partners\" alongside community and commercial partners.\n\n**Candidate programs/supervisors to evaluate:**\n- Israel: Hebrew University of Jerusalem (Economics; Business School finance/risk), Tel Aviv University (New Environmental School; Coller School), Ben-Gurion University (Public Policy and Management; Economics)\n- International: Oxford (Smith School / Oxford Sustainable Finance Group), LSE (Finance / International Development), Cambridge (Judge Business School / CISL), Geneva Finance Research Institute, IESEG/Lille, Loughborough Business School\n\n## Business model framing\n\nThree-layer structure:\n- **Origination layer:** VSLAs, NGOs, MFIs, community banks, employer networks -- handle KYC, disbursement, collections, claims, local compliance\n- **Risk layer (my role):** underwriting rules, monitoring dashboards, early-warning systems, risk-sharing/tranching design, first-loss structuring\n- **Product layer:** loans, insurance, bundled products, priced using group-behavior data\n\n**Target end state:** investment-grade tranches sellable to institutional investors, with DFI/philanthropic capital absorbing first-loss/junior risk and private capital in mezzanine.\n\n**My value-add / toolkit to build:**\n1. Standardized data schema for loans/insurance (ABS-data-tape-ready)\n2. Underwriting engine (rules-based + ML scoring incorporating community signals)\n3. Monitoring & early-warning system (DPD tracking, delinquency/claim pattern alerts)\n4. Impact evaluation module (randomization infrastructure, pre-registered designs with academic partners)\n5. Securitization modeling (cash-flow waterfall models, loss/prepayment simulations)\n\n## Open questions for next phase\n\n- Which use cases have the best combination of social need, unit economics, and securitization potential?\n- Which communities/partner types generate the most reliable screening and servicing signals?\n- What data schema is required to make future pooling and rating feasible?\n- Which impact metrics should be tracked alongside financial metrics from day one?\n- What minimum credit enhancement is likely needed to approach investment-grade notes?\n- Israel pilot vs. Africa pilot as the first site -- final decision pending contact/access assessment\n- Loan vs. insurance vs. bundled product as the first instrument\n\n## Change log\n\n- Initial version drafted via research/planning conversation (pre-lit-review)\n"
+  },
+  {
+   "path": "product-design/business-economics.md",
+   "category": "Product & business",
+   "title": "Business Economics — Analysis Plan & Benchmark Skeleton",
+   "summary": "",
+   "words": 1138,
+   "body": "# Business Economics — Analysis Plan & Benchmark Skeleton\n\n**Status:** Plan (week of 2026-08-02) · **Owner:** BB\n\nThis fills the \"Financial plan — cost structure, revenue projections, funding ask\" gap flagged in\n`business-plan.md §10`. It is the **plan for the analysis**, plus a first benchmark skeleton — not\na finished model. Its job is to state, precisely, the questions the economics must answer and the\nnumbers we need to pin down, so that during the research phase we can tell — with benchmarks, not\nvibes — whether and how this becomes a profitable business.\n\nThe two questions the analysis exists to answer:\n\n> **Do the unit economics of a single structured deal work — and how many deals, at what size, does\n> the venture need before the structuring layer is self-sustaining?**\n\nEverything below serves those two questions.\n\n## 1. Deal anatomy and the cost stack\n\nA \"deal\" is one pool of community-originated receivables that we structure, monitor and place. Its\neconomics decompose into a **fixed** cost stack (largely independent of pool size — this is what\nmakes small pools uneconomic, per OQ-2) and a **variable** stack (scales with the pool).\n\n| Cost | Fixed / Variable | Notes |\n|---|---|---|\n| Legal & SPV set-up (true-sale opinions, domicile, counsel) | Fixed | The OQ-1 / LIT-009 checklist work; the main reason a pool must reach scale |\n| Structuring & rating / analytics | Fixed | Our own labour early on; a rating cost later |\n| Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |\n| Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |\n| Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |\n| Impact measurement | Semi-fixed | Grant-funded where possible (see `funding-pipeline.md`), so kept off the commercial P&L |\n\n**The key structural fact:** the fixed stack is why OQ-2's \"tens of millions, scaling to ≥USD 100m\"\nband exists. The analysis has to locate the pool size at which fixed costs stop dominating.\n\n## 2. Revenue lines\n\nFrom `business-plan.md §4`, made quantifiable:\n\n1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.\n2. **Retained economic interest** — return on the strip we are required to hold (EU/UK\n   risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.\n3. **Data / analytics licensing** — later-stage, once the underwriting engine has a track record.\n\nThe analysis models each as a driver, so we can see which line actually carries the business at\neach stage (early: fees; later: retained interest + data).\n\n## 3. The unit-economics model (spec — to build)\n\nA single spreadsheet / script that takes pool-level inputs and returns deal- and venture-level\neconomics. Candidate to become a new risk-tool alongside RT-1…RT-5.\n\n**Inputs (drivers):** pool notional; # loans / # groups; average ticket; tenor; gross yield;\nexpected loss curve; cost-to-serve; fixed structuring cost; fee %; retained-interest %; first-loss\nsize and cost; ramp (deals per year).\n\n**Outputs:** net margin per deal; break-even pool size; deals-to-breakeven for the venture;\nblended return to each tranche; sensitivity to loss rate and fee compression.\n\n**Two levels:**\n- **Deal level** — is one pool profitable, and above what size?\n- **Venture level** — given fixed overhead and a realistic ramp, how many deals of what size until\n  the structuring layer covers its own costs? This is the go/no-go number (OQ-10).\n\n## 4. Benchmark skeleton\n\nStarting values to *test*, not targets. Some are already evidence-backed in `business-plan.md §7`;\nthose are marked **[sourced]**. The rest are marked **[assumed]** and are exactly what the research\nphase exists to replace with real numbers. Nothing here is stated as fact.\n\n| Benchmark | Working value | Basis |\n|---|---|---|\n| First-loss / junior tranche | 10–20% of structure | **[sourced]** LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | **[sourced]** LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | **[sourced]** LIT-012 |\n| Track record before first tranche | 2–3 years clean repayment data | **[sourced]** LIT-004, LIT-006 |\n| Structuring / servicing fee | To source | **[assumed]** benchmark vs responsAbility / BlueOrchard-type managers (PT-08) |\n| Fixed legal / SPV set-up cost | To source | **[assumed]** get from counsel (PT-09) alongside OQ-1 |\n| Portfolio gross yield (community loans) | To source | **[assumed]** from MFI/VSLA partner data (PT-03, PT-04) |\n| Expected loss / PAR | To source | **[assumed]** from partner MIS + Memo 1/2 |\n| Cost-to-serve per loan | To source | **[assumed]** from origination-partner economics |\n| DFI mobilization ratio (private $ per DFI $) | To source | **[assumed]** OECD/IFC blended-finance data (Memo 3) |\n\nThe **[assumed]** rows are the shopping list. Each maps to a partner or source that can replace the\nguess with a number — which is precisely how the research phase produces the benchmarks the user\nasked for.\n\n## 5. What \"profitable business\" means here (decided)\n\n**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do\nthe unit economics show a defensible route to the structuring layer covering its costs plus a target\nmargin, at a scale we can realistically reach, with the key assumptions named and testable? Three\ndeliberate choices around it:\n\n- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is\n  from covering itself and what would close the gap — but a pilot failing to break even is expected and\n  is not a \"no\".\n- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the\n  question between the pilot floor and the path to scale.\n- **Gate on our own P&L; investor returns are a constraint.** \"Is this a business for us\" is judged on the\n  structuring company's economics; the tranche returns to junior / senior investors are a binding\n  constraint (if they do not clear, there is no deal to structure), not the primary gate.\n\nWhat remains is calibration: the concrete benchmark numbers (the **[assumed]** rows in §4), now anchored\non the flagship assets chosen in OQ-11.\n\n## 6. Sequence\n\n1. Confirm the cost-stack and revenue-line taxonomy above (this doc).\n2. Define the go/no-go threshold (OQ-10).\n3. Build the deal-level model with **[assumed]** benchmarks; expose the sensitivities.\n4. Replace **[assumed]** with **[sourced]** as partner/counsel conversations land (M-04, OQ-1).\n5. Extend to the venture level and read off the deals-to-breakeven number.\n\n## Deliverable state\n\nPlan + benchmark skeleton; OQ-10 framing now locked (§5). Remaining work: calibrate the [assumed]\nbenchmark rows against the flagship assets (OQ-11), then build the model (candidate new risk-tool).\nFeeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6.\n"
   },
   {
    "path": "product-design/business-plan.md",
@@ -8353,18 +8713,19 @@ window.SFV_DATA = {
     "Reviewed": 15
    },
    "questionsByStatus": {
-    "Partially answered": 4,
-    "Open": 4
+    "Partially answered": 6,
+    "Open": 3,
+    "Answered": 2
    },
    "milestonesByStatus": {
-    "Done": 2,
-    "Not started": 8,
-    "In progress": 1
+    "Done": 5,
+    "Not started": 11,
+    "In progress": 5
    },
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 30204
+   "totalWords": 34550
   }
  }
 };
