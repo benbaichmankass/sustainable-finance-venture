@@ -241,6 +241,70 @@ window.SFV_DATA = {
    "Link_Citation": "IFC 2025 - The Role of Blended Finance in an Evolving Global Context",
    "URL": "https://www.ifc.org/content/dam/ifc/doc/2025/role-of-blended-finance-in-an-evolving-global-context.pdf",
    "Status": "Reviewed"
+  },
+  {
+   "ID": "LIT-016",
+   "Axis": "2-Microfinance",
+   "Geography": "Global (regional breakdowns incl. Africa/MENA)",
+   "Method": "Industry benchmark report",
+   "Population_Context": "762 financial service providers, ~120m borrowers, USD 112bn gross loan portfolio (FY2017)",
+   "Key_Findings": "Global yield on gross loan portfolio 19.2% (FY2017); operating expense / loan portfolio ratio (OER) 10.6%, down from 11.1% in FY2016; PAR30 6.0%, down from 7.1%; cost per borrower ~USD 87. Regional: Africa OER 14.5%, MENA yield 15.3% and OER 15.6%. This is the last comprehensive MIX benchmark edition.",
+   "Limitations": "FY2017 data - predates COVID and the current rate cycle; self-reported by FSPs; MIX ceased regular reporting after this edition, so there is no newer equivalent; several regional figures are read from tables rather than stated in prose.",
+   "Relevance_Product": "Medium",
+   "Relevance_Risk": "High",
+   "Relevance_Impact": "Low",
+   "Open_Questions": "Supplies the gross-yield, expected-loss (PAR) and cost-to-serve anchors for the RT-6 unit-economics model (OQ-10). Open: how do community/VSLA-level economics compare with these formal-MFI averages?",
+   "Link_Citation": "MIX Market / Center for Financial Inclusion 2019 - Global Outreach and Financial Performance Benchmark Report 2017-2018",
+   "URL": "https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf",
+   "Status": "Reviewed"
+  },
+  {
+   "ID": "LIT-017",
+   "Axis": "4-Blended finance",
+   "Geography": "Global",
+   "Method": "Industry survey",
+   "Population_Context": "87 microfinance investment vehicles (MIVs), USD 15.3bn assets under management (Dec 2018)",
+   "Key_Findings": "MIV total expense ratio (TER) 2.4% of average assets in 2018, down from 2.9% in 2017; all-MIV management fee ~1.5%; Fixed-Income Funds (the debt vehicles closest to a securitisation) TER 2.2% and management fee 1.2%; weighted-average yield on the direct microfinance debt portfolio 7.6%; portfolio write-offs 0.2% and loan-loss-provision ratio 3.7%. Latest publicly available edition.",
+   "Limitations": "2018 data - predates COVID and current rates; self-reported; equity-fund TER excludes carried interest per the report's own footnote; MIV-level economics (a fund lending senior debt to MFIs) sit above the community/VSLA level this venture originates at.",
+   "Relevance_Product": "Medium",
+   "Relevance_Risk": "High",
+   "Relevance_Impact": "Low",
+   "Open_Questions": "Supplies the structuring/servicing-fee and senior-coupon anchors for RT-6 (OQ-10). Open: how does a VSLA-linked vehicle's cost structure compare with an established MIV's?",
+   "Link_Citation": "Symbiotics 2020 - 2019 Symbiotics MIV Survey (13th edition)",
+   "URL": "https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf",
+   "Status": "Reviewed"
+  },
+  {
+   "ID": "LIT-018",
+   "Axis": "4-Blended finance",
+   "Geography": "Global",
+   "Method": "Transaction-database analysis",
+   "Population_Context": "Blended finance funds and transactions in Convergence's deal database",
+   "Key_Findings": "On average USD 1 of concessional capital mobilises ~USD 4.1 of commercial capital, of which ~USD 1.8 is private-sector (just under half), across 340 transactions (2023 data). An earlier brief reported ~4.0x average, median 2.7x and a range of 0.3x-22x (2018, 72 funds). Dispersion is wide and mobilisation skews toward middle-income countries.",
+   "Limitations": "The leverage ratio is a contested metric that OECD warns can create perverse incentives; the deal database is self-reported; ratios skew to middle-income countries, so Sub-Saharan Africa / LDC figures are typically lower; it is a mobilisation, not an additionality or impact, measure.",
+   "Relevance_Product": "Low",
+   "Relevance_Risk": "High",
+   "Relevance_Impact": "Medium",
+   "Open_Questions": "Provides the DFI mobilisation-ratio context for RT-6 and OQ-6 (how much private capital a first-loss layer can unlock). Open: what ratio is realistic for a VSLA-linked vehicle in Sub-Saharan Africa?",
+   "Link_Citation": "Convergence - How much commercial capital does concessional capital leverage? (State of Blended Finance data)",
+   "URL": "https://www.convergence.finance/news/4cC8kVJXvOFZDVxGQ6HLNH/view",
+   "Status": "Reviewed"
+  },
+  {
+   "ID": "LIT-019",
+   "Axis": "4-Blended finance",
+   "Geography": "Global",
+   "Method": "Policy report / mobilisation-data analysis",
+   "Population_Context": "DFIs, donors and private investors using guarantees and other blended instruments",
+   "Key_Findings": "Guarantees mobilised more private finance than any other instrument - 39% of all private capital mobilised over 2012-2018 - and were the most effective tool in every year of that period. OECD 2012-2023 instrument shares are roughly direct investment 29%, guarantees 23% and syndicated loans 19% (~70% combined). Total private finance mobilised exceeded USD 500bn over 2012-2023.",
+   "Limitations": "OECD cautions that the leverage ratio is not its official metric; the instrument mix aggregates all sectors and geographies rather than microfinance/VSLA specifically; the analysis is descriptive rather than causal.",
+   "Relevance_Product": "Low",
+   "Relevance_Risk": "High",
+   "Relevance_Impact": "Medium",
+   "Open_Questions": "Informs OQ-6 first-loss instrument choice (a pooled guarantee may mobilise more than junior equity) and the RT-6 mobilisation driver. Open: which first-loss instrument fits a first VSLA-linked pilot vehicle?",
+   "Link_Citation": "OECD 2021 - The Role of Guarantees in Blended Finance",
+   "URL": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/06/the-role-of-guarantees-in-blended-finance_cef700a2/730e1498-en.pdf",
+   "Status": "Reviewed"
   }
  ],
  "openQuestions": [
@@ -261,8 +325,8 @@ window.SFV_DATA = {
    "Linked_Area": "Product Design / Pilot Design",
    "Status": "Partially answered",
    "Owner": "BB",
-   "Notes": "Rule-of-thumb ABS deals need $20-50M+ notional to justify costs; pilot-stage pools (20-50 VSLAs) will be far below this - need a warehousing/aggregation bridge strategy until scale is reached. LIT-012 shows structured funds are more likely than flat funds to reach >=USD 100m, with average fund size ~USD 250m; LIT-011 shows African deals that closed involved large, standardised portfolios with DFI sponsorship. Working target band: private DFI-anchored warehouse in the tens of millions, scaling toward >=USD 100m before public issuance.",
-   "Evidence_Refs": "LIT-011; LIT-012"
+   "Notes": "Rule-of-thumb ABS deals need $20-50M+ notional to justify costs; pilot-stage pools (20-50 VSLAs) will be far below this - need a warehousing/aggregation bridge strategy until scale is reached. LIT-012 shows structured funds are more likely than flat funds to reach >=USD 100m, with average fund size ~USD 250m; LIT-011 shows African deals that closed involved large, standardised portfolios with DFI sponsorship. Working target band: private DFI-anchored warehouse in the tens of millions, scaling toward >=USD 100m before public issuance. RT-6 (2026-08-02) adds the OUR-P&L side of the min-pool question: the structuring company's deal-level break-even pool is ~USD 8.6m under likely assumptions (~USD 38m worst, ~USD 3.2m best), complementing RT-5's finding that fixed costs destroy the junior tranche below ~USD 5m and flatten around USD 20-40m. Both point to the same conclusion from opposite sides: pilot pools (20-50 groups) sit 14-50x below break-even, so the DFI-anchored warehousing bridge is the only path, not an optimisation.",
+   "Evidence_Refs": "LIT-011; LIT-012; RT-6"
   },
   {
    "ID": "OQ-3",
@@ -341,8 +405,8 @@ window.SFV_DATA = {
    "Linked_Area": "Business Plan / Product Design",
    "Status": "Partially answered",
    "Owner": "BB",
-   "Notes": "Framing locked 2026-08-02: the go/no-go GATE is a credible path to at-scale profitability at a scale we can realistically reach (assumptions named and testable); pilot-level breakeven rides alongside as a concrete near-term yardstick, not the gate; no single fixed-scale target is assumed. Gate on our own structuring-company P&L, with investor-return hurdles as a binding constraint (if the tranches do not clear, there is no deal). Remaining work: set the concrete benchmark numbers (the [assumed] rows in business-economics.md), which depend on the flagship assets now chosen in OQ-11.",
-   "Evidence_Refs": "OQ-2"
+   "Notes": "Framing locked 2026-08-02; threshold decided and a first model-based answer produced 2026-08-02. GATE (go/no-go) = a credible path to the structuring layer covering its own costs at a reachable scale within 3 years; KPIs tracked (not gates) = steady-state operating margin (target 30%) and return on capital-at-risk (target 15%); investor tranche returns are the binding constraint. Built RT-6 (risk-tools/tools/economics_model.py): a deterministic three-scenario P&L (Worst/Likely/Best), keeping our-P&L (the gate) separate from the investor stack (the constraint), and separate from RT-5 which owns the loss distribution. Benchmarks sourced where open-access data exists (LIT-016 MFI yield/PAR/OER, LIT-017 MIV fees/yield, LIT-018/019 mobilisation); 5/23 drivers SOURCED, 18 ASSUMED. First answer = CONDITIONAL GO: under the most-likely scenario the gate passes (break-even ~yr 1 at ~4x USD 25m deals/yr) and both KPIs are met (op margin 34%, RoCaR 16%), but only above a ~USD 8.6m deal size and only with concessional first-loss (junior returns 8.7% vs a 10% hurdle); the worst case fails the clearing test outright. Remaining work: replace the two stubborn assumed drivers (fixed structuring cost - no open-access benchmark exists; origination share of the spread - needs partner MIS) and tie the loss assumption to RT-5 (RT-6 v0.2). See product-design/business-economics.md and risk-tools/rt-6-economics-model.md.",
+   "Evidence_Refs": "OQ-2; RT-6; LIT-016; LIT-017; LIT-018; LIT-019"
   },
   {
    "ID": "OQ-11",
@@ -446,6 +510,19 @@ window.SFV_DATA = {
    "Path": "risk-tools/rt-5-securitisation-model.md",
    "Blocked_By": "RT-1",
    "Notes": "Synthetic scaffold running: pool generator, single-factor correlated loss model, sequential waterfall, six macro stress scenarios. Uncalibrated - outputs are structural, not evidential. Already yields a derived OQ-2 answer via --sweep: fixed costs dominate the junior tranche below roughly USD 5m and flatten around USD 20-40m."
+  },
+  {
+   "ID": "RT-6",
+   "Name": "Unit-economics model",
+   "Purpose": "Models the structuring company's own P&L across three scenarios to answer OQ-10: is there a credible path to at-scale profitability? Deal- and venture-level net margin, break-even pool size, deals-to-breakeven, the pilot-breakeven yardstick on the flagship trio, and sensitivity to loss and fee compression.",
+   "Product_Lines": "PL-1; PL-2",
+   "Status": "In development",
+   "Version": "0.1",
+   "Stack": "Python",
+   "Tests": "P&L identity (revenue-cost=margin), economies of scale, scenario ordering, gate consistency (test_toolchain.py, CI)",
+   "Path": "risk-tools/rt-6-economics-model.md",
+   "Blocked_By": "partner/counsel data for calibration",
+   "Notes": "Deterministic closed-form P&L over Worst/Likely/Best scenarios. GATE (OQ-10, set 2026-08-02) = structuring layer covers its own costs within 3y at reachable scale; KPIs tracked = operating margin (t.30%) and return on capital-at-risk (t.15%); investor tranche returns are the binding constraint. 5/23 drivers SOURCED (MIX 2017-18, Symbiotics 2019, Convergence, OECD - LIT-016..019), 18 ASSUMED. Likely case passes the gate and meets both KPIs but the junior tranche needs concessional pricing; pilots sit 14-50x below break-even. Not calibrated - outputs describe the model, not the asset class. Separate from RT-5, which owns the loss distribution."
   }
  ],
  "macroIndicators": [
@@ -975,6 +1052,305 @@ window.SFV_DATA = {
    "Default_Multiplier": "2.8",
    "Model_Version": "0.1",
    "Basis": "SYNTHETIC - illustrative only, not calibrated to field data"
+  }
+ ],
+ "rt6Results": [
+  {
+   "Scenario": "Worst",
+   "Metric": "Deal net margin",
+   "Value": "-190000.0",
+   "Unit": "USD",
+   "Detail": "on a $20,000,000 pool over 1.5y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Deal net margin",
+   "Value": "-0.95",
+   "Unit": "% of notional",
+   "Detail": "structuring-company margin",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Break-even pool size",
+   "Value": "38095238.0",
+   "Unit": "USD",
+   "Detail": "notional at which our net margin = 0",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Gate: cover costs",
+   "Value": "fail",
+   "Unit": "bool",
+   "Detail": "venture break-even within 3y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Years to break-even",
+   "Value": "",
+   "Unit": "years",
+   "Detail": "venture-level, incl. $2,000,000/yr overhead",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Deals to break-even",
+   "Value": "",
+   "Unit": "deals",
+   "Detail": "cumulative, at 3 deals/yr",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "KPI1 operating margin",
+   "Value": "-101.48",
+   "Unit": "%",
+   "Detail": "steady-state; target 30.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "KPI2 return on capital-at-risk",
+   "Value": "-30.44",
+   "Unit": "%",
+   "Detail": "on $4,500,000 strip; target 15.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Steady-state margin",
+   "Value": "-1370000.0",
+   "Unit": "USD/yr",
+   "Detail": "on a $90,000,000 book",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Junior residual return",
+   "Value": "-21.33",
+   "Unit": "%",
+   "Detail": "binding constraint; hurdle 10.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Worst",
+   "Metric": "Senior+mezz covered",
+   "Value": "no",
+   "Unit": "bool",
+   "Detail": "does pool spread pay senior+mezz coupons",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Deal net margin",
+   "Value": "475000.0",
+   "Unit": "USD",
+   "Detail": "on a $25,000,000 pool over 1.5y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Deal net margin",
+   "Value": "1.9",
+   "Unit": "% of notional",
+   "Detail": "structuring-company margin",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Break-even pool size",
+   "Value": "8620690.0",
+   "Unit": "USD",
+   "Detail": "notional at which our net margin = 0",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Gate: cover costs",
+   "Value": "pass",
+   "Unit": "bool",
+   "Detail": "venture break-even within 3y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Years to break-even",
+   "Value": "1",
+   "Unit": "years",
+   "Detail": "venture-level, incl. $1,500,000/yr overhead",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Deals to break-even",
+   "Value": "4.0",
+   "Unit": "deals",
+   "Detail": "cumulative, at 4 deals/yr",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "KPI1 operating margin",
+   "Value": "34.47",
+   "Unit": "%",
+   "Detail": "steady-state; target 30.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "KPI2 return on capital-at-risk",
+   "Value": "15.78",
+   "Unit": "%",
+   "Detail": "on $7,500,000 strip; target 15.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Steady-state margin",
+   "Value": "1183333.0",
+   "Unit": "USD/yr",
+   "Detail": "on a $150,000,000 book",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Junior residual return",
+   "Value": "8.67",
+   "Unit": "%",
+   "Detail": "binding constraint; hurdle 10.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Likely",
+   "Metric": "Senior+mezz covered",
+   "Value": "yes",
+   "Unit": "bool",
+   "Detail": "does pool spread pay senior+mezz coupons",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Deal net margin",
+   "Value": "1240000.0",
+   "Unit": "USD",
+   "Detail": "on a $30,000,000 pool over 1.5y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Deal net margin",
+   "Value": "4.13",
+   "Unit": "% of notional",
+   "Detail": "structuring-company margin",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Break-even pool size",
+   "Value": "3237410.0",
+   "Unit": "USD",
+   "Detail": "notional at which our net margin = 0",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Gate: cover costs",
+   "Value": "pass",
+   "Unit": "bool",
+   "Detail": "venture break-even within 3y",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Years to break-even",
+   "Value": "1",
+   "Unit": "years",
+   "Detail": "venture-level, incl. $1,300,000/yr overhead",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Deals to break-even",
+   "Value": "5.0",
+   "Unit": "deals",
+   "Detail": "cumulative, at 5 deals/yr",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "KPI1 operating margin",
+   "Value": "69.32",
+   "Unit": "%",
+   "Detail": "steady-state; target 30.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "KPI2 return on capital-at-risk",
+   "Value": "44.19",
+   "Unit": "%",
+   "Detail": "on $11,250,000 strip; target 15.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Steady-state margin",
+   "Value": "4970833.0",
+   "Unit": "USD/yr",
+   "Detail": "on a $225,000,000 book",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Junior residual return",
+   "Value": "18.11",
+   "Unit": "%",
+   "Detail": "binding constraint; hurdle 10.00%",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
+  },
+  {
+   "Scenario": "Best",
+   "Metric": "Senior+mezz covered",
+   "Value": "yes",
+   "Unit": "bool",
+   "Detail": "does pool spread pay senior+mezz coupons",
+   "Model_Version": "0.1",
+   "Basis": "SOURCED 5/23 drivers; remainder ASSUMED - not calibrated to field data"
   }
  ],
  "partners": [
@@ -1994,8 +2370,8 @@ window.SFV_DATA = {
    "ID": "M-17",
    "Phase": "Week of 2026-08-02",
    "Milestone": "Draft the business-economics analysis plan and benchmark skeleton",
-   "Detail": "product-design/business-economics.md: deal cost stack, revenue lines, unit-economics model spec and a benchmark table splitting [sourced] from [assumed]. Fills business-plan.md section 10. Model build follows OQ-10.",
-   "Status": "In progress",
+   "Detail": "product-design/business-economics.md: deal cost stack, revenue lines, unit-economics model spec and a benchmark table splitting [sourced] from [assumed]. Fills business-plan.md section 10. Model build follows OQ-10. Model build now complete as RT-6 (see M-23); this milestone (the plan + benchmark skeleton) is done.",
+   "Status": "Done",
    "Owner": "BB",
    "Linked_Refs": "OQ-2; OQ-6; OQ-10"
   },
@@ -2043,6 +2419,15 @@ window.SFV_DATA = {
    "Status": "Not started",
    "Owner": "BB",
    "Linked_Refs": "FUND-02; FUND-03; M-20"
+  },
+  {
+   "ID": "M-23",
+   "Phase": "Week of 2026-08-02",
+   "Milestone": "Build the RT-6 unit-economics model and produce a first OQ-10 answer",
+   "Detail": "Benchmark-research pass sourced the load-bearing drivers where open-access data exists (LIT-016 MIX MFI yield/PAR/OER; LIT-017 Symbiotics MIV fees/yield; LIT-018/019 blended-finance mobilisation). Built RT-6 (risk-tools/tools/economics_model.py): a stdlib three-scenario P&L with deal- and venture-level outputs, break-even pool size, operating margin and return on capital-at-risk KPIs, a pilot-breakeven yardstick on the flagship trio, and a loss x fee sensitivity grid. Threshold decided (gate = cover costs within 3y; KPIs = 30% op margin, 15% RoCaR). First answer: conditional GO under likely assumptions. Results surfaced on the dashboard; OQ-10 and OQ-2 updated. Remaining: calibrate the two stubborn assumed drivers and wire the loss to RT-5.",
+   "Status": "Done",
+   "Owner": "BB",
+   "Linked_Refs": "OQ-10; OQ-2; RT-6; LIT-016; LIT-017; LIT-018; LIT-019"
   }
  ],
  "memos": [
@@ -2071,7 +2456,7 @@ window.SFV_DATA = {
    "Covers_Axis": "3-Securitization / 4-Blended finance",
    "Status": "Reviewed",
    "Path": "literature/notes/memo-3-securitization-blended-finance.md",
-   "Key_Takeaways": "Securitization of community/microfinance assets is feasible but nascent: existing models all required a standardization layer, credit enhancement/first-loss, and an anchor investor before market-rate tranches were sellable. New anchors add three concrete design parameters: a six-point legal checklist for cross-border true sale (LIT-009/010); a size band of tens of millions warehoused scaling to >=USD 100m for issuance (LIT-011/012); and a first-loss tranche in the 10-20% range with a documented additionality and tapering story (LIT-013/015). Design the data schema and underwriting rules from day one to match ABS eligibility criteria."
+   "Key_Takeaways": "Securitization of community/microfinance assets is feasible but nascent: existing models all required a standardization layer, credit enhancement/first-loss, and an anchor investor before market-rate tranches were sellable. New anchors add three concrete design parameters: a six-point legal checklist for cross-border true sale (LIT-009/010); a size band of tens of millions warehoused scaling to >=USD 100m for issuance (LIT-011/012); and a first-loss tranche in the 10-20% range with a documented additionality and tapering story (LIT-013/015). Design the data schema and underwriting rules from day one to match ABS eligibility criteria. Economics anchors added 2026-08-02 for RT-6/OQ-10: MIV total expense ratio ~2.4% and Fixed-Income fund fee 1.2% with a 7.6% senior yield (LIT-017), and a concessional-to-private mobilisation ratio of ~1.8x with guarantees the strongest lever (LIT-018/019)."
   }
  ],
  "resources": [
@@ -8563,10 +8948,10 @@ window.SFV_DATA = {
   {
    "path": "product-design/business-economics.md",
    "category": "Product & business",
-   "title": "Business Economics — Analysis Plan & Benchmark Skeleton",
+   "title": "Business Economics — Benchmarks & Unit-Economics Model",
    "summary": "",
-   "words": 1138,
-   "body": "# Business Economics — Analysis Plan & Benchmark Skeleton\n\n**Status:** Plan (week of 2026-08-02) · **Owner:** BB\n\nThis fills the \"Financial plan — cost structure, revenue projections, funding ask\" gap flagged in\n`business-plan.md §10`. It is the **plan for the analysis**, plus a first benchmark skeleton — not\na finished model. Its job is to state, precisely, the questions the economics must answer and the\nnumbers we need to pin down, so that during the research phase we can tell — with benchmarks, not\nvibes — whether and how this becomes a profitable business.\n\nThe two questions the analysis exists to answer:\n\n> **Do the unit economics of a single structured deal work — and how many deals, at what size, does\n> the venture need before the structuring layer is self-sustaining?**\n\nEverything below serves those two questions.\n\n## 1. Deal anatomy and the cost stack\n\nA \"deal\" is one pool of community-originated receivables that we structure, monitor and place. Its\neconomics decompose into a **fixed** cost stack (largely independent of pool size — this is what\nmakes small pools uneconomic, per OQ-2) and a **variable** stack (scales with the pool).\n\n| Cost | Fixed / Variable | Notes |\n|---|---|---|\n| Legal & SPV set-up (true-sale opinions, domicile, counsel) | Fixed | The OQ-1 / LIT-009 checklist work; the main reason a pool must reach scale |\n| Structuring & rating / analytics | Fixed | Our own labour early on; a rating cost later |\n| Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |\n| Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |\n| Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |\n| Impact measurement | Semi-fixed | Grant-funded where possible (see `funding-pipeline.md`), so kept off the commercial P&L |\n\n**The key structural fact:** the fixed stack is why OQ-2's \"tens of millions, scaling to ≥USD 100m\"\nband exists. The analysis has to locate the pool size at which fixed costs stop dominating.\n\n## 2. Revenue lines\n\nFrom `business-plan.md §4`, made quantifiable:\n\n1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.\n2. **Retained economic interest** — return on the strip we are required to hold (EU/UK\n   risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.\n3. **Data / analytics licensing** — later-stage, once the underwriting engine has a track record.\n\nThe analysis models each as a driver, so we can see which line actually carries the business at\neach stage (early: fees; later: retained interest + data).\n\n## 3. The unit-economics model (spec — to build)\n\nA single spreadsheet / script that takes pool-level inputs and returns deal- and venture-level\neconomics. Candidate to become a new risk-tool alongside RT-1…RT-5.\n\n**Inputs (drivers):** pool notional; # loans / # groups; average ticket; tenor; gross yield;\nexpected loss curve; cost-to-serve; fixed structuring cost; fee %; retained-interest %; first-loss\nsize and cost; ramp (deals per year).\n\n**Outputs:** net margin per deal; break-even pool size; deals-to-breakeven for the venture;\nblended return to each tranche; sensitivity to loss rate and fee compression.\n\n**Two levels:**\n- **Deal level** — is one pool profitable, and above what size?\n- **Venture level** — given fixed overhead and a realistic ramp, how many deals of what size until\n  the structuring layer covers its own costs? This is the go/no-go number (OQ-10).\n\n## 4. Benchmark skeleton\n\nStarting values to *test*, not targets. Some are already evidence-backed in `business-plan.md §7`;\nthose are marked **[sourced]**. The rest are marked **[assumed]** and are exactly what the research\nphase exists to replace with real numbers. Nothing here is stated as fact.\n\n| Benchmark | Working value | Basis |\n|---|---|---|\n| First-loss / junior tranche | 10–20% of structure | **[sourced]** LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | **[sourced]** LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | **[sourced]** LIT-012 |\n| Track record before first tranche | 2–3 years clean repayment data | **[sourced]** LIT-004, LIT-006 |\n| Structuring / servicing fee | To source | **[assumed]** benchmark vs responsAbility / BlueOrchard-type managers (PT-08) |\n| Fixed legal / SPV set-up cost | To source | **[assumed]** get from counsel (PT-09) alongside OQ-1 |\n| Portfolio gross yield (community loans) | To source | **[assumed]** from MFI/VSLA partner data (PT-03, PT-04) |\n| Expected loss / PAR | To source | **[assumed]** from partner MIS + Memo 1/2 |\n| Cost-to-serve per loan | To source | **[assumed]** from origination-partner economics |\n| DFI mobilization ratio (private $ per DFI $) | To source | **[assumed]** OECD/IFC blended-finance data (Memo 3) |\n\nThe **[assumed]** rows are the shopping list. Each maps to a partner or source that can replace the\nguess with a number — which is precisely how the research phase produces the benchmarks the user\nasked for.\n\n## 5. What \"profitable business\" means here (decided)\n\n**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do\nthe unit economics show a defensible route to the structuring layer covering its costs plus a target\nmargin, at a scale we can realistically reach, with the key assumptions named and testable? Three\ndeliberate choices around it:\n\n- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is\n  from covering itself and what would close the gap — but a pilot failing to break even is expected and\n  is not a \"no\".\n- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the\n  question between the pilot floor and the path to scale.\n- **Gate on our own P&L; investor returns are a constraint.** \"Is this a business for us\" is judged on the\n  structuring company's economics; the tranche returns to junior / senior investors are a binding\n  constraint (if they do not clear, there is no deal to structure), not the primary gate.\n\nWhat remains is calibration: the concrete benchmark numbers (the **[assumed]** rows in §4), now anchored\non the flagship assets chosen in OQ-11.\n\n## 6. Sequence\n\n1. Confirm the cost-stack and revenue-line taxonomy above (this doc).\n2. Define the go/no-go threshold (OQ-10).\n3. Build the deal-level model with **[assumed]** benchmarks; expose the sensitivities.\n4. Replace **[assumed]** with **[sourced]** as partner/counsel conversations land (M-04, OQ-1).\n5. Extend to the venture level and read off the deals-to-breakeven number.\n\n## Deliverable state\n\nPlan + benchmark skeleton; OQ-10 framing now locked (§5). Remaining work: calibrate the [assumed]\nbenchmark rows against the flagship assets (OQ-11), then build the model (candidate new risk-tool).\nFeeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6.\n"
+   "words": 1660,
+   "body": "# Business Economics — Benchmarks & Unit-Economics Model\n\n**Status:** Model built (RT-6 v0.1) · **Owner:** BB · **Updated:** 2026-08-02\n\nThis fills the \"Financial plan — cost structure, revenue projections, funding ask\" gap flagged in\n`business-plan.md §10`. It began as a plan for the analysis plus a benchmark skeleton; it now carries\na **working unit-economics model (RT-6)** and a first, defensible answer to OQ-10. Its job is to tell\nus — with benchmarks, not vibes — whether and how this becomes a profitable business.\n\nThe two questions the analysis exists to answer:\n\n> **Do the unit economics of a single structured deal work — and how many deals, at what size, does\n> the venture need before the structuring layer is self-sustaining?**\n\nEverything below serves those two questions.\n\n## 1. Deal anatomy and the cost stack\n\nA \"deal\" is one pool of community-originated receivables that we structure, monitor and place. Its\neconomics decompose into a **fixed** cost stack (largely independent of pool size — this is what\nmakes small pools uneconomic, per OQ-2) and a **variable** stack (scales with the pool).\n\n| Cost | Fixed / Variable | Notes |\n|---|---|---|\n| Legal & SPV set-up (true-sale opinions, domicile, counsel) | Fixed | The OQ-1 / LIT-009 checklist work; the main reason a pool must reach scale |\n| Structuring & rating / analytics | Fixed | Our own labour early on; a rating cost later |\n| Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |\n| Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |\n| Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |\n| Impact measurement | Semi-fixed | Grant-funded where possible (see `funding-pipeline.md`), so kept off the commercial P&L |\n\n**The key structural fact:** the fixed stack is why OQ-2's \"tens of millions, scaling to ≥USD 100m\"\nband exists. The analysis has to locate the pool size at which fixed costs stop dominating.\n\n## 2. Revenue lines\n\nFrom `business-plan.md §4`, made quantifiable:\n\n1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.\n2. **Retained economic interest** — return on the strip we are required to hold (EU/UK\n   risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.\n3. **Data / analytics licensing** — later-stage, once the underwriting engine has a track record.\n\nThe analysis models each as a driver, so we can see which line actually carries the business at\neach stage (early: fees; later: retained interest + data).\n\n## 3. The unit-economics model (built — RT-6)\n\nBuilt as **RT-6** (`risk-tools/tools/economics_model.py`, doc `risk-tools/rt-6-economics-model.md`),\na stdlib-only tool alongside RT-1…RT-5. It takes pool-level drivers and returns deal- and\nventure-level economics across **three scenarios** (Worst / Likely / Best).\n\n**Inputs (drivers):** pool notional; average ticket; weighted life; gross yield; expected loss;\norigination share of the spread; our cost-to-serve; fixed structuring cost; structuring and servicing\nfee %; retained-interest %; tranche sizes and coupons; junior hurdle; ramp (deals per year); overhead.\nEach driver is tagged `SOURCED` or `ASSUMED` in `economics-config.csv`.\n\n**Outputs:** net margin per deal; break-even pool size; deals- and years-to-breakeven; operating\nmargin and return on capital-at-risk; the junior residual return against its hurdle; and a loss ×\nfee-compression sensitivity grid.\n\n**Two levels, plus a companion:**\n- **Deal level** — is one pool profitable, and above what size?\n- **Venture level** — given fixed overhead and a realistic ramp, does the structuring layer cover its\n  own costs, and at what margin? This is the go/no-go test (OQ-10).\n- **Pilot yardstick** — how far a pilot-scale pool on each flagship asset is from covering itself.\n\n**The design choice that matters:** RT-6 keeps *our P&L* (the gate) separate from *the investor\nstack* (the binding constraint), and it is **not** RT-5. RT-5 owns the correlated loss distribution\nand the fixed-cost floor; RT-6 takes a loss assumption and asks whether the business pays.\n\n## 4. Benchmarks\n\nStarting values to *test*, not targets. The 2026-08-02 benchmark-research pass replaced most of the\noriginal **[assumed]** shopping list with open-access **[sourced]** anchors; what remains assumed is\nflagged honestly. Nothing here is stated as fact, and every figure feeds RT-6's `economics-config.csv`.\n\n| Benchmark | Working value | Basis |\n|---|---|---|\n| First-loss / junior tranche | 10–20% of structure | **[sourced]** LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | **[sourced]** LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | **[sourced]** LIT-012 |\n| Track record before first tranche | 2–3 years clean repayment data | **[sourced]** LIT-004, LIT-006 |\n| Portfolio gross yield (MFI to borrower) | ~20% Africa / 19.2% global | **[sourced]** LIT-016 (MIX 2017-18) |\n| Expected loss / PAR | PAR30 6.0% global → ~5% net loss modelled | **[sourced]** LIT-016; net-loss value **[assumed]** |\n| Cost-to-serve (operating expense ratio) | 10.6% global / 14.5% Africa; ~$87/borrower | **[sourced]** LIT-016 |\n| Structuring / servicing fee | MIV TER 2.4%; Fixed-Income fund fee 1.2% | **[sourced]** LIT-017 (Symbiotics 2019) |\n| Senior coupon | ~7% (MIV wholesale yield 7.6%) | **[sourced]** LIT-017 |\n| DFI mobilization ratio (private $ per DFI $) | ~1.8× private / 4.1× commercial; guarantees lead | **[sourced]** LIT-018, LIT-019 |\n| Fixed legal / SPV set-up cost | ~$250k/deal (working) | **[assumed]** — no open-access benchmark exists; get from counsel (PT-09) alongside OQ-1 |\n| Origination share of the spread | ~5% of the ~20% yield | **[assumed]** — informed by OER; get from partner MIS (PT-03, PT-04) |\n\n**Two rows resisted sourcing and remain the priority shopping list:** the **fixed structuring cost per\ndeal** (genuinely absent from open-access literature — a we-assume, not a the-literature-says) and the\n**origination layer's share of the spread** (needs real partner MIS). These are also the two drivers\nRT-6's sensitivity flags as most load-bearing. The vintage caveat matters: the MIX and Symbiotics\nanchors are 2017-18 data — the last comprehensive public editions — so they predate the current rate\ncycle.\n\n## 5. What \"profitable business\" means here (decided)\n\n**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do\nthe unit economics show a defensible route to the structuring layer covering its costs plus a target\nmargin, at a scale we can realistically reach, with the key assumptions named and testable? Three\ndeliberate choices around it:\n\n- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is\n  from covering itself and what would close the gap — but a pilot failing to break even is expected and\n  is not a \"no\".\n- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the\n  question between the pilot floor and the path to scale.\n- **Gate on our own P&L; investor returns are a constraint.** \"Is this a business for us\" is judged on the\n  structuring company's economics; the tranche returns to junior / senior investors are a binding\n  constraint (if they do not clear, there is no deal to structure), not the primary gate.\n\n**The concrete threshold (decided 2026-08-02, BB).** The go/no-go **gate** is a credible path to the\nstructuring layer **covering its own costs at a reachable scale, within 3 years**. Two figures ride\nalongside as **KPIs we steer by, not gates**: steady-state **operating margin** (target 30%) and\n**return on capital-at-risk** on the retained first-loss strip (target 15%). RT-6 evaluates all three,\nper scenario.\n\n### What the model says (RT-6 v0.1, synthetic)\n\n| | Worst | Likely | Best |\n|---|---|---|---|\n| Deal net margin (% of notional) | −0.95% | **+1.9%** | +4.1% |\n| Break-even pool size | ~$38m | **~$8.6m** | ~$3.2m |\n| Gate — cover costs within 3y | fail | **pass (yr 1)** | pass (yr 1) |\n| KPI1 operating margin (t. 30%) | −101% | **34%** | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | **16%** | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | **8.7% (short)** | 18% (clears) |\n\n**A first, defensible answer to OQ-10: a conditional GO.** Under the most-likely assumptions the gate\npasses and both KPIs are met — the structuring layer is a business at a reachable scale (roughly four\n$25m warehouse-scale deals a year). But the answer rests on two conditions the model makes explicit:\n(1) it holds only above ~$8.6m per deal — pilots sit 14–50× below that (the warehousing bridge is the\nonly path, per OQ-2); and (2) the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists\nonly with concessional first-loss** — the blended-finance case stated as arithmetic. The worst case does\nnot merely thin the margin; it fails the clearing test, so there is no deal at all. This is a first\nanswer to calibrate, not a verdict — 18 of 23 drivers are still assumed.\n\nWhat remains is calibration: replace the two stubborn **[assumed]** rows in §4 (fixed structuring cost;\norigination share) with partner and counsel numbers, and tie the loss assumption to RT-5 directly.\n\n## 6. Sequence\n\n1. ~~Confirm the cost-stack and revenue-line taxonomy~~ (this doc). **Done.**\n2. ~~Define the go/no-go threshold (OQ-10).~~ **Done** — gate + KPIs, §5.\n3. ~~Build the deal- and venture-level model; expose the sensitivities.~~ **Done** — RT-6, three scenarios.\n4. ~~Source the benchmarks.~~ **Mostly done** — LIT-016..019; two rows resist sourcing (§4).\n5. Replace the two remaining **[assumed]** rows with partner/counsel numbers (M-04, OQ-1, PT-03/04/09).\n6. Wire RT-6's loss assumption to an RT-5 scenario directly (RT-6 v0.2).\n\n## Deliverable state\n\n**Model built (RT-6 v0.1).** Benchmarks sourced where open-access data exists; go/no-go threshold\ndecided; a three-scenario model produces a first, defensible answer to OQ-10 (conditional GO, §5).\nFeeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6. Remaining work is\ncalibration: the two stubborn assumed drivers, and tying the loss assumption to RT-5.\n"
   },
   {
    "path": "product-design/business-plan.md",
@@ -8621,8 +9006,8 @@ window.SFV_DATA = {
    "category": "Risk tools",
    "title": "Risk management tools",
    "summary": "",
-   "words": 695,
-   "body": "# Risk management tools\n\nThe toolkit that makes community-originated cash flows underwritable. Registry: `data/risk-tools.csv`; one document per tool in this directory.\n\n**Nothing here is built yet.** Every tool is at specification stage. That's stated honestly in the registry rather than dressed up as \"in progress\" — the specs exist so that when data arrives the build is a matter of execution, not design.\n\n## The tools\n\n| ID | Tool | Consumes | Blocked by |\n|---|---|---|---|\n| RT-1 | Origination data schema | — | OQ-3 |\n| RT-2 | Underwriting engine | RT-1 | RT-1, pilot data |\n| RT-3 | Monitoring & early-warning | RT-1 | RT-1 |\n| RT-4 | Impact evaluation module | RT-1 | OQ-4/5/7 |\n| RT-5 | Securitisation cash-flow model | RT-1 | RT-1 |\n\n**RT-1 is the critical path.** Everything consumes its output. Get the field list wrong and every downstream tool inherits the error — and unlike code, an origination schema cannot be fixed retroactively, because the data you failed to capture is simply gone.\n\n## Why these five\n\nThey map to the venture's position in the stack. We sit in the risk layer (`product-design/business-plan.md` §3): origination partners handle disbursement and collection, we handle underwriting rules, monitoring, tranching and evidence. These five are that layer made concrete.\n\nRT-5 is the one that can be built first with no real data — waterfall mechanics can be exercised against synthetic portfolios, and it answers OQ-2 and OQ-6, which are currently blocking decisions.\n\n## Conventions\n\n**Versioning.** Semantic, per tool, recorded in the tool's document and in `data/risk-tools.csv`:\n\n- **Major** — a change that invalidates comparison with prior output. A removed schema field, a changed scoring scale, a different waterfall convention. Requires a migration note.\n- **Minor** — additive and backward-compatible. A new optional field, a new alert type.\n- **Patch** — fixes that don't change the interface.\n\nEvery tool document carries a version history table with date, version, change and rationale. `0.x` means specification only, nothing implemented.\n\n**Schema changes are special.** RT-1 is a data contract with origination partners in the field. A major version bump means retraining people and possibly reprinting forms. Batch changes; don't drip them.\n\n**Tests.** Each tool states its test strategy in its own document. The standing requirements:\n\n- Deterministic golden cases for anything doing arithmetic on money.\n- Property-based tests for invariants (a waterfall must distribute exactly what it receives; a score must stay in range).\n- Backtests against held-out data for anything predictive — and no predictive model ships without one.\n- Synthetic-data tests so tools are testable before real portfolios exist.\n\n**No model without a backtest** is the rule that matters most. The temptation with thin data is to ship a plausible-looking scorecard. A model that has never been validated out-of-sample is a guess wearing a number, and it would be used to price other people's risk.\n\n## Adding a tool\n\n1. Add a row to `data/risk-tools.csv` with the next `RT-N`.\n2. Add `risk-tools/rt-N-slug.md` following the structure of the existing docs: purpose, design, inputs/outputs, versioning, tests, open questions.\n3. Rebuild the dashboard.\n\n## Built so far\n\n| | What exists | Where |\n|---|---|---|\n| RT-1 | 57-field origination schema (v0.1) + validator | [`schema/`](schema/), [`tools/validate_schema.py`](tools/validate_schema.py) |\n| RT-2 | Rules-based scorecard: band, limit, reasons both ways | [`tools/score_loans.py`](tools/score_loans.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |\n| RT-3 | Portfolio monitor: PAR, arrears concentration, alerts | [`tools/monitor_portfolio.py`](tools/monitor_portfolio.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |\n| RT-5 | Synthetic portfolio simulator + waterfall + 6 stress scenarios | [`tools/simulate_portfolio.py`](tools/simulate_portfolio.py), [`rt-5-simulator.md`](rt-5-simulator.md) |\n\nRT-4 remains at specification stage — it is gated on a pre-registered design with an academic partner, not on code.\n\n## Running the chain\n\n```bash\npython3 risk-tools/tools/generate_dataset.py --out /tmp/synth   # RT-1-conformant synthetic data\npython3 risk-tools/tools/validate_schema.py --data /tmp/synth   # proves schema and generator agree\npython3 risk-tools/tools/score_loans.py     --data /tmp/synth   # RT-2\npython3 risk-tools/tools/monitor_portfolio.py --data /tmp/synth # RT-3\npython3 risk-tools/tools/simulate_portfolio.py                  # RT-5\npython3 risk-tools/tools/test_toolchain.py                      # end-to-end checks (CI)\n```\n\n**Nothing here is calibrated and nothing is field-tested.** Every tool says so in its own output and its own doc, rather than relying on the reader to infer it. None of these outputs should be shown to a partner or an investor as a result.\n"
+   "words": 764,
+   "body": "# Risk management tools\n\nThe toolkit that makes community-originated cash flows underwritable. Registry: `data/risk-tools.csv`; one document per tool in this directory.\n\n**Nothing here is built yet.** Every tool is at specification stage. That's stated honestly in the registry rather than dressed up as \"in progress\" — the specs exist so that when data arrives the build is a matter of execution, not design.\n\n## The tools\n\n| ID | Tool | Consumes | Blocked by |\n|---|---|---|---|\n| RT-1 | Origination data schema | — | OQ-3 |\n| RT-2 | Underwriting engine | RT-1 | RT-1, pilot data |\n| RT-3 | Monitoring & early-warning | RT-1 | RT-1 |\n| RT-4 | Impact evaluation module | RT-1 | OQ-4/5/7 |\n| RT-5 | Securitisation cash-flow model | RT-1 | RT-1 |\n| RT-6 | Unit-economics model | benchmarks; RT-5 loss shape | partner/counsel data for calibration |\n\n**RT-1 is the critical path.** Everything consumes its output. Get the field list wrong and every downstream tool inherits the error — and unlike code, an origination schema cannot be fixed retroactively, because the data you failed to capture is simply gone.\n\n## Why these five\n\nThey map to the venture's position in the stack. We sit in the risk layer (`product-design/business-plan.md` §3): origination partners handle disbursement and collection, we handle underwriting rules, monitoring, tranching and evidence. These five are that layer made concrete.\n\nRT-5 is the one that can be built first with no real data — waterfall mechanics can be exercised against synthetic portfolios, and it answers OQ-2 and OQ-6, which are currently blocking decisions. RT-6 sits on top of the same fixed-cost logic from the P&L side: it takes a loss assumption and asks whether the *structuring company* makes money (OQ-10), where RT-5 asks whether the *structure* survives.\n\n## Conventions\n\n**Versioning.** Semantic, per tool, recorded in the tool's document and in `data/risk-tools.csv`:\n\n- **Major** — a change that invalidates comparison with prior output. A removed schema field, a changed scoring scale, a different waterfall convention. Requires a migration note.\n- **Minor** — additive and backward-compatible. A new optional field, a new alert type.\n- **Patch** — fixes that don't change the interface.\n\nEvery tool document carries a version history table with date, version, change and rationale. `0.x` means specification only, nothing implemented.\n\n**Schema changes are special.** RT-1 is a data contract with origination partners in the field. A major version bump means retraining people and possibly reprinting forms. Batch changes; don't drip them.\n\n**Tests.** Each tool states its test strategy in its own document. The standing requirements:\n\n- Deterministic golden cases for anything doing arithmetic on money.\n- Property-based tests for invariants (a waterfall must distribute exactly what it receives; a score must stay in range).\n- Backtests against held-out data for anything predictive — and no predictive model ships without one.\n- Synthetic-data tests so tools are testable before real portfolios exist.\n\n**No model without a backtest** is the rule that matters most. The temptation with thin data is to ship a plausible-looking scorecard. A model that has never been validated out-of-sample is a guess wearing a number, and it would be used to price other people's risk.\n\n## Adding a tool\n\n1. Add a row to `data/risk-tools.csv` with the next `RT-N`.\n2. Add `risk-tools/rt-N-slug.md` following the structure of the existing docs: purpose, design, inputs/outputs, versioning, tests, open questions.\n3. Rebuild the dashboard.\n\n## Built so far\n\n| | What exists | Where |\n|---|---|---|\n| RT-1 | 57-field origination schema (v0.1) + validator | [`schema/`](schema/), [`tools/validate_schema.py`](tools/validate_schema.py) |\n| RT-2 | Rules-based scorecard: band, limit, reasons both ways | [`tools/score_loans.py`](tools/score_loans.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |\n| RT-3 | Portfolio monitor: PAR, arrears concentration, alerts | [`tools/monitor_portfolio.py`](tools/monitor_portfolio.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |\n| RT-5 | Synthetic portfolio simulator + waterfall + 6 stress scenarios | [`tools/simulate_portfolio.py`](tools/simulate_portfolio.py), [`rt-5-simulator.md`](rt-5-simulator.md) |\n| RT-6 | Three-scenario unit-economics P&L + pilot yardstick + sensitivity | [`tools/economics_model.py`](tools/economics_model.py), [`rt-6-economics-model.md`](rt-6-economics-model.md) |\n\nRT-4 remains at specification stage — it is gated on a pre-registered design with an academic partner, not on code.\n\n## Running the chain\n\n```bash\npython3 risk-tools/tools/generate_dataset.py --out /tmp/synth   # RT-1-conformant synthetic data\npython3 risk-tools/tools/validate_schema.py --data /tmp/synth   # proves schema and generator agree\npython3 risk-tools/tools/score_loans.py     --data /tmp/synth   # RT-2\npython3 risk-tools/tools/monitor_portfolio.py --data /tmp/synth # RT-3\npython3 risk-tools/tools/simulate_portfolio.py                  # RT-5\npython3 risk-tools/tools/economics_model.py                     # RT-6\npython3 risk-tools/tools/test_toolchain.py                      # end-to-end checks (CI)\n```\n\n**Nothing here is calibrated and nothing is field-tested.** Every tool says so in its own output and its own doc, rather than relying on the reader to infer it. None of these outputs should be shown to a partner or an investor as a result.\n"
   },
   {
    "path": "risk-tools/rt-1-origination-schema.md",
@@ -8681,6 +9066,14 @@ window.SFV_DATA = {
    "body": "# RT-5 simulator — what it is, what it is not\n\n**Status:** Scaffold built, running · **Model version:** 0.1 · **Calibration: none**\n**Code:** `risk-tools/tools/simulate_portfolio.py` · **Config:** `risk-tools/tools/portfolio-config.csv` · **Scenarios:** `data/macro-scenarios.csv`\n\n## What it is\n\nA synthetic portfolio generator and a sequential waterfall, wired to the deterministic macro scenarios. It answers structural questions:\n\n- How sensitive is the junior tranche to default correlation?\n- At what pool size do fixed costs stop dominating? (**OQ-2**)\n- Does a 15% first-loss layer survive a correlated food-price shock? (**OQ-6**)\n- Which of those two questions is actually binding at a given scale?\n\n```bash\npython3 risk-tools/tools/simulate_portfolio.py              # all scenarios\npython3 risk-tools/tools/simulate_portfolio.py --scenario SC-2\npython3 risk-tools/tools/simulate_portfolio.py --sweep      # pool size vs fixed costs\npython3 risk-tools/tools/simulate_portfolio.py --write-loans\n```\n\nHeadline results are written to `data/rt5-scenario-results.csv` and surface on the dashboard. The loan-level tape is gitignored — it is regenerable from the seed, and committing 36,000 synthetic rows would bury the real data in the repo.\n\n## What it is not\n\n**It is not calibrated.** No field data exists. The default rate, recovery rate and correlation are placeholders chosen to be plausible. Any number this produces is a statement about the *model*, not about this asset class.\n\n**It is not a forecast.** The scenarios are deterministic rule sets, not probability-weighted views. SC-5 is not a prediction that rates, food prices and FX will move together — it is a coherence test.\n\n**It is not a rating model.** No agency methodology is implemented. Whether to target one is still open (Memo 3).\n\n**Its outputs are not evidence.** They belong in a design conversation, not in a document that makes claims to an investor. Every output row carries `Basis: SYNTHETIC` for exactly this reason.\n\n## What the scaffold has already shown\n\nTwo things worth recording, both of which are properties of the structure rather than of the placeholder parameters:\n\n**1. The fixed-cost floor is real and steep.** From `--sweep`:\n\n| Groups | Pool | Fixed cost as % of pool | Base junior loss | Stressed junior loss |\n|---|---|---|---|---|\n| 250 | $1.2m | 20.9% | 100% | 100% |\n| 500 | $2.3m | 10.8% | 82% | 95% |\n| 1,000 | $4.6m | 5.5% | 47% | 66% |\n| 2,000 | $9.3m | 2.7% | 27% | 48% |\n| 4,000 | $18.7m | 1.3% | 20% | 36% |\n| 8,000 | $37.3m | 0.7% | 15% | 35% |\n| 16,000 | $74.7m | 0.3% | 13% | 31% |\n\nBelow roughly $5m the junior tranche is destroyed by **costs, not credit**. The curve flattens around $20–40m, where credit loss takes over as the binding constraint. That is a derived answer to OQ-2 rather than a borrowed one — the existing working band came from central tendencies across deals that do not resemble this asset (LIT-011, LIT-012).\n\nIt also reframes the question. A pilot pool of 20–50 groups is not \"too small to securitise\" by a little; it is smaller than the fixed-cost floor by two orders of magnitude. The warehousing bridge is not an optimisation, it is the only path.\n\n**2. Correlation matters more than the default rate.** SC-2 raises the default multiplier 2.2× *and* pushes correlation from 0.20 to 0.45. The mean loss rate roughly doubles, but the p95 loss nearly triples. A model assuming independence would look reassuring and size the junior layer far too thin — the failure mode Memo 3 warns about.\n\n**Caveat on both:** these are relationships between the model's own parameters. They are believable as *shapes* and worthless as *levels*.\n\n## Design choices worth knowing\n\n**Single-factor Gaussian copula** for correlated default: each geography draws a systemic factor, each loan combines it with an idiosyncratic draw. Standard in structured credit, chosen here because it is inspectable — a reader can see exactly what the correlation parameter does. Anything more sophisticated would be harder to check and no better founded, given nothing is calibrated.\n\n**Sequential waterfall** with an explicit conservation assertion: what goes in must equal what comes out, to the cent, on every path. A leak there would invalidate every number downstream, and it is the classic waterfall bug.\n\n**Cost drag reported separately from credit loss.** Learned the hard way: the first run showed a 1.4% pool loss wiping out 48% of the junior tranche, which reads as a credit result and is not one. Splitting the two is what made the fixed-cost finding visible at all.\n\n**Stdlib only.** Includes a hand-rolled inverse normal CDF rather than taking a numpy/scipy dependency, consistent with the rest of the toolchain. A researcher with Python and no install step must be able to run this in five years.\n\n## Graduating from synthetic to calibrated\n\nIn order of how much each would improve the model:\n\n1. **Observed default and recovery rates** from a real pilot cohort, by cycle. Replaces the two most load-bearing placeholders. Requires RT-1 to be in the field.\n2. **An empirical correlation estimate** — needs several groups across several geographies observed through at least one common shock. This is the hardest input to get and the one that matters most, and it plausibly requires SAVIX historical data rather than our own pilot.\n3. **Real cost quotes** — legal, rating, listing, servicing, from actual providers in the target jurisdiction (PT-09). The fixed-cost term drives the OQ-2 answer, and $250,000 is currently a guess.\n4. **A structuring review** of the waterfall convention against what an investor would actually accept (PT-08).\n\nUntil (1) and (3), treat every level this produces as illustrative. The *shapes* — cost floor steepness, correlation sensitivity — are more robust than the levels and are what the tool is currently good for.\n\n## Open questions\n\n- What loss and correlation assumptions are defensible with no track record? The honest output is a range, not a number.\n- Should the model target a rating-agency methodology, and if so which?\n- What servicing cost is realistic for community-originated assets? Likely higher per dollar than any comparable deal, which pushes the minimum viable scale up.\n- **OQ-8**: run a blended PL-1 / PL-2 pool through the same engine. Not yet implemented — PL-2 needs a PPA cash-flow generator, and the prior question of whether a utility PPA permits assignment at all is unresolved.\n"
   },
   {
+   "path": "risk-tools/rt-6-economics-model.md",
+   "category": "Risk tools",
+   "title": "RT-6 — Unit-economics model",
+   "summary": "",
+   "words": 1417,
+   "body": "# RT-6 — Unit-economics model\n\n**Status:** In development · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Blocked by:** nothing to run against synthetic assumptions; calibration blocked on partner/counsel data\n**Code:** `risk-tools/tools/economics_model.py` · **Config:** `risk-tools/tools/economics-config.csv` (drivers × 3 scenarios) · **Assets:** `risk-tools/tools/economics-assets.csv`\n\n## Purpose\n\nAnswer OQ-10: *is there a credible path to at-scale profitability for the structuring layer, at a scale we can realistically reach?* RT-6 is a deterministic, closed-form model of the **structuring company's own P&L**, run across three scenarios, with a check on whether the tranche stack clears the returns investors require.\n\nIt is the model the business-economics plan (`product-design/business-economics.md`) specified in §3 and now builds.\n\n## What it is\n\nA pair of computations, kept deliberately separate because they answer different questions and because the OQ-10 framing (locked 2026-08-02) turns on the distinction:\n\n| Computation | Question | Role |\n|---|---|---|\n| `deal_pnl` / `venture_ramp` | Does the structuring company make money — per deal, and as a venture? | **The gate and the KPIs** |\n| `structure_clears` | Does the pool's spread pay the investor tranches after loss and fees? | **The binding constraint** |\n\n**The gate (go/no-go), set by BB 2026-08-02:** a credible path to the structuring layer **covering its own costs at a reachable scale, within `gate_horizon_years` (3)**. This is a venture-level break-even test. It is *not* the pilot-breakeven yardstick — that asks the same of a single pilot pool, is expected to fail, and rides alongside as a companion.\n\n**The KPIs we track (not the gate):** (1) steady-state **operating margin** (target 30%) and (2) **return on capital-at-risk** (target 15%, on the retained first-loss strip). The model reports each against its target, per scenario.\n\n**The binding constraint:** if the pool's spread cannot pay senior and mezzanine their coupons after expected loss and the originator's share, there is no deal to structure. Our fees sit ahead of the tranches in the waterfall, so our fee income is insulated from credit loss *while the deal clears* — and vanishes entirely when it does not. The model shows both.\n\n## What it is not\n\n**It is not RT-5.** RT-5 simulates the credit waterfall with a correlated Monte-Carlo loss model; it owns the loss distribution and the fixed-cost floor (OQ-2). RT-6 takes a loss *assumption* — a point estimate, sweepable, and readable straight off an RT-5 scenario — and asks the economics question on top of it. RT-5 answers \"does the structure survive\"; RT-6 answers \"does the business pay\". They share the fixed-cost logic and reach the same shape of OQ-2 answer from opposite sides.\n\n**It is not calibrated.** 5 of 23 drivers are `SOURCED` against open-access benchmarks; the other 18 are `ASSUMED`. Every output describes the *model*, not this asset class, while the assumed rows carry the load. No number here should be shown to an investor as a result.\n\n**It is not a forecast.** The three scenarios are coherent assumption sets, not probability-weighted views.\n\n## The three scenarios\n\n`economics-config.csv` carries `Worst`, `Likely` and `Best` value columns. **Sourced anchors are held fixed across all three** (a benchmark does not get more optimistic because we want it to); the scenarios flex only the assumed judgment calls — expected loss, the origination share, our fees and cost-to-serve, the fixed cost, deal size, ramp and overhead.\n\n### Sourced anchors (held fixed)\n\n| Driver | Value | Source |\n|---|---|---|\n| Portfolio gross yield | 20% | MFI portfolio yield, Africa ~20% / global 19.2%, MIX 2017-18 (LIT-016) |\n| Senior coupon | 7% | near MIV wholesale yield 7.6%, Symbiotics 2019 (LIT-017) |\n| Junior/first-loss tranche | 15% | 10–20% range, LIT-013 / LIT-015 |\n| Retained economic interest | 5% | EU/UK risk-retention minimum, Memo 3 |\n| DFI mobilisation ratio | 1.8× private | Convergence (LIT-018); guarantees lead (LIT-019) |\n\nThe expected-loss and cost-to-serve **anchors** are also sourced (global PAR30 6.0% and OER 10.6% / Africa 14.5%, MIX 2017-18, LIT-016; MIV TER 2.4% / fee 1.2%, LIT-017), but the values the scenarios *use* are assumptions informed by them, so they sit in the flexed set.\n\n### What the model currently says (synthetic, illustrative)\n\nRunning `economics_model.py` on the committed config:\n\n| | Worst | Likely | Best |\n|---|---|---|---|\n| Deal net margin (% of notional) | −0.95% | +1.9% | +4.1% |\n| Break-even pool size | ~$38m | ~$8.6m | ~$3.2m |\n| Gate (cover costs within 3y) | **fail** | **pass** (yr 1) | **pass** (yr 1) |\n| KPI1 operating margin (t. 30%) | −101% | 34% | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | 16% | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | 8.7% (short) | 18% (clears) |\n\n**The reading.** Under the most-likely assumptions the gate passes and both KPIs are met — but the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss**. That is the blended-finance story stated as arithmetic, not asserted. The worst case is not a rounding-down of the likely case: it fails the clearing test outright (senior+mezz uncovered), which means no deal, not a thin one. The sensitivity grid shows why — our fee margin survives fee compression far better than it survives loss, because the real cliff is the pool ceasing to clear at ~6% loss, not our margin thinning.\n\n**The companion yardstick.** On the flagship trio at pilot scale (EXP-01/02/06, `economics-assets.csv`), pilots sit **14–50× below break-even**. That is expected and is the same finding RT-5 reaches for the junior tranche: the warehousing bridge to scale is not an optimisation, it is the only path (OQ-2).\n\n## Running it\n\n```bash\npython3 risk-tools/tools/economics_model.py               # all scenarios + pilot, writes results CSV\npython3 risk-tools/tools/economics_model.py --scenario Likely\npython3 risk-tools/tools/economics_model.py --deal        # deal-level P&L per scenario\npython3 risk-tools/tools/economics_model.py --venture     # venture ramp per scenario\npython3 risk-tools/tools/economics_model.py --pilot       # flagship pilot-breakeven yardstick\npython3 risk-tools/tools/economics_model.py --sensitivity # loss × fee grid (Likely)\n```\n\nHeadline metrics per scenario are written to `data/rt6-economics-results.csv` (committed) and surface on the dashboard's Business tab. Every row carries the basis mix (`SOURCED 5/23 drivers; remainder ASSUMED`).\n\n## Versioning\n\n| Bump | Means |\n|---|---|\n| Major | A change to the P&L definition or the gate/KPI methodology — prior outputs are not comparable |\n| Minor | A new driver, a new scenario column, an added output metric |\n| Patch | A numerical fix with no methodology change |\n\nEvery run prints its model version and the basis mix. **A margin without its assumptions is not a result** — this is the tool most likely to be quoted back in a conversation with an investor.\n\n### History\n\n| Date | Version | Change |\n|---|---|---|\n| 2026-08-02 | 0.1 | Initial build. Three-scenario deal + venture P&L; gate = cover-costs-within-3y; KPIs = operating margin and return on capital-at-risk; pilot yardstick on the flagship trio; loss × fee sensitivity. Benchmarks sourced against MIX 2017-18, Symbiotics 2019, Convergence and OECD (LIT-016..019). |\n\n## Tests\n\nWired into `risk-tools/tools/test_toolchain.py` (CI):\n\n- **P&L identity** — revenue − cost = net margin, to the cent, every scenario.\n- **Economies of scale** — a larger pool never earns a smaller net margin (fixed cost is diluted, everything else scales linearly).\n- **Scenario ordering** — Best ≥ Likely ≥ Worst on deal net margin as a share of notional.\n- **Gate consistency** — the gate flag matches the break-even year against the horizon.\n\n## Open questions\n\n- **The five sourced anchors are the floor, not the ceiling.** 18 drivers remain assumed. The two that swing the answer most and are hardest to source: the **origination-layer share of the spread** (needs partner MIS, PT-03/PT-04) and the **fixed structuring cost per deal** (needs counsel, PT-09 — no open-access benchmark exists for this, so it stays a we-assume). See `business-economics.md §4`.\n- **The junior hurdle is the whole blended-finance question.** At 10% the Likely deal is short; at a commercial 15%+ it is far short. What return the DFI/first-loss layer will actually accept (OQ-6) decides whether the deal clears.\n- **Should the loss assumption be driven off RT-5 directly?** Today it is a config value informed by PAR benchmarks. Wiring RT-6 to read an RT-5 scenario's mean/p95 loss would tie the two tools together — a candidate for v0.2.\n- **Weighted life and revolving pools.** The model treats the pool as a single-life structure; a revolving warehouse that recycles principal several times per year would change the fee base materially. Worth modelling once the warehouse design (M-22) firms up.\n"
+  },
+  {
    "path": "risk-tools/schema/README.md",
    "category": "Risk tools",
    "title": "Minimum viable origination schema for future poolability",
@@ -8709,8 +9102,8 @@ window.SFV_DATA = {
    "category": "Synthesis memos",
    "title": "Memo 3: Securitization & Blended Finance — Synthesis for Product/Research Design",
    "summary": "",
-   "words": 1235,
-   "body": "# Memo 3: Securitization & Blended Finance — Synthesis for Product/Research Design\n\n**Status:** Reviewed · **Covers axes:** 3-Securitization / 4-Blended finance · **Last updated:** 2026-07-30\n\n## Sources\n- LIT-004: Case studies of MFI loan securitization/ABS in Africa (FSD Africa/BII; NSIA Cote d'Ivoire; solar securitization Rwanda)\n- LIT-005: G20/OECD review of blended finance de-risking instruments\n- LIT-006: Microcredit Securitization — Indirect Microcredit-Backed Securitization (IMBS) model\n- LIT-008: Solar securitization Rwanda — distributed asset aggregation template\n- LIT-009: World Bank/IFC 2004 — *Securitization: Key Legal and Regulatory Issues*\n- LIT-010: Baker McKenzie 2020 — *A Global Guide to Legal Issues in Securitisation*\n- LIT-011: FSD Africa & BII 2025 — *The role of securitisation in developing capital markets in Africa*\n- LIT-012: OECD 2019 — *Blended Finance Funds and Facilities: 2018 Survey Results*\n- LIT-013: OECD 2021 — *Evaluating blended finance instruments and mechanisms*\n- LIT-015: IFC 2025 — *The Role of Blended Finance in an Evolving Global Context*\n\n## Key Findings\n- Existing microfinance/community-asset securitization deals (IMBS tranching, Rwanda solar ABS, African bank SME ABS) required: (1) a standardization layer for loan-level data, (2) credit enhancement or a first-loss tranche, and (3) an anchor investor (often DFI or donor) before market-rate senior tranches were sellable to private investors.\n- Blended finance instruments (guarantees, concessional capital) are the typical bridge used to de-risk the earliest tranches/deals in this space.\n- The solar securitization template (pooling many small, geographically dispersed loans from multiple originators into one tradable vehicle) is a close structural analogue to pooling VSLA/community loans across NGOs.\n\n## Legal and regulatory framework for cross-border SPVs\n\nThe legal question is not \"onshore or offshore\" — it is whether the originating jurisdiction recognises the transfer and the security. LIT-009 gives the checklist to run against each jurisdiction:\n\n1. **True sale** that is not unwound in the originator's insolvency.\n2. **Assignability of receivables** without prohibitive consent or notification requirements.\n3. **Efficient perfection/registration** of the transfer.\n4. **Enforceable security** over both the receivables and the collection accounts.\n5. **Insolvency-remote, limited-purpose SPV.**\n6. **Tax neutrality** — no punitive transfer, stamp or withholding tax on the structure.\n\nLIT-010 adds the jurisdiction-by-jurisdiction layer. Practical constraints it surfaces that bear on our design:\n\n- Many jurisdictions permit offshore SPVs with foreign-law documentation provided local assignment and tax rules are respected — so the SPV domicile is a cost/efficiency decision more than a feasibility one.\n- If senior notes are to be sold to EU/UK investors, **risk-retention rules** apply (the originator must retain a minimum economic interest), alongside qualified-investor and private-placement restrictions.\n- Some jurisdictions restrict SPV ownership by entities resident in particular offshore centres — worth checking before defaulting to a Cayman vehicle.\n\n**Next step (OQ-1):** run the six-point checklist above against Israel and the shortlisted African jurisdiction with local counsel, and shortlist two candidate domiciles (one EEA, one African/regional). The literature has taken this as far as it can; the remainder is a counsel question.\n\n## Pool size and aggregation strategy\n\n- LIT-011 finds that several African countries have enacted securitisation frameworks without generating meaningful deal flow. The binding constraints are a shallow institutional investor base, limited rating-agency coverage, and too few originators holding portfolios large and standardised enough to securitise efficiently.\n- LIT-012 gives the size benchmarks: 180 blended vehicles surveyed, USD 60.2bn AUM, average facility ~USD 483m and average fund ~USD 250m, with **structured funds materially more likely than flat funds to clear USD 100m**.\n- Fixed costs — legal, rating, listing, structuring — set a minimum efficient scale that a single NGO's VSLA portfolio in a single country will not reach.\n\n**Implication:** the first vehicle should be a **multi-originator, plausibly regional** aggregation rather than a single-partner pool, and it should be framed as a *blended fund with securitisation-ready mechanics* — private, DFI-anchored, in the tens of millions — with an explicit path to a public issuance at ≥ USD 100m once the track record exists. This is the warehousing/aggregation bridge referenced in OQ-2.\n\n## First-loss and blended-finance structuring\n\n- OECD mobilisation methodology attributes **50% of mobilised private capital to official investors in the riskiest tranche** (LIT-012, LIT-013). The junior tranche is the mobilisation lever, and it is measured as such — a strong argument for a clearly delineated junior layer rather than a pari-passu pool.\n- Junior/first-loss capital in comparable structures commonly sits in the **10–20% of total structure** range, though it varies widely by sector and risk (LIT-013, LIT-015). Treat this as a starting range to be tested, not a target.\n- LIT-015 sets out the instrument menu: junior equity, subordinated debt, and **pooled first-loss guarantees** that absorb default losses on a first-come, first-served basis. It also stresses that concessional instruments are frequently recyclable or returnable rather than pure grant — a material point when asking a donor to fund the junior layer.\n\nDesign guidance from LIT-013, which is written for evaluators and therefore tells us what we will be judged on:\n\n- State **additionality** explicitly: why private capital would not enter without the first-loss layer.\n- Instrument monitoring to track **both** mobilisation and the financial performance of the junior layer.\n- Document a **tapering/exit plan** so concessional support is understood as time-bound from the outset.\n\n## Limitations\n- Sample of actual community-asset securitization deals is still small; most precedents are at MFI/bank scale, not yet at raw community-group (VSLA) level.\n- Blended finance evaluation literature is largely descriptive/case-based; rigorous counterfactual evidence on mobilization effectiveness is limited.\n- LIT-009 predates the EU Securitisation Regulation and Basel III/IV; its legal checklist remains sound but its regulatory context does not.\n- The 10–20% first-loss range is an observed central tendency across heterogeneous deals, not a benchmark derived from anything resembling our asset class.\n\n## Implications for Product/Research Design\n1. Build the data schema and underwriting rules from day one to match ABS eligibility criteria: loan-level granularity, standardized covenants, verifiable repayment/claims history, and audit trails.\n2. Plan for a 2-3 year pilot period generating a clean data/repayment track record sufficient to make a credible case to a DFI or anchor investor for a first credit-enhanced tranche.\n3. Explore multi-originator aggregation (multiple NGO/VSLA networks feeding one SPV) using the solar securitization structure as a direct template — and size it against the ≥ USD 100m threshold where structured vehicles start to behave like the rest of the market.\n4. Budget for a first-loss/guarantee layer (likely donor or DFI capital) at roughly 10–20% of the structure; do not assume market-rate capital will be available for the first securitized tranche.\n5. Run the LIT-009 legal checklist as a formal jurisdiction scan before committing to a pilot geography — the legal precondition set is binary, and discovering a broken link late is expensive.\n\n## Open Questions\n- ~~What legal/regulatory framework applies to cross-border pooling of Israel + Africa-origin receivables into a single SPV?~~ → **partially answered**: checklist and candidate structures identified (LIT-009, LIT-010); jurisdiction-specific counsel review outstanding. (OQ-1)\n- ~~What minimum pool size and data standardization threshold is required before a rating agency or anchor investor will engage?~~ → **partially answered**: target band established (tens of millions warehoused, ≥ USD 100m for issuance) (LIT-011, LIT-012). (OQ-2)\n- ~~What blended-finance structure best fits our expected risk profile at pilot stage?~~ → **partially answered**: junior tranche at 10–20%, instrument menu identified, evaluation requirements known (LIT-012, LIT-013, LIT-015). (OQ-6)\n- Still fully open: what does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record?\n"
+   "words": 1578,
+   "body": "# Memo 3: Securitization & Blended Finance — Synthesis for Product/Research Design\n\n**Status:** Reviewed · **Covers axes:** 3-Securitization / 4-Blended finance · **Last updated:** 2026-08-02\n\n## Sources\n- LIT-004: Case studies of MFI loan securitization/ABS in Africa (FSD Africa/BII; NSIA Cote d'Ivoire; solar securitization Rwanda)\n- LIT-005: G20/OECD review of blended finance de-risking instruments\n- LIT-006: Microcredit Securitization — Indirect Microcredit-Backed Securitization (IMBS) model\n- LIT-008: Solar securitization Rwanda — distributed asset aggregation template\n- LIT-009: World Bank/IFC 2004 — *Securitization: Key Legal and Regulatory Issues*\n- LIT-010: Baker McKenzie 2020 — *A Global Guide to Legal Issues in Securitisation*\n- LIT-011: FSD Africa & BII 2025 — *The role of securitisation in developing capital markets in Africa*\n- LIT-012: OECD 2019 — *Blended Finance Funds and Facilities: 2018 Survey Results*\n- LIT-013: OECD 2021 — *Evaluating blended finance instruments and mechanisms*\n- LIT-015: IFC 2025 — *The Role of Blended Finance in an Evolving Global Context*\n- LIT-017: Symbiotics 2020 — *2019 Symbiotics MIV Survey* (MIV cost structure and yields)\n- LIT-018: Convergence — *How much commercial capital does concessional capital leverage?* (mobilisation ratios)\n- LIT-019: OECD 2021 — *The Role of Guarantees in Blended Finance*\n\n## Key Findings\n- Existing microfinance/community-asset securitization deals (IMBS tranching, Rwanda solar ABS, African bank SME ABS) required: (1) a standardization layer for loan-level data, (2) credit enhancement or a first-loss tranche, and (3) an anchor investor (often DFI or donor) before market-rate senior tranches were sellable to private investors.\n- Blended finance instruments (guarantees, concessional capital) are the typical bridge used to de-risk the earliest tranches/deals in this space.\n- The solar securitization template (pooling many small, geographically dispersed loans from multiple originators into one tradable vehicle) is a close structural analogue to pooling VSLA/community loans across NGOs.\n\n## Legal and regulatory framework for cross-border SPVs\n\nThe legal question is not \"onshore or offshore\" — it is whether the originating jurisdiction recognises the transfer and the security. LIT-009 gives the checklist to run against each jurisdiction:\n\n1. **True sale** that is not unwound in the originator's insolvency.\n2. **Assignability of receivables** without prohibitive consent or notification requirements.\n3. **Efficient perfection/registration** of the transfer.\n4. **Enforceable security** over both the receivables and the collection accounts.\n5. **Insolvency-remote, limited-purpose SPV.**\n6. **Tax neutrality** — no punitive transfer, stamp or withholding tax on the structure.\n\nLIT-010 adds the jurisdiction-by-jurisdiction layer. Practical constraints it surfaces that bear on our design:\n\n- Many jurisdictions permit offshore SPVs with foreign-law documentation provided local assignment and tax rules are respected — so the SPV domicile is a cost/efficiency decision more than a feasibility one.\n- If senior notes are to be sold to EU/UK investors, **risk-retention rules** apply (the originator must retain a minimum economic interest), alongside qualified-investor and private-placement restrictions.\n- Some jurisdictions restrict SPV ownership by entities resident in particular offshore centres — worth checking before defaulting to a Cayman vehicle.\n\n**Next step (OQ-1):** run the six-point checklist above against Israel and the shortlisted African jurisdiction with local counsel, and shortlist two candidate domiciles (one EEA, one African/regional). The literature has taken this as far as it can; the remainder is a counsel question.\n\n## Pool size and aggregation strategy\n\n- LIT-011 finds that several African countries have enacted securitisation frameworks without generating meaningful deal flow. The binding constraints are a shallow institutional investor base, limited rating-agency coverage, and too few originators holding portfolios large and standardised enough to securitise efficiently.\n- LIT-012 gives the size benchmarks: 180 blended vehicles surveyed, USD 60.2bn AUM, average facility ~USD 483m and average fund ~USD 250m, with **structured funds materially more likely than flat funds to clear USD 100m**.\n- Fixed costs — legal, rating, listing, structuring — set a minimum efficient scale that a single NGO's VSLA portfolio in a single country will not reach.\n\n**Implication:** the first vehicle should be a **multi-originator, plausibly regional** aggregation rather than a single-partner pool, and it should be framed as a *blended fund with securitisation-ready mechanics* — private, DFI-anchored, in the tens of millions — with an explicit path to a public issuance at ≥ USD 100m once the track record exists. This is the warehousing/aggregation bridge referenced in OQ-2.\n\n## First-loss and blended-finance structuring\n\n- OECD mobilisation methodology attributes **50% of mobilised private capital to official investors in the riskiest tranche** (LIT-012, LIT-013). The junior tranche is the mobilisation lever, and it is measured as such — a strong argument for a clearly delineated junior layer rather than a pari-passu pool.\n- Junior/first-loss capital in comparable structures commonly sits in the **10–20% of total structure** range, though it varies widely by sector and risk (LIT-013, LIT-015). Treat this as a starting range to be tested, not a target.\n- LIT-015 sets out the instrument menu: junior equity, subordinated debt, and **pooled first-loss guarantees** that absorb default losses on a first-come, first-served basis. It also stresses that concessional instruments are frequently recyclable or returnable rather than pure grant — a material point when asking a donor to fund the junior layer.\n\nDesign guidance from LIT-013, which is written for evaluators and therefore tells us what we will be judged on:\n\n- State **additionality** explicitly: why private capital would not enter without the first-loss layer.\n- Instrument monitoring to track **both** mobilisation and the financial performance of the junior layer.\n- Document a **tapering/exit plan** so concessional support is understood as time-bound from the outset.\n\n## Fee benchmarks and mobilisation ratios (for the unit economics)\n\nThese anchors were added to calibrate the RT-6 unit-economics model (OQ-10); they price the structuring layer rather than the legal or credit structure.\n\n- **What a fund earns and what it costs to run (LIT-017).** The 2019 Symbiotics MIV Survey (87 vehicles, USD 15.3bn AUM, 2018) reports an all-MIV total expense ratio of **2.4%** of average assets (management fee ~1.5%); for Fixed-Income Funds — the debt vehicles closest to a securitisation — TER is **2.2%** and the management fee **1.2%**. The weighted-average yield on the direct microfinance debt portfolio was **7.6%**, i.e. what senior capital lent into this market earned. These set our fee-load and senior-coupon anchors. The MIV write-off ratio was only 0.2% because the MFI, not the fund, absorbs first loss — a reminder that where you sit in the stack determines the loss you bear.\n- **How much private capital a first-loss layer unlocks (LIT-018, LIT-019).** Convergence finds USD 1 of concessional capital mobilises ~USD 4.1 of commercial capital on average, of which ~USD 1.8 is private-sector — with wide dispersion (median 2.7x, range 0.3x–22x) and a skew toward middle-income countries, so Sub-Saharan Africa is likely at the lower end. OECD adds the instrument nuance: **guarantees mobilised more private finance than any other instrument** (39% of the 2012–2018 total, most effective in every year), which bears directly on the OQ-6 first-loss instrument choice — a pooled guarantee may out-mobilise junior equity.\n\nThe honest caveat: these are MIV- and fund-level figures. A VSLA-linked vehicle originates a layer below an established MIV, where the origination cost-to-serve is higher and the net spread thinner. The RT-6 model uses these as anchors, flags everything derived from them as a working assumption, and brackets the answer across worst/likely/best scenarios rather than asserting a point estimate.\n\n## Limitations\n- Sample of actual community-asset securitization deals is still small; most precedents are at MFI/bank scale, not yet at raw community-group (VSLA) level.\n- Blended finance evaluation literature is largely descriptive/case-based; rigorous counterfactual evidence on mobilization effectiveness is limited.\n- LIT-009 predates the EU Securitisation Regulation and Basel III/IV; its legal checklist remains sound but its regulatory context does not.\n- The 10–20% first-loss range is an observed central tendency across heterogeneous deals, not a benchmark derived from anything resembling our asset class.\n\n## Implications for Product/Research Design\n1. Build the data schema and underwriting rules from day one to match ABS eligibility criteria: loan-level granularity, standardized covenants, verifiable repayment/claims history, and audit trails.\n2. Plan for a 2-3 year pilot period generating a clean data/repayment track record sufficient to make a credible case to a DFI or anchor investor for a first credit-enhanced tranche.\n3. Explore multi-originator aggregation (multiple NGO/VSLA networks feeding one SPV) using the solar securitization structure as a direct template — and size it against the ≥ USD 100m threshold where structured vehicles start to behave like the rest of the market.\n4. Budget for a first-loss/guarantee layer (likely donor or DFI capital) at roughly 10–20% of the structure; do not assume market-rate capital will be available for the first securitized tranche.\n5. Run the LIT-009 legal checklist as a formal jurisdiction scan before committing to a pilot geography — the legal precondition set is binary, and discovering a broken link late is expensive.\n\n## Open Questions\n- ~~What legal/regulatory framework applies to cross-border pooling of Israel + Africa-origin receivables into a single SPV?~~ → **partially answered**: checklist and candidate structures identified (LIT-009, LIT-010); jurisdiction-specific counsel review outstanding. (OQ-1)\n- ~~What minimum pool size and data standardization threshold is required before a rating agency or anchor investor will engage?~~ → **partially answered**: target band established (tens of millions warehoused, ≥ USD 100m for issuance) (LIT-011, LIT-012). (OQ-2)\n- ~~What blended-finance structure best fits our expected risk profile at pilot stage?~~ → **partially answered**: junior tranche at 10–20%, instrument menu identified, evaluation requirements known (LIT-012, LIT-013, LIT-015). (OQ-6)\n- Still fully open: what does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record?\n"
   }
  ],
  "meta": {
@@ -8721,13 +9114,13 @@ window.SFV_DATA = {
   "counts": {
    "literatureByAxis": {
     "1-VSLA": 3,
-    "2-Microfinance": 1,
+    "2-Microfinance": 2,
     "3-Securitization": 6,
-    "4-Blended finance": 4,
+    "4-Blended finance": 7,
     "5-Insurance": 1
    },
    "literatureByStatus": {
-    "Reviewed": 15
+    "Reviewed": 19
    },
    "questionsByStatus": {
     "Partially answered": 6,
@@ -8736,14 +9129,14 @@ window.SFV_DATA = {
     "Answered": 3
    },
    "milestonesByStatus": {
-    "Done": 5,
+    "Done": 7,
     "Not started": 12,
-    "In progress": 5
+    "In progress": 4
    },
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 36245
+   "totalWords": 38596
   }
  }
 };
