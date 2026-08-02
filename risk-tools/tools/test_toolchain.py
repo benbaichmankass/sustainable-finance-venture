@@ -147,6 +147,47 @@ def main():
                     leaked = True
         check("waterfall conserves cash across scenarios and collection levels", not leaked)
 
+        # --- 7. RT-6 economics identities and monotonicity -------------------
+        # The model does arithmetic on money across three scenarios; the checks
+        # are the identities that would silently mis-state a P&L if they broke.
+        from economics_model import (load_config as econ_config, deal_pnl,
+                                     break_even_pool, evaluate)
+        scenarios, _basis = econ_config()
+
+        # 7a. revenue - cost == net margin, to the cent, every scenario.
+        ident_ok = True
+        for name, cfg in scenarios.items():
+            d = deal_pnl(cfg, cfg["avg_deal_notional"])
+            if abs((d["revenue"] - d["cost"]) - d["net_margin_usd"]) > 0.01:
+                ident_ok = False
+        check("RT-6 deal P&L identity holds (revenue - cost = net margin)", ident_ok)
+
+        # 7b. economies of scale: a bigger pool never earns a smaller net margin
+        # (fixed cost is diluted, everything else scales linearly).
+        cfg = scenarios["Likely"]
+        margins = [deal_pnl(cfg, n)["net_margin_usd"] for n in (5e6, 10e6, 25e6, 50e6)]
+        check("RT-6 net margin is monotone in pool size",
+              all(a <= b for a, b in zip(margins, margins[1:])),
+              "margins at 5/10/25/50m: %s" % [round(m) for m in margins])
+
+        # 7c. scenario ordering: Best is not worse than Likely, Likely not worse
+        # than Worst, on deal net margin as a share of notional.
+        pct_by = {n: deal_pnl(c, c["avg_deal_notional"])["net_margin_pct"]
+                  for n, c in scenarios.items()}
+        check("RT-6 scenario ordering Best >= Likely >= Worst",
+              pct_by["Best"] >= pct_by["Likely"] >= pct_by["Worst"],
+              "net margin %%: %s" % {k: round(100 * v, 2) for k, v in pct_by.items()})
+
+        # 7d. gate flag agrees with the ramp it is derived from.
+        gate_ok = True
+        for name, cfg in scenarios.items():
+            e = evaluate(cfg)
+            by = e["venture"]["break_even_year"]
+            expect = by is not None and by <= cfg["gate_horizon_years"]
+            if expect != e["gate_pass"]:
+                gate_ok = False
+        check("RT-6 gate flag matches break-even vs horizon", gate_ok)
+
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

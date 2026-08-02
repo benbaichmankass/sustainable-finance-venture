@@ -1,0 +1,4 @@
+"Asset_ID","Name","pilot_notional_usd","pilot_loans","gross_yield_pct","expected_loss_pct","weighted_life_years","Basis"
+"EXP-01","Crop drought-index insurance + VSLA loan","250000","500","0.20","0.07","1.0","ASSUMED pilot profile. Notional at 20-50 VSLA scale (RT-5 implies ~USD 4,700/group). Loss lifted for drought exposure; short single-cycle life."
+"EXP-02","Clean-energy PAYGO asset loan","400000","800","0.22","0.05","2.0","ASSUMED pilot profile. Higher yield reflects PAYGO pricing; longer life reflects the asset tenor. Loss near the portfolio central case."
+"EXP-06","Multi-peril parametric climate cover + retrofit loan","300000","600","0.20","0.06","1.0","ASSUMED pilot profile. Urban informal-settlement scale; multi-peril loss between crop and PAYGO. Shares a measurement design with EXP-01."

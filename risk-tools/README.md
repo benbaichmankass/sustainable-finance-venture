@@ -13,6 +13,7 @@ The toolkit that makes community-originated cash flows underwritable. Registry: 
 | RT-3 | Monitoring & early-warning | RT-1 | RT-1 |
 | RT-4 | Impact evaluation module | RT-1 | OQ-4/5/7 |
 | RT-5 | Securitisation cash-flow model | RT-1 | RT-1 |
+| RT-6 | Unit-economics model | benchmarks; RT-5 loss shape | partner/counsel data for calibration |
 
 **RT-1 is the critical path.** Everything consumes its output. Get the field list wrong and every downstream tool inherits the error — and unlike code, an origination schema cannot be fixed retroactively, because the data you failed to capture is simply gone.
 
@@ -20,7 +21,7 @@ The toolkit that makes community-originated cash flows underwritable. Registry: 
 
 They map to the venture's position in the stack. We sit in the risk layer (`product-design/business-plan.md` §3): origination partners handle disbursement and collection, we handle underwriting rules, monitoring, tranching and evidence. These five are that layer made concrete.
 
-RT-5 is the one that can be built first with no real data — waterfall mechanics can be exercised against synthetic portfolios, and it answers OQ-2 and OQ-6, which are currently blocking decisions.
+RT-5 is the one that can be built first with no real data — waterfall mechanics can be exercised against synthetic portfolios, and it answers OQ-2 and OQ-6, which are currently blocking decisions. RT-6 sits on top of the same fixed-cost logic from the P&L side: it takes a loss assumption and asks whether the *structuring company* makes money (OQ-10), where RT-5 asks whether the *structure* survives.
 
 ## Conventions
 
@@ -57,6 +58,7 @@ Every tool document carries a version history table with date, version, change a
 | RT-2 | Rules-based scorecard: band, limit, reasons both ways | [`tools/score_loans.py`](tools/score_loans.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |
 | RT-3 | Portfolio monitor: PAR, arrears concentration, alerts | [`tools/monitor_portfolio.py`](tools/monitor_portfolio.py), [`rt-2-rt-3-scaffolds.md`](rt-2-rt-3-scaffolds.md) |
 | RT-5 | Synthetic portfolio simulator + waterfall + 6 stress scenarios | [`tools/simulate_portfolio.py`](tools/simulate_portfolio.py), [`rt-5-simulator.md`](rt-5-simulator.md) |
+| RT-6 | Three-scenario unit-economics P&L + pilot yardstick + sensitivity | [`tools/economics_model.py`](tools/economics_model.py), [`rt-6-economics-model.md`](rt-6-economics-model.md) |
 
 RT-4 remains at specification stage — it is gated on a pre-registered design with an academic partner, not on code.
 
@@ -68,6 +70,7 @@ python3 risk-tools/tools/validate_schema.py --data /tmp/synth   # proves schema 
 python3 risk-tools/tools/score_loans.py     --data /tmp/synth   # RT-2
 python3 risk-tools/tools/monitor_portfolio.py --data /tmp/synth # RT-3
 python3 risk-tools/tools/simulate_portfolio.py                  # RT-5
+python3 risk-tools/tools/economics_model.py                     # RT-6
 python3 risk-tools/tools/test_toolchain.py                      # end-to-end checks (CI)
 ```
 

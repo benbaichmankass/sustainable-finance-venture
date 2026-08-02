@@ -1,6 +1,6 @@
 # Memo 3: Securitization & Blended Finance — Synthesis for Product/Research Design
 
-**Status:** Reviewed · **Covers axes:** 3-Securitization / 4-Blended finance · **Last updated:** 2026-07-30
+**Status:** Reviewed · **Covers axes:** 3-Securitization / 4-Blended finance · **Last updated:** 2026-08-02
 
 ## Sources
 - LIT-004: Case studies of MFI loan securitization/ABS in Africa (FSD Africa/BII; NSIA Cote d'Ivoire; solar securitization Rwanda)
@@ -13,6 +13,9 @@
 - LIT-012: OECD 2019 — *Blended Finance Funds and Facilities: 2018 Survey Results*
 - LIT-013: OECD 2021 — *Evaluating blended finance instruments and mechanisms*
 - LIT-015: IFC 2025 — *The Role of Blended Finance in an Evolving Global Context*
+- LIT-017: Symbiotics 2020 — *2019 Symbiotics MIV Survey* (MIV cost structure and yields)
+- LIT-018: Convergence — *How much commercial capital does concessional capital leverage?* (mobilisation ratios)
+- LIT-019: OECD 2021 — *The Role of Guarantees in Blended Finance*
 
 ## Key Findings
 - Existing microfinance/community-asset securitization deals (IMBS tranching, Rwanda solar ABS, African bank SME ABS) required: (1) a standardization layer for loan-level data, (2) credit enhancement or a first-loss tranche, and (3) an anchor investor (often DFI or donor) before market-rate senior tranches were sellable to private investors.
@@ -57,6 +60,15 @@ Design guidance from LIT-013, which is written for evaluators and therefore tell
 - State **additionality** explicitly: why private capital would not enter without the first-loss layer.
 - Instrument monitoring to track **both** mobilisation and the financial performance of the junior layer.
 - Document a **tapering/exit plan** so concessional support is understood as time-bound from the outset.
+
+## Fee benchmarks and mobilisation ratios (for the unit economics)
+
+These anchors were added to calibrate the RT-6 unit-economics model (OQ-10); they price the structuring layer rather than the legal or credit structure.
+
+- **What a fund earns and what it costs to run (LIT-017).** The 2019 Symbiotics MIV Survey (87 vehicles, USD 15.3bn AUM, 2018) reports an all-MIV total expense ratio of **2.4%** of average assets (management fee ~1.5%); for Fixed-Income Funds — the debt vehicles closest to a securitisation — TER is **2.2%** and the management fee **1.2%**. The weighted-average yield on the direct microfinance debt portfolio was **7.6%**, i.e. what senior capital lent into this market earned. These set our fee-load and senior-coupon anchors. The MIV write-off ratio was only 0.2% because the MFI, not the fund, absorbs first loss — a reminder that where you sit in the stack determines the loss you bear.
+- **How much private capital a first-loss layer unlocks (LIT-018, LIT-019).** Convergence finds USD 1 of concessional capital mobilises ~USD 4.1 of commercial capital on average, of which ~USD 1.8 is private-sector — with wide dispersion (median 2.7x, range 0.3x–22x) and a skew toward middle-income countries, so Sub-Saharan Africa is likely at the lower end. OECD adds the instrument nuance: **guarantees mobilised more private finance than any other instrument** (39% of the 2012–2018 total, most effective in every year), which bears directly on the OQ-6 first-loss instrument choice — a pooled guarantee may out-mobilise junior equity.
+
+The honest caveat: these are MIV- and fund-level figures. A VSLA-linked vehicle originates a layer below an established MIV, where the origination cost-to-serve is higher and the net spread thinner. The RT-6 model uses these as anchors, flags everything derived from them as a working assumption, and brackets the answer across worst/likely/best scenarios rather than asserting a point estimate.
 
 ## Limitations
 - Sample of actual community-asset securitization deals is still small; most precedents are at MFI/bank scale, not yet at raw community-group (VSLA) level.

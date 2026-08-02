@@ -849,6 +849,87 @@ function renderResearch() {
   return html;
 }
 
+/* RT-6 unit-economics results on the Business tab, because they answer OQ-10.
+   Every number is synthetic, so the banner says so before the cards - the same
+   discipline as the RT-5 block on the risk-tools tab. */
+function renderEconomics() {
+  var rt6 = D.rt6Results || [];
+  if (!rt6.length) return "";
+  var order = ["Worst", "Likely", "Best"];
+
+  var byScen = {};
+  rt6.forEach(function (r) {
+    (byScen[r.Scenario] = byScen[r.Scenario] || {})[r.Metric + "|" + r.Unit] = r;
+  });
+  function g(scen, metric, unit) {
+    var o = (byScen[scen] || {})[metric + "|" + unit];
+    return o ? o.Value : "";
+  }
+  function usd(v) {
+    var n = parseFloat(v);
+    if (isNaN(n)) return "—";
+    var neg = n < 0; n = Math.abs(n);
+    var s = n >= 1e6 ? "$" + (n / 1e6).toFixed(1) + "m"
+          : n >= 1e3 ? "$" + Math.round(n / 1e3) + "k" : "$" + Math.round(n);
+    return (neg ? "−" : "") + s;
+  }
+  function pctv(v) { return v === "" ? "—" : parseFloat(v).toFixed(1) + "%"; }
+
+  var html = '<h3 class="sub">Unit economics — RT-6 (answers OQ-10)</h3>' +
+    '<div class="card" style="margin-bottom:14px;border-color:var(--warning)">' +
+    "<strong>Every figure below is synthetic and uncalibrated.</strong>" +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' + esc(rt6[0].Basis) +
+    '. The gate is a credible path to the structuring layer covering its own costs within 3 years; ' +
+    'operating margin and return on capital-at-risk are tracked KPIs, not gates. The junior tranche ' +
+    'returning below its hurdle is the binding constraint — the blended-finance case, stated as ' +
+    'arithmetic. See <code>risk-tools/rt-6-economics-model.md</code> and ' +
+    '<code>product-design/business-economics.md</code>.</p></div>';
+
+  html += '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:14px">' +
+    order.map(function (s) {
+      var gate = g(s, "Gate: cover costs", "bool");
+      var pass = gate === "pass";
+      var jr = g(s, "Junior residual return", "%");
+      var hurdleShort = jr !== "" && parseFloat(jr) < 10;
+      return '<div class="card"' + (s === "Likely" ? ' style="border-color:var(--accent)"' : "") + ">" +
+        '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px">' +
+        '<strong>' + esc(s) + " case</strong>" +
+        '<span class="pill ' + (pass ? "good" : "critical") + '"><span class="dot"></span>gate ' +
+        (pass ? "pass" : "fail") + "</span></div>" +
+        '<div class="detail-grid" style="padding-top:12px;grid-template-columns:1fr 1fr">' +
+        [["Deal net margin", pctv(g(s, "Deal net margin", "% of notional")) + " of notional"],
+         ["Break-even pool", usd(g(s, "Break-even pool size", "USD"))],
+         ["Operating margin", pctv(g(s, "KPI1 operating margin", "%")) + " (t. 30%)"],
+         ["Return on capital-at-risk", pctv(g(s, "KPI2 return on capital-at-risk", "%")) + " (t. 15%)"],
+         ["Junior return", pctv(jr) + (hurdleShort ? " (short of 10% hurdle)" : " (clears 10%)")]]
+          .map(function (p) {
+            return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + esc(p[1]) + "</div></div>";
+          }).join("") + "</div></div>";
+    }).join("") + "</div>";
+
+  html += '<p class="hint" style="margin:0 0 10px">Companion yardstick: at pilot scale the flagship trio ' +
+    '(EXP-01/02/06) sits 14–50× below break-even — the warehousing bridge to scale is the only path (OQ-2). ' +
+    'Full metrics per scenario below.</p><div id="rt6-tbl"></div>';
+
+  setTimeout(function () {
+    var host = by("rt6-tbl"); if (!host) return;
+    var cols = [
+      { key: "Scenario", label: "Scenario", cls: "id" },
+      { key: "Metric", label: "Metric" },
+      { label: "Value", render: function (r) {
+          var u = r.Unit;
+          if (u === "USD" || u === "USD/yr") return esc(usd(r.Value)) + (u === "USD/yr" ? "/yr" : "");
+          if (u === "%" || u === "% of notional") return r.Value === "" ? "—" : esc(r.Value) + "%";
+          return esc(r.Value || "—");
+        } },
+      { key: "Detail", label: "Detail", cls: "wrap-cell" }
+    ];
+    host.innerHTML = buildTable(rt6, cols, null);
+    wireTable(host);
+  }, 0);
+  return html;
+}
+
 function renderBusiness() {
   var docs = D.docs || [];
   var plan = docs.filter(function (d) { return d.path.indexOf("product-design/") === 0; });
@@ -871,6 +952,8 @@ function renderBusiness() {
     '<p class="lede">The current plan, the 60/90-day milestone tracker, and the structuring assumptions the plan rests on.</p>' +
 
     decisionsCallout(["OQ-10"]) +
+
+    renderEconomics() +
 
     '<h3 class="sub">Milestone tracker</h3>' +
     '<div class="grid g2" style="margin-bottom:16px">' +
