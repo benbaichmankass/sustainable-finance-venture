@@ -71,6 +71,8 @@ Adding a tracker:
 
 The `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.
 
+**Columns are click-to-sort.** Any column with a `key`, `sortKey`, or `sortVal(row)` sorts on click (first click ascending, second descending); blanks always fall to the bottom and comparison is numeric-aware, so `PHD-2` precedes `PHD-10` and tier `1` precedes `2`. A render-only column (one drawing a pill or link with no underlying field) becomes sortable by giving it a `sortKey` — e.g. the PhD "Fit" column renders a tier pill but sorts on `Tier`. Sorting and row-expansion run off one delegated listener, so a sort re-renders in place without re-wiring. Pass `{sortIdx, sortDir}` in `opts` to set a default sort.
+
 ## Deliberately not built
 
 - **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.

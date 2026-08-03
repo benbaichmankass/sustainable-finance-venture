@@ -194,6 +194,10 @@ td { padding: 11px 14px; border-bottom: 1px solid var(--grid); vertical-align: t
 tr:last-child td { border-bottom: none; }
 tbody tr.clickable { cursor: pointer; }
 tbody tr.clickable:hover { background: var(--accent-soft); }
+th.sortable { cursor: pointer; user-select: none; }
+th.sortable:hover { color: var(--text-2); }
+th[aria-sort] { color: var(--text); }
+.sort-ar { font-size: 9px; color: var(--accent); vertical-align: middle; }
 td.id { font-family: var(--mono); font-size: 12px; color: var(--text-2); white-space: nowrap; }
 td.wrap-cell { min-width: 240px; }
 
@@ -202,6 +206,9 @@ tr.detail > td { background: var(--page); padding: 0 14px 16px; }
 .detail-grid { display: grid; gap: 10px 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); padding-top: 12px; }
 .field .fk { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 2px; }
 .field .fv { font-size: 13.5px; color: var(--text); }
+.fin-block { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--page); }
+.fin-block .detail-grid { padding-top: 8px; }
+.fin-head { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; }
 
 /* doc library */
 .doc { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin-bottom: 8px; overflow: hidden; }
@@ -599,33 +606,97 @@ function autoLink(text) {
   });
 }
 
-/* Sortable/filterable table with expandable detail rows. */
-function buildTable(rows, cols, detailFn, opts) {
-  opts = opts || {};
-  if (!rows.length) return '<p class="empty">Nothing here yet.</p>';
-  var thead = "<tr>" + cols.map(function (c) { return "<th>" + esc(c.label) + "</th>"; }).join("") + "</tr>";
+/* Sortable/filterable table with expandable detail rows.
+   Any column with a key, sortKey or sortVal is click-to-sort: first click sorts
+   ascending, a second click on the same header flips to descending. Sorting and
+   row-expansion are handled by one delegated listener so they survive the
+   in-place re-render a sort does. Blanks always sort to the bottom; comparison
+   is natural (numeric-aware, case-insensitive) so "PHD-2" precedes "PHD-10" and
+   tier "1" precedes "2". */
+var TBL_REG = {};
+var TBL_SEQ = 0;
+var TBL_DELEGATED = false;
+
+function cellSortVal(c, r) {
+  if (c.sortVal) return c.sortVal(r);
+  var k = c.sortKey || c.key;
+  return k ? (r[k] || "") : null;
+}
+function colSortable(c) {
+  return c.sortable !== false && !!(c.sortVal || c.sortKey || c.key);
+}
+function sortRows(rows, c, dir) {
+  return rows.slice().sort(function (a, b) {
+    var va = cellSortVal(c, a), vb = cellSortVal(c, b);
+    va = va == null ? "" : String(va); vb = vb == null ? "" : String(vb);
+    var ea = va.trim() === "", eb = vb.trim() === "";
+    if (ea && eb) return 0;
+    if (ea) return 1;            /* blanks last, in both directions */
+    if (eb) return -1;
+    return dir * va.localeCompare(vb, undefined, { numeric: true, sensitivity: "base" });
+  });
+}
+function tableInner(st) {
+  var rows = st.sortIdx == null ? st.rows : sortRows(st.rows, st.cols[st.sortIdx], st.sortDir);
+  var thead = "<tr>" + st.cols.map(function (c, i) {
+    var s = colSortable(c);
+    var on = st.sortIdx === i;
+    var arrow = s && on ? ' <span class="sort-ar">' + (st.sortDir > 0 ? "▲" : "▼") + "</span>" : "";
+    var attrs = s ? ' class="sortable" data-si="' + i + '"' : "";
+    if (s && on) attrs += ' aria-sort="' + (st.sortDir > 0 ? "ascending" : "descending") + '"';
+    return "<th" + attrs + ">" + esc(c.label) + arrow + "</th>";
+  }).join("") + "</tr>";
   var body = rows.map(function (r, idx) {
-    var tds = cols.map(function (c) {
+    var tds = st.cols.map(function (c) {
       var v = c.render ? c.render(r) : esc(r[c.key] || "");
       return '<td class="' + (c.cls || "") + '">' + v + "</td>";
     }).join("");
-    var main = '<tr class="' + (detailFn ? "clickable" : "") + '" data-row="' + idx + '">' + tds + "</tr>";
-    var det = detailFn
-      ? '<tr class="detail" data-detail="' + idx + '" hidden><td colspan="' + cols.length + '">' +
-        detailFn(r) + "</td></tr>"
+    var main = '<tr class="' + (st.detailFn ? "clickable" : "") + '" data-row="' + idx + '">' + tds + "</tr>";
+    var det = st.detailFn
+      ? '<tr class="detail" data-detail="' + idx + '" hidden><td colspan="' + st.cols.length + '">' +
+        st.detailFn(r) + "</td></tr>"
       : "";
     return main + det;
   }).join("");
-  return '<div class="tbl-wrap"><table><thead>' + thead + "</thead><tbody>" + body + "</tbody></table></div>";
+  return "<table><thead>" + thead + "</thead><tbody>" + body + "</tbody></table>";
 }
-function wireTable(root) {
-  root.querySelectorAll("tr.clickable").forEach(function (tr) {
-    tr.addEventListener("click", function () {
+function buildTable(rows, cols, detailFn, opts) {
+  opts = opts || {};
+  if (!rows.length) return '<p class="empty">Nothing here yet.</p>';
+  var id = "t" + (++TBL_SEQ);
+  TBL_REG[id] = {
+    rows: rows, cols: cols, detailFn: detailFn,
+    sortIdx: (opts.sortIdx == null ? null : opts.sortIdx),
+    sortDir: (opts.sortDir === -1 ? -1 : 1)
+  };
+  installTableDelegation();
+  return '<div class="tbl-wrap" data-tbl="' + id + '">' + tableInner(TBL_REG[id]) + "</div>";
+}
+function installTableDelegation() {
+  if (TBL_DELEGATED) return;
+  TBL_DELEGATED = true;
+  document.addEventListener("click", function (e) {
+    var th = e.target.closest && e.target.closest("th.sortable");
+    if (th) {
+      var wrap = th.closest("[data-tbl]");
+      var st = wrap && TBL_REG[wrap.getAttribute("data-tbl")];
+      if (!st) return;
+      var si = parseInt(th.getAttribute("data-si"), 10);
+      if (st.sortIdx === si) st.sortDir = -st.sortDir;
+      else { st.sortIdx = si; st.sortDir = 1; }
+      wrap.innerHTML = tableInner(st);
+      return;
+    }
+    var tr = e.target.closest && e.target.closest("tr.clickable");
+    if (tr) {
+      var root = tr.closest("[data-tbl]") || document;
       var d = root.querySelector('tr.detail[data-detail="' + tr.dataset.row + '"]');
       if (d) d.hidden = !d.hidden;
-    });
+    }
   });
 }
+/* Kept for call-site compatibility; delegation is installed on first table build. */
+function wireTable() { installTableDelegation(); }
 function fields(pairs) {
   return '<div class="detail-grid">' + pairs.filter(function (p) { return p[1]; }).map(function (p) {
     return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + p[1] + "</div></div>";
@@ -1366,18 +1437,26 @@ function renderPhd() {
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
     {
-      label: "University", cls: "wrap-cell", render: function (r) {
+      label: "University", cls: "wrap-cell", sortKey: "University", render: function (r) {
         return nameLink(r.University, r.URL, r.University + " " + r.Department_Program);
       }
     },
     { key: "Department_Program", label: "Department", cls: "wrap-cell" },
     { key: "Region", label: "Region" },
     { key: "Country", label: "Country" },
-    { label: "Fit", render: function (r) { return tierPill(r.Tier); } }
+    { label: "Fit", sortKey: "Tier", render: function (r) { return tierPill(r.Tier); } }
   ];
-  if (hasPrivate) cols.push({ label: "Status", render: function (r) { return pill(r.Application_Status); } });
+  if (hasPrivate) cols.push({ label: "Status", sortKey: "Application_Status", render: function (r) { return pill(r.Application_Status); } });
 
   function detail(r) {
+    var money = (r.Tuition || r.Scholarships_Grants || r.TA_RA_Opportunities || r.Net_Earnings_Estimate)
+      ? '<div class="fin-block"><div class="fin-head">Financial setup</div>' + fields([
+          ["Tuition", autoLink(r.Tuition)],
+          ["Scholarships & grants", autoLink(r.Scholarships_Grants)],
+          ["TA / RA work", autoLink(r.TA_RA_Opportunities)],
+          ["Net earnings (take-home)", autoLink(r.Net_Earnings_Estimate)]
+        ]) + "</div>"
+      : "";
     return fields([
       ["Fit", autoLink(r.Fit_Notes)],
       ["Format", autoLink(r.Format)],
@@ -1391,11 +1470,13 @@ function renderPhd() {
       ["Candidate supervisors", esc(r.Candidate_Supervisors)],
       ["Next step", esc(r.Outreach_Plan)],
       ["Private notes", esc(r.Private_Notes)]
-    ]);
+    ]) + money;
   }
   var html = '<section class="panel"><h2>PhD pipeline</h2>' +
     '<p class="lede">Target programs and why each fits, with format, funding, publicly-listed supervisors, advantages, ' +
-    'disadvantages and a fit tier (1 best combined fit, 2 strong with a caveat, 3 supporting). Click a row for the detail. ' +
+    'disadvantages and a fit tier (1 best combined fit, 2 strong with a caveat, 3 supporting). ' +
+    'Click any column header to sort; click a row for the detail, including the per-program financial setup ' +
+    '(tuition, scholarships, TA/RA work and estimated take-home pay). ' +
     'Application status and outreach plans are personal and live in the private overlay; application materials live in the Drive Vault, not the repo.</p>' +
     (hasPrivate ? "" : privateNotice("Supervisor targeting and application status")) +
     '<div id="phd-tbl"></div></section>';

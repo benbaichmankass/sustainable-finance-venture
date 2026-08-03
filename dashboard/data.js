@@ -693,12 +693,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-01",
+   "As_Of": "2026-08-02",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -708,12 +708,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-02",
+   "As_Of": "2026-08-03",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -728,7 +728,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.15",
    "Chg_12m": "-0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -743,7 +743,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.12",
    "Chg_12m": "1.0",
    "Direction": "up",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -758,7 +758,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.0458",
    "Chg_12m": "-0.4142",
    "Direction": "up",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -768,15 +768,15 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-01",
+   "As_Of": "2026-08-02",
    "Chg_1m": "0.0",
-   "Chg_3m": "-0.5",
+   "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-01T08:35:02+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
-   "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure. | last refresh failed: <urlopen error timed out>"
+   "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
   },
   {
    "ID": "MAC-06",
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -803,10 +803,10 @@ window.SFV_DATA = {
    "Chg_3m": "0.078",
    "Chg_12m": "-0.304",
    "Direction": "up",
-   "Fetched_At": "2026-08-01T08:35:02+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
-   "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated. | last refresh failed: <urlopen error timed out>"
+   "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
   },
   {
    "ID": "MAC-14",
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -833,7 +833,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.37",
    "Chg_12m": "0.22",
    "Direction": "up",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -848,7 +848,7 @@ window.SFV_DATA = {
    "Chg_3m": "-21.62",
    "Chg_12m": "22.15",
    "Direction": "up",
-   "Fetched_At": "2026-08-02T08:37:57+00:00",
+   "Fetched_At": "2026-08-03T10:07:25+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -1462,7 +1462,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low-moderate: no part-time path; Israel pilot on the doorstep but full-time academic culture.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (method fit); finance side needs co-advisor",
-   "Fit_Notes": "Local pilot access; strongest methods training in Israel but least venture-friendly and light on finance-structuring."
+   "Fit_Notes": "Local pilot access; strongest methods training in Israel but least venture-friendly and light on finance-structuring.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-02",
@@ -1480,7 +1484,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate: excellent Tel Aviv pilot proximity; finance-academic culture less obviously venture-flexible.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (finance); pair with Berglas econ",
-   "Fit_Notes": "Sustainability + finance interdisciplinary. Excellent for the finance-engineering half; needs an economics co-advisor for impact evaluation."
+   "Fit_Notes": "Sustainability + finance interdisciplinary. Excellent for the finance-engineering half; needs an economics co-advisor for impact evaluation.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-03",
@@ -1498,7 +1506,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Uncertain: part-time unverified; geographically less convenient for a central-Israel pilot.",
    "Tier": "3",
    "Verification_Status": "Supervisor to verify - contact department first",
-   "Fit_Notes": "Development and behavioral economics. Plausible policy home but unproven supervisor fit; pursue only after confirming an advisor."
+   "Fit_Notes": "Development and behavioral economics. Plausible policy home but unproven supervisor fit; pursue only after confirming an advisor.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-10",
@@ -1516,7 +1528,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High (for Israel): flexible structure, outside part-time work permitted, Israel pilot local, practitioner-linked supervisors.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (strong); confirm English track + stipend",
-   "Fit_Notes": "NEW route distinct from Bogen. The standout Israeli option on supervisor fit and venture tolerance."
+   "Fit_Notes": "NEW route distinct from Bogen. The standout Israeli option on supervisor fit and venture tolerance.",
+   "Tuition": "NIS 16,239/yr (2025/26) standard HUJI doctoral tuition (~USD 4,400), same for Israeli and international; normally covered in full by a tuition scholarship for funded students.",
+   "Scholarships_Grants": "PBC 'Rotenstreich' doctoral fellowship ~NIS 80,000/yr (~USD 21,600), up to 3 yrs - but restricted to Israeli citizens/permanent residents. HUJI President's/Honors stipends (~NIS 75,000/yr) and Business School + research-foundation scholarships also exist. (The ~NIS 7,100 then ~NIS 3,100/mo figures circulating are for direct-track science programs, NOT the Business School.)",
+   "TA_RA_Opportunities": "TA work available as parallel income; the PhD explicitly permits outside part-time (not full-time) employment. TA pay rate not published.",
+   "Net_Earnings_Estimate": "On a PBC/President's-tier fellowship ~NIS 75,000-80,000/yr, largely income-tax-exempt (milga), tuition separately covered = ~NIS 6,300-6,700/mo take-home (~USD 20,000-21,600/yr). Jerusalem: TIGHT on the fellowship alone, comfortable once topped up with the permitted TA/part-time work."
   },
   {
    "ID": "PHD-11",
@@ -1534,7 +1550,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low-moderate (full-time, coursework-heavy) but excellent Tel Aviv pilot proximity.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (method fit)",
-   "Fit_Notes": "The rigorous impact-evaluation anchor at TAU; pair with Coller finance for the structuring side."
+   "Fit_Notes": "The rigorous impact-evaluation anchor at TAU; pair with Coller finance for the structuring side.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-12",
@@ -1552,7 +1572,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate: strong funding but full-time; venture-parallel tolerance unverified.",
    "Tier": "3",
    "Verification_Status": "Program verified; topical supervisor to verify",
-   "Fit_Notes": "Best-funded, strongest on quantitative risk/structuring methods; only if he reframes toward the analytics/decision-science core."
+   "Fit_Notes": "Best-funded, strongest on quantitative risk/structuring methods; only if he reframes toward the analytics/decision-science core.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-04",
@@ -1570,7 +1594,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate-low: prestigious and on-theme but full-time residency and a geography base make parallel venture + field RCTs harder.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (theme); topic co-supervisor unconfirmed",
-   "Fit_Notes": "High-prestige, high-theme, structurally awkward and funding-competitive; best only if Caldecott/OSFG actively want the topic."
+   "Fit_Notes": "High-prestige, high-theme, structurally awkward and funding-competitive; best only if Caldecott/OSFG actively want the topic.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-05",
@@ -1588,7 +1616,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Finance route low; International Development route moderate.",
    "Tier": "2",
    "Verification_Status": "Supervisor to verify before investing",
-   "Fit_Notes": "Deep risk + development finance expertise. The International Development door is the more venture-compatible LSE route."
+   "Fit_Notes": "Deep risk + development finance expertise. The International Development door is the more venture-compatible LSE route.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-06",
@@ -1606,7 +1638,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low.",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor fit is the weak link",
-   "Fit_Notes": "Quant finance + sustainability network. Best funding certainty but topical supervision is the risk - pursue only if a Judge finance professor bites."
+   "Fit_Notes": "Quant finance + sustainability network. Best funding certainty but topical supervision is the risk - pursue only if a Judge finance professor bites.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-09",
@@ -1624,7 +1660,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Good: part-time route + applied/inclusive-finance theme.",
    "Tier": "3",
    "Verification_Status": "Program verified; supervisor + funding to secure",
-   "Fit_Notes": "Financial systems + inclusive growth focus. Flexible and thematically welcoming but likely self-funded unless a separate studentship is landed."
+   "Fit_Notes": "Financial systems + inclusive growth focus. Flexible and thematically welcoming but likely self-funded unless a separate studentship is landed.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-13",
@@ -1642,7 +1682,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High: part-time route, fieldwork-native; but periodic London presence needed.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Volz); confirm finance co-supervisor",
-   "Fit_Notes": "Top-tier thematic + supervisor fit, part-time-friendly. Pair with a structured-finance mentor."
+   "Fit_Notes": "Top-tier thematic + supervisor fit, part-time-friendly. Pair with a structured-finance mentor.",
+   "Tuition": "2025/26: Home (UK) GBP 5,055/yr; International GBP 23,390/yr (~USD 29,700).",
+   "Scholarships_Grants": "ESRC studentships via the UBEL/Bloomsbury DTP - internationals ARE eligible (since 2021/22) but each DTP is capped ~30% international; award pays home-rate fees + a London-weighted UKRI stipend. Felix (SOAS) does NOT fit (developing-country/Indian nationals only); Commonwealth also n/a for Israel. SOAS Teaching/GTA and Tibawi are smaller/partial.",
+   "TA_RA_Opportunities": "SOAS Teaching Scholarships and Graduate Teaching Assistantships (competitive, hourly, not guaranteed or required).",
+   "Net_Earnings_Estimate": "If ESRC-funded: ~GBP 20,780-22,780/yr tax-free stipend + fees covered (~USD 27,000-29,000); London: TIGHT-to-INSUFFICIENT even funded. Self-funded international: pays GBP 23,390 tuition + London living = strongly negative."
   },
   {
    "ID": "PHD-14",
@@ -1660,7 +1704,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High: fieldwork-native, part-time possible, African sites core.",
    "Tier": "1",
    "Verification_Status": "Supervisors verified (multiple)",
-   "Fit_Notes": "Excellent development-finance/social-protection supervision with real named fits; add a finance co-supervisor for the securitization craft."
+   "Fit_Notes": "Excellent development-finance/social-protection supervision with real named fits; add a finance co-supervisor for the securitization craft.",
+   "Tuition": "2026 entry: Home (UK) GBP 6,000/yr; International GBP 22,500/yr (~USD 28,600). Part-time roughly half.",
+   "Scholarships_Grants": "ESRC NWSSDTP fully-funded studentships (fees + UKRI maintenance GBP 20,780), internationals eligible subject to the ~30% cap (fees at home rate). President's Doctoral Scholar award: stipend GBP 21,805 + GBP 1,000 and FULL international tuition, open to all nationalities, highly competitive.",
+   "TA_RA_Opportunities": "GTA/RA roles across the School of Environment, Education and Development; not guaranteed, not required; rates unpublished.",
+   "Net_Earnings_Estimate": "With PDS: ~GBP 22,805/yr tax-free + full intl tuition covered (~USD 29,000). With NWSSDTP: ~GBP 20,780 tax-free + home-rate fees (~USD 26,400). Manchester (low rents): COMFORTABLY COVERS. Self-funded international: insufficient."
   },
   {
    "ID": "PHD-15",
@@ -1678,7 +1726,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High: fieldwork-native, RCT culture, African sites standard.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Verschoor)",
-   "Fit_Notes": "Outstanding fit for the insurance + RCT core, with international-eligible funding. A top pick; pair with structured-finance input."
+   "Fit_Notes": "Outstanding fit for the insurance + RCT core, with international-eligible funding. A top pick; pair with structured-finance input.",
+   "Tuition": "SeNSS-funded students are exempt from the higher international fee. Exact Home/International PGR tuition not confirmed on an official page (UEA renders it via JavaScript) - treat as unverified.",
+   "Scholarships_Grants": "SeNSS ESRC DTP studentships cover tuition for BOTH UK and international students AND pay the standard UKRI stipend (GBP 20,780, 2025/26); internationals explicitly eligible (subject to the ~30% DTP cap). Verschoor (weather-index insurance / RCTs) aligns with SeNSS pathways.",
+   "TA_RA_Opportunities": "GTA/RA available; not published as guaranteed or required.",
+   "Net_Earnings_Estimate": "With SeNSS: ~GBP 20,780/yr tax-free + full tuition covered (~USD 26,400). Norwich (low-cost): COMFORTABLY COVERS. Self-funded international: insufficient."
   },
   {
    "ID": "PHD-16",
@@ -1696,7 +1748,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Johnson); confirm availability + URL",
-   "Fit_Notes": "Strong supervisor fit on financial inclusion in Africa; pursue if she is available to supervise."
+   "Fit_Notes": "Strong supervisor fit on financial inclusion in Africa; pursue if she is available to supervise.",
+   "Tuition": "2025/26 (HSS PGR band): Home GBP 4,900/yr; Overseas GBP 23,500/yr (~USD 29,800); up to ~8% annual rise.",
+   "Scholarships_Grants": "The CDS route is delivered as the SWDTP-only 'PhD Global Challenges & Transformations' pathway: ESRC studentship covers fees + UKRI stipend (GBP 20,780); internationals eligible subject to the ~30% cap (fees at home rate). Susan Johnson (financial inclusion, FSD Kenya) sits in this pathway.",
+   "TA_RA_Opportunities": "GTA/RA available in Social & Policy Sciences; not guaranteed or required.",
+   "Net_Earnings_Estimate": "With SWDTP: ~GBP 20,780/yr tax-free + fees covered (~USD 26,400). Bath: COMFORTABLY COVERS but tighter than Norwich/Manchester (high rents for a small city). Self-funded overseas: insufficient."
   },
   {
    "ID": "PHD-17",
@@ -1714,7 +1770,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low-moderate (FT only).",
    "Tier": "2",
    "Verification_Status": "Program verified; best as securitization co-supervision",
-   "Fit_Notes": "Best of the pure-finance options for the securitization craft, but weak on development/impact side and full-time only."
+   "Fit_Notes": "Best of the pure-finance options for the securitization craft, but weak on development/impact side and full-time only.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-18",
@@ -1732,7 +1792,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Executive PhD high; standard PhD moderate.",
    "Tier": "2",
    "Verification_Status": "Program verified; strong as actuarial co-supervision",
-   "Fit_Notes": "The home for the actuarial/insurance-structuring dimension; strongest as a co-supervision partner or via the part-time Executive route."
+   "Fit_Notes": "The home for the actuarial/insurance-structuring dimension; strongest as a co-supervision partner or via the part-time Executive route.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-19",
@@ -1750,7 +1814,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate-high for UK residents; reduced if PT needed as an international student.",
    "Tier": "3",
    "Verification_Status": "Supervisor + PT eligibility to verify",
-   "Fit_Notes": "Strong thematic home only if UK-resident and a matched supervisor is confirmed."
+   "Fit_Notes": "Strong thematic home only if UK-resident and a matched supervisor is confirmed.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-07",
@@ -1768,7 +1836,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium: excellent theme + network, but full-time coursework-heavy early on.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (confirm Balkenhol active supervision)",
-   "Fit_Notes": "Highly quantitative sustainable finance. Strong on theme, funding and network; best if he can commit full-time."
+   "Fit_Notes": "Highly quantitative sustainable finance. Strong on theme, funding and network; best if he can commit full-time.",
+   "Tuition": "CHF 500/semester (~CHF 1,000/yr, ~USD 1,250); same for Swiss and international.",
+   "Scholarships_Grants": "Every SFI PhD offer includes an SFI fellowship OR a UNIGE teaching/research assistantship - funding is part of admission; non-EU eligible. Exact SFI fellowship figure not published (confirm with phd@sfi.ch).",
+   "TA_RA_Opportunities": "Standard route is a salaried UNIGE doctoral-assistant post from yr 1-2; cantonal scale ~CHF 4,000/mo net at 100% in yr 1, rising to a max ~CHF 81,264/yr gross; 100% or 70% contracts, min ~40% of time reserved for the thesis.",
+   "Net_Earnings_Estimate": "~CHF 48,000/yr net (est.) on a 100% assistantship (~USD 60,000), less ~CHF 1,000 tuition. Geneva is very expensive: COVERS BUT TIGHT at 100%; a 70% contract is insufficient-to-tight."
   },
   {
    "ID": "PHD-08",
@@ -1786,7 +1858,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium: funded + English but teaching duties and full-time status constrain parallel work.",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor to secure (D'Espallier via KUL)",
-   "Fit_Notes": "Applied focus. Attractive funding/structure; verify a genuinely on-topic co-promotor before ranking above Geneva."
+   "Fit_Notes": "Applied focus. Attractive funding/structure; verify a genuinely on-topic co-promotor before ranking above Geneva.",
+   "Tuition": "None - fully funded, no tuition charged to PhD students.",
+   "Scholarships_Grants": "Funded as a salaried Teaching & Research Assistant contract (KU Leuven yr 1, IESEG Lille yrs 2-4) plus IESEG research-support funds. Pay stated only as 'competitive with European institutions'; no euro figure published. No non-EU bar stated.",
+   "TA_RA_Opportunities": "Salaried TA model, not optional: yr 1 coursework at KU Leuven, then ~100 teaching hrs/yr (~300 total) at IESEG across yrs 2-4.",
+   "Net_Earnings_Estimate": "Salary unpublished; as a salaried assistant, est. ~EUR 2,000-2,400/mo net = ~EUR 24,000-29,000/yr (~USD 26,000-31,000). Lille/Leuven: comfortably covers (est.)."
   },
   {
    "ID": "PHD-20",
@@ -1804,7 +1880,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High thematically (venture IS the thesis); Belgian networks reach African microfinance sites; full-time positions still constrain time.",
    "Tier": "1",
    "Verification_Status": "Supervisors verified (multiple, directly on-topic)",
-   "Fit_Notes": "Best-in-class supervisor and thematic fit in Europe. Priority target - approach Hudon/Szafarz/Labie about a securitization-focused thesis."
+   "Fit_Notes": "Best-in-class supervisor and thematic fit in Europe. Priority target - approach Hudon/Szafarz/Labie about a securitization-focused thesis.",
+   "Tuition": "Nominal Belgian doctoral registration fee ~EUR 835/yr (est.); not a real cost barrier when funded.",
+   "Scholarships_Grants": "Primary route is an F.R.S.-FNRS ASP fellowship (2+2 yrs) or FRESH (social sciences); income-tax-free, Belgian social security. CERMi recruits doctoral fellows on FNRS ASP under Hudon/Szafarz. KEY: FNRS has NO EEA-degree nationality bar (unlike Flemish FWO), so a non-EU (Israeli) applicant is eligible.",
+   "TA_RA_Opportunities": "FNRS fellows carry no mandatory teaching. Alternative: a salaried ULB/UMONS 'assistant' (mandataire) post with teaching duties.",
+   "Net_Earnings_Estimate": "FNRS fellowship ~EUR 2,300-2,600/mo net, tax-free = ~EUR 28,000-31,000/yr (~USD 30,000-33,000); exact indexed figure unverified. Brussels/Mons: comfortably covers for a single person."
   },
   {
    "ID": "PHD-21",
@@ -1822,7 +1902,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High (network + methods).",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Vandewalle, strong)",
-   "Fit_Notes": "Top-tier individual match. Add to shortlist; approach Vandewalle/Panizza directly."
+   "Fit_Notes": "Top-tier individual match. Add to shortlist; approach Vandewalle/Panizza directly.",
+   "Tuition": "CHF 3,000 in yr 1, then CHF 1,000/yr in yrs 2-4; no domestic/international split.",
+   "Scholarships_Grants": "Every PhD offer carries a 4-yr support package; core is an IHEID scholarship CHF 20,000/yr (CHF 2,000/mo Sep-Jun) plus a need-based tuition reduction; non-EU eligible; re-appliable in later years.",
+   "TA_RA_Opportunities": "From yrs 3-4, TA/RA positions add income. Non-EU work permits cap activity at 25% (yrs 1-2) and 50% (yrs 3-4); no work in the first 6 months in Switzerland.",
+   "Net_Earnings_Estimate": "~CHF 20,000/yr (~USD 24,000), ~CHF 19,000 net of yr-1 tuition. Geneva: INSUFFICIENT-to-TIGHT on the scholarship alone; workable only with a TA/RA top-up in later years. (Vandewalle fit is strong but the money is thin.)"
   },
   {
    "ID": "PHD-22",
@@ -1840,7 +1924,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High methodologically; full-time.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Lensink, near-exact fit)",
-   "Fit_Notes": "Very strong on supervisor fit. Pursue Lensink directly."
+   "Fit_Notes": "Very strong on supervisor fit. Pursue Lensink directly.",
+   "Tuition": "None - a Dutch salaried PhD (werknemerspromovendus) is staff, not a fee-paying student.",
+   "Scholarships_Grants": "Funded via a salaried PhD employment contract, advertised as a vacancy on funded projects (NWO/university/faculty). No nationality bar; work/residence permit arranged by the university.",
+   "TA_RA_Opportunities": "The PhD IS a salaried job; a modest teaching share (~10-15% of time) is usual and part of the employment.",
+   "Net_Earnings_Estimate": "CAO scale P: gross EUR 3,059/mo (yr 1) rising to EUR 3,881/mo (yr 4) as of 1 Jul 2025, +8% holiday +8.3% year-end; net ~EUR 29,000-34,000/yr (~USD 31,000-37,000). Groningen (cheaper Dutch city): comfortably covers."
   },
   {
    "ID": "PHD-23",
@@ -1858,7 +1946,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Good: policy-relevance requirement rewards an applied venture; African fieldwork core IOB territory.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (Cassimon); confirm funding route",
-   "Fit_Notes": "Strong secondary target on the development-finance structuring layer; confirm funding early."
+   "Fit_Notes": "Strong secondary target on the development-finance structuring layer; confirm funding early.",
+   "Tuition": "Nominal Belgian doctoral registration fee ~EUR 835/yr (est.); not a cost barrier when funded.",
+   "Scholarships_Grants": "No default stipend - funding is assembled per candidate: VLIR-UOS (Global South), university BOF doctoral mandates, FWO, or external/own funding. FWO restricts to EEA/Swiss degrees (limits a straight non-EU route); VLIR-UOS/BOF/project funding do not carry that bar. Self-funded admission possible. An IOB supervisor must be secured before admission.",
+   "TA_RA_Opportunities": "Varies by funding line: BOF/assistant mandates can include teaching; scholarship (VLIR-UOS/FWO) holders generally have no mandatory teaching.",
+   "Net_Earnings_Estimate": "On a Belgian mandate/fellowship, net ~EUR 2,300-2,600/mo = ~EUR 28,000-31,000/yr (~USD 30,000-33,000). Antwerp: comfortably covers IF funded; insufficient if self-funded."
   },
   {
    "ID": "PHD-24",
@@ -1876,7 +1968,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium-high.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (D'Espallier)",
-   "Fit_Notes": "Strong microfinance supervisor within a top department; natural complement to the IESEG joint route."
+   "Fit_Notes": "Strong microfinance supervisor within a top department; natural complement to the IESEG joint route.",
+   "Tuition": "Very low: doctorate fee EUR 557.10 on first registration, none on re-registration, EUR 557.10 again in the defence year; no non-EEA doctorate surcharge (the ~EUR 9,494 non-EEA figure is for taught master's, not the doctorate).",
+   "Scholarships_Grants": "Routes: FWO PhD Fellowship (~EUR 2,460/mo-level, tax-exempt + social security, 4 yrs, + ~EUR 3,720/yr bench fee), KU Leuven BOF, project/assistant posts, or external. Caveat: FWO generally requires an EEA/Switzerland degree, so BOF/project/external funding is the more reliable channel for a non-EU candidate.",
+   "TA_RA_Opportunities": "FWO/BOF holders: no mandatory teaching. Salaried 'assistent' posts carry teaching duties. A doctoral training program (~60 ECTS-equivalent) is required.",
+   "Net_Earnings_Estimate": "On FWO/BOF: net ~EUR 2,300-2,600/mo = ~EUR 28,000-31,000/yr (~USD 30,000-33,000). On a salaried assistant contract: gross ~EUR 2,600-3,000/mo, net ~EUR 2,000-2,300. Tuition negligible. Leuven: comfortably covers."
   },
   {
    "ID": "PHD-25",
@@ -1894,7 +1990,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium: excellent network, demanding time commitment.",
    "Tier": "2",
    "Verification_Status": "Program verified; academic supervisor to verify",
-   "Fit_Notes": "Strong funding + practitioner network; confirm an on-topic academic supervisor exists before ranking highly."
+   "Fit_Notes": "Strong funding + practitioner network; confirm an on-topic academic supervisor exists before ranking highly.",
+   "Tuition": "Waived for admitted doctoral scholarship holders (Frankfurt School's fees sit on its Master/MBA programmes, not the funded doctorate); internationals admitted on the same merit terms.",
+   "Scholarships_Grants": "Foundation Doctoral Scholarship up to EUR 2,320/mo tax-exempt from yr 1, for the full 5 yrs (progress-contingent), plus travel/research budget; up to ~8 funded places; all applicants considered automatically on merit - open to internationals, not nationality-gated.",
+   "TA_RA_Opportunities": "Not detailed; the scholarship requires 100% time on the doctorate, implying limited teaching/RA duties rather than a salaried-contract requirement (unverified).",
+   "Net_Earnings_Estimate": "~EUR 27,840/yr tax-free (~USD 30,000). Frankfurt housing is pricey, so: ADEQUATE, tighter than the headline suggests for a single person."
   },
   {
    "ID": "PHD-26",
@@ -1912,7 +2012,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High: Dual Career format is purpose-built for professionals running parallel work.",
    "Tier": "1",
    "Verification_Status": "Program verified (part-time track); supervisor to verify",
-   "Fit_Notes": "Best structural match for part-time/venture-parallel study; confirm funding + a financial-inclusion/RCT supervisor."
+   "Fit_Notes": "Best structural match for part-time/venture-parallel study; confirm funding + a financial-inclusion/RCT supervisor.",
+   "Tuition": "Track-dependent. Full-time: no published figure (candidates 'typically secure funding via grants/scholarships'). Dual Career (part-time, working professionals): EUR 9,000 in yr 1 then EUR 7,000/yr - you PAY.",
+   "Scholarships_Grants": "No scholarships for the Dual Career track (self/employer-funded). Full-time: funded PhD-fellowship cohorts (~10) advertised periodically via EURAXESS; Global South encouraged but no nationality bar (non-EU eligible). The Dual Career track is the structurally relevant one for a founder running a parallel venture.",
+   "TA_RA_Opportunities": "None inherent to the Dual Career track (fee-paying, not employment). Full-time funded fellows may have research duties tied to their funding.",
+   "Net_Earnings_Estimate": "Dual Career: NEGATIVE - ~EUR 30,000 over 4 yrs in fees, no stipend (designed to run alongside a paying job). Full-time funded: ~EUR 29,000-34,000/yr net (est., Dutch levels). Flag: Dual Career is self-financed by design; full-time funded comfortably covers in Maastricht."
   },
   {
    "ID": "PHD-27",
@@ -1930,7 +2034,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High for African rural pilots + insurance evaluation.",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (Bulte)",
-   "Fit_Notes": "Strong for the impact-evaluation + microinsurance side; verify a named funded position."
+   "Fit_Notes": "Strong for the impact-evaluation + microinsurance side; verify a named funded position.",
+   "Tuition": "None on a salaried position (employed promovendus = staff). Self-funded/sandwich candidates may face fees/bench costs.",
+   "Scholarships_Grants": "Salaried PhD vacancies attached to funded projects (NWO/EU/university/development-research) in the Development Economics Group; no nationality bar (non-EU eligible), permit handled by WUR. External/sandwich candidates also accepted.",
+   "TA_RA_Opportunities": "Salaried Dutch CAO job with a modest teaching/assistance component (part of employment, faculty-dependent).",
+   "Net_Earnings_Estimate": "CAO scale P: gross EUR 3,059/mo (yr 1) to EUR 3,881/mo (yr 4), +8% holiday +8.3% year-end; net ~EUR 29,000-34,000/yr (~USD 31,000-37,000). Wageningen (affordable): comfortably covers."
   },
   {
    "ID": "PHD-28",
@@ -1948,7 +2056,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Good for the African field site; full-time contract limits parallel time.",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor to verify",
-   "Fit_Notes": "Strong development-economics + African focus + funding; verify a named on-topic supervisor."
+   "Fit_Notes": "Strong development-economics + African focus + funding; verify a named on-topic supervisor.",
+   "Tuition": "French national doctoral fee ~EUR 400/yr + ~EUR 100 CVEC; no international differential at public universities.",
+   "Scholarships_Grants": "Funded route is the salaried 'contrat doctoral' (3 yrs), statutory minimum gross EUR 2,300/mo from 1 Jan 2026; non-EU eligible. Also Eiffel Excellence (Campus France), regional and ANR-funded thesis contracts.",
+   "TA_RA_Opportunities": "A contrat doctoral can add an optional teaching mission (~64 h/yr) at a premium, or be research-only.",
+   "Net_Earnings_Estimate": "EUR 2,300 gross ~ EUR 1,850/mo net = ~EUR 22,000/yr (~USD 24,000). Clermont-Ferrand (low-cost): COMFORTABLY COVERS - the French option where the doctoral salary stretches furthest."
   },
   {
    "ID": "PHD-29",
@@ -1966,7 +2078,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium (full-time).",
    "Tier": "2",
    "Verification_Status": "Supervisor verified (de Haas; confirm availability)",
-   "Fit_Notes": "Strong development-finance supervisor within a top department; approach de Haas directly."
+   "Fit_Notes": "Strong development-finance supervisor within a top department; approach de Haas directly.",
+   "Tuition": "Tuition-free; only the semester fee (~EUR 200/semester, unverified). Same for internationals.",
+   "Scholarships_Grants": "CDSE/GESS guarantees 3-5 yrs of funding. Yrs 1-2 (coursework): a EUR 1,500/mo tax-free stipend (ZEW track paid by ZEW); the core stipend is open to internationals. GESS also administers DAAD/foundation top-ups and completion/travel funds.",
+   "TA_RA_Opportunities": "Coursework years are generally teaching-free; from ~yr 3 funding typically converts to a salaried RA/TA or ZEW-researcher post (higher pay); rates unpublished.",
+   "Net_Earnings_Estimate": "Yrs 1-2: EUR 1,500/mo tax-free = ~EUR 18,000/yr (~USD 19,400). Later salaried RA (est. TV-L E13 65%): ~EUR 23,000-25,000/yr net. Mannheim (moderate cost): TIGHT early, adequate once on the later salaried contract."
   },
   {
    "ID": "PHD-30",
@@ -1984,7 +2100,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate-high via the part-time hybrid track (periodic India presence for exams, not continuous relocation).",
    "Tier": "1",
    "Verification_Status": "Supervisor verified; part-time route verified",
-   "Fit_Notes": "Strongest topical + methodological fit in Asia, with a rare part-time option. Top direct-inquiry target."
+   "Fit_Notes": "Strongest topical + methodological fit in Asia, with a rare part-time option. Top direct-inquiry target.",
+   "Tuition": "Full-time: full tuition WAIVER (funded scholars pay no tuition). Part-time: self-funded (separate published fee structure).",
+   "Scholarships_Grants": "Full-time PhD fellowship INR 35,000/mo, rising to INR 40,000/mo from yr 3, paid for 4 yrs (extendable to a 5th), plus accommodation support and national + international conference funding. Domestic scheme (no international-specific stipend named; not on UK/Singapore schemes).",
+   "TA_RA_Opportunities": "Research/teaching engagement is part of the fellowship; RA work with LEAD at Krea is a feature of the ecosystem - not an extra required job on top of the stipend. No separate published rate.",
+   "Net_Earnings_Estimate": "INR 35,000/mo = INR 420,000/yr (~USD 5,050); INR 40,000/mo from yr 3 = INR 480,000/yr (~USD 5,800). Largely tax-free, tuition waived, accommodation supported. Sri City (very low cost, subsidised housing): COMFORTABLY COVERS locally, though modest in USD terms."
   },
   {
    "ID": "PHD-31",
@@ -2002,7 +2122,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "PhD low (relocation); DBA moderate.",
    "Tier": "1",
    "Verification_Status": "Supervisor verified (Liang, strong)",
-   "Fit_Notes": "Highest supervisor fit in Singapore. Worth a direct approach to Prof. Liang regardless of program route."
+   "Fit_Notes": "Highest supervisor fit in Singapore. Worth a direct approach to Prof. Liang regardless of program route.",
+   "Tuition": "Full-time PhD: full tuition subsidy + registration-fee waiver (effectively S$0 out of pocket). DBA (part-time professional doctorate): self-funded; exact SGD fee not verifiable (SMU pages behind bot protection).",
+   "Scholarships_Grants": "SMU PhD Scholarship: full tuition + fee waiver + monthly living stipend up to 4 yrs (school-specific SGD amount not verifiable). SINGA (Singapore International Graduate Award), which SMU participates in and which IS open to internationals: full tuition + stipend S$2,700/mo rising to S$3,200 after the Qualifying Exam, + one-time S$1,500 airfare and S$1,000 settling-in, up to 4 yrs - the most relevant funded route for an Israel-based applicant.",
+   "TA_RA_Opportunities": "TA/RA duties are part of the funded PhD; after yr 4 students may continue support via RA/TA. Hours/pay not published.",
+   "Net_Earnings_Estimate": "On SINGA/SMU stipend: S$2,700-3,200/mo = S$32,400-38,400/yr (~USD 24,000-28,400), tuition fully covered. Singapore (high rents): TIGHT at S$2,700, tight-to-manageable at the S$3,200 post-QE rate; clearly net-positive since tuition is funded."
   },
   {
    "ID": "PHD-32",
@@ -2020,7 +2144,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low (relocation required).",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor to verify",
-   "Fit_Notes": "Elite and well-funded, but a full relocation with imperfect topical supervisor fit."
+   "Fit_Notes": "Elite and well-funded, but a full relocation with imperfect topical supervisor fit.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-33",
@@ -2038,7 +2166,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low (relocation).",
    "Tier": "2",
    "Verification_Status": "Supervisors verified (theme + insurance)",
-   "Fit_Notes": "One of the better thematic matches in Asia (finance + insurance + sustainability), but relocation-bound."
+   "Fit_Notes": "One of the better thematic matches in Asia (finance + insurance + sustainability), but relocation-bound.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-34",
@@ -2056,7 +2188,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low (relocation).",
    "Tier": "2",
    "Verification_Status": "Program + funding verified; topical supervisor to verify",
-   "Fit_Notes": "Best funding + prestige in Asia, but methodologically distant from the RCT/development core and relocation-bound. (HKU/CUHK/CityU are HKPFS-eligible leads with the same tradeoff.)"
+   "Fit_Notes": "Best funding + prestige in Asia, but methodologically distant from the RCT/development core and relocation-bound. (HKU/CUHK/CityU are HKPFS-eligible leads with the same tradeoff.)",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-35",
@@ -2074,7 +2210,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Distinctive for the South-Asian/African field-site leg; residency component.",
    "Tier": "3",
    "Verification_Status": "Program verified; funding + supervisors to verify",
-   "Fit_Notes": "High-relevance option for the field-site leg; worth a direct enquiry."
+   "Fit_Notes": "High-relevance option for the field-site leg; worth a direct enquiry.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-36",
@@ -2092,7 +2232,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Potentially high IF overseas PT permitted; otherwise low.",
    "Tier": "3",
    "Verification_Status": "Overseas PT residency rule to verify (decisive)",
-   "Fit_Notes": "Attractive on paper for a remote PhD; hinges entirely on the UK-residency question."
+   "Fit_Notes": "Attractive on paper for a remote PhD; hinges entirely on the UK-residency question.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-37",
@@ -2110,7 +2254,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High (fully online, part-time).",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor to verify",
-   "Fit_Notes": "Leading fully-remote option if a DBA's credibility tradeoff is acceptable."
+   "Fit_Notes": "Leading fully-remote option if a DBA's credibility tradeoff is acceptable.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-38",
@@ -2128,7 +2276,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High.",
    "Tier": "2",
    "Verification_Status": "Program verified; supervisor to verify",
-   "Fit_Notes": "Among the most travel-light credible DBAs; note the separate full-time PhD in Management if he wants the academic track."
+   "Fit_Notes": "Among the most travel-light credible DBAs; note the separate full-time PhD in Management if he wants the academic track.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-39",
@@ -2146,7 +2298,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "High (part-time hybrid, executive-oriented).",
    "Tier": "2",
    "Verification_Status": "Program verified; check 5-yr experience bar",
-   "Fit_Notes": "Strong credible-DBA option if the work-experience bar is met and periodic UK/SA presence is workable."
+   "Fit_Notes": "Strong credible-DBA option if the work-experience bar is met and periodic UK/SA presence is workable.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-40",
@@ -2164,7 +2320,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Moderate.",
    "Tier": "3",
    "Verification_Status": "Supervisor verified (Morrissey); supporting option",
-   "Fit_Notes": "Credible development-economics home; a supporting option rather than a lead."
+   "Fit_Notes": "Credible development-economics home; a supporting option rather than a lead.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
   },
   {
    "ID": "PHD-41",
@@ -2182,7 +2342,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Low-moderate (full-time).",
    "Tier": "3",
    "Verification_Status": "Program strong; supervisor to verify",
-   "Fit_Notes": "Elite economics + impact-evaluation homes; confirm a development/finance supervisor."
+   "Fit_Notes": "Elite economics + impact-evaluation homes; confirm a development/finance supervisor.",
+   "Tuition": "French national doctoral fee ~EUR 400/yr + ~EUR 100 CVEC; no international differential.",
+   "Scholarships_Grants": "Both fund via the salaried 'contrat doctoral' (EUR 2,300 gross/mo, 2026) and/or institutional fellowships. TSE funds from the M2 ETE doctoral track upward and guarantees funding on progression; PSE admits only candidates with secured funding and awards a few 3-yr stipends/yr + mobility support. Non-EU eligible; Eiffel has an earlier (Nov) deadline.",
+   "TA_RA_Opportunities": "Active RA markets tied to funded projects at both, plus optional teaching missions (~64 h/yr) on a contrat doctoral.",
+   "Net_Earnings_Estimate": "~EUR 1,850/mo net (~EUR 22,000/yr, ~USD 24,000), a little higher where a school fellowship tops up the minimum. Toulouse: COMFORTABLY COVERS; Paris (PSE): TIGHT (rents)."
   },
   {
    "ID": "PHD-42",
@@ -2200,7 +2364,11 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Medium (full-time, salaried).",
    "Tier": "3",
    "Verification_Status": "Funding model strong; supervisor to verify",
-   "Fit_Notes": "Excellent funding model + climate/development-economics fit; verify a supervisor."
+   "Fit_Notes": "Excellent funding model + climate/development-economics fit; verify a supervisor.",
+   "Tuition": "None - Swedish doctoral positions are salaried employment (doktorandtjanst), not fee-paying, so no tuition for EU or non-EU doctoral employees.",
+   "Scholarships_Grants": "Not a scholarship model: funded via a salaried 4-yr (FTE) doctoral employment awarded through competitive annual admission; open to internationals. (Stockholm School of Economics / SITE uses a comparable salaried/funded model.)",
+   "TA_RA_Opportunities": "Departmental duties (teaching/admin) up to a maximum of 20% of time, extending the position pro rata; part of the employment, not a separate job.",
+   "Net_Earnings_Estimate": "Salaried ladder rising with progress (~SEK 34,550/mo gross reported from May 2025, with milestone raises at 50% and 80%; exact ladder varies by dept - verify). Net after tax ~SEK 23,000-26,000/mo = ~SEK 280,000-310,000/yr (~USD 27,000-30,000). Gothenburg: comfortably covers on the salaried Nordic model; Stockholm is tighter."
   },
   {
    "ID": "PHD-43",
@@ -2218,7 +2386,209 @@ window.SFV_DATA = {
    "Venture_Pilot_Fit": "Good fieldwork orientation; cost is a real drawback.",
    "Tier": "3",
    "Verification_Status": "Program verified; funding structure weak",
-   "Fit_Notes": "Thematically credible on development, but the self-funded structure works against the funding priority."
+   "Fit_Notes": "Thematically credible on development, but the self-funded structure works against the funding priority.",
+   "Tuition": "",
+   "Scholarships_Grants": "",
+   "TA_RA_Opportunities": "",
+   "Net_Earnings_Estimate": ""
+  },
+  {
+   "ID": "PHD-44",
+   "University": "University of Passau",
+   "Department_Program": "Chair of Development Economics (Prof. Grimm); individual doctorate in Economics with Bavarian Graduate Program in Economics (BGPE) coursework",
+   "Country": "Germany",
+   "City": "Passau",
+   "Region": "Europe",
+   "URL": "https://www.wiwi.uni-passau.de/en/development-economics/team/prof-dr-michael-grimm",
+   "Format": "~3-4 yrs full-time; individual doctorate (own supervisor + financing) plus BGPE coursework; English working language, doctoral regulations in German; dissertation + oral exam.",
+   "Funding_Summary": "No guaranteed scholarship on admission; the standard route is a paid research/project position on a chair or grant (German public scale TV-L E13, ~65-75% FTE), plus Graduate Centre starter/travel/publication grants. Grimm's chair has advertised fully-funded doctoral positions.",
+   "Key_Supervisors": "Michael Grimm (development economics: microinsurance, health, small and informal firms, RCTs; West Africa and SE Asia; J-PAL affiliate, EUDN board)",
+   "Advantages": "Arguably the closest single-supervisor topical match on the list (microinsurance + RCTs + African fieldwork + informal-enterprise finance); J-PAL network; a salaried TV-L post is real income with social insurance; English-workable.",
+   "Disadvantages": "No guaranteed funding line - you must land a chair/project position or bring funding; individual doctorate (less cohort structure); advertised posts are topic-specific so exact-theme fit depends on an open vacancy.",
+   "Venture_Pilot_Fit": "Strong. A TV-L position is in principle compatible with a parallel venture (subject to secondary-employment approval); Grimm's RCT/field orientation and West-Africa focus suit treating the venture's pilots as research.",
+   "Tier": "1",
+   "Verification_Status": "Verified (route, supervisor and funding mechanism); exact stipend depends on the vacancy",
+   "Fit_Notes": "Best pure topical fit (microinsurance + RCTs + informal-firm finance); funding is position-by-position, not guaranteed. Note: as an Israeli applicant, DAAD development-country scholarships do not apply - the funded route is a salaried TV-L post.",
+   "Tuition": "No tuition; only the semester contribution (est. ~EUR 100-170/semester). Same for internationals.",
+   "Scholarships_Grants": "No blanket entry scholarship; Graduate Centre thesis-starter/travel/publication grants. DAAD EPOS is not open to an Israeli (high-income, non-DAC) applicant. Main realistic funding is a salaried RA/project post.",
+   "TA_RA_Opportunities": "Yes, and central to funding: doctoral candidates are typically employed as research assistants (wissenschaftliche Mitarbeiter) on TV-L E13, 65-75% FTE, with teaching/research duties as part of the salaried contract.",
+   "Net_Earnings_Estimate": "On TV-L E13: ~EUR 23,000-25,000/yr net at 65% FTE, ~EUR 25,000-27,000/yr net at 75% (est.; ~USD 25,000-29,000). Passau is a small, low-cost Bavarian town (rent ~EUR 400-600): COMFORTABLY COVERS."
+  },
+  {
+   "ID": "PHD-45",
+   "University": "University of Bonn (Center for Development Research, ZEF)",
+   "Department_Program": "Bonn International Graduate School for Development Research (BIGS-DR); interdisciplinary doctoral program in development research",
+   "Country": "Germany",
+   "City": "Bonn",
+   "Region": "Europe",
+   "URL": "https://www.zef.de/doctoralprogram",
+   "Format": "~3-4 yrs full-time; English; structured, ~30 ECTS coursework; cohort of ~20-30/yr; degree awarded by a University of Bonn faculty.",
+   "Funding_Summary": "Historically funded largely through DAAD EPOS development-country scholarships; applicants with secured funding can also enrol (1 May deadline, October start). No tuition, only a semester fee.",
+   "Key_Supervisors": "~50 senior researchers across three departments (Economic and Technological Change; Political and Cultural Change; Ecology and Natural Resources). No individual PhD supervisor named on the program pages - identify a development-finance supervisor before applying.",
+   "Advantages": "Strong interdisciplinary development-research environment with a genuine field-research culture and Global-South networks; tuition-free; well-known development-studies brand; research funds ~EUR 5,000-20,000.",
+   "Disadvantages": "Its flagship funding (DAAD EPOS) is not open to an Israeli applicant, so a paid position, an external fellowship or self-funding is needed; supervisors not individually named on the public pages; more development-studies than finance-technical.",
+   "Venture_Pilot_Fit": "Good field-pilot culture (built around Global-South fieldwork); running a parallel venture is workable only on a non-EPOS/self-funded or salaried route.",
+   "Tier": "2",
+   "Verification_Status": "Program, format and fee verified; funding-eligibility caveat confirmed; specific supervisor unverified",
+   "Fit_Notes": "Excellent development-research home, but the standard scholarship excludes an Israeli applicant - fit hinges on securing a salaried position or external funding.",
+   "Tuition": "No tuition; semester fee ~EUR 350/semester (search-reported).",
+   "Scholarships_Grants": "DAAD EPOS doctoral rate EUR 1,300/mo (rising to EUR 1,400/mo from Feb 2026) + insurance/travel - BUT restricted to development/newly-industrialized-country nationals, so an Israeli applicant is NOT eligible. Non-EPOS routes: salaried ZEF/project (TV-L) positions or bring-your-own funding.",
+   "TA_RA_Opportunities": "EPOS scholars are funded to focus on the PhD (scholarship, not salaried teaching). Salaried RA positions on ZEF projects (TV-L) exist separately and are the realistic paid, teaching/RA-bearing route for a non-EPOS applicant.",
+   "Net_Earnings_Estimate": "On a TV-L project salary (the realistic route for an Israeli): est. ~EUR 23,000-25,000/yr net (~USD 25,000-27,000) if such a post is available - comfortable in Bonn. EPOS (~EUR 15,600-16,800/yr) is both tight and unavailable to this applicant. Flag: salaried post comfortable but not guaranteed."
+  },
+  {
+   "ID": "PHD-46",
+   "University": "University of Hohenheim",
+   "Department_Program": "Hans-Ruthenberg-Institute, Chair of Rural Development Theory and Policy (490a); doctorate in agricultural/development economics + the international IPPAE track",
+   "Country": "Germany",
+   "City": "Stuttgart (Hohenheim)",
+   "Region": "Europe",
+   "URL": "https://entwicklungspolitik.uni-hohenheim.de/en/prof-dr-manfred-zeller-490a-en",
+   "Format": "~3-4 yrs. Two routes: an individual doctorate under a chair (funded by a project/RA post), or the structured International PhD Programme for Agricultural Economics, Bioeconomy and Rural Development (IPPAE, with Giessen). English; some regulations in German.",
+   "Funding_Summary": "No automatic funding on admission; routes are a paid TV-L project/RA position, a DAAD/foundation scholarship, or (for IPPAE) DAAD development-country funding. Tuition-free aside from the semester fee.",
+   "Key_Supervisors": "Manfred Zeller (rural finance, microfinance institutions, cooperatives, food security, poverty-targeting tools; Sub-Saharan Africa and SE Asia); Regina Birner (institutions, governance, digital agricultural innovation)",
+   "Advantages": "Zeller is one of the strongest rural-finance/microfinance names in German academia - a near-exact match to VSLA/community-lending finance; deep rural-financial-systems and poverty-measurement tradition; tuition-free; strong tropical-agriculture field network.",
+   "Disadvantages": "Framing is agricultural/rural economics, not structured/securitized finance - the capital-markets side is not the chair's core; Zeller is long-tenured (confirm his remaining supervision horizon); IPPAE's own stream is development-country-restricted (an Israeli is not EPOS-eligible).",
+   "Venture_Pilot_Fit": "Strong on the field/microfinance side (rural-finance fieldwork in Africa is home turf); parallel-venture compatibility depends on a salaried post with secondary-employment approval rather than a full-time development scholarship.",
+   "Tier": "2",
+   "Verification_Status": "Supervisor, chair and on-topic research verified; funding route-dependent and not guaranteed",
+   "Fit_Notes": "Best-in-class rural-finance/microfinance supervisor (Zeller), but agricultural-economics framing and no securitization angle; confirm his supervision horizon and a funded position.",
+   "Tuition": "No tuition; standard semester contribution only (est. ~EUR 170/semester). Same for internationals.",
+   "Scholarships_Grants": "No blanket scholarship. The IPPAE track is typically DAAD-funded for developing-country nationals (an Israeli applicant is not eligible). Otherwise DAAD/foundation fellowships (eligibility varies) or, most realistically, a salaried RA/project post.",
+   "TA_RA_Opportunities": "Yes - the standard funded route is employment as a research assistant on a chair/DFG/BMZ project, TV-L E13 (commonly 65-75% FTE), carrying research and some teaching as part of the salaried contract.",
+   "Net_Earnings_Estimate": "On a TV-L E13 RA post: ~EUR 23,000-25,000/yr net at 65% FTE, ~EUR 25,000-27,000/yr at 75% (est.; ~USD 25,000-29,000). The campus is in Stuttgart, a high-cost city (rent ~EUR 700-1,000), so 65% is adequate-to-tight and 75% is comfortable for a single person."
+  },
+  {
+   "ID": "PHD-47",
+   "University": "University of Goettingen (Georg-August-Universitaet)",
+   "Department_Program": "Faculty of Business and Economics, structured PhD in Economic Sciences (Goettingen Graduate School of Social Sciences); Development Economics / global-health RCT group",
+   "Country": "Germany",
+   "City": "Goettingen",
+   "Region": "Europe",
+   "URL": "https://www.uni-goettingen.de/en/594836.html",
+   "Format": "Modularised, accredited doctorate; 20 ECTS coursework; part-time possible; German (DSH-2) OR English (C1); a supervising professor's written agreement is required before you apply.",
+   "Funding_Summary": "Tuition-free (semester fee only). Funding is via salaried RA/project positions (TV-L E13) on chairs/DFG Research Training Groups, or Graduate-School-administered grants; amounts not published on the program page.",
+   "Key_Supervisors": "Sebastian Vollmer (development economics and global health; RCTs, nutrition/child development, poverty in low/middle-income countries; PI of DFG RTG 2654; IGC affiliate). (Do NOT list Stephan Klasen - died 2020.)",
+   "Advantages": "Strong RCT/impact-evaluation methods training directly relevant to the impact-evaluation axis; DFG Research Training Groups provide structured, salaried doctoral cohorts; English-language route; reputable development-economics tradition.",
+   "Disadvantages": "Core strength is health/nutrition/impact-evaluation, not structured finance or microfinance specifically - overlap is on methods (RCTs) more than on the securitization thesis; you must secure a supervisor's commitment and a funded position first; some administration in German.",
+   "Venture_Pilot_Fit": "Good for treating venture pilots as RCTs/impact evaluations and for African field data; parallel-venture compatibility is workable on a salaried TV-L post with secondary-employment approval.",
+   "Tier": "2",
+   "Verification_Status": "Program, format and a current on-topic supervisor (Vollmer) verified; specific funding amount unverified",
+   "Fit_Notes": "Best methods fit (RCTs/impact evaluation via Vollmer) rather than a finance/securitization fit; funding via an RTG or a chair position, not a development scholarship (which an Israeli cannot access).",
+   "Tuition": "No tuition; standard semester contribution/Semesterticket only (est. ~EUR 350/semester). Same for internationals.",
+   "Scholarships_Grants": "Graduate-School grants/scholarships (amounts unpublished). DFG RTG 2654 funds doctoral positions. DAAD EPOS is development-country-restricted (not open to an Israeli). Realistic route: an RTG-funded or chair RA post.",
+   "TA_RA_Opportunities": "Yes - doctoral researchers are typically employed on TV-L E13 (RTG or chair positions, commonly 65-75% FTE), with research and some teaching as part of the salaried contract.",
+   "Net_Earnings_Estimate": "On a TV-L E13 RA/RTG post: ~EUR 23,000-25,000/yr net at 65% FTE, ~EUR 25,000-27,000/yr at 75% (est.; ~USD 25,000-29,000). Goettingen is a small, low-cost university town (rent ~EUR 400-650), so even a 65% post COMFORTABLY COVERS living costs."
+  },
+  {
+   "ID": "PHD-48",
+   "University": "NHH Norwegian School of Economics",
+   "Department_Program": "Department of Economics / FAIR Centre; PhD in Economics (salaried Research Scholar position)",
+   "Country": "Norway",
+   "City": "Bergen",
+   "Region": "Europe",
+   "URL": "https://www.nhh.no/en/study-programmes/phd-programme-at-nhh/",
+   "Format": "Full-time salaried PhD employee (fully-funded research-scholar contract, ~4 yrs including a 25% duty-work component); English.",
+   "Funding_Summary": "Salaried employment, not a stipend. PhD Research Scholar gross salary ~NOK 565,000/yr (advertised 2025-26), with annual adjustment; includes Norwegian public pension and health coverage; 25% of time allocated to teaching-assistance/duty work. No tuition. Open to international (non-EU) applicants.",
+   "Key_Supervisors": "Kjetil Bjorvatn (microfinance, savings-group and entrepreneurship field experiments in Uganda/Tanzania; leads the FAIR Insight Team); Bertil Tungodden (experimental development economics)",
+   "Advantages": "Directly on-topic supervisor with a savings-group/microfinance RCT track record; fully-salaried Nordic model with strong net pay and benefits; FAIR is a leading experimental-economics centre; no tuition.",
+   "Disadvantages": "PhD positions are advertised vacancies (you apply to a posted call, not open-ended admission) and are highly competitive; Bergen cost of living is high; the econ-experiment orientation is a step from securitization/structuring.",
+   "Venture_Pilot_Fit": "High on the VSLA/savings-group and microfinance-impact side (Bjorvatn's Uganda savings-group work maps onto the community-lending pilots); lower on the structured-instrument side.",
+   "Tier": "1",
+   "Verification_Status": "Program, supervisor (current NHH faculty page) and salaried funding model all verified",
+   "Fit_Notes": "Best 'field-experiment on community lending' home of the new set; pair the pilots with RCT design under Bjorvatn/FAIR.",
+   "Tuition": "None (public Norwegian PhD; the student is a salaried employee).",
+   "Scholarships_Grants": "The position itself is the funding - a salaried research-scholar contract ~NOK 565,000/yr gross; additional external mobility/fieldwork grants via FAIR/the Research Council of Norway.",
+   "TA_RA_Opportunities": "Built into the contract - a 25% duty component (teaching assistance/research support) is standard; RA work on FAIR field projects is available.",
+   "Net_Earnings_Estimate": "~NOK 565,000 gross -> ~NOK 400,000-410,000/yr net (est., after ~28-30% tax) = ~NOK 33,000/mo (~USD 38,000/yr). Bergen is expensive, but the salaried Nordic model is among the strongest for take-home: COMFORTABLY COVERS (a genuine living wage)."
+  },
+  {
+   "ID": "PHD-49",
+   "University": "University of Copenhagen",
+   "Department_Program": "Department of Economics, Development Economics Research Group (DERG); PhD in Economics",
+   "Country": "Denmark",
+   "City": "Copenhagen",
+   "Region": "Europe",
+   "URL": "https://www.econ.ku.dk/derg/about-derg/",
+   "Format": "Full-time salaried PhD fellow (employed, ~3 yrs; 4+4 / 3+5 variants exist); scholarships advertised once a year (mid-January deadline); English.",
+   "Funding_Summary": "Salaried employment under the Danish state/AC collective agreement, not a stipend. Monthly gross ~DKK 29,310-35,715 by seniority, plus 17.1% pension. No tuition. Teaching obligation ~416 hrs over the PhD. Open to non-EU applicants.",
+   "Key_Supervisors": "Finn Tarp (development economics, aid; WIDER founder-director; coordinates DERG - likely emeritus, confirm active supervision); John Rand (co-coordinator; firms, finance and development)",
+   "Advantages": "A premier development-economics group with a deep fieldwork/impact-evaluation tradition; fully-salaried Danish model; no tuition; strong Global-South data and partnership networks.",
+   "Disadvantages": "Positions are advertised vacancies (you compete for a posted scholarship, not open admission); Tarp is senior/likely emeritus so day-to-day supervision may fall to Rand or others; more macro/development than finance-structuring; Copenhagen is expensive.",
+   "Venture_Pilot_Fit": "Strong on impact-evaluation of financial-inclusion/community-finance interventions; moderate on structuring/securitization.",
+   "Tier": "2",
+   "Verification_Status": "DERG, PhD programme and salaried funding model verified; confirm Tarp's current supervising capacity",
+   "Fit_Notes": "A position under John Rand (firms/finance and development) may be a more active supervisory route than Tarp. Strong topically; the practical constraint is landing an advertised scholarship.",
+   "Tuition": "None (salaried PhD; no tuition for the employed fellowship).",
+   "Scholarships_Grants": "The PhD scholarship IS the salaried position, advertised annually (mid-January deadline). 4+4/3+5 entrants also draw state education-grant portions (~DKK 6,820/portion, 2024) plus salary in the early years.",
+   "TA_RA_Opportunities": "A teaching obligation (~416 hrs) is part of the contract; RA opportunities on DERG projects.",
+   "Net_Earnings_Estimate": "~DKK 30,000-35,000 gross/mo -> ~DKK 21,000-23,000/mo net (est., after ~38% tax) = ~DKK 250,000-275,000/yr net (~USD 37,000-40,000). Copenhagen is costly but the salaried scale is a solid living wage with strong benefits: COMFORTABLY COVERS."
+  },
+  {
+   "ID": "PHD-50",
+   "University": "Universite Paris-Dauphine PSL",
+   "Department_Program": "LEDa (Laboratoire d'Economie de Dauphine, UMR DIAL) / doctoral school SDOSE; PhD in Economics (development finance / microfinance)",
+   "Country": "France",
+   "City": "Paris",
+   "Region": "Europe",
+   "URL": "https://leda.dauphine.fr/fr/membre/detail-cv/profile/baptiste-venet.html",
+   "Format": "PhD via the French doctoral school; funded route is the salaried 'contrat doctoral' (3 yrs); research in English.",
+   "Funding_Summary": "Contrat doctoral - statutory gross EUR 2,300/mo (2026); only the ~EUR 400 national doctoral fee, no international differential. Non-EU eligible. Also Eiffel, PSL doctoral contracts, and agency (AUF/ANR) funding.",
+   "Key_Supervisors": "Baptiste Venet (Associate Professor; development finance, informal finance, individual microcredit, digital financial services, MFI-funder relationships; member of LEDa-DIAL and CERMi, the Centre for European Research in Microfinance)",
+   "Advantages": "A rare direct-hit supervisor on microfinance/microcredit AND development finance (CERMi network links to ULB microfinance research); PSL is a top-ranked umbrella; DIAL is a leading Franco development-economics unit; negligible tuition.",
+   "Disadvantages": "Funded contrats doctoraux are scarce and competitive (funding must be secured to enrol); Venet is an Associate Professor (confirm he holds the HDR / can supervise directly); Paris cost of living squeezes the doctoral-contract salary.",
+   "Venture_Pilot_Fit": "High - Venet's microcredit / MFI-funding / digital-financial-services agenda overlaps directly with structuring community-originated assets and MFI funding relationships.",
+   "Tier": "1",
+   "Verification_Status": "Supervisor (current Dauphine/LEDa CV), lab and French doctoral-contract funding all verified",
+   "Fit_Notes": "Strongest supervisor-thesis match of the French set for the specifically financial/structuring angle (vs. the broader TSE/PSE/CERDI development-economics homes).",
+   "Tuition": "~EUR 400/yr national doctoral fee + ~EUR 100 CVEC (est.); no international differential.",
+   "Scholarships_Grants": "Contrat doctoral (EUR 2,300 gross/mo, 2026), plus Eiffel, PSL/ED and agency-funded thesis contracts. Securing a funded contract is the gating step.",
+   "TA_RA_Opportunities": "A contrat doctoral can carry a teaching mission (~64 h/yr); RA work on DIAL/LEDa funded projects is possible.",
+   "Net_Earnings_Estimate": "~EUR 1,850/mo net (est.) = ~EUR 22,000/yr (~USD 24,000). Paris: TIGHT - rents make the standard doctoral-contract salary modest; workable but not comfortable."
+  },
+  {
+   "ID": "PHD-51",
+   "University": "Bocconi University",
+   "Department_Program": "Ettore Bocconi Department of Economics / LEAP (Laboratory for Effective Anti-poverty Policies); PhD in Economics and Finance",
+   "Country": "Italy",
+   "City": "Milan",
+   "Region": "Europe",
+   "URL": "https://www.unibocconi.it/en/programs/phd/phd-economics-and-finance",
+   "Format": "Full-time funded PhD (4-5 yrs); scholarship + monthly stipend model (not a Nordic-style employment contract); English.",
+   "Funding_Summary": "All admitted students are fully funded - a full scholarship with a ~EUR 30,000/yr gross stipend, no tuition, health insurance, and a travel budget for conferences/fieldwork, plus research-assistantship opportunities. Non-EU eligible.",
+   "Key_Supervisors": "Nicola Limodio (Associate Professor of Finance; finance in developing countries, banks/credit and financial-institution design in emerging markets - Pakistan, Ethiopia, Colombia). LEAP provides a wider development-economics/RCT bench.",
+   "Advantages": "Fully-funded with a solid EUR 30,000 stipend, no tuition, health cover and a travel/fieldwork budget; Limodio bridges finance and development (the closest of the new set to 'structuring financial instruments in developing economies'); LEAP is a top applied-development lab; strong placement.",
+   "Disadvantages": "A US-style, coursework-heavy, very competitive econ/finance PhD; Limodio works on formal banking rather than microfinance (a complement, not a microfinance specialist); Milan cost of living is on the higher side.",
+   "Venture_Pilot_Fit": "High on the financial-institution-design/development-finance/structuring side (Limodio); LEAP adds impact-evaluation capacity for the pilot side.",
+   "Tier": "1",
+   "Verification_Status": "Program, EUR 30,000 funding and a current on-topic supervisor (Limodio) all verified",
+   "Fit_Notes": "Of the new programs, the best match for the securitization/structured-finance-of-community-lending thesis specifically (a finance department with a development focus); complement Limodio with a LEAP RCT co-advisor for the pilot side.",
+   "Tuition": "None - waived for all admitted PhD students.",
+   "Scholarships_Grants": "Full scholarship, ~EUR 30,000/yr gross, health insurance, conference/fieldwork travel budget; the INSPIRE PhD student grant and LEAP faculty grants exist for development-focused projects.",
+   "TA_RA_Opportunities": "Research-assistantship opportunities are part of the package; TA duties are typical in later years.",
+   "Net_Earnings_Estimate": "~EUR 30,000 gross -> ~EUR 24,000-25,000/yr net (est.; Italian PhD-scholarship taxation is favourable) = ~EUR 2,000/mo (~USD 27,000/yr). Milan is one of Italy's pricier cities, but EUR 30,000 with no tuition + benefits is a comfortable European PhD package: COMFORTABLY COVERS (mildly tight)."
+  },
+  {
+   "ID": "PHD-52",
+   "University": "University of Namur (UNamur)",
+   "Department_Program": "Namur School of Economics / DeFiPP - CRED (Center for Research in the Economics of Development); PhD in Economics",
+   "Country": "Belgium",
+   "City": "Namur",
+   "Region": "Europe",
+   "URL": "https://defipp.unamur.be/research-centers/cred",
+   "Format": "Full-time doctoral program in Economics (French-speaking Belgian university; research in English); standard 4-yr (2+2) fellowship-funded model.",
+   "Funding_Summary": "Belgian French-community model - primary funding via F.R.S.-FNRS ASP (2+2 yrs) or FRESH doctoral fellowships (income-tax-free, social-security-covered), or UNamur assistant/mandate posts. FNRS carries no EEA-degree nationality bar, so a non-EU (Israeli) applicant is eligible. Nominal annual registration fee (~EUR 835 est.).",
+   "Key_Supervisors": "Catherine Guirkinger (Professor of Economics, CRED - microfinance (credit AND insurance), economics of extended families; field data in Cameroon/Mali/Burkina Faso/Benin/Peru/Honduras; CEPR, EUDN); Jean-Marie Baland and Guilhem Cassan (development economics)",
+   "Advantages": "Guirkinger is an unusually precise topical match - rural credit markets, agricultural finance, risk/quantity/transaction-cost rationing and microinsurance; strong applied-micro/field-data methods; FNRS funding open to non-EU applicants; low tuition; small, research-intensive department.",
+   "Disadvantages": "Small program in a French-speaking city (economics research is in English); funding hinges on winning a competitive FNRS fellowship or an open mandate; less oriented to structured/securitized-finance engineering than to field development economics.",
+   "Venture_Pilot_Fit": "High - Guirkinger's work on smallholder credit and index/agricultural insurance in Africa maps directly onto VSLA-loan and microinsurance origination and the risk-rationing dynamics the venture must model.",
+   "Tier": "1",
+   "Verification_Status": "DeFiPP/CRED program and URLs resolve; Guirkinger confirmed as a current CRED professor with microfinance (credit + insurance) as a stated main area; FNRS structure confirmed",
+   "Fit_Notes": "Best of the new candidates on supervisor fit - arguably rivals Lensink/Bulte for the microfinance + insurance + field-evaluation axis. The securitization/structuring angle would be framed as an extension of her credit-market work.",
+   "Tuition": "Nominal annual doctoral registration fee ~EUR 835/yr (est., Belgian standard); not a cost barrier when funded.",
+   "Scholarships_Grants": "F.R.S.-FNRS ASP (2+2) and FRESH fellowships (tax-free, social-security-covered) are the main funded routes and are open to non-EU applicants (eligibility rests on a recognized Master's / entry to a French-language Belgian doctoral program, not nationality). UNamur/DeFiPP also fund assistant mandates and project positions.",
+   "TA_RA_Opportunities": "FNRS fellows carry no mandatory teaching (research-focused); UNamur assistant/mandate posts are salaried with teaching/tutoring duties alongside the thesis.",
+   "Net_Earnings_Estimate": "FNRS fellowship ~EUR 2,300-2,600/mo net, tax-free = ~EUR 28,000-31,000/yr (~USD 30,000-33,000); exact indexed figure unverified. Namur (low-cost Belgian city): comfortably covers."
   }
  ],
  "milestones": [
@@ -3461,7 +3831,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-01",
+    "2026-08-02",
     3.75
    ]
   ],
@@ -4039,7 +4409,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-02",
+    "2026-08-03",
     2.4
    ]
   ],
@@ -4573,7 +4943,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-01",
+    "2026-08-02",
     3.5
    ]
   ],
@@ -8864,8 +9234,8 @@ window.SFV_DATA = {
    "category": "Planning",
    "title": "Dashboard — design plan",
    "summary": "",
-   "words": 854,
-   "body": "# Dashboard — design plan\n\n**Status:** v1 implemented · **Last updated:** 2026-07-30\n\n## The problem\n\nProject state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering \"what's the current status of X\" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.\n\n## The core decision: generated, not authored\n\nThe dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.\n\nThis is the whole design. It means:\n\n- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.\n- Status changes happen in one place, in a diffable file, under version control.\n- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.\n\nThe cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.\n\n## Architecture\n\n```\ndata/*.csv  ─┐\nliterature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html\ndocs/*.md    │                                                    (opened in a browser)\nproduct-design/\narchive/     ─┘\n```\n\n- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.\n- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.\n- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.\n\n### Why no framework\n\nThe whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.\n\n## Tabs\n\n| Tab | Answers |\n|---|---|\n| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |\n| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. |\n| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |\n| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |\n| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |\n| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |\n| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |\n| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |\n\n## Visual design rules\n\nThe dashboard follows the data-visualisation conventions the project uses everywhere:\n\n- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.\n- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The \"sources by axis\" bars compare quantities, so they're a sequential encoding.\n- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.\n- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.\n- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.\n- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.\n\n## Extending it\n\nAdding a tracker:\n\n1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.\n2. Register it in `build.py`'s `TABLES` dict.\n3. Add a `TABS` entry and a `render*()` function in `index.html`.\n4. Rebuild, open, check both colour schemes.\n\nThe `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.\n\n## Deliberately not built\n\n- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.\n- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.\n- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.\n- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.\n"
+   "words": 952,
+   "body": "# Dashboard — design plan\n\n**Status:** v1 implemented · **Last updated:** 2026-07-30\n\n## The problem\n\nProject state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering \"what's the current status of X\" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.\n\n## The core decision: generated, not authored\n\nThe dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.\n\nThis is the whole design. It means:\n\n- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.\n- Status changes happen in one place, in a diffable file, under version control.\n- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.\n\nThe cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.\n\n## Architecture\n\n```\ndata/*.csv  ─┐\nliterature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html\ndocs/*.md    │                                                    (opened in a browser)\nproduct-design/\narchive/     ─┘\n```\n\n- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.\n- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.\n- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.\n\n### Why no framework\n\nThe whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.\n\n## Tabs\n\n| Tab | Answers |\n|---|---|\n| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |\n| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. |\n| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |\n| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |\n| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |\n| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |\n| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |\n| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |\n\n## Visual design rules\n\nThe dashboard follows the data-visualisation conventions the project uses everywhere:\n\n- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.\n- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The \"sources by axis\" bars compare quantities, so they're a sequential encoding.\n- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.\n- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.\n- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.\n- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.\n\n## Extending it\n\nAdding a tracker:\n\n1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.\n2. Register it in `build.py`'s `TABLES` dict.\n3. Add a `TABS` entry and a `render*()` function in `index.html`.\n4. Rebuild, open, check both colour schemes.\n\nThe `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.\n\n**Columns are click-to-sort.** Any column with a `key`, `sortKey`, or `sortVal(row)` sorts on click (first click ascending, second descending); blanks always fall to the bottom and comparison is numeric-aware, so `PHD-2` precedes `PHD-10` and tier `1` precedes `2`. A render-only column (one drawing a pill or link with no underlying field) becomes sortable by giving it a `sortKey` — e.g. the PhD \"Fit\" column renders a tier pill but sorts on `Tier`. Sorting and row-expansion run off one delegated listener, so a sort re-renders in place without re-wiring. Pass `{sortIdx, sortDir}` in `opts` to set a default sort.\n\n## Deliberately not built\n\n- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.\n- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.\n- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.\n- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.\n"
   },
   {
    "path": "docs/drive-vault.md",
@@ -8914,6 +9284,14 @@ window.SFV_DATA = {
    "summary": "",
    "words": 370,
    "body": "# 60/90-Day Milestone Plan\n\n**Last updated:** 2026-07-30 · **Owner:** BB (founder owns all workstreams currently)\n\nStructured data lives in `data/milestones.csv` — the dashboard reads that file. This document holds the narrative around it.\n\n## Days 1–30 — Research foundation\n\n- **Finalize lit-matrix anchors.** Target was 10–15; now at 15 (LIT-001 to LIT-015). ✅\n- **Complete the three synthesis memos.** All three drafted and now revised against the new anchors; status moved Drafted → Reviewed. ✅\n- **Identify 3–5 concrete market gaps via partner outreach.** Partner Tracker holds 10 candidates. Contact has not begun — this is the live blocker for the next phase.\n\n## Days 31–60 — Partners, product, and the three hard questions\n\n- Screen and interview 3–5 candidate originator/verification partners.\n- Select the Israel pilot use-case and draft the product/operating model.\n- Begin PhD supervisor outreach (per-program plans in `data/phd-programs.csv`).\n- Resolve Open Questions 1–3 (legal, pool size, data schema) with counsel and CGAP input.\n\n**Where OQ-1 to OQ-3 now stand.** All three moved from Open to Partially answered on the strength of the new literature anchors:\n\n- **OQ-1 (cross-border SPV/legal):** the six-point legal precondition checklist and jurisdiction-level rules are established (LIT-009, LIT-010). What remains is not a literature question — it is a counsel question in two named jurisdictions.\n- **OQ-2 (minimum viable pool size):** a working band is established — a private DFI-anchored warehouse in the tens of millions, scaling toward ≥ USD 100m before public issuance (LIT-011, LIT-012).\n- **OQ-3 (data schema):** the policy constraint is now clear — the schema must be light enough to live inside a delegated, light-touch registration regime (LIT-014). Drafting the schema itself is the outstanding work.\n\n## Days 61–90 — Pilot design and first commitments\n\n- Draft the pilot design doc: 20–50 VSLA or Israel-equivalent cohort, RCT/quasi-experimental design per OQ-4.\n- Secure at least one anchor originator and one verification partner commitment.\n- Outline the first-loss/blended-finance structure with 1–2 DFI/impact fund contacts.\n- Submit first PhD applications where cycles allow.\n\n## Ownership\n\nThe founder currently owns every workstream. Partner outreach and legal/regulatory research are the first two candidates to delegate to an advisor or first hire — they are the most parallelizable and the least dependent on founder context.\n"
+  },
+  {
+   "path": "docs/phd-funding-landscape.md",
+   "category": "Planning",
+   "title": "PhD funding landscape — how the money actually works",
+   "summary": "",
+   "words": 812,
+   "body": "# PhD funding landscape — how the money actually works\n\n**Status:** first pass · **Last updated:** 2026-08-03 · **Applicant frame:** Israel-based, running a parallel venture\n\nThis note sits behind the four financial columns now in `data/phd-programs.csv`\n(`Tuition`, `Scholarships_Grants`, `TA_RA_Opportunities`, `Net_Earnings_Estimate`).\nThe per-program numbers live in the tracker and on the dashboard's **PhD pipeline**\ntab (open a row → *Financial setup*). This doc records the patterns that cut across\nprograms — the things a row-by-row read misses — and, importantly, the **eligibility\nrules that quietly rule some funding out for an Israeli applicant**.\n\nEvery figure here is sourced from official program/scholarship pages checked in\nAugust 2026, or flagged `(est.)` / *unverified* where it is an estimate or the page\ncould not be confirmed. Take-home figures are **net of tax and any tuition**, with a\ncost-of-living flag, per the framing chosen for this pass. FX is approximate.\n\n## The five funding models\n\nWhich model a program uses matters more than its headline number, because the models\ndiffer in whether you are a *paid employee*, a *tax-free fellow*, or a *fee-payer*.\n\n| Model | Where | You are… | Typical net take-home | Non-EU/Israeli eligible? |\n|---|---|---|---|---|\n| **Salaried-PhD (Dutch CAO)** | Groningen, Wageningen; UNU-MERIT full-time | An employee (scale P, EUR 3,059→3,881/mo gross) | ~EUR 29–34k/yr | Yes — vacancy-based |\n| **Salaried-PhD (Nordic)** | NHH Bergen, Gothenburg, Copenhagen | An employee | ~USD 30–40k/yr | Yes — vacancy-based |\n| **French contrat doctoral** | CERDI, TSE/PSE, Paris-Dauphine | A salaried doctoral contractee | ~EUR 22k/yr (Paris tighter) | Yes |\n| **Belgian FNRS fellowship** | CERMi (ULB/UMons), Namur; Belgian legs generally | A tax-free fellow | ~EUR 28–31k/yr | **Yes — FNRS has no EEA-degree bar** |\n| **Merit scholarship** | Frankfurt School, Bocconi, IHEID, Mannheim | A tax-free scholarship-holder | ~EUR 18–27k/yr | Yes |\n| **Fee-paying** | ISS Rotterdam, UNU-MERIT *Dual Career* | A paying student | **Negative** | Yes, but you pay |\n\n## Eligibility traps worth knowing before applying\n\nThese are the places where a program looks funded but the specific instrument does\n**not** admit an Israeli applicant. They are the reason several otherwise-strong rows\ncarry a funding caveat in the tracker.\n\n- **German DAAD \"development-country\" scholarships (EPOS) exclude Israel.** EPOS and\n  most development-scholarship streams require DAC/developing-or-newly-industrialised\n  nationality; Israel is high-income and non-DAC, so the applicant is **not eligible**.\n  At Passau, Bonn/ZEF, Hohenheim and Göttingen the realistic funded route is therefore\n  a **salaried TV-L E13 research position** (a paid job with teaching/research duties,\n  ~EUR 23–27k/yr net), not a development scholarship. Frankfurt School and Mannheim/GESS\n  are the German exceptions — they fund via **merit scholarships open to internationals**.\n- **Flemish FWO (Belgium) is degree-restricted; French-community FNRS is not.** FWO\n  fundamental-research fellowships generally require an EEA/Switzerland degree, which can\n  exclude a straight non-EEA route (relevant at KU Leuven and Antwerp — use BOF/project\n  funding instead). The **F.R.S.-FNRS** ASP/FRESH fellowships (CERMi, Namur, ULB/UMons)\n  carry **no such nationality bar** — a genuine strategic edge for this applicant.\n- **UK ESRC DTP studentships are open to internationals but capped ~30%.** Since 2021/22\n  UKRI studentships admit international students (fees at the home rate + a ~GBP 20,780\n  UKRI stipend, London-weighted higher), but each Doctoral Training Partnership caps\n  international intake near 30% — so at SOAS, Manchester, UEA and Bath the funded route\n  exists but is competitive. **Felix (SOAS) and Commonwealth scholarships do not fit** an\n  Israel-based, non-Indian, non-Commonwealth applicant.\n- **Israel's PBC/Rotenstreich fellowship (HUJI) is for citizens/permanent residents.**\n  Fine if the applicant is an Israeli citizen/PR; not a route for a non-citizen.\n\n## Reading the cost-of-living flag\n\nA high stipend in an expensive city can net out worse than a modest one in a cheap town.\nThe pattern from this pass:\n\n- **Comfortably covers:** Nordic salaried posts (NHH, Copenhagen, Gothenburg), Dutch\n  salaried posts (Groningen, Wageningen), Passau and Göttingen (low-cost German towns),\n  Clermont-Ferrand, Bocconi, the Belgian FNRS cities, Manchester/Norwich (UK, if funded).\n- **Tight even when funded:** Geneva (both UNIGE and IHEID — Swiss rents dominate),\n  Paris (PSE, Paris-Dauphine), London (SOAS), Jerusalem on the fellowship alone.\n- **Costs you money:** ISS Rotterdam (~EUR 8k/yr tuition, no stipend) and the UNU-MERIT\n  *Dual Career* part-time track (EUR 9k then 7k/yr) — these only make sense if external\n  funding is brought, or (Dual Career) as a deliberately venture-parallel degree.\n\n## What still needs confirming\n\nHonest gaps to close before relying on a number for a decision:\n\n- Exact **FNRS** monthly amount (indexed; not machine-readable this pass) — Belgian rows.\n- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection);\n  SINGA figures (S$2,700→3,200) are confirmed and are the relevant international route.\n- **UEA** Home/International PGR tuition (rendered via JavaScript; SeNSS funding waives it).\n- Whether senior/emeritus supervisors still take students: **Balkenhol** (Geneva),\n  **Tarp** (Copenhagen), **Zeller** (Hohenheim), **de Haas** availability (Mannheim/ZEW).\n- The two German-town TV-L net figures are estimates from standard public-pay tables, not\n  program-published numbers.\n"
   },
   {
    "path": "docs/phd-scoring-rubric.md",
@@ -9125,7 +9503,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-08-02",
+  "generated": "2026-08-03",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
@@ -9154,7 +9532,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 38596
+   "totalWords": 39506
   }
  }
 };
