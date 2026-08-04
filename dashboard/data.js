@@ -693,12 +693,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-02",
+   "As_Of": "2026-08-03",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -708,12 +708,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-03",
+   "As_Of": "2026-08-04",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -728,7 +728,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.15",
    "Chg_12m": "-0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -743,7 +743,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.12",
    "Chg_12m": "1.0",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -751,14 +751,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.5114",
+   "Value": "3.5194",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-07-31",
-   "Chg_1m": "0.1214",
-   "Chg_3m": "0.0458",
-   "Chg_12m": "-0.4142",
+   "As_Of": "2026-08-03",
+   "Chg_1m": "0.0983",
+   "Chg_3m": "0.0641",
+   "Chg_12m": "-0.4152",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -768,12 +768,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-02",
+   "As_Of": "2026-08-04",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -796,14 +796,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.057",
+   "Value": "3.059",
    "Unit": "ILS per USD",
-   "As_Of": "2026-07-31",
-   "Chg_1m": "0.079",
-   "Chg_3m": "0.078",
-   "Chg_12m": "-0.304",
+   "As_Of": "2026-08-03",
+   "Chg_1m": "0.08",
+   "Chg_3m": "0.068",
+   "Chg_12m": "-0.281",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -826,14 +826,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.68",
+   "Value": "4.75",
    "Unit": "%",
-   "As_Of": "2026-07-30",
-   "Chg_1m": "0.3",
-   "Chg_3m": "0.37",
-   "Chg_12m": "0.22",
+   "As_Of": "2026-07-31",
+   "Chg_1m": "0.31",
+   "Chg_3m": "0.4",
+   "Chg_12m": "0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -848,7 +848,7 @@ window.SFV_DATA = {
    "Chg_3m": "-21.62",
    "Chg_12m": "22.15",
    "Direction": "up",
-   "Fetched_At": "2026-08-03T10:07:25+00:00",
+   "Fetched_At": "2026-08-04T09:10:47+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -3831,7 +3831,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-02",
+    "2026-08-03",
     3.75
    ]
   ],
@@ -4409,7 +4409,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-03",
+    "2026-08-04",
     2.4
    ]
   ],
@@ -4943,7 +4943,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-02",
+    "2026-08-04",
     3.5
    ]
   ],
@@ -6251,10 +6251,6 @@ window.SFV_DATA = {
   ],
   "MAC-12": [
    [
-    "2014-08-29",
-    4.7057
-   ],
-   [
     "2014-09-30",
     4.6474
    ],
@@ -6825,13 +6821,13 @@ window.SFV_DATA = {
    [
     "2026-07-31",
     3.5114
+   ],
+   [
+    "2026-08-03",
+    3.5194
    ]
   ],
   "MAC-13": [
-   [
-    "2014-08-29",
-    3.568
-   ],
    [
     "2014-09-30",
     3.695
@@ -7403,6 +7399,10 @@ window.SFV_DATA = {
    [
     "2026-07-31",
     3.057
+   ],
+   [
+    "2026-08-03",
+    3.059
    ]
   ],
   "MAC-14": [
@@ -8557,8 +8557,8 @@ window.SFV_DATA = {
     4.44
    ],
    [
-    "2026-07-30",
-    4.68
+    "2026-07-31",
+    4.75
    ]
   ],
   "MAC-16": [
@@ -9234,8 +9234,8 @@ window.SFV_DATA = {
    "category": "Planning",
    "title": "Dashboard — design plan",
    "summary": "",
-   "words": 952,
-   "body": "# Dashboard — design plan\n\n**Status:** v1 implemented · **Last updated:** 2026-07-30\n\n## The problem\n\nProject state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering \"what's the current status of X\" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.\n\n## The core decision: generated, not authored\n\nThe dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.\n\nThis is the whole design. It means:\n\n- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.\n- Status changes happen in one place, in a diffable file, under version control.\n- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.\n\nThe cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.\n\n## Architecture\n\n```\ndata/*.csv  ─┐\nliterature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html\ndocs/*.md    │                                                    (opened in a browser)\nproduct-design/\narchive/     ─┘\n```\n\n- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.\n- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.\n- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.\n\n### Why no framework\n\nThe whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.\n\n## Tabs\n\n| Tab | Answers |\n|---|---|\n| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |\n| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. |\n| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |\n| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |\n| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |\n| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |\n| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |\n| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |\n\n## Visual design rules\n\nThe dashboard follows the data-visualisation conventions the project uses everywhere:\n\n- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.\n- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The \"sources by axis\" bars compare quantities, so they're a sequential encoding.\n- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.\n- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.\n- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.\n- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.\n\n## Extending it\n\nAdding a tracker:\n\n1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.\n2. Register it in `build.py`'s `TABLES` dict.\n3. Add a `TABS` entry and a `render*()` function in `index.html`.\n4. Rebuild, open, check both colour schemes.\n\nThe `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.\n\n**Columns are click-to-sort.** Any column with a `key`, `sortKey`, or `sortVal(row)` sorts on click (first click ascending, second descending); blanks always fall to the bottom and comparison is numeric-aware, so `PHD-2` precedes `PHD-10` and tier `1` precedes `2`. A render-only column (one drawing a pill or link with no underlying field) becomes sortable by giving it a `sortKey` — e.g. the PhD \"Fit\" column renders a tier pill but sorts on `Tier`. Sorting and row-expansion run off one delegated listener, so a sort re-renders in place without re-wiring. Pass `{sortIdx, sortDir}` in `opts` to set a default sort.\n\n## Deliberately not built\n\n- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.\n- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.\n- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.\n- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.\n"
+   "words": 1302,
+   "body": "# Dashboard — design plan\n\n**Status:** v1 implemented · **Last updated:** 2026-08-04\n\n## The problem\n\nProject state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering \"what's the current status of X\" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.\n\n## The core decision: generated, not authored\n\nThe dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.\n\nThis is the whole design. It means:\n\n- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.\n- Status changes happen in one place, in a diffable file, under version control.\n- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.\n\nThe cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.\n\n## Architecture\n\n```\ndata/*.csv  ─┐\nliterature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html\ndocs/*.md    │                                                    (opened in a browser)\nproduct-design/\narchive/     ─┘\n```\n\n- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.\n- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.\n- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.\n\n### Why no framework\n\nThe whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.\n\n## Tabs\n\n| Tab | Answers |\n|---|---|\n| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |\n| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. Each document also has one-click download as Markdown, DOCX or PDF (see \"Document export\" below). |\n| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |\n| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |\n| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |\n| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |\n| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |\n| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |\n\n## Navigation\n\nThe tab list is a **left sidebar**, not a top bar — with 13 tabs a horizontal strip was starting to require scrolling to find the later ones, and a sidebar scales to more tabs without that. It sticks just below the header (`--header-h`, measured from the header's real rendered height in JS since the header wraps at some widths — see `syncHeaderHeight()`), with its own scroll region so a long tab list never pushes the page taller than the viewport.\n\nBelow 900px wide, the sidebar flattens back into a horizontal scrolling bar directly under the header — the same shape the nav had before it became a sidebar. This is a CSS-only change (`@media (max-width: 900px)` in the stylesheet); the markup and the tab-switching JS are identical at every width.\n\n## Document export\n\nEvery document in the Library can be downloaded as Markdown, DOCX or PDF, generated **client-side, on click, with no server and no external library** — consistent with the \"no framework\" decision above. MD is just the document's own source text. DOCX and PDF share a plain-text block parser (`mdToBlocks`) that walks the same markdown grammar as the inline renderer but emits plain text instead of HTML. From there:\n\n- **DOCX** is built as a minimal but spec-valid OPC package — `[Content_Types].xml`, `_rels/.rels`, `word/document.xml` — zipped with a hand-rolled STORE-only writer (no DEFLATE implementation needed for a handful of small XML parts).\n- **PDF** is assembled object-by-object (catalog, pages, four Base-14 fonts, one content stream per page) with a hand-rolled writer that computes its own xref table. Word-wrap uses the standard Helvetica AFM width metrics rather than a guess, and text is restricted to Latin-1/WinAnsi before layout, since the writer emits single-byte string literals rather than carrying a Unicode CMap.\n\nBoth are deliberately plain — headings and emphasis carry through, tables collapse to pipe-separated text, but there is no attempt to reproduce the dashboard's visual styling. The goal is a portable, readable copy of the document, not a design export.\n\n## Visual design rules\n\nThe dashboard follows the data-visualisation conventions the project uses everywhere:\n\n- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.\n- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The \"sources by axis\" bars compare quantities, so they're a sequential encoding.\n- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.\n- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.\n- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.\n- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.\n\n## Extending it\n\nAdding a tracker:\n\n1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.\n2. Register it in `build.py`'s `TABLES` dict.\n3. Add a `TABS` entry and a `render*()` function in `index.html`.\n4. Rebuild, open, check both colour schemes.\n\nThe `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.\n\n**Columns are click-to-sort.** Any column with a `key`, `sortKey`, or `sortVal(row)` sorts on click (first click ascending, second descending); blanks always fall to the bottom and comparison is numeric-aware, so `PHD-2` precedes `PHD-10` and tier `1` precedes `2`. A render-only column (one drawing a pill or link with no underlying field) becomes sortable by giving it a `sortKey` — e.g. the PhD \"Fit\" column renders a tier pill but sorts on `Tier`. Sorting and row-expansion run off one delegated listener, so a sort re-renders in place without re-wiring. Pass `{sortIdx, sortDir}` in `opts` to set a default sort.\n\n## Deliberately not built\n\n- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.\n- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.\n- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.\n- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.\n"
   },
   {
    "path": "docs/drive-vault.md",
@@ -9292,6 +9292,14 @@ window.SFV_DATA = {
    "summary": "",
    "words": 812,
    "body": "# PhD funding landscape — how the money actually works\n\n**Status:** first pass · **Last updated:** 2026-08-03 · **Applicant frame:** Israel-based, running a parallel venture\n\nThis note sits behind the four financial columns now in `data/phd-programs.csv`\n(`Tuition`, `Scholarships_Grants`, `TA_RA_Opportunities`, `Net_Earnings_Estimate`).\nThe per-program numbers live in the tracker and on the dashboard's **PhD pipeline**\ntab (open a row → *Financial setup*). This doc records the patterns that cut across\nprograms — the things a row-by-row read misses — and, importantly, the **eligibility\nrules that quietly rule some funding out for an Israeli applicant**.\n\nEvery figure here is sourced from official program/scholarship pages checked in\nAugust 2026, or flagged `(est.)` / *unverified* where it is an estimate or the page\ncould not be confirmed. Take-home figures are **net of tax and any tuition**, with a\ncost-of-living flag, per the framing chosen for this pass. FX is approximate.\n\n## The five funding models\n\nWhich model a program uses matters more than its headline number, because the models\ndiffer in whether you are a *paid employee*, a *tax-free fellow*, or a *fee-payer*.\n\n| Model | Where | You are… | Typical net take-home | Non-EU/Israeli eligible? |\n|---|---|---|---|---|\n| **Salaried-PhD (Dutch CAO)** | Groningen, Wageningen; UNU-MERIT full-time | An employee (scale P, EUR 3,059→3,881/mo gross) | ~EUR 29–34k/yr | Yes — vacancy-based |\n| **Salaried-PhD (Nordic)** | NHH Bergen, Gothenburg, Copenhagen | An employee | ~USD 30–40k/yr | Yes — vacancy-based |\n| **French contrat doctoral** | CERDI, TSE/PSE, Paris-Dauphine | A salaried doctoral contractee | ~EUR 22k/yr (Paris tighter) | Yes |\n| **Belgian FNRS fellowship** | CERMi (ULB/UMons), Namur; Belgian legs generally | A tax-free fellow | ~EUR 28–31k/yr | **Yes — FNRS has no EEA-degree bar** |\n| **Merit scholarship** | Frankfurt School, Bocconi, IHEID, Mannheim | A tax-free scholarship-holder | ~EUR 18–27k/yr | Yes |\n| **Fee-paying** | ISS Rotterdam, UNU-MERIT *Dual Career* | A paying student | **Negative** | Yes, but you pay |\n\n## Eligibility traps worth knowing before applying\n\nThese are the places where a program looks funded but the specific instrument does\n**not** admit an Israeli applicant. They are the reason several otherwise-strong rows\ncarry a funding caveat in the tracker.\n\n- **German DAAD \"development-country\" scholarships (EPOS) exclude Israel.** EPOS and\n  most development-scholarship streams require DAC/developing-or-newly-industrialised\n  nationality; Israel is high-income and non-DAC, so the applicant is **not eligible**.\n  At Passau, Bonn/ZEF, Hohenheim and Göttingen the realistic funded route is therefore\n  a **salaried TV-L E13 research position** (a paid job with teaching/research duties,\n  ~EUR 23–27k/yr net), not a development scholarship. Frankfurt School and Mannheim/GESS\n  are the German exceptions — they fund via **merit scholarships open to internationals**.\n- **Flemish FWO (Belgium) is degree-restricted; French-community FNRS is not.** FWO\n  fundamental-research fellowships generally require an EEA/Switzerland degree, which can\n  exclude a straight non-EEA route (relevant at KU Leuven and Antwerp — use BOF/project\n  funding instead). The **F.R.S.-FNRS** ASP/FRESH fellowships (CERMi, Namur, ULB/UMons)\n  carry **no such nationality bar** — a genuine strategic edge for this applicant.\n- **UK ESRC DTP studentships are open to internationals but capped ~30%.** Since 2021/22\n  UKRI studentships admit international students (fees at the home rate + a ~GBP 20,780\n  UKRI stipend, London-weighted higher), but each Doctoral Training Partnership caps\n  international intake near 30% — so at SOAS, Manchester, UEA and Bath the funded route\n  exists but is competitive. **Felix (SOAS) and Commonwealth scholarships do not fit** an\n  Israel-based, non-Indian, non-Commonwealth applicant.\n- **Israel's PBC/Rotenstreich fellowship (HUJI) is for citizens/permanent residents.**\n  Fine if the applicant is an Israeli citizen/PR; not a route for a non-citizen.\n\n## Reading the cost-of-living flag\n\nA high stipend in an expensive city can net out worse than a modest one in a cheap town.\nThe pattern from this pass:\n\n- **Comfortably covers:** Nordic salaried posts (NHH, Copenhagen, Gothenburg), Dutch\n  salaried posts (Groningen, Wageningen), Passau and Göttingen (low-cost German towns),\n  Clermont-Ferrand, Bocconi, the Belgian FNRS cities, Manchester/Norwich (UK, if funded).\n- **Tight even when funded:** Geneva (both UNIGE and IHEID — Swiss rents dominate),\n  Paris (PSE, Paris-Dauphine), London (SOAS), Jerusalem on the fellowship alone.\n- **Costs you money:** ISS Rotterdam (~EUR 8k/yr tuition, no stipend) and the UNU-MERIT\n  *Dual Career* part-time track (EUR 9k then 7k/yr) — these only make sense if external\n  funding is brought, or (Dual Career) as a deliberately venture-parallel degree.\n\n## What still needs confirming\n\nHonest gaps to close before relying on a number for a decision:\n\n- Exact **FNRS** monthly amount (indexed; not machine-readable this pass) — Belgian rows.\n- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection);\n  SINGA figures (S$2,700→3,200) are confirmed and are the relevant international route.\n- **UEA** Home/International PGR tuition (rendered via JavaScript; SeNSS funding waives it).\n- Whether senior/emeritus supervisors still take students: **Balkenhol** (Geneva),\n  **Tarp** (Copenhagen), **Zeller** (Hohenheim), **de Haas** availability (Mannheim/ZEW).\n- The two German-town TV-L net figures are estimates from standard public-pay tables, not\n  program-published numbers.\n"
+  },
+  {
+   "path": "docs/phd-proposal-master.md",
+   "category": "Planning",
+   "title": "Provisional Title",
+   "summary": "",
+   "words": 3123,
+   "body": "> This is a living master PhD proposal for the Sustainable Finance Venture (SFV). It is intended as a base document to be adapted for different programs and supervisors.\n\n# Provisional Title\n\nStructuring Community Savings-Group Finance into Securitizable, Empirically Verified Risk Assets\n\n# Introduction and Problem Statement\n\nEvery year, a large share of proven, economically viable sustainable-development solutions — climate-resilient agriculture, clean-energy access, health and consumption-smoothing insurance for low-income households — goes underfunded not because the underlying technology or intervention fails, but because private capital cannot find a way to price the risk of financing it. Institutional investors have trillions of dollars available for allocation and an explicit mandate, in many cases, to deploy some of it against sustainability outcomes. What they lack is not appetite but *legible assets*: standardized, verifiable, diversifiable cash-flow streams that meet the due-diligence and rating requirements of structured finance. The financing gap for sustainable development is, in large part, a risk-allocation and information problem rather than a capital-scarcity problem.\n\nCommunity-based financial institutions — village savings and loan associations (VSLAs), savings groups, rotating credit associations, and comparable informal or semi-formal structures — sit at an unusual intersection of this problem. They already perform much of the underwriting and monitoring work that formal lenders find prohibitively expensive at small ticket sizes: peer screening, social enforcement of repayment, local information about borrower reliability, and dense monitoring relationships. Decades of research show these structures are durable and measurably improve resilience and consumption-smoothing, even where effects on income and enterprise growth are more mixed. What has not been established with comparable rigor is whether the *cash-flow behavior* these structures generate — repayment timing, delinquency patterns, claims incidence — is stable and well-characterized enough to be modeled the way a securitization requires: with default curves, loss distributions, and correlation structures a rating agency or institutional buyer can underwrite.\n\nThis is the gap the research program addresses. The problem is not \"do community financial structures work\" — that question has a reasonably well-evidenced answer — but \"can the risk embedded in community-originated loan and insurance cash flows be modeled, verified, and standardized well enough to support pooling into an investment-grade or near-investment-grade instrument.\" That is a different, harder, and largely unanswered question, requiring tools — causal identification, risk modeling, structured-finance analytics — that the microfinance-impact and securitization literatures address separately but rarely together.\n\nThe central research question this proposal poses is: **How should community-level lending and insurance arrangements be structured and modeled at origination so that their cash flows become standardized, verifiable, and poolable into securitizable assets — and under what conditions do such structures deliver risk-adjusted returns and development outcomes that justify the pooling?** A secondary, methodological question follows from it: what minimum data architecture, credit-enhancement design, and verification protocol are needed to move a community loan or insurance book from \"informally functional\" to \"investor-legible\" without distorting the social mechanisms that make it function in the first place.\n\n# Background, Gap, and Significance\n\nThree strands of literature converge on this question, and each is well developed on its own terms.\n\n**Microfinance and savings-group impact evaluation.** A substantial body of randomized and quasi-experimental evidence — including the coordinated multi-country microcredit evaluations of the early 2010s and a parallel set of savings-group RCTs — establishes that access to credit and group-based savings produces real but heterogeneous effects: reliable gains in resilience, consumption-smoothing, and savings behavior; more limited and context-dependent effects on income, business investment, and poverty status. This literature is methodologically mature — it is where development economics' RCT toolkit was substantially built — but it is oriented toward *impact measurement*, not toward characterizing the risk properties of the resulting cash flows in a form a financial engineer would recognize as a loss curve or a hazard model.\n\n**Securitization and structured finance in emerging and frontier markets.** A separate literature, closer to finance and development banking than to applied microeconomics, documents how asset-backed structures have been used to fund microfinance institutions and other emerging-market originators: pooling receivables, tranching credit risk, and attracting institutional capital that would not lend directly to small, informal originators. This literature is comparatively thin on Africa specifically, and it treats securitization mostly at the level of formal microfinance institutions with existing loan books and MIS systems — not at the level of informal, community-governed savings groups where the underlying data may not exist in a standardized form at all.\n\n**Blended and catalytic finance for sustainable development.** A third strand — blended finance, catalytic first-loss capital, development finance institution (DFI) co-investment — describes the capital-stack mechanics that let concessional and commercial capital sit alongside each other in a single structure. This is the literature the \"how do we get institutional capital in\" side of the question draws on, and it is well developed on structuring mechanics but largely silent on how the underlying assets get produced in investable form in the first place.\n\nBetween these three strands sit at least three specific gaps this research program is positioned to address:\n\n1. **No rigorous modeling of savings-group cash-flow risk in securitization terms.** The impact-evaluation literature measures whether savings groups help members; it does not produce default curves, delinquency hazard models, or loss-given-default estimates comparable to what a structured-finance analyst needs. This gap sits precisely at the intersection of applied econometrics and financial risk modeling.\n2. **Little evidence on bundling loan and insurance products within community structures**, despite theoretical reasons to expect that bundled products could improve both risk-pooling (insurance offsets idiosyncratic shocks that would otherwise cause loan default) and the stability of the resulting cash-flow stream — a property that matters directly for securitization quality.\n3. **A missing empirical account of \"securitization-readiness by design.\"** Existing securitized microfinance deals retrofit standardization onto originators that were not designed with pooling in mind. No study to date evaluates whether designing data capture, contract terms, and monitoring at origination — rather than after the fact — measurably improves the resulting asset's investability, and at what cost in operational complexity.\n\n**Significance.** Academically, this project contributes to development economics and empirical finance by producing one of the first studies to connect rigorous causal identification of community-finance outcomes directly to the risk-modeling and structuring questions that determine whether those cash flows can attract institutional capital. Practically, it aims to produce a tested prototype of a community-linked financial product built for securitization from the ground up, together with a general framework — a data schema, a risk-modeling approach, and a credit-enhancement logic — that NGOs, MFIs, DFIs, and investors could apply beyond the specific pilot sites. If the hypothesis holds even partially, it opens a mechanism for redirecting institutional capital toward proven sustainable-development interventions at a scale grant and DFI-only funding cannot reach.\n\n# Research Questions and Objectives\n\n**Research questions**\n\n- How stable and well-characterized are the repayment and claims behaviors of community-originated loans and insurance products, and can they be modeled using standard credit-risk and actuarial techniques (hazard models, loss distributions, correlation structures)?\n- What data architecture and monitoring protocol, implemented at origination, most improves the resulting portfolio's suitability for pooling — and what is the marginal cost of collecting that data relative to the marginal improvement in investability?\n- Does bundling a loan product with a parametric or indemnity-based insurance product measurably reduce default risk and cash-flow volatility relative to a loan-only product, holding the originating community structure constant?\n- Under what credit-enhancement design (first-loss sizing, multi-originator pooling, geographic and temporal diversification) does a pool of community-originated assets approach investment-grade risk-return characteristics, and how sensitive is that result to the underlying assumptions?\n\n**Objectives (3–4 year scope)**\n\n1. Design and field-test one or two community-linked financial products (a standardized loan product and a bundled loan-insurance product) with data capture built for securitization from origination.\n2. Build and validate a risk-modeling pipeline — default/claims hazard models, loss distributions, portfolio correlation estimates — using pilot and, where accessible, historical partner data.\n3. Run a field evaluation (randomized or strong quasi-experimental) of the bundled versus unbundled product to identify the causal effect of bundling on repayment stability and household resilience outcomes.\n4. Construct and stress-test a securitization/pooling model (cash-flow waterfall, tranche sizing, first-loss requirements) calibrated to the empirical risk parameters estimated in objectives 2–3, and evaluate under what conditions the resulting structure is investable by institutional standards.\n5. Synthesize findings into a transferable framework — schema, model, and structuring guidance — usable by originators and investors beyond the pilot sites.\n\n# Methodology and Data\n\nThe empirical strategy follows development-economics norms while adding a structured-finance modeling layer that is less common in that literature but standard in applied credit-risk work.\n\n**Field design.** Where a partner and site allow it, the core evaluation uses a cluster-randomized design — randomizing the bundled loan-insurance product against a loan-only control at the group or community level — to identify the causal effect of bundling on default and resilience outcomes cleanly. Where full randomization is not feasible (an existing partner portfolio, phased rollout constraints, ethical objections to withholding a product believed beneficial), the design falls back to strong quasi-experimental alternatives: difference-in-differences around a staggered rollout, regression discontinuity around an eligibility threshold, or matched panel comparisons on existing administrative data. Throughout, the design favors pre-registration and, where feasible, blinded or independent outcome verification — consistent with the venture's broader \"verification-first\" research posture.\n\n**Risk and structuring modeling.** In parallel, the project builds a quantitative risk-modeling pipeline: survival/hazard models for time-to-default and time-to-claim, loss-given-default estimation, and portfolio-level correlation and concentration analysis across originating groups, geographies, and time. These estimates feed a cash-flow waterfall simulation — a Monte Carlo model of pool performance under a tranche structure — used to test how much credit enhancement (first-loss sizing, diversification across uncorrelated originators) is required before a pool's modeled loss distribution approaches investment-grade benchmarks. This is standard technique in structured-finance risk modeling, applied here to an asset class it has rarely been applied to systematically.\n\n**Data sources.** Three broad sources are anticipated, at varying degrees of access certainty: (1) primary data from the pilot product itself — loan and claims records captured through a standardized digital schema designed for the study; (2) historical administrative data from partner NGOs, MFIs, or savings-group networks, where data-sharing agreements can be negotiated, useful for out-of-sample validation and for extending the estimation window beyond what a 3–4 year pilot alone generates; (3) in the Israel track, employer- or scheme-linked records of migrant-worker savings and lending arrangements, where an existing regulatory environment around foreign-worker insurance offers an unusually well-instrumented, logistically accessible testbed for developing the protocol before extending it to African sites. Access to each is a negotiation, not a guarantee, and the work plan below treats partner and data access as a gating milestone rather than an assumption.\n\n**Why this is feasible for a PhD candidate with this background.** The risk-modeling component — hazard modeling, Monte Carlo simulation of cash-flow waterfalls, building and validating a pipeline from messy field-collected records — draws directly on a background in algorithmic trading, ML-based risk modeling, and cloud-based data engineering. That background substantially de-risks the technical portion of the project relative to a candidate starting from a purely qualitative or reduced-form econometric background. The comparative advantage is not in inventing new causal-inference techniques — identification stays close to established development-economics practice — but in making the risk-modeling and data-infrastructure side more ambitious and rigorous than is typical for a single-investigator project in this space.\n\n**Limitations.** Sample size at the group or community level may be modest relative to individual-level microcredit RCTs, limiting power and pushing some analysis toward quasi-experimental designs with their own caveats. Historical partner data, where accessible, will vary in quality, and the risk model's external validity depends on how representative pilot originators are of the broader universe of community financial structures. A 3–4 year panel is also short relative to the multi-year loss-emergence patterns credit-risk models ideally calibrate against; early-pilot risk estimates will be treated as provisional, not final.\n\n# Expected Contributions\n\n**Academic contributions.** The project contributes new causal evidence on the effect of bundling loan and insurance products within community financial structures — a design question the existing literature raises but rarely tests directly. It also contributes a methodological bridge that is currently underused in development economics: applying credit-risk and actuarial modeling techniques to data generated by rigorously evaluated community-finance interventions, rather than treating impact evaluation and risk/structuring analysis as separate literatures with separate audiences. The resulting risk-modeling framework — however provisional given the horizon limitations above — is itself a contribution, since almost no published work characterizes savings-group cash flows in a form comparable to a securitization loss curve.\n\n**Practical contributions.** The project is designed to leave behind artifacts beyond the dissertation itself: a tested prototype of one or two community-linked financial products with securitization-ready data capture; a transferable data schema and monitoring protocol that other originators could adopt; a validated (if provisional) risk-modeling approach that DFIs, impact investors, and originator NGOs could apply to their own portfolios; and a structuring framework — credit-enhancement sizing, pooling logic, diversification requirements — that translates the empirical risk findings into concrete guidance for anyone trying to bring a similar asset class to institutional capital.\n\n# Work Plan and Timetable\n\n| Phase | Focus | Main tasks |\n|---|---|---|\n| **Year 1** | Literature, design, partnerships | Complete the targeted literature review (index insurance/climate risk, securitization mechanics, impact-measurement methods); finalize product and data-schema design; identify and formalize agreements with an originating partner (NGO/MFI/savings-group network) and, where feasible, a verification/academic partner; pre-register the field evaluation design; secure ethics/IRB approval. |\n| **Year 2** | Piloting and data collection | Launch the pilot product(s) at the chosen site(s); begin structured data capture under the standardized schema; monitor early operational issues in the origination and data pipeline; if a second (Africa) site is added, begin partner and access negotiations there using lessons from the first site. |\n| **Year 3** | Analysis | Estimate causal effects of bundling on repayment/resilience outcomes; build and validate the hazard/loss risk model on accumulated pilot (and, where available, historical partner) data; run the cash-flow waterfall and credit-enhancement simulations; begin drafting core dissertation chapters. |\n| **Year 4** | Write-up, extensions, publication | Finalize dissertation chapters; submit findings to relevant journals/working-paper series; package the schema, risk model, and structuring framework as a standalone practitioner-facing output; explore extensions (additional sites, additional product variants, or a closer collaboration with an investor/DFI partner interested in a pilot pooling vehicle). |\n\nField access negotiation, ethics approval, and partner data-sharing agreements are treated as gating milestones for Year 1–2 transitions rather than background assumptions — if a first-choice partner or site is not accessible on the expected timeline, the plan shifts to the next-best available site rather than stalling the research design.\n\n# Risks, Ethics, and Feasibility\n\n**Ethical considerations.** Any field component working with low-income or migrant communities requires informed consent appropriate to the local context and literacy/language environment, careful attention to power asymmetries between researcher, originating partner, and participant, and a do-no-harm standard in product design — particularly for a bundled loan-insurance product, where the risk of over-indebtedness or mis-sold coverage must be actively designed against, not merely disclosed. Data privacy is a first-order design constraint: individual-level records are handled under a data-protection protocol agreed with the originating partner, aggregate results are what leave the research pipeline, and a person's identity is never conflated with an aggregate finding.\n\n**Operational and regulatory risks.** Field access is the largest source of schedule risk: partner negotiations, data-sharing agreements, and (where relevant) local regulatory review can slip well beyond initial estimates, and the work plan above builds in explicit gating checkpoints rather than assuming access on a fixed date. Political and macroeconomic conditions in prospective field geographies can also shift over a multi-year field program; the design deliberately does not depend on a single site succeeding, and the two-track Israel/Africa framing exists partly for this reason.\n\n**Why the proposed pilot sites are feasible.** Israel, and specifically migrant-worker savings and lending arrangements, offers a logistically accessible, well-regulated environment in which to develop and stress-test the research protocol, data pipeline, and risk model before extending the framework to a second, less controlled environment. Africa's savings-group ecosystems offer deep, decades-long traditions of community-based finance, a large potential originator base, and — because formal securitization of this asset class remains nascent there — a genuine opportunity to shape how it develops, rather than simply replicating an existing model. This two-site framing is a working plan, not a fixed commitment: the final choice of first field site is expected to depend on which program and supervisor network offers the strongest realistic path to partner access, and the design is written to be adaptable to whichever site that turns out to be, without changing the underlying research question or methodology.\n\n# Bibliography (Skeleton)\n\n- Banerjee, Duflo, Glennerster & Kinnan (2015). The Miracle of Microfinance? Evidence from a Randomized Evaluation.\n- Banerjee, Karlan & Zinman (2015). Six Randomized Evaluations of Microcredit: Introduction and Further Steps.\n- Angelucci, Karlan & Zinman (2015). Win Some Lose Some? Evidence from a Randomized Microcredit Program.\n- Attanasio, Augsburg, De Haas, Fitzsimons & Harmgart (2015). The Impact of Microfinance: Evidence from Joint-Liability Lending in Mongolia.\n- Meager (2019). Understanding the Average Impact of Microcredit Expansions: A Bayesian Hierarchical Analysis of Seven Randomized Experiments.\n- Karlan & Morduch (2010). Access to Finance (Handbook of Development Economics chapter).\n- Cull, Demirgüç-Kunt & Morduch (2009). Microfinance Meets the Market.\n- de Mel, McKenzie & Woodruff (2008). Returns to Capital in Microenterprises.\n- Ksoll, Lilleør, Lønborg & Rasmussen (2016). Impact of Village Savings and Loan Associations: Evidence from a Cluster-Randomized Trial.\n- Beaman, Karlan & Thuysbaert (2014). Saving for a (Not So) Rainy Day: A Randomized Evaluation of Savings Groups in Mali.\n- Karlan, Savonitto, Thuysbaert & Udry (2017). Impact of Savings Groups on the Lives of the Poor.\n- Gash & Odell (2013). The Evidence-Based Story of Savings Groups: A Synthesis of Seven Randomized Control Trials.\n- Allen & Panetta (2010). Savings Groups: What Are They? (SEEP Network).\n- Cole, Giné & Vickery (2017). How Does Risk Management Influence Production Decisions? Evidence from a Field Experiment.\n- Karlan, Osei, Osei-Akoto & Udry (2014). Agricultural Decisions after Relaxing Credit and Risk Constraints.\n- Clarke & Dercon (2016). Dull Disasters? How Planning Ahead Will Make a Difference.\n- CGAP (2006). Use of Securitization to Fund Microfinance (Focus Note).\n- Jobst (2006). Asset Securitisation as a Risk Management and Funding Tool.\n- IFC / DFI Working Group (2019). Blended Concessional Finance: The Joint Report.\n- Convergence Blended Finance (2021). The State of Blended Finance.\n- GIIN (2020). Annual Impact Investor Survey.\n\n*Placeholder list — to be replaced with entries from `literature/lit-matrix.csv` as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*\n"
   },
   {
    "path": "docs/phd-scoring-rubric.md",
@@ -9503,7 +9511,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-08-03",
+  "generated": "2026-08-04",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
@@ -9532,7 +9540,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 39506
+   "totalWords": 42979
   }
  }
 };
