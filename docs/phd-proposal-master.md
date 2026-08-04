@@ -1,8 +1,8 @@
 > This is a living master PhD proposal for the Sustainable Finance Venture (SFV). It is intended as a base document to be adapted for different programs and supervisors.
 
-# Provisional Title
+# Structuring Community Savings-Group Finance into Securitizable, Empirically Verified Risk Assets
 
-Structuring Community Savings-Group Finance into Securitizable, Empirically Verified Risk Assets
+*Provisional title — working title only, to be adapted per program and supervisor.*
 
 # Introduction and Problem Statement
 
