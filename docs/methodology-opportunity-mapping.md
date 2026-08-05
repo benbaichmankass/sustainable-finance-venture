@@ -13,19 +13,15 @@ It is a **two-axis** map:
 
 A problem that is huge but that our tools cannot make investable is a policy question, not our question. A problem our tools fit perfectly but that barely moves any SDG outcome is a rounding error. The interesting shortlist sits high on **both** axes.
 
+```
  Toolbox      high │  build the tools,        │  FLAGSHIP —
-
  capacity          │  small prize (park)      │  pilot these first
-
  (Axis Y)          │--------------------------+--------------------------
-
              low   │  not ours                │  big prize, wrong layer
-
                    │  (refer out)             │  (watch / partner)
-
                    └──────────────────────────┴──────────────────────────
-
                         low  ── Opportunity size / potential (Axis X) ──  high
+```
 
 ## Axis X — scoring the opportunity
 
