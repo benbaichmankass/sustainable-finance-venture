@@ -108,11 +108,23 @@ button.ghost {
 }
 button.ghost:hover { border-color: var(--muted); color: var(--text); }
 
+/* Hamburger toggle - hidden on desktop, shown by the mobile media query below.
+   Always present in the DOM (not just under the breakpoint) so a listener can
+   be wired unconditionally in boot(); CSS alone decides whether it's reachable. */
+.nav-toggle { display: none; font-size: 16px; line-height: 1; padding: 4px 10px; }
+
+/* Backdrop behind the mobile drawer - click it to close. Only ever shown by
+   JS (removing `hidden`) when the drawer is opened, so no media query needed
+   here: on desktop nav-toggle is unreachable, so this never gets shown. */
+.sidebar-backdrop {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); z-index: 25;
+}
+
 /* ---------- sidebar nav ----------
    Desktop: a sticky left column below the header, its own scroll region so a
    long tab list never pushes the page taller than the viewport. Narrow
-   screens (see the media query at the bottom of this sheet) flatten it back
-   into the horizontal scrolling bar the header used to carry directly. */
+   screens (see the media query at the bottom of this sheet) turn it into a
+   slide-in drawer instead, opened by the hamburger button. */
 .shell { display: flex; align-items: flex-start; max-width: 1360px; margin: 0 auto; }
 .sidebar {
   flex: 0 0 224px; width: 224px;
@@ -296,21 +308,21 @@ footer.foot {
   font-size: 12.5px; color: var(--muted);
 }
 /* Below this width a fixed-height sidebar column costs more than it gives —
-   flatten it back into a horizontal scrolling bar directly under the header,
-   the same shape the nav used to have before it became a sidebar. */
+   and a horizontal scrolling tab bar doesn't scale to this many tabs either
+   (you can't see what's off to the right). Turn the sidebar into a slide-in
+   drawer instead: same vertical list as desktop, off-canvas until opened via
+   the hamburger button, dismissed by the backdrop, a tab pick, or Escape. */
 @media (max-width: 900px) {
-  .shell { flex-direction: column; }
+  .nav-toggle { display: inline-flex; }
   .sidebar {
-    width: 100%; flex: 0 0 auto;
-    position: sticky; top: var(--header-h);
-    border-right: none; border-bottom: 1px solid var(--border);
-    max-height: none; overflow: visible;
+    position: fixed; top: var(--header-h); left: 0; bottom: 0;
+    width: 260px; max-width: 82vw;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.18);
+    z-index: 30;
   }
-  nav.tabs { flex-direction: row; overflow-x: auto; scrollbar-width: thin; padding: 8px 14px; }
-  nav.tabs button {
-    border-left: none; border-bottom: 2px solid transparent; border-radius: 6px 6px 0 0;
-  }
-  nav.tabs button[aria-selected="true"] { border-left-color: transparent; border-bottom-color: var(--accent); background: none; }
+  .sidebar.open { transform: translateX(0); }
   .wrap { padding: 20px 20px 72px; }
 }
 @media (max-width: 620px) {
@@ -323,6 +335,7 @@ footer.foot {
 
 <header class="top" id="site-header">
   <div class="top-inner">
+    <button class="ghost nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="tabs">☰</button>
     <div class="brand">
       <h1>Sustainable Finance Venture</h1>
       <p id="subtitle">Structuring community-originated financial assets into poolable, verifiable instruments</p>
@@ -336,7 +349,8 @@ footer.foot {
 </header>
 
 <div class="shell">
-  <aside class="sidebar"><nav class="tabs" id="tabs" role="tablist"></nav></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" id="sidebar"><nav class="tabs" id="tabs" role="tablist"></nav></aside>
   <div class="main-col">
     <div class="wrap"><main id="view"></main>
       <footer class="foot" id="foot"></footer>
@@ -2195,8 +2209,32 @@ function boot() {
     return '<button role="tab" data-tab="' + t.id + '" aria-selected="false">' + esc(t.label) +
       (n != null ? '<span class="tcount">' + n + "</span>" : "") + "</button>";
   }).join("");
+
+  /* Mobile drawer: the sidebar is off-canvas by default under the 900px
+     breakpoint (see the media query), toggled open by the hamburger button.
+     Wiring this unconditionally is harmless on desktop - nav-toggle is
+     display:none there, so open() can never actually be triggered. */
+  var sidebar = by("sidebar"), backdrop = by("sidebar-backdrop"), navToggle = by("nav-toggle");
+  function openDrawer() {
+    sidebar.classList.add("open");
+    backdrop.hidden = false;
+    navToggle.setAttribute("aria-expanded", "true");
+  }
+  function closeDrawer() {
+    sidebar.classList.remove("open");
+    backdrop.hidden = true;
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+  navToggle.addEventListener("click", function () {
+    if (sidebar.classList.contains("open")) closeDrawer(); else openDrawer();
+  });
+  backdrop.addEventListener("click", closeDrawer);
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeDrawer();
+  });
+
   Array.prototype.forEach.call(by("tabs").children, function (b) {
-    b.addEventListener("click", function () { show(b.dataset.tab); });
+    b.addEventListener("click", function () { show(b.dataset.tab); closeDrawer(); });
   });
 
   /* In-content links like the decisions callout use #tab hrefs. show() itself
@@ -2231,7 +2269,10 @@ function boot() {
   /* Header height can change once real content lands (e.g. the tier chip
      going from hidden to visible) or on a viewport resize/rotation. */
   syncHeaderHeight();
-  window.addEventListener("resize", syncHeaderHeight);
+  window.addEventListener("resize", function () {
+    syncHeaderHeight();
+    if (window.innerWidth > 900) closeDrawer();
+  });
 
   var btn = by("theme-btn");
   btn.addEventListener("click", function () {
