@@ -40,6 +40,7 @@ docs/
   milestone-plan.md              60/90-day plan narrative
   dashboard-design.md            Dashboard design decisions and how to extend it
   drive-vault.md                 What lives in Drive instead of git, and why
+  drive-sync.md                  The automated, bidirectional Drive workfolder sync
   publishing.md                  Public/private boundary, pre-publish checklist
   macro-watch.md                 Macro watchlist rationale and logging discipline
 literature/
@@ -61,9 +62,12 @@ data/                            Structured trackers — the dashboard reads the
   phd-programs.csv               PHD-NN target programs (public tier)
   synthesis-memos.csv            MEMO-N memo status index
   resources.csv                  RES-NN external links
+  drive-links.csv                DRV-NN Drive workfolder sync manifest — see docs/drive-sync.md
 private/                         GITIGNORED overlay — see §1b and docs/publishing.md
 archive/google-drive/            Verbatim exports of superseded source docs
 dashboard/                       Static dashboard — see §5
+scripts/                         Automation run outside the dashboard build (Drive sync engine)
+.github/workflows/               CI: Pages deploy, Drive sync
 .claude/skills/                  Task-specific working procedures
 ```
 
@@ -84,6 +88,7 @@ dashboard/                       Static dashboard — see §5
 | Something you noticed about the macro environment | a row in `data/macro-log.csv` |
 | A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |
 | Narrative reasoning or a plan | a markdown doc in `docs/` |
+| A doc that should stay editable from Google Drive | a row in `data/drive-links.csv` — see `docs/drive-sync.md` |
 
 **Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.
 
@@ -99,6 +104,7 @@ dashboard/                       Static dashboard — see §5
   - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`
   - Memo `Status`: `Outline` · `Drafted` · `Reviewed`
   - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`
+  - Drive link `Status`: `Not synced` · `Synced` · `Conflict` · `Error`
 
 **URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.
 

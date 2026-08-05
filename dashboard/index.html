@@ -370,7 +370,8 @@ var STATUS_CLASS = {
   "contacted": "warning", "in conversation": "warning", "drafted": "warning",
   "blocked": "critical", "declined": "critical",
   "not started": "", "open": "", "to read": "", "not contacted": "",
-  "superseded": "", "dropped": "", "outline": ""
+  "superseded": "", "dropped": "", "outline": "",
+  "synced": "good", "conflict": "critical", "not synced": "", "error": "critical"
 };
 function statusClass(v) { return STATUS_CLASS[String(v || "").toLowerCase().trim()] || ""; }
 function pill(v) {
@@ -1934,6 +1935,62 @@ function renderPhd() {
   return html;
 }
 
+/* Google's docs.google.com/document editor URL for a Doc, /spreadsheets/ for a
+   Sheet, and the plain drive.google.com folder browser for a folder. Blank
+   Drive_ID means the sync workflow hasn't created it yet - callers show that
+   as a hint rather than a dead link. */
+function driveDocUrl(r) {
+  if (!r.Drive_ID) return "";
+  if (r.Type === "sheet") return "https://docs.google.com/spreadsheets/d/" + r.Drive_ID + "/edit";
+  if (r.Type === "folder") return "https://drive.google.com/drive/folders/" + r.Drive_ID;
+  return "https://docs.google.com/document/d/" + r.Drive_ID + "/edit";
+}
+
+function renderDriveSection() {
+  var links = D.driveLinks || [];
+  if (!links.length) return "";
+  var folder = links.filter(function (r) { return r.Type === "folder"; })[0];
+  var items = links.filter(function (r) { return r.Type !== "folder"; });
+  var cats = [];
+  items.forEach(function (r) { if (r.Category && cats.indexOf(r.Category) < 0) cats.push(r.Category); });
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    {
+      key: "Title", label: "Document", cls: "wrap-cell",
+      render: function (r) { return nameLink(r.Title || r.Repo_Path, driveDocUrl(r), r.Title,
+        r.Drive_ID ? "" : "not created yet"); }
+    },
+    { key: "Category", label: "Category" },
+    {
+      label: "Repo file", cls: "wrap-cell",
+      render: function (r) { return r.Repo_Path ? extLink(
+        "https://github.com/" + (D.meta.repo || "") + "/blob/main/" + r.Repo_Path, r.Repo_Path) : ""; }
+    },
+    { label: "Status", sortKey: "Status", render: function (r) { return pill(r.Status); } },
+    { key: "Last_Synced_At", label: "Last synced" }
+  ];
+  var html = '<div class="card" style="margin-bottom:16px">' +
+    '<strong>Drive workfolder</strong> ' +
+    (folder && folder.Drive_ID
+      ? nameLink("Open the master folder", "https://drive.google.com/drive/folders/" + folder.Drive_ID, folder.Title)
+      : "") +
+    '<p class="hint" style="margin:6px 0 0">Every document below is mirrored bidirectionally with a Doc in that folder — ' +
+    'edit either side and an automated job reconciles the other within about 15 minutes, no manual sync step needed. ' +
+    'The repo stays the source of truth throughout; see <code>docs/drive-sync.md</code> for how.</p></div>' +
+    '<div class="filters"><select class="pickr" id="drv-cat"><option value="">All categories</option>' +
+    cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
+    '</select></div><div id="drv-tbl"></div>';
+  setTimeout(function () {
+    var cat = by("drv-cat"), host = by("drv-tbl");
+    function draw() {
+      var rows = items.filter(function (r) { return !cat.value || r.Category === cat.value; });
+      host.innerHTML = buildTable(rows, cols, null, { sortIdx: 0, sortDir: 1 });
+    }
+    cat.addEventListener("change", draw); draw();
+  }, 0);
+  return html;
+}
+
 function renderResources() {
   var res = D.resources || [];
   var cats = [];
@@ -1956,6 +2013,8 @@ function renderResources() {
   var html = '<section class="panel"><h2>Resources</h2>' +
     '<p class="lede">Links, reference libraries, and the Drive vault where artifacts that do not belong in git are kept — ' +
     'PDFs, applications, correspondence and raw data. The repo always holds the pointer.</p>' +
+    renderDriveSection() +
+    '<h3 style="margin-top:24px">Links &amp; libraries</h3>' +
     '<div class="filters"><select class="pickr" id="res-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
     '</select><span class="hint">See <code>docs/drive-vault.md</code> for what goes where.</span></div>' +
