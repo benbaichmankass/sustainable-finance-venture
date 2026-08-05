@@ -3278,9 +3278,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Dashboard — design plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e530610cd791493ab256b077e4064573dae361c68cfbb8bd4f57b5070253ec4d",
-   "Baseline_Repo_Hash": "10cbb04110f6bb62bc68346962c78c4dbbad5f4270eb2921264ad293b25569a2",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "203cdece06fe031be15dab73fefaae094de34f82fa6ff870201d272fb6200644",
+   "Baseline_Repo_Hash": "64f942d0347a3823b59465fe1ca947e4723f82a73f691948a9d2d85e4f2a0d9d",
+   "Last_Synced_At": "2026-08-05T10:17:15Z",
    "Status": "Synced"
   },
   {
@@ -3344,8 +3344,8 @@ window.SFV_DATA = {
    "Title": "Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity",
    "Category": "Planning",
    "Baseline_Drive_Hash": "506684250707f764027ed0d323066e4759c1e2844f5ef597a32764ae74700820",
-   "Baseline_Repo_Hash": "506684250707f764027ed0d323066e4759c1e2844f5ef597a32764ae74700820",
-   "Last_Synced_At": "2026-08-05T09:41:10Z",
+   "Baseline_Repo_Hash": "7d654082684aae008136a13dad2aab4875f3f54ac186812a17fce261ea41af03",
+   "Last_Synced_At": "2026-08-05T10:17:23Z",
    "Status": "Synced"
   },
   {
