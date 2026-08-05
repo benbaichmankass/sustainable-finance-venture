@@ -3281,7 +3281,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-03",
@@ -3294,7 +3294,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-04",
@@ -3307,7 +3307,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-05",
@@ -3320,7 +3320,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-06",
@@ -3333,7 +3333,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-07",
@@ -3346,7 +3346,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-08",
@@ -3359,7 +3359,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-09",
@@ -3372,7 +3372,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-10",
@@ -3385,7 +3385,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-11",
@@ -3398,7 +3398,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-12",
@@ -3411,7 +3411,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-13",
@@ -3424,7 +3424,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-14",
@@ -3437,7 +3437,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-15",
@@ -3450,7 +3450,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-16",
@@ -3463,7 +3463,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-17",
@@ -3476,7 +3476,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-18",
@@ -3489,7 +3489,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-19",
@@ -3502,7 +3502,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-20",
@@ -3515,7 +3515,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-21",
@@ -3528,7 +3528,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-22",
@@ -3541,7 +3541,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-23",
@@ -3554,7 +3554,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-24",
@@ -3567,7 +3567,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-25",
@@ -3580,7 +3580,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-26",
@@ -3593,7 +3593,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-27",
@@ -3606,7 +3606,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-28",
@@ -3619,7 +3619,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-29",
@@ -3632,7 +3632,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-30",
@@ -3645,7 +3645,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-31",
@@ -3658,7 +3658,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-32",
@@ -3671,7 +3671,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-33",
@@ -3684,7 +3684,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "",
    "Baseline_Repo_Hash": "",
    "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Status": "Error"
   }
  ],
  "macroSeries": {
@@ -9617,8 +9617,8 @@ window.SFV_DATA = {
    "category": "AI skills",
    "title": "Syncing Drive and the repo",
    "summary": "Move content between Google Drive and this repo. Use when the user says \"save this doc to the repo\", \"make sure the repo has everything from Drive\", shares a Google Doc/Sheet link, wants a PDF filed in the Vault, or asks whether the repo and Drive are in sync.",
-   "words": 393,
-   "body": "# Syncing Drive and the repo\n\nThe repo is the source of truth; Drive holds inputs and artifacts that shouldn't be versioned. See `docs/drive-vault.md` for the boundary.\n\n## Direction 1 — Drive content into the repo\n\nFor a Doc or Sheet whose *content* belongs in the repo:\n\n1. **Read the whole thing** before writing anything. Sheets have multiple tabs; read them all.\n2. **Archive it verbatim** at `archive/google-drive/<slug>.md` with a provenance header: source title, URL, created/modified dates, capture date, and a status line saying whether it's live, superseded, or predecessor thinking.\n3. **Split the live content into its proper homes** per the table in `CLAUDE.md` §3. Trackers become CSVs in `data/`; narrative becomes markdown in `docs/`; evidence becomes matrix rows.\n4. **Add a mapping table** to the archive file — \"Where this content now lives\" — so a reader who finds the archive knows to edit elsewhere.\n5. **Note anything you had to fix** during migration (mangled cells, pasted-in stray text, inconsistent IDs) in the archive file. Silent cleanup makes later discrepancies unexplainable.\n6. **Add a `data/resources.csv` row** pointing back at the original if collaborators still use it.\n\n## Direction 2 — artifacts into the Vault\n\nFiles that shouldn't be in git — PDFs, CVs, correspondence, raw data:\n\n1. Pick the right folder (`01-literature-pdfs` … `06-legal-and-regulatory`).\n2. Name it per convention: `YYYY-MM-DD — subject — counterparty.ext`, or `LIT-0NN — short-title.pdf` for papers.\n3. **Add the pointer to the repo** — a matrix `URL`, or a `data/resources.csv` row. An unreferenced Vault file is a lost Vault file.\n\n## Permissions\n\n- **Reading from Drive: go ahead.** Fetching a doc to summarise or file needs no check-in.\n- **Writing to Drive: say what you're about to do first.** Creating folders, uploading, moving or overwriting are all visible to collaborators and some are hard to undo.\n- **Never overwrite a Drive file without reading it first.**\n\n## Checking sync status\n\nTo answer \"is the repo current?\":\n\n1. List recent Drive activity in the project folders.\n2. Compare against `archive/google-drive/` capture dates and `data/resources.csv`.\n3. Report what's missing rather than assuming it's covered — and don't claim a doc is synced without having read it.\n\n## Privacy boundary\n\nContent from the Vault's `05-raw-data` never moves into the repo. Aggregate analysis results can; row-level records with personal data cannot — not in a CSV, a memo, or the dashboard.\n"
+   "words": 463,
+   "body": "# Syncing Drive and the repo\n\nThe repo is the source of truth; Drive holds inputs and artifacts that shouldn't be versioned. See `docs/drive-vault.md` for the boundary.\n\n**This skill covers manual, one-off sync** — migrating a Doc's content into the repo, filing a PDF in the Vault. A separate, automated mechanism keeps a defined set of public narrative docs continuously synced with live Drive copies in both directions, no agent involved in the reconciliation itself — see `docs/drive-sync.md`. Use that system (edit `data/drive-links.csv`), not this skill, for anything that should stay permanently mirrored rather than migrated once.\n\n## Direction 1 — Drive content into the repo\n\nFor a Doc or Sheet whose *content* belongs in the repo:\n\n1. **Read the whole thing** before writing anything. Sheets have multiple tabs; read them all.\n2. **Archive it verbatim** at `archive/google-drive/<slug>.md` with a provenance header: source title, URL, created/modified dates, capture date, and a status line saying whether it's live, superseded, or predecessor thinking.\n3. **Split the live content into its proper homes** per the table in `CLAUDE.md` §3. Trackers become CSVs in `data/`; narrative becomes markdown in `docs/`; evidence becomes matrix rows.\n4. **Add a mapping table** to the archive file — \"Where this content now lives\" — so a reader who finds the archive knows to edit elsewhere.\n5. **Note anything you had to fix** during migration (mangled cells, pasted-in stray text, inconsistent IDs) in the archive file. Silent cleanup makes later discrepancies unexplainable.\n6. **Add a `data/resources.csv` row** pointing back at the original if collaborators still use it.\n\n## Direction 2 — artifacts into the Vault\n\nFiles that shouldn't be in git — PDFs, CVs, correspondence, raw data:\n\n1. Pick the right folder (`01-literature-pdfs` … `06-legal-and-regulatory`).\n2. Name it per convention: `YYYY-MM-DD — subject — counterparty.ext`, or `LIT-0NN — short-title.pdf` for papers.\n3. **Add the pointer to the repo** — a matrix `URL`, or a `data/resources.csv` row. An unreferenced Vault file is a lost Vault file.\n\n## Permissions\n\n- **Reading from Drive: go ahead.** Fetching a doc to summarise or file needs no check-in.\n- **Writing to Drive: say what you're about to do first.** Creating folders, uploading, moving or overwriting are all visible to collaborators and some are hard to undo.\n- **Never overwrite a Drive file without reading it first.**\n\n## Checking sync status\n\nTo answer \"is the repo current?\":\n\n1. List recent Drive activity in the project folders.\n2. Compare against `archive/google-drive/` capture dates and `data/resources.csv`.\n3. Report what's missing rather than assuming it's covered — and don't claim a doc is synced without having read it.\n\n## Privacy boundary\n\nContent from the Vault's `05-raw-data` never moves into the repo. Aggregate analysis results can; row-level records with personal data cannot — not in a CSV, a memo, or the dashboard.\n"
   },
   {
    "path": ".claude/skills/update-dashboard/SKILL.md",
@@ -9669,12 +9669,20 @@ window.SFV_DATA = {
    "body": "# Dashboard — design plan\n\n**Status:** v1 implemented · **Last updated:** 2026-08-04\n\n## The problem\n\nProject state was spread across a Google Sheet, several Google Docs, a repo, and conversation history. Answering \"what's the current status of X\" meant checking three places and hoping they agreed. The dashboard exists so there is one place to look — and, more importantly, so that place can't drift from the underlying record.\n\n## The core decision: generated, not authored\n\nThe dashboard has **no state of its own**. Every number, row and document on it is read out of the repo's source files at build time. You cannot update the dashboard directly; you update the CSV or the markdown and rebuild.\n\nThis is the whole design. It means:\n\n- The dashboard can never disagree with the repo — the failure mode that made the Sheet unreliable.\n- Status changes happen in one place, in a diffable file, under version control.\n- Anyone can reconstruct the dashboard from the repo alone. No database, no hosted service, nothing to expire.\n\nThe cost is a build step. It's a 200-line Python script with no dependencies, which seemed a fair trade.\n\n## Architecture\n\n```\ndata/*.csv  ─┐\nliterature/  ├─→  dashboard/build.py  ─→  dashboard/data.js  ─→  dashboard/index.html\ndocs/*.md    │                                                    (opened in a browser)\nproduct-design/\narchive/     ─┘\n```\n\n- **`build.py`** — Python 3 stdlib only. Reads seven CSVs and every markdown file in the tracked directories, and emits a single JSON blob assigned to `window.SFV_DATA`.\n- **`data.js`** — generated, committed, never hand-edited. Committing it means the dashboard works from a fresh clone with no build step for a reader.\n- **`index.html`** — one self-contained file: CSS, a small markdown renderer, and the view code. No npm, no bundler, no CDN.\n\n### Why no framework\n\nThe whole point is longevity. This project will be picked up intermittently over years. A React build with pinned dependencies would be unbuildable in three years; a single HTML file opened with `file://` will not be.\n\n## Tabs\n\n| Tab | Answers |\n|---|---|\n| **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |\n| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. Each document also has one-click download as Markdown, DOCX or PDF (see \"Document export\" below). |\n| **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |\n| **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |\n| **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |\n| **Partners** | Who have we approached? Contact status across originators, funders, verification partners and counsel. |\n| **PhD pipeline** | Where are the applications? Programs, supervisors, fit notes and next steps. |\n| **Resources** | Where's everything else? External libraries, the Master Tracker Sheet, and the Drive vault folders. |\n\n## Navigation\n\nThe tab list is a **left sidebar**, not a top bar — with 13 tabs a horizontal strip was starting to require scrolling to find the later ones, and a sidebar scales to more tabs without that. It sticks just below the header (`--header-h`, measured from the header's real rendered height in JS since the header wraps at some widths — see `syncHeaderHeight()`), with its own scroll region so a long tab list never pushes the page taller than the viewport.\n\nBelow 900px wide, the sidebar flattens back into a horizontal scrolling bar directly under the header — the same shape the nav had before it became a sidebar. This is a CSS-only change (`@media (max-width: 900px)` in the stylesheet); the markup and the tab-switching JS are identical at every width.\n\n## Document export\n\nEvery document in the Library can be downloaded as Markdown, DOCX or PDF, generated **client-side, on click, with no server and no external library** — consistent with the \"no framework\" decision above. MD is just the document's own source text. DOCX and PDF share a plain-text block parser (`mdToBlocks`) that walks the same markdown grammar as the inline renderer but emits plain text instead of HTML. From there:\n\n- **DOCX** is built as a minimal but spec-valid OPC package — `[Content_Types].xml`, `_rels/.rels`, `word/document.xml` — zipped with a hand-rolled STORE-only writer (no DEFLATE implementation needed for a handful of small XML parts).\n- **PDF** is assembled object-by-object (catalog, pages, four Base-14 fonts, one content stream per page) with a hand-rolled writer that computes its own xref table. Word-wrap uses the standard Helvetica AFM width metrics rather than a guess, and text is restricted to Latin-1/WinAnsi before layout, since the writer emits single-byte string literals rather than carrying a Unicode CMap.\n\nBoth are deliberately plain — headings and emphasis carry through, tables collapse to pipe-separated text, but there is no attempt to reproduce the dashboard's visual styling. The goal is a portable, readable copy of the document, not a design export.\n\n## Visual design rules\n\nThe dashboard follows the data-visualisation conventions the project uses everywhere:\n\n- **Colour is assigned by identity, never by rank.** Filtering the literature matrix doesn't repaint the rows that survive.\n- **Magnitude comparisons use one hue** (the blue ramp), not a categorical rainbow. The \"sources by axis\" bars compare quantities, so they're a sequential encoding.\n- **Status colour never carries meaning alone.** Every status pill shows a coloured dot *and* its text label — required for colourblind readers, and it also survives being printed.\n- **Both colour schemes are designed, not flipped.** Dark mode uses its own colour steps chosen against the dark surface. The page follows the OS setting; the in-page toggle overrides it in both directions.\n- **Wide content scrolls inside its own container.** The page body never scrolls horizontally.\n- **Recessive chrome.** Hairline borders, muted axis text, no shadows or gradients competing with content.\n\n## Extending it\n\nAdding a tracker:\n\n1. Add the CSV to `data/` following the conventions in `CLAUDE.md` §4.\n2. Register it in `build.py`'s `TABLES` dict.\n3. Add a `TABS` entry and a `render*()` function in `index.html`.\n4. Rebuild, open, check both colour schemes.\n\nThe `buildTable(rows, cols, detailFn)` helper handles the common case — a compact table with expandable detail rows. Most trackers need nothing more than a column config.\n\n**Columns are click-to-sort.** Any column with a `key`, `sortKey`, or `sortVal(row)` sorts on click (first click ascending, second descending); blanks always fall to the bottom and comparison is numeric-aware, so `PHD-2` precedes `PHD-10` and tier `1` precedes `2`. A render-only column (one drawing a pill or link with no underlying field) becomes sortable by giving it a `sortKey` — e.g. the PhD \"Fit\" column renders a tier pill but sorts on `Tier`. Sorting and row-expansion run off one delegated listener, so a sort re-renders in place without re-wiring. Pass `{sortIdx, sortDir}` in `opts` to set a default sort.\n\n## Deliberately not built\n\n- **No hosting.** Open the file locally. If it's ever wanted on the web, GitHub Pages would serve `dashboard/` as-is, but the repo is private and the content includes partner names — that's a decision to make explicitly, not to drift into.\n- **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.\n- **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.\n- **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.\n"
   },
   {
+   "path": "docs/drive-sync.md",
+   "category": "Planning",
+   "title": "Drive sync — bidirectional, automated, repo stays the source of truth",
+   "summary": "",
+   "words": 1358,
+   "body": "# Drive sync — bidirectional, automated, repo stays the source of truth\n\n**Status:** v1 — narrative docs only · **Last updated:** 2026-08-05\n\n## What this is, and what it isn't\n\nThe **Drive Vault** (`docs/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.\n\nThe point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:\n\n**Reconciliation is mechanical, not editorial.** A script compares hashes against the last-synced baseline and moves content in whichever direction actually changed. There is no model in this loop and no judgment call about which version is \"better\" — if both sides changed since the last sync, the script does not guess; it stops and flags it for a human.\n\n## Architecture\n\n```\ndata/drive-links.csv  ── manifest: one row per synced item ─┐\n                                                              │\nscripts/sync_drive.py ── the reconciliation engine ──────────┤\n  (service-account auth, hash comparison, pull/push/conflict) │\n                                                              │\n.github/workflows/sync-drive.yml ── runs it on a timer ──────┘\n  (every ~15 min + manual dispatch, commits straight to main)\n\ndashboard/build.py reads data/drive-links.csv like any other tracker ─→\n  Resources tab: master folder link + every item, each linking out to\n  its Drive copy and its repo file.\n```\n\nNothing here talks to Claude. The workflow, the script, and the credential all live in this repo and GitHub's infrastructure; an AI agent might *write* the manifest row for a new doc, same as any other repo edit, but the reconciliation itself runs unattended.\n\n## The manifest — `data/drive-links.csv`\n\nOne row per synced item, plus one `folder`-type row for the master Drive folder itself (used only for navigation, never reconciled).\n\n| Column | Meaning |\n|---|---|\n| `ID` | Stable ID, `DRV-NN`. Never reused, same rule as every other tracker. |\n| `Drive_ID` | The Drive file/folder ID. Blank means \"not created yet\" — the next sync run creates it from the repo file. |\n| `Repo_Path` | The repo file this row reconciles with. Blank for the folder row. |\n| `Type` | `folder` (navigation only) · `doc` (Google Doc ↔ markdown) · `sheet` (Google Sheet ↔ CSV). |\n| `Parent_ID` | The `ID` of the folder row a new file gets created inside. |\n| `Title` | Display title — also the Doc/Sheet's name when it's first created. |\n| `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |\n| `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |\n| `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |\n| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. |\n\n## The reconciliation algorithm\n\nEvery run, for every non-folder row, the script computes the current hash of both sides and compares each against its stored baseline — not against each other directly:\n\n| Drive vs. baseline | Repo vs. baseline | Result |\n|---|---|---|\n| unchanged | unchanged | nothing to do |\n| changed | unchanged | **pull** — Drive was edited, overwrite the repo file |\n| unchanged | changed | **push** — the repo was edited, overwrite the Drive file |\n| changed | changed, but Drive now equals repo | not a real conflict — both sides independently landed on the same content; just re-baseline |\n| changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |\n| — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious \"changed\" on the very next run) |\n\nWhy compare against a stored baseline instead of just \"whichever timestamp is newer\": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same 15-minute window, and whichever wrote last wins with no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.\n\n## Resolving a conflict\n\nThe issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.\n\n## Auto-commit, not auto-merge\n\nReconciled changes are committed straight to `main` by the workflow — no PR, no review gate, for either direction. That's deliberately different from how a normal content change to this repo works (see `CLAUDE.md` §7, \"ask before committing when the change is substantive\"). It's safe here specifically because:\n\n- The only things a sync run can touch are the markdown docs and Sheets explicitly listed in the manifest — nothing structural, nothing with an ID scheme to corrupt.\n- Every commit is a plain content diff, fully revertable with `git revert`.\n- The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.\n\nIf a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.\n\n## Adding a new synced document\n\n1. Add a row to `data/drive-links.csv`: a fresh `DRV-NN` ID, `Repo_Path` set, `Drive_ID` blank, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`.\n2. Either wait for the next scheduled run, or trigger the workflow manually (Actions tab → Drive sync → Run workflow).\n3. The row fills itself in — `Drive_ID`, both baseline hashes, `Last_Synced_At`, `Status: Synced`.\n\n## Cadence and its tradeoff\n\nThe workflow polls every ~15 minutes rather than reacting to a Drive push notification. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep. Fifteen-minute polling gets nearly all the same practical benefit (nobody is watching a doc update in real time) at zero hosting cost and nothing to renew. If that latency ever actually matters, revisiting this is a self-contained change — it doesn't require touching the reconciliation logic, only the trigger.\n\n## One-time setup (already done for this repo)\n\n1. A Google Cloud project with the Drive API (and Sheets API, for the `sheet` path) enabled — no billing account required.\n2. A service account (`sfv-drive-sync-bot@sustainable-finance-venture.iam.gserviceaccount.com`) with a JSON key.\n3. That service account invited as **Editor** on the master Drive folder — this is what actually grants access; the key alone gets nowhere without it.\n4. The key stored as the `GDRIVE_SA_KEY` GitHub Actions secret on this repo.\n5. Repo Settings → Actions → General → Workflow permissions set to **Read and write permissions**, so the workflow's `GITHUB_TOKEN` can push to `main` and open issues.\n\nSetting this up again from scratch (a new project, a rotated key) is the same five steps.\n"
+  },
+  {
    "path": "docs/drive-vault.md",
    "category": "Planning",
    "title": "The Drive Vault — where non-repo artifacts live",
    "summary": "",
-   "words": 618,
-   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n## The rule\n\n| Put it in the **repo** | Put it in the **Vault** |\n|---|---|\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n|---|---|\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.\n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.\n"
+   "words": 680,
+   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the **repo** | Put it in the **Vault** |\n|---|---|\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n|---|---|\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.\n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.\n"
   },
   {
    "path": "docs/funding-pipeline.md",
@@ -9817,8 +9825,8 @@ window.SFV_DATA = {
    "category": "Project",
    "title": "Working in this repo",
    "summary": "",
-   "words": 1556,
-   "body": "# Working in this repo\n\nThis repository is the **single source of truth** for the Sustainable Finance Venture project — a research and venture-building effort on structuring community-originated financial assets (VSLA loans, microinsurance) into standardized, verifiable, poolable instruments.\n\nRead this file before making changes. It is short on purpose.\n\n---\n\n## 1. The SSOT rule\n\n**If it isn't in the repo, it isn't real.** Google Docs, Sheets, chat threads and notebooks are inputs; the repo is the record. When you learn something from an external source, write it into the repo in the same session — don't leave it in the conversation.\n\nTwo exceptions, both deliberate:\n\n- **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.\n- **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.\n\n## 1b. This repo is intended to be public\n\nWritten accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.\n\n**The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.\n\nCommercial strategy is deliberately on the public side. The thesis isn't the moat; relationships and execution are.\n\nThe private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.\n\nSetup and worked examples for the overlay: `docs/private-overlay.md`. Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.\n\n**Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.\n\n## 2. Repo structure\n\n```\nREADME.md                        Project index and status — start here\nCLAUDE.md                        This file\ndocs/\n  working-doc.md                 Main planning doc — thesis, design principles, hypotheses\n  research-agenda.md             Literature review plan, reading lists, workflow\n  milestone-plan.md              60/90-day plan narrative\n  dashboard-design.md            Dashboard design decisions and how to extend it\n  drive-vault.md                 What lives in Drive instead of git, and why\n  publishing.md                  Public/private boundary, pre-publish checklist\n  macro-watch.md                 Macro watchlist rationale and logging discipline\nliterature/\n  lit-matrix.csv                 THE literature matrix — one row per source\n  notes/memo-*.md                Synthesis memos\nproduct-design/\n  business-plan.md               Venture-level plan\n  product-lines/                 One doc per product line (PL-1, PL-2)\nrisk-tools/                      One doc per risk tool (RT-1..RT-5) + conventions\ndata/                            Structured trackers — the dashboard reads these\n  milestones.csv                 M-NN   60/90-day milestones\n  open-questions.csv             OQ-N   unresolved decisions\n  product-lines.csv              PL-N   product lines\n  risk-tools.csv                 RT-N   risk management tools\n  macro-indicators.csv           MAC-NN macro watchlist\n  macro-snapshot.csv             GENERATED daily by dashboard/fetch_macro.py\n  macro-log.csv                  MLOG-N dated macro observations\n  partner-tracker.csv            PT-NN  candidate partners (public tier)\n  phd-programs.csv               PHD-NN target programs (public tier)\n  synthesis-memos.csv            MEMO-N memo status index\n  resources.csv                  RES-NN external links\nprivate/                         GITIGNORED overlay — see §1b and docs/publishing.md\narchive/google-drive/            Verbatim exports of superseded source docs\ndashboard/                       Static dashboard — see §5\n.claude/skills/                  Task-specific working procedures\n```\n\n## 3. Where things go\n\n| You have… | It goes in… |\n|---|---|\n| A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |\n| A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |\n| An unresolved decision | a row in `data/open-questions.csv` |\n| An org worth talking to, and why | a row in `data/partner-tracker.csv` |\n| A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |\n| A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |\n| A dated commitment | a row in `data/milestones.csv` |\n| A link worth keeping | a row in `data/resources.csv` |\n| A new risk/analysis tool | a row in `data/risk-tools.csv` + a doc in `risk-tools/` |\n| A macro condition worth tracking | a row in `data/macro-indicators.csv` |\n| Something you noticed about the macro environment | a row in `data/macro-log.csv` |\n| A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |\n| Narrative reasoning or a plan | a markdown doc in `docs/` |\n\n**Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.\n\n## 4. Data file conventions\n\n- All CSVs: **every field quoted**, header row required, UTF-8, LF line endings.\n- No commas-as-decimals, no smart quotes, no em-dashes inside CSV fields (they survive but make diffs noisy).\n- Cross-references go in dedicated columns (`Evidence_Refs`, `Linked_Refs`) as semicolon-separated IDs: `\"LIT-009; LIT-010\"`.\n- Status vocabularies are fixed. Use exactly these:\n  - Literature `Status`: `To read` · `Reading` · `Reviewed` · `Superseded`\n  - Open question `Status`: `Open` · `Partially answered` · `Answered` · `Dropped`\n  - Milestone `Status`: `Not started` · `In progress` · `Done` · `Blocked`\n  - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`\n  - Memo `Status`: `Outline` · `Drafted` · `Reviewed`\n  - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`\n\n**URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.\n\n## 5. The dashboard\n\n`dashboard/index.html` is a static, dependency-free page. It reads `dashboard/data.js`, which is **generated** — never hand-edit it.\n\nAfter changing anything in `data/`, `literature/`, `docs/` or `product-design/`:\n\n```bash\npython3 dashboard/fetch_macro.py      # optional: refresh live macro values\npython3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)\npython3 dashboard/build.py --public   # before pushing: → data.js (committed)\n```\n\nCommit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.\n\n## 6. Research standards\n\nThis project's credibility rests on the literature matrix being trustworthy. Accordingly:\n\n- **Never invent a citation, URL, author, year, or finding.** If you haven't read the source, say so. A row with `Status: To read` and an honest gap is worth more than a plausible-sounding summary.\n- **Never state a number the source doesn't state.** If a figure is your inference, mark it as such in the text.\n- **Record limitations as carefully as findings.** The `Limitations` column is not a formality — the design decisions downstream depend on knowing where the evidence is thin.\n- **Distinguish \"the literature says\" from \"we assume.\"** Working assumptions in `product-design/business-plan.md` carry a source column for this reason.\n- Prefer open-access sources (World Bank, CGAP, J-PAL, FinDev Gateway, OECD, IFC, FSD Africa). They're citable by anyone reading this repo later.\n\n## 7. Working style\n\n- **Ask before committing** when the change is substantive (new literature anchors, a changed conclusion, a restructure). Mechanical changes — regenerating the dashboard, fixing a typo, adding a pointer row — don't need a check-in.\n- **Small commits with real messages.** `literature: add LIT-009..LIT-015 (SPV law, ABS scale, first-loss)` beats `update files`.\n- **Update the dashboard in the same commit** as the data change that requires it.\n- **Don't silently narrow scope.** If part of a task is blocked, do the rest and say what you skipped.\n\n### Finish the job — don't leave work in a draft PR\n\n**Ship it.** Open the PR ready for review, merge it once the work is verified, and confirm the deploy landed. Do not park finished work behind a review gate nobody asked for.\n\nThe failure this prevents: work gets built, tested, screenshotted and written up as done, while the published dashboard still shows the old thing — because the PR was never merged. Local verification proves nothing to the person looking at the site.\n\n- **Squash-merge**, keeping `main` a clean sequence of whole changes.\n- **Then verify the deploy**, not the branch. Fetch the live page and check the thing you changed is actually in it. `dashboard/data.js` is separately cached, so check that too when data changed.\n- **\"Done\" means visible.** Never report a change as complete on the strength of a local build.\n\nOnly hold something back when it is genuinely ambiguous, hard to reverse, or the user asked to review it first. Repo visibility is still never yours to change.\n- When a memo's conclusions change, update the memo, the `synthesis-memos.csv` row, and any open question that cited it. These three drift apart easily.\n\n## 8. Privacy\n\nRow-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't.\n\nSince the repo is meant to be public, professional contacts are private too: a person's name attached to *our* outreach status belongs in `private/`, not in git. A public academic listed with their published research interests is fine — that's what any research proposal contains. The difference is whether we're publishing a fact about them or a fact about our relationship with them.\n"
+   "words": 1619,
+   "body": "# Working in this repo\n\nThis repository is the **single source of truth** for the Sustainable Finance Venture project — a research and venture-building effort on structuring community-originated financial assets (VSLA loans, microinsurance) into standardized, verifiable, poolable instruments.\n\nRead this file before making changes. It is short on purpose.\n\n---\n\n## 1. The SSOT rule\n\n**If it isn't in the repo, it isn't real.** Google Docs, Sheets, chat threads and notebooks are inputs; the repo is the record. When you learn something from an external source, write it into the repo in the same session — don't leave it in the conversation.\n\nTwo exceptions, both deliberate:\n\n- **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.\n- **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.\n\n## 1b. This repo is intended to be public\n\nWritten accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.\n\n**The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.\n\nCommercial strategy is deliberately on the public side. The thesis isn't the moat; relationships and execution are.\n\nThe private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.\n\nSetup and worked examples for the overlay: `docs/private-overlay.md`. Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.\n\n**Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.\n\n## 2. Repo structure\n\n```\nREADME.md                        Project index and status — start here\nCLAUDE.md                        This file\ndocs/\n  working-doc.md                 Main planning doc — thesis, design principles, hypotheses\n  research-agenda.md             Literature review plan, reading lists, workflow\n  milestone-plan.md              60/90-day plan narrative\n  dashboard-design.md            Dashboard design decisions and how to extend it\n  drive-vault.md                 What lives in Drive instead of git, and why\n  drive-sync.md                  The automated, bidirectional Drive workfolder sync\n  publishing.md                  Public/private boundary, pre-publish checklist\n  macro-watch.md                 Macro watchlist rationale and logging discipline\nliterature/\n  lit-matrix.csv                 THE literature matrix — one row per source\n  notes/memo-*.md                Synthesis memos\nproduct-design/\n  business-plan.md               Venture-level plan\n  product-lines/                 One doc per product line (PL-1, PL-2)\nrisk-tools/                      One doc per risk tool (RT-1..RT-5) + conventions\ndata/                            Structured trackers — the dashboard reads these\n  milestones.csv                 M-NN   60/90-day milestones\n  open-questions.csv             OQ-N   unresolved decisions\n  product-lines.csv              PL-N   product lines\n  risk-tools.csv                 RT-N   risk management tools\n  macro-indicators.csv           MAC-NN macro watchlist\n  macro-snapshot.csv             GENERATED daily by dashboard/fetch_macro.py\n  macro-log.csv                  MLOG-N dated macro observations\n  partner-tracker.csv            PT-NN  candidate partners (public tier)\n  phd-programs.csv               PHD-NN target programs (public tier)\n  synthesis-memos.csv            MEMO-N memo status index\n  resources.csv                  RES-NN external links\n  drive-links.csv                DRV-NN Drive workfolder sync manifest — see docs/drive-sync.md\nprivate/                         GITIGNORED overlay — see §1b and docs/publishing.md\narchive/google-drive/            Verbatim exports of superseded source docs\ndashboard/                       Static dashboard — see §5\nscripts/                         Automation run outside the dashboard build (Drive sync engine)\n.github/workflows/               CI: Pages deploy, Drive sync\n.claude/skills/                  Task-specific working procedures\n```\n\n## 3. Where things go\n\n| You have… | It goes in… |\n|---|---|\n| A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |\n| A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |\n| An unresolved decision | a row in `data/open-questions.csv` |\n| An org worth talking to, and why | a row in `data/partner-tracker.csv` |\n| A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |\n| A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |\n| A dated commitment | a row in `data/milestones.csv` |\n| A link worth keeping | a row in `data/resources.csv` |\n| A new risk/analysis tool | a row in `data/risk-tools.csv` + a doc in `risk-tools/` |\n| A macro condition worth tracking | a row in `data/macro-indicators.csv` |\n| Something you noticed about the macro environment | a row in `data/macro-log.csv` |\n| A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |\n| Narrative reasoning or a plan | a markdown doc in `docs/` |\n| A doc that should stay editable from Google Drive | a row in `data/drive-links.csv` — see `docs/drive-sync.md` |\n\n**Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.\n\n## 4. Data file conventions\n\n- All CSVs: **every field quoted**, header row required, UTF-8, LF line endings.\n- No commas-as-decimals, no smart quotes, no em-dashes inside CSV fields (they survive but make diffs noisy).\n- Cross-references go in dedicated columns (`Evidence_Refs`, `Linked_Refs`) as semicolon-separated IDs: `\"LIT-009; LIT-010\"`.\n- Status vocabularies are fixed. Use exactly these:\n  - Literature `Status`: `To read` · `Reading` · `Reviewed` · `Superseded`\n  - Open question `Status`: `Open` · `Partially answered` · `Answered` · `Dropped`\n  - Milestone `Status`: `Not started` · `In progress` · `Done` · `Blocked`\n  - Partner `Contact_Status`: `Not contacted` · `Contacted` · `In conversation` · `Committed` · `Declined`\n  - Memo `Status`: `Outline` · `Drafted` · `Reviewed`\n  - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`\n  - Drive link `Status`: `Not synced` · `Synced` · `Conflict` · `Error`\n\n**URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.\n\n## 5. The dashboard\n\n`dashboard/index.html` is a static, dependency-free page. It reads `dashboard/data.js`, which is **generated** — never hand-edit it.\n\nAfter changing anything in `data/`, `literature/`, `docs/` or `product-design/`:\n\n```bash\npython3 dashboard/fetch_macro.py      # optional: refresh live macro values\npython3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)\npython3 dashboard/build.py --public   # before pushing: → data.js (committed)\n```\n\nCommit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.\n\n## 6. Research standards\n\nThis project's credibility rests on the literature matrix being trustworthy. Accordingly:\n\n- **Never invent a citation, URL, author, year, or finding.** If you haven't read the source, say so. A row with `Status: To read` and an honest gap is worth more than a plausible-sounding summary.\n- **Never state a number the source doesn't state.** If a figure is your inference, mark it as such in the text.\n- **Record limitations as carefully as findings.** The `Limitations` column is not a formality — the design decisions downstream depend on knowing where the evidence is thin.\n- **Distinguish \"the literature says\" from \"we assume.\"** Working assumptions in `product-design/business-plan.md` carry a source column for this reason.\n- Prefer open-access sources (World Bank, CGAP, J-PAL, FinDev Gateway, OECD, IFC, FSD Africa). They're citable by anyone reading this repo later.\n\n## 7. Working style\n\n- **Ask before committing** when the change is substantive (new literature anchors, a changed conclusion, a restructure). Mechanical changes — regenerating the dashboard, fixing a typo, adding a pointer row — don't need a check-in.\n- **Small commits with real messages.** `literature: add LIT-009..LIT-015 (SPV law, ABS scale, first-loss)` beats `update files`.\n- **Update the dashboard in the same commit** as the data change that requires it.\n- **Don't silently narrow scope.** If part of a task is blocked, do the rest and say what you skipped.\n\n### Finish the job — don't leave work in a draft PR\n\n**Ship it.** Open the PR ready for review, merge it once the work is verified, and confirm the deploy landed. Do not park finished work behind a review gate nobody asked for.\n\nThe failure this prevents: work gets built, tested, screenshotted and written up as done, while the published dashboard still shows the old thing — because the PR was never merged. Local verification proves nothing to the person looking at the site.\n\n- **Squash-merge**, keeping `main` a clean sequence of whole changes.\n- **Then verify the deploy**, not the branch. Fetch the live page and check the thing you changed is actually in it. `dashboard/data.js` is separately cached, so check that too when data changed.\n- **\"Done\" means visible.** Never report a change as complete on the strength of a local build.\n\nOnly hold something back when it is genuinely ambiguous, hard to reverse, or the user asked to review it first. Repo visibility is still never yours to change.\n- When a memo's conclusions change, update the memo, the `synthesis-memos.csv` row, and any open question that cited it. These three drift apart easily.\n\n## 8. Privacy\n\nRow-level pilot data and anything identifying a research participant lives in the Vault's `05-raw-data`, never in the repo — not in a CSV, not in a summary, not in the dashboard. Aggregate results come back; individual records don't.\n\nSince the repo is meant to be public, professional contacts are private too: a person's name attached to *our* outreach status belongs in `private/`, not in git. A public academic listed with their published research interests is fine — that's what any research proposal contains. The difference is whether we're publishing a fact about them or a fact about our relationship with them.\n"
   },
   {
    "path": "LICENSE-CONTENT.md",
@@ -9971,7 +9979,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 42990
+   "totalWords": 44543
   }
  }
 };
