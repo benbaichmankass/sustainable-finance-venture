@@ -74,11 +74,23 @@ Reconciled changes are committed straight to `main` by the workflow — no PR, n
 
 If a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.
 
+## Known constraint: the service account can't create new files
+
+A standalone Google service account — one not backed by a Google Workspace organization with a **Shared Drive** — has **zero Drive storage quota of its own**. Editing a file it doesn't own costs it nothing (the file's storage counts against whoever owns it), but *creating* a new file makes the service account the owner by default, and Google rejects that with `storageQuotaExceeded` even though it has full Editor access to the folder. This isn't a permissions bug; it surfaced on the very first live run of this system (every one of the 32 initial docs failed to create, cleanly, with that exact error, while everything else — auth, the commit, the push — worked).
+
+Shared Drives fix this properly (files there are owned by the Shared Drive, not any one account), but Shared Drives are a Workspace-only feature, unavailable on a plain Google account. So for a plain account, the practical rule is:
+
+**New files must be created by a real account with its own quota, then the service account only ever edits what already exists.** The initial 32 docs were seeded this way (via an authenticated Drive connection to the folder owner's real account) rather than through the automated workflow.
+
 ## Adding a new synced document
 
-1. Add a row to `data/drive-links.csv`: a fresh `DRV-NN` ID, `Repo_Path` set, `Drive_ID` blank, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`.
-2. Either wait for the next scheduled run, or trigger the workflow manually (Actions tab → Drive sync → Run workflow).
-3. The row fills itself in — `Drive_ID`, both baseline hashes, `Last_Synced_At`, `Status: Synced`.
+Because of the constraint above, adding a new synced doc is a two-step, not a one-step:
+
+1. **Create the Doc yourself first** — either directly in Drive (File → New → Google Doc, inside the workfolder), or by asking an agent with a real (non-service-account) Drive connection to create it from the repo file's content. Either way, note the resulting file's ID from its URL (`docs.google.com/document/d/<ID>/edit`).
+2. **Add a row to `data/drive-links.csv`** with that `Drive_ID` already filled in — a fresh `DRV-NN` ID, `Repo_Path` set, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`, baseline hash columns left blank.
+3. Trigger the workflow (scheduled, or Actions tab → Drive sync → Run workflow). Since `Drive_ID` is no longer blank, the script treats this as a normal reconciliation, not a creation — it'll see one side changed relative to a blank baseline and sync accordingly, filling in the baseline hashes and `Status: Synced`.
+
+Leaving `Drive_ID` blank and letting the workflow create it will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive.
 
 ## Cadence and its tradeoff
 

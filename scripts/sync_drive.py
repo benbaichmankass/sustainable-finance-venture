@@ -231,8 +231,17 @@ def reconcile_row(row, id_index, drive, sheets):
             return
         title = row["Title"] or os.path.basename(row["Repo_Path"])
         log("  creating %s (%s) in Drive..." % (row["ID"], row["Repo_Path"]))
-        created = (create_sheet(drive, sheets, parent_drive_id, title, repo_text)
-                   if is_sheet else create_doc(drive, parent_drive_id, title, repo_text))
+        try:
+            created = (create_sheet(drive, sheets, parent_drive_id, title, repo_text)
+                       if is_sheet else create_doc(drive, parent_drive_id, title, repo_text))
+        except HttpError as e:
+            if "storageQuotaExceeded" in str(e):
+                log("  ! %s: the service account has no Drive storage quota of its own "
+                    "(expected for a standalone service account, not backed by a Workspace "
+                    "Shared Drive) - it cannot create new files, only edit ones a real "
+                    "account already owns. See docs/drive-sync.md's 'known constraint' "
+                    "section for how new docs actually get seeded." % row["ID"])
+            raise
         row["Drive_ID"] = created["id"]
         drive_text = (export_sheet_text(sheets, created["id"])
                       if is_sheet else export_doc_text(drive, created["id"]))
