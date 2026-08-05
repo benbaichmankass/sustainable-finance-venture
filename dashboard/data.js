@@ -693,12 +693,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-03",
+   "As_Of": "2026-08-04",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -708,12 +708,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-04",
+   "As_Of": "2026-08-05",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -721,14 +721,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.13",
+   "Value": "2.96",
    "Unit": "pp",
-   "As_Of": "2026-07-30",
-   "Chg_1m": "0.02",
-   "Chg_3m": "-0.15",
-   "Chg_12m": "-0.28",
-   "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "As_Of": "2026-08-03",
+   "Chg_1m": "-0.16",
+   "Chg_3m": "-0.25",
+   "Chg_12m": "-0.45",
+   "Direction": "down",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -743,7 +743,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.12",
    "Chg_12m": "1.0",
    "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -751,14 +751,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.5194",
+   "Value": "3.485",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-08-03",
-   "Chg_1m": "0.0983",
-   "Chg_3m": "0.0641",
-   "Chg_12m": "-0.4152",
+   "As_Of": "2026-08-04",
+   "Chg_1m": "0.0519",
+   "Chg_3m": "0.0199",
+   "Chg_12m": "-0.4245",
    "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -768,12 +768,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-04",
+   "As_Of": "2026-08-05",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -796,14 +796,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.059",
+   "Value": "3.03",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-03",
-   "Chg_1m": "0.08",
-   "Chg_3m": "0.068",
-   "Chg_12m": "-0.281",
+   "As_Of": "2026-08-04",
+   "Chg_1m": "0.028",
+   "Chg_3m": "0.069",
+   "Chg_12m": "-0.307",
    "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -826,14 +826,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.75",
+   "Value": "4.7",
    "Unit": "%",
-   "As_Of": "2026-07-31",
-   "Chg_1m": "0.31",
-   "Chg_3m": "0.4",
-   "Chg_12m": "0.28",
+   "As_Of": "2026-08-03",
+   "Chg_1m": "0.22",
+   "Chg_3m": "0.34",
+   "Chg_12m": "0.26",
    "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -848,7 +848,7 @@ window.SFV_DATA = {
    "Chg_3m": "-21.62",
    "Chg_12m": "22.15",
    "Direction": "up",
-   "Fetched_At": "2026-08-04T09:10:47+00:00",
+   "Fetched_At": "2026-08-05T09:07:50+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -4262,7 +4262,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-03",
+    "2026-08-04",
     3.75
    ]
   ],
@@ -4840,7 +4840,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-04",
+    "2026-08-05",
     2.4
    ]
   ],
@@ -5374,7 +5374,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-04",
+    "2026-08-05",
     3.5
    ]
   ],
@@ -5520,8 +5520,12 @@ window.SFV_DATA = {
     3.11
    ],
    [
-    "2026-07-30",
-    3.13
+    "2026-07-31",
+    2.99
+   ],
+   [
+    "2026-08-03",
+    2.96
    ]
   ],
   "MAC-06": [
@@ -7254,8 +7258,8 @@ window.SFV_DATA = {
     3.5114
    ],
    [
-    "2026-08-03",
-    3.5194
+    "2026-08-04",
+    3.485
    ]
   ],
   "MAC-13": [
@@ -7832,8 +7836,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-03",
-    3.059
+    "2026-08-04",
+    3.03
    ]
   ],
   "MAC-14": [
@@ -8416,10 +8420,6 @@ window.SFV_DATA = {
   ],
   "MAC-15": [
    [
-    "2014-08-29",
-    2.35
-   ],
-   [
     "2014-09-30",
     2.52
    ],
@@ -8990,6 +8990,10 @@ window.SFV_DATA = {
    [
     "2026-07-31",
     4.75
+   ],
+   [
+    "2026-08-03",
+    4.7
    ]
   ],
   "MAC-16": [
@@ -9673,8 +9677,8 @@ window.SFV_DATA = {
    "category": "Planning",
    "title": "Drive sync — bidirectional, automated, repo stays the source of truth",
    "summary": "",
-   "words": 1358,
-   "body": "# Drive sync — bidirectional, automated, repo stays the source of truth\n\n**Status:** v1 — narrative docs only · **Last updated:** 2026-08-05\n\n## What this is, and what it isn't\n\nThe **Drive Vault** (`docs/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.\n\nThe point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:\n\n**Reconciliation is mechanical, not editorial.** A script compares hashes against the last-synced baseline and moves content in whichever direction actually changed. There is no model in this loop and no judgment call about which version is \"better\" — if both sides changed since the last sync, the script does not guess; it stops and flags it for a human.\n\n## Architecture\n\n```\ndata/drive-links.csv  ── manifest: one row per synced item ─┐\n                                                              │\nscripts/sync_drive.py ── the reconciliation engine ──────────┤\n  (service-account auth, hash comparison, pull/push/conflict) │\n                                                              │\n.github/workflows/sync-drive.yml ── runs it on a timer ──────┘\n  (every ~15 min + manual dispatch, commits straight to main)\n\ndashboard/build.py reads data/drive-links.csv like any other tracker ─→\n  Resources tab: master folder link + every item, each linking out to\n  its Drive copy and its repo file.\n```\n\nNothing here talks to Claude. The workflow, the script, and the credential all live in this repo and GitHub's infrastructure; an AI agent might *write* the manifest row for a new doc, same as any other repo edit, but the reconciliation itself runs unattended.\n\n## The manifest — `data/drive-links.csv`\n\nOne row per synced item, plus one `folder`-type row for the master Drive folder itself (used only for navigation, never reconciled).\n\n| Column | Meaning |\n|---|---|\n| `ID` | Stable ID, `DRV-NN`. Never reused, same rule as every other tracker. |\n| `Drive_ID` | The Drive file/folder ID. Blank means \"not created yet\" — the next sync run creates it from the repo file. |\n| `Repo_Path` | The repo file this row reconciles with. Blank for the folder row. |\n| `Type` | `folder` (navigation only) · `doc` (Google Doc ↔ markdown) · `sheet` (Google Sheet ↔ CSV). |\n| `Parent_ID` | The `ID` of the folder row a new file gets created inside. |\n| `Title` | Display title — also the Doc/Sheet's name when it's first created. |\n| `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |\n| `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |\n| `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |\n| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. |\n\n## The reconciliation algorithm\n\nEvery run, for every non-folder row, the script computes the current hash of both sides and compares each against its stored baseline — not against each other directly:\n\n| Drive vs. baseline | Repo vs. baseline | Result |\n|---|---|---|\n| unchanged | unchanged | nothing to do |\n| changed | unchanged | **pull** — Drive was edited, overwrite the repo file |\n| unchanged | changed | **push** — the repo was edited, overwrite the Drive file |\n| changed | changed, but Drive now equals repo | not a real conflict — both sides independently landed on the same content; just re-baseline |\n| changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |\n| — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious \"changed\" on the very next run) |\n\nWhy compare against a stored baseline instead of just \"whichever timestamp is newer\": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same 15-minute window, and whichever wrote last wins with no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.\n\n## Resolving a conflict\n\nThe issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.\n\n## Auto-commit, not auto-merge\n\nReconciled changes are committed straight to `main` by the workflow — no PR, no review gate, for either direction. That's deliberately different from how a normal content change to this repo works (see `CLAUDE.md` §7, \"ask before committing when the change is substantive\"). It's safe here specifically because:\n\n- The only things a sync run can touch are the markdown docs and Sheets explicitly listed in the manifest — nothing structural, nothing with an ID scheme to corrupt.\n- Every commit is a plain content diff, fully revertable with `git revert`.\n- The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.\n\nIf a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.\n\n## Adding a new synced document\n\n1. Add a row to `data/drive-links.csv`: a fresh `DRV-NN` ID, `Repo_Path` set, `Drive_ID` blank, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`.\n2. Either wait for the next scheduled run, or trigger the workflow manually (Actions tab → Drive sync → Run workflow).\n3. The row fills itself in — `Drive_ID`, both baseline hashes, `Last_Synced_At`, `Status: Synced`.\n\n## Cadence and its tradeoff\n\nThe workflow polls every ~15 minutes rather than reacting to a Drive push notification. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep. Fifteen-minute polling gets nearly all the same practical benefit (nobody is watching a doc update in real time) at zero hosting cost and nothing to renew. If that latency ever actually matters, revisiting this is a self-contained change — it doesn't require touching the reconciliation logic, only the trigger.\n\n## One-time setup (already done for this repo)\n\n1. A Google Cloud project with the Drive API (and Sheets API, for the `sheet` path) enabled — no billing account required.\n2. A service account (`sfv-drive-sync-bot@sustainable-finance-venture.iam.gserviceaccount.com`) with a JSON key.\n3. That service account invited as **Editor** on the master Drive folder — this is what actually grants access; the key alone gets nowhere without it.\n4. The key stored as the `GDRIVE_SA_KEY` GitHub Actions secret on this repo.\n5. Repo Settings → Actions → General → Workflow permissions set to **Read and write permissions**, so the workflow's `GITHUB_TOKEN` can push to `main` and open issues.\n\nSetting this up again from scratch (a new project, a rotated key) is the same five steps.\n"
+   "words": 1693,
+   "body": "# Drive sync — bidirectional, automated, repo stays the source of truth\n\n**Status:** v1 — narrative docs only · **Last updated:** 2026-08-05\n\n## What this is, and what it isn't\n\nThe **Drive Vault** (`docs/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.\n\nThe point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:\n\n**Reconciliation is mechanical, not editorial.** A script compares hashes against the last-synced baseline and moves content in whichever direction actually changed. There is no model in this loop and no judgment call about which version is \"better\" — if both sides changed since the last sync, the script does not guess; it stops and flags it for a human.\n\n## Architecture\n\n```\ndata/drive-links.csv  ── manifest: one row per synced item ─┐\n                                                              │\nscripts/sync_drive.py ── the reconciliation engine ──────────┤\n  (service-account auth, hash comparison, pull/push/conflict) │\n                                                              │\n.github/workflows/sync-drive.yml ── runs it on a timer ──────┘\n  (every ~15 min + manual dispatch, commits straight to main)\n\ndashboard/build.py reads data/drive-links.csv like any other tracker ─→\n  Resources tab: master folder link + every item, each linking out to\n  its Drive copy and its repo file.\n```\n\nNothing here talks to Claude. The workflow, the script, and the credential all live in this repo and GitHub's infrastructure; an AI agent might *write* the manifest row for a new doc, same as any other repo edit, but the reconciliation itself runs unattended.\n\n## The manifest — `data/drive-links.csv`\n\nOne row per synced item, plus one `folder`-type row for the master Drive folder itself (used only for navigation, never reconciled).\n\n| Column | Meaning |\n|---|---|\n| `ID` | Stable ID, `DRV-NN`. Never reused, same rule as every other tracker. |\n| `Drive_ID` | The Drive file/folder ID. Blank means \"not created yet\" — the next sync run creates it from the repo file. |\n| `Repo_Path` | The repo file this row reconciles with. Blank for the folder row. |\n| `Type` | `folder` (navigation only) · `doc` (Google Doc ↔ markdown) · `sheet` (Google Sheet ↔ CSV). |\n| `Parent_ID` | The `ID` of the folder row a new file gets created inside. |\n| `Title` | Display title — also the Doc/Sheet's name when it's first created. |\n| `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |\n| `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |\n| `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |\n| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. |\n\n## The reconciliation algorithm\n\nEvery run, for every non-folder row, the script computes the current hash of both sides and compares each against its stored baseline — not against each other directly:\n\n| Drive vs. baseline | Repo vs. baseline | Result |\n|---|---|---|\n| unchanged | unchanged | nothing to do |\n| changed | unchanged | **pull** — Drive was edited, overwrite the repo file |\n| unchanged | changed | **push** — the repo was edited, overwrite the Drive file |\n| changed | changed, but Drive now equals repo | not a real conflict — both sides independently landed on the same content; just re-baseline |\n| changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |\n| — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious \"changed\" on the very next run) |\n\nWhy compare against a stored baseline instead of just \"whichever timestamp is newer\": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same 15-minute window, and whichever wrote last wins with no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.\n\n## Resolving a conflict\n\nThe issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.\n\n## Auto-commit, not auto-merge\n\nReconciled changes are committed straight to `main` by the workflow — no PR, no review gate, for either direction. That's deliberately different from how a normal content change to this repo works (see `CLAUDE.md` §7, \"ask before committing when the change is substantive\"). It's safe here specifically because:\n\n- The only things a sync run can touch are the markdown docs and Sheets explicitly listed in the manifest — nothing structural, nothing with an ID scheme to corrupt.\n- Every commit is a plain content diff, fully revertable with `git revert`.\n- The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.\n\nIf a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.\n\n## Known constraint: the service account can't create new files\n\nA standalone Google service account — one not backed by a Google Workspace organization with a **Shared Drive** — has **zero Drive storage quota of its own**. Editing a file it doesn't own costs it nothing (the file's storage counts against whoever owns it), but *creating* a new file makes the service account the owner by default, and Google rejects that with `storageQuotaExceeded` even though it has full Editor access to the folder. This isn't a permissions bug; it surfaced on the very first live run of this system (every one of the 32 initial docs failed to create, cleanly, with that exact error, while everything else — auth, the commit, the push — worked).\n\nShared Drives fix this properly (files there are owned by the Shared Drive, not any one account), but Shared Drives are a Workspace-only feature, unavailable on a plain Google account. So for a plain account, the practical rule is:\n\n**New files must be created by a real account with its own quota, then the service account only ever edits what already exists.** The initial 32 docs were seeded this way (via an authenticated Drive connection to the folder owner's real account) rather than through the automated workflow.\n\n## Adding a new synced document\n\nBecause of the constraint above, adding a new synced doc is a two-step, not a one-step:\n\n1. **Create the Doc yourself first** — either directly in Drive (File → New → Google Doc, inside the workfolder), or by asking an agent with a real (non-service-account) Drive connection to create it from the repo file's content. Either way, note the resulting file's ID from its URL (`docs.google.com/document/d/<ID>/edit`).\n2. **Add a row to `data/drive-links.csv`** with that `Drive_ID` already filled in — a fresh `DRV-NN` ID, `Repo_Path` set, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`, baseline hash columns left blank.\n3. Trigger the workflow (scheduled, or Actions tab → Drive sync → Run workflow). Since `Drive_ID` is no longer blank, the script treats this as a normal reconciliation, not a creation — it'll see one side changed relative to a blank baseline and sync accordingly, filling in the baseline hashes and `Status: Synced`.\n\nLeaving `Drive_ID` blank and letting the workflow create it will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive.\n\n## Cadence and its tradeoff\n\nThe workflow polls every ~15 minutes rather than reacting to a Drive push notification. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep. Fifteen-minute polling gets nearly all the same practical benefit (nobody is watching a doc update in real time) at zero hosting cost and nothing to renew. If that latency ever actually matters, revisiting this is a self-contained change — it doesn't require touching the reconciliation logic, only the trigger.\n\n## One-time setup (already done for this repo)\n\n1. A Google Cloud project with the Drive API (and Sheets API, for the `sheet` path) enabled — no billing account required.\n2. A service account (`sfv-drive-sync-bot@sustainable-finance-venture.iam.gserviceaccount.com`) with a JSON key.\n3. That service account invited as **Editor** on the master Drive folder — this is what actually grants access; the key alone gets nowhere without it.\n4. The key stored as the `GDRIVE_SA_KEY` GitHub Actions secret on this repo.\n5. Repo Settings → Actions → General → Workflow permissions set to **Read and write permissions**, so the workflow's `GITHUB_TOKEN` can push to `main` and open issues.\n\nSetting this up again from scratch (a new project, a rotated key) is the same five steps.\n"
   },
   {
    "path": "docs/drive-vault.md",
@@ -9979,7 +9983,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 44543
+   "totalWords": 44878
   }
  }
 };
