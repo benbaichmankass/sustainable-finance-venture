@@ -42,6 +42,7 @@ TABLES = {
     "resources": "data/resources.csv",
     "experiments": "data/experiments.csv",
     "funders": "data/funders.csv",
+    "driveLinks": "data/drive-links.csv",
 }
 
 # --- private overlay ---------------------------------------------------------

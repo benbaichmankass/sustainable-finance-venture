@@ -1,0 +1,64 @@
+name: Drive sync
+
+# Reconciles data/drive-links.csv against Google Drive in both directions -
+# see docs/drive-sync.md for the full design. No model in the loop: this is
+# a deterministic script (scripts/sync_drive.py) run on a timer.
+
+on:
+  schedule:
+    # Four times an hour, off the congested :00/:15/:30/:45 marks (see the
+    # same reasoning in pages.yml's cron comment).
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: drive-sync
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Fail if any private file was committed
+        run: |
+          set -e
+          if git ls-files private/ | grep -vE '^private/(README\.md|.*\.example\.csv)$'; then
+            echo "::error::A file under private/ is tracked by git. See docs/publishing.md."
+            exit 1
+          fi
+
+      - name: Install script dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Reconcile Drive <-> repo
+        env:
+          GDRIVE_SA_KEY: ${{ secrets.GDRIVE_SA_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/sync_drive.py
+
+      - name: Rebuild dashboard data
+        run: python3 dashboard/build.py --public
+
+      - name: Commit and push if anything changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/drive-links.csv dashboard/data.js docs literature/notes product-design risk-tools
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "drive-sync: reconcile ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+          git push

@@ -8,6 +8,8 @@ This matters more than it would in a private repo, because **this repo is intend
 
 **Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.
 
+**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.
+
 ## The rule
 
 | Put it in the **repo** | Put it in the **Vault** |
