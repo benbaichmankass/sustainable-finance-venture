@@ -53,7 +53,7 @@ The whole point is longevity. This project will be picked up intermittently over
 
 The tab list is a **left sidebar**, not a top bar — with 13 tabs a horizontal strip was starting to require scrolling to find the later ones, and a sidebar scales to more tabs without that. It sticks just below the header (`--header-h`, measured from the header's real rendered height in JS since the header wraps at some widths — see `syncHeaderHeight()`), with its own scroll region so a long tab list never pushes the page taller than the viewport.
 
-Below 900px wide, the sidebar flattens back into a horizontal scrolling bar directly under the header — the same shape the nav had before it became a sidebar. This is a CSS-only change (`@media (max-width: 900px)` in the stylesheet); the markup and the tab-switching JS are identical at every width.
+Below 900px wide, the sidebar becomes a **slide-in drawer** instead of staying on-screen: off-canvas by default, opened by a hamburger button in the header (`#nav-toggle`, itself hidden above 900px), dismissed by tapping the backdrop, picking a tab, pressing Escape, or resizing back past the breakpoint. This was a horizontal scrolling tab bar in an earlier version, but that doesn't scale any better than the old top bar did once there are enough tabs to require scrolling to find one — a drawer keeps the same full vertical list mobile gets on desktop, just off-screen until asked for.
 
 ## Document export
 
