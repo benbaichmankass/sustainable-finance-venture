@@ -1246,6 +1246,14 @@ function renderLibrary() {
   var docs = D.docs || [];
   var cats = [];
   docs.forEach(function (d) { if (cats.indexOf(d.category) < 0) cats.push(d.category); });
+  /* Docs mirrored to the Drive workfolder (see the Resources tab and
+     docs/drive-sync.md) get a live "open in Drive" link instead of a DOCX
+     download - the point of the sync is that Drive copy stays editable and
+     current, so it is strictly more useful than a static export. Docs with
+     no Drive mapping yet (or none intended - archive/, AI skills) keep the
+     DOCX button as before. */
+  var driveByPath = {};
+  (D.driveLinks || []).forEach(function (r) { if (r.Repo_Path) driveByPath[r.Repo_Path] = r; });
 
   var html = '<section class="panel"><h2>Library</h2>' +
     '<p class="lede">Every document in the repo, in full. Click a title to read it inline. Search covers the complete text ' +
@@ -1270,6 +1278,11 @@ function renderLibrary() {
       cnt.textContent = shown.length + " of " + docs.length + " documents";
       list.innerHTML = shown.length ? shown.map(function (d) {
         var i = docs.indexOf(d);
+        var dl = driveByPath[d.path];
+        var middleBtn = (dl && dl.Drive_ID)
+          ? '<a class="dl-btn" href="' + esc(driveDocUrl(dl)) + '" target="_blank" rel="noopener noreferrer" ' +
+            'title="Open the live, editable copy in Google Drive">Drive ↗</a>'
+          : '<button type="button" class="dl-btn" data-fmt="docx" data-doc="' + i + '" title="Download as Word (.docx)">DOCX</button>';
         return '<div class="doc"><div class="doc-head" data-doc="' + i + '">' +
           '<span class="dt">' + esc(d.title) +
             (d.summary ? '<div class="ds">' + esc(d.summary) + "</div>" : "") + "</span>" +
@@ -1277,7 +1290,7 @@ function renderLibrary() {
           '<span class="dw">' + d.words.toLocaleString() + " words</span>" +
           '<span class="doc-actions">' +
             '<button type="button" class="dl-btn" data-fmt="md" data-doc="' + i + '" title="Download as Markdown">MD</button>' +
-            '<button type="button" class="dl-btn" data-fmt="docx" data-doc="' + i + '" title="Download as Word (.docx)">DOCX</button>' +
+            middleBtn +
             '<button type="button" class="dl-btn" data-fmt="pdf" data-doc="' + i + '" title="Download as PDF">PDF</button>' +
           "</span></div>" +
           '<div class="doc-body" data-body="' + i + '" hidden><div class="md">' + renderMd(d.body) + "</div></div></div>";
