@@ -693,12 +693,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-05",
+   "As_Of": "2026-08-06",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -713,7 +713,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -721,14 +721,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "2.96",
+   "Value": "2.94",
    "Unit": "pp",
-   "As_Of": "2026-08-04",
-   "Chg_1m": "-0.15",
-   "Chg_3m": "-0.23",
+   "As_Of": "2026-08-05",
+   "Chg_1m": "-0.18",
+   "Chg_3m": "-0.25",
    "Chg_12m": "-0.38",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -743,7 +743,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -751,14 +751,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4672",
+   "Value": "3.4774",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-08-05",
-   "Chg_1m": "0.0258",
-   "Chg_3m": "0.0277",
-   "Chg_12m": "-0.4195",
+   "As_Of": "2026-08-06",
+   "Chg_1m": "0.0177",
+   "Chg_3m": "0.0594",
+   "Chg_12m": "-0.4037",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -773,7 +773,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -796,14 +796,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.001",
+   "Value": "3.013",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-05",
-   "Chg_1m": "0.005",
-   "Chg_3m": "0.05",
-   "Chg_12m": "-0.354",
+   "As_Of": "2026-08-06",
+   "Chg_1m": "0.007",
+   "Chg_3m": "0.065",
+   "Chg_12m": "-0.315",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -828,12 +828,12 @@ window.SFV_DATA = {
    "Label": "US 10-year Treasury yield",
    "Value": "4.63",
    "Unit": "%",
-   "As_Of": "2026-08-04",
-   "Chg_1m": "0.14",
-   "Chg_3m": "0.21",
-   "Chg_12m": "0.25",
+   "As_Of": "2026-08-05",
+   "Chg_1m": "0.15",
+   "Chg_3m": "0.23",
+   "Chg_12m": "0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -848,7 +848,7 @@ window.SFV_DATA = {
    "Chg_3m": "-35.26",
    "Chg_12m": "19.73",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T09:08:10+00:00",
+   "Fetched_At": "2026-08-06T22:02:46+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -3278,9 +3278,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Dashboard — design plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "203cdece06fe031be15dab73fefaae094de34f82fa6ff870201d272fb6200644",
-   "Baseline_Repo_Hash": "64f942d0347a3823b59465fe1ca947e4723f82a73f691948a9d2d85e4f2a0d9d",
-   "Last_Synced_At": "2026-08-05T10:17:15Z",
+   "Baseline_Drive_Hash": "68ac29e88f7d546a1f21f40cefbeddb8c062d1cb41371f483ddf3d26c4ab50f5",
+   "Baseline_Repo_Hash": "a7ad6d56d92cb1dd7c9d4f07e802c17d1ad58f2924c2d440812377a5d6ac3594",
+   "Last_Synced_At": "2026-08-06T22:39:30Z",
    "Status": "Synced"
   },
   {
@@ -3291,9 +3291,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The Drive Vault — where non-repo artifacts live",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "bfbe133b5ca6fca0d885ca3e7741b2faef330ffae6aecdb422791a251dec1ef0",
-   "Baseline_Repo_Hash": "3735240a6fe67a700b8ff4883ffe53cab14d88923e7c7ab3aabf37ef6421bb83",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
+   "Baseline_Repo_Hash": "fb5f87867c4c9052bda7ad10b34dca76a49e3091fa7834bcf9fdcf52b3c95acc",
+   "Last_Synced_At": "2026-08-06T22:39:33Z",
    "Status": "Synced"
   },
   {
@@ -3304,9 +3304,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Grant & Funding Plan for Research Experiments",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "c1c6c5e19611993720c19e12a413fe13638501d074703c9df4386ab13ee3ecac",
-   "Baseline_Repo_Hash": "686c1321ca29f9dbce9c90e5eea5f14d04bccf5fbd6595e3a56de7032daae500",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "e9c7edb4d992205497366509edb842c4a41ffda19174f6c354d1424a20223f13",
+   "Baseline_Repo_Hash": "f3f08685ba477c7da7ac3f555a8869d3b395612f8668e37e76ca498e037fac68",
+   "Last_Synced_At": "2026-08-06T22:39:36Z",
    "Status": "Synced"
   },
   {
@@ -3330,9 +3330,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Methodology: Measuring the SDG Impact of the Financial Products",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "d2af2322e8a688e0ec497c892d49b5c3fc5279540b52ed8a5b6f9a332dc484ea",
-   "Baseline_Repo_Hash": "bccb9188bbeeead6ba127fbc464d626fb47bf2e2546d7b17bba463fcdf2dc0d8",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "6bfdae72369747e5ef7e0de9aa369ac64877f1f1ff1e5191f2156f99052e3074",
+   "Baseline_Repo_Hash": "6f636e72b0ff647b77b50ee9391697c1db2792abb3f2b694e0aa17923d0c80e6",
+   "Last_Synced_At": "2026-08-06T22:39:41Z",
    "Status": "Synced"
   },
   {
@@ -3343,9 +3343,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "506684250707f764027ed0d323066e4759c1e2844f5ef597a32764ae74700820",
-   "Baseline_Repo_Hash": "7d654082684aae008136a13dad2aab4875f3f54ac186812a17fce261ea41af03",
-   "Last_Synced_At": "2026-08-05T10:17:23Z",
+   "Baseline_Drive_Hash": "a5909e811d3c7982de210f173acc349888a40c01eb703d3c5d4a6a7f0556f8e2",
+   "Baseline_Repo_Hash": "83ef9237582296c4077c0bf1e49b0b4d2809a9452612a5ab014b6f5d3d8d5c8c",
+   "Last_Synced_At": "2026-08-06T22:39:44Z",
    "Status": "Synced"
   },
   {
@@ -3408,9 +3408,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The private overlay — collaborator onboarding",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "dc7ec011e86448e2db157de1e7c4f730a1885ba4073e4939ee56eba25d583136",
-   "Baseline_Repo_Hash": "fe8ce45eaca983a83d87a17390e41ce1089735cec79174826c38876c3fd7b4ac",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "7aebe4d4f1abc104c05c73395e48aaf7be29c4a32c439819f19f7bd262853b21",
+   "Baseline_Repo_Hash": "146e4d7353953e42505dd8a24d8866eebd269dbf68931e008e3da0bccb2002cd",
+   "Last_Synced_At": "2026-08-06T22:39:52Z",
    "Status": "Synced"
   },
   {
@@ -3421,9 +3421,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Publishing — what's public, what's private, and how the two connect",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "1f7c06f871d2d02fd68d64ffc6b7c5c0d5b8688fc501011fd64d3ba39904f923",
-   "Baseline_Repo_Hash": "1f7c06f871d2d02fd68d64ffc6b7c5c0d5b8688fc501011fd64d3ba39904f923",
-   "Last_Synced_At": "2026-08-06T12:14:27Z",
+   "Baseline_Drive_Hash": "28ac8f45a87123c6e45e32c1be4e48b863d9dd2499230242a4fdd2a6e3092507",
+   "Baseline_Repo_Hash": "a576e38f0b510fe2f642a20caa214dfc0e7b5c151de032adbe7ba93ebd25a1b3",
+   "Last_Synced_At": "2026-08-06T22:39:56Z",
    "Status": "Synced"
   },
   {
@@ -3447,9 +3447,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Proposal Framework",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "04bb34542897bb83ece33a613499ce838a5f76f46e11baabcc44d809626a4b54",
-   "Baseline_Repo_Hash": "8f7c120cce586bb74441e1fb3b8621c32e4b9016da6c2b2f98cf306646273b5f",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "d2ec1cf8be5eddd69fe92c3d094b6074b5a7cf56b93ce8e8e0abf61fb76997f9",
+   "Baseline_Repo_Hash": "e57dc83115b4353763de92fbaebcbfa3100aef20116439404ce242a568677ce9",
+   "Last_Synced_At": "2026-08-06T22:40:00Z",
    "Status": "Synced"
   },
   {
@@ -3668,9 +3668,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "RT-6 — Unit-economics model",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "65a28acf903a744f2cd31029cceada7bc8f8577cde063b65c6ad6c6a7e6d3951",
-   "Baseline_Repo_Hash": "65a28acf903a744f2cd31029cceada7bc8f8577cde063b65c6ad6c6a7e6d3951",
-   "Last_Synced_At": "2026-08-06T14:40:08Z",
+   "Baseline_Drive_Hash": "8e4fed7104ac5ba37138724f44e3288d67649ee89a04042ad3c82c935f286382",
+   "Baseline_Repo_Hash": "8e4fed7104ac5ba37138724f44e3288d67649ee89a04042ad3c82c935f286382",
+   "Last_Synced_At": "2026-08-06T22:40:17Z",
    "Status": "Synced"
   },
   {
@@ -3681,9 +3681,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Minimum viable origination schema for future poolability",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "ccce871f5c074430bc74a2a4bec6563b8442538b595eb1bc5d608b7ec8000c0a",
-   "Baseline_Repo_Hash": "ccce871f5c074430bc74a2a4bec6563b8442538b595eb1bc5d608b7ec8000c0a",
-   "Last_Synced_At": "2026-08-06T14:40:09Z",
+   "Baseline_Drive_Hash": "fef308370f2867231f601961cffee73b860ab8f94c66a135d69b850c006d0861",
+   "Baseline_Repo_Hash": "fef308370f2867231f601961cffee73b860ab8f94c66a135d69b850c006d0861",
+   "Last_Synced_At": "2026-08-06T22:40:18Z",
    "Status": "Synced"
   },
   {
@@ -3697,7 +3697,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "ce3f06b2efb2640b2199fbdc70ebc9efb0c330b46c44a5d0cf57aa512669da7b",
    "Baseline_Repo_Hash": "3906435ab9149a204555ea81cfdd07f43af33e6375a422af11fe34cd62c080b9",
    "Last_Synced_At": "2026-08-06T18:09:34Z",
-   "Status": "Synced"
+   "Status": "Conflict"
   }
  ],
  "macroSeries": {
@@ -4275,7 +4275,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-05",
+    "2026-08-06",
     3.75
    ]
   ],
@@ -5537,8 +5537,8 @@ window.SFV_DATA = {
     2.99
    ],
    [
-    "2026-08-04",
-    2.96
+    "2026-08-05",
+    2.94
    ]
   ],
   "MAC-06": [
@@ -7271,8 +7271,8 @@ window.SFV_DATA = {
     3.5114
    ],
    [
-    "2026-08-05",
-    3.4672
+    "2026-08-06",
+    3.4774
    ]
   ],
   "MAC-13": [
@@ -7849,8 +7849,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-05",
-    3.001
+    "2026-08-06",
+    3.013
    ]
   ],
   "MAC-14": [
@@ -9005,7 +9005,7 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-08-04",
+    "2026-08-05",
     4.63
    ]
   ],
@@ -9907,7 +9907,7 @@ window.SFV_DATA = {
    "title": "Minimum viable origination schema for future poolability",
    "summary": "",
    "words": 873,
-   "body": "# Minimum viable origination schema for future poolability\n\n**Schema:** rt-1-origination-schema.csv · **Version 0.1** · **Status: v0, not yet field-tested**\n\n## The philosophy\n\nThis schema exists to answer one question: **what must be captured at origination so that a pool of these assets is legible to an investor later, without retrofitting?**\n\nEverything follows from a single asymmetry. Most mistakes in this project are recoverable — a wrong assumption in the business plan gets revised, a bad literature summary gets corrected. **A field not captured at origination is gone forever.** You cannot go back to a village in 2029 and ask what a borrower's savings balance was on the day of a 2027 disbursement. A field added in year two produces a portfolio with two years of nulls, which to a rating agency is a portfolio with no history.\n\nSo the design rule is not \"capture everything useful.\" It is **capture everything irreplaceable, and nothing else.**\n\n## Three constraints, one of them binding\n\n**1\\. ABS legibility.** The end state is a loan-level data tape an investor will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they are a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised records, delegated to local authorities and NGOs. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already gets.\n\n**3\\. Privacy.** Personal data lives in the Vault, never the repo. The schema separates a stable pseudonymous ID from the identifying record, so analysis and pooling run on the pseudonymous layer alone.\n\n**Constraint 2 is binding.** It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting. Every field here was tested against the question \"could a group secretary record this, in a meeting, without a laptop?\" Fields that failed are not in the schema, however useful they would have been.\n\nThat is why there is no GPS coordinate, no exact date of birth, no itemised household income, and no free-text notes field.\n\n## What \"minimum viable\" cost us\n\nDeliberate omissions, recorded so they are choices rather than oversights:\n\n| Not captured | Why not |\n| :---- | :---- |\n| Exact location (GPS/village) | Identifies a group. admin1 is required and admin2 optional; that is enough to model a regional drought without exposing anyone. |\n| Exact date of birth | Age bands give the cohort analysis its value with none of the identifiability. |\n| Household income | Not reliably measurable in a meeting. A number that is collected but wrong is worse than a gap, because it gets modelled. |\n| Free-text notes | Unpoolable. Anything worth analysing gets an enum or it does not get captured. |\n| Detailed impact outcomes | Belongs to RT-4 under a pre-registered design, not to origination. Collecting outcome data casually is how impact claims lose credibility. |\n\n## The two things that carry the most weight\n\n**The event table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.\n\n**schema\\_version on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.\n\n## Reading the schema file\n\n| Column |  |\n| :---- | :---- |\n| Entity | Which table: originator, group, member, loan, event |\n| Required | required fields block a record; optional fields are collected where cheap |\n| Capture | origination (fixed at disbursement), updated (changes over time), derived (computed, never entered) |\n| Privacy | public · private (pseudonymous, repo-safe) · sensitive (aggregate only, never row-level) · derived |\n| Critical\\_Path | yes \\= cannot be reconstructed later. **These are the fields worth arguing about.** |\n| Validation | The rule validate\\_schema.py enforces |\n| Why\\_It\\_Matters | Why the field earns its place. A field that cannot fill this column should not exist. |\n\n45 of 57 fields are critical path. That ratio is high on purpose: a field that *can* be reconstructed later is a field that does not need to be in a v0 schema.\n\n## Status and what would change it\n\nThis is **v0**. It has been designed against the literature and validated for internal consistency — it has **not** been tested with a real group, and no field data has been collected against it.\n\nWhat would move it to v1:\n\n1. A group secretary completing a full cycle of records with it, and telling us which fields they skipped.  \n2. A SAVIX mapping exercise — if existing MIS data maps in cleanly, the pilot cohort could be hundreds of groups rather than twenty.  \n3. A structuring conversation confirming these fields are what an investor would actually want (PT-08).\n\nUntil then, treat the field list as a serious proposal, not a settled contract.  \n"
+   "body": "# Minimum viable origination schema for future poolability\n\n**Schema:** `rt-1-origination-schema.csv` · **Version 0.1** · **Status: v0, not yet field-tested**\n\n## The philosophy\n\nThis schema exists to answer one question: **what must be captured at origination so that a pool of these assets is legible to an investor later, without retrofitting?**\n\nEverything follows from a single asymmetry. Most mistakes in this project are recoverable — a wrong assumption in the business plan gets revised, a bad literature summary gets corrected. **A field not captured at origination is gone forever.** You cannot go back to a village in 2029 and ask what a borrower's savings balance was on the day of a 2027 disbursement. A field added in year two produces a portfolio with two years of nulls, which to a rating agency is a portfolio with no history.\n\nSo the design rule is not \"capture everything useful.\" It is **capture everything irreplaceable, and nothing else.**\n\n## Three constraints, one of them binding\n\n**1\\. ABS legibility.** The end state is a loan-level data tape an investor will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they are a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised records, delegated to local authorities and NGOs. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already gets.\n\n**3\\. Privacy.** Personal data lives in the Vault, never the repo. The schema separates a stable pseudonymous ID from the identifying record, so analysis and pooling run on the pseudonymous layer alone.\n\n**Constraint 2 is binding.** It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting. Every field here was tested against the question \"could a group secretary record this, in a meeting, without a laptop?\" Fields that failed are not in the schema, however useful they would have been.\n\nThat is why there is no GPS coordinate, no exact date of birth, no itemised household income, and no free-text notes field.\n\n## What \"minimum viable\" cost us\n\nDeliberate omissions, recorded so they are choices rather than oversights:\n\n| Not captured | Why not |\n| :---- | :---- |\n| Exact location (GPS/village) | Identifies a group. `admin1` is required and `admin2` optional; that is enough to model a regional drought without exposing anyone. |\n| Exact date of birth | Age bands give the cohort analysis its value with none of the identifiability. |\n| Household income | Not reliably measurable in a meeting. A number that is collected but wrong is worse than a gap, because it gets modelled. |\n| Free-text notes | Unpoolable. Anything worth analysing gets an enum or it does not get captured. |\n| Detailed impact outcomes | Belongs to RT-4 under a pre-registered design, not to origination. Collecting outcome data casually is how impact claims lose credibility. |\n\n## The two things that carry the most weight\n\n**The `event` table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.\n\n**`schema_version` on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.\n\n## Reading the schema file\n\n| Column |  |\n| :---- | :---- |\n| `Entity` | Which table: `originator`, `group`, `member`, `loan`, `event` |\n| `Required` | `required` fields block a record; `optional` fields are collected where cheap |\n| `Capture` | `origination` (fixed at disbursement), `updated` (changes over time), `derived` (computed, never entered) |\n| `Privacy` | `public` · `private` (pseudonymous, repo-safe) · `sensitive` (aggregate only, never row-level) · `derived` |\n| `Critical_Path` | `yes` \\= cannot be reconstructed later. **These are the fields worth arguing about.** |\n| `Validation` | The rule `validate_schema.py` enforces |\n| `Why_It_Matters` | Why the field earns its place. A field that cannot fill this column should not exist. |\n\n45 of 57 fields are critical path. That ratio is high on purpose: a field that *can* be reconstructed later is a field that does not need to be in a v0 schema.\n\n## Status and what would change it\n\nThis is **v0**. It has been designed against the literature and validated for internal consistency — it has **not** been tested with a real group, and no field data has been collected against it.\n\nWhat would move it to v1:\n\n1. A group secretary completing a full cycle of records with it, and telling us which fields they skipped.  \n2. A SAVIX mapping exercise — if existing MIS data maps in cleanly, the pilot cohort could be hundreds of groups rather than twenty.  \n3. A structuring conversation confirming these fields are what an investor would actually want (PT-08).\n\nUntil then, treat the field list as a serious proposal, not a settled contract.  \n"
   },
   {
    "path": "risk-tools/README.md",
@@ -9997,7 +9997,7 @@ window.SFV_DATA = {
    "title": "Unit-economics model",
    "summary": "",
    "words": 1445,
-   "body": "# RT-6 — Unit-economics model\n\n**Status:** In development · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Blocked by:** nothing to run against synthetic assumptions; calibration blocked on partner/counsel data **Code:** risk-tools/tools/economics\\_model.py · **Config:** risk-tools/tools/economics-config.csv (drivers × 3 scenarios) · **Assets:** risk-tools/tools/economics-assets.csv\n\n## Purpose\n\nAnswer OQ-10: *is there a credible path to at-scale profitability for the structuring layer, at a scale we can realistically reach?* RT-6 is a deterministic, closed-form model of the **structuring company's own P\\&L**, run across three scenarios, with a check on whether the tranche stack clears the returns investors require.\n\nIt is the model the business-economics plan (product-design/business-economics.md) specified in §3 and now builds.\n\n## What it is\n\nA pair of computations, kept deliberately separate because they answer different questions and because the OQ-10 framing (locked 2026-08-02) turns on the distinction:\n\n| Computation | Question | Role |\n| :---- | :---- | :---- |\n| deal\\_pnl / venture\\_ramp | Does the structuring company make money — per deal, and as a venture? | **The gate and the KPIs** |\n| structure\\_clears | Does the pool's spread pay the investor tranches after loss and fees? | **The binding constraint** |\n\n**The gate (go/no-go), set by BB 2026-08-02:** a credible path to the structuring layer **covering its own costs at a reachable scale, within gate\\_horizon\\_years (3)**. This is a venture-level break-even test. It is *not* the pilot-breakeven yardstick — that asks the same of a single pilot pool, is expected to fail, and rides alongside as a companion.\n\n**The KPIs we track (not the gate):** (1) steady-state **operating margin** (target 30%) and (2) **return on capital-at-risk** (target 15%, on the retained first-loss strip). The model reports each against its target, per scenario.\n\n**The binding constraint:** if the pool's spread cannot pay senior and mezzanine their coupons after expected loss and the originator's share, there is no deal to structure. Our fees sit ahead of the tranches in the waterfall, so our fee income is insulated from credit loss *while the deal clears* — and vanishes entirely when it does not. The model shows both.\n\n## What it is not\n\n**It is not RT-5.** RT-5 simulates the credit waterfall with a correlated Monte-Carlo loss model; it owns the loss distribution and the fixed-cost floor (OQ-2). RT-6 takes a loss *assumption* — a point estimate, sweepable, and readable straight off an RT-5 scenario — and asks the economics question on top of it. RT-5 answers \"does the structure survive\"; RT-6 answers \"does the business pay\". They share the fixed-cost logic and reach the same shape of OQ-2 answer from opposite sides.\n\n**It is not calibrated.** 5 of 23 drivers are SOURCED against open-access benchmarks; the other 18 are ASSUMED. Every output describes the *model*, not this asset class, while the assumed rows carry the load. No number here should be shown to an investor as a result.\n\n**It is not a forecast.** The three scenarios are coherent assumption sets, not probability-weighted views.\n\n## The three scenarios\n\neconomics-config.csv carries Worst, Likely and Best value columns. **Sourced anchors are held fixed across all three** (a benchmark does not get more optimistic because we want it to); the scenarios flex only the assumed judgment calls — expected loss, the origination share, our fees and cost-to-serve, the fixed cost, deal size, ramp and overhead.\n\n### Sourced anchors (held fixed)\n\n| Driver | Value | Source |\n| :---- | :---- | :---- |\n| Portfolio gross yield | 20% | MFI portfolio yield, Africa \\~20% / global 19.2%, MIX 2017-18 (LIT-016) |\n| Senior coupon | 7% | near MIV wholesale yield 7.6%, Symbiotics 2019 (LIT-017) |\n| Junior/first-loss tranche | 15% | 10–20% range, LIT-013 / LIT-015 |\n| Retained economic interest | 5% | EU/UK risk-retention minimum, Memo 3 |\n| DFI mobilisation ratio | 1.8× private | Convergence (LIT-018); guarantees lead (LIT-019) |\n\nThe expected-loss and cost-to-serve **anchors** are also sourced (global PAR30 6.0% and OER 10.6% / Africa 14.5%, MIX 2017-18, LIT-016; MIV TER 2.4% / fee 1.2%, LIT-017), but the values the scenarios *use* are assumptions informed by them, so they sit in the flexed set.\n\n### What the model currently says (synthetic, illustrative)\n\nRunning economics\\_model.py on the committed config:\n\n|  | Worst | Likely | Best |\n| :---- | :---- | :---- | :---- |\n| Deal net margin (% of notional) | −0.95% | \\+1.9% | \\+4.1% |\n| Break-even pool size | \\~$38m | \\~$8.6m | \\~$3.2m |\n| Gate (cover costs within 3y) | **fail** | **pass** (yr 1\\) | **pass** (yr 1\\) |\n| KPI1 operating margin (t. 30%) | −101% | 34% | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | 16% | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | 8.7% (short) | 18% (clears) |\n\n**The reading.** Under the most-likely assumptions the gate passes and both KPIs are met — but the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss**. That is the blended-finance story stated as arithmetic, not asserted. The worst case is not a rounding-down of the likely case: it fails the clearing test outright (senior+mezz uncovered), which means no deal, not a thin one. The sensitivity grid shows why — our fee margin survives fee compression far better than it survives loss, because the real cliff is the pool ceasing to clear at \\~6% loss, not our margin thinning.\n\n**The companion yardstick.** On the flagship trio at pilot scale (EXP-01/02/06, economics-assets.csv), pilots sit **14–50× below break-even**. That is expected and is the same finding RT-5 reaches for the junior tranche: the warehousing bridge to scale is not an optimisation, it is the only path (OQ-2).\n\n## Running it\n\npython3 risk-tools/tools/economics\\_model.py               \\# all scenarios \\+ pilot, writes results CSV\n\npython3 risk-tools/tools/economics\\_model.py \\--scenario Likely\n\npython3 risk-tools/tools/economics\\_model.py \\--deal        \\# deal-level P\\&L per scenario\n\npython3 risk-tools/tools/economics\\_model.py \\--venture     \\# venture ramp per scenario\n\npython3 risk-tools/tools/economics\\_model.py \\--pilot       \\# flagship pilot-breakeven yardstick\n\npython3 risk-tools/tools/economics\\_model.py \\--sensitivity \\# loss × fee grid (Likely)\n\nHeadline metrics per scenario are written to data/rt6-economics-results.csv (committed) and surface on the dashboard's Business tab. Every row carries the basis mix (SOURCED 5/23 drivers; remainder ASSUMED).\n\n## Versioning\n\n| Bump | Means |\n| :---- | :---- |\n| Major | A change to the P\\&L definition or the gate/KPI methodology — prior outputs are not comparable |\n| Minor | A new driver, a new scenario column, an added output metric |\n| Patch | A numerical fix with no methodology change |\n\nEvery run prints its model version and the basis mix. **A margin without its assumptions is not a result** — this is the tool most likely to be quoted back in a conversation with an investor.\n\n### History\n\n| Date | Version | Change |\n| :---- | :---- | :---- |\n| 2026-08-02 | 0.1 | Initial build. Three-scenario deal \\+ venture P\\&L; gate \\= cover-costs-within-3y; KPIs \\= operating margin and return on capital-at-risk; pilot yardstick on the flagship trio; loss × fee sensitivity. Benchmarks sourced against MIX 2017-18, Symbiotics 2019, Convergence and OECD (LIT-016..019). |\n\n## Tests\n\nWired into risk-tools/tools/test\\_toolchain.py (CI):\n\n- **P\\&L identity** — revenue − cost \\= net margin, to the cent, every scenario.  \n- **Economies of scale** — a larger pool never earns a smaller net margin (fixed cost is diluted, everything else scales linearly).  \n- **Scenario ordering** — Best ≥ Likely ≥ Worst on deal net margin as a share of notional.  \n- **Gate consistency** — the gate flag matches the break-even year against the horizon.\n\n## Open questions\n\n- **The five sourced anchors are the floor, not the ceiling.** 18 drivers remain assumed. The two that swing the answer most and are hardest to source: the **origination-layer share of the spread** (needs partner MIS, PT-03/PT-04) and the **fixed structuring cost per deal** (needs counsel, PT-09 — no open-access benchmark exists for this, so it stays a we-assume). See business-economics.md §4.  \n- **The junior hurdle is the whole blended-finance question.** At 10% the Likely deal is short; at a commercial 15%+ it is far short. What return the DFI/first-loss layer will actually accept (OQ-6) decides whether the deal clears.  \n- **Should the loss assumption be driven off RT-5 directly?** Today it is a config value informed by PAR benchmarks. Wiring RT-6 to read an RT-5 scenario's mean/p95 loss would tie the two tools together — a candidate for v0.2.  \n- **Weighted life and revolving pools.** The model treats the pool as a single-life structure; a revolving warehouse that recycles principal several times per year would change the fee base materially. Worth modelling once the warehouse design (M-22) firms up.\n\n"
+   "body": "# RT-6 — Unit-economics model\n\n**Status:** In development · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Blocked by:** nothing to run against synthetic assumptions; calibration blocked on partner/counsel data **Code:** `risk-tools/tools/economics_model.py` · **Config:** `risk-tools/tools/economics-config.csv` (drivers × 3 scenarios) · **Assets:** `risk-tools/tools/economics-assets.csv`\n\n## Purpose\n\nAnswer OQ-10: *is there a credible path to at-scale profitability for the structuring layer, at a scale we can realistically reach?* RT-6 is a deterministic, closed-form model of the **structuring company's own P\\&L**, run across three scenarios, with a check on whether the tranche stack clears the returns investors require.\n\nIt is the model the business-economics plan (`product-design/business-economics.md`) specified in §3 and now builds.\n\n## What it is\n\nA pair of computations, kept deliberately separate because they answer different questions and because the OQ-10 framing (locked 2026-08-02) turns on the distinction:\n\n| Computation | Question | Role |\n| :---- | :---- | :---- |\n| `deal_pnl` / `venture_ramp` | Does the structuring company make money — per deal, and as a venture? | **The gate and the KPIs** |\n| `structure_clears` | Does the pool's spread pay the investor tranches after loss and fees? | **The binding constraint** |\n\n**The gate (go/no-go), set by BB 2026-08-02:** a credible path to the structuring layer **covering its own costs at a reachable scale, within `gate_horizon_years` (3)**. This is a venture-level break-even test. It is *not* the pilot-breakeven yardstick — that asks the same of a single pilot pool, is expected to fail, and rides alongside as a companion.\n\n**The KPIs we track (not the gate):** (1) steady-state **operating margin** (target 30%) and (2) **return on capital-at-risk** (target 15%, on the retained first-loss strip). The model reports each against its target, per scenario.\n\n**The binding constraint:** if the pool's spread cannot pay senior and mezzanine their coupons after expected loss and the originator's share, there is no deal to structure. Our fees sit ahead of the tranches in the waterfall, so our fee income is insulated from credit loss *while the deal clears* — and vanishes entirely when it does not. The model shows both.\n\n## What it is not\n\n**It is not RT-5.** RT-5 simulates the credit waterfall with a correlated Monte-Carlo loss model; it owns the loss distribution and the fixed-cost floor (OQ-2). RT-6 takes a loss *assumption* — a point estimate, sweepable, and readable straight off an RT-5 scenario — and asks the economics question on top of it. RT-5 answers \"does the structure survive\"; RT-6 answers \"does the business pay\". They share the fixed-cost logic and reach the same shape of OQ-2 answer from opposite sides.\n\n**It is not calibrated.** 5 of 23 drivers are `SOURCED` against open-access benchmarks; the other 18 are `ASSUMED`. Every output describes the *model*, not this asset class, while the assumed rows carry the load. No number here should be shown to an investor as a result.\n\n**It is not a forecast.** The three scenarios are coherent assumption sets, not probability-weighted views.\n\n## The three scenarios\n\n`economics-config.csv` carries `Worst`, `Likely` and `Best` value columns. **Sourced anchors are held fixed across all three** (a benchmark does not get more optimistic because we want it to); the scenarios flex only the assumed judgment calls — expected loss, the origination share, our fees and cost-to-serve, the fixed cost, deal size, ramp and overhead.\n\n### Sourced anchors (held fixed)\n\n| Driver | Value | Source |\n| :---- | :---- | :---- |\n| Portfolio gross yield | 20% | MFI portfolio yield, Africa \\~20% / global 19.2%, MIX 2017-18 (LIT-016) |\n| Senior coupon | 7% | near MIV wholesale yield 7.6%, Symbiotics 2019 (LIT-017) |\n| Junior/first-loss tranche | 15% | 10–20% range, LIT-013 / LIT-015 |\n| Retained economic interest | 5% | EU/UK risk-retention minimum, Memo 3 |\n| DFI mobilisation ratio | 1.8× private | Convergence (LIT-018); guarantees lead (LIT-019) |\n\nThe expected-loss and cost-to-serve **anchors** are also sourced (global PAR30 6.0% and OER 10.6% / Africa 14.5%, MIX 2017-18, LIT-016; MIV TER 2.4% / fee 1.2%, LIT-017), but the values the scenarios *use* are assumptions informed by them, so they sit in the flexed set.\n\n### What the model currently says (synthetic, illustrative)\n\nRunning `economics_model.py` on the committed config:\n\n|  | Worst | Likely | Best |\n| :---- | :---- | :---- | :---- |\n| Deal net margin (% of notional) | −0.95% | \\+1.9% | \\+4.1% |\n| Break-even pool size | \\~$38m | \\~$8.6m | \\~$3.2m |\n| Gate (cover costs within 3y) | **fail** | **pass** (yr 1\\) | **pass** (yr 1\\) |\n| KPI1 operating margin (t. 30%) | −101% | 34% | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | 16% | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | 8.7% (short) | 18% (clears) |\n\n**The reading.** Under the most-likely assumptions the gate passes and both KPIs are met — but the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss**. That is the blended-finance story stated as arithmetic, not asserted. The worst case is not a rounding-down of the likely case: it fails the clearing test outright (senior+mezz uncovered), which means no deal, not a thin one. The sensitivity grid shows why — our fee margin survives fee compression far better than it survives loss, because the real cliff is the pool ceasing to clear at \\~6% loss, not our margin thinning.\n\n**The companion yardstick.** On the flagship trio at pilot scale (EXP-01/02/06, `economics-assets.csv`), pilots sit **14–50× below break-even**. That is expected and is the same finding RT-5 reaches for the junior tranche: the warehousing bridge to scale is not an optimisation, it is the only path (OQ-2).\n\n## Running it\n\npython3 risk-tools/tools/economics\\_model.py               \\# all scenarios \\+ pilot, writes results CSV\n\npython3 risk-tools/tools/economics\\_model.py \\--scenario Likely\n\npython3 risk-tools/tools/economics\\_model.py \\--deal        \\# deal-level P\\&L per scenario\n\npython3 risk-tools/tools/economics\\_model.py \\--venture     \\# venture ramp per scenario\n\npython3 risk-tools/tools/economics\\_model.py \\--pilot       \\# flagship pilot-breakeven yardstick\n\npython3 risk-tools/tools/economics\\_model.py \\--sensitivity \\# loss × fee grid (Likely)\n\nHeadline metrics per scenario are written to `data/rt6-economics-results.csv` (committed) and surface on the dashboard's Business tab. Every row carries the basis mix (`SOURCED 5/23 drivers; remainder ASSUMED`).\n\n## Versioning\n\n| Bump | Means |\n| :---- | :---- |\n| Major | A change to the P\\&L definition or the gate/KPI methodology — prior outputs are not comparable |\n| Minor | A new driver, a new scenario column, an added output metric |\n| Patch | A numerical fix with no methodology change |\n\nEvery run prints its model version and the basis mix. **A margin without its assumptions is not a result** — this is the tool most likely to be quoted back in a conversation with an investor.\n\n### History\n\n| Date | Version | Change |\n| :---- | :---- | :---- |\n| 2026-08-02 | 0.1 | Initial build. Three-scenario deal \\+ venture P\\&L; gate \\= cover-costs-within-3y; KPIs \\= operating margin and return on capital-at-risk; pilot yardstick on the flagship trio; loss × fee sensitivity. Benchmarks sourced against MIX 2017-18, Symbiotics 2019, Convergence and OECD (LIT-016..019). |\n\n## Tests\n\nWired into `risk-tools/tools/test_toolchain.py` (CI):\n\n- **P\\&L identity** — revenue − cost \\= net margin, to the cent, every scenario.  \n- **Economies of scale** — a larger pool never earns a smaller net margin (fixed cost is diluted, everything else scales linearly).  \n- **Scenario ordering** — Best ≥ Likely ≥ Worst on deal net margin as a share of notional.  \n- **Gate consistency** — the gate flag matches the break-even year against the horizon.\n\n## Open questions\n\n- **The five sourced anchors are the floor, not the ceiling.** 18 drivers remain assumed. The two that swing the answer most and are hardest to source: the **origination-layer share of the spread** (needs partner MIS, PT-03/PT-04) and the **fixed structuring cost per deal** (needs counsel, PT-09 — no open-access benchmark exists for this, so it stays a we-assume). See `business-economics.md §4`.  \n- **The junior hurdle is the whole blended-finance question.** At 10% the Likely deal is short; at a commercial 15%+ it is far short. What return the DFI/first-loss layer will actually accept (OQ-6) decides whether the deal clears.  \n- **Should the loss assumption be driven off RT-5 directly?** Today it is a config value informed by PAR benchmarks. Wiring RT-6 to read an RT-5 scenario's mean/p95 loss would tie the two tools together — a candidate for v0.2.  \n- **Weighted life and revolving pools.** The model treats the pool as a single-life structure; a revolving warehouse that recycles principal several times per year would change the fee base materially. Worth modelling once the warehouse design (M-22) firms up.\n\n"
   },
   {
    "path": "docs/venture/milestone-plan.md",
