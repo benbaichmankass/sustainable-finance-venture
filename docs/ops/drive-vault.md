@@ -4,11 +4,11 @@
 
 Some project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.
 
-This matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/publishing.md`. The Vault is the private half of the system.
+This matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/ops/publishing.md`. The Vault is the private half of the system.
 
 **Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.
 
-**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.
+**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/ops/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.
 
 ## The rule
 

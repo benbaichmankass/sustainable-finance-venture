@@ -1,4 +1,4 @@
-# Private overlay — never committed. See docs/publishing.md.
+# Private overlay — never committed. See docs/ops/publishing.md.
 # These files hold the things that keep this repo publishable: named
 # individuals, relationship status, deal terms, Vault links, raw data.
 # The canonical copies live in the Drive Vault; this directory is a local

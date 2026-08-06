@@ -20,7 +20,7 @@ Nothing stays here permanently. When we go over the list, each item either dies 
 This file is public. Two things belong elsewhere, no exceptions:
 
 - **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.
-- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/publishing.md`.
+- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.
 
 If an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.
 

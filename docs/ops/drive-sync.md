@@ -4,7 +4,7 @@
 
 ## What this is, and what it isn't
 
-The **Drive Vault** (`docs/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.
+The **Drive Vault** (`docs/ops/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.
 
 The point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:
 

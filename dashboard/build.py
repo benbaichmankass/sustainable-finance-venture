@@ -49,7 +49,7 @@ TABLES = {
 # Gitignored files that add the columns a public repo must not carry: named
 # individuals, relationship status, Vault links. Merged by ID when present, so
 # a local build shows the whole picture and a public build shows only the
-# public tier. See docs/publishing.md.
+# public tier. See docs/ops/publishing.md.
 OVERLAYS = {
     "partners": "private/partner-contacts.csv",
     "phdPrograms": "private/phd-applications.csv",
@@ -60,18 +60,108 @@ OVERLAYS = {
 }
 
 # --- document library --------------------------------------------------------
-# directory -> display category. Files are picked up recursively.
+# Where to look for documents: (directory, recursive). This is discovery only -
+# what a document is grouped UNDER comes from DOC_TREE below, not from where it
+# happens to sit on disk.
 DOC_DIRS = [
-    (".", "Project", False),
-    ("docs", "Planning", True),
-    ("literature/notes", "Synthesis memos", True),
-    ("product-design", "Product & business", True),
-    ("risk-tools", "Risk tools", True),
-    ("archive/google-drive", "Archive", True),
-    (".claude/skills", "AI skills", True),
+    (".", False),
+    ("docs", True),
+    ("literature/notes", True),
+    ("product-design", True),
+    ("risk-tools", True),
+    ("archive/google-drive", True),
+    (".claude/skills", True),
 ]
 
 SKIP_FILES = {"data.js"}
+
+# The library's two-level tree: (path prefix, group, section). Grouping is by
+# what a document is FOR, which is why the PhD track is its own group rather
+# than a corner of Research - writing the enquiry and applying to programmes are
+# different jobs with different deadlines, and burying one inside the other is
+# what made the old flat "Planning" bucket unusable at 17 files.
+#
+# First match wins, so exact paths come before the directories they sit in.
+# Order here is the order the tree renders in - deliberately the order the work
+# actually flows, not alphabetical.
+DOC_TREE = [
+    ("docs/research/",                  "Research",    "Programme & method"),
+    ("literature/notes/",               "Research",    "Evidence synthesis"),
+
+    ("docs/phd/phd-proposal-master.md", "PhD track",   "Proposal & positioning"),
+    ("docs/phd/research-proposal.md",   "PhD track",   "Proposal & positioning"),
+    ("docs/phd/",                       "PhD track",   "Applications & funding"),
+
+    ("product-design/product-lines/",   "Venture",     "Product lines"),
+    ("product-design/",                 "Venture",     "Plan & economics"),
+    ("docs/venture/",                   "Venture",     "Delivery & funding"),
+
+    ("risk-tools/README.md",            "Risk tools",  "Overview & schema"),
+    ("risk-tools/schema/",              "Risk tools",  "Overview & schema"),
+    ("risk-tools/",                     "Risk tools",  "Tool specs"),
+
+    ("docs/ops/publishing.md",          "Operations",  "Publishing & privacy"),
+    ("docs/ops/private-overlay.md",     "Operations",  "Publishing & privacy"),
+    ("docs/ops/drive-sync.md",          "Operations",  "Drive & sync"),
+    ("docs/ops/drive-vault.md",         "Operations",  "Drive & sync"),
+    ("docs/ops/",                       "Operations",  "Dashboard & capture"),
+    ("CLAUDE.md",                       "Operations",  "Repo conventions"),
+    ("README.md",                       "Operations",  "Repo conventions"),
+    ("LICENSE-CONTENT.md",              "Operations",  "Repo conventions"),
+
+    (".claude/skills/",                 "AI skills",   "Working procedures"),
+    ("archive/google-drive/",           "Archive",     "Superseded source docs"),
+]
+
+# Which family a document belongs to, where it belongs to one. These are display
+# labels for the library, NOT new record IDs - nothing cross-references them, and
+# they are not subject to the never-renumber rule in CLAUDE.md section 3.
+#
+# RT-5 covers two documents and RT-2/3 covers one document spanning two tools;
+# the a/b suffixes and the slash say so rather than leaving three files looking
+# like collisions. Value is either an ID or (ID, display title override).
+DOC_FAMILY = {
+    "risk-tools/rt-1-origination-schema.md":            "RT-1",
+    "risk-tools/rt-2-underwriting-engine.md":           "RT-2",
+    "risk-tools/rt-3-monitoring-early-warning.md":      "RT-3",
+    "risk-tools/rt-2-rt-3-scaffolds.md":                ("RT-2/3", "Scaffolds - scorecard and monitor"),
+    "risk-tools/rt-4-impact-evaluation.md":             "RT-4",
+    "risk-tools/rt-5-securitisation-model.md":          "RT-5a",
+    "risk-tools/rt-5-simulator.md":                     ("RT-5b", "Simulator - what it is, what it is not"),
+    "risk-tools/rt-6-economics-model.md":               "RT-6",
+    "literature/notes/memo-1-vslas.md":                 "MEMO-1",
+    "literature/notes/memo-2-microfinance-impact.md":   "MEMO-2",
+    "literature/notes/memo-3-securitization-blended-finance.md": "MEMO-3",
+    "product-design/product-lines/community-credit-and-insurance.md":  "PL-1",
+    "product-design/product-lines/agrivoltaic-project-finance.md":     "PL-2",
+}
+
+# Strips a family label off the front of a title so the library does not render
+# "RT-1 - RT-1 - Origination data schema". The separator is mandatory: without
+# it "RT-2 and RT-3 scaffolds" would lose its "RT-2" and start with "and".
+FAMILY_PREFIX = re.compile(
+    r"^(?:RT-\d+[a-z]?|MEMO-\d+|Memo \d+|PL-\d+|Product Line \d+)\s*[-—:]\s*",
+    re.IGNORECASE,
+)
+
+
+def classify(rel):
+    """(group, section) for a repo-relative path. Unmatched files land in
+    Unfiled rather than vanishing - a visible prompt to place them."""
+    for prefix, group, section in DOC_TREE:
+        if rel == prefix or rel.startswith(prefix):
+            return group, section
+    return "Unfiled", "Needs a home"
+
+
+def family_of(rel, title):
+    """(doc_id, display_title). Both fall back cleanly when there is no family."""
+    entry = DOC_FAMILY.get(rel)
+    if entry is None:
+        return "", title
+    if isinstance(entry, tuple):
+        return entry[0], entry[1]
+    return entry, FAMILY_PREFIX.sub("", title).strip() or title
 
 
 def read_table(relpath):
@@ -118,7 +208,7 @@ def prettify(name):
 def collect_docs():
     docs = []
     seen = set()
-    for reldir, category, recursive in DOC_DIRS:
+    for reldir, recursive in DOC_DIRS:
         base = os.path.join(ROOT, reldir)
         if not os.path.isdir(base):
             continue
@@ -137,18 +227,39 @@ def collect_docs():
                     text = fh.read()
                 meta, body = split_frontmatter(text)
                 fallback = meta.get("name") or prettify(filename[:-3])
+                group, section = classify(rel)
+                doc_id, title = family_of(rel, title_of(body, fallback))
                 docs.append(
                     {
                         "path": rel,
-                        "category": category,
-                        "title": title_of(body, fallback),
+                        "group": group,
+                        "section": section,
+                        "docId": doc_id,
+                        "title": title,
                         "summary": meta.get("description", ""),
                         "words": len(body.split()),
                         "body": body,
                     }
                 )
-    docs.sort(key=lambda d: (d["category"], d["path"]))
+    # Sort within a section by family ID where there is one (so RT-1..RT-6 read
+    # as a sequence), then by title. The group/section order itself comes from
+    # DOC_TREE, applied in the dashboard.
+    docs.sort(key=lambda d: (d["group"], d["section"], d["docId"] or "zz", d["title"]))
     return docs
+
+
+def tree_order():
+    """Group -> [section, ...] in DOC_TREE order, deduped. The dashboard renders
+    the tree from this rather than re-deriving an order from the docs."""
+    order = []
+    for _, group, section in DOC_TREE:
+        entry = next((e for e in order if e["group"] == group), None)
+        if entry is None:
+            entry = {"group": group, "sections": []}
+            order.append(entry)
+        if section not in entry["sections"]:
+            entry["sections"].append(section)
+    return order
 
 
 def merge_overlay(rows, relpath):
@@ -216,7 +327,16 @@ def main():
 
     docs = collect_docs()
     data["docs"] = docs
+    data["docTree"] = tree_order()
     print("  %-14s %3d files" % ("docs", len(docs)))
+    for entry in data["docTree"]:
+        total = sum(1 for d in docs if d["group"] == entry["group"])
+        print("      %-13s %3d  (%s)" % (entry["group"], total, ", ".join(entry["sections"])))
+    unfiled = [d["path"] for d in docs if d["group"] == "Unfiled"]
+    if unfiled:
+        print("  ! %d unfiled doc(s) - add them to DOC_TREE:" % len(unfiled), file=sys.stderr)
+        for path in unfiled:
+            print("      %s" % path, file=sys.stderr)
 
     data["meta"] = {
         "generated": date.today().isoformat(),

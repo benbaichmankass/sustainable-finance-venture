@@ -12,12 +12,12 @@ Read this file before making changes. It is short on purpose.
 
 Two exceptions, both deliberate:
 
-- **The Vault** (`docs/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.
+- **The Vault** (`docs/ops/drive-vault.md`) holds artifacts that shouldn't be in git — PDFs, personal documents, correspondence, raw data. The repo always holds the *pointer* to them.
 - **The Master Reference Tracker Sheet** still exists for collaborator access. It is now a *mirror*, not a source. If the Sheet and the repo disagree, the repo wins.
 
 ## 1b. This repo is intended to be public
 
-Written accordingly: open by default, with a short private tier. Full policy in `docs/publishing.md`.
+Written accordingly: open by default, with a short private tier. Full policy in `docs/ops/publishing.md`.
 
 **The test — does it name a person and say something about them?** Then it's private and belongs in `private/` (gitignored) or the Vault. An organization named as a candidate partner, with the reasoning, is a research observation and is public.
 
@@ -25,7 +25,7 @@ Commercial strategy is deliberately on the public side. The thesis isn't the moa
 
 The private overlay merges onto the public trackers by ID at build time — `data/partner-tracker.csv` holds who they are and why they matter, `private/partner-contacts.csv` holds status and contact person. Locally you see both; a published build shows the public tier.
 
-Setup and worked examples for the overlay: `docs/private-overlay.md`. Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
+Setup and worked examples for the overlay: `docs/ops/private-overlay.md`. Before any push that touches `data/`, `private/` or the dashboard, run the `publish-check` skill. Never change repo visibility yourself — that's the user's call.
 
 **Licences:** Apache-2.0 for code (`LICENSE`), CC BY 4.0 for writing and data (`LICENSE-CONTENT.md`). New files fall under one or the other by kind — code under Apache, everything else under CC BY. If you add third-party material, flag it in `NOTICE`; never commit the full text of a copyrighted source.
 
@@ -34,16 +34,27 @@ Setup and worked examples for the overlay: `docs/private-overlay.md`. Before any
 ```
 README.md                        Project index and status — start here
 CLAUDE.md                        This file
-docs/
-  working-doc.md                 Main planning doc — thesis, design principles, hypotheses
-  research-agenda.md             Literature review plan, reading lists, workflow
-  milestone-plan.md              60/90-day plan narrative
-  dashboard-design.md            Dashboard design decisions and how to extend it
-  drive-vault.md                 What lives in Drive instead of git, and why
-  drive-sync.md                  The automated, bidirectional Drive workfolder sync
-  publishing.md                  Public/private boundary, pre-publish checklist
-  macro-watch.md                 Macro watchlist rationale and logging discipline
-  scratchpad.md                  Untriaged ideas — Drive-synced capture doc, cleared as items get filed
+docs/                            Grouped by what the doc is FOR, not what it is about
+  research/                      The enquiry itself — what we're investigating and how
+    working-doc.md               Main planning doc — thesis, design principles, hypotheses
+    research-agenda.md           Literature review plan, reading lists, workflow
+    methodology-*.md             Method specs: impact measurement, opportunity mapping
+  phd/                           The academic track as an application process
+    phd-proposal-master.md       The proposal itself
+    research-proposal.md         Proposal framework — the shape a proposal has to take
+    phd-scoring-rubric.md        How target programs get scored
+    phd-funding-landscape.md     How PhD money actually works
+  venture/                       Building and running the thing
+    milestone-plan.md            60/90-day plan narrative
+    funding-pipeline.md          Grant and funding plan for research experiments
+    macro-watch.md               Macro watchlist rationale and logging discipline
+  ops/                           How this repo itself works
+    publishing.md                Public/private boundary, pre-publish checklist
+    private-overlay.md           Collaborator onboarding for the private overlay
+    drive-sync.md                The automated, bidirectional Drive workfolder sync
+    drive-vault.md               What lives in Drive instead of git, and why
+    dashboard-design.md          Dashboard design decisions and how to extend it
+    scratchpad.md                Untriaged ideas — cleared as items get filed
 literature/
   lit-matrix.csv                 THE literature matrix — one row per source
   notes/memo-*.md                Synthesis memos
@@ -63,8 +74,8 @@ data/                            Structured trackers — the dashboard reads the
   phd-programs.csv               PHD-NN target programs (public tier)
   synthesis-memos.csv            MEMO-N memo status index
   resources.csv                  RES-NN external links
-  drive-links.csv                DRV-NN Drive workfolder sync manifest — see docs/drive-sync.md
-private/                         GITIGNORED overlay — see §1b and docs/publishing.md
+  drive-links.csv                DRV-NN Drive workfolder sync manifest — see docs/ops/drive-sync.md
+private/                         GITIGNORED overlay — see §1b and docs/ops/publishing.md
 archive/google-drive/            Verbatim exports of superseded source docs
 dashboard/                       Static dashboard — see §5
 scripts/                         Automation run outside the dashboard build (Drive sync engine)
@@ -87,10 +98,10 @@ scripts/                         Automation run outside the dashboard build (Dri
 | A new risk/analysis tool | a row in `data/risk-tools.csv` + a doc in `risk-tools/` |
 | A macro condition worth tracking | a row in `data/macro-indicators.csv` |
 | Something you noticed about the macro environment | a row in `data/macro-log.csv` |
-| A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |
-| Narrative reasoning or a plan | a markdown doc in `docs/` |
-| A doc that should stay editable from Google Drive | a row in `data/drive-links.csv` — see `docs/drive-sync.md` |
-| A half-formed idea with no home yet | `docs/scratchpad.md` — then file it properly and delete it from there |
+| A PDF, CV, or email thread | the Vault (`docs/ops/drive-vault.md`), then a pointer row |
+| Narrative reasoning or a plan | a markdown doc in the right `docs/` subfolder — `research/`, `phd/`, `venture/` or `ops/`. Never loose in `docs/` |
+| A doc that should stay editable from Google Drive | a row in `data/drive-links.csv` — see `docs/ops/drive-sync.md` |
+| A half-formed idea with no home yet | `docs/ops/scratchpad.md` — then file it properly and delete it from there |
 
 **Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.
 
@@ -122,7 +133,7 @@ python3 dashboard/build.py            # local: merges private overlay → data.p
 python3 dashboard/build.py --public   # before pushing: → data.js (committed)
 ```
 
-Commit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/dashboard-design.md`.
+Commit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/ops/dashboard-design.md`.
 
 ## 6. Research standards
 

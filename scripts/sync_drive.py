@@ -3,7 +3,7 @@
 
 No model in the loop: this is a deterministic hash comparison against the
 last-synced baseline recorded in the manifest, run unattended by
-.github/workflows/sync-drive.yml. Full design in docs/drive-sync.md.
+.github/workflows/sync-drive.yml. Full design in docs/ops/drive-sync.md.
 
 For every non-folder row in the manifest:
 
@@ -19,7 +19,7 @@ For every non-folder row in the manifest:
 
 Auth: a service-account JSON key in the GDRIVE_SA_KEY env var. The service
 account needs Editor access on the target Drive folder (granted by sharing
-the folder with its email) - see docs/drive-sync.md for one-time setup.
+the folder with its email) - see docs/ops/drive-sync.md for one-time setup.
 """
 import csv
 import hashlib
@@ -239,7 +239,7 @@ def reconcile_row(row, id_index, drive, sheets):
                 log("  ! %s: the service account has no Drive storage quota of its own "
                     "(expected for a standalone service account, not backed by a Workspace "
                     "Shared Drive) - it cannot create new files, only edit ones a real "
-                    "account already owns. See docs/drive-sync.md's 'known constraint' "
+                    "account already owns. See docs/ops/drive-sync.md's 'known constraint' "
                     "section for how new docs actually get seeded." % row["ID"])
             raise
         row["Drive_ID"] = created["id"]

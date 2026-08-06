@@ -10,7 +10,7 @@ The matrix (`literature/lit-matrix.csv`) is the project's evidence base. A weak 
 ## Before you add anything
 
 1. **Read `literature/lit-matrix.csv`** — check the source isn't already there under a different citation string. Duplicates across LIT-004/LIT-011 style overlaps are the common failure.
-2. **Read `docs/research-agenda.md`** — the four review axes and the identified gaps. A new anchor should close a named gap, not just be interesting.
+2. **Read `docs/research/research-agenda.md`** — the four review axes and the identified gaps. A new anchor should close a named gap, not just be interesting.
 3. **Actually read the source.** Abstract, introduction, methods, limitations, conclusion at minimum. If you can only reach a landing page or an abstract, the row's `Status` is `To read` and `Key_Findings` says what you could and couldn't verify.
 
 ## The ID scheme
@@ -21,7 +21,7 @@ Sequential, never reused: the next row after `LIT-015` is `LIT-016`. If a source
 
 | Column | Standard |
 |---|---|
-| `Axis` | One of: `1-VSLA`, `2-Microfinance`, `3-Securitization`, `4-Blended finance`, `5-Insurance`. New axes need a corresponding update to `docs/research-agenda.md`. |
+| `Axis` | One of: `1-VSLA`, `2-Microfinance`, `3-Securitization`, `4-Blended finance`, `5-Insurance`. New axes need a corresponding update to `docs/research/research-agenda.md`. |
 | `Geography` | Where the *evidence* comes from, not where the publisher sits. |
 | `Method` | RCT / systematic review / evaluation review / case study / legal review / policy report / survey. Be precise — this is how a reader weights the finding. |
 | `Key_Findings` | What the source actually establishes. Include sample size, country and design where stated. Never a number the source doesn't state. |
@@ -38,7 +38,7 @@ Sequential, never reused: the next row after `LIT-015` is `LIT-016`. If a source
 2. **Update `data/synthesis-memos.csv`** if the memo's takeaway changed.
 3. **Check `data/open-questions.csv`** — if the new source moves a question, update its `Status`, `Notes` and `Evidence_Refs`. Questions go `Open` → `Partially answered` → `Answered`; say explicitly what remains.
 4. **Regenerate the dashboard**: `python3 dashboard/build.py`.
-5. **Offer to file the PDF** in the Vault's `01-literature-pdfs` as `LIT-0NN — short-title.pdf` (see `docs/drive-vault.md`).
+5. **Offer to file the PDF** in the Vault's `01-literature-pdfs` as `LIT-0NN — short-title.pdf` (see `docs/ops/drive-vault.md`).
 
 ## The hard rule
 

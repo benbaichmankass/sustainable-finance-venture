@@ -1,6 +1,6 @@
 "ID","Title","Category","Type","Location","URL","Notes"
 "RES-01","GitHub repository","Repo","Git","GitHub","https://github.com/benbaichmankass/sustainable-finance-venture","Canonical source of truth for project docs, trackers, methods and data"
-"RES-02","Vault - root folder","Vault","Drive folder","Google Drive","","Private artifacts that do not belong in a public repo. Link resolves from the private overlay. See docs/drive-vault.md."
+"RES-02","Vault - root folder","Vault","Drive folder","Google Drive","","Private artifacts that do not belong in a public repo. Link resolves from the private overlay. See docs/ops/drive-vault.md."
 "RES-03","Vault - 00 private overlay","Vault","Drive folder","Google Drive","","Canonical copies of the gitignored CSVs in private/. Download these into private/ when setting up on a new machine."
 "RES-04","Vault - 01 literature PDFs","Vault","Drive folder","Google Drive","","Full-text PDFs for lit-matrix entries. Name as LIT-0NN - short-title.pdf"
 "RES-05","Vault - 02 applications and PhD","Vault","Drive folder","Google Drive","","Applications, CVs, statements of purpose, transcripts, supervisor correspondence"

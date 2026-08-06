@@ -41,7 +41,7 @@ The whole point is longevity. This project will be picked up intermittently over
 | Tab | Answers |
 |---|---|
 | **Overview** | Where does the project stand, and what's next? KPI tiles, milestone and question status, evidence base by axis, and the current critical path. |
-| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline. Search runs over complete document text, not just titles. Each document also has one-click download as Markdown, DOCX or PDF (see "Document export" below). |
+| **Library** | Where's that thing I wrote? Every markdown document in the repo, in full, rendered inline, in a group/section tree (see "How the Library is organised" below). Search runs over complete document text, not just titles. Each document also has one-click download as Markdown, DOCX or PDF (see "Document export" below). |
 | **Research plan** | What does the evidence say? The full literature matrix with per-source findings, limitations, relevance ratings and links, plus the synthesis memos built on it. |
 | **Business plan** | What are we building, and are we on schedule? The plan itself plus the 60/90-day milestone tracker broken out by phase. |
 | **Open questions** | What can't we decide yet? Each question's status, what the evidence establishes, and explicitly what remains. |
@@ -54,6 +54,29 @@ The whole point is longevity. This project will be picked up intermittently over
 The tab list is a **left sidebar**, not a top bar — with 13 tabs a horizontal strip was starting to require scrolling to find the later ones, and a sidebar scales to more tabs without that. It sticks just below the header (`--header-h`, measured from the header's real rendered height in JS since the header wraps at some widths — see `syncHeaderHeight()`), with its own scroll region so a long tab list never pushes the page taller than the viewport.
 
 Below 900px wide, the sidebar becomes a **slide-in drawer** instead of staying on-screen: off-canvas by default, opened by a hamburger button in the header (`#nav-toggle`, itself hidden above 900px), dismissed by tapping the backdrop, picking a tab, pressing Escape, or resizing back past the breakpoint. This was a horizontal scrolling tab bar in an earlier version, but that doesn't scale any better than the old top bar did once there are enough tabs to require scrolling to find one — a drawer keeps the same full vertical list mobile gets on desktop, just off-screen until asked for.
+
+## How the Library is organised
+
+The Library groups documents into a **two-level tree — group, then section** — rather than the single flat category filter it started with. That filter derived a category from the top-level directory, which meant `docs/` produced one bucket called "Planning" holding 17 files: PhD applications, research methodology, venture funding and repo plumbing, undifferentiated. It was the largest bucket and the least useful, and finding anything in it meant reading all of it.
+
+Three rules make the current version work:
+
+**Group by what a document is FOR, not what it is about.** The PhD track is its own group rather than a corner of Research, because writing the enquiry and applying to programmes are different jobs on different clocks — one is intellectual, one is a deadline-driven application process. They share subject matter, which is exactly why lumping them together hides both.
+
+**The tree is declared, not derived.** `DOC_TREE` in `dashboard/build.py` is an ordered list of `(path prefix, group, section)`, first match wins, so an exact path can override the directory it sits in. Order in that list is the order the tree renders — deliberately the order work flows, not alphabetical, so Research comes before Operations regardless of the letter R. Directory layout under `docs/` mirrors the four main groups (`research/`, `phd/`, `venture/`, `ops/`), but the tree doesn't *depend* on that: a document can be regrouped without moving the file, and the build stays correct either way.
+
+**Nothing is allowed to fall out.** A file matching no prefix lands in a visible `Unfiled / Needs a home` group and the build prints it to stderr. A taxonomy that silently drops documents is worse than no taxonomy, because it looks complete.
+
+Groups carrying reference material — Operations, AI skills, Archive — start collapsed so the first screen is the work rather than the plumbing. A search overrides that and force-opens any group holding a hit, since a search is a request to see the matches, not to be told a count behind a fold.
+
+### Family labels
+
+Documents belonging to a numbered family show that ID as a chip before the title: `RT-1`, `MEMO-2`, `PL-1`. Three needed disambiguating, and the labels say so rather than leaving them looking like collisions:
+
+- `RT-5a` (securitisation cash-flow model) and `RT-5b` (the simulator) — two documents legitimately sharing the RT-5 number with no ordering implied between them.
+- `RT-2/3` — one document scaffolding two tools that have since grown their own specs.
+
+These live in `DOC_FAMILY` and are **display labels only**. They are not record IDs, nothing cross-references them, and the never-renumber rule in `CLAUDE.md` §3 does not apply — if a better label presents itself, change it. Where the ID already leads the document's H1 (`RT-1 — Origination data schema`), the build strips the duplicate so the row doesn't read `RT-1 · RT-1 — …`. The separator in that pattern is mandatory, which is what stops `RT-2 and RT-3 scaffolds` from losing its `RT-2` and starting with the word "and".
 
 ## Document export
 

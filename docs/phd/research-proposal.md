@@ -17,10 +17,10 @@ rejected, just not this proposal.
 | Deliverable | Lives in | State |
 |---|---|---|
 | 1. Literature review | §1 below + `literature/` (matrix + memos) | Anchors + memos exist; proposal-grade synthesis section drafted here |
-| 2. Opportunity-mapping methodology | `docs/methodology-opportunity-mapping.md` | Skeleton |
-| 3. Impact-measurement methodology | `docs/methodology-impact-measurement.md` | Skeleton |
+| 2. Opportunity-mapping methodology | `docs/research/methodology-opportunity-mapping.md` | Skeleton |
+| 3. Impact-measurement methodology | `docs/research/methodology-impact-measurement.md` | Skeleton |
 | 4. 5–10 experiment ideas | `data/experiments.csv` (EXP-01…) | Populated |
-| 5. Grant / funding plan | `docs/funding-pipeline.md` + `data/funders.csv` | Plan + tracker |
+| 5. Grant / funding plan | `docs/venture/funding-pipeline.md` + `data/funders.csv` | Plan + tracker |
 
 **Direction decided (2026-08-02).** Working through OQ-9/10/11 landed four choices that shape the rest:
 
@@ -43,7 +43,7 @@ rejected, just not this proposal.
 
 ## 0. Research question
 
-Carried from `docs/working-doc.md`, narrowed to the climate + poverty frame:
+Carried from `docs/research/working-doc.md`, narrowed to the climate + poverty frame:
 
 > How can community-based lending and insurance arrangements in climate-exposed, low-income
 > communities in Africa and MENA be structured into standardized, verifiable, poolable assets
@@ -93,7 +93,7 @@ These are logged as gaps, not filled with guesses — see the milestone tracker.
 
 ## 2. Opportunity-mapping methodology (skeleton)
 
-Full skeleton in **`docs/methodology-opportunity-mapping.md`**.
+Full skeleton in **`docs/research/methodology-opportunity-mapping.md`**.
 
 In one line: a two-axis prioritization that scores candidate climate-and-poverty problems by
 **(a) the size / potential of the unmet-financing gap** against **(b) our toolkit's capacity to
@@ -103,7 +103,7 @@ raw candidates this methodology is designed to score.
 
 ## 3. Impact-measurement methodology (skeleton)
 
-Full skeleton in **`docs/methodology-impact-measurement.md`**.
+Full skeleton in **`docs/research/methodology-impact-measurement.md`**.
 
 In one line: how the research measures whether the financial products actually move the SDG
 outcomes they target — the causal-identification strategy (building on OQ-4 / OQ-5), the outcome
@@ -119,7 +119,7 @@ design. See §2 of the mapping methodology for how they get narrowed to a flagsh
 
 ## 5. Grant / funding plan
 
-Full plan in **`docs/funding-pipeline.md`**, tracker in **`data/funders.csv`** (FUND-01…). Covers
+Full plan in **`docs/venture/funding-pipeline.md`**, tracker in **`data/funders.csv`** (FUND-01…). Covers
 the grantmaker landscape for climate-and-poverty research experiments (impact-evaluation funders,
 climate funds, foundations, DFI research windows) and a sequenced ask strategy that fits the
 research timeline.
