@@ -693,12 +693,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-04",
+   "As_Of": "2026-08-05",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -708,12 +708,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-05",
+   "As_Of": "2026-08-06",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -723,12 +723,12 @@ window.SFV_DATA = {
    "Label": "ICE BofA EM high-yield corporate OAS",
    "Value": "2.96",
    "Unit": "pp",
-   "As_Of": "2026-08-03",
-   "Chg_1m": "-0.16",
-   "Chg_3m": "-0.25",
-   "Chg_12m": "-0.45",
+   "As_Of": "2026-08-04",
+   "Chg_1m": "-0.15",
+   "Chg_3m": "-0.23",
+   "Chg_12m": "-0.38",
    "Direction": "down",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -736,14 +736,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-07",
    "Label": "ENSO / Oceanic Nino Index",
-   "Value": "0.98",
+   "Value": "1.39",
    "Unit": "degC anomaly",
-   "As_Of": "2026 AMJ",
-   "Chg_1m": "0.47",
-   "Chg_3m": "1.12",
-   "Chg_12m": "1.0",
+   "As_Of": "2026 MJJ",
+   "Chg_1m": "0.44",
+   "Chg_3m": "1.28",
+   "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -751,14 +751,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.485",
+   "Value": "3.4672",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-08-04",
-   "Chg_1m": "0.0519",
-   "Chg_3m": "0.0199",
-   "Chg_12m": "-0.4245",
+   "As_Of": "2026-08-05",
+   "Chg_1m": "0.0258",
+   "Chg_3m": "0.0277",
+   "Chg_12m": "-0.4195",
    "Direction": "up",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -768,12 +768,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-05",
+   "As_Of": "2026-08-06",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -796,14 +796,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.03",
+   "Value": "3.001",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-04",
-   "Chg_1m": "0.028",
-   "Chg_3m": "0.069",
-   "Chg_12m": "-0.307",
+   "As_Of": "2026-08-05",
+   "Chg_1m": "0.005",
+   "Chg_3m": "0.05",
+   "Chg_12m": "-0.354",
    "Direction": "up",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -826,14 +826,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.7",
+   "Value": "4.63",
    "Unit": "%",
-   "As_Of": "2026-08-03",
-   "Chg_1m": "0.22",
-   "Chg_3m": "0.34",
-   "Chg_12m": "0.26",
+   "As_Of": "2026-08-04",
+   "Chg_1m": "0.14",
+   "Chg_3m": "0.21",
+   "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -841,14 +841,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-16",
    "Label": "Brent crude oil price",
-   "Value": "91.82",
+   "Value": "88.9",
    "Unit": "USD/barrel",
-   "As_Of": "2026-07-27",
-   "Chg_1m": "18.08",
-   "Chg_3m": "-21.62",
-   "Chg_12m": "22.15",
+   "As_Of": "2026-08-03",
+   "Chg_1m": "20.37",
+   "Chg_3m": "-35.26",
+   "Chg_12m": "19.73",
    "Direction": "up",
-   "Fetched_At": "2026-08-05T09:07:50+00:00",
+   "Fetched_At": "2026-08-06T09:08:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -3421,9 +3421,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Publishing — what's public, what's private, and how the two connect",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "1f7c06f871d2d02fd68d64ffc6b7c5c0d5b8688fc501011fd64d3ba39904f923",
-   "Baseline_Repo_Hash": "7d442e893065d919734d4b093d75357cd026eb2d653ffbc922c9d6f35a1fbe04",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "5161908708ff026db1642733d628b3982faa28d767216a3db998bf1eb3c3e9dd",
+   "Baseline_Repo_Hash": "5161908708ff026db1642733d628b3982faa28d767216a3db998bf1eb3c3e9dd",
+   "Last_Synced_At": "2026-08-06T10:05:11Z",
    "Status": "Synced"
   },
   {
@@ -3525,9 +3525,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Business Plan — Working Draft",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "6a270cad48dea4e95d84f5c2734117c8181b490f673139b269747f26ac7c17a4",
-   "Baseline_Repo_Hash": "53952b87104417997d16aec9f48a3ead6106d0ae1f6869315a5b264bf80d5d8b",
-   "Last_Synced_At": "2026-08-05T07:48:17Z",
+   "Baseline_Drive_Hash": "ae0f2fd5bf2f95bf7b74abdd872108e40a0f781d0ff42419f6a0fcb99ca4cbd1",
+   "Baseline_Repo_Hash": "ae0f2fd5bf2f95bf7b74abdd872108e40a0f781d0ff42419f6a0fcb99ca4cbd1",
+   "Last_Synced_At": "2026-08-06T10:05:19Z",
    "Status": "Synced"
   },
   {
@@ -4262,7 +4262,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-04",
+    "2026-08-05",
     3.75
    ]
   ],
@@ -4840,7 +4840,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-05",
+    "2026-08-06",
     2.4
    ]
   ],
@@ -5374,7 +5374,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-05",
+    "2026-08-06",
     3.5
    ]
   ],
@@ -5524,7 +5524,7 @@ window.SFV_DATA = {
     2.99
    ],
    [
-    "2026-08-03",
+    "2026-08-04",
     2.96
    ]
   ],
@@ -6108,144 +6108,140 @@ window.SFV_DATA = {
   ],
   "MAC-07": [
    [
-    "2014 JFM",
-    -0.32
-   ],
-   [
     "2014 JJA",
-    0.1
+    0.07
    ],
    [
     "2014 MAM",
-    0.15
+    0.25
    ],
    [
     "2014 MJJ",
-    0.23
+    0.22
    ],
    [
     "2014 NDJ",
-    0.77
+    0.8
    ],
    [
     "2014 OND",
-    0.71
+    0.7
    ],
    [
     "2014 SON",
-    0.54
+    0.51
    ],
    [
     "2015 AMJ",
-    1.02
+    1.04
    ],
    [
     "2015 ASO",
-    2.21
+    2.02
    ],
    [
     "2015 DJF",
-    0.69
+    0.73
    ],
    [
     "2015 FMA",
-    0.65
+    0.72
    ],
    [
     "2015 JAS",
-    1.91
+    1.73
    ],
    [
     "2015 JFM",
-    0.61
+    0.65
    ],
    [
     "2015 JJA",
-    1.57
+    1.44
    ],
    [
     "2015 MAM",
-    0.81
+    0.86
    ],
    [
     "2015 MJJ",
-    1.25
+    1.19
    ],
    [
     "2015 NDJ",
-    2.75
+    2.59
    ],
    [
     "2015 OND",
-    2.64
+    2.45
    ],
    [
     "2015 SON",
-    2.47
-   ],
-   [
-    "2016 AMJ",
-    0.49
-   ],
-   [
-    "2016 ASO",
-    -0.58
-   ],
-   [
-    "2016 DJF",
-    2.63
-   ],
-   [
-    "2016 FMA",
-    1.71
-   ],
-   [
-    "2016 JAS",
-    -0.5
-   ],
-   [
-    "2016 JFM",
     2.28
    ],
    [
-    "2016 JJA",
-    -0.31
+    "2016 AMJ",
+    0.57
    ],
    [
-    "2016 MAM",
-    1.05
+    "2016 ASO",
+    -0.42
    ],
    [
-    "2016 MJJ",
-    0.0
+    "2016 DJF",
+    2.5
    ],
    [
-    "2016 NDJ",
-    -0.45
+    "2016 FMA",
+    1.69
    ],
    [
-    "2016 OND",
-    -0.6
-   ],
-   [
-    "2016 SON",
-    -0.64
-   ],
-   [
-    "2017 AMJ",
-    0.4
-   ],
-   [
-    "2017 ASO",
+    "2016 JAS",
     -0.34
    ],
    [
-    "2017 DJF",
+    "2016 JFM",
+    2.21
+   ],
+   [
+    "2016 JJA",
     -0.19
    ],
    [
+    "2016 MAM",
+    1.11
+   ],
+   [
+    "2016 MJJ",
+    0.09
+   ],
+   [
+    "2016 NDJ",
+    -0.37
+   ],
+   [
+    "2016 OND",
+    -0.49
+   ],
+   [
+    "2016 SON",
+    -0.51
+   ],
+   [
+    "2017 AMJ",
+    0.35
+   ],
+   [
+    "2017 ASO",
+    -0.23
+   ],
+   [
+    "2017 DJF",
+    -0.08
+   ],
+   [
     "2017 FMA",
-    0.18
+    0.27
    ],
    [
     "2017 JAS",
@@ -6253,199 +6249,199 @@ window.SFV_DATA = {
    ],
    [
     "2017 JFM",
-    -0.02
+    0.08
    ],
    [
     "2017 JJA",
-    0.19
-   ],
-   [
-    "2017 MAM",
-    0.31
-   ],
-   [
-    "2017 MJJ",
-    0.39
-   ],
-   [
-    "2017 NDJ",
-    -0.86
-   ],
-   [
-    "2017 OND",
-    -0.77
-   ],
-   [
-    "2017 SON",
-    -0.6
-   ],
-   [
-    "2018 AMJ",
-    -0.13
-   ],
-   [
-    "2018 ASO",
-    0.53
-   ],
-   [
-    "2018 DJF",
-    -0.77
-   ],
-   [
-    "2018 FMA",
-    -0.57
-   ],
-   [
-    "2018 JAS",
-    0.27
-   ],
-   [
-    "2018 JFM",
-    -0.71
-   ],
-   [
-    "2018 JJA",
     0.14
    ],
    [
-    "2018 MAM",
-    -0.39
+    "2017 MAM",
+    0.32
    ],
    [
-    "2018 MJJ",
-    0.06
+    "2017 MJJ",
+    0.32
    ],
    [
-    "2018 NDJ",
-    0.92
+    "2017 NDJ",
+    -0.76
    ],
    [
-    "2018 OND",
-    0.97
+    "2017 OND",
+    -0.61
    ],
    [
-    "2018 SON",
-    0.81
+    "2017 SON",
+    -0.44
    ],
    [
-    "2019 AMJ",
-    0.64
+    "2018 AMJ",
+    -0.07
    ],
    [
-    "2019 ASO",
-    0.23
-   ],
-   [
-    "2019 DJF",
-    0.89
-   ],
-   [
-    "2019 FMA",
-    0.84
-   ],
-   [
-    "2019 JAS",
-    0.19
-   ],
-   [
-    "2019 JFM",
-    0.86
-   ],
-   [
-    "2019 JJA",
-    0.33
-   ],
-   [
-    "2019 MAM",
-    0.77
-   ],
-   [
-    "2019 MJJ",
+    "2018 ASO",
     0.52
    ],
    [
-    "2019 NDJ",
-    0.66
-   ],
-   [
-    "2019 OND",
-    0.58
-   ],
-   [
-    "2019 SON",
-    0.39
-   ],
-   [
-    "2020 AMJ",
-    0.01
-   ],
-   [
-    "2020 ASO",
-    -0.85
-   ],
-   [
-    "2020 DJF",
-    0.64
-   ],
-   [
-    "2020 FMA",
-    0.53
-   ],
-   [
-    "2020 JAS",
-    -0.53
-   ],
-   [
-    "2020 JFM",
-    0.63
-   ],
-   [
-    "2020 JJA",
-    -0.36
-   ],
-   [
-    "2020 MAM",
-    0.3
-   ],
-   [
-    "2020 MJJ",
-    -0.23
-   ],
-   [
-    "2020 NDJ",
-    -1.08
-   ],
-   [
-    "2020 OND",
-    -1.2
-   ],
-   [
-    "2020 SON",
-    -1.12
-   ],
-   [
-    "2021 AMJ",
-    -0.39
-   ],
-   [
-    "2021 ASO",
-    -0.63
-   ],
-   [
-    "2021 DJF",
-    -0.91
-   ],
-   [
-    "2021 FMA",
+    "2018 DJF",
     -0.71
    ],
    [
+    "2018 FMA",
+    -0.55
+   ],
+   [
+    "2018 JAS",
+    0.3
+   ],
+   [
+    "2018 JFM",
+    -0.67
+   ],
+   [
+    "2018 JJA",
+    0.2
+   ],
+   [
+    "2018 MAM",
+    -0.35
+   ],
+   [
+    "2018 MJJ",
+    0.13
+   ],
+   [
+    "2018 NDJ",
+    1.05
+   ],
+   [
+    "2018 OND",
+    1.04
+   ],
+   [
+    "2018 SON",
+    0.82
+   ],
+   [
+    "2019 AMJ",
+    0.71
+   ],
+   [
+    "2019 ASO",
+    0.31
+   ],
+   [
+    "2019 DJF",
+    0.99
+   ],
+   [
+    "2019 FMA",
+    0.87
+   ],
+   [
+    "2019 JAS",
+    0.2
+   ],
+   [
+    "2019 JFM",
+    0.94
+   ],
+   [
+    "2019 JJA",
+    0.38
+   ],
+   [
+    "2019 MAM",
+    0.82
+   ],
+   [
+    "2019 MJJ",
+    0.59
+   ],
+   [
+    "2019 NDJ",
+    0.75
+   ],
+   [
+    "2019 OND",
+    0.72
+   ],
+   [
+    "2019 SON",
+    0.51
+   ],
+   [
+    "2020 AMJ",
+    0.04
+   ],
+   [
+    "2020 ASO",
+    -0.77
+   ],
+   [
+    "2020 DJF",
+    0.71
+   ],
+   [
+    "2020 FMA",
+    0.57
+   ],
+   [
+    "2020 JAS",
+    -0.43
+   ],
+   [
+    "2020 JFM",
+    0.66
+   ],
+   [
+    "2020 JJA",
+    -0.29
+   ],
+   [
+    "2020 MAM",
+    0.33
+   ],
+   [
+    "2020 MJJ",
+    -0.18
+   ],
+   [
+    "2020 NDJ",
+    -1.06
+   ],
+   [
+    "2020 OND",
+    -1.11
+   ],
+   [
+    "2020 SON",
+    -1.0
+   ],
+   [
+    "2021 AMJ",
+    -0.4
+   ],
+   [
+    "2021 ASO",
+    -0.64
+   ],
+   [
+    "2021 DJF",
+    -0.99
+   ],
+   [
+    "2021 FMA",
+    -0.74
+   ],
+   [
     "2021 JAS",
-    -0.45
+    -0.46
    ],
    [
     "2021 JFM",
-    -0.79
+    -0.85
    ],
    [
     "2021 JJA",
@@ -6453,15 +6449,15 @@ window.SFV_DATA = {
    ],
    [
     "2021 MAM",
-    -0.55
+    -0.56
    ],
    [
     "2021 MJJ",
-    -0.3
+    -0.31
    ],
    [
     "2021 NDJ",
-    -0.87
+    -0.83
    ],
    [
     "2021 OND",
@@ -6469,179 +6465,179 @@ window.SFV_DATA = {
    ],
    [
     "2021 SON",
-    -0.76
+    -0.77
    ],
    [
     "2022 AMJ",
-    -0.9
+    -0.83
    ],
    [
     "2022 ASO",
-    -0.97
-   ],
-   [
-    "2022 DJF",
-    -0.82
-   ],
-   [
-    "2022 FMA",
-    -0.86
-   ],
-   [
-    "2022 JAS",
     -0.87
    ],
    [
-    "2022 JFM",
-    -0.79
-   ],
-   [
-    "2022 JJA",
+    "2022 DJF",
     -0.76
    ],
    [
-    "2022 MAM",
-    -0.95
+    "2022 FMA",
+    -0.77
    ],
    [
-    "2022 MJJ",
+    "2022 JAS",
     -0.78
    ],
    [
+    "2022 JFM",
+    -0.68
+   ],
+   [
+    "2022 JJA",
+    -0.7
+   ],
+   [
+    "2022 MAM",
+    -0.86
+   ],
+   [
+    "2022 MJJ",
+    -0.73
+   ],
+   [
     "2022 NDJ",
-    -0.71
+    -0.7
    ],
    [
     "2022 OND",
-    -0.85
+    -0.82
    ],
    [
     "2022 SON",
-    -0.94
+    -0.89
    ],
    [
     "2023 AMJ",
-    0.57
+    0.46
    ],
    [
     "2023 ASO",
-    1.6
+    1.5
    ],
    [
     "2023 DJF",
-    -0.54
+    -0.55
    ],
    [
     "2023 FMA",
-    -0.02
+    -0.11
    ],
    [
     "2023 JAS",
-    1.37
+    1.25
    ],
    [
     "2023 JFM",
-    -0.29
+    -0.33
    ],
    [
     "2023 JJA",
-    1.12
+    1.0
    ],
    [
     "2023 MAM",
-    0.27
+    0.19
    ],
    [
     "2023 MJJ",
-    0.84
+    0.73
    ],
    [
     "2023 NDJ",
-    2.06
-   ],
-   [
-    "2023 OND",
     1.99
    ],
    [
+    "2023 OND",
+    1.9
+   ],
+   [
     "2023 SON",
-    1.83
+    1.74
    ],
    [
     "2024 AMJ",
-    0.49
+    0.43
    ],
    [
     "2024 ASO",
-    -0.17
+    -0.12
    ],
    [
     "2024 DJF",
-    1.92
+    1.84
    ],
    [
     "2024 FMA",
-    1.26
+    1.18
    ],
    [
     "2024 JAS",
-    -0.07
+    -0.04
    ],
    [
     "2024 JFM",
-    1.62
+    1.53
    ],
    [
     "2024 JJA",
-    0.08
+    0.06
    ],
    [
     "2024 MAM",
-    0.82
+    0.77
    ],
    [
     "2024 MJJ",
-    0.22
+    0.18
    ],
    [
     "2024 NDJ",
-    -0.42
+    -0.43
    ],
    [
     "2024 OND",
-    -0.3
+    -0.29
    ],
    [
     "2024 SON",
-    -0.21
+    -0.19
    ],
    [
     "2025 AMJ",
-    -0.02
+    -0.04
    ],
    [
     "2025 ASO",
-    -0.4
+    -0.43
    ],
    [
     "2025 DJF",
-    -0.45
+    -0.46
    ],
    [
     "2025 FMA",
-    -0.06
+    -0.08
    ],
    [
     "2025 JAS",
-    -0.28
+    -0.26
    ],
    [
     "2025 JFM",
-    -0.24
+    -0.22
    ],
    [
     "2025 JJA",
-    -0.14
+    -0.11
    ],
    [
     "2025 MAM",
@@ -6649,39 +6645,43 @@ window.SFV_DATA = {
    ],
    [
     "2025 MJJ",
-    -0.04
+    -0.02
    ],
    [
     "2025 NDJ",
-    -0.54
+    -0.6
    ],
    [
     "2025 OND",
-    -0.55
+    -0.61
    ],
    [
     "2025 SON",
-    -0.51
+    -0.57
    ],
    [
     "2026 AMJ",
-    0.98
+    0.95
    ],
    [
     "2026 DJF",
-    -0.37
+    -0.39
    ],
    [
     "2026 FMA",
-    0.13
+    0.11
    ],
    [
     "2026 JFM",
-    -0.14
+    -0.21
    ],
    [
     "2026 MAM",
-    0.51
+    0.46
+   ],
+   [
+    "2026 MJJ",
+    1.39
    ]
   ],
   "MAC-12": [
@@ -7258,8 +7258,8 @@ window.SFV_DATA = {
     3.5114
    ],
    [
-    "2026-08-04",
-    3.485
+    "2026-08-05",
+    3.4672
    ]
   ],
   "MAC-13": [
@@ -7836,8 +7836,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-04",
-    3.03
+    "2026-08-05",
+    3.001
    ]
   ],
   "MAC-14": [
@@ -8992,15 +8992,11 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-08-03",
-    4.7
+    "2026-08-04",
+    4.63
    ]
   ],
   "MAC-16": [
-   [
-    "2014-08-29",
-    101.12
-   ],
    [
     "2014-09-30",
     94.67
@@ -9570,8 +9566,12 @@ window.SFV_DATA = {
     70.46
    ],
    [
-    "2026-07-27",
-    91.82
+    "2026-07-31",
+    96.95
+   ],
+   [
+    "2026-08-03",
+    88.9
    ]
   ]
  },
@@ -9766,7 +9766,7 @@ window.SFV_DATA = {
    "title": "Publishing — what's public, what's private, and how the two connect",
    "summary": "",
    "words": 1510,
-   "body": "# Publishing — what's public, what's private, and how the two connect\n\n**Status:** policy in force; repo not yet flipped to public · **Last updated:** 2026-07-30\n\n## The posture\n\nThis project is **open by default**. The repo holds the thinking, the methods, the evidence base and the tools — and there is no good reason for any of that to be secret. Community finance and blended finance are fields that advance by people publishing what they learned; a literature matrix and a data schema are more valuable shared than hoarded.\n\nWhat stays private is a short list, and it's private for one reason: **it's about people.** Not because it's commercially precious.\n\n## The line\n\n| Public repo | Private Vault |\n|---|---|\n| Methods, schemas, code, models | Raw and row-level data, anything identifying a research participant |\n| The literature matrix and memos | Copyrighted PDFs of the sources |\n| Research agenda, working doc, business plan | Signed documents, term sheets, priced offers |\n| Product-line specs and structuring logic | Named individuals and what they said |\n| Open questions and reasoning | Relationship status — who was approached, who declined, who's warm |\n| Organizations as research targets, and why | Personal documents — CVs, transcripts, applications |\n| Milestones and progress | Correspondence threads |\n| Aggregate findings | Vault links themselves |\n\n**The test:** does it name a person and say something about them? Then it's private. Does it name an organization as a candidate partner and explain the reasoning? That's a research observation, and it's public.\n\n\"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — public.\n\"Spoke to [name] on 12 March, lukewarm on the data standard, revisit after pilot\" — private.\n\nCommercial strategy is deliberately on the public side. The thesis isn't a secret worth keeping; execution and relationships are the moat, and those are exactly what stays in the Vault.\n\n## How they connect\n\nThis is the part that makes it workable rather than annoying: **the private data overlays the public data, matched by ID.**\n\n```\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter        (public)\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes        (gitignored)\n                                      ↓ merged on ID by dashboard/build.py\n                            the full picture, locally\n```\n\nSo the repo carries the *structure* and the Vault carries the *instances*. Run the dashboard locally and you see everything. Publish it and you see the public tier. Nothing is duplicated, nothing has to be manually kept in sync, and the boundary is a property of where a file lives rather than a judgement call made repeatedly.\n\nThe same pattern works for the research use case you'd actually want: the analysis code, the schema and the methodology are in the repo; you point them at a dataset in the Vault's `05-raw-data`; the aggregate result comes back into the repo. The tooling is public, the inputs are private, the conclusions are publishable.\n\n**Setting up the overlay, and adding new private fields:** `docs/private-overlay.md` — the operational how-to for this policy.\n\n## Building each tier\n\n```bash\npython3 dashboard/build.py            # merges the private overlay if present\n                                      # → dashboard/data.private.js (gitignored)\n\npython3 dashboard/build.py --public   # public tier only\n                                      # → dashboard/data.js (committed)\n```\n\nThe dashboard loads `data.js`, then `data.private.js` on top if it exists. The header chip says **Private view** or **Public view** so there's no ambiguity about what's on screen — check it before screenshotting anything.\n\n**Before pushing, always run `--public`.** Otherwise the committed `data.js` goes stale.\n\n## Setting up on a new machine\n\nThe `private/` directory is gitignored, so a fresh clone doesn't have it. The canonical copies live in the Vault under `00-private-overlay`. Download them into `private/` and rebuild.\n\nIf you skip that step nothing breaks — you get the public view, with a banner on the Partners and PhD tabs explaining what's missing.\n\n## Pre-publish checklist\n\nRun through this before flipping the repo to public, and before enabling Pages.\n\n- [ ] `grep -rn \"drive.google.com\\|docs.google.com\" --include=\"*.md\" --include=\"*.csv\" .` returns nothing outside `private/` and `docs/publishing.md`\n- [ ] No file in `data/` has a `Contact_Person`, `Contact_Status`, `Application_Status` or `Private_Notes` column\n- [ ] `git ls-files private/` shows only `README.md` and the `.example.csv` templates\n- [ ] `dashboard/data.js` was built with `--public` (check: `grep -c '\"Private_Notes\":' dashboard/data.js` returns 0)\n- [ ] No personal data of any research participant anywhere in the tree\n- [ ] `git log -p | grep -i` spot-check for anything sensitive in history — **history is public too**\n- [ ] Named individuals appearing anywhere public would be comfortable seeing it there\n- [ ] New files are covered by one of the two licences, and anything third-party is flagged in `NOTICE`\n\nThe `publish-check` skill runs most of this.\n\n## Remaining steps to go public\n\n1. ~~Add a licence~~ — done: Apache-2.0 + CC BY 4.0.\n2. **Squash-merge the open PR** so `main` carries only the final tree. Git history is published too, and the Vault folder IDs appear in earlier commits on that branch.\n3. **Flip repo visibility** to public. Owner action — irreversible in practice, since anything public may be cloned or indexed immediately.\n4. **Enable Pages**: Settings → Pages → Source: GitHub Actions. `.github/workflows/pages.yml` takes over from there.\n\n## About git history\n\nFlipping a repo to public publishes **every commit ever made**, not just the current tree. Removing something in a new commit does not unpublish it.\n\nFor this repo that's been checked. The one item ever committed that shouldn't be public is the set of Drive Vault folder URLs, which are access-controlled anyway — someone with a link still has to request access and be refused. Untidy rather than dangerous.\n\nPR #1 was squash-merged, so **`main` carries only the final tree** — a fresh clone contains no Vault IDs.\n\n**But squash-merge does not erase the pull request.** GitHub keeps a merged PR's individual commits reachable under `refs/pull/1/*`, and those are visible to anyone who can see the repo. On a public repo, browsing PR #1's commit list still surfaces the Vault folder IDs. Squashing cleans the branch history, not the PR record.\n\nThree ways to handle it, in ascending order of effort:\n\n1. **Accept it.** The IDs are useless without Drive permissions. This is the proportionate response and the current position.\n2. **Rotate the Vault.** Create new folders, move contents, update `private/pointers.csv`, delete the old folders. Cheapest to do while the Vault is nearly empty — the leaked IDs then point at nothing.\n3. **Ask GitHub Support to purge the PR refs.** Only worth it if something genuinely sensitive is involved. Nothing here meets that bar.\n\n## Enabling GitHub Pages\n\nOnce the repo is public, `.github/workflows/pages.yml` publishes `dashboard/` on every push to `main`. It's committed but **inert until Pages is enabled** in repo settings (Settings → Pages → Source: GitHub Actions).\n\nThe workflow builds with `--public`, so even if a private file were somehow present in CI it wouldn't be published. That's belt-and-braces; the real protection is that `private/` is never committed.\n\nPublished URL will be `https://benbaichmankass.github.io/sustainable-finance-venture/`.\n\n## What flipping to public does not change\n\n- The Vault stays exactly as private as it is now — it's a separate system with its own permissions.\n- Nothing about how you work day to day; the local dashboard still shows everything.\n\n## Licensing\n\nSettled: **Apache-2.0 for code** (`LICENSE`), **CC BY 4.0 for writing and data** (`LICENSE-CONTENT.md`), with `NOTICE` carrying the copyright line and the third-party caveat.\n\nWhy this pair rather than the alternatives:\n\n- **Apache-2.0 over MIT.** Almost identical in permissiveness, but Apache adds an express patent grant and patent-retaliation clause. Today the code is a dashboard; the toolkit this project intends to build — origination schema, underwriting engine, waterfall models — is exactly the kind of work where a patent question can surface later, from us or from a contributor. Apache settles it up front at no practical cost.\n- **CC BY over CC BY-SA.** Share-alike would force anyone incorporating the data schema or matrix into their own materials to open-license those materials too. For a project whose whole strategy is getting NGOs, DFIs and regulators to adopt a standard, that's a barrier pointed the wrong way.\n- **CC BY over CC0.** Attribution is worth keeping for a project with a PhD attached to it. CC0 gives up the citation.\n- **CC BY specifically** also matches how this project's own sources publish — World Bank, OECD and CGAP all use it — so their material and ours are mutually compatible rather than in tension.\n\n**What CC BY on the business plan actually means:** anyone may take the thesis, the product design and the structuring logic and build on them commercially, provided they credit the source. That is the intended consequence, not an oversight — the moat here is execution, relationships and field data, none of which is in this repo.\n\n**What is not licensed by us:** cited sources. The matrix holds our summaries and analysis; the underlying papers remain their publishers' property and their full texts stay in the Vault. See `NOTICE`.\n"
+   "body": "# Publishing — what's public, what's private, and how the two connect\n\n**Status:** policy in force; repo not yet flipped to public · **Last updated:** 2026-07-30\n\n## The posture\n\nThis project is **open by default**. The repo holds the thinking, the methods, the evidence base and the tools — and there is no good reason for any of that to be secret. Community finance and blended finance are fields that advance by people publishing what they learned; a literature matrix and a data schema are more valuable shared than hoarded.\n\nWhat stays private is a short list, and it's private for one reason: **it's about people.** Not because it's commercially precious.\n\n## The line\n\n| Public repo | Private Vault |\n| :---- | :---- |\n| Methods, schemas, code, models | Raw and row-level data, anything identifying a research participant |\n| The literature matrix and memos | Copyrighted PDFs of the sources |\n| Research agenda, working doc, business plan | Signed documents, term sheets, priced offers |\n| Product-line specs and structuring logic | Named individuals and what they said |\n| Open questions and reasoning | Relationship status — who was approached, who declined, who's warm |\n| Organizations as research targets, and why | Personal documents — CVs, transcripts, applications |\n| Milestones and progress | Correspondence threads |\n| Aggregate findings | Vault links themselves |\n\n**The test:** does it name a person and say something about them? Then it's private. Does it name an organization as a candidate partner and explain the reasoning? That's a research observation, and it's public.\n\n\"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — public. \"Spoke to \\[name\\] on 12 March, lukewarm on the data standard, revisit after pilot\" — private.\n\nCommercial strategy is deliberately on the public side. The thesis isn't a secret worth keeping; execution and relationships are the moat, and those are exactly what stays in the Vault.\n\n## How they connect\n\nThis is the part that makes it workable rather than annoying: **the private data overlays the public data, matched by ID.**\n\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter        (public)\n\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes        (gitignored)\n\n                                      ↓ merged on ID by dashboard/build.py\n\n                            the full picture, locally\n\nSo the repo carries the *structure* and the Vault carries the *instances*. Run the dashboard locally and you see everything. Publish it and you see the public tier. Nothing is duplicated, nothing has to be manually kept in sync, and the boundary is a property of where a file lives rather than a judgement call made repeatedly.\n\nThe same pattern works for the research use case you'd actually want: the analysis code, the schema and the methodology are in the repo; you point them at a dataset in the Vault's 05-raw-data; the aggregate result comes back into the repo. The tooling is public, the inputs are private, the conclusions are publishable.\n\n**Setting up the overlay, and adding new private fields:** docs/private-overlay.md — the operational how-to for this policy.\n\n## Building each tier\n\npython3 dashboard/build.py            \\# merges the private overlay if present\n\n                                      \\# → dashboard/data.private.js (gitignored)\n\npython3 dashboard/build.py \\--public   \\# public tier only\n\n                                      \\# → dashboard/data.js (committed)\n\nThe dashboard loads data.js, then data.private.js on top if it exists. The header chip says **Private view** or **Public view** so there's no ambiguity about what's on screen — check it before screenshotting anything.\n\n**Before pushing, always run \\--public.** Otherwise the committed data.js goes stale.\n\n## Setting up on a new machine\n\nThe private/ directory is gitignored, so a fresh clone doesn't have it. The canonical copies live in the Vault under 00-private-overlay. Download them into private/ and rebuild.\n\nIf you skip that step nothing breaks — you get the public view, with a banner on the Partners and PhD tabs explaining what's missing.\n\n## Pre-publish checklist\n\nRun through this before flipping the repo to public, and before enabling Pages.\n\n- [ ] grep \\-rn \"drive.google.com\\\\|docs.google.com\" \\--include=\"\\*.md\" \\--include=\"\\*.csv\" . returns nothing outside private/ and docs/publishing.md  \n- [ ] No file in data/ has a Contact\\_Person, Contact\\_Status, Application\\_Status or Private\\_Notes column  \n- [ ] git ls-files private/ shows only README.md and the .example.csv templates  \n- [ ] dashboard/data.js was built with \\--public (check: grep \\-c '\"Private\\_Notes\":' dashboard/data.js returns 0\\)  \n- [ ] No personal data of any research participant anywhere in the tree  \n- [ ] git log \\-p | grep \\-i spot-check for anything sensitive in history — **history is public too**  \n- [ ] Named individuals appearing anywhere public would be comfortable seeing it there  \n- [ ] New files are covered by one of the two licences, and anything third-party is flagged in NOTICE\n\nThe publish-check skill runs most of this.\n\n## Remaining steps to go public\n\n1. ~~Add a licence~~ — done: Apache-2.0 \\+ CC BY 4.0.  \n2. **Squash-merge the open PR** so main carries only the final tree. Git history is published too, and the Vault folder IDs appear in earlier commits on that branch.  \n3. **Flip repo visibility** to public. Owner action — irreversible in practice, since anything public may be cloned or indexed immediately.  \n4. **Enable Pages**: Settings → Pages → Source: GitHub Actions. .github/workflows/pages.yml takes over from there.\n\n## About git history\n\nFlipping a repo to public publishes **every commit ever made**, not just the current tree. Removing something in a new commit does not unpublish it.\n\nFor this repo that's been checked. The one item ever committed that shouldn't be public is the set of Drive Vault folder URLs, which are access-controlled anyway — someone with a link still has to request access and be refused. Untidy rather than dangerous.\n\nPR \\#1 was squash-merged, so **main carries only the final tree** — a fresh clone contains no Vault IDs.\n\n**But squash-merge does not erase the pull request.** GitHub keeps a merged PR's individual commits reachable under refs/pull/1/\\*, and those are visible to anyone who can see the repo. On a public repo, browsing PR \\#1's commit list still surfaces the Vault folder IDs. Squashing cleans the branch history, not the PR record.\n\nThree ways to handle it, in ascending order of effort:\n\n1. **Accept it.** The IDs are useless without Drive permissions. This is the proportionate response and the current position.  \n2. **Rotate the Vault.** Create new folders, move contents, update private/pointers.csv, delete the old folders. Cheapest to do while the Vault is nearly empty — the leaked IDs then point at nothing.  \n3. **Ask GitHub Support to purge the PR refs.** Only worth it if something genuinely sensitive is involved. Nothing here meets that bar.\n\n## Enabling GitHub Pages\n\nOnce the repo is public, .github/workflows/pages.yml publishes dashboard/ on every push to main. It's committed but **inert until Pages is enabled** in repo settings (Settings → Pages → Source: GitHub Actions).\n\nThe workflow builds with \\--public, so even if a private file were somehow present in CI it wouldn't be published. That's belt-and-braces; the real protection is that private/ is never committed.\n\nPublished URL will be https://benbaichmankass.github.io/sustainable-finance-venture/.\n\n## What flipping to public does not change\n\n- The Vault stays exactly as private as it is now — it's a separate system with its own permissions.  \n- Nothing about how you work day to day; the local dashboard still shows everything.\n\n## Licensing\n\nSettled: **Apache-2.0 for code** (LICENSE), **CC BY 4.0 for writing and data** (LICENSE-CONTENT.md), with NOTICE carrying the copyright line and the third-party caveat.\n\nWhy this pair rather than the alternatives:\n\n- **Apache-2.0 over MIT.** Almost identical in permissiveness, but Apache adds an express patent grant and patent-retaliation clause. Today the code is a dashboard; the toolkit this project intends to build — origination schema, underwriting engine, waterfall models — is exactly the kind of work where a patent question can surface later, from us or from a contributor. Apache settles it up front at no practical cost.  \n- **CC BY over CC BY-SA.** Share-alike would force anyone incorporating the data schema or matrix into their own materials to open-license those materials too. For a project whose whole strategy is getting NGOs, DFIs and regulators to adopt a standard, that's a barrier pointed the wrong way.  \n- **CC BY over CC0.** Attribution is worth keeping for a project with a PhD attached to it. CC0 gives up the citation.  \n- **CC BY specifically** also matches how this project's own sources publish — World Bank, OECD and CGAP all use it — so their material and ours are mutually compatible rather than in tension.\n\n**What CC BY on the business plan actually means:** anyone may take the thesis, the product design and the structuring logic and build on them commercially, provided they credit the source. That is the intended consequence, not an oversight — the moat here is execution, relationships and field data, none of which is in this repo.\n\n**What is not licensed by us:** cited sources. The matrix holds our summaries and analysis; the underlying papers remain their publishers' property and their full texts stay in the Vault. See NOTICE.  \n"
   },
   {
    "path": "docs/research-agenda.md",
@@ -9805,8 +9805,8 @@ window.SFV_DATA = {
    "category": "Product & business",
    "title": "Business Plan — Working Draft",
    "summary": "",
-   "words": 1453,
-   "body": "# Business Plan — Working Draft\n\n**Status:** Draft · **Last updated:** 2026-07-30 · **Owner:** BB\n\nThis is the venture-level plan. Individual product lines have their own documents in `product-design/product-lines/`.\n\nIt draws on three earlier framings, all archived for lineage:\n\n- `archive/google-drive/sds-work-plan.md` (Nov 2024) — sustainable development securities; the general thesis\n- `archive/google-drive/bfav-business-plan.md` (Apr 2024) — agrivoltaic project finance; now Product Line 2\n- `archive/google-drive/web3-vsla-business-plan.md` (Feb 2025) — Web3/DAO delivery; now Product Line 1\n\n**What carried over, and what did not.** From the Web3 plan: the community-finance core, the pooled-liquidity/structured-product revenue model, the risk-layer positioning, and the insurance expansion path all survive; the blockchain/DAO delivery mechanism does not — smart-contract governance solved a trust problem VSLAs already solve socially, while adding crypto-regulatory and FX risk the venture has no reason to carry. From the SDS plan: the pooling logic (combine assets with uncorrelated idiosyncratic risk across timeline, type and geography), the \"design the asset to capture induced growth\" principle, and the public-markets distribution ambition carry directly into the securitization design. From BFAV: the whole thing, promoted from a standalone business to a product line.\n\n---\n\n## 1. Concept\n\nA structuring and verification layer that turns cash flows originated in underfunded sustainable-development sectors into standardized, verifiable, poolable assets that institutional capital can price.\n\nThe thesis is that some sustainable-development problems persist not because solutions are absent, but because the market lacks the right financial product design, underwriting logic, distribution mechanism and de-risking structure to channel capital toward them.\n\n**The thesis is layer-agnostic.** It does not say anything about VSLAs specifically. It says that if an asset's cash flows are standardized, verifiable and legally transferable *at origination*, they can be pooled and sold; and that the reason they usually aren't is that nobody designed them that way. That claim applies equally to a community loan book and to a portfolio of solar PPAs — which is why the venture runs more than one product line.\n\n## 2. Product lines\n\nTracked in `data/product-lines.csv`.\n\n| | **PL-1 — Community credit & insurance** | **PL-2 — Agrivoltaic project finance (BFAV)** |\n|---|---|---|\n| Origination layer | VSLAs, MFIs, NGOs, employer networks | Farmers / landholders via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Tenor | Months | 15–25 years |\n| Counterparty | Many small, socially enforced | One utility, monopsony |\n| Hard part | Data capture and standardization | Permitting, offtake terms, concentration |\n| Precedent | LIT-004, LIT-006 | LIT-008 |\n| Evidence base | Strong (LIT-001/002/003/007) | Thin — no equivalent impact literature yet |\n| Document | `product-lines/community-credit-and-insurance.md` | `product-lines/agrivoltaic-project-finance.md` |\n\n**Why they belong together.** Beyond sharing the thesis, they share the *toolkit* — the data schema, underwriting engine, monitoring system and waterfall models in §5 are largely asset-agnostic. Building them twice would be waste.\n\nAnd they are close to uncorrelated. A community loan book and a portfolio of utility PPAs have almost no shared risk driver: different obligors, different macro exposure, different failure modes. That is exactly the diversification the SDS plan argued for, and neither line achieves it alone — PL-2 in particular is only superficially diversified, since many small projects still face one offtaker and one regulator.\n\nWhether that means they should share a *vehicle* is a separate question — investors and rating agencies generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one. **Resolved (OQ-8, 2026-08-02): keep separate homogeneous pools**, and capture the PL-1/PL-2 diversification at the fund/investor level rather than inside one pool.\n\n**Sequencing.** PL-1 leads, because it carries the research programme and the PhD, and because its evidence base is real. PL-2 is closer to revenue and has a cleaner asset, so it may well produce the first pooled structure. They are not competing for the same milestone.\n\n## 3. Three-layer structure\n\n| Layer | Who | What they do |\n|---|---|---|\n| **Origination** | PL-1: VSLAs, NGOs, MFIs, employer networks · PL-2: farmers/landholders, EPC subcontractors | KYC, disbursement, collections, claims, construction, local compliance |\n| **Risk (our layer)** | Us | Underwriting rules, monitoring dashboards, early-warning systems, risk-sharing/tranching design, first-loss structuring |\n| **Product** | Joint | Loans, insurance, bundled products, project equity/debt — priced using origination data |\n\nWe sit in the structuring layer deliberately. Regulated entities handle origination, claims, collections and compliance; we are asset-light and do not seek a licence in the first phase.\n\n**Target end state:** investment-grade tranches sellable to institutional investors, with DFI/philanthropic capital absorbing first-loss/junior risk and private capital in mezzanine and senior.\n\n## 4. Revenue model\n\n1. **Structuring and servicing fees** on pools we assemble and monitor.\n2. **Retained economic interest** in the pools — which is not optional: EU/UK risk-retention rules require the originator/sponsor to hold a minimum economic interest if senior notes are placed with those investors (see `literature/notes/memo-3-securitization-blended-finance.md`).\n3. **Data/analytics licensing** to originators and funders once the underwriting engine has a track record.\n\nThe earlier Web3 plan's \"non-voting investor in the VSLA\" model is preserved in substance by (2): we take return on capital without taking governance control of the group.\n\n## 5. Toolkit to build\n\n1. Standardized data schema for loans/insurance — ABS-data-tape-ready (→ OQ-3)\n2. Underwriting engine — rules-based plus ML scoring incorporating community signals\n3. Monitoring & early-warning system — DPD tracking, delinquency/claim pattern alerts\n4. Impact evaluation module — randomization infrastructure, pre-registered designs with academic partners\n5. Securitization modelling — cash-flow waterfall models, loss/prepayment simulations\n\n## 6. Market and pilot direction\n\n**Two candidate first sites.**\n\n- **Israel (migrant-worker communities)** — logistical proximity, easier hands-on project management, existing regulatory environment around foreign-worker insurance. A controlled environment in which to develop the research protocol and tooling.\n- **Africa (multi-country VSLA networks)** — deep traditions of community-based finance, high financial exclusion, alignment with blended-finance/SDG capital mobilization narratives, and a nascent securitization market that offers first-mover advantage in standard-setting.\n\n**Working decision:** anchor methodology development in Israel first, then replicate in an African country as a second field site once the framework is proven. Final decision pending contact/access assessment.\n\n## 7. Structuring assumptions (evidence-backed)\n\nDerived from the literature review; see Memo 3 for sources.\n\n| Assumption | Working value | Basis |\n|---|---|---|\n| First-loss / junior tranche size | 10–20% of structure | LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | LIT-012 |\n| Originator structure | Multi-originator, plausibly regional | LIT-008, LIT-011 |\n| Track record before first tranche | 2–3 years of clean repayment data | LIT-004, LIT-006 |\n\nThese are starting ranges to be tested, not targets. Each is an observed central tendency across deals that do not closely resemble our asset class.\n\n## 8. Risks\n\n| Category | Risk | Mitigation |\n|---|---|---|\n| Market | No investor appetite for a novel asset class at pilot scale | Anchor investor secured before structuring; frame first vehicle as a blended fund, not a public ABS |\n| Financial | FX exposure between local-currency receivables and hard-currency notes | Hedging or local-currency tranches; DFI guarantees for FX risk |\n| Financial | Interest-rate mismatch across the waterfall | Match funding tenor to asset tenor at structuring |\n| Credit | Community portfolios underperform relative to modelled loss curves | First-loss layer; conservative advance rates; early-warning monitoring |\n| Legal | Cross-border transfer fails a true-sale test in one jurisdiction | Run the LIT-009 six-point checklist with local counsel **before** committing to a geography (→ OQ-1) |\n| Regulatory | Origination partner loses licence or falls foul of local rules | Partner diligence; multi-originator structure limits single-partner exposure |\n| Operational | Origination data quality too poor to underwrite | Schema and data capture designed at origination, not retrofitted (→ OQ-3) |\n| Reputational | Impact claims outrun the evidence base | Frame around resilience/smoothing, which the evidence supports (Memo 2) |\n\n## 9. Open work\n\nTracked in `data/milestones.csv` and `data/open-questions.csv`. The near-term critical path:\n\n1. Draft the canonical data schema (OQ-3) — blocks everything downstream.\n2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection.\n3. First originator and verification partner conversations (M-03, M-04).\n4. Choose the first instrument: loan vs insurance vs bundled.\n\n## 10. Not yet drafted\n\nSections carried forward from the earlier plans that still need work, listed so the gaps stay visible:\n\n- Financial plan — cost structure, revenue projections, funding ask\n- Organization & management — team structure, hiring sequence\n- Competitive analysis — who else is structuring community-originated assets\n- Marketing/BD strategy — how originator partners are actually reached\n- Legal structure of the operating company itself\n"
+   "words": 1477,
+   "body": "# Business Plan — Working Draft\n\n**Status:** Draft · **Last updated:** 2026-07-30 · **Owner:** BB\n\nThis is the venture-level plan. Individual product lines have their own documents in product-design/product-lines/.\n\nIt draws on three earlier framings, all archived for lineage:\n\n- archive/google-drive/sds-work-plan.md (Nov 2024\\) — sustainable development securities; the general thesis  \n- archive/google-drive/bfav-business-plan.md (Apr 2024\\) — agrivoltaic project finance; now Product Line 2  \n- archive/google-drive/web3-vsla-business-plan.md (Feb 2025\\) — Web3/DAO delivery; now Product Line 1\n\n**What carried over, and what did not.** From the Web3 plan: the community-finance core, the pooled-liquidity/structured-product revenue model, the risk-layer positioning, and the insurance expansion path all survive; the blockchain/DAO delivery mechanism does not — smart-contract governance solved a trust problem VSLAs already solve socially, while adding crypto-regulatory and FX risk the venture has no reason to carry. From the SDS plan: the pooling logic (combine assets with uncorrelated idiosyncratic risk across timeline, type and geography), the \"design the asset to capture induced growth\" principle, and the public-markets distribution ambition carry directly into the securitization design. From BFAV: the whole thing, promoted from a standalone business to a product line.\n\n---\n\n## 1\\. Concept\n\nA structuring and verification layer that turns cash flows originated in underfunded sustainable-development sectors into standardized, verifiable, poolable assets that institutional capital can price.\n\nThe thesis is that some sustainable-development problems persist not because solutions are absent, but because the market lacks the right financial product design, underwriting logic, distribution mechanism and de-risking structure to channel capital toward them.\n\n**The thesis is layer-agnostic.** It does not say anything about VSLAs specifically. It says that if an asset's cash flows are standardized, verifiable and legally transferable *at origination*, they can be pooled and sold; and that the reason they usually aren't is that nobody designed them that way. That claim applies equally to a community loan book and to a portfolio of solar PPAs — which is why the venture runs more than one product line.\n\n## 2\\. Product lines\n\nTracked in data/product-lines.csv.\n\n|  | PL-1 — Community credit & insurance | PL-2 — Agrivoltaic project finance (BFAV) |\n| :---- | :---- | :---- |\n| Origination layer | VSLAs, MFIs, NGOs, employer networks | Farmers / landholders via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Tenor | Months | 15–25 years |\n| Counterparty | Many small, socially enforced | One utility, monopsony |\n| Hard part | Data capture and standardization | Permitting, offtake terms, concentration |\n| Precedent | LIT-004, LIT-006 | LIT-008 |\n| Evidence base | Strong (LIT-001/002/003/007) | Thin — no equivalent impact literature yet |\n| Document | product-lines/community-credit-and-insurance.md | product-lines/agrivoltaic-project-finance.md |\n\n**Why they belong together.** Beyond sharing the thesis, they share the *toolkit* — the data schema, underwriting engine, monitoring system and waterfall models in §5 are largely asset-agnostic. Building them twice would be waste.\n\nAnd they are close to uncorrelated. A community loan book and a portfolio of utility PPAs have almost no shared risk driver: different obligors, different macro exposure, different failure modes. That is exactly the diversification the SDS plan argued for, and neither line achieves it alone — PL-2 in particular is only superficially diversified, since many small projects still face one offtaker and one regulator.\n\nWhether that means they should share a *vehicle* is a separate question — investors and rating agencies generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one. **Resolved (OQ-8, 2026-08-02): keep separate homogeneous pools**, and capture the PL-1/PL-2 diversification at the fund/investor level rather than inside one pool.\n\n**Sequencing.** PL-1 leads, because it carries the research programme and the PhD, and because its evidence base is real. PL-2 is closer to revenue and has a cleaner asset, so it may well produce the first pooled structure. They are not competing for the same milestone.\n\n## 3\\. Three-layer structure\n\n| Layer | Who | What they do |\n| :---- | :---- | :---- |\n| **Origination** | PL-1: VSLAs, NGOs, MFIs, employer networks · PL-2: farmers/landholders, EPC subcontractors | KYC, disbursement, collections, claims, construction, local compliance |\n| **Risk (our layer)** | Us | Underwriting rules, monitoring dashboards, early-warning systems, risk-sharing/tranching design, first-loss structuring |\n| **Product** | Joint | Loans, insurance, bundled products, project equity/debt — priced using origination data |\n\nWe sit in the structuring layer deliberately. Regulated entities handle origination, claims, collections and compliance; we are asset-light and do not seek a licence in the first phase.\n\n**Target end state:** investment-grade tranches sellable to institutional investors, with DFI/philanthropic capital absorbing first-loss/junior risk and private capital in mezzanine and senior.\n\n## 4\\. Revenue model\n\n1. **Structuring and servicing fees** on pools we assemble and monitor.  \n2. **Retained economic interest** in the pools — which is not optional: EU/UK risk-retention rules require the originator/sponsor to hold a minimum economic interest if senior notes are placed with those investors (see literature/notes/memo-3-securitization-blended-finance.md).  \n3. **Data/analytics licensing** to originators and funders once the underwriting engine has a track record.\n\nThe earlier Web3 plan's \"non-voting investor in the VSLA\" model is preserved in substance by (2): we take return on capital without taking governance control of the group.\n\n## 5\\. Toolkit to build\n\n1. Standardized data schema for loans/insurance — ABS-data-tape-ready (→ OQ-3)  \n2. Underwriting engine — rules-based plus ML scoring incorporating community signals  \n3. Monitoring & early-warning system — DPD tracking, delinquency/claim pattern alerts  \n4. Impact evaluation module — randomization infrastructure, pre-registered designs with academic partners  \n5. Securitization modelling — cash-flow waterfall models, loss/prepayment simulations\n\n## 6\\. Market and pilot direction\n\n**Two candidate first sites.**\n\n- **Israel (migrant-worker communities)** — logistical proximity, easier hands-on project management, existing regulatory environment around foreign-worker insurance. A controlled environment in which to develop the research protocol and tooling.  \n- **Africa (multi-country VSLA networks)** — deep traditions of community-based finance, high financial exclusion, alignment with blended-finance/SDG capital mobilization narratives, and a nascent securitization market that offers first-mover advantage in standard-setting.\n\n**Working decision:** anchor methodology development in Israel first, then replicate in an African country as a second field site once the framework is proven. Final decision pending contact/access assessment.\n\n## 7\\. Structuring assumptions (evidence-backed)\n\nDerived from the literature review; see Memo 3 for sources.\n\n| Assumption | Working value | Basis |\n| :---- | :---- | :---- |\n| First-loss / junior tranche size | 10–20% of structure | LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | LIT-012 |\n| Originator structure | Multi-originator, plausibly regional | LIT-008, LIT-011 |\n| Track record before first tranche | 2–3 years of clean repayment data | LIT-004, LIT-006 |\n\nThese are starting ranges to be tested, not targets. Each is an observed central tendency across deals that do not closely resemble our asset class.\n\n## 8\\. Risks\n\n| Category | Risk | Mitigation |\n| :---- | :---- | :---- |\n| Market | No investor appetite for a novel asset class at pilot scale | Anchor investor secured before structuring; frame first vehicle as a blended fund, not a public ABS |\n| Financial | FX exposure between local-currency receivables and hard-currency notes | Hedging or local-currency tranches; DFI guarantees for FX risk |\n| Financial | Interest-rate mismatch across the waterfall | Match funding tenor to asset tenor at structuring |\n| Credit | Community portfolios underperform relative to modelled loss curves | First-loss layer; conservative advance rates; early-warning monitoring |\n| Legal | Cross-border transfer fails a true-sale test in one jurisdiction | Run the LIT-009 six-point checklist with local counsel **before** committing to a geography (→ OQ-1) |\n| Regulatory | Origination partner loses licence or falls foul of local rules | Partner diligence; multi-originator structure limits single-partner exposure |\n| Operational | Origination data quality too poor to underwrite | Schema and data capture designed at origination, not retrofitted (→ OQ-3) |\n| Reputational | Impact claims outrun the evidence base | Frame around resilience/smoothing, which the evidence supports (Memo 2\\) |\n\n## 9\\. Open work\n\nTracked in data/milestones.csv and data/open-questions.csv. The near-term critical path:\n\n1. Draft the canonical data schema (OQ-3) — blocks everything downstream.  \n2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection.  \n3. First originator and verification partner conversations (M-03, M-04).  \n4. Choose the first instrument: loan vs insurance vs bundled.\n\n## 10\\. Not yet drafted\n\nSections carried forward from the earlier plans that still need work, listed so the gaps stay visible:\n\n- Financial plan — cost structure, revenue projections, funding ask  \n- Organization & management — team structure, hiring sequence  \n- Competitive analysis — who else is structuring community-originated assets  \n- Marketing/BD strategy — how originator partners are actually reached  \n- Legal structure of the operating company itself\n\n"
   },
   {
    "path": "product-design/product-lines/agrivoltaic-project-finance.md",
@@ -9983,7 +9983,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 44957
+   "totalWords": 44981
   }
  }
 };
