@@ -43,6 +43,7 @@ docs/
   drive-sync.md                  The automated, bidirectional Drive workfolder sync
   publishing.md                  Public/private boundary, pre-publish checklist
   macro-watch.md                 Macro watchlist rationale and logging discipline
+  scratchpad.md                  Untriaged ideas — Drive-synced capture doc, cleared as items get filed
 literature/
   lit-matrix.csv                 THE literature matrix — one row per source
   notes/memo-*.md                Synthesis memos
@@ -89,6 +90,7 @@ scripts/                         Automation run outside the dashboard build (Dri
 | A PDF, CV, or email thread | the Vault (`docs/drive-vault.md`), then a pointer row |
 | Narrative reasoning or a plan | a markdown doc in `docs/` |
 | A doc that should stay editable from Google Drive | a row in `data/drive-links.csv` — see `docs/drive-sync.md` |
+| A half-formed idea with no home yet | `docs/scratchpad.md` — then file it properly and delete it from there |
 
 **Every record gets a stable ID** (`LIT-009`, `OQ-3`, `PT-04`, `M-07`). IDs are never reused or renumbered — cross-references depend on them. When something is superseded, mark it, don't delete it.
 

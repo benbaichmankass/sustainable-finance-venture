@@ -41,8 +41,9 @@ docs/
   drive-vault.md           What lives in Drive instead of git, and why
   publishing.md            Public/private boundary and pre-publish checklist
   private-overlay.md       Collaborator onboarding for the private overlay
-  macro-watch.md           Macro watchlist, live values and stress scenarios
+  drive-sync.md            The automated, bidirectional Drive workfolder sync
   macro-watch.md           Macro watchlist rationale and logging discipline
+  scratchpad.md            Untriaged ideas — Drive-synced, cleared as items get filed
 literature/
   lit-matrix.csv           15 anchors (LIT-001 … LIT-015)
   notes/memo-*.md          3 synthesis memos, all Reviewed

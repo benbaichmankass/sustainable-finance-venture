@@ -82,15 +82,28 @@ Shared Drives fix this properly (files there are owned by the Shared Drive, not 
 
 **New files must be created by a real account with its own quota, then the service account only ever edits what already exists.** The initial 32 docs were seeded this way (via an authenticated Drive connection to the folder owner's real account) rather than through the automated workflow.
 
+## The manifest is the whole world — nothing is auto-discovered
+
+The script iterates over the rows in `data/drive-links.csv` and nothing else. It never lists the workfolder's contents, so:
+
+- **A Doc you create by hand in the Drive workfolder will not appear in the repo.** It sits there, unseen, until someone adds a `DRV-NN` row pointing at it. There is no scan step that would notice it.
+- **A markdown file you add to the repo will not appear in Drive**, for the same reason.
+
+Sync is bidirectional *per registered pair*, not per folder. Registration is the manual half, and it's manual on purpose — it's what keeps an arbitrary Drive upload from landing in a public repo without anyone deciding it should.
+
 ## Adding a new synced document
 
-Because of the constraint above, adding a new synced doc is a two-step, not a one-step:
+Because of the quota constraint above, adding a new synced doc is a three-step:
 
-1. **Create the Doc yourself first** — either directly in Drive (File → New → Google Doc, inside the workfolder), or by asking an agent with a real (non-service-account) Drive connection to create it from the repo file's content. Either way, note the resulting file's ID from its URL (`docs.google.com/document/d/<ID>/edit`).
-2. **Add a row to `data/drive-links.csv`** with that `Drive_ID` already filled in — a fresh `DRV-NN` ID, `Repo_Path` set, `Parent_ID` set to the folder row's ID, `Type` set, `Status` set to `Not synced`, baseline hash columns left blank.
-3. Trigger the workflow (scheduled, or Actions tab → Drive sync → Run workflow). Since `Drive_ID` is no longer blank, the script treats this as a normal reconciliation, not a creation — it'll see one side changed relative to a blank baseline and sync accordingly, filling in the baseline hashes and `Status: Synced`.
+1. **Create the Doc first, from an account with storage quota** — directly in Drive (File → New → Google Doc, inside the workfolder), or via an agent holding a real Drive connection rather than the service-account key. Note the file ID from its URL (`docs.google.com/document/d/<ID>/edit`). Seed it with the repo file's content in the same move, so the two sides start out saying the same thing.
+2. **Baseline both sides before the first run.** Add the row with `Drive_ID` filled in, a fresh `DRV-NN`, `Repo_Path`, `Parent_ID` pointing at the folder row, `Type`, and — this is the part that matters — **both baseline hashes already populated**, `Status: Synced`.
 
-Leaving `Drive_ID` blank and letting the workflow create it will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive.
+   Leaving the baselines blank does *not* produce a clean first sync. Blank baselines make both sides read as changed, and since a markdown → Google Doc → markdown round-trip is never quite byte-identical, the two hashes won't match either — which is precisely the conflict signature. The very first scheduled run would open a conflict issue on a document nobody had edited yet.
+
+   So compute them by hand: `Baseline_Repo_Hash` is the SHA-256 of the repo file's bytes; `Baseline_Drive_Hash` is the SHA-256 of the Doc **exported as `text/markdown`** — Drive's own rendering, not the content you uploaded. Getting one slightly wrong is survivable (the next run just pulls or pushes, and re-baselines itself); leaving both blank is the case that actually jams.
+3. **Trigger the workflow** (scheduled, or Actions tab → Drive sync → Run workflow) and confirm the row comes back clean. With correct baselines this run is a no-op, which is the point — the row is already reconciled and the automation takes over from there.
+
+Leaving `Drive_ID` blank and letting the workflow create the file will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive. The `create` branch in `reconcile_row()` is still correct code — it just can't run on this account.
 
 ## Cadence and its tradeoff
 
