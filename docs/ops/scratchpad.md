@@ -6,9 +6,9 @@ A holding pen for half-formed ideas. Write here when you have a thought worth ke
 
 ## How to use it
 
-- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.
-- **Date the section** you're writing under so we can tell a stale idea from a fresh one.
-- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.
+- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  
+- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  
+- **Editable from either side.** This doc has a Google Doc twin in the workfolder; the sync reconciles them roughly every 15 minutes in whichever direction actually changed. Writing on a phone is the point.  
 - **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.
 
 ## How ideas leave
@@ -19,8 +19,8 @@ Nothing stays here permanently. When we go over the list, each item either dies 
 
 This file is public. Two things belong elsewhere, no exceptions:
 
-- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.
-- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.
+- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  
+- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/publishing.md`.
 
 If an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.
 
@@ -28,4 +28,5 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 
 ## 2026-08-06
 
-- _(first entry — replace me)_
+- *Testing the mechanism of community based risk management (intimate knowledge or social costs of non-repayment)*
+

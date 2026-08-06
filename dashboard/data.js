@@ -698,7 +698,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -713,7 +713,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -728,7 +728,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.38",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -743,7 +743,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -758,7 +758,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.0594",
    "Chg_12m": "-0.4037",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -773,7 +773,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -788,7 +788,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.6",
    "Chg_12m": "2.2",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -803,7 +803,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.065",
    "Chg_12m": "-0.315",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -818,7 +818,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.2",
    "Chg_12m": "2.9",
    "Direction": "down",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -833,7 +833,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.23",
    "Chg_12m": "0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -848,7 +848,7 @@ window.SFV_DATA = {
    "Chg_3m": "-35.26",
    "Chg_12m": "19.73",
    "Direction": "up",
-   "Fetched_At": "2026-08-06T22:02:46+00:00",
+   "Fetched_At": "2026-08-06T23:19:38+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -3694,10 +3694,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "ce3f06b2efb2640b2199fbdc70ebc9efb0c330b46c44a5d0cf57aa512669da7b",
-   "Baseline_Repo_Hash": "856302da7554e64f3d0380a22c0c444222bac96b339d6f6334af49bdecd63d1b",
-   "Last_Synced_At": "2026-08-06T18:09:34Z",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "9f5d5ac6ba8797861627251c074e177475b2c62421f8d1ea2834b339ce81058e",
+   "Baseline_Repo_Hash": "9f5d5ac6ba8797861627251c074e177475b2c62421f8d1ea2834b339ce81058e",
+   "Last_Synced_At": "2026-08-06T23:23:36Z",
+   "Status": "Synced"
   }
  ],
  "macroSeries": {
@@ -9716,8 +9716,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Scratchpad",
    "summary": "",
-   "words": 364,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.\n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.\n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.\n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.\n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n- _(first entry — replace me)_\n"
+   "words": 346,
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder; the sync reconciles them roughly every 15 minutes in whichever direction actually changed. Writing on a phone is the point.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n- *Testing the mechanism of community based risk management (intimate knowledge or social costs of non-repayment)*\n\n"
   },
   {
    "path": "docs/ops/drive-sync.md",
@@ -10152,7 +10152,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 46808
+   "totalWords": 46790
   }
  }
 };
