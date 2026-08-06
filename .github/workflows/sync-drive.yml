@@ -5,10 +5,31 @@ name: Drive sync
 # a deterministic script (scripts/sync_drive.py) run on a timer.
 
 on:
+  # Repo -> Drive needs no scheduler at all: a push that touches a synced file
+  # IS the trigger. This is the reliable half of the sync. GITHUB_TOKEN pushes
+  # do not retrigger workflows, so this job's own commit cannot loop back here.
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'literature/notes/**'
+      - 'product-design/**'
+      - 'risk-tools/**'
+      - 'data/drive-links.csv'
+
+  # Drive -> repo has no push signal available (that would need a hosted webhook
+  # receiver for Drive's watch channels), so it still has to be polled.
+  #
+  # Hourly, not every 15 minutes. Measured over 18.7h on 2026-08-06, a
+  # '7,22,37,52' cron fired 10 times out of 74 - 87% of scheduled runs were
+  # dropped, mean gap 124 min against the 15 min the schedule claimed, and the
+  # runs that did fire did not land on the cron minutes either. Scheduled
+  # workflows are best-effort and high-frequency crons are deprioritised
+  # hardest, so asking for 4x/hour bought nothing but scheduler pressure and a
+  # cadence figure in the docs that was never true.
   schedule:
-    # Four times an hour, off the congested :00/:15/:30/:45 marks (see the
-    # same reasoning in pages.yml's cron comment).
-    - cron: '7,22,37,52 * * * *'
+    - cron: '22 * * * *'
+
   workflow_dispatch:
 
 permissions:
@@ -50,6 +71,14 @@ jobs:
       - name: Rebuild dashboard data
         run: python3 dashboard/build.py --public
 
+      # A bare `git push` here loses the race whenever main advanced during the
+      # run - another merge, a Pages macro-refresh commit, or a backlog of runs
+      # draining after an Actions outage. The reconcile work is then thrown away
+      # and the manifest's new baselines are lost, so the next run redoes it all
+      # and the row sits on a stale Status until one happens to win the race.
+      # Rebase and retry instead: these commits are content-only and never
+      # conflict semantically with someone else's, so replaying them on top of
+      # whatever landed is always the right resolution.
       - name: Commit and push if anything changed
         run: |
           set -e
@@ -61,4 +90,15 @@ jobs:
             exit 0
           fi
           git commit -m "drive-sync: reconcile ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt) - main moved. Rebasing onto it."
+            git fetch origin main
+            git rebase origin/main
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not push after 5 attempts - main is moving faster than this job can rebase."
+          exit 1
