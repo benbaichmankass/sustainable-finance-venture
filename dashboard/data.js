@@ -3695,9 +3695,9 @@ window.SFV_DATA = {
    "Title": "Scratchpad",
    "Category": "Planning",
    "Baseline_Drive_Hash": "ce3f06b2efb2640b2199fbdc70ebc9efb0c330b46c44a5d0cf57aa512669da7b",
-   "Baseline_Repo_Hash": "3906435ab9149a204555ea81cfdd07f43af33e6375a422af11fe34cd62c080b9",
+   "Baseline_Repo_Hash": "856302da7554e64f3d0380a22c0c444222bac96b339d6f6334af49bdecd63d1b",
    "Last_Synced_At": "2026-08-06T18:09:34Z",
-   "Status": "Conflict"
+   "Status": "Not synced"
   }
  ],
  "macroSeries": {
