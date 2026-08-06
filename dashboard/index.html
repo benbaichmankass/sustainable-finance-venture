@@ -2091,7 +2091,8 @@ function renderDriveSection() {
       ? nameLink("Open the master folder", "https://drive.google.com/drive/folders/" + folder.Drive_ID, folder.Title)
       : "") +
     '<p class="hint" style="margin:6px 0 0">Every document below is mirrored bidirectionally with a Doc in that folder — ' +
-    'edit either side and an automated job reconciles the other within about 15 minutes, no manual sync step needed. ' +
+    'edit either side and an automated job reconciles the other, no manual sync step needed. Repo edits sync on the ' +
+    'commit; Drive edits are polled and can take a couple of hours to come back. ' +
     'The repo stays the source of truth throughout; see <code>docs/ops/drive-sync.md</code> for how.</p></div>' +
     '<div class="filters"><select class="pickr" id="drv-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +

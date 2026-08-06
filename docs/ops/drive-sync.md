@@ -18,8 +18,10 @@ data/drive-links.csv  ── manifest: one row per synced item ─┐
 scripts/sync_drive.py ── the reconciliation engine ──────────┤
   (service-account auth, hash comparison, pull/push/conflict) │
                                                               │
-.github/workflows/sync-drive.yml ── runs it on a timer ──────┘
-  (every ~15 min + manual dispatch, commits straight to main)
+.github/workflows/sync-drive.yml ── runs it ─────────────────┘
+  (on push to a synced path + hourly poll + manual dispatch;
+   commits straight to main. See "Cadence" - the poll is
+   best-effort and routinely much slower than hourly.)
 
 dashboard/build.py reads data/drive-links.csv like any other tracker ─→
   Resources tab: master folder link + every item, each linking out to
@@ -58,7 +60,7 @@ Every run, for every non-folder row, the script computes the current hash of bot
 | changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |
 | — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious "changed" on the very next run) |
 
-Why compare against a stored baseline instead of just "whichever timestamp is newer": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same 15-minute window, and whichever wrote last wins with no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.
+Why compare against a stored baseline instead of just "whichever timestamp is newer": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same polling window — and that window is hours wide, not minutes, so the odds of it happening are not academic — with whichever wrote last winning and no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.
 
 ## Resolving a conflict
 
@@ -105,9 +107,33 @@ Because of the quota constraint above, adding a new synced doc is a three-step:
 
 Leaving `Drive_ID` blank and letting the workflow create the file will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive. The `create` branch in `reconcile_row()` is still correct code — it just can't run on this account.
 
-## Cadence and its tradeoff
+## Cadence — and why the two directions are not symmetric
 
-The workflow polls every ~15 minutes rather than reacting to a Drive push notification. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep. Fifteen-minute polling gets nearly all the same practical benefit (nobody is watching a doc update in real time) at zero hosting cost and nothing to renew. If that latency ever actually matters, revisiting this is a self-contained change — it doesn't require touching the reconciliation logic, only the trigger.
+The two directions have different trigger mechanics, and conflating them is what produced the wrong latency figure this section used to quote.
+
+**Repo → Drive is push-triggered and effectively immediate.** A commit to `main` touching `docs/`, `literature/notes/`, `product-design/`, `risk-tools/` or the manifest runs the workflow directly. No scheduler involved, so no scheduler to be let down by. (The job's own commit can't loop back: pushes authenticated with `GITHUB_TOKEN` don't retrigger workflows.)
+
+**Drive → repo has to be polled**, because there's no signal to react to. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep, to speed up the direction that's used less. Not worth it yet.
+
+### What the cron actually delivers
+
+The poll is **hourly**, and that number is deliberately modest, because a more aggressive one was measured and found to be fiction. The schedule used to read `7,22,37,52 * * * *` — four times an hour. Measured over 18.7 hours on 2026-08-06:
+
+| | |
+|---|---|
+| Scheduled runs in the window | 74 |
+| Runs that actually fired | 10 |
+| **Dropped** | **87%** |
+| Claimed gap | 15 min |
+| Observed gap | 60–205 min, mean 124 |
+
+The runs that did fire didn't land on the cron minutes either. This is documented GitHub behaviour, not a repo bug: `schedule` is best-effort, it's deprioritised under load, and high-frequency crons are dropped hardest. Asking for four runs an hour bought nothing but scheduler pressure and a latency figure in this document that was never true.
+
+So: **assume up to a couple of hours for a Drive-side edit to reach the repo**, and don't design anything around a tighter bound. If you need it now, run the workflow by hand — Actions tab → Drive sync → Run workflow. A repo-side edit, by contrast, syncs on the push.
+
+### When Actions is down
+
+Both triggers are dead during a GitHub Actions outage, and a run queued when the incident starts may be cancelled rather than eventually run. Nothing is lost when this happens — reconciliation is a pure function of current state against the stored baselines, so a skipped run is simply caught by the next one. Check <https://www.githubstatus.com> before debugging a sync that appears stuck; on 2026-08-06 an Actions/Pages major outage from 15:22Z stalled both this workflow and the Pages deploy for hours, and it looked exactly like a broken workflow from inside the repo.
 
 ## One-time setup (already done for this repo)
 

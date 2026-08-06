@@ -8,7 +8,7 @@ A holding pen for half-formed ideas. Write here when you have a thought worth ke
 
 - **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.
 - **Date the section** you're writing under so we can tell a stale idea from a fresh one.
-- **Editable from either side.** This doc has a Google Doc twin in the workfolder; the sync reconciles them roughly every 15 minutes in whichever direction actually changed. Writing on a phone is the point.
+- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.
 - **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.
 
 ## How ideas leave
