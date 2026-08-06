@@ -28,9 +28,20 @@ Open `dashboard/index.html` directly in a browser — it works from `file://`, n
 3. Add a tab entry in `index.html`'s `TABS` array with its render config.
 4. Rebuild and open the page to check it.
 
+## Adding a new document
+
+Markdown files under the indexed directories are picked up automatically, but a new one still needs a home in the Library's tree:
+
+1. Put the file in the right `docs/` subfolder — `research/`, `phd/`, `venture/` or `ops/`. Never loose in `docs/`.
+2. If no existing `DOC_TREE` prefix in `build.py` already covers it, add one. Rows are `(path prefix, group, section)`, first match wins, and list order is render order.
+3. Rebuild. **Check stderr** — a document matching no prefix is reported there and shows up on the page under `Unfiled / Needs a home`. That's the taxonomy telling you it has a gap, not a cosmetic warning.
+4. If it belongs to a numbered family (RT, MEMO, PL), add it to `DOC_FAMILY` so it renders with its ID chip and sorts in sequence.
+
+Full reasoning in `docs/ops/dashboard-design.md`, "How the Library is organised".
+
 ## Design constraints
 
-Documented in `docs/dashboard-design.md`. The ones that are easy to break:
+Documented in `docs/ops/dashboard-design.md`. The ones that are easy to break:
 
 - **No external requests.** No CDN scripts, no web fonts, no remote images. Everything inline.
 - **No build toolchain.** No npm, no bundler. A contributor with Python and a browser must be able to run this in five years.

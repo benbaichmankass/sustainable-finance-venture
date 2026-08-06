@@ -1,6 +1,6 @@
 # Grant & Funding Plan for Research Experiments
 
-**Status:** Plan (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §5
+**Status:** Plan (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §5
 
 This is the plan for raising the non-dilutive funding that pays for the research experiments —
 the field pilots and impact evaluations, distinct from the blended/DFI capital that funds the

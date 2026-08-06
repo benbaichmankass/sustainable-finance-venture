@@ -1,6 +1,6 @@
 # Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity
 
-**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §2
+**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §2
 
 ## Purpose
 

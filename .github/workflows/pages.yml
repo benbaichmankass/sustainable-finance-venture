@@ -3,7 +3,7 @@ name: Publish dashboard to GitHub Pages
 # Inert until Pages is enabled: Settings -> Pages -> Source: GitHub Actions.
 # Builds the PUBLIC tier only. The private overlay lives in private/, which is
 # gitignored and therefore never present in CI - the --public flag is a second
-# line of defence, not the first. See docs/publishing.md.
+# line of defence, not the first. See docs/ops/publishing.md.
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
         run: |
           set -e
           if git ls-files private/ | grep -vE '^private/(README\.md|.*\.example\.csv)$'; then
-            echo "::error::A file under private/ is tracked by git. See docs/publishing.md."
+            echo "::error::A file under private/ is tracked by git. See docs/ops/publishing.md."
             exit 1
           fi
           if [ -f dashboard/data.private.js ]; then
@@ -83,7 +83,7 @@ jobs:
         run: python3 dashboard/build.py --public
 
       # Match the JSON key form, with the colon. A bare column name also appears
-      # in the prose of docs/publishing.md and the publish-check skill, both of
+      # in the prose of docs/ops/publishing.md and the publish-check skill, both of
       # which are baked into data.js as document text - so a loose pattern
       # matches the policy that describes the check, not a real leak.
       - name: Fail if private columns leaked into the build

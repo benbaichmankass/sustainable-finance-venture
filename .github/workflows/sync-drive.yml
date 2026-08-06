@@ -1,7 +1,7 @@
 name: Drive sync
 
 # Reconciles data/drive-links.csv against Google Drive in both directions -
-# see docs/drive-sync.md for the full design. No model in the loop: this is
+# see docs/ops/drive-sync.md for the full design. No model in the loop: this is
 # a deterministic script (scripts/sync_drive.py) run on a timer.
 
 on:
@@ -33,7 +33,7 @@ jobs:
         run: |
           set -e
           if git ls-files private/ | grep -vE '^private/(README\.md|.*\.example\.csv)$'; then
-            echo "::error::A file under private/ is tracked by git. See docs/publishing.md."
+            echo "::error::A file under private/ is tracked by git. See docs/ops/publishing.md."
             exit 1
           fi
 

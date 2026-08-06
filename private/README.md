@@ -1,6 +1,6 @@
 # The private overlay
 
-> **Full onboarding guide: [`docs/private-overlay.md`](../docs/private-overlay.md)** — setup, what happens when the overlay is absent, and a worked example of adding a private field. This file is the quick reference.
+> **Full onboarding guide: [`docs/ops/private-overlay.md`](../docs/ops/private-overlay.md)** — setup, what happens when the overlay is absent, and a worked example of adding a private field. This file is the quick reference.
 
 This directory is **gitignored**. Nothing in it except this file and the `*.example.csv` templates is ever committed.
 

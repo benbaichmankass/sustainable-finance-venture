@@ -43,7 +43,7 @@ So the repo carries the *structure* and the Vault carries the *instances*. Run t
 
 The same pattern works for the research use case you'd actually want: the analysis code, the schema and the methodology are in the repo; you point them at a dataset in the Vault's `05-raw-data`; the aggregate result comes back into the repo. The tooling is public, the inputs are private, the conclusions are publishable.
 
-**Setting up the overlay, and adding new private fields:** `docs/private-overlay.md` — the operational how-to for this policy.
+**Setting up the overlay, and adding new private fields:** `docs/ops/private-overlay.md` — the operational how-to for this policy.
 
 ## Building each tier
 
@@ -69,7 +69,7 @@ If you skip that step nothing breaks — you get the public view, with a banner 
 
 Run through this before flipping the repo to public, and before enabling Pages.
 
-- [ ] `grep -rn "drive.google.com\|docs.google.com" --include="*.md" --include="*.csv" .` returns nothing outside `private/` and `docs/publishing.md`  
+- [ ] `grep -rn "drive.google.com\|docs.google.com" --include="*.md" --include="*.csv" .` returns nothing outside `private/` and `docs/ops/publishing.md`  
 - [ ] No file in `data/` has a `Contact_Person`, `Contact_Status`, `Application_Status` or `Private_Notes` column  
 - [ ] `git ls-files private/` shows only `README.md` and the `.example.csv` templates  
 - [ ] `dashboard/data.js` was built with `--public` (check: `grep -c '"Private_Notes":' dashboard/data.js` returns 0\)  

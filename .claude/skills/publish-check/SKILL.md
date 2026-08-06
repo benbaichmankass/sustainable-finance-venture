@@ -5,7 +5,7 @@ description: Audit the repo before making it public, enabling GitHub Pages, or s
 
 # Pre-publish audit
 
-This repo is intended to be public. That only works if the private tier stays private — see `docs/publishing.md` for the policy and the reasoning.
+This repo is intended to be public. That only works if the private tier stays private — see `docs/ops/publishing.md` for the policy and the reasoning.
 
 ## The line, in one sentence
 
@@ -18,7 +18,7 @@ Commercial strategy is deliberately public here. The thesis isn't the moat; rela
 ```bash
 # 1. No Drive/Sheet links outside the private overlay and the policy doc
 grep -rn "drive.google.com\|docs.google.com" --include="*.md" --include="*.csv" . \
-  | grep -v "^./private/" | grep -v "^./docs/publishing.md"
+  | grep -v "^./private/" | grep -v "^./docs/ops/publishing.md"
 
 # 2. No private columns in the public trackers
 grep -l "Contact_Person\|Contact_Status\|Application_Status\|Private_Notes" data/*.csv
@@ -65,7 +65,7 @@ If a finding is already committed, say so explicitly and offer the options: squa
 
 ## Before flipping the repo to public
 
-Work the checklist in `docs/publishing.md`, then confirm with the user. Changing repo visibility is theirs to do and effectively irreversible — anything public may already be cloned or indexed. Never flip it unprompted.
+Work the checklist in `docs/ops/publishing.md`, then confirm with the user. Changing repo visibility is theirs to do and effectively irreversible — anything public may already be cloned or indexed. Never flip it unprompted.
 
 ## Before sharing a dashboard screenshot
 

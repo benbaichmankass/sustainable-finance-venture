@@ -5,9 +5,9 @@ description: Move content between Google Drive and this repo. Use when the user 
 
 # Syncing Drive and the repo
 
-The repo is the source of truth; Drive holds inputs and artifacts that shouldn't be versioned. See `docs/drive-vault.md` for the boundary.
+The repo is the source of truth; Drive holds inputs and artifacts that shouldn't be versioned. See `docs/ops/drive-vault.md` for the boundary.
 
-**This skill covers manual, one-off sync** — migrating a Doc's content into the repo, filing a PDF in the Vault. A separate, automated mechanism keeps a defined set of public narrative docs continuously synced with live Drive copies in both directions, no agent involved in the reconciliation itself — see `docs/drive-sync.md`. Use that system (edit `data/drive-links.csv`), not this skill, for anything that should stay permanently mirrored rather than migrated once.
+**This skill covers manual, one-off sync** — migrating a Doc's content into the repo, filing a PDF in the Vault. A separate, automated mechanism keeps a defined set of public narrative docs continuously synced with live Drive copies in both directions, no agent involved in the reconciliation itself — see `docs/ops/drive-sync.md`. Use that system (edit `data/drive-links.csv`), not this skill, for anything that should stay permanently mirrored rather than migrated once.
 
 ## Direction 1 — Drive content into the repo
 

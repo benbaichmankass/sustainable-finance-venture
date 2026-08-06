@@ -4,7 +4,7 @@
 
 This repo is public. A short private tier is not, and it is not private because it is commercially precious — it is private because **it is about people**. This document explains how the two fit together and how to work with both without leaking one into the other.
 
-Policy and reasoning: `docs/publishing.md`. This is the operational how-to.
+Policy and reasoning: `docs/ops/publishing.md`. This is the operational how-to.
 
 ## The one-sentence rule
 

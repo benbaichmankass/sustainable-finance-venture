@@ -240,7 +240,36 @@ tr.detail > td { background: var(--page); padding: 0 14px 16px; }
 .fin-block .detail-grid { padding-top: 8px; }
 .fin-head { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; }
 
-/* doc library */
+/* doc library — two-level tree: group > section > document */
+.lib-grp { margin-bottom: 18px; }
+.lib-grp-h {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  font-family: inherit; font-size: 15px; font-weight: 660; color: var(--text);
+  background: none; border: none; border-bottom: 1px solid var(--border);
+  padding: 6px 2px 8px; margin-bottom: 10px; cursor: pointer; text-align: left;
+}
+.lib-grp-h:hover { color: var(--accent); border-color: var(--muted); }
+.lib-caret { font-size: 11px; color: var(--muted); transition: transform 0.15s ease; display: inline-block; }
+.lib-grp.open .lib-caret { transform: rotate(90deg); }
+.lib-n {
+  font-size: 11px; font-weight: 650; color: var(--text-2); background: var(--page);
+  border: 1px solid var(--border); border-radius: 20px; padding: 1px 8px; margin-left: auto;
+}
+.lib-sec { margin: 0 0 14px; }
+.lib-sec-h {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); margin: 0 2px 7px;
+}
+.lib-sec-h .lib-n { text-transform: none; letter-spacing: 0; }
+/* Family label (RT-5a, MEMO-2, PL-1) in front of the title, so numbered
+   families read as a sequence instead of a pile of similar names. */
+.dfam {
+  font-family: var(--mono); font-size: 11px; font-weight: 650; color: var(--accent);
+  background: var(--accent-soft); border-radius: 5px; padding: 2px 6px; margin-right: 8px;
+  white-space: nowrap;
+}
+
 .doc { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); margin-bottom: 8px; overflow: hidden; }
 .doc-head { display: flex; flex-wrap: wrap; row-gap: 6px; gap: 12px; align-items: baseline; padding: 13px 16px; cursor: pointer; }
 .doc-head:hover { background: var(--accent-soft); }
@@ -873,7 +902,7 @@ function renderOverview() {
 /* ------------------------------------------------------------- doc export
    The Library's download buttons build MD/DOCX/PDF client-side — no
    external library, no CDN, consistent with the dashboard's "no framework"
-   design (docs/dashboard-design.md). MD is just the document's own source
+   design (docs/ops/dashboard-design.md). MD is just the document's own source
    text. DOCX and PDF share a plain-text block parser (mdToBlocks) that
    strips markdown syntax rather than rendering it; a hand-rolled ZIP writer
    (STORE only — no DEFLATE needed for a handful of small XML parts) makes
@@ -1258,10 +1287,9 @@ function downloadPdf(doc) {
 
 function renderLibrary() {
   var docs = D.docs || [];
-  var cats = [];
-  docs.forEach(function (d) { if (cats.indexOf(d.category) < 0) cats.push(d.category); });
+  var tree = D.docTree || [];
   /* Docs mirrored to the Drive workfolder (see the Resources tab and
-     docs/drive-sync.md) get a live "open in Drive" link instead of a DOCX
+     docs/ops/drive-sync.md) get a live "open in Drive" link instead of a DOCX
      download - the point of the sync is that Drive copy stays editable and
      current, so it is strictly more useful than a static export. Docs with
      no Drive mapping yet (or none intended - archive/, AI skills) keep the
@@ -1269,46 +1297,98 @@ function renderLibrary() {
   var driveByPath = {};
   (D.driveLinks || []).forEach(function (r) { if (r.Repo_Path) driveByPath[r.Repo_Path] = r; });
 
+  /* Groups a reader opens on arrival. Operations, AI skills and Archive are
+     reference material rather than the work itself, so they start folded -
+     otherwise the first screen is repo plumbing instead of research. */
+  var OPEN_BY_DEFAULT = { "Research": 1, "PhD track": 1, "Venture": 1, "Risk tools": 1 };
+  var collapsed = {};
+  tree.forEach(function (g) { if (!OPEN_BY_DEFAULT[g.group]) collapsed[g.group] = true; });
+
   var html = '<section class="panel"><h2>Library</h2>' +
-    '<p class="lede">Every document in the repo, in full. Click a title to read it inline. Search covers the complete text ' +
-    'of all ' + docs.length + ' documents, not just titles.</p>' +
+    '<p class="lede">Every document in the repo, in full, grouped by what it is for. Click a title to read it inline. ' +
+    'Search covers the complete text of all ' + docs.length + ' documents, not just titles - and opens whichever ' +
+    'groups contain a hit.</p>' +
     '<div class="filters">' +
       '<input class="search" id="lib-q" type="search" placeholder="Search full text of every document…">' +
-      '<select class="pickr" id="lib-cat"><option value="">All categories</option>' +
-      cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
+      '<select class="pickr" id="lib-grp"><option value="">All groups</option>' +
+      tree.map(function (g) {
+        return '<option value="' + esc(g.group) + '">' + esc(g.group) + "</option>";
+      }).join("") +
       "</select>" +
+      '<button type="button" class="dl-btn" id="lib-toggle" title="Expand or collapse every group">Expand all</button>' +
       '<span class="hint" id="lib-count"></span>' +
     '</div><div id="lib-list"></div></section>';
 
   setTimeout(function () {
-    var q = by("lib-q"), cat = by("lib-cat"), list = by("lib-list"), cnt = by("lib-count");
+    var q = by("lib-q"), grp = by("lib-grp"), list = by("lib-list"), cnt = by("lib-count"),
+        toggle = by("lib-toggle");
+
+    function docRow(d) {
+      var i = docs.indexOf(d);
+      var dl = driveByPath[d.path];
+      var middleBtn = (dl && dl.Drive_ID)
+        ? '<a class="dl-btn" href="' + esc(driveDocUrl(dl)) + '" target="_blank" rel="noopener noreferrer" ' +
+          'title="Open the live, editable copy in Google Drive">Drive ↗</a>'
+        : '<button type="button" class="dl-btn" data-fmt="docx" data-doc="' + i + '" title="Download as Word (.docx)">DOCX</button>';
+      return '<div class="doc"><div class="doc-head" data-doc="' + i + '">' +
+        '<span class="dt">' +
+          (d.docId ? '<span class="dfam">' + esc(d.docId) + "</span>" : "") + esc(d.title) +
+          (d.summary ? '<div class="ds">' + esc(d.summary) + "</div>" : "") + "</span>" +
+        '<span class="dp">' + esc(d.path) + '</span>' +
+        '<span class="dw">' + d.words.toLocaleString() + " words</span>" +
+        '<span class="doc-actions">' +
+          '<button type="button" class="dl-btn" data-fmt="md" data-doc="' + i + '" title="Download as Markdown">MD</button>' +
+          middleBtn +
+          '<button type="button" class="dl-btn" data-fmt="pdf" data-doc="' + i + '" title="Download as PDF">PDF</button>' +
+        "</span></div>" +
+        '<div class="doc-body" data-body="' + i + '" hidden><div class="md">' + renderMd(d.body) + "</div></div></div>";
+    }
+
     function draw() {
-      var term = q.value.trim().toLowerCase(), cv = cat.value;
+      var term = q.value.trim().toLowerCase(), gv = grp.value;
       var shown = docs.filter(function (d) {
-        if (cv && d.category !== cv) return false;
+        if (gv && d.group !== gv) return false;
         if (!term) return true;
-        return (d.title + " " + d.path + " " + (d.summary || "") + " " + d.body).toLowerCase().indexOf(term) > -1;
+        return (d.title + " " + d.docId + " " + d.path + " " + (d.summary || "") + " " + d.body).toLowerCase().indexOf(term) > -1;
       });
       cnt.textContent = shown.length + " of " + docs.length + " documents";
-      list.innerHTML = shown.length ? shown.map(function (d) {
-        var i = docs.indexOf(d);
-        var dl = driveByPath[d.path];
-        var middleBtn = (dl && dl.Drive_ID)
-          ? '<a class="dl-btn" href="' + esc(driveDocUrl(dl)) + '" target="_blank" rel="noopener noreferrer" ' +
-            'title="Open the live, editable copy in Google Drive">Drive ↗</a>'
-          : '<button type="button" class="dl-btn" data-fmt="docx" data-doc="' + i + '" title="Download as Word (.docx)">DOCX</button>';
-        return '<div class="doc"><div class="doc-head" data-doc="' + i + '">' +
-          '<span class="dt">' + esc(d.title) +
-            (d.summary ? '<div class="ds">' + esc(d.summary) + "</div>" : "") + "</span>" +
-          '<span class="dp">' + esc(d.path) + '</span>' +
-          '<span class="dw">' + d.words.toLocaleString() + " words</span>" +
-          '<span class="doc-actions">' +
-            '<button type="button" class="dl-btn" data-fmt="md" data-doc="' + i + '" title="Download as Markdown">MD</button>' +
-            middleBtn +
-            '<button type="button" class="dl-btn" data-fmt="pdf" data-doc="' + i + '" title="Download as PDF">PDF</button>' +
-          "</span></div>" +
-          '<div class="doc-body" data-body="' + i + '" hidden><div class="md">' + renderMd(d.body) + "</div></div></div>";
-      }).join("") : '<p class="empty">No documents match that search.</p>';
+
+      if (!shown.length) {
+        list.innerHTML = '<p class="empty">No documents match that search.</p>';
+        return;
+      }
+
+      /* A search is a request to see the hits, so it forces every group with a
+         match open regardless of the folded state the reader left behind. */
+      var forceOpen = !!term;
+      list.innerHTML = tree.map(function (g) {
+        var inGroup = shown.filter(function (d) { return d.group === g.group; });
+        if (!inGroup.length) return "";
+        var open = forceOpen || !collapsed[g.group];
+        var body = g.sections.map(function (s) {
+          var inSection = inGroup.filter(function (d) { return d.section === s; });
+          if (!inSection.length) return "";
+          return '<div class="lib-sec"><div class="lib-sec-h">' + esc(s) +
+            '<span class="lib-n">' + inSection.length + "</span></div>" +
+            inSection.map(docRow).join("") + "</div>";
+        }).join("");
+        return '<div class="lib-grp' + (open ? " open" : "") + '">' +
+          '<button type="button" class="lib-grp-h" data-grp="' + esc(g.group) + '">' +
+            '<span class="lib-caret">▸</span>' + esc(g.group) +
+            '<span class="lib-n">' + inGroup.length + "</span></button>" +
+          '<div class="lib-grp-b"' + (open ? "" : " hidden") + ">" + body + "</div></div>";
+      }).join("");
+
+      list.querySelectorAll(".lib-grp-h").forEach(function (h) {
+        h.addEventListener("click", function () {
+          var name = h.dataset.grp;
+          collapsed[name] = !collapsed[name];
+          /* Toggling while a search is active would fight forceOpen, so clear
+             the term rather than leave the caret lying about the state. */
+          if (q.value.trim()) q.value = "";
+          draw();
+        });
+      });
       list.querySelectorAll(".doc-head").forEach(function (h) {
         h.addEventListener("click", function () {
           var b = list.querySelector('[data-body="' + h.dataset.doc + '"]');
@@ -1328,7 +1408,16 @@ function renderLibrary() {
         });
       });
     }
-    q.addEventListener("input", draw); cat.addEventListener("change", draw); draw();
+    toggle.addEventListener("click", function () {
+      /* "Expand all" only while something is still folded; once everything is
+         open the same button collapses the lot. */
+      var anyCollapsed = tree.some(function (g) { return collapsed[g.group]; });
+      tree.forEach(function (g) { collapsed[g.group] = !anyCollapsed; });
+      toggle.textContent = anyCollapsed ? "Collapse all" : "Expand all";
+      if (q.value.trim()) q.value = "";
+      draw();
+    });
+    q.addEventListener("input", draw); grp.addEventListener("change", draw); draw();
   }, 0);
   return html;
 }
@@ -1787,7 +1876,7 @@ function renderMacro() {
         "Every value shows the observation date from the source and its age, because a number without a date is " +
         "worse than no number. A stale row keeps its last good value rather than showing a blank — the " +
         '<strong>As of</strong> column is the one to trust. Indicators marked <em>link only</em> have no keyless ' +
-        "machine-readable source; follow the link for those. See <code>docs/macro-watch.md</code>.</p></div>";
+        "machine-readable source; follow the link for those. See <code>docs/venture/macro-watch.md</code>.</p></div>";
     })() +
 
     /* Chart wall. One panel per live series - separate charts rather than one
@@ -1869,7 +1958,7 @@ function privateNotice(what) {
     "<strong>" + esc(what) + " is in the private overlay.</strong>" +
     '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' +
     "This build shows the public tier only. Named individuals and relationship status live in " +
-    "<code>private/</code>, which is gitignored — see <code>docs/publishing.md</code>. " +
+    "<code>private/</code>, which is gitignored — see <code>docs/ops/publishing.md</code>. " +
     "Pull the overlay from the Drive Vault and rebuild to see the full picture.</p></div>";
 }
 
@@ -2003,7 +2092,7 @@ function renderDriveSection() {
       : "") +
     '<p class="hint" style="margin:6px 0 0">Every document below is mirrored bidirectionally with a Doc in that folder — ' +
     'edit either side and an automated job reconciles the other within about 15 minutes, no manual sync step needed. ' +
-    'The repo stays the source of truth throughout; see <code>docs/drive-sync.md</code> for how.</p></div>' +
+    'The repo stays the source of truth throughout; see <code>docs/ops/drive-sync.md</code> for how.</p></div>' +
     '<div class="filters"><select class="pickr" id="drv-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
     '</select></div><div id="drv-tbl"></div>';
@@ -2044,7 +2133,7 @@ function renderResources() {
     '<h3 style="margin-top:24px">Links &amp; libraries</h3>' +
     '<div class="filters"><select class="pickr" id="res-cat"><option value="">All categories</option>' +
     cats.map(function (c) { return '<option value="' + esc(c) + '">' + esc(c) + "</option>"; }).join("") +
-    '</select><span class="hint">See <code>docs/drive-vault.md</code> for what goes where.</span></div>' +
+    '</select><span class="hint">See <code>docs/ops/drive-vault.md</code> for what goes where.</span></div>' +
     '<div id="res-tbl"></div></section>';
   setTimeout(function () {
     var cat = by("res-cat"), host = by("res-tbl");
@@ -2106,7 +2195,7 @@ function renderExperiments() {
     '<p class="lede">Candidate experiments for the research proposal: a community with a specified climate-or-poverty problem, ' +
     'a financial product that could address it, and how the venture toolkit fits. These are ideas at concept stage — the raw ' +
     'material the opportunity-mapping methodology scores and narrows to a flagship shortlist. See ' +
-    '<code>docs/research-proposal.md</code> and <code>docs/methodology-opportunity-mapping.md</code>.</p>' +
+    '<code>docs/phd/research-proposal.md</code> and <code>docs/research/methodology-opportunity-mapping.md</code>.</p>' +
     decisionsCallout(["OQ-9", "OQ-11"]) +
     '<div class="filters"><select class="pickr" id="exp-geo"><option value="">All geographies</option>' +
     geos.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +
@@ -2154,7 +2243,7 @@ function renderFunders() {
     '<p class="lede">The grant pipeline for the research experiments — money that buys evidence, kept separate from the ' +
     'blended/DFI capital that funds the investment structures. Organised into four lanes (impact-evaluation funders, ' +
     'development-research desks, climate + poverty foundations, climate funds). Strategy in ' +
-    '<code>docs/funding-pipeline.md</code>. Contact people live in the private overlay, never here.</p>' +
+    '<code>docs/venture/funding-pipeline.md</code>. Contact people live in the private overlay, never here.</p>' +
     '<div class="card" style="margin-bottom:16px;border-color:var(--warning)">' +
     "<strong>Every row is at " + esc((f[0] || {}).Status || "Not researched") + " stage.</strong> " +
     '<span class="hint">URLs, live calls, deadlines and grant sizes are pending the funder-research pass (M-19). ' +

@@ -1,6 +1,6 @@
 # Methodology: Measuring the SDG Impact of the Financial Products
 
-**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/research-proposal.md` §3
+**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §3
 
 ## Purpose
 
@@ -77,7 +77,7 @@ The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 or
 that makes receivables poolable also carries the baseline covariates the causal design needs;
 the RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing
 impact measurement and securitization-readiness together is design principle 2 of the venture
-(`docs/working-doc.md`).
+(`docs/research/working-doc.md`).
 
 ## Deliverable state
 

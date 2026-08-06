@@ -10,7 +10,7 @@ Two trackers: `data/partner-tracker.csv` (originators, verification partners, fu
 ## Before drafting anything
 
 1. **Check the tracker for prior contact.** `Contact_Status` and `Notes`. Duplicate cold approaches to the same organisation are the specific failure this tracker exists to prevent.
-2. **Read what we'd be asking for.** For originators: `product-design/business-plan.md` §2 and §5. For funders: Memo 3's first-loss section. For supervisors: the PhD framing in `docs/working-doc.md`, plus that program's `Fit_Notes` and `Outreach_Plan`.
+2. **Read what we'd be asking for.** For originators: `product-design/business-plan.md` §2 and §5. For funders: Memo 3's first-loss section. For supervisors: the PhD framing in `docs/research/working-doc.md`, plus that program's `Fit_Notes` and `Outreach_Plan`.
 3. **Know the specific ask.** "Explore a partnership" wastes the first contact. "Would you be open to a 30-minute call about whether your VSLA cohort's existing MIS could support a standardized loan-level data capture pilot?" doesn't.
 
 ## Drafting
@@ -29,7 +29,7 @@ After any contact, update the tracker row in the same session:
 - `Contact_Person`: name and role
 - `Notes`: date, channel, what was asked, what came back, next step and when
 
-File the actual correspondence in the Vault's `03-communications` (see `docs/drive-vault.md`) — the tracker holds the summary, the Vault holds the thread.
+File the actual correspondence in the Vault's `03-communications` (see `docs/ops/drive-vault.md`) — the tracker holds the summary, the Vault holds the thread.
 
 ## Follow-through
 
