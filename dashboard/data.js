@@ -489,7 +489,7 @@ window.SFV_DATA = {
    "Linked_Area": "Risk Tools / PhD Research Design",
    "Status": "Partially answered",
    "Owner": "BB",
-   "Notes": "Raised 2026-08-06. Partially answered 2026-08-07 by LIT-020, LIT-021 and LIT-022. WHAT THE EVIDENCE NOW ESTABLISHES: the joint-liability CONTRACT is not the active ingredient. LIT-020 converted half of 169 pre-existing group-liability centres in the Philippines to individual liability and found no effect on repayment, with faster growth in centre size; a second trial randomising villages to either regime agreed over two to three years. LIT-021 then isolates a channel that is: first-cycle meeting frequency was randomised and afterwards equalised, so later differences reflect social ties already formed, and monthly-meeting clients were four times more likely to default on their second loan, via improved informal risk-sharing - in INDIVIDUAL-liability groups, with no joint liability present. LIT-022 supplies the taxonomy (screening, peer monitoring, enforcement, reduced audit costs) and shows the information and sanction channels can trade off: 19th-century Irish credit cooperatives failed because members would not sanction neighbours, and the proposed fix of enlarging each cooperative so outsiders could bear the blame 'amounts to throwing away all the information local people have on one another'. SO: the answer leans toward social structure over contract terms, and toward repeat interaction as the mechanism rather than the threat of sanction alone. WHAT REMAINS OPEN, and it is the part that matters most to this venture: none of this literature tests what happens when the creditor stops being the community or the MFI the members meet through and becomes an outside investor. Every study here has the lender embedded in the same social setting as the borrowers. Securitisation removes exactly that. This is the securitisation-specific gap and it is ours to establish, most likely as a pilot design question rather than a literature one. CONSEQUENCES ALREADY ACTIONABLE: (1) RT-2 features should describe group social structure, not liability terms. (2) RT-1 should capture meeting frequency and attendance as first-class origination variables while it is still v0 - see OQ-3. (3) RT-5 correlation assumptions should reflect that repayment is socially mediated within a group. (4) LIT-022 flags a social cost worth carrying into the impact methodology: when a whole group is denied future loans, 'bitterness and recrimination among group members may have far-reaching consequences for village life'. STRUCTURAL RESPONSE PROPOSED 2026-08-07: see OQ-13, which asks whether securitising one level up - lending to the collective, which carries the individual loans - preserves the mechanism this question is about. That is now where the securitisation-specific gap is being worked.",
+   "Notes": "Raised 2026-08-06. Partially answered 2026-08-07 by LIT-020, LIT-021 and LIT-022. WHAT THE EVIDENCE NOW ESTABLISHES: the joint-liability CONTRACT is not the active ingredient. LIT-020 converted half of 169 pre-existing group-liability centres in the Philippines to individual liability and found no effect on repayment, with faster growth in centre size; a second trial randomising villages to either regime agreed over two to three years. LIT-021 then isolates a channel that is: first-cycle meeting frequency was randomised and afterwards equalised, so later differences reflect social ties already formed, and monthly-meeting clients were four times more likely to default on their second loan, via improved informal risk-sharing - in INDIVIDUAL-liability groups, with no joint liability present. LIT-022 supplies the taxonomy (screening, peer monitoring, enforcement, reduced audit costs) and shows the information and sanction channels can trade off: 19th-century Irish credit cooperatives failed because members would not sanction neighbours, and the proposed fix of enlarging each cooperative so outsiders could bear the blame 'amounts to throwing away all the information local people have on one another'. SO: the answer leans toward social structure over contract terms, and toward repeat interaction as the mechanism rather than the threat of sanction alone. WHAT REMAINS OPEN, and it is the part that matters most to this venture: none of this literature tests what happens when the creditor stops being the community or the MFI the members meet through and becomes an outside investor. Every study here has the lender embedded in the same social setting as the borrowers. Securitisation removes exactly that. This is the securitisation-specific gap and it is ours to establish, most likely as a pilot design question rather than a literature one. CONSEQUENCES ALREADY ACTIONABLE: (1) RT-2 features should describe group social structure, not liability terms. (2) RT-1 should capture meeting frequency and attendance as first-class origination variables while it is still v0 - see OQ-3. (3) RT-5 correlation assumptions should reflect that repayment is socially mediated within a group. (4) LIT-022 flags a social cost worth carrying into the impact methodology: when a whole group is denied future loans, 'bitterness and recrimination among group members may have far-reaching consequences for village life'. STRUCTURAL RESPONSE PROPOSED 2026-08-07: see OQ-13, which asks whether securitising one level up - lending to the collective, which carries the individual loans - preserves the mechanism this question is about. That is now where the securitisation-specific gap is being worked. CANDIDATE MECHANISM SET WIDENED 2026-08-07. The original framing offered two candidates, information and social cost. Reading LIT-022 in full surfaces at least six more, and the one the strongest evidence actually measures is not either of the original two: (a) INFORMAL RISK-SHARING / MUTUAL INSURANCE - members absorb each other's shocks so a shock does not become a default. This is what LIT-021 measures directly, and it is distinct from both screening and sanction. (b) DYNAMIC INCENTIVES - repayment because continued access depends on it. LIT-022 section 3.4: the threat to cut off all members of a defaulting group from future loans. Requires a lender both WILLING AND ABLE to carry out the threat, which is where it breaks. (c) COSTLY STATE VERIFICATION - the group can distinguish cannot-pay from will-not-pay at low cost where the lender cannot (LIT-022 section 2.3). This is what makes forbearance possible without inviting strategic default, and it is a capability an outside investor simply does not have. (d) ASSORTATIVE MATCHING AT FORMATION - self-selection means safe borrowers group with safe borrowers, screening ex ante rather than by collateral (LIT-022 section 2.1). Distinct from ongoing monitoring. (e) INTERNALLY GENERATED LOSS-ABSORBING CAPITAL - Grameen's Group Fund (compulsory savings, a 5% loan-initiation fee, fines) and Emergency Fund (surcharge on interest) exist to 'make good the loss' when a member defaults (LIT-022). This is first-loss credit enhancement that the community funds itself, which is directly relevant to how a pool would be tranched. (f) SEQUENCED DISBURSEMENT - Grameen lends to two members first and releases further loans only if repayment holds, managing risk through ordering rather than through selection or sanction. (g) INFERRED, NOT EVIDENCED: the group may act as a volatility damper, rescheduling internally so that lumpy individual cash flows arrive as smoother group-level payments. Nothing logged here tests this; flagged as an assumption to verify, not a finding. WHY THIS MATTERS FOR DESIGN: (c) and (e) are the two an external investor most obviously cannot replicate and most obviously benefits from, and (b) is the one most easily destroyed by getting the funding structure wrong - see OQ-13.",
    "Evidence_Refs": "LIT-023; LIT-020; LIT-021; LIT-022; LIT-001; LIT-002; LIT-003"
   },
   {
@@ -499,7 +499,7 @@ window.SFV_DATA = {
    "Linked_Area": "Product Design / Risk Tools",
    "Status": "Open",
    "Owner": "BB",
-   "Notes": "Proposed by BB 2026-08-07, in direct response to the residual on OQ-12: securitisation removes the community as the individual-level creditor, which is the layer the mechanism evidence says is doing the work. Attaching one level up preserves it. THIS STRUCTURE ALREADY EXISTS AT NATIONAL SCALE. India's SHG-Bank Linkage Programme (LIT-023) has run since 1992: banks lend to self-help groups of typically 10-20 women which on-lend to members at rates the group sets. Tankha calls the SHG 'effectively a micro bank as it raises equity and deposits, as well as external funds, and on-lends them'. So the question is not whether the structure works but on what terms it holds up. WHAT THE RECORD SHOWS: NPAs on the bank SHG portfolio were steady at 2.9% in March 2009 and March 2010 then rose to 4.72% by 31 March 2011 (commercial banks near 5%, cooperative banks near 7%). The subsidised SGSY component ran consistently over 5% and above 7% at March 2011. Deterioration is linked to target-driven group formation and to concerns about the quality of groups promoted. The predecessor IRDP programme was wrecked by political loan waivers. RISKS THIS STRUCTURE INTRODUCES, which are different from individual-level securitisation: (1) The group becomes a leveraged intermediary rather than a rotating savings fund. Member defaults aggregate into GROUP default, so idiosyncratic risk is concentrated at the group level by construction before any pooling happens - the diversification has to come from holding many groups, and within-group correlation rises rather than falls. (2) Whose money is at stake changes. LIT-021's mechanism is informal risk-sharing among members whose own savings are lent out. External funds dilute that framing, which is the OQ-12 concern reappearing one level up rather than being solved. (3) The underwriting unit becomes the group as an intermediary - governance, vintage, record-keeping, meeting discipline - not the member. That is an RT-1 and RT-2 change, and it is the same schema deadline flagged on OQ-3. (4) Capital-deployment pressure degrades group quality. If groups are formed to absorb funding, India's experience says credit quality follows formation quality down. (5) Political waiver risk at the group level is systemic within a jurisdiction, so it is NOT diversifiable by pooling more groups in the same country. That is a cross-border argument, and it connects to OQ-1. HISTORICAL CAUTION: the canonical successful joint-liability institution in LIT-022, the German rural credit cooperative, 'financed those loans from local deposits' - it was self-funded, not externally funded. The one structure with the longest success record did not do what we are proposing. NOT YET ESTABLISHED: the securitisation sources we hold (LIT-004, LIT-006, LIT-011) concern MFI-originated portfolios rather than group-intermediated ones, and SHG-BLP lenders were banks with local branch relationships, not remote capital-markets investors. Whether the mechanism survives when the ultimate creditor is an investor two steps removed is not answered by anything logged here.",
+   "Notes": "Proposed by BB 2026-08-07, in direct response to the residual on OQ-12: securitisation removes the community as the individual-level creditor, which is the layer the mechanism evidence says is doing the work. Attaching one level up preserves it. THIS STRUCTURE ALREADY EXISTS AT NATIONAL SCALE. India's SHG-Bank Linkage Programme (LIT-023) has run since 1992: banks lend to self-help groups of typically 10-20 women which on-lend to members at rates the group sets. Tankha calls the SHG 'effectively a micro bank as it raises equity and deposits, as well as external funds, and on-lends them'. So the question is not whether the structure works but on what terms it holds up. WHAT THE RECORD SHOWS: NPAs on the bank SHG portfolio were steady at 2.9% in March 2009 and March 2010 then rose to 4.72% by 31 March 2011 (commercial banks near 5%, cooperative banks near 7%). The subsidised SGSY component ran consistently over 5% and above 7% at March 2011. Deterioration is linked to target-driven group formation and to concerns about the quality of groups promoted. The predecessor IRDP programme was wrecked by political loan waivers. RISKS THIS STRUCTURE INTRODUCES, which are different from individual-level securitisation: (1) The group becomes a leveraged intermediary rather than a rotating savings fund. Member defaults aggregate into GROUP default, so idiosyncratic risk is concentrated at the group level by construction before any pooling happens - the diversification has to come from holding many groups, and within-group correlation rises rather than falls. (2) Whose money is at stake changes. LIT-021's mechanism is informal risk-sharing among members whose own savings are lent out. External funds dilute that framing, which is the OQ-12 concern reappearing one level up rather than being solved. (3) The underwriting unit becomes the group as an intermediary - governance, vintage, record-keeping, meeting discipline - not the member. That is an RT-1 and RT-2 change, and it is the same schema deadline flagged on OQ-3. (4) Capital-deployment pressure degrades group quality. If groups are formed to absorb funding, India's experience says credit quality follows formation quality down. (5) Political waiver risk at the group level is systemic within a jurisdiction, so it is NOT diversifiable by pooling more groups in the same country. That is a cross-border argument, and it connects to OQ-1. HISTORICAL CAUTION: the canonical successful joint-liability institution in LIT-022, the German rural credit cooperative, 'financed those loans from local deposits' - it was self-funded, not externally funded. The one structure with the longest success record did not do what we are proposing. NOT YET ESTABLISHED: the securitisation sources we hold (LIT-004, LIT-006, LIT-011) concern MFI-originated portfolios rather than group-intermediated ones, and SHG-BLP lenders were banks with local branch relationships, not remote capital-markets investors. Whether the mechanism survives when the ultimate creditor is an investor two steps removed is not answered by anything logged here. SHARPENED 2026-08-07, and this materially strengthens the caution above. LIT-022 section 3.4 shows the Irish credit cooperatives were not merely a case of members refusing to sanction neighbours. They were EXTERNALLY FUNDED, and in the same shape being proposed here: 'Unlike their German counterparts, the Irish credit cooperatives garnered few deposits. Most of what they lent was a loan to the cooperative from the government.' The failure mechanism was that dynamic incentives collapsed - given the politics, it was not realistic that the government would sue poor farmers, 'making the liability of cooperative members meaningless', and the only real threat available, non-renewal, was exercised only after years of visible trouble. So the German success was deposit-funded and the Irish failure was wholesale-funded, and the difference in funding structure maps onto the difference in outcome. That is the closest historical analogue to a group-level securitisation that the evidence base contains, and it is a failure. The same pattern recurs with a magnitude attached: in Malawi's SACA programme a drought moratorium, plus a rumour that all loans had been extended, saw repayment fall to about 21% (LIT-022 citing Buckley 1996b). DESIGN IMPLICATION, and it is the crux of this question: whoever holds the paper must retain a CREDIBLE AND PROMPTLY EXERCISED renewal decision. A securitisation that disperses the creditor relationship across investors, or that mechanically renews, destroys the mechanism the structure exists to protect. This argues for the servicer keeping a real, fast continuation decision rather than for the pool holding it, and it is testable in a pilot.",
    "Evidence_Refs": "LIT-023; LIT-020; LIT-021; LIT-022; LIT-014"
   }
  ],
@@ -777,12 +777,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-06",
+   "As_Of": "2026-08-07",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -797,7 +797,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -812,7 +812,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.38",
    "Direction": "down",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -827,7 +827,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -842,7 +842,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.0594",
    "Chg_12m": "-0.4037",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -857,7 +857,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -872,7 +872,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1",
    "Chg_12m": "1.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -880,14 +880,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.013",
+   "Value": "3.006",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-06",
-   "Chg_1m": "0.007",
-   "Chg_3m": "0.065",
-   "Chg_12m": "-0.315",
-   "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "As_Of": "2026-08-07",
+   "Chg_1m": "-0.023",
+   "Chg_3m": "0.044",
+   "Chg_12m": "-0.3",
+   "Direction": "down",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -902,7 +902,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.5",
    "Chg_12m": "7.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -917,7 +917,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.23",
    "Chg_12m": "0.28",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -932,7 +932,7 @@ window.SFV_DATA = {
    "Chg_3m": "-35.26",
    "Chg_12m": "19.73",
    "Direction": "up",
-   "Fetched_At": "2026-08-07T08:48:14+00:00",
+   "Fetched_At": "2026-08-07T12:04:53+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -4359,7 +4359,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-06",
+    "2026-08-07",
     3.75
    ]
   ],
@@ -7933,8 +7933,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-06",
-    3.013
+    "2026-08-07",
+    3.006
    ]
   ],
   "MAC-14": [
