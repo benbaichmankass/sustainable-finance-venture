@@ -3544,9 +3544,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 2: Microfinance Impact Evidence — Synthesis for Product/Research Design",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "0e722adaaab5605d6a5123cfa763346a0013d2571688ede2d57f5c6a6fae2dae",
-   "Baseline_Repo_Hash": "26f792674fdc57e3647e6321aad089b23f110369664c41511aafaf2af28e7341",
-   "Last_Synced_At": "2026-08-05T07:48:17Z",
+   "Baseline_Drive_Hash": "87702c4a38a6ffc313af816a022e3aea52d49db44824ed3522ac82927936f746",
+   "Baseline_Repo_Hash": "c02450968d127d5f6fb5aaa30622d12a11810d7280717347bf7ab8463a38d094",
+   "Last_Synced_At": "2026-08-07T08:48:11Z",
    "Status": "Synced"
   },
   {
