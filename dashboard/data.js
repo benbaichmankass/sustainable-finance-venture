@@ -417,6 +417,16 @@ window.SFV_DATA = {
    "Owner": "BB",
    "Notes": "Resolved 2026-08-02 from the research-first scoring pass (OQ-9). Flagship trio: EXP-01 (crop drought-index, rural smallholders), EXP-02 (clean-energy PAYGO, energy/enterprise), EXP-06 (multi-peril parametric climate cover, urban informal settlements). Chosen for three uncorrelated risk drivers (the pooling thesis) plus clean measurability; EXP-01 and EXP-06 share a parametric measurement design, making parallel RCTs under one verification partner affordable. Selection is subject to the verification partner confirming design feasibility (OQ-7).",
    "Evidence_Refs": "EXP-01; EXP-02; EXP-06"
+  },
+  {
+   "ID": "OQ-12",
+   "Question": "Which mechanism actually drives repayment in community-originated lending: information (members' intimate knowledge of each other, enabling screening and monitoring that an outside lender cannot replicate) or social cost (the sanction attached to defaulting on neighbours)? And does that mechanism survive being transformed into a pooled, externally-funded asset?",
+   "Category": "Research Design",
+   "Linked_Area": "Risk Tools / PhD Research Design",
+   "Status": "Open",
+   "Owner": "BB",
+   "Notes": "Raised 2026-08-06. This is upstream of several decisions already logged, which is why it is worth separating from them. (1) RT-2 underwriting: if information is the mechanism, the predictive features are about knowledge quality (group tenure, meeting attendance, member overlap, screening behaviour). If social cost is the mechanism, they are about sanction capacity (geographic proximity, repeat interaction, exit cost). These are different variable sets, not different weightings of one set. (2) RT-1 origination schema is still v0 and not field-tested, so which variables get captured is still changeable - but only until collection starts, after which the gap cannot be backfilled. Bears directly on OQ-3. (3) RT-5 loss modelling: if social sanction is doing the work, defaults correlate within a group by construction rather than by shared exposure, which changes the loss distribution and the tranching. Bears on OQ-2. (4) The structural risk: securitisation replaces the community's own capital with an outside investor's. If repayment is driven by the social cost of defaulting on neighbours whose money is at stake, then removing the neighbours' money may weaken the mechanism the asset is priced on. Testing this before scaling is cheaper than discovering it in a pool. EVIDENCE GAP: the anchors currently logged (LIT-001, LIT-002, LIT-003) measure outcomes - savings, consumption smoothing, income - and not mechanisms. None of them identify why repayment happens. The literature to bring in is the group-lending and joint-liability theory (peer screening, peer monitoring, social sanctions, dynamic incentives) plus the experimental work comparing group against individual liability. Not yet added to the matrix: no rows should be created for sources until they are read and their links verified.",
+   "Evidence_Refs": "LIT-001; LIT-002; LIT-003"
   }
  ],
  "productLines": [
@@ -9716,8 +9726,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Scratchpad",
    "summary": "",
-   "words": 374,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n- *Testing the mechanism of community based risk management (intimate knowledge or social costs of non-repayment)*\n\n"
+   "words": 389,
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n_Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation)._\n\n"
   },
   {
    "path": "docs/ops/drive-sync.md",
@@ -10141,7 +10151,7 @@ window.SFV_DATA = {
    "questionsByStatus": {
     "Partially answered": 6,
     "Dropped": 1,
-    "Open": 1,
+    "Open": 2,
     "Answered": 3
    },
    "milestonesByStatus": {
@@ -10152,7 +10162,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 46818
+   "totalWords": 46833
   }
  }
 };

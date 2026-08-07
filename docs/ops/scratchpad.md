@@ -28,5 +28,5 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 
 ## 2026-08-06
 
-- *Testing the mechanism of community based risk management (intimate knowledge or social costs of non-repayment)*
+_Nothing untriaged. Last cleared 2026-08-06: "testing the mechanism of community based risk management" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation)._
 
