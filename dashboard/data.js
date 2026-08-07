@@ -3557,9 +3557,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 1: VSLAs & Savings Groups — Synthesis for Product/Research Design",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "bdc256b4989c9153e8608c0fa207cc0ae0bc9da177d71a7edf4d108188789dfe",
-   "Baseline_Repo_Hash": "b1a706af9ee894326ca2f5f78e6a64ad23bb5880582879adc32d0dadf2f5e3ab",
-   "Last_Synced_At": "2026-08-05T07:53:52Z",
+   "Baseline_Drive_Hash": "43610f294e7656d1a461042b73e4bc90c29cc477a6549d7219bc2c04a0e3893c",
+   "Baseline_Repo_Hash": "9b5eaeec7f1813089ac9238d31376c332f03e94ed556911ff4ac5e1a8164b176",
+   "Last_Synced_At": "2026-08-07T12:04:38Z",
    "Status": "Synced"
   },
   {
