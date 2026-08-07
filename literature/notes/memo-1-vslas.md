@@ -1,11 +1,24 @@
 # Memo 1: VSLAs & Savings Groups — Synthesis for Product/Research Design
 
-**Status:** Reviewed · **Covers axis:** 1-VSLA · **Last updated:** 2026-07-30
+**Status:** Reviewed · **Covers axis:** 1-VSLA · **Last updated:** 2026-08-07
 
 ## Sources
 - LIT-001: Ksoll et al. 2016, cluster RCT (46 villages, Malawi)
 - LIT-002: Cross-country VSLA/savings-group evaluation synthesis (Brannen 2016)
 - LIT-014: CGAP 2025, *Regulating Savings Groups: Only a Proportionate Approach Will Work*
+- LIT-023: Tankha 2012, *Banking on Self-help Groups: Twenty Years On* (India's SHG-Bank Linkage Programme)
+
+## Lending to the group rather than the member (added 2026-08-07, for OQ-13)
+
+India's SHG-Bank Linkage Programme is the large-scale precedent for financing the collective and letting it carry the individual loans. Banks lend to self-help groups of typically 10–20 women; the group on-lends to members at rates it sets. Tankha (LIT-023) describes the SHG as "effectively a micro bank as it raises equity and deposits, as well as external funds, and on-lends them."
+
+The record is instructive precisely because it is mixed:
+
+- NPAs on the bank SHG portfolio were **steady at 2.9%** in March 2009 and March 2010, then rose to **4.72% by 31 March 2011** — commercial banks near 5%, cooperative banks near 7%. The subsidised SGSY component ran **consistently over 5%, above 7%** at March 2011.
+- Deterioration tracks **target-driven group formation** and concerns about the quality of groups promoted, not the structure alone.
+- The predecessor IRDP programme suffered "abysmally low recoveries... exacerbated by political decisions to waive loan repayments."
+
+**The counterweight worth holding onto:** the longest-running successful joint-liability institution in the record — the 19th-century German rural credit cooperative (LIT-022) — "financed those loans from local deposits." It was self-funded. The structure with the best track record did not take external wholesale funding into the group layer, which is exactly what a group-level securitisation would do.
 
 ## Key Findings
 - Cluster-randomized evidence shows consistent, positive intent-to-treat effects on savings behavior and consumption smoothing.
@@ -39,3 +52,5 @@ The practical consequence for us: the data spine we need for underwriting is the
 - Does effect persistence extend beyond typical 1-2 year RCT windows?
 - What governance/verification structure is needed to make VSLA cash-flow data audit-grade for external investors? (→ OQ-3)
 - Which registration model in our target jurisdictions — statutory, delegated, or purely voluntary — is realistically available to a pilot cohort? (→ OQ-3, OQ-1)
+- If we lend to the group rather than the member, what stops capital-deployment pressure from degrading group formation quality the way it did in India? This is the failure mode LIT-023 documents, and it is a governance question about our own origination incentives, not about the groups. (→ OQ-13)
+- Does a group carrying external debt still behave like a mutual-risk pool, or does it become a leveraged intermediary whose members' incentives shift? No source logged here answers this. (→ OQ-13, OQ-12)
