@@ -2,13 +2,13 @@
 
 **Status:** Draft · **Last updated:** 2026-07-30 · **Owner:** BB
 
-This is the venture-level plan. Individual product lines have their own documents in product-design/product-lines/.
+This is the venture-level plan. Individual product lines have their own documents in `product-design/product-lines/`.
 
 It draws on three earlier framings, all archived for lineage:
 
-- archive/google-drive/sds-work-plan.md (Nov 2024\) — sustainable development securities; the general thesis  
-- archive/google-drive/bfav-business-plan.md (Apr 2024\) — agrivoltaic project finance; now Product Line 2  
-- archive/google-drive/web3-vsla-business-plan.md (Feb 2025\) — Web3/DAO delivery; now Product Line 1
+- `archive/google-drive/sds-work-plan.md` (Nov 2024\) — sustainable development securities; the general thesis  
+- `archive/google-drive/bfav-business-plan.md` (Apr 2024\) — agrivoltaic project finance; now Product Line 2  
+- `archive/google-drive/web3-vsla-business-plan.md` (Feb 2025\) — Web3/DAO delivery; now Product Line 1
 
 **What carried over, and what did not.** From the Web3 plan: the community-finance core, the pooled-liquidity/structured-product revenue model, the risk-layer positioning, and the insurance expansion path all survive; the blockchain/DAO delivery mechanism does not — smart-contract governance solved a trust problem VSLAs already solve socially, while adding crypto-regulatory and FX risk the venture has no reason to carry. From the SDS plan: the pooling logic (combine assets with uncorrelated idiosyncratic risk across timeline, type and geography), the "design the asset to capture induced growth" principle, and the public-markets distribution ambition carry directly into the securitization design. From BFAV: the whole thing, promoted from a standalone business to a product line.
 
@@ -24,7 +24,7 @@ The thesis is that some sustainable-development problems persist not because sol
 
 ## 2\. Product lines
 
-Tracked in data/product-lines.csv.
+Tracked in `data/product-lines.csv`.
 
 |  | PL-1 — Community credit & insurance | PL-2 — Agrivoltaic project finance (BFAV) |
 | :---- | :---- | :---- |
@@ -35,7 +35,7 @@ Tracked in data/product-lines.csv.
 | Hard part | Data capture and standardization | Permitting, offtake terms, concentration |
 | Precedent | LIT-004, LIT-006 | LIT-008 |
 | Evidence base | Strong (LIT-001/002/003/007) | Thin — no equivalent impact literature yet |
-| Document | product-lines/community-credit-and-insurance.md | product-lines/agrivoltaic-project-finance.md |
+| Document | `product-lines/community-credit-and-insurance.md` | `product-lines/agrivoltaic-project-finance.md` |
 
 **Why they belong together.** Beyond sharing the thesis, they share the *toolkit* — the data schema, underwriting engine, monitoring system and waterfall models in §5 are largely asset-agnostic. Building them twice would be waste.
 
@@ -60,7 +60,7 @@ We sit in the structuring layer deliberately. Regulated entities handle originat
 ## 4\. Revenue model
 
 1. **Structuring and servicing fees** on pools we assemble and monitor.  
-2. **Retained economic interest** in the pools — which is not optional: EU/UK risk-retention rules require the originator/sponsor to hold a minimum economic interest if senior notes are placed with those investors (see literature/notes/memo-3-securitization-blended-finance.md).  
+2. **Retained economic interest** in the pools — which is not optional: EU/UK risk-retention rules require the originator/sponsor to hold a minimum economic interest if senior notes are placed with those investors (see `literature/notes/memo-3-securitization-blended-finance.md`).  
 3. **Data/analytics licensing** to originators and funders once the underwriting engine has a track record.
 
 The earlier Web3 plan's "non-voting investor in the VSLA" model is preserved in substance by (2): we take return on capital without taking governance control of the group.
@@ -111,7 +111,7 @@ These are starting ranges to be tested, not targets. Each is an observed central
 
 ## 9\. Open work
 
-Tracked in data/milestones.csv and data/open-questions.csv. The near-term critical path:
+Tracked in `data/milestones.csv` and `data/open-questions.csv`. The near-term critical path:
 
 1. Draft the canonical data schema (OQ-3) — blocks everything downstream.  
 2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection.  
