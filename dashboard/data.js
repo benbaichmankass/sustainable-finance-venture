@@ -10207,7 +10207,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-08-09",
+  "generated": "2026-08-10",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
