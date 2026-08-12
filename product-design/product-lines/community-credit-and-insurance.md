@@ -1,7 +1,6 @@
 # Product Line 1 — Community Credit & Insurance
 
-**Status:** Concept, pilot design pending · **Origination layer:** VSLAs, MFIs, NGOs, employer networks · **Asset:** loan repayments and insurance premiums
-**Lineage:** `archive/google-drive/web3-vsla-business-plan.md` (Feb 2025) · **Last updated:** 2026-07-30
+**Status:** Concept, pilot design pending · **Origination layer:** VSLAs, MFIs, NGOs, employer networks · **Asset:** loan repayments and insurance premiums **Lineage:** archive/google-drive/web3-vsla-business-plan.md (Feb 2025\) · **Last updated:** 2026-07-30
 
 ## Concept
 
@@ -11,8 +10,8 @@ Loans and insurance originated through community-based financial structures, des
 
 This line rests on the strongest evidence base of the two product lines, and the evidence constrains what we may claim:
 
-- Cluster-RCT evidence and cross-country synthesis show **consistent, replicable gains in savings and resilience** (LIT-001, LIT-002).
-- Income and business-investment effects are **smaller and more heterogeneous** (LIT-002, LIT-003).
+- Cluster-RCT evidence and cross-country synthesis show **consistent, replicable gains in savings and resilience** (LIT-001, LIT-002).  
+- Income and business-investment effects are **smaller and more heterogeneous** (LIT-002, LIT-003).  
 - Parametric microinsurance improves resilience and payout speed but suffers from low take-up without bundling, and from basis risk (LIT-007).
 
 The product must therefore be framed around resilience and consumption smoothing, not income growth. See Memo 2 — this is an alignment rather than a concession, since cash-flow regularity is what an investor underwrites anyway.
@@ -27,9 +26,9 @@ LIT-014 supplies the policy constraint that shapes the answer: savings-group reg
 
 ## Products
 
-1. **Group-guaranteed credit** — the base instrument.
-2. **Parametric microinsurance** — bundled rather than sold standalone, given LIT-007's take-up finding. Open design question: can triggers be built around group-level shocks (e.g. remittance disruption for migrant-worker groups) rather than only weather?
-3. **Bundled credit + cover** — likely the strongest product, and the one that most needs pilot evidence.
+1. **Group-guaranteed credit** — the base instrument.  
+2. **Parametric microinsurance** — bundled rather than sold standalone, given LIT-007's take-up finding. Open design question: can triggers be built around group-level shocks (e.g. remittance disruption for migrant-worker groups) rather than only weather?  
+3. **Bundled credit \+ cover** — likely the strongest product, and the one that most needs pilot evidence.
 
 Which of the three goes first is undecided and is on the critical path.
 
@@ -47,8 +46,9 @@ What survived: the community-finance core, the pooled-liquidity/structured-produ
 
 ## Open questions
 
-- OQ-3 — the origination data schema. Blocks everything downstream.
-- OQ-4 / OQ-5 — cluster randomization vs stepped-wedge for the pilot evaluation.
-- OQ-7 — which verification partners can provide independent, ideally blinded, outcome data.
-- Loan vs insurance vs bundled as the first instrument.
+- OQ-3 — the origination data schema. Blocks everything downstream.  
+- OQ-4 / OQ-5 — cluster randomization vs stepped-wedge for the pilot evaluation.  
+- OQ-7 — which verification partners can provide independent, ideally blinded, outcome data.  
+- Loan vs insurance vs bundled as the first instrument.  
 - Does the RCT effect persist beyond the 1–2 year evaluation window, and without NGO support?
+
