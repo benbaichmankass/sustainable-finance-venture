@@ -1,6 +1,6 @@
 # RT-2 and RT-3 scaffolds — scorecard and monitor
 
-**Status:** Scaffolds built, running against synthetic data · **Version:** 0.1 · **Calibration: none** **Code:** `tools/score_loans.py`, `tools/monitor_portfolio.py` · **Data:** `tools/generate_dataset.py`
+**Status:** Scaffolds built, running against synthetic data · **Version:** 0.1 · **Calibration: none** **Code:** tools/score\_loans.py, tools/monitor\_portfolio.py · **Data:** tools/generate\_dataset.py
 
 ## The chain now runs end to end
 
@@ -40,9 +40,9 @@ When a real track record exists, the honest upgrade is to **backtest this scorec
 
 Most of the scorecard is unsurprising — track record, leverage, group maturity, guarantee. Two rules are worth calling out because a generic credit scorecard could not express them:
 
-**The share-out constraint.** A loan maturing at or past the end of the savings cycle has to survive the moment the group empties its box. The joint-liability backing is at its weakest exactly when the loan falls due. This is only visible because RT-1 captures `group_cycle_length_months` alongside `loan_term_days` — and it is a concrete argument for keeping that field required.
+**The share-out constraint.** A loan maturing at or past the end of the savings cycle has to survive the moment the group empties its box. The joint-liability backing is at its weakest exactly when the loan falls due. This is only visible because RT-1 captures group\_cycle\_length\_months alongside loan\_term\_days — and it is a concrete argument for keeping that field required.
 
-**Correlated exposure.** An `agriculture_input` loan to a `smallholder_farming` borrower is repaid from the same harvest it funds. That is correlated risk hiding inside an apparently diversified pool, and it is exactly the parameter RT-5 shows the junior tranche is most sensitive to. Two fields the schema already has, combined.
+**Correlated exposure.** An agriculture\_input loan to a smallholder\_farming borrower is repaid from the same harvest it funds. That is correlated risk hiding inside an apparently diversified pool, and it is exactly the parameter RT-5 shows the junior tranche is most sensitive to. Two fields the schema already has, combined.
 
 ### Output on synthetic data
 
@@ -75,7 +75,7 @@ Loan LN-0000000003 \- score 93.0 \-\> approve
 
 ## RT-3 — monitoring and early warning
 
-Walks the event stream in date order, tracks per-loan state, and reports portfolio at risk, arrears concentration by group / region / originator, and threshold breaches. Supports `--as-of` for point-in-time evaluation.
+Walks the event stream in date order, tracks per-loan state, and reports portfolio at risk, arrears concentration by group / region / originator, and threshold breaches. Supports \--as-of for point-in-time evaluation.
 
 ### It fires before the loss lands
 
@@ -99,13 +99,13 @@ At the end of May in this run (300 groups, seed 20260730), **nothing has been wr
 
 By the time write-offs reach $51k, PAR30 has already peaked and started falling. The arrears signal leads the realised loss by roughly four to seven months here.
 
-Whether write-offs are *exactly* zero at a given date depends on the seed and the sample size, so `test_toolchain.py` asserts the durable property instead: at the early date, arrears are already accumulating while under 20% of eventual write-offs have been booked. A write-off is not a warning — it is an outcome, and by then the only remaining question is how to report it.
+Whether write-offs are *exactly* zero at a given date depends on the seed and the sample size, so test\_toolchain.py asserts the durable property instead: at the early date, arrears are already accumulating while under 20% of eventual write-offs have been booked. A write-off is not a warning — it is an outcome, and by then the only remaining question is how to report it.
 
 That lead time is also what makes the junior tranche fundable. LIT-013 is explicit that a documented monitoring regime is part of what a first-loss provider is buying: they are taking the risk, so they need to see it moving before it arrives.
 
 ### The alert that matters most for a pooled structure
 
-Several regions deteriorating *simultaneously* escalates to `critical`, with an explicit note that this is consistent with a correlated shock rather than idiosyncratic default. That is the scenario RT-5 shows the junior tranche is most sensitive to, and RT-3 is where it becomes visible first.
+Several regions deteriorating *simultaneously* escalates to critical, with an explicit note that this is consistent with a correlated shock rather than idiosyncratic default. That is the scenario RT-5 shows the junior tranche is most sensitive to, and RT-3 is where it becomes visible first.
 
 ### Thresholds are judgement
 
