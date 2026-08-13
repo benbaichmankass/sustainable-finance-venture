@@ -1,6 +1,6 @@
 # Minimum viable origination schema for future poolability
 
-**Schema:** `rt-1-origination-schema.csv` · **Version 0.1** · **Status: v0, not yet field-tested**
+**Schema:** rt-1-origination-schema.csv · **Version 0.1** · **Status: v0, not yet field-tested**
 
 ## The philosophy
 
@@ -28,7 +28,7 @@ Deliberate omissions, recorded so they are choices rather than oversights:
 
 | Not captured | Why not |
 | :---- | :---- |
-| Exact location (GPS/village) | Identifies a group. `admin1` is required and `admin2` optional; that is enough to model a regional drought without exposing anyone. |
+| Exact location (GPS/village) | Identifies a group. admin1 is required and admin2 optional; that is enough to model a regional drought without exposing anyone. |
 | Exact date of birth | Age bands give the cohort analysis its value with none of the identifiability. |
 | Household income | Not reliably measurable in a meeting. A number that is collected but wrong is worse than a gap, because it gets modelled. |
 | Free-text notes | Unpoolable. Anything worth analysing gets an enum or it does not get captured. |
@@ -36,21 +36,21 @@ Deliberate omissions, recorded so they are choices rather than oversights:
 
 ## The two things that carry the most weight
 
-**The `event` table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.
+**The event table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.
 
-**`schema_version` on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.
+**schema\_version on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.
 
 ## Reading the schema file
 
 | Column |  |
 | :---- | :---- |
-| `Entity` | Which table: `originator`, `group`, `member`, `loan`, `event` |
-| `Required` | `required` fields block a record; `optional` fields are collected where cheap |
-| `Capture` | `origination` (fixed at disbursement), `updated` (changes over time), `derived` (computed, never entered) |
-| `Privacy` | `public` · `private` (pseudonymous, repo-safe) · `sensitive` (aggregate only, never row-level) · `derived` |
-| `Critical_Path` | `yes` \= cannot be reconstructed later. **These are the fields worth arguing about.** |
-| `Validation` | The rule `validate_schema.py` enforces |
-| `Why_It_Matters` | Why the field earns its place. A field that cannot fill this column should not exist. |
+| Entity | Which table: originator, group, member, loan, event |
+| Required | required fields block a record; optional fields are collected where cheap |
+| Capture | origination (fixed at disbursement), updated (changes over time), derived (computed, never entered) |
+| Privacy | public · private (pseudonymous, repo-safe) · sensitive (aggregate only, never row-level) · derived |
+| Critical\_Path | yes \= cannot be reconstructed later. **These are the fields worth arguing about.** |
+| Validation | The rule validate\_schema.py enforces |
+| Why\_It\_Matters | Why the field earns its place. A field that cannot fill this column should not exist. |
 
 45 of 57 fields are critical path. That ratio is high on purpose: a field that *can* be reconstructed later is a field that does not need to be in a v0 schema.
 
