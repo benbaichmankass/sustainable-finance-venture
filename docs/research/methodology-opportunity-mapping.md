@@ -1,6 +1,6 @@
 # Methodology: Mapping Underserved SDG Opportunities against Toolbox Capacity
 
-**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §2
+**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** docs/phd/research-proposal.md §2
 
 ## Purpose
 
@@ -13,15 +13,19 @@ It is a **two-axis** map:
 
 A problem that is huge but that our tools cannot make investable is a policy question, not our question. A problem our tools fit perfectly but that barely moves any SDG outcome is a rounding error. The interesting shortlist sits high on **both** axes.
 
-```
  Toolbox      high │  build the tools,        │  FLAGSHIP —
+
  capacity          │  small prize (park)      │  pilot these first
+
  (Axis Y)          │--------------------------+--------------------------
+
              low   │  not ours                │  big prize, wrong layer
+
                    │  (refer out)             │  (watch / partner)
+
                    └──────────────────────────┴──────────────────────────
+
                         low  ── Opportunity size / potential (Axis X) ──  high
-```
 
 ## Axis X — scoring the opportunity
 
@@ -32,7 +36,7 @@ A problem that is huge but that our tools cannot make investable is a policy que
 | Impact leverage | **High** | How much resilience / poverty reduction per dollar deployed? | Impact literature (Memo 2 \+ climate-resilience anchors) |
 | Measurability / RCT-feasibility | **High** | Can the effect be identified cleanly with a lean randomized design? | Impact-measurement methodology; precedent studies |
 | Depth of need | Medium | How concentrated is the problem among the poor / climate-exposed? | Poverty and vulnerability data |
-| Precedent signal | Medium | Has *anything* like this worked — enough to be feasible, not so much it is already settled? | Experiment `Linked_Refs`, lit matrix |
+| Precedent signal | Medium | Has *anything* like this worked — enough to be feasible, not so much it is already settled? | Experiment Linked\_Refs, lit matrix |
 | Gap magnitude / neglectedness | Low | How large / how capital-starved is the need? | Adaptation-finance-gap and energy-access-gap literature (to anchor — see proposal §1) |
 
 *Measurability was promoted here from the toolbox axis (it was "verifiability"): under a research-first win condition it is the criterion that most reorders the ranking.*
@@ -51,7 +55,7 @@ A problem that is huge but that our tools cannot make investable is a policy que
 
 ## Method
 
-1. **Candidates in.** Start from `data/experiments.csv` (EXP-01…). Add others as they surface.  
+1. **Candidates in.** Start from data/experiments.csv (EXP-01…). Add others as they surface.  
 2. **Score** each candidate on both axes using the sub-criteria above.  
 3. **Weight and combine** — apply the resolved research-first weights (OQ-9): the Axis-X score leads, Axis-Y acts as a filter plus tie-breaker.  
 4. **Plot** onto the 2x2 and read the top-right quadrant.  
