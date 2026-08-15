@@ -74,7 +74,7 @@ Build a structured, reusable literature base supporting: (1) a PhD proposal, (2)
 
 ### Step 1 \-- Literature matrix
 
-Maintained in /literature/lit-matrix.csv (mirrored in the Master Reference Tracker Google Sheet). Fields: ID, Axis, Geography, Method, Population/Context, Key Findings, Limitations, Relevance (Product/Risk/Impact), Open Questions, Link/Citation.
+Maintained in `/literature/lit-matrix.csv` (mirrored in the Master Reference Tracker Google Sheet). Fields: ID, Axis, Geography, Method, Population/Context, Key Findings, Limitations, Relevance (Product/Risk/Impact), Open Questions, Link/Citation.
 
 ### Step 2 \-- First pass: breadth (target \~2-3 weeks)
 
@@ -95,7 +95,7 @@ Capture detailed notes on design, assumptions, context; identify where this proj
 2. What microfinance RCTs and reviews say about impact and design  
 3. How securitization/blended finance has been applied to microfinance and what structural constraints remain
 
-Each memo: 2-4 pages, with an explicit "implications for this project" section. Store in /literature/notes/.
+Each memo: 2-4 pages, with an explicit "implications for this project" section. Store in `/literature/notes/`.
 
 ## Resource access notes
 
