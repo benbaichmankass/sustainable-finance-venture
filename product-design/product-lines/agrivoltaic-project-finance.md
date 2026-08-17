@@ -1,7 +1,6 @@
 # Product Line 2 — Agrivoltaic Project Finance (BFAV)
 
-**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows
-**Lineage:** `archive/google-drive/bfav-business-plan.md` (Apr 2024) · **Last updated:** 2026-07-30
+**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** archive/google-drive/bfav-business-plan.md (Apr 2024\) · **Last updated:** 2026-07-30
 
 ## Why this belongs in the same venture
 
@@ -9,8 +8,8 @@ BFAV looks like a different business from the VSLA line — solar developers and
 
 The venture's claim is that certain sustainable-development assets are underfunded because nobody designed them at origination to be poolable. That claim is layer-agnostic. What matters is whether the origination layer produces cash flows that are **standardized, verifiable, and legally transferable**. Agrivoltaic projects do — arguably more cleanly than community loans:
 
-| | Community credit line | Agrivoltaic line |
-|---|---|---|
+|  | Community credit line | Agrivoltaic line |
+| :---- | :---- | :---- |
 | Originator | VSLAs, MFIs, NGOs | Farmers / landholders, via our project vehicle |
 | Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |
 | Counterparty credit | Many small, socially enforced | One utility, monopsony |
@@ -20,7 +19,7 @@ The venture's claim is that certain sustainable-development assets are underfund
 
 **LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.
 
-The predecessor `sds-work-plan.md` is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.
+The predecessor sds-work-plan.md is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.
 
 ## Concept
 
@@ -28,7 +27,7 @@ A project finance and management firm that adds bifacial agrivoltaic solar capac
 
 The differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.
 
-Unit economics reduce to: `(Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt)`.
+Unit economics reduce to: (Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt).
 
 ## Market structure
 
@@ -40,15 +39,15 @@ The monopsony also cuts the other way, and favourably for securitization: a sing
 
 ## Products and services
 
-1. **Capital investment and project management** — the core service.
-2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.
-3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.
-4. **O&M** — operations and maintenance over project life.
+1. **Capital investment and project management** — the core service.  
+2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.  
+3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.  
+4. **O\&M** — operations and maintenance over project life.
 
 ## Risks
 
 | Category | Risk | Note |
-|---|---|---|
+| :---- | :---- | :---- |
 | Production | Solar yield below model | Bifacial gain on agricultural ground cover is site-specific; needs measured validation, not datasheet assumptions |
 | Agricultural | Crop yield loss under array, rotation incompatibility | The value proposition to the farmer fails if this isn't managed |
 | Offtake | PPA terms set by a monopsony buyer; tariff or policy revision | The single largest exposure — concentrated counterparty and regulatory risk in one place |
@@ -68,14 +67,15 @@ Whether a **blended vehicle** is desirable is a live question. Rating agencies a
 
 Carried forward from the 2024 plan and still open:
 
-- Financial plan — capex per MW, project IRR, revenue projections, the funding ask
-- Competitive analysis — who else is doing agrivoltaic project finance in this market
-- Team and organizational structure
-- Legal structure of the project vehicle, and whether it can be the same entity as the community line
+- Financial plan — capex per MW, project IRR, revenue projections, the funding ask  
+- Competitive analysis — who else is doing agrivoltaic project finance in this market  
+- Team and organizational structure  
+- Legal structure of the project vehicle, and whether it can be the same entity as the community line  
 - Which jurisdiction — the original plan implies Israel, which would align with the community line's pilot site
 
 ## Open questions
 
-- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?
-- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?
+- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?  
+- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?  
 - What does a utility's PPA actually allow in terms of assignment of receivables? This is the LIT-009 true-sale checklist applied to this asset — and it may be the binding constraint.
+
