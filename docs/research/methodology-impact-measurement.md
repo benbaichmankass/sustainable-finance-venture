@@ -1,6 +1,6 @@
 # Methodology: Measuring the SDG Impact of the Financial Products
 
-**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §3
+**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** docs/phd/research-proposal.md §3
 
 ## Purpose
 
@@ -10,7 +10,7 @@ It answers three questions: **impact on what**, **identified how**, and **verifi
 
 ## 1\. Impact on what — outcome metrics
 
-Metrics are chosen to map onto the two SDG frames the proposal commits to. Each candidate product in `data/experiments.csv` will select from this menu; the menu is deliberately outcome-side, not output-side.
+Metrics are chosen to map onto the two SDG frames the proposal commits to. Each candidate product in data/experiments.csv will select from this menu; the menu is deliberately outcome-side, not output-side.
 
 | Frame | Primary outcomes | Notes |
 | :---- | :---- | :---- |
@@ -43,11 +43,11 @@ Impact the venture measures on its own products is not credible. The design sepa
 
 - An **independent verification partner** (academic field team / RCT lab) runs outcome measurement — this is OQ-7, and PT-05 (J-PAL) is the standing candidate.  
 - **IRB / ethics approval** and a **data-sharing agreement** are preconditions, not afterthoughts.  
-- Row-level participant data stays in the Vault (`05-raw-data`), never in the repo — only aggregate results come back (CLAUDE.md §8).
+- Row-level participant data stays in the Vault (05-raw-data), never in the repo — only aggregate results come back (CLAUDE.md §8).
 
 ## 4\. Integration with the toolkit
 
-The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 origination schema that makes receivables poolable also carries the baseline covariates the causal design needs; the RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing impact measurement and securitization-readiness together is design principle 2 of the venture (`docs/research/working-doc.md`).
+The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 origination schema that makes receivables poolable also carries the baseline covariates the causal design needs; the RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing impact measurement and securitization-readiness together is design principle 2 of the venture (docs/research/working-doc.md).
 
 ## Deliverable state
 
