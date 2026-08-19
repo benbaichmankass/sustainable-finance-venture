@@ -54,4 +54,6 @@ Places I want to apply to:
 4. [Copenhagen](https://www.econ.ku.dk/derg/current-projects/)  
 5. [ZEW](https://www.zew.de/en/team/rdh)  
    1. [Dr. Ralph de Haas](https://www.zew.de/en/team/rdh)  
-6. 
+6. [Bacconi](https://www.unibocconi.it/en/programs/phd/admissions)  
+   1.   
+7. 
