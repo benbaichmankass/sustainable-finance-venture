@@ -2,9 +2,9 @@
 
 **Status:** first pass · **Last updated:** 2026-08-03 · **Applicant frame:** Israel-based, running a parallel venture
 
-This note sits behind the four financial columns now in `data/phd-programs.csv` (`Tuition`, `Scholarships_Grants`, `TA_RA_Opportunities`, `Net_Earnings_Estimate`). The per-program numbers live in the tracker and on the dashboard's **PhD pipeline** tab (open a row → *Financial setup*). This doc records the patterns that cut across programs — the things a row-by-row read misses — and, importantly, the **eligibility rules that quietly rule some funding out for an Israeli applicant**.
+This note sits behind the four financial columns now in data/phd-programs.csv (Tuition, Scholarships\_Grants, TA\_RA\_Opportunities, Net\_Earnings\_Estimate). The per-program numbers live in the tracker and on the dashboard's **PhD pipeline** tab (open a row → *Financial setup*). This doc records the patterns that cut across programs — the things a row-by-row read misses — and, importantly, the **eligibility rules that quietly rule some funding out for an Israeli applicant**.
 
-Every figure here is sourced from official program/scholarship pages checked in August 2026, or flagged `(est.)` / *unverified* where it is an estimate or the page could not be confirmed. Take-home figures are **net of tax and any tuition**, with a cost-of-living flag, per the framing chosen for this pass. FX is approximate.
+Every figure here is sourced from official program/scholarship pages checked in August 2026, or flagged (est.) / *unverified* where it is an estimate or the page could not be confirmed. Take-home figures are **net of tax and any tuition**, with a cost-of-living flag, per the framing chosen for this pass. FX is approximate.
 
 ## The five funding models
 
