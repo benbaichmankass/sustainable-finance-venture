@@ -37,13 +37,21 @@ Focus on coffee growers:
 * Insurance products  
 * Price stabilization products  
 * Credit for agribusiness development and climate resilience  
-* Orgs that help coffee growers
+* Orgs that help coffee growers  
+* [https://library.sweetmarias.com/category/coffee-sourcing/coffee-atlas-origins/](https://library.sweetmarias.com/category/coffee-sourcing/coffee-atlas-origins/) 
 
 Places I want to apply to:
 
-1. HUJI  
+1. [HUJI](https://bschool.huji.ac.il/phd)  
    1. [Orly Sade](https://bschool.huji.ac.il/people/%D7%90%D7%95%D7%A8%D7%9C%D7%99-%D7%A9%D7%93%D7%94)  
    2. [Anat Bracha](https://bschool.huji.ac.il/people/%D7%A2%D7%A0%D7%AA-%D7%91%D7%A8%D7%9B%D7%94)  
    3. [Yishai Yafe](https://bschool.huji.ac.il/people/%D7%99%D7%A9%D7%99-%D7%99%D7%A4%D7%94)  
-2. Groningen  
-3. TAU
+2. [Groningen](https://www.rug.nl/education/phd-programmes/prospective/phd-positions/phd-options)  
+   1. [Robert Lensink](https://research.rug.nl/en/persons/robert-lensink/publications/)  
+   2.   
+3. [TAU](https://coller.tau.ac.il/PhD-applicants/program/business-economics/?tab=1)  
+   1.   
+4. [Copenhagen](https://www.econ.ku.dk/derg/current-projects/)  
+5. [ZEW](https://www.zew.de/en/team/rdh)  
+   1. [Dr. Ralph de Haas](https://www.zew.de/en/team/rdh)  
+6. 
