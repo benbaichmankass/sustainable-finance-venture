@@ -28,4 +28,22 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 
 ## 2026-08-06
 
-*Nothing untriaged. Last cleared 2026-08-06: "testing the mechanism of community based risk management" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*  
+*Nothing untriaged. Last cleared 2026-08-06: "testing the mechanism of community based risk management" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*
+
+## 2026-08-19
+
+Focus on coffee growers:
+
+* Insurance products  
+* Price stabilization products  
+* Credit for agribusiness development and climate resilience  
+* Orgs that help coffee growers
+
+Places I want to apply to:
+
+1. HUJI  
+   1. [Orly Sade](https://bschool.huji.ac.il/people/%D7%90%D7%95%D7%A8%D7%9C%D7%99-%D7%A9%D7%93%D7%94)  
+   2. [Anat Bracha](https://bschool.huji.ac.il/people/%D7%A2%D7%A0%D7%AA-%D7%91%D7%A8%D7%9B%D7%94)  
+   3. [Yishai Yafe](https://bschool.huji.ac.il/people/%D7%99%D7%A9%D7%99-%D7%99%D7%A4%D7%94)  
+2. Groningen  
+3. TAU

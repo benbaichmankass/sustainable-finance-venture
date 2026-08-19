@@ -777,12 +777,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-17",
+   "As_Of": "2026-08-18",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -792,12 +792,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-18",
+   "As_Of": "2026-08-19",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -805,14 +805,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "2.82",
+   "Value": "2.85",
    "Unit": "pp",
-   "As_Of": "2026-08-14",
-   "Chg_1m": "-0.3",
-   "Chg_3m": "-0.27",
-   "Chg_12m": "-0.44",
+   "As_Of": "2026-08-17",
+   "Chg_1m": "-0.27",
+   "Chg_3m": "-0.29",
+   "Chg_12m": "-0.4",
    "Direction": "down",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -827,7 +827,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -835,14 +835,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4214",
+   "Value": "3.4635",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-08-17",
-   "Chg_1m": "-0.0285",
-   "Chg_3m": "0.0237",
-   "Chg_12m": "-0.5815",
+   "As_Of": "2026-08-18",
+   "Chg_1m": "-0.0208",
+   "Chg_3m": "0.0773",
+   "Chg_12m": "-0.509",
    "Direction": "down",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -852,12 +852,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-18",
+   "As_Of": "2026-08-19",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -872,7 +872,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1",
    "Chg_12m": "1.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -880,14 +880,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "2.95",
+   "Value": "2.986",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-17",
-   "Chg_1m": "-0.045",
-   "Chg_3m": "0.041",
-   "Chg_12m": "-0.405",
+   "As_Of": "2026-08-18",
+   "Chg_1m": "-0.019",
+   "Chg_3m": "0.078",
+   "Chg_12m": "-0.369",
    "Direction": "down",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -902,7 +902,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.5",
    "Chg_12m": "7.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -910,14 +910,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.68",
+   "Value": "4.72",
    "Unit": "%",
-   "As_Of": "2026-08-14",
-   "Chg_1m": "0.13",
+   "As_Of": "2026-08-17",
+   "Chg_1m": "0.15",
    "Chg_3m": "0.26",
-   "Chg_12m": "0.31",
+   "Chg_12m": "0.49",
    "Direction": "up",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -932,7 +932,7 @@ window.SFV_DATA = {
    "Chg_3m": "-10.22",
    "Chg_12m": "19.83",
    "Direction": "up",
-   "Fetched_At": "2026-08-18T07:05:58+00:00",
+   "Fetched_At": "2026-08-19T07:06:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -3596,9 +3596,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Business Economics — Benchmarks & Unit-Economics Model",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "e99d3171ff11f39096d7e867f4bf8bda17ff89afce0516af592b8f0e1c93b342",
-   "Baseline_Repo_Hash": "f6ff282c83c0e95babf212ecbc3c4365251d50e1997fbc99ee9553ee387a7da8",
-   "Last_Synced_At": "2026-08-05T07:48:17Z",
+   "Baseline_Drive_Hash": "71f21ae2c2676c8f29fda3c76adb01fec89ae92f8c73ca6005371bcd75f9d219",
+   "Baseline_Repo_Hash": "71f21ae2c2676c8f29fda3c76adb01fec89ae92f8c73ca6005371bcd75f9d219",
+   "Last_Synced_At": "2026-08-19T07:10:51Z",
    "Status": "Synced"
   },
   {
@@ -3778,9 +3778,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "a8f628b6a67db3a5e5eb1f7317ed949cca533a9f5bec38ac4a898e6da1fe4ea5",
-   "Baseline_Repo_Hash": "a8f628b6a67db3a5e5eb1f7317ed949cca533a9f5bec38ac4a898e6da1fe4ea5",
-   "Last_Synced_At": "2026-08-14T15:02:56Z",
+   "Baseline_Drive_Hash": "27c58d885ccb850f8e5404c54ba8733abd3bfd1844dc52c24f7ec65c14a5c40b",
+   "Baseline_Repo_Hash": "27c58d885ccb850f8e5404c54ba8733abd3bfd1844dc52c24f7ec65c14a5c40b",
+   "Last_Synced_At": "2026-08-19T07:11:06Z",
    "Status": "Synced"
   }
  ],
@@ -4359,7 +4359,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-17",
+    "2026-08-18",
     3.75
    ]
   ],
@@ -4937,7 +4937,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-18",
+    "2026-08-19",
     2.4
    ]
   ],
@@ -5467,7 +5467,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-18",
+    "2026-08-19",
     3.5
    ]
   ],
@@ -5617,8 +5617,8 @@ window.SFV_DATA = {
     2.99
    ],
    [
-    "2026-08-14",
-    2.82
+    "2026-08-17",
+    2.85
    ]
   ],
   "MAC-06": [
@@ -7351,8 +7351,8 @@ window.SFV_DATA = {
     3.5114
    ],
    [
-    "2026-08-17",
-    3.4214
+    "2026-08-18",
+    3.4635
    ]
   ],
   "MAC-13": [
@@ -7929,8 +7929,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-17",
-    2.95
+    "2026-08-18",
+    2.986
    ]
   ],
   "MAC-14": [
@@ -9085,8 +9085,8 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-08-14",
-    4.68
+    "2026-08-17",
+    4.72
    ]
   ],
   "MAC-16": [
@@ -9796,8 +9796,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Scratchpad",
    "summary": "",
-   "words": 389,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*  \n"
+   "words": 437,
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-19\n\nFocus on coffee growers:\n\n* Insurance products  \n* Price stabilization products  \n* Credit for agribusiness development and climate resilience  \n* Orgs that help coffee growers\n\nPlaces I want to apply to:\n\n1. HUJI  \n   1. [Orly Sade](https://bschool.huji.ac.il/people/%D7%90%D7%95%D7%A8%D7%9C%D7%99-%D7%A9%D7%93%D7%94)  \n   2. [Anat Bracha](https://bschool.huji.ac.il/people/%D7%A2%D7%A0%D7%AA-%D7%91%D7%A8%D7%9B%D7%94)  \n   3. [Yishai Yafe](https://bschool.huji.ac.il/people/%D7%99%D7%A9%D7%99-%D7%99%D7%A4%D7%94)  \n2. Groningen  \n3. TAU"
   },
   {
    "path": "docs/ops/drive-sync.md",
@@ -10116,8 +10116,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Business Economics — Benchmarks & Unit-Economics Model",
    "summary": "",
-   "words": 1660,
-   "body": "# Business Economics — Benchmarks & Unit-Economics Model\n\n**Status:** Model built (RT-6 v0.1) · **Owner:** BB · **Updated:** 2026-08-02\n\nThis fills the \"Financial plan — cost structure, revenue projections, funding ask\" gap flagged in\n`business-plan.md §10`. It began as a plan for the analysis plus a benchmark skeleton; it now carries\na **working unit-economics model (RT-6)** and a first, defensible answer to OQ-10. Its job is to tell\nus — with benchmarks, not vibes — whether and how this becomes a profitable business.\n\nThe two questions the analysis exists to answer:\n\n> **Do the unit economics of a single structured deal work — and how many deals, at what size, does\n> the venture need before the structuring layer is self-sustaining?**\n\nEverything below serves those two questions.\n\n## 1. Deal anatomy and the cost stack\n\nA \"deal\" is one pool of community-originated receivables that we structure, monitor and place. Its\neconomics decompose into a **fixed** cost stack (largely independent of pool size — this is what\nmakes small pools uneconomic, per OQ-2) and a **variable** stack (scales with the pool).\n\n| Cost | Fixed / Variable | Notes |\n|---|---|---|\n| Legal & SPV set-up (true-sale opinions, domicile, counsel) | Fixed | The OQ-1 / LIT-009 checklist work; the main reason a pool must reach scale |\n| Structuring & rating / analytics | Fixed | Our own labour early on; a rating cost later |\n| Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |\n| Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |\n| Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |\n| Impact measurement | Semi-fixed | Grant-funded where possible (see `funding-pipeline.md`), so kept off the commercial P&L |\n\n**The key structural fact:** the fixed stack is why OQ-2's \"tens of millions, scaling to ≥USD 100m\"\nband exists. The analysis has to locate the pool size at which fixed costs stop dominating.\n\n## 2. Revenue lines\n\nFrom `business-plan.md §4`, made quantifiable:\n\n1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.\n2. **Retained economic interest** — return on the strip we are required to hold (EU/UK\n   risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.\n3. **Data / analytics licensing** — later-stage, once the underwriting engine has a track record.\n\nThe analysis models each as a driver, so we can see which line actually carries the business at\neach stage (early: fees; later: retained interest + data).\n\n## 3. The unit-economics model (built — RT-6)\n\nBuilt as **RT-6** (`risk-tools/tools/economics_model.py`, doc `risk-tools/rt-6-economics-model.md`),\na stdlib-only tool alongside RT-1…RT-5. It takes pool-level drivers and returns deal- and\nventure-level economics across **three scenarios** (Worst / Likely / Best).\n\n**Inputs (drivers):** pool notional; average ticket; weighted life; gross yield; expected loss;\norigination share of the spread; our cost-to-serve; fixed structuring cost; structuring and servicing\nfee %; retained-interest %; tranche sizes and coupons; junior hurdle; ramp (deals per year); overhead.\nEach driver is tagged `SOURCED` or `ASSUMED` in `economics-config.csv`.\n\n**Outputs:** net margin per deal; break-even pool size; deals- and years-to-breakeven; operating\nmargin and return on capital-at-risk; the junior residual return against its hurdle; and a loss ×\nfee-compression sensitivity grid.\n\n**Two levels, plus a companion:**\n- **Deal level** — is one pool profitable, and above what size?\n- **Venture level** — given fixed overhead and a realistic ramp, does the structuring layer cover its\n  own costs, and at what margin? This is the go/no-go test (OQ-10).\n- **Pilot yardstick** — how far a pilot-scale pool on each flagship asset is from covering itself.\n\n**The design choice that matters:** RT-6 keeps *our P&L* (the gate) separate from *the investor\nstack* (the binding constraint), and it is **not** RT-5. RT-5 owns the correlated loss distribution\nand the fixed-cost floor; RT-6 takes a loss assumption and asks whether the business pays.\n\n## 4. Benchmarks\n\nStarting values to *test*, not targets. The 2026-08-02 benchmark-research pass replaced most of the\noriginal **[assumed]** shopping list with open-access **[sourced]** anchors; what remains assumed is\nflagged honestly. Nothing here is stated as fact, and every figure feeds RT-6's `economics-config.csv`.\n\n| Benchmark | Working value | Basis |\n|---|---|---|\n| First-loss / junior tranche | 10–20% of structure | **[sourced]** LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | **[sourced]** LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | **[sourced]** LIT-012 |\n| Track record before first tranche | 2–3 years clean repayment data | **[sourced]** LIT-004, LIT-006 |\n| Portfolio gross yield (MFI to borrower) | ~20% Africa / 19.2% global | **[sourced]** LIT-016 (MIX 2017-18) |\n| Expected loss / PAR | PAR30 6.0% global → ~5% net loss modelled | **[sourced]** LIT-016; net-loss value **[assumed]** |\n| Cost-to-serve (operating expense ratio) | 10.6% global / 14.5% Africa; ~$87/borrower | **[sourced]** LIT-016 |\n| Structuring / servicing fee | MIV TER 2.4%; Fixed-Income fund fee 1.2% | **[sourced]** LIT-017 (Symbiotics 2019) |\n| Senior coupon | ~7% (MIV wholesale yield 7.6%) | **[sourced]** LIT-017 |\n| DFI mobilization ratio (private $ per DFI $) | ~1.8× private / 4.1× commercial; guarantees lead | **[sourced]** LIT-018, LIT-019 |\n| Fixed legal / SPV set-up cost | ~$250k/deal (working) | **[assumed]** — no open-access benchmark exists; get from counsel (PT-09) alongside OQ-1 |\n| Origination share of the spread | ~5% of the ~20% yield | **[assumed]** — informed by OER; get from partner MIS (PT-03, PT-04) |\n\n**Two rows resisted sourcing and remain the priority shopping list:** the **fixed structuring cost per\ndeal** (genuinely absent from open-access literature — a we-assume, not a the-literature-says) and the\n**origination layer's share of the spread** (needs real partner MIS). These are also the two drivers\nRT-6's sensitivity flags as most load-bearing. The vintage caveat matters: the MIX and Symbiotics\nanchors are 2017-18 data — the last comprehensive public editions — so they predate the current rate\ncycle.\n\n## 5. What \"profitable business\" means here (decided)\n\n**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do\nthe unit economics show a defensible route to the structuring layer covering its costs plus a target\nmargin, at a scale we can realistically reach, with the key assumptions named and testable? Three\ndeliberate choices around it:\n\n- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is\n  from covering itself and what would close the gap — but a pilot failing to break even is expected and\n  is not a \"no\".\n- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the\n  question between the pilot floor and the path to scale.\n- **Gate on our own P&L; investor returns are a constraint.** \"Is this a business for us\" is judged on the\n  structuring company's economics; the tranche returns to junior / senior investors are a binding\n  constraint (if they do not clear, there is no deal to structure), not the primary gate.\n\n**The concrete threshold (decided 2026-08-02, BB).** The go/no-go **gate** is a credible path to the\nstructuring layer **covering its own costs at a reachable scale, within 3 years**. Two figures ride\nalongside as **KPIs we steer by, not gates**: steady-state **operating margin** (target 30%) and\n**return on capital-at-risk** on the retained first-loss strip (target 15%). RT-6 evaluates all three,\nper scenario.\n\n### What the model says (RT-6 v0.1, synthetic)\n\n| | Worst | Likely | Best |\n|---|---|---|---|\n| Deal net margin (% of notional) | −0.95% | **+1.9%** | +4.1% |\n| Break-even pool size | ~$38m | **~$8.6m** | ~$3.2m |\n| Gate — cover costs within 3y | fail | **pass (yr 1)** | pass (yr 1) |\n| KPI1 operating margin (t. 30%) | −101% | **34%** | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | **16%** | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | **8.7% (short)** | 18% (clears) |\n\n**A first, defensible answer to OQ-10: a conditional GO.** Under the most-likely assumptions the gate\npasses and both KPIs are met — the structuring layer is a business at a reachable scale (roughly four\n$25m warehouse-scale deals a year). But the answer rests on two conditions the model makes explicit:\n(1) it holds only above ~$8.6m per deal — pilots sit 14–50× below that (the warehousing bridge is the\nonly path, per OQ-2); and (2) the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists\nonly with concessional first-loss** — the blended-finance case stated as arithmetic. The worst case does\nnot merely thin the margin; it fails the clearing test, so there is no deal at all. This is a first\nanswer to calibrate, not a verdict — 18 of 23 drivers are still assumed.\n\nWhat remains is calibration: replace the two stubborn **[assumed]** rows in §4 (fixed structuring cost;\norigination share) with partner and counsel numbers, and tie the loss assumption to RT-5 directly.\n\n## 6. Sequence\n\n1. ~~Confirm the cost-stack and revenue-line taxonomy~~ (this doc). **Done.**\n2. ~~Define the go/no-go threshold (OQ-10).~~ **Done** — gate + KPIs, §5.\n3. ~~Build the deal- and venture-level model; expose the sensitivities.~~ **Done** — RT-6, three scenarios.\n4. ~~Source the benchmarks.~~ **Mostly done** — LIT-016..019; two rows resist sourcing (§4).\n5. Replace the two remaining **[assumed]** rows with partner/counsel numbers (M-04, OQ-1, PT-03/04/09).\n6. Wire RT-6's loss assumption to an RT-5 scenario directly (RT-6 v0.2).\n\n## Deliverable state\n\n**Model built (RT-6 v0.1).** Benchmarks sourced where open-access data exists; go/no-go threshold\ndecided; a three-scenario model produces a first, defensible answer to OQ-10 (conditional GO, §5).\nFeeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6. Remaining work is\ncalibration: the two stubborn assumed drivers, and tying the loss assumption to RT-5.\n"
+   "words": 1679,
+   "body": "# Business Economics — Benchmarks & Unit-Economics Model\n\n**Status:** Model built (RT-6 v0.1) · **Owner:** BB · **Updated:** 2026-08-02\n\nThis fills the \"Financial plan — cost structure, revenue projections, funding ask\" gap flagged in business-plan.md §10. It began as a plan for the analysis plus a benchmark skeleton; it now carries a **working unit-economics model (RT-6)** and a first, defensible answer to OQ-10. Its job is to tell us — with benchmarks, not vibes — whether and how this becomes a profitable business.\n\nThe two questions the analysis exists to answer:\n\n> **Do the unit economics of a single structured deal work — and how many deals, at what size, does the venture need before the structuring layer is self-sustaining?**\n\nEverything below serves those two questions.\n\n## 1\\. Deal anatomy and the cost stack\n\nA \"deal\" is one pool of community-originated receivables that we structure, monitor and place. Its economics decompose into a **fixed** cost stack (largely independent of pool size — this is what makes small pools uneconomic, per OQ-2) and a **variable** stack (scales with the pool).\n\n| Cost | Fixed / Variable | Notes |\n| :---- | :---- | :---- |\n| Legal & SPV set-up (true-sale opinions, domicile, counsel) | Fixed | The OQ-1 / LIT-009 checklist work; the main reason a pool must reach scale |\n| Structuring & rating / analytics | Fixed | Our own labour early on; a rating cost later |\n| Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |\n| Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |\n| Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |\n| Impact measurement | Semi-fixed | Grant-funded where possible (see funding-pipeline.md), so kept off the commercial P\\&L |\n\n**The key structural fact:** the fixed stack is why OQ-2's \"tens of millions, scaling to ≥USD 100m\" band exists. The analysis has to locate the pool size at which fixed costs stop dominating.\n\n## 2\\. Revenue lines\n\nFrom business-plan.md §4, made quantifiable:\n\n1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.  \n2. **Retained economic interest** — return on the strip we are required to hold (EU/UK risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.  \n3. **Data / analytics licensing** — later-stage, once the underwriting engine has a track record.\n\nThe analysis models each as a driver, so we can see which line actually carries the business at each stage (early: fees; later: retained interest \\+ data).\n\n## 3\\. The unit-economics model (built — RT-6)\n\nBuilt as **RT-6** (risk-tools/tools/economics\\_model.py, doc risk-tools/rt-6-economics-model.md), a stdlib-only tool alongside RT-1…RT-5. It takes pool-level drivers and returns deal- and venture-level economics across **three scenarios** (Worst / Likely / Best).\n\n**Inputs (drivers):** pool notional; average ticket; weighted life; gross yield; expected loss; origination share of the spread; our cost-to-serve; fixed structuring cost; structuring and servicing fee %; retained-interest %; tranche sizes and coupons; junior hurdle; ramp (deals per year); overhead. Each driver is tagged SOURCED or ASSUMED in economics-config.csv.\n\n**Outputs:** net margin per deal; break-even pool size; deals- and years-to-breakeven; operating margin and return on capital-at-risk; the junior residual return against its hurdle; and a loss × fee-compression sensitivity grid.\n\n**Two levels, plus a companion:**\n\n- **Deal level** — is one pool profitable, and above what size?  \n- **Venture level** — given fixed overhead and a realistic ramp, does the structuring layer cover its own costs, and at what margin? This is the go/no-go test (OQ-10).  \n- **Pilot yardstick** — how far a pilot-scale pool on each flagship asset is from covering itself.\n\n**The design choice that matters:** RT-6 keeps *our P\\&L* (the gate) separate from *the investor stack* (the binding constraint), and it is **not** RT-5. RT-5 owns the correlated loss distribution and the fixed-cost floor; RT-6 takes a loss assumption and asks whether the business pays.\n\n## 4\\. Benchmarks\n\nStarting values to *test*, not targets. The 2026-08-02 benchmark-research pass replaced most of the original **\\[assumed\\]** shopping list with open-access **\\[sourced\\]** anchors; what remains assumed is flagged honestly. Nothing here is stated as fact, and every figure feeds RT-6's economics-config.csv.\n\n| Benchmark | Working value | Basis |\n| :---- | :---- | :---- |\n| First-loss / junior tranche | 10–20% of structure | **\\[sourced\\]** LIT-013, LIT-015 |\n| Pilot warehouse size | Tens of millions USD, DFI-anchored | **\\[sourced\\]** LIT-011, LIT-012 |\n| Public issuance threshold | ≥ USD 100m | **\\[sourced\\]** LIT-012 |\n| Track record before first tranche | 2–3 years clean repayment data | **\\[sourced\\]** LIT-004, LIT-006 |\n| Portfolio gross yield (MFI to borrower) | \\~20% Africa / 19.2% global | **\\[sourced\\]** LIT-016 (MIX 2017-18) |\n| Expected loss / PAR | PAR30 6.0% global → \\~5% net loss modelled | **\\[sourced\\]** LIT-016; net-loss value **\\[assumed\\]** |\n| Cost-to-serve (operating expense ratio) | 10.6% global / 14.5% Africa; \\~$87/borrower | **\\[sourced\\]** LIT-016 |\n| Structuring / servicing fee | MIV TER 2.4%; Fixed-Income fund fee 1.2% | **\\[sourced\\]** LIT-017 (Symbiotics 2019\\) |\n| Senior coupon | \\~7% (MIV wholesale yield 7.6%) | **\\[sourced\\]** LIT-017 |\n| DFI mobilization ratio (private $ per DFI $) | \\~1.8× private / 4.1× commercial; guarantees lead | **\\[sourced\\]** LIT-018, LIT-019 |\n| Fixed legal / SPV set-up cost | \\~$250k/deal (working) | **\\[assumed\\]** — no open-access benchmark exists; get from counsel (PT-09) alongside OQ-1 |\n| Origination share of the spread | \\~5% of the \\~20% yield | **\\[assumed\\]** — informed by OER; get from partner MIS (PT-03, PT-04) |\n\n**Two rows resisted sourcing and remain the priority shopping list:** the **fixed structuring cost per deal** (genuinely absent from open-access literature — a we-assume, not a the-literature-says) and the **origination layer's share of the spread** (needs real partner MIS). These are also the two drivers RT-6's sensitivity flags as most load-bearing. The vintage caveat matters: the MIX and Symbiotics anchors are 2017-18 data — the last comprehensive public editions — so they predate the current rate cycle.\n\n## 5\\. What \"profitable business\" means here (decided)\n\n**Locked 2026-08-02 (OQ-10).** The go/no-go **gate** is a *credible path to at-scale profitability* — do the unit economics show a defensible route to the structuring layer covering its costs plus a target margin, at a scale we can realistically reach, with the key assumptions named and testable? Three deliberate choices around it:\n\n- **Pilot-breakeven is a companion yardstick, not the gate.** We compute how far a pilot-scale deal is from covering itself and what would close the gap — but a pilot failing to break even is expected and is not a \"no\".  \n- **No single fixed-scale target.** Rather than assume one target notional, the model brackets the question between the pilot floor and the path to scale.  \n- **Gate on our own P\\&L; investor returns are a constraint.** \"Is this a business for us\" is judged on the structuring company's economics; the tranche returns to junior / senior investors are a binding constraint (if they do not clear, there is no deal to structure), not the primary gate.\n\n**The concrete threshold (decided 2026-08-02, BB).** The go/no-go **gate** is a credible path to the structuring layer **covering its own costs at a reachable scale, within 3 years**. Two figures ride alongside as **KPIs we steer by, not gates**: steady-state **operating margin** (target 30%) and **return on capital-at-risk** on the retained first-loss strip (target 15%). RT-6 evaluates all three, per scenario.\n\n### What the model says (RT-6 v0.1, synthetic)\n\n|  | Worst | Likely | Best |\n| :---- | :---- | :---- | :---- |\n| Deal net margin (% of notional) | −0.95% | **\\+1.9%** | \\+4.1% |\n| Break-even pool size | \\~$38m | **\\~$8.6m** | \\~$3.2m |\n| Gate — cover costs within 3y | fail | **pass (yr 1\\)** | pass (yr 1\\) |\n| KPI1 operating margin (t. 30%) | −101% | **34%** | 69% |\n| KPI2 return on capital-at-risk (t. 15%) | −30% | **16%** | 44% |\n| Junior residual vs 10% hurdle | −21% (no deal) | **8.7% (short)** | 18% (clears) |\n\n**A first, defensible answer to OQ-10: a conditional GO.** Under the most-likely assumptions the gate passes and both KPIs are met — the structuring layer is a business at a reachable scale (roughly four $25m warehouse-scale deals a year). But the answer rests on two conditions the model makes explicit: (1) it holds only above \\~$8.6m per deal — pilots sit 14–50× below that (the warehousing bridge is the only path, per OQ-2); and (2) the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss** — the blended-finance case stated as arithmetic. The worst case does not merely thin the margin; it fails the clearing test, so there is no deal at all. This is a first answer to calibrate, not a verdict — 18 of 23 drivers are still assumed.\n\nWhat remains is calibration: replace the two stubborn **\\[assumed\\]** rows in §4 (fixed structuring cost; origination share) with partner and counsel numbers, and tie the loss assumption to RT-5 directly.\n\n## 6\\. Sequence\n\n1. ~~Confirm the cost-stack and revenue-line taxonomy~~ (this doc). **Done.**  \n2. ~~Define the go/no-go threshold (OQ-10).~~ **Done** — gate \\+ KPIs, §5.  \n3. ~~Build the deal- and venture-level model; expose the sensitivities.~~ **Done** — RT-6, three scenarios.  \n4. ~~Source the benchmarks.~~ **Mostly done** — LIT-016..019; two rows resist sourcing (§4).  \n5. Replace the two remaining **\\[assumed\\]** rows with partner/counsel numbers (M-04, OQ-1, PT-03/04/09).  \n6. Wire RT-6's loss assumption to an RT-5 scenario directly (RT-6 v0.2).\n\n## Deliverable state\n\n**Model built (RT-6 v0.1).** Benchmarks sourced where open-access data exists; go/no-go threshold decided; a three-scenario model produces a first, defensible answer to OQ-10 (conditional GO, §5). Feeds business-plan.md §10 (financial plan) and connects to OQ-2 and OQ-6. Remaining work is calibration: the two stubborn assumed drivers, and tying the loss assumption to RT-5.  \n"
   },
   {
    "path": "product-design/business-plan.md",
@@ -10232,7 +10232,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 10
    },
-   "totalWords": 47672
+   "totalWords": 47739
   }
  }
 };
