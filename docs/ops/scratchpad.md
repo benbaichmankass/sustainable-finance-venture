@@ -1,6 +1,6 @@
 # Scratchpad
 
-**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side
+**Status:** Live capture doc · **Synced with Drive** (DRV-34) — edit either side
 
 A holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.
 
@@ -13,16 +13,16 @@ A holding pen for half-formed ideas. Write here when you have a thought worth ke
 
 ## How ideas leave
 
-Nothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.
+Nothing stays here permanently. When we go over the list, each item either dies or moves to its real home per CLAUDE.md §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.
 
 ## What not to write here
 
 This file is public. Two things belong elsewhere, no exceptions:
 
-- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  
-- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.
+- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in private/partner-contacts.csv. An organization named as a candidate partner, with the reasoning, is fine here.  
+- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's 05-raw-data. See docs/ops/publishing.md.
 
-If an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.
+If an idea can't be written without crossing one of those lines, put it in private/ and leave a pointer here.
 
 ---
 
