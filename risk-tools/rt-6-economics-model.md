@@ -1,12 +1,12 @@
 # RT-6 — Unit-economics model
 
-**Status:** In development · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Blocked by:** nothing to run against synthetic assumptions; calibration blocked on partner/counsel data **Code:** `risk-tools/tools/economics_model.py` · **Config:** `risk-tools/tools/economics-config.csv` (drivers × 3 scenarios) · **Assets:** `risk-tools/tools/economics-assets.csv`
+**Status:** In development · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Blocked by:** nothing to run against synthetic assumptions; calibration blocked on partner/counsel data **Code:** risk-tools/tools/economics\_model.py · **Config:** risk-tools/tools/economics-config.csv (drivers × 3 scenarios) · **Assets:** risk-tools/tools/economics-assets.csv
 
 ## Purpose
 
 Answer OQ-10: *is there a credible path to at-scale profitability for the structuring layer, at a scale we can realistically reach?* RT-6 is a deterministic, closed-form model of the **structuring company's own P\&L**, run across three scenarios, with a check on whether the tranche stack clears the returns investors require.
 
-It is the model the business-economics plan (`product-design/business-economics.md`) specified in §3 and now builds.
+It is the model the business-economics plan (product-design/business-economics.md) specified in §3 and now builds.
 
 ## What it is
 
@@ -14,10 +14,10 @@ A pair of computations, kept deliberately separate because they answer different
 
 | Computation | Question | Role |
 | :---- | :---- | :---- |
-| `deal_pnl` / `venture_ramp` | Does the structuring company make money — per deal, and as a venture? | **The gate and the KPIs** |
-| `structure_clears` | Does the pool's spread pay the investor tranches after loss and fees? | **The binding constraint** |
+| deal\_pnl / venture\_ramp | Does the structuring company make money — per deal, and as a venture? | **The gate and the KPIs** |
+| structure\_clears | Does the pool's spread pay the investor tranches after loss and fees? | **The binding constraint** |
 
-**The gate (go/no-go), set by BB 2026-08-02:** a credible path to the structuring layer **covering its own costs at a reachable scale, within `gate_horizon_years` (3)**. This is a venture-level break-even test. It is *not* the pilot-breakeven yardstick — that asks the same of a single pilot pool, is expected to fail, and rides alongside as a companion.
+**The gate (go/no-go), set by BB 2026-08-02:** a credible path to the structuring layer **covering its own costs at a reachable scale, within gate\_horizon\_years (3)**. This is a venture-level break-even test. It is *not* the pilot-breakeven yardstick — that asks the same of a single pilot pool, is expected to fail, and rides alongside as a companion.
 
 **The KPIs we track (not the gate):** (1) steady-state **operating margin** (target 30%) and (2) **return on capital-at-risk** (target 15%, on the retained first-loss strip). The model reports each against its target, per scenario.
 
@@ -27,13 +27,13 @@ A pair of computations, kept deliberately separate because they answer different
 
 **It is not RT-5.** RT-5 simulates the credit waterfall with a correlated Monte-Carlo loss model; it owns the loss distribution and the fixed-cost floor (OQ-2). RT-6 takes a loss *assumption* — a point estimate, sweepable, and readable straight off an RT-5 scenario — and asks the economics question on top of it. RT-5 answers "does the structure survive"; RT-6 answers "does the business pay". They share the fixed-cost logic and reach the same shape of OQ-2 answer from opposite sides.
 
-**It is not calibrated.** 5 of 23 drivers are `SOURCED` against open-access benchmarks; the other 18 are `ASSUMED`. Every output describes the *model*, not this asset class, while the assumed rows carry the load. No number here should be shown to an investor as a result.
+**It is not calibrated.** 5 of 23 drivers are SOURCED against open-access benchmarks; the other 18 are ASSUMED. Every output describes the *model*, not this asset class, while the assumed rows carry the load. No number here should be shown to an investor as a result.
 
 **It is not a forecast.** The three scenarios are coherent assumption sets, not probability-weighted views.
 
 ## The three scenarios
 
-`economics-config.csv` carries `Worst`, `Likely` and `Best` value columns. **Sourced anchors are held fixed across all three** (a benchmark does not get more optimistic because we want it to); the scenarios flex only the assumed judgment calls — expected loss, the origination share, our fees and cost-to-serve, the fixed cost, deal size, ramp and overhead.
+economics-config.csv carries Worst, Likely and Best value columns. **Sourced anchors are held fixed across all three** (a benchmark does not get more optimistic because we want it to); the scenarios flex only the assumed judgment calls — expected loss, the origination share, our fees and cost-to-serve, the fixed cost, deal size, ramp and overhead.
 
 ### Sourced anchors (held fixed)
 
@@ -49,7 +49,7 @@ The expected-loss and cost-to-serve **anchors** are also sourced (global PAR30 6
 
 ### What the model currently says (synthetic, illustrative)
 
-Running `economics_model.py` on the committed config:
+Running economics\_model.py on the committed config:
 
 |  | Worst | Likely | Best |
 | :---- | :---- | :---- | :---- |
@@ -62,7 +62,7 @@ Running `economics_model.py` on the committed config:
 
 **The reading.** Under the most-likely assumptions the gate passes and both KPIs are met — but the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss**. That is the blended-finance story stated as arithmetic, not asserted. The worst case is not a rounding-down of the likely case: it fails the clearing test outright (senior+mezz uncovered), which means no deal, not a thin one. The sensitivity grid shows why — our fee margin survives fee compression far better than it survives loss, because the real cliff is the pool ceasing to clear at \~6% loss, not our margin thinning.
 
-**The companion yardstick.** On the flagship trio at pilot scale (EXP-01/02/06, `economics-assets.csv`), pilots sit **14–50× below break-even**. That is expected and is the same finding RT-5 reaches for the junior tranche: the warehousing bridge to scale is not an optimisation, it is the only path (OQ-2).
+**The companion yardstick.** On the flagship trio at pilot scale (EXP-01/02/06, economics-assets.csv), pilots sit **14–50× below break-even**. That is expected and is the same finding RT-5 reaches for the junior tranche: the warehousing bridge to scale is not an optimisation, it is the only path (OQ-2).
 
 ## Running it
 
@@ -78,7 +78,7 @@ python3 risk-tools/tools/economics\_model.py \--pilot       \# flagship pilot-br
 
 python3 risk-tools/tools/economics\_model.py \--sensitivity \# loss × fee grid (Likely)
 
-Headline metrics per scenario are written to `data/rt6-economics-results.csv` (committed) and surface on the dashboard's Business tab. Every row carries the basis mix (`SOURCED 5/23 drivers; remainder ASSUMED`).
+Headline metrics per scenario are written to data/rt6-economics-results.csv (committed) and surface on the dashboard's Business tab. Every row carries the basis mix (SOURCED 5/23 drivers; remainder ASSUMED).
 
 ## Versioning
 
@@ -98,7 +98,7 @@ Every run prints its model version and the basis mix. **A margin without its ass
 
 ## Tests
 
-Wired into `risk-tools/tools/test_toolchain.py` (CI):
+Wired into risk-tools/tools/test\_toolchain.py (CI):
 
 - **P\&L identity** — revenue − cost \= net margin, to the cent, every scenario.  
 - **Economies of scale** — a larger pool never earns a smaller net margin (fixed cost is diluted, everything else scales linearly).  
@@ -107,7 +107,7 @@ Wired into `risk-tools/tools/test_toolchain.py` (CI):
 
 ## Open questions
 
-- **The five sourced anchors are the floor, not the ceiling.** 18 drivers remain assumed. The two that swing the answer most and are hardest to source: the **origination-layer share of the spread** (needs partner MIS, PT-03/PT-04) and the **fixed structuring cost per deal** (needs counsel, PT-09 — no open-access benchmark exists for this, so it stays a we-assume). See `business-economics.md §4`.  
+- **The five sourced anchors are the floor, not the ceiling.** 18 drivers remain assumed. The two that swing the answer most and are hardest to source: the **origination-layer share of the spread** (needs partner MIS, PT-03/PT-04) and the **fixed structuring cost per deal** (needs counsel, PT-09 — no open-access benchmark exists for this, so it stays a we-assume). See business-economics.md §4.  
 - **The junior hurdle is the whole blended-finance question.** At 10% the Likely deal is short; at a commercial 15%+ it is far short. What return the DFI/first-loss layer will actually accept (OQ-6) decides whether the deal clears.  
 - **Should the loss assumption be driven off RT-5 directly?** Today it is a config value informed by PAR benchmarks. Wiring RT-6 to read an RT-5 scenario's mean/p95 loss would tie the two tools together — a candidate for v0.2.  
 - **Weighted life and revolving pools.** The model treats the pool as a single-life structure; a revolving warehouse that recycles principal several times per year would change the fee base materially. Worth modelling once the warehouse design (M-22) firms up.
