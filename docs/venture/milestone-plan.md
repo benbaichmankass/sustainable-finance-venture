@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-07-30 · **Owner:** BB (founder owns all workstreams currently)
 
-Structured data lives in data/milestones.csv — the dashboard reads that file. This document holds the narrative around it.
+Structured data lives in `data/milestones.csv` — the dashboard reads that file. This document holds the narrative around it.
 
 ## Days 1–30 — Research foundation
 
@@ -14,7 +14,7 @@ Structured data lives in data/milestones.csv — the dashboard reads that file. 
 
 - Screen and interview 3–5 candidate originator/verification partners.  
 - Select the Israel pilot use-case and draft the product/operating model.  
-- Begin PhD supervisor outreach (per-program plans in data/phd-programs.csv).  
+- Begin PhD supervisor outreach (per-program plans in `data/phd-programs.csv`).  
 - Resolve Open Questions 1–3 (legal, pool size, data schema) with counsel and CGAP input.
 
 **Where OQ-1 to OQ-3 now stand.** All three moved from Open to Partially answered on the strength of the new literature anchors:
