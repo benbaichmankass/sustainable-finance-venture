@@ -26,8 +26,8 @@ Three strands of literature converge on this question, and each is well develope
 
 Between these three strands sit at least three specific gaps this research program is positioned to address:
 
-1. **No rigorous modeling of savings-group cash-flow risk in securitization terms.** The impact-evaluation literature measures whether savings groups help members; it does not produce default curves, delinquency hazard models, or loss-given-default estimates comparable to what a structured-finance analyst needs. This gap sits precisely at the intersection of applied econometrics and financial risk modeling.
-2. **Little evidence on bundling loan and insurance products within community structures**, despite theoretical reasons to expect that bundled products could improve both risk-pooling (insurance offsets idiosyncratic shocks that would otherwise cause loan default) and the stability of the resulting cash-flow stream — a property that matters directly for securitization quality.
+1. **No rigorous modeling of savings-group cash-flow risk in securitization terms.** The impact-evaluation literature measures whether savings groups help members; it does not produce default curves, delinquency hazard models, or loss-given-default estimates comparable to what a structured-finance analyst needs. This gap sits precisely at the intersection of applied econometrics and financial risk modeling.  
+2. **Little evidence on bundling loan and insurance products within community structures**, despite theoretical reasons to expect that bundled products could improve both risk-pooling (insurance offsets idiosyncratic shocks that would otherwise cause loan default) and the stability of the resulting cash-flow stream — a property that matters directly for securitization quality.  
 3. **A missing empirical account of "securitization-readiness by design."** Existing securitized microfinance deals retrofit standardization onto originators that were not designed with pooling in mind. No study to date evaluates whether designing data capture, contract terms, and monitoring at origination — rather than after the fact — measurably improves the resulting asset's investability, and at what cost in operational complexity.
 
 **Significance.** Academically, this project contributes to development economics and empirical finance by producing one of the first studies to connect rigorous causal identification of community-finance outcomes directly to the risk-modeling and structuring questions that determine whether those cash flows can attract institutional capital. Practically, it aims to produce a tested prototype of a community-linked financial product built for securitization from the ground up, together with a general framework — a data schema, a risk-modeling approach, and a credit-enhancement logic — that NGOs, MFIs, DFIs, and investors could apply beyond the specific pilot sites. If the hypothesis holds even partially, it opens a mechanism for redirecting institutional capital toward proven sustainable-development interventions at a scale grant and DFI-only funding cannot reach.
@@ -36,17 +36,17 @@ Between these three strands sit at least three specific gaps this research progr
 
 **Research questions**
 
-- How stable and well-characterized are the repayment and claims behaviors of community-originated loans and insurance products, and can they be modeled using standard credit-risk and actuarial techniques (hazard models, loss distributions, correlation structures)?
-- What data architecture and monitoring protocol, implemented at origination, most improves the resulting portfolio's suitability for pooling — and what is the marginal cost of collecting that data relative to the marginal improvement in investability?
-- Does bundling a loan product with a parametric or indemnity-based insurance product measurably reduce default risk and cash-flow volatility relative to a loan-only product, holding the originating community structure constant?
+- How stable and well-characterized are the repayment and claims behaviors of community-originated loans and insurance products, and can they be modeled using standard credit-risk and actuarial techniques (hazard models, loss distributions, correlation structures)?  
+- What data architecture and monitoring protocol, implemented at origination, most improves the resulting portfolio's suitability for pooling — and what is the marginal cost of collecting that data relative to the marginal improvement in investability?  
+- Does bundling a loan product with a parametric or indemnity-based insurance product measurably reduce default risk and cash-flow volatility relative to a loan-only product, holding the originating community structure constant?  
 - Under what credit-enhancement design (first-loss sizing, multi-originator pooling, geographic and temporal diversification) does a pool of community-originated assets approach investment-grade risk-return characteristics, and how sensitive is that result to the underlying assumptions?
 
 **Objectives (3–4 year scope)**
 
-1. Design and field-test one or two community-linked financial products (a standardized loan product and a bundled loan-insurance product) with data capture built for securitization from origination.
-2. Build and validate a risk-modeling pipeline — default/claims hazard models, loss distributions, portfolio correlation estimates — using pilot and, where accessible, historical partner data.
-3. Run a field evaluation (randomized or strong quasi-experimental) of the bundled versus unbundled product to identify the causal effect of bundling on repayment stability and household resilience outcomes.
-4. Construct and stress-test a securitization/pooling model (cash-flow waterfall, tranche sizing, first-loss requirements) calibrated to the empirical risk parameters estimated in objectives 2–3, and evaluate under what conditions the resulting structure is investable by institutional standards.
+1. Design and field-test one or two community-linked financial products (a standardized loan product and a bundled loan-insurance product) with data capture built for securitization from origination.  
+2. Build and validate a risk-modeling pipeline — default/claims hazard models, loss distributions, portfolio correlation estimates — using pilot and, where accessible, historical partner data.  
+3. Run a field evaluation (randomized or strong quasi-experimental) of the bundled versus unbundled product to identify the causal effect of bundling on repayment stability and household resilience outcomes.  
+4. Construct and stress-test a securitization/pooling model (cash-flow waterfall, tranche sizing, first-loss requirements) calibrated to the empirical risk parameters estimated in objectives 2–3, and evaluate under what conditions the resulting structure is investable by institutional standards.  
 5. Synthesize findings into a transferable framework — schema, model, and structuring guidance — usable by originators and investors beyond the pilot sites.
 
 # Methodology and Data
@@ -72,7 +72,7 @@ The empirical strategy follows development-economics norms while adding a struct
 # Work Plan and Timetable
 
 | Phase | Focus | Main tasks |
-|---|---|---|
+| :---- | :---- | :---- |
 | **Year 1** | Literature, design, partnerships | Complete the targeted literature review (index insurance/climate risk, securitization mechanics, impact-measurement methods); finalize product and data-schema design; identify and formalize agreements with an originating partner (NGO/MFI/savings-group network) and, where feasible, a verification/academic partner; pre-register the field evaluation design; secure ethics/IRB approval. |
 | **Year 2** | Piloting and data collection | Launch the pilot product(s) at the chosen site(s); begin structured data capture under the standardized schema; monitor early operational issues in the origination and data pipeline; if a second (Africa) site is added, begin partner and access negotiations there using lessons from the first site. |
 | **Year 3** | Analysis | Estimate causal effects of bundling on repayment/resilience outcomes; build and validate the hazard/loss risk model on accumulated pilot (and, where available, historical partner) data; run the cash-flow waterfall and credit-enhancement simulations; begin drafting core dissertation chapters. |
@@ -90,26 +90,26 @@ Field access negotiation, ethics approval, and partner data-sharing agreements a
 
 # Bibliography (Skeleton)
 
-- Banerjee, Duflo, Glennerster & Kinnan (2015). The Miracle of Microfinance? Evidence from a Randomized Evaluation.
-- Banerjee, Karlan & Zinman (2015). Six Randomized Evaluations of Microcredit: Introduction and Further Steps.
-- Angelucci, Karlan & Zinman (2015). Win Some Lose Some? Evidence from a Randomized Microcredit Program.
-- Attanasio, Augsburg, De Haas, Fitzsimons & Harmgart (2015). The Impact of Microfinance: Evidence from Joint-Liability Lending in Mongolia.
-- Meager (2019). Understanding the Average Impact of Microcredit Expansions: A Bayesian Hierarchical Analysis of Seven Randomized Experiments.
-- Karlan & Morduch (2010). Access to Finance (Handbook of Development Economics chapter).
-- Cull, Demirgüç-Kunt & Morduch (2009). Microfinance Meets the Market.
-- de Mel, McKenzie & Woodruff (2008). Returns to Capital in Microenterprises.
-- Ksoll, Lilleør, Lønborg & Rasmussen (2016). Impact of Village Savings and Loan Associations: Evidence from a Cluster-Randomized Trial.
-- Beaman, Karlan & Thuysbaert (2014). Saving for a (Not So) Rainy Day: A Randomized Evaluation of Savings Groups in Mali.
-- Karlan, Savonitto, Thuysbaert & Udry (2017). Impact of Savings Groups on the Lives of the Poor.
-- Gash & Odell (2013). The Evidence-Based Story of Savings Groups: A Synthesis of Seven Randomized Control Trials.
-- Allen & Panetta (2010). Savings Groups: What Are They? (SEEP Network).
-- Cole, Giné & Vickery (2017). How Does Risk Management Influence Production Decisions? Evidence from a Field Experiment.
-- Karlan, Osei, Osei-Akoto & Udry (2014). Agricultural Decisions after Relaxing Credit and Risk Constraints.
-- Clarke & Dercon (2016). Dull Disasters? How Planning Ahead Will Make a Difference.
-- CGAP (2006). Use of Securitization to Fund Microfinance (Focus Note).
-- Jobst (2006). Asset Securitisation as a Risk Management and Funding Tool.
-- IFC / DFI Working Group (2019). Blended Concessional Finance: The Joint Report.
-- Convergence Blended Finance (2021). The State of Blended Finance.
+- Banerjee, Duflo, Glennerster & Kinnan (2015). The Miracle of Microfinance? Evidence from a Randomized Evaluation.  
+- Banerjee, Karlan & Zinman (2015). Six Randomized Evaluations of Microcredit: Introduction and Further Steps.  
+- Angelucci, Karlan & Zinman (2015). Win Some Lose Some? Evidence from a Randomized Microcredit Program.  
+- Attanasio, Augsburg, De Haas, Fitzsimons & Harmgart (2015). The Impact of Microfinance: Evidence from Joint-Liability Lending in Mongolia.  
+- Meager (2019). Understanding the Average Impact of Microcredit Expansions: A Bayesian Hierarchical Analysis of Seven Randomized Experiments.  
+- Karlan & Morduch (2010). Access to Finance (Handbook of Development Economics chapter).  
+- Cull, Demirgüç-Kunt & Morduch (2009). Microfinance Meets the Market.  
+- de Mel, McKenzie & Woodruff (2008). Returns to Capital in Microenterprises.  
+- Ksoll, Lilleør, Lønborg & Rasmussen (2016). Impact of Village Savings and Loan Associations: Evidence from a Cluster-Randomized Trial.  
+- Beaman, Karlan & Thuysbaert (2014). Saving for a (Not So) Rainy Day: A Randomized Evaluation of Savings Groups in Mali.  
+- Karlan, Savonitto, Thuysbaert & Udry (2017). Impact of Savings Groups on the Lives of the Poor.  
+- Gash & Odell (2013). The Evidence-Based Story of Savings Groups: A Synthesis of Seven Randomized Control Trials.  
+- Allen & Panetta (2010). Savings Groups: What Are They? (SEEP Network).  
+- Cole, Giné & Vickery (2017). How Does Risk Management Influence Production Decisions? Evidence from a Field Experiment.  
+- Karlan, Osei, Osei-Akoto & Udry (2014). Agricultural Decisions after Relaxing Credit and Risk Constraints.  
+- Clarke & Dercon (2016). Dull Disasters? How Planning Ahead Will Make a Difference.  
+- CGAP (2006). Use of Securitization to Fund Microfinance (Focus Note).  
+- Jobst (2006). Asset Securitisation as a Risk Management and Funding Tool.  
+- IFC / DFI Working Group (2019). Blended Concessional Finance: The Joint Report.  
+- Convergence Blended Finance (2021). The State of Blended Finance.  
 - GIIN (2020). Annual Impact Investor Survey.
 
-*Placeholder list — to be replaced with entries from `literature/lit-matrix.csv` as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*
+*Placeholder list — to be replaced with entries from literature/lit-matrix.csv as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*  
