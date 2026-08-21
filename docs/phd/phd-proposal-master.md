@@ -112,4 +112,4 @@ Field access negotiation, ethics approval, and partner data-sharing agreements a
 - Convergence Blended Finance (2021). The State of Blended Finance.  
 - GIIN (2020). Annual Impact Investor Survey.
 
-*Placeholder list — to be replaced with entries from literature/lit-matrix.csv as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*  
+*Placeholder list — to be replaced with entries from `literature/lit-matrix.csv` as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*  
