@@ -5249,9 +5249,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Structuring Community Savings-Group Finance into Securitizable, Empirically Verified Risk Assets",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "c01dd7ce489422c48302cdf5d1dc465dd7cc6f1157945fd4b18acf497f36e1da",
-   "Baseline_Repo_Hash": "c01dd7ce489422c48302cdf5d1dc465dd7cc6f1157945fd4b18acf497f36e1da",
-   "Last_Synced_At": "2026-08-21T14:47:36Z",
+   "Baseline_Drive_Hash": "e36e5ae7f4e32fefd24eff216569eda80445c00b050b9549583f75094c8978a8",
+   "Baseline_Repo_Hash": "71d05bd6217b2afd51b527638d5d6cbfd2ab6c832aff3c757d289cb52d76ca7b",
+   "Last_Synced_At": "2026-08-22T15:49:01Z",
    "Status": "Synced"
   },
   {
@@ -5301,9 +5301,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Agenda: Literature Review Plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "7dbe24c92ce967bb97e7e2f6149b9bc402b8ff7f0e11ca4ac30965f75e1b62b3",
-   "Baseline_Repo_Hash": "9761f87bf0e84fa5a3456863da0099f929302393e0f6ed92a34d603010a54949",
-   "Last_Synced_At": "2026-08-22T13:02:10Z",
+   "Baseline_Drive_Hash": "9fb1fc5a44c9d7006e9c1c015620f01e54baa3cd159a992dd424c8d06b54de69",
+   "Baseline_Repo_Hash": "329b4a9c972b33579862719028cc4c89d9de2daf9536007c0daa12904a8952fe",
+   "Last_Synced_At": "2026-08-22T15:49:08Z",
    "Status": "Synced"
   },
   {
