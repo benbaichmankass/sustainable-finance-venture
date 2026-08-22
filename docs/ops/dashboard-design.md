@@ -141,3 +141,42 @@ gzip -c dashboard/data.js | wc -c
 
 If it ever does become a problem, the fix is lazy-loading doc bodies, not dropping the
 document. `build.py` keeps a `SKIP_PATHS` hook for genuinely excludable paths; it is empty.
+
+## Citation chips
+
+Every `LIT-0NN` token in rendered prose becomes a button that opens that source's
+matrix row in a modal — citation, status, method, geography, findings, limitations,
+relevance, what it opens next, and a link to the article.
+
+**Why a modal rather than a link.** Reading the review, you hit a claim attributed to
+`LIT-037` and want to know what that source actually is without losing your place.
+Navigating to the Evidence base table and finding the row loses the place; a modal
+does not.
+
+**The sources reference is `literature/lit-matrix.csv`.** There is no second list and
+there must not be. The chip is a view onto the matrix row, so a source described once
+is described everywhere it is cited.
+
+Two chokepoints cover everything:
+
+- `inlineMd()` — all rendered markdown: docs, memos, the generated review.
+- `fields()` — tracker detail rows, which come straight from `esc()`'d CSV text and
+  never touch the markdown path. Open-question notes and component rationales are full
+  of references and would otherwise have been missed. One expanded OQ row carries ~34.
+
+`citeChips()` walks the string and skips anything inside a tag or inside `<code>`, so a
+reference written as `` `LIT-031` `` stays literal and an ID inside an `href` is not
+mangled.
+
+**An ID not in the matrix renders as a dashed red chip that does nothing**, rather than
+silently as plain text. A citation pointing at a source that does not exist is a defect
+and should look like one. `scripts/build_lit_review.py` catches the same class of drift
+at build time.
+
+**Links follow the matrix's URL rule.** A verified URL gives "Open source ↗"; a blank
+one gives "Search on Scholar ↗" plus the reason. The matrix leaves a URL blank rather
+than guessing (CLAUDE.md §4), and the UI says so instead of hiding it. Eight anchors —
+LIT-001 to LIT-008 — currently have no URL.
+
+The source link sits in the modal **header**, not the footer. These rows run long, and a
+link you must scroll a screenful of findings to reach is one most readers never see.
