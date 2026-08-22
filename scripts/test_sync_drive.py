@@ -127,6 +127,43 @@ def main():
     finally:
         sync_drive.ROOT = real_root
 
+    # --- a stale Error clears once the row verifies in sync -----------------
+    # DRV-09 hit a Google 500 on 2026-08-22T14:53Z. The guard correctly refused
+    # the degraded pull and marked the row Error - but every later run found both
+    # sides unchanged and returned early without touching Status, so the manifest
+    # kept claiming Error on a healthy row. Status must be self-healing.
+    tmp2 = tempfile.mkdtemp()
+    real_root = sync_drive.ROOT
+    real_export = sync_drive.export_doc_text
+    try:
+        sync_drive.ROOT = tmp2
+        settled = "# Funding landscape\n\nA line.\n"
+        sync_drive.write_repo_file("docs/settled.md", settled)
+        sync_drive.export_doc_text = lambda drive, file_id: settled
+        h = sync_drive.sha(settled)
+        row = {"ID": "DRV-TEST", "Type": "doc", "Drive_ID": "abc",
+               "Repo_Path": "docs/settled.md", "Parent_ID": "", "Title": "",
+               "Baseline_Repo_Hash": h, "Baseline_Drive_Hash": h,
+               "Last_Synced_At": "2026-08-19T17:14:37Z", "Status": "Error"}
+        sync_drive.reconcile_row(row, {}, None, None)
+        check("a stale Error clears when both sides verify unchanged",
+              row["Status"] == "Synced",
+              "one transient API error would otherwise pin the row to Error for ever")
+        check("clearing a stale Error does not touch Last_Synced_At",
+              row["Last_Synced_At"] == "2026-08-19T17:14:37Z",
+              "nothing moved; bumping it would churn every row every run")
+
+        # ...and an unchanged row that was already Synced stays untouched, so the
+        # twenty-minute schedule keeps producing empty diffs.
+        quiet = dict(row, Status="Synced")
+        before = dict(quiet)
+        sync_drive.reconcile_row(quiet, {}, None, None)
+        check("an already-Synced unchanged row is left exactly as it was",
+              quiet == before)
+    finally:
+        sync_drive.ROOT = real_root
+        sync_drive.export_doc_text = real_export
+
     # --- the fallback must be gone -----------------------------------------
     src_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sync_drive.py")
     src = open(src_path, encoding="utf-8").read()
