@@ -1,6 +1,6 @@
 # Product Line 2 — Agrivoltaic Project Finance (BFAV)
 
-**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** `archive/google-drive/bfav-business-plan.md` (Apr 2024\) · **Last updated:** 2026-07-30
+**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** archive/google-drive/bfav-business-plan.md (Apr 2024\) · **Last updated:** 2026-07-30
 
 ## Why this belongs in the same venture
 
@@ -19,7 +19,7 @@ The venture's claim is that certain sustainable-development assets are underfund
 
 **LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.
 
-The predecessor `sds-work-plan.md` is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.
+The predecessor sds-work-plan.md is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.
 
 ## Concept
 
@@ -27,7 +27,7 @@ A project finance and management firm that adds bifacial agrivoltaic solar capac
 
 The differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.
 
-Unit economics reduce to: `(Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt)`.
+Unit economics reduce to: (Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt).
 
 ## Market structure
 

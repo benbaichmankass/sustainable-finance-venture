@@ -1,6 +1,6 @@
 # Scratchpad
 
-**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side
+**Status:** Live capture doc · **Synced with Drive** (DRV-34) — edit either side
 
 A holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.
 
@@ -13,16 +13,16 @@ A holding pen for half-formed ideas. Write here when you have a thought worth ke
 
 ## How ideas leave
 
-Nothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.
+Nothing stays here permanently. When we go over the list, each item either dies or moves to its real home per CLAUDE.md §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.
 
 ## What not to write here
 
 This file is public. Two things belong elsewhere, no exceptions:
 
-- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  
-- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.
+- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in private/partner-contacts.csv. An organization named as a candidate partner, with the reasoning, is fine here.  
+- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's 05-raw-data. See docs/ops/publishing.md.
 
-If an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.
+If an idea can't be written without crossing one of those lines, put it in private/ and leave a pointer here.
 
 ---
 
@@ -34,7 +34,8 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 
 *Nothing untriaged.*
 
-**Cleared 2026-08-22** - the 2026-08-19 entries were filed:
+**Cleared 2026-08-22** \- the 2026-08-19 entries were filed:
 
-- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows - **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) - plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.
-- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` - including where it disagrees with the scoring rubric, which is the part worth thinking about.
+- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  
+- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in docs/phd/application-pack.md \- including where it disagrees with the scoring rubric, which is the part worth thinking about.
+
