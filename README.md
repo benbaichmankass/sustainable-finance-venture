@@ -84,7 +84,7 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 | Synthesis memos | 3 reviewed, 2 drafted, 4 outlined |
 | Open questions | 17 — 4 answered, 8 partially answered, 4 open, 1 dropped |
 | Milestones | 8 done, 6 in progress, 21 not started |
-| Experiments | 30 candidates, scored — 1 specified (EXP-25), 1 selected (EXP-22); anchor setting is the coffee cluster, instrument open between EXP-09 and EXP-10 (OQ-16) |
+| Experiments | 30 candidates, scored — 2 specified (EXP-25, EXP-22); anchor setting is the coffee cluster, instrument open between EXP-09 and EXP-10 (OQ-16) |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
 | Risk tools | 6 — 5 in development, 1 specified |
 | Macro watchlist | 16 indicators |

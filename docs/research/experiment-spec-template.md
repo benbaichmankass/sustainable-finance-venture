@@ -202,7 +202,13 @@ Priority order for specs, settled by OQ-15:
    tracker row survived four months of comparison without anyone noticing it asked
    the wrong question.
 2. **EXP-22** - securitisation-ready origination protocol with activity-based costing.
-   Tests whether investability costs more than it unlocks. `Selected`.
+   Tests whether investability costs more than it unlocks. **`Specified` 2026-08-22** -
+   `docs/research/experiments/exp-22-origination-protocol-costing.md`. Writing it up
+   caught two defects the tracker row had carried unnoticed: it named *two* primary
+   outcomes running on incompatible clocks, and it assumed the control arm was a
+   coherent protocol, which LIT-031 shows is not true where the originator is a
+   cooperative internal credit fund. Both are the kind of thing only the template's
+   one-primary-outcome rule and its "who is the control arm" question surface.
 3. **The field anchor** - one of EXP-01, EXP-06, EXP-09 or EXP-10, once OQ-16 resolves.
    Cannot be specced until it is chosen, and it should carry the second randomisation
    layer from `docs/research/research-framework.md` §3.
@@ -210,4 +216,11 @@ Priority order for specs, settled by OQ-15:
    memorable in a proposal and costs almost nothing to run.
 
 Specs 1 and 2 can be written now - neither is waiting on a decision, only on partner
-data access (M-32). Spec 1 is done; spec 2 is next.
+data access (M-32). **Both are done.** Next is the field anchor, which cannot be
+specced until OQ-16's residual resolves, then optionally EXP-23.
+
+**A sequencing result that came out of writing them.** EXP-22 is the better *first*
+ask of a new originator: it needs only permission to vary a process and to observe it,
+no historical data disclosure, and it hands back a costed answer plus a time-and-motion
+baseline the originator does not otherwise have. EXP-25 asks for loan-level history,
+which is a much larger trust ask. Approach in that order (M-32).
