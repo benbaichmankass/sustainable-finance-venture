@@ -192,7 +192,15 @@ Priority order for specs, settled by OQ-15:
 
 1. **EXP-25** - default correlation on partner MIS. Tests whether the risk is
    covariate rather than idiosyncratic, which is the falsification test the whole
-   pooling thesis turns on. `Selected`.
+   pooling thesis turns on. **`Specified` 2026-08-22** -
+   `docs/research/experiments/exp-25-default-correlation.md`. Note that writing the
+   spec changed the experiment: the LC-08 read showed a single pooled correlation
+   would hide the finding, because the covariate component arrives through two
+   separable channels and only one of them is diversifiable. The estimand is now a
+   variance decomposition, and the design needs two lenders per market to identify
+   the institutional channel at all. That is the case for speccing early - the
+   tracker row survived four months of comparison without anyone noticing it asked
+   the wrong question.
 2. **EXP-22** - securitisation-ready origination protocol with activity-based costing.
    Tests whether investability costs more than it unlocks. `Selected`.
 3. **The field anchor** - one of EXP-01, EXP-06, EXP-09 or EXP-10, once OQ-16 resolves.
@@ -202,4 +210,4 @@ Priority order for specs, settled by OQ-15:
    memorable in a proposal and costs almost nothing to run.
 
 Specs 1 and 2 can be written now - neither is waiting on a decision, only on partner
-data access (M-32).
+data access (M-32). Spec 1 is done; spec 2 is next.
