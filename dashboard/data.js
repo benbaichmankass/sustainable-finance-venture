@@ -5470,9 +5470,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Agenda: Literature Review Plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "be9e2fe29a845d9a196f3b34e09d344c0d6bca1b47410ce4a61a55c3a848f192",
-   "Baseline_Repo_Hash": "73a3a9a7c478f38d498db36aa04d82aab92dca7c3c5dfff6f0b293c37d1d9c50",
-   "Last_Synced_At": "2026-08-22T16:24:51Z",
+   "Baseline_Drive_Hash": "db8e5225d6fd5cca1891120e7bf06a91ea37ad1fd5b20a893932fee5d675dbf2",
+   "Baseline_Repo_Hash": "2e74d5ff281892bf35c816ea2ed67306fadd9174d2b23a59ae097cf8ca4105fe",
+   "Last_Synced_At": "2026-08-22T17:02:26Z",
    "Status": "Synced"
   },
   {
