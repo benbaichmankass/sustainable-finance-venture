@@ -80,10 +80,10 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 |---|---|
 | Research questions | 1 core, 7 strands, 21 sub-questions — lead strand open (OQ-14) |
 | Literature components | 26 — 10 are P1, needed before the proposal goes out |
-| Literature anchors | 30 logged (23 reviewed, 7 to read) — against a P1 target of ~96 |
-| Synthesis memos | 3 reviewed, 1 drafted, 5 outlined |
+| Literature anchors | 35 logged (28 reviewed, 7 to read) — against a P1 target of ~96 |
+| Synthesis memos | 3 reviewed, 2 drafted, 4 outlined |
 | Open questions | 17 — 4 answered, 8 partially answered, 4 open, 1 dropped |
-| Milestones | 8 done, 4 in progress, 23 not started |
+| Milestones | 8 done, 5 in progress, 22 not started |
 | Experiments | 30 candidates, scored — 2 selected; anchor setting is the coffee cluster, instrument open between EXP-09 and EXP-10 (OQ-16) |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
 | Risk tools | 6 — 5 in development, 1 specified |
@@ -96,7 +96,7 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 1. **Read LC-05 to LC-08, then close OQ-17** (M-35). The LC-04 read found the proposal's novelty claim is false — bundling *has* been tested, twice, and compulsory bundling suppressed demand both times. On 2026-08-22 the relocation was deliberately deferred until those four components are read, because LC-08 in particular may move the answer again. Until it closes, `docs/phd/phd-proposal-master.md` does not go to an advisor. Candidates are in OQ-17; synthesis in MEMO-5.
 2. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item. Lead with a data-sharing request rather than a pilot proposal; it is a much smaller ask and it opens the same door.
 3. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape. Settle it against OQ-12 before any field deployment, because fields cannot be backfilled.
-4. Choose between EXP-09 and EXP-10 (OQ-16 residual, M-33) — the sequence is settled and the setting is now the coffee cooperative cluster; the instrument is not. Read LC-24 first: it now verifies that bet rather than informing it.
+4. Choose between EXP-09 and EXP-10 (OQ-16 residual, M-33) — the sequence is settled and the setting is now the coffee cooperative cluster; the instrument is not. LC-24 has been read and the coffee bet cleared its two assumptions (MEMO-9), so no reversal is forced — but it found coffee carries two covariate shocks, leaf rust and world price, which makes the pool the hardest case for poolability and the best case for measuring correlation.
 5. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.
 
 ## Open by default
