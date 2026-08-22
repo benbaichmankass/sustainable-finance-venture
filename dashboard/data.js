@@ -5075,9 +5075,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Methodology: Measuring the SDG Impact of the Financial Products",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "6bfdae72369747e5ef7e0de9aa369ac64877f1f1ff1e5191f2156f99052e3074",
-   "Baseline_Repo_Hash": "6bfdae72369747e5ef7e0de9aa369ac64877f1f1ff1e5191f2156f99052e3074",
-   "Last_Synced_At": "2026-08-19T01:48:24Z",
+   "Baseline_Drive_Hash": "7856d2759a33ea831409034ab29a184fe52e0c5b86b51a4b71e0a3aafecad6e8",
+   "Baseline_Repo_Hash": "cd10ae7fc1631785655b7186fe0d384fa40a37b864be9c0958d7f099daf680e7",
+   "Last_Synced_At": "2026-08-22T13:01:59Z",
    "Status": "Synced"
   },
   {
@@ -5179,9 +5179,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Agenda: Literature Review Plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "f4a1565b8b5a8aa620aab236cb247a7c5578847ee48362cc9855a44aba13b32f",
-   "Baseline_Repo_Hash": "f4a1565b8b5a8aa620aab236cb247a7c5578847ee48362cc9855a44aba13b32f",
-   "Last_Synced_At": "2026-08-15T22:32:47Z",
+   "Baseline_Drive_Hash": "7dbe24c92ce967bb97e7e2f6149b9bc402b8ff7f0e11ca4ac30965f75e1b62b3",
+   "Baseline_Repo_Hash": "9761f87bf0e84fa5a3456863da0099f929302393e0f6ed92a34d603010a54949",
+   "Last_Synced_At": "2026-08-22T13:02:10Z",
    "Status": "Synced"
   },
   {
@@ -5192,9 +5192,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Proposal Framework",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "d2ec1cf8be5eddd69fe92c3d094b6074b5a7cf56b93ce8e8e0abf61fb76997f9",
-   "Baseline_Repo_Hash": "d2ec1cf8be5eddd69fe92c3d094b6074b5a7cf56b93ce8e8e0abf61fb76997f9",
-   "Last_Synced_At": "2026-08-18T03:31:25Z",
+   "Baseline_Drive_Hash": "70047a1244c7ed5795557923fb02cc27e545f35d2dc3c1651137660984e3b645",
+   "Baseline_Repo_Hash": "4d51cca382ea83363dfa96f837a4d53eb0474928ff3e8fb6b6889ae09d72250c",
+   "Last_Synced_At": "2026-08-22T13:02:13Z",
    "Status": "Synced"
   },
   {
@@ -5439,9 +5439,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "f4c8d72984268567b85dda31beeb8c168a541da0ab6c84bf18c8889cbe006646",
-   "Baseline_Repo_Hash": "f4c8d72984268567b85dda31beeb8c168a541da0ab6c84bf18c8889cbe006646",
-   "Last_Synced_At": "2026-08-21T14:48:01Z",
+   "Baseline_Drive_Hash": "c025d979018de9eabc9928e57b8e62d4d9b7a43d70b46810bab2de7b06abefb1",
+   "Baseline_Repo_Hash": "97faa0b1b73dc685248d5ac84f4ce98f573f3b7d8939120d17c138426a7e3818",
+   "Last_Synced_At": "2026-08-22T13:02:32Z",
    "Status": "Synced"
   }
  ],
