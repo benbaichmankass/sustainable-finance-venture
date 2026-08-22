@@ -24,6 +24,7 @@ import csv
 import io
 import os
 import sys
+from urllib.parse import quote_plus
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "research", "literature-review.md")
@@ -235,7 +236,14 @@ def main():
                     w("> ⚠️ `%s` is referenced here but is not in the matrix." % i)
                     w("")
                     continue
-                w("#### %s — %s" % (r["ID"], r["Link_Citation"]))
+                # The citation itself is the link to the article where we have a
+                # verified URL. Renders as a link on GitHub and in the dashboard,
+                # and the bare LIT-0NN token stays in the text so the dashboard
+                # also turns it into a citation chip.
+                if r.get("URL"):
+                    w("#### %s — [%s](%s)" % (r["ID"], r["Link_Citation"], r["URL"]))
+                else:
+                    w("#### %s — %s" % (r["ID"], r["Link_Citation"]))
                 w("")
                 meta = ["**%s**" % r["Status"], r["Method"], r["Geography"]]
                 w(" · ".join(x for x in meta if x))
@@ -254,9 +262,14 @@ def main():
                     w("")
                 tail = []
                 if r.get("URL"):
-                    tail.append("[source](%s)" % r["URL"])
+                    tail.append("[open source](%s)" % r["URL"])
                 else:
-                    tail.append("*no verified URL on file*")
+                    # CLAUDE.md: a URL is verified or absent, never guessed. Give
+                    # the reader a search instead of a dead link.
+                    tail.append(
+                        "*no verified URL on file* — "
+                        "[search Scholar](https://scholar.google.com/scholar?q=%s)"
+                        % quote_plus(r["Link_Citation"]))
                 tail.append("relevance — product %s, risk %s, impact %s"
                             % (r.get("Relevance_Product", "?"),
                                r.get("Relevance_Risk", "?"),

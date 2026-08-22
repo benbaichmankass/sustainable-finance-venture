@@ -138,7 +138,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Does the effect persist beyond the 1-2 year RCT window, and does it survive withdrawal of NGO support?
 
-*no verified URL on file* · relevance — product High, risk Medium, impact High
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Ksoll+et+al.+2016+-+Impact+of+Village+Savings+and+Loan+Associations) · relevance — product High, risk Medium, impact High
 
 #### LIT-002 — Brannen 2016 - Evaluation of the impact of VSLAs
 
@@ -152,9 +152,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What governance features drive the best outcomes, and which of them generalise across contexts?
 
-*no verified URL on file* · relevance — product Medium, risk Medium, impact High
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Brannen+2016+-+Evaluation+of+the+impact+of+VSLAs) · relevance — product Medium, risk Medium, impact High
 
-#### LIT-014 — CGAP 2025 - Regulating Savings Groups: Only a Proportionate Approach Will Work
+#### LIT-014 — [CGAP 2025 - Regulating Savings Groups: Only a Proportionate Approach Will Work](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work)
 
 **Reviewed** · Policy synthesis · East Africa (Tanzania, Uganda, Rwanda; generalisable)
 
@@ -166,9 +166,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What registration and data-collection model would both protect members and generate the digital, auditable data streams needed to underwrite VSLA-linked credit/insurance and eventual securitisation?
 
-[source](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work) · relevance — product High, risk Medium, impact High
+[open source](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work) · relevance — product High, risk Medium, impact High
 
-#### LIT-023 — Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)
+#### LIT-023 — [Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf)
 
 **Reviewed** · Programme review with portfolio data · India
 
@@ -180,7 +180,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Anchors OQ-13. Shows the group-as-intermediary model is viable at scale but that its credit quality is not self-sustaining: it degraded when group formation was driven by capital deployment targets, and it is exposed to political waiver risk that is systemic rather than idiosyncratic and therefore not diversifiable by pooling within one country. Also implies the underwriting unit becomes the GROUP as an intermediary - its governance, vintage and record-keeping - which is an RT-1 and RT-2 consequence.
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
 
 ### LC-18 — Financialisation of community institutions
 
@@ -190,7 +190,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** What does the critical literature say about formalising informal finance? What is the record of external capital entering member-owned institutions? What happened to the SHG-Bank Linkage Programme and to microfinance commercialisation?
 
-#### LIT-023 — Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)
+#### LIT-023 — [Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf)
 
 **Reviewed** · Programme review with portfolio data · India
 
@@ -202,7 +202,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Anchors OQ-13. Shows the group-as-intermediary model is viable at scale but that its credit quality is not self-sustaining: it degraded when group formation was driven by capital deployment targets, and it is exposed to political waiver risk that is systemic rather than idiosyncratic and therefore not diversifiable by pooling within one country. Also implies the underwriting unit becomes the GROUP as an intermediary - its governance, vintage and record-keeping - which is an RT-1 and RT-2 consequence.
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
 
 ### LC-19 — Regulation of savings groups and microinsurance
 
@@ -212,7 +212,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** How are savings groups regulated across candidate jurisdictions? What licensing does a microinsurance product require? Who may lawfully hold and share member data?
 
-#### LIT-014 — CGAP 2025 - Regulating Savings Groups: Only a Proportionate Approach Will Work
+#### LIT-014 — [CGAP 2025 - Regulating Savings Groups: Only a Proportionate Approach Will Work](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work)
 
 **Reviewed** · Policy synthesis · East Africa (Tanzania, Uganda, Rwanda; generalisable)
 
@@ -224,7 +224,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What registration and data-collection model would both protect members and generate the digital, auditable data streams needed to underwrite VSLA-linked credit/insurance and eventual securitisation?
 
-[source](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work) · relevance — product High, risk Medium, impact High
+[open source](https://www.cgap.org/blog/regulating-savings-groups-only-proportionate-approach-will-work) · relevance — product High, risk Medium, impact High
 
 ### LC-23 — Gender, group composition and intra-household allocation
 
@@ -248,7 +248,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** Which channel actually drives repayment, and how were the channels separated empirically? What evidence exists on what happens when the funding source changes? Is there any prior work on group-level versus member-level lending?
 
-#### LIT-020 — Gine & Karlan 2009 - Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014)
+#### LIT-020 — [Gine & Karlan 2009 - Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014)](https://ideas.repec.org/p/egc/wpaper/970.html)
 
 **Reviewed** · RCT · Philippines
 
@@ -260,9 +260,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears directly on OQ-12: if the joint-liability contract is not doing the work, then the underwriting features for RT-2 should describe the group's social structure rather than its liability terms. Raises whether weekly meetings, held constant here, are the actual active ingredient.
 
-[source](https://ideas.repec.org/p/egc/wpaper/970.html) · relevance — product High, risk High, impact Medium
+[open source](https://ideas.repec.org/p/egc/wpaper/970.html) · relevance — product High, risk High, impact Medium
 
-#### LIT-021 — Feigenberg, Field & Pande 2010 - Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483)
+#### LIT-021 — [Feigenberg, Field & Pande 2010 - Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483)](https://ideas.repec.org/p/nbr/nberwo/16018.html)
 
 **Reviewed** · RCT · India (West Bengal)
 
@@ -274,9 +274,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears directly on OQ-12 and supplies a candidate causal channel: repayment via informal risk-sharing built by repeat interaction. Suggests RT-1 should capture meeting frequency and attendance as origination variables. Raises whether the effect survives when the creditor is an outside investor rather than the MFI the clients meet through.
 
-[source](https://ideas.repec.org/p/nbr/nberwo/16018.html) · relevance — product High, risk High, impact Medium
+[open source](https://ideas.repec.org/p/nbr/nberwo/16018.html) · relevance — product High, risk High, impact Medium
 
-#### LIT-022 — Ghatak & Guinnane 1999 - The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228)
+#### LIT-022 — [Ghatak & Guinnane 1999 - The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228)](https://personal.lse.ac.uk/ghatak/jde2.pdf)
 
 **Reviewed** · Theory with case-study review · Cross-country (theory plus case studies: Bangladesh, Germany, Ireland, Guatemala, USA, Malaysia, Burkina Faso)
 
@@ -288,9 +288,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the mechanism vocabulary OQ-12 needs and names the failure mode that matters most to this project: the authors note that when a group is denied future loans, 'bitterness and recrimination among group members may have far-reaching consequences for village life. This risk is inherent in the system and needs to be viewed as a potential cost.' That is a social-cost consideration for the impact methodology, not just a credit one.
 
-[source](https://personal.lse.ac.uk/ghatak/jde2.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://personal.lse.ac.uk/ghatak/jde2.pdf) · relevance — product High, risk High, impact Medium
 
-#### LIT-023 — Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)
+#### LIT-023 — [Tankha 2012 - Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE)](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf)
 
 **Reviewed** · Programme review with portfolio data · India
 
@@ -302,7 +302,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Anchors OQ-13. Shows the group-as-intermediary model is viable at scale but that its credit quality is not self-sustaining: it degraded when group formation was driven by capital deployment targets, and it is exposed to political waiver risk that is systemic rather than idiosyncratic and therefore not diversifiable by pooling within one country. Also implies the underwriting unit becomes the GROUP as an intermediary - its governance, vintage and record-keeping - which is an RT-1 and RT-2 consequence.
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-paper-banking-on-self-help-groups-twenty-years-on-2012.pdf) · relevance — product High, risk High, impact Medium
 
 ### LC-05 — Resilience and consumption-smoothing outcome measurement
 
@@ -312,7 +312,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** How is household resilience operationalised and which indices are defensible? How are shocks timed and verified? What recall periods and survey instruments are standard? How is consumption smoothing distinguished from consumption level?
 
-#### LIT-039 — FAO 2020 - Resilience Index Measurement and Analysis: Short Questionnaire (RIMA-II)
+#### LIT-039 — [FAO 2020 - Resilience Index Measurement and Analysis: Short Questionnaire (RIMA-II)](https://openknowledge.fao.org/server/api/core/bitstreams/381c85aa-9de1-434b-8928-f6c92ee633b0/content)
 
 **Reviewed** · Measurement methodology and survey instrument (latent variable model) · Global - designed for fragile and conflict-affected contexts
 
@@ -324,7 +324,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Gives the research framework a concrete, defensible resilience instrument to name instead of gesturing at 'resilience', and its shocks module is a ready answer to how shocks get timed and verified. Still open for LC-05: whether the RCI is the right primary outcome for a credit-and-insurance intervention or whether consumption smoothing measured directly is better, and the smoothing-versus-level distinction, which nothing here addresses. Bears on OQ-4 and on framework section 6, since the estimand determines the power calculation.
 
-[source](https://openknowledge.fao.org/server/api/core/bitstreams/381c85aa-9de1-434b-8928-f6c92ee633b0/content) · relevance — product Low, risk Low, impact High
+[open source](https://openknowledge.fao.org/server/api/core/bitstreams/381c85aa-9de1-434b-8928-f6c92ee633b0/content) · relevance — product Low, risk Low, impact High
 
 ### LC-13 — Microcredit impact evidence and the meta-analytic record
 
@@ -346,7 +346,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Which subpopulations see the largest effects, and can we screen for them at intake?
 
-*no verified URL on file* · relevance — product Low, risk Medium, impact High
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Duvendack+et+al.+-+What+is+the+evidence+of+microfinance+impact) · relevance — product Low, risk Medium, impact High
 
 ### LC-17 — Over-indebtedness, consumer protection and credit ethics
 
@@ -366,7 +366,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** What are benchmark operating expense ratios by institution type and loan size? How does cost-to-serve scale with portfolio size? What does group methodology cost per member relative to individual lending?
 
-#### LIT-016 — MIX Market / Center for Financial Inclusion 2019 - Global Outreach and Financial Performance Benchmark Report 2017-2018
+#### LIT-016 — [MIX Market / Center for Financial Inclusion 2019 - Global Outreach and Financial Performance Benchmark Report 2017-2018](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf)
 
 **Reviewed** · Industry benchmark report · Global (regional breakdowns incl. Africa/MENA)
 
@@ -378,9 +378,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the gross-yield, expected-loss (PAR) and cost-to-serve anchors for the RT-6 unit-economics model (OQ-10). Open: how do community/VSLA-level economics compare with these formal-MFI averages?
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf) · relevance — product Medium, risk High, impact Low
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf) · relevance — product Medium, risk High, impact Low
 
-#### LIT-017 — Symbiotics 2020 - 2019 Symbiotics MIV Survey (13th edition)
+#### LIT-017 — [Symbiotics 2020 - 2019 Symbiotics MIV Survey (13th edition)](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf)
 
 **Reviewed** · Industry survey · Global
 
@@ -392,7 +392,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the structuring/servicing-fee and senior-coupon anchors for RT-6 (OQ-10). Open: how does a VSLA-linked vehicle's cost structure compare with an established MIV's?
 
-[source](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf) · relevance — product Medium, risk High, impact Low
+[open source](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf) · relevance — product Medium, risk High, impact Low
 
 ### LC-21 — Microsavings and household financial behaviour
 
@@ -436,7 +436,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** Which hazard and survival specifications are standard for small-ticket unsecured credit? How is loss-given-default estimated with few observed recoveries? What are the small-sample and short-panel corrections? How is model risk disclosed?
 
-#### LIT-038 — Grigutis 2023 - Probabilistic Overview of Probabilities of Default for Low Default Portfolios by K. Pluto and D. Tasche (arXiv:2303.06148)
+#### LIT-038 — [Grigutis 2023 - Probabilistic Overview of Probabilities of Default for Low Default Portfolios by K. Pluto and D. Tasche (arXiv:2303.06148)](https://arxiv.org/pdf/2303.06148)
 
 **Reviewed** · Methodological / probabilistic exposition · Not applicable - methodological
 
@@ -448,9 +448,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Gives RQ-03 a defensible starting method and, more usefully, identifies WHERE the modelling is load-bearing: the asset correlation input. That converts a vague 'we will model the cash flows' claim into a specific, falsifiable one - the PD bound is only as good as the correlation assumption, and EXP-25 is the experiment that would supply it. Still open for LC-07: loss-given-default with few recoveries, competing risks of default and prepayment, small-sample and short-panel corrections, and how model risk gets disclosed to an investor.
 
-[source](https://arxiv.org/pdf/2303.06148) · relevance — product Low, risk High, impact Low
+[open source](https://arxiv.org/pdf/2303.06148) · relevance — product Low, risk High, impact Low
 
-#### LIT-041 — Basel Committee on Banking Supervision 2005 - Studies on the Validation of Internal Rating Systems (Working Paper No. 14, revised)
+#### LIT-041 — [Basel Committee on Banking Supervision 2005 - Studies on the Validation of Internal Rating Systems (Working Paper No. 14, revised)](https://www.bis.org/publ/bcbs_wp14.pdf)
 
 **Reviewed** · Regulatory working paper (collected technical studies by supervisory experts) · Not applicable - regulatory and methodological
 
@@ -462,9 +462,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Answers LC-07's LGD question with a named menu and identifies which route fits a retail-shaped book, while making clear the retail route inherits all the PD uncertainty. More importantly it joins LC-07 to LC-08 from the regulator's side: correlation does not merely widen the PD estimate, it BREAKS THE VALIDATION - you cannot backtest your way out of a correlated portfolio. That is a second, independent reason the correlation parameter EXP-25 targets is load-bearing. The pooling remark also cuts both ways for this project and is worth taking seriously: pooling data across small lenders is endorsed as the fix for thin data, which is structurally the same move as pooling their loans, and the same concentration question applies.
 
-[source](https://www.bis.org/publ/bcbs_wp14.pdf) · relevance — product Low, risk High, impact Low
+[open source](https://www.bis.org/publ/bcbs_wp14.pdf) · relevance — product Low, risk High, impact Low
 
-#### LIT-042 — Board of Governors of the Federal Reserve System & Office of the Comptroller of the Currency 2011 - Supervisory Guidance on Model Risk Management (SR 11-7 / OCC Bulletin 2011-12)
+#### LIT-042 — [Board of Governors of the Federal Reserve System & Office of the Comptroller of the Currency 2011 - Supervisory Guidance on Model Risk Management (SR 11-7 / OCC Bulletin 2011-12)](https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf)
 
 **Reviewed** · Supervisory guidance · United States - regulatory guidance, internationally influential
 
@@ -476,9 +476,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Gives RT-5 and any published risk model a disclosure standard to be held to, and gives the proposal a defensible answer to a finance-side supervisor asking how model risk is handled. The conservatism paragraph is a direct warning to this project's own method: LIT-038's Pluto-Tasche upper confidence bound LOOKS conservative, but it is an extreme point on a distribution whose asset correlation is assumed rather than estimated - which is precisely the case the guidance says is not necessarily conservative at all. That should be stated explicitly wherever the bound is used, and it is a further argument for EXP-25. Effective challenge is also a structural point for the venture: a model built and validated by the same party that originates the assets is exactly the arrangement the guidance is written against.
 
-[source](https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf) · relevance — product Low, risk High, impact Low
+[open source](https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107a1.pdf) · relevance — product Low, risk High, impact Low
 
-#### LIT-043 — Botha & Verster 2025 - Approaches for modelling the term-structure of default risk under IFRS 9: A tutorial using discrete-time survival analysis (arXiv:2507.15441v3)
+#### LIT-043 — [Botha & Verster 2025 - Approaches for modelling the term-structure of default risk under IFRS 9: A tutorial using discrete-time survival analysis (arXiv:2507.15441v3)](https://arxiv.org/pdf/2507.15441)
 
 **Reviewed** · Methodological tutorial with empirical demonstration; public R codebase · South Africa
 
@@ -490,9 +490,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Settles the specification question for RQ-03: discrete-time hazard with an explicit baseline, competing risks for prepayment and write-off, and left-truncation handling, with public code to start from rather than build. It also names the exact features a partner MIS must record for any of this to be possible - origination date, censoring status, and an event type that distinguishes default from prepayment and restructure - which should feed straight into RT-1's field list and EXP-22's protocol. Still open for LC-07: small-sample and short-panel corrections, and loss given default with few observed recoveries.
 
-[source](https://arxiv.org/pdf/2507.15441) · relevance — product Low, risk High, impact Low
+[open source](https://arxiv.org/pdf/2507.15441) · relevance — product Low, risk High, impact Low
 
-#### LIT-044 — DAI Washington for USAID 2006 - A Handbook for Developing Credit Scoring Systems in a Microfinance Context (microREPORT #66, AMAP)
+#### LIT-044 — [DAI Washington for USAID 2006 - A Handbook for Developing Credit Scoring Systems in a Microfinance Context (microREPORT #66, AMAP)](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-toolkit-a-handbook-for-developing-credit-scoring-systems-in-a-microfinance-context-feb-2006_0.pdf)
 
 **Reviewed** · Practitioner handbook with institutional case studies · Multi-country practitioner cases - includes Bolivia, South Africa, Latvia, Bulgaria
 
@@ -504,7 +504,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Reframes the thin-data problem as a sequence rather than a barrier, which fits this project's own logic: the origination protocol comes first and the model becomes possible later. That is EXP-22's argument arriving from the practitioner side, and it is worth citing there. But it also sharpens a constraint the venture has not fully confronted - a judgmental scorecard cannot price a pool, only rank it, so an originator running one is not investment-ready no matter how well it performs, and the gap between ranking and pricing is the gap this project has to close. Leaves open the minimum data volume at which statistical scoring becomes defensible in a group-lending book, which is a question EXP-25's panels could answer directly.
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-toolkit-a-handbook-for-developing-credit-scoring-systems-in-a-microfinance-context-feb-2006_0.pdf) · relevance — product Medium, risk Medium, impact Low
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mfg-en-toolkit-a-handbook-for-developing-credit-scoring-systems-in-a-microfinance-context-feb-2006_0.pdf) · relevance — product Medium, risk Medium, impact Low
 
 ### LC-08 — Portfolio correlation and covariate risk in microfinance
 
@@ -514,7 +514,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** How correlated are microfinance defaults across groups, regions and time? What drives the covariate component? How did microfinance portfolios behave in crises and droughts? What correlation assumptions do rating agencies apply to EM consumer pools?
 
-#### LIT-016 — MIX Market / Center for Financial Inclusion 2019 - Global Outreach and Financial Performance Benchmark Report 2017-2018
+#### LIT-016 — [MIX Market / Center for Financial Inclusion 2019 - Global Outreach and Financial Performance Benchmark Report 2017-2018](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf)
 
 **Reviewed** · Industry benchmark report · Global (regional breakdowns incl. Africa/MENA)
 
@@ -526,9 +526,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the gross-yield, expected-loss (PAR) and cost-to-serve anchors for the RT-6 unit-economics model (OQ-10). Open: how do community/VSLA-level economics compare with these formal-MFI averages?
 
-[source](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf) · relevance — product Medium, risk High, impact Low
+[open source](https://www.findevgateway.org/sites/default/files/publications/files/mix_market_global_outreach_financial_benchmark_report_2017-2018_1.pdf) · relevance — product Medium, risk High, impact Low
 
-#### LIT-030 — Jensen, Mude & Barrett 2018 - How basis risk and spatiotemporal adverse selection influence demand for index insurance: Evidence from northern Kenya (Food Policy 74(C) 172-198)
+#### LIT-030 — [Jensen, Mude & Barrett 2018 - How basis risk and spatiotemporal adverse selection influence demand for index insurance: Evidence from northern Kenya (Food Policy 74(C) 172-198)](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html)
 
 **To read** · Longitudinal household panel analysis · Kenya (northern, arid and semi-arid)
 
@@ -540,9 +540,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Two things for us. (1) It is the empirical counterpart to LIT-028's theory and supports treating basis risk as a first-order design parameter, which is EXP-30's premise. (2) The spatiotemporal adverse-selection finding is a warning for the securitisation side: if clients time purchase on private seasonal information, the pool's loss distribution is not what a naive actuarial model assumes. That belongs in LC-08 and RT-5, not only in LC-03.
 
-[source](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html) · relevance — product High, risk High, impact Medium
+[open source](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html) · relevance — product High, risk High, impact Medium
 
-#### LIT-031 — Root Capital 2016 - Financing Farm Renovation: How to Build Resilience Using a Blend of Capital (Learning Report: The Coffee Farmer Resilience Initiative)
+#### LIT-031 — [Root Capital 2016 - Financing Farm Renovation: How to Build Resilience Using a Blend of Capital (Learning Report: The Coffee Farmer Resilience Initiative)](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf)
 
 **Reviewed** · Practitioner learning report (lender self-report, non-experimental) · Guatemala; Honduras; Mexico; Nicaragua; Peru
 
@@ -554,9 +554,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears directly on OQ-16: the co-operative credit rail the coffee anchor assumes does exist, but its data quality is the known weak point, which is the project's own thesis restated as a field risk. Feeds OQ-3 (canonical data schema) - an internal credit fund with informal records is precisely what a schema has to formalise. Feeds LC-08 and EXP-25: leaf rust is a textbook covariate shock and these figures are the correlation problem in its sharpest form.
 
-[source](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf) · relevance — product High, risk High, impact Medium
 
-#### LIT-036 — Chen, Rasmussen & Reille 2010 - Growth and Vulnerabilities in Microfinance (CGAP Focus Note 61)
+#### LIT-036 — [Chen, Rasmussen & Reille 2010 - Growth and Vulnerabilities in Microfinance (CGAP Focus Note 61)](https://www.cgap.org/sites/default/files/CGAP-Focus-Note-Growth-and-Vulnerabilities-in-Microfinance-Feb-2010.pdf)
 
 **Reviewed** · Comparative case study (four national markets) with MIX and supervisory data plus practitioner interviews · Nicaragua; Morocco; Bosnia and Herzegovina; Pakistan
 
@@ -568,9 +568,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Directly answers part of LC-08 and shifts it: the dominant correlation channel in the historical record is INSTITUTIONAL - concentration, multiple borrowing and social-network contagion - not weather or macro. That matters for the pooling thesis because geographic diversification does not diversify away a channel created by the lending structure itself, and because a pool assembled from several MFIs in one market may be more correlated, not less. Feeds EXP-25 directly: any correlation estimate should decompose institutional from environmental drivers, not lump them. Leaves open what the base rate is outside crisis markets, and what correlation assumption a rating agency would actually apply.
 
-[source](https://www.cgap.org/sites/default/files/CGAP-Focus-Note-Growth-and-Vulnerabilities-in-Microfinance-Feb-2010.pdf) · relevance — product Medium, risk High, impact Low
+[open source](https://www.cgap.org/sites/default/files/CGAP-Focus-Note-Growth-and-Vulnerabilities-in-Microfinance-Feb-2010.pdf) · relevance — product Medium, risk High, impact Low
 
-#### LIT-037 — Schicks & Rosenberg 2011 - Too Much Microcredit? A Survey of the Evidence on Over-Indebtedness (CGAP Occasional Paper 19)
+#### LIT-037 — [Schicks & Rosenberg 2011 - Too Much Microcredit? A Survey of the Evidence on Over-Indebtedness (CGAP Occasional Paper 19)](https://www.cgap.org/sites/default/files/CGAP-Occasional-Paper-Too-Much-Microcredit-A-Survey-of-the-Evidence-on-Overindebtedness-Sep-2011.pdf)
 
 **Reviewed** · Evidence survey (narrative review of the over-indebtedness literature) · Cross-country; evidence base skewed to a small set of markets
 
@@ -582,9 +582,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** This is the sharpest available statement of the pooling problem: if the risk factor is market penetration rather than lender behaviour, then a pool diversified ACROSS LENDERS WITHIN A MARKET is not diversified against the thing that predicts trouble. Any tranching assumption in the risk tools should be tested against that. Feeds RT-1 and RT-5 and gives EXP-25 a concrete hypothesis to test rather than an open-ended correlation hunt.
 
-[source](https://www.cgap.org/sites/default/files/CGAP-Occasional-Paper-Too-Much-Microcredit-A-Survey-of-the-Evidence-on-Overindebtedness-Sep-2011.pdf) · relevance — product Low, risk High, impact Medium
+[open source](https://www.cgap.org/sites/default/files/CGAP-Occasional-Paper-Too-Much-Microcredit-A-Survey-of-the-Evidence-on-Overindebtedness-Sep-2011.pdf) · relevance — product Low, risk High, impact Medium
 
-#### LIT-038 — Grigutis 2023 - Probabilistic Overview of Probabilities of Default for Low Default Portfolios by K. Pluto and D. Tasche (arXiv:2303.06148)
+#### LIT-038 — [Grigutis 2023 - Probabilistic Overview of Probabilities of Default for Low Default Portfolios by K. Pluto and D. Tasche (arXiv:2303.06148)](https://arxiv.org/pdf/2303.06148)
 
 **Reviewed** · Methodological / probabilistic exposition · Not applicable - methodological
 
@@ -596,7 +596,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Gives RQ-03 a defensible starting method and, more usefully, identifies WHERE the modelling is load-bearing: the asset correlation input. That converts a vague 'we will model the cash flows' claim into a specific, falsifiable one - the PD bound is only as good as the correlation assumption, and EXP-25 is the experiment that would supply it. Still open for LC-07: loss-given-default with few recoveries, competing risks of default and prepayment, small-sample and short-panel corrections, and how model risk gets disclosed to an investor.
 
-[source](https://arxiv.org/pdf/2303.06148) · relevance — product Low, risk High, impact Low
+[open source](https://arxiv.org/pdf/2303.06148) · relevance — product Low, risk High, impact Low
 
 ### LC-09 — Securitisation eligibility, data tapes and rating criteria
 
@@ -618,7 +618,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What legal/regulatory barriers block ABS issuance at community-group level?
 
-*no verified URL on file* · relevance — product High, risk High, impact Low
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=FSD+Africa+%2F+BII+-+microfinance+securitization+report) · relevance — product High, risk High, impact Low
 
 #### LIT-006 — La Torre - Microcredit Securitization
 
@@ -632,9 +632,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What minimum pool size/data standardization is needed for VSLA-level receivables to be tranche-able?
 
-*no verified URL on file* · relevance — product High, risk Low, impact Low
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=La+Torre+-+Microcredit+Securitization) · relevance — product High, risk Low, impact Low
 
-#### LIT-011 — FSD Africa & BII 2025 - The role of securitisation in developing capital markets in Africa
+#### LIT-011 — [FSD Africa & BII 2025 - The role of securitisation in developing capital markets in Africa](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf)
 
 **Reviewed** · Policy/market report with case studies · Africa
 
@@ -646,7 +646,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What transaction sizes and structures (single-country vs regional, single- vs multi-originator) have actually closed in Africa, and what does that imply for minimum viable pool size and aggregation strategy?
 
-[source](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf) · relevance — product High, risk High, impact Medium
 
 ### LC-10 — Securitisation law, true sale and SPV domicile
 
@@ -656,7 +656,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** What makes an assignment a true sale across candidate jurisdictions? How is insolvency remoteness achieved where local trust law is thin? What changed with the EU Securitisation Regulation and Basel III/IV since LIT-009?
 
-#### LIT-009 — World Bank / IFC 2004 - Securitization: Key Legal and Regulatory Issues
+#### LIT-009 — [World Bank / IFC 2004 - Securitization: Key Legal and Regulatory Issues](https://documents1.worldbank.org/curated/en/747401468092077080/pdf/395540Securitization.pdf)
 
 **Reviewed** · Legal/technical review · Global / Europe
 
@@ -668,9 +668,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Use its legal checklist to assess whether Israel and target African jurisdictions can support true-sale transfers of VSLA-linked receivables, and whether local or offshore SPVs are feasible.
 
-[source](https://documents1.worldbank.org/curated/en/747401468092077080/pdf/395540Securitization.pdf) · relevance — product High, risk High, impact Low
+[open source](https://documents1.worldbank.org/curated/en/747401468092077080/pdf/395540Securitization.pdf) · relevance — product High, risk High, impact Low
 
-#### LIT-010 — Baker McKenzie 2020 - A Global Guide to Legal Issues in Securitisation
+#### LIT-010 — [Baker McKenzie 2020 - A Global Guide to Legal Issues in Securitisation](https://www.bakermckenzie.com/-/media/files/insight/publications/2020/09/global-securitisation-guide-2020-final_030920.pdf)
 
 **Reviewed** · Comparative legal guide · Multi-country (incl. Africa / Europe / Middle East)
 
@@ -682,7 +682,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Which SPV domiciles and cross-border structures could hold pooled VSLA/community receivables while remaining compliant with local securitisation and investor-protection rules?
 
-[source](https://www.bakermckenzie.com/-/media/files/insight/publications/2020/09/global-securitisation-guide-2020-final_030920.pdf) · relevance — product High, risk High, impact Low
+[open source](https://www.bakermckenzie.com/-/media/files/insight/publications/2020/09/global-securitisation-guide-2020-final_030920.pdf) · relevance — product High, risk High, impact Low
 
 ### LC-11 — African and emerging-market capital-market depth
 
@@ -704,9 +704,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Direct analogue for pooling VSLA/community loans across multiple NGOs into one aggregation vehicle - what standardization is required?
 
-*no verified URL on file* · relevance — product High, risk Medium, impact Medium
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Climate+Finance+Lab+-+Solar+Securitization+Rwanda) · relevance — product High, risk Medium, impact Medium
 
-#### LIT-011 — FSD Africa & BII 2025 - The role of securitisation in developing capital markets in Africa
+#### LIT-011 — [FSD Africa & BII 2025 - The role of securitisation in developing capital markets in Africa](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf)
 
 **Reviewed** · Policy/market report with case studies · Africa
 
@@ -718,9 +718,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What transaction sizes and structures (single-country vs regional, single- vs multi-originator) have actually closed in Africa, and what does that imply for minimum viable pool size and aggregation strategy?
 
-[source](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://fsdafrica.org/wp-content/uploads/2025/10/The-role-of-securitisation-in-developing-capital-markets-in-Africa-BII-and-FSD-Africa.pdf) · relevance — product High, risk High, impact Medium
 
-#### LIT-012 — OECD 2019 - Blended Finance Funds and Facilities: 2018 Survey Results (Working Paper 59)
+#### LIT-012 — [OECD 2019 - Blended Finance Funds and Facilities: 2018 Survey Results (Working Paper 59)](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf)
 
 **Reviewed** · Quantitative survey (180 funds/facilities) · Global
 
@@ -732,7 +732,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What does existing practice imply about sizing the junior/first-loss tranche and the overall vehicle if a VSLA-linked structured product is to attract DFIs and institutional investors?
 
-[source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf) · relevance — product Medium, risk High, impact Medium
+[open source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf) · relevance — product Medium, risk High, impact Medium
 
 ### LC-15 — PAYGO and energy-access receivables finance
 
@@ -754,7 +754,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Direct analogue for pooling VSLA/community loans across multiple NGOs into one aggregation vehicle - what standardization is required?
 
-*no verified URL on file* · relevance — product High, risk Medium, impact Medium
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Climate+Finance+Lab+-+Solar+Securitization+Rwanda) · relevance — product High, risk Medium, impact Medium
 
 ---
 
@@ -768,7 +768,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** What are the authoritative adaptation-finance and energy-access gap estimates and how are they constructed? Which instruments are actually deployed at household scale? What share of adaptation finance reaches households at all?
 
-#### LIT-040 — Climate Policy Initiative 2024 - Global Landscape of Climate Finance 2024: Insights for COP29
+#### LIT-040 — [Climate Policy Initiative 2024 - Global Landscape of Climate Finance 2024: Insights for COP29](https://www.climatepolicyinitiative.org/wp-content/uploads/2024/10/Global-Landscape-of-Climate-Finance-2024.pdf)
 
 **Reviewed** · Financial flow tracking and gap analysis · Global, with emerging market and developing economy breakdown
 
@@ -780,7 +780,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Closes the gap-magnitude axis of the opportunity-mapping methodology with a citable number and a defensible range. It also converts LC-06's household question into a documented data gap rather than an unanswered one - nobody tracks adaptation finance to the household, and 92 per cent of what is tracked is public, which is itself the argument for a private, poolable instrument. Leaves open which instruments are actually deployed at household scale, LC-06's second question, which needs a different source.
 
-[source](https://www.climatepolicyinitiative.org/wp-content/uploads/2024/10/Global-Landscape-of-Climate-Finance-2024.pdf) · relevance — product Medium, risk Low, impact Medium
+[open source](https://www.climatepolicyinitiative.org/wp-content/uploads/2024/10/Global-Landscape-of-Climate-Finance-2024.pdf) · relevance — product Medium, risk Low, impact Medium
 
 ### LC-12 — Blended finance, first-loss and guarantees
 
@@ -802,9 +802,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What blended structures have proven replicable at scale, and which fit our risk profile?
 
-*no verified URL on file* · relevance — product Medium, risk High, impact Medium
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=OECD+-+Scaling+up+blended+finance+in+developing+countries) · relevance — product Medium, risk High, impact Medium
 
-#### LIT-012 — OECD 2019 - Blended Finance Funds and Facilities: 2018 Survey Results (Working Paper 59)
+#### LIT-012 — [OECD 2019 - Blended Finance Funds and Facilities: 2018 Survey Results (Working Paper 59)](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf)
 
 **Reviewed** · Quantitative survey (180 funds/facilities) · Global
 
@@ -816,9 +816,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** What does existing practice imply about sizing the junior/first-loss tranche and the overall vehicle if a VSLA-linked structured product is to attract DFIs and institutional investors?
 
-[source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf) · relevance — product Medium, risk High, impact Medium
+[open source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2019/08/blended-finance-funds-and-facilities_14900999/806991a2-en.pdf) · relevance — product Medium, risk High, impact Medium
 
-#### LIT-013 — OECD 2021 - Evaluating blended finance instruments and mechanisms
+#### LIT-013 — [OECD 2021 - Evaluating blended finance instruments and mechanisms](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/08/evaluating-blended-finance-instruments-and-mechanisms_c995f112/f1574c10-en.pdf)
 
 **Reviewed** · Conceptual / evaluation guidance · Global
 
@@ -830,9 +830,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** How should a first-loss tranche or pooled guarantee in a VSLA-linked vehicle be designed and documented so DFIs and donors can evaluate additionality and mobilisation against emerging OECD norms?
 
-[source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/08/evaluating-blended-finance-instruments-and-mechanisms_c995f112/f1574c10-en.pdf) · relevance — product Medium, risk High, impact Medium
+[open source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/08/evaluating-blended-finance-instruments-and-mechanisms_c995f112/f1574c10-en.pdf) · relevance — product Medium, risk High, impact Medium
 
-#### LIT-015 — IFC 2025 - The Role of Blended Finance in an Evolving Global Context
+#### LIT-015 — [IFC 2025 - The Role of Blended Finance in an Evolving Global Context](https://www.ifc.org/content/dam/ifc/doc/2025/role-of-blended-finance-in-an-evolving-global-context.pdf)
 
 **Reviewed** · Policy note · Global
 
@@ -844,9 +844,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Which first-loss instrument (junior equity, subordinated debt or pooled guarantee) is the most realistic ask for a first VSLA-linked pilot vehicle, and what tapering plan makes it acceptable to a donor?
 
-[source](https://www.ifc.org/content/dam/ifc/doc/2025/role-of-blended-finance-in-an-evolving-global-context.pdf) · relevance — product Medium, risk High, impact Medium
+[open source](https://www.ifc.org/content/dam/ifc/doc/2025/role-of-blended-finance-in-an-evolving-global-context.pdf) · relevance — product Medium, risk High, impact Medium
 
-#### LIT-017 — Symbiotics 2020 - 2019 Symbiotics MIV Survey (13th edition)
+#### LIT-017 — [Symbiotics 2020 - 2019 Symbiotics MIV Survey (13th edition)](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf)
 
 **Reviewed** · Industry survey · Global
 
@@ -858,9 +858,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the structuring/servicing-fee and senior-coupon anchors for RT-6 (OQ-10). Open: how does a VSLA-linked vehicle's cost structure compare with an established MIV's?
 
-[source](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf) · relevance — product Medium, risk High, impact Low
+[open source](https://symbioticsgroup.com/wp-content/uploads/2020/02/symbiotics-symbiotics-2019-miv-survey.pdf) · relevance — product Medium, risk High, impact Low
 
-#### LIT-018 — Convergence - How much commercial capital does concessional capital leverage? (State of Blended Finance data)
+#### LIT-018 — [Convergence - How much commercial capital does concessional capital leverage? (State of Blended Finance data)](https://www.convergence.finance/news/4cC8kVJXvOFZDVxGQ6HLNH/view)
 
 **Reviewed** · Transaction-database analysis · Global
 
@@ -872,9 +872,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Provides the DFI mobilisation-ratio context for RT-6 and OQ-6 (how much private capital a first-loss layer can unlock). Open: what ratio is realistic for a VSLA-linked vehicle in Sub-Saharan Africa?
 
-[source](https://www.convergence.finance/news/4cC8kVJXvOFZDVxGQ6HLNH/view) · relevance — product Low, risk High, impact Medium
+[open source](https://www.convergence.finance/news/4cC8kVJXvOFZDVxGQ6HLNH/view) · relevance — product Low, risk High, impact Medium
 
-#### LIT-019 — OECD 2021 - The Role of Guarantees in Blended Finance
+#### LIT-019 — [OECD 2021 - The Role of Guarantees in Blended Finance](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/06/the-role-of-guarantees-in-blended-finance_cef700a2/730e1498-en.pdf)
 
 **Reviewed** · Policy report / mobilisation-data analysis · Global
 
@@ -886,7 +886,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Informs OQ-6 first-loss instrument choice (a pooled guarantee may mobilise more than junior equity) and the RT-6 mobilisation driver. Open: which first-loss instrument fits a first VSLA-linked pilot vehicle?
 
-[source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/06/the-role-of-guarantees-in-blended-finance_cef700a2/730e1498-en.pdf) · relevance — product Low, risk High, impact Medium
+[open source](https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/06/the-role-of-guarantees-in-blended-finance_cef700a2/730e1498-en.pdf) · relevance — product Low, risk High, impact Medium
 
 ---
 
@@ -912,9 +912,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Can parametric triggers be designed around VSLA/group-level shocks (e.g., migrant remittance disruption) rather than only weather?
 
-*no verified URL on file* · relevance — product High, risk High, impact Medium
+*no verified URL on file* — [search Scholar](https://scholar.google.com/scholar?q=Kousky+2021+-+Parametric+Microinsurance+review) · relevance — product High, risk High, impact Medium
 
-#### LIT-028 — Clarke 2016 - A Theory of Rational Demand for Index Insurance (American Economic Journal: Microeconomics 8(1) 283-306)
+#### LIT-028 — [Clarke 2016 - A Theory of Rational Demand for Index Insurance (American Economic Journal: Microeconomics 8(1) 283-306)](https://www.aeaweb.org/articles?id=10.1257%2Fmic.20140103)
 
 **To read** · Theoretical model · Theoretical (no single geography)
 
@@ -926,9 +926,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Sharpens OQ-17 considerably. If low demand for index cover is a RATIONAL response to basis risk rather than a behavioural failure, then compelling purchase by financing the premium into loan principal does not fix the problem - it overrides a correct decision and transfers the deadweight cost to the borrower, which is a plausible mechanism behind LIT-024 and LIT-025. Also bears on EXP-30 (does reducing basis risk pay for itself) and on the do-no-harm section of the research framework.
 
-[source](https://www.aeaweb.org/articles?id=10.1257%2Fmic.20140103) · relevance — product High, risk Medium, impact Medium
+[open source](https://www.aeaweb.org/articles?id=10.1257%2Fmic.20140103) · relevance — product High, risk Medium, impact Medium
 
-#### LIT-029 — Carter, de Janvry, Sadoulet & Sarris 2017 - Index Insurance for Developing Country Agriculture: A Reassessment (Annual Review of Resource Economics 9 421-438)
+#### LIT-029 — [Carter, de Janvry, Sadoulet & Sarris 2017 - Index Insurance for Developing Country Agriculture: A Reassessment (Annual Review of Resource Economics 9 421-438)](https://ferdi.fr/en/publications/index-insurance-for-developing-country-agriculture-a-reassessment)
 
 **To read** · Review article · Developing-country smallholder agriculture (review)
 
@@ -940,9 +940,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** The phrase that matters for us is 'without large and sustained subsidies'. Our EXP-01 design does the opposite of subsidising - it adds the premium to the amount owed. Feeds OQ-17 directly, and makes the subsidised-opt-in arm of EXP-17 the arm with the strongest prior. Also names contract redesign and measurement technology as the levers, which is where EXP-30 sits.
 
-[source](https://ferdi.fr/en/publications/index-insurance-for-developing-country-agriculture-a-reassessment) · relevance — product High, risk Medium, impact High
+[open source](https://ferdi.fr/en/publications/index-insurance-for-developing-country-agriculture-a-reassessment) · relevance — product High, risk Medium, impact High
 
-#### LIT-030 — Jensen, Mude & Barrett 2018 - How basis risk and spatiotemporal adverse selection influence demand for index insurance: Evidence from northern Kenya (Food Policy 74(C) 172-198)
+#### LIT-030 — [Jensen, Mude & Barrett 2018 - How basis risk and spatiotemporal adverse selection influence demand for index insurance: Evidence from northern Kenya (Food Policy 74(C) 172-198)](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html)
 
 **To read** · Longitudinal household panel analysis · Kenya (northern, arid and semi-arid)
 
@@ -954,7 +954,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Two things for us. (1) It is the empirical counterpart to LIT-028's theory and supports treating basis risk as a first-order design parameter, which is EXP-30's premise. (2) The spatiotemporal adverse-selection finding is a warning for the securitisation side: if clients time purchase on private seasonal information, the pool's loss distribution is not what a naive actuarial model assumes. That belongs in LC-08 and RT-5, not only in LC-03.
 
-[source](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html) · relevance — product High, risk High, impact Medium
+[open source](https://ideas.repec.org/a/eee/jfpoli/v74y2018icp172-198.html) · relevance — product High, risk High, impact Medium
 
 ### LC-04 — Bundled credit and insurance: theory and evidence
 
@@ -964,7 +964,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** What is the theoretical case that insurance relieves a credit constraint? What field evidence exists on interlinked credit-insurance contracts? Has anyone measured the effect of bundling on lender-side portfolio performance rather than borrower welfare?
 
-#### LIT-024 — Gine & Yang 2009 - Insurance, credit, and technology adoption: Field experimental evidence from Malawi (Journal of Development Economics 89(1) 1-11)
+#### LIT-024 — [Gine & Yang 2009 - Insurance, credit, and technology adoption: Field experimental evidence from Malawi (Journal of Development Economics 89(1) 1-11)](https://www.povertyactionlab.org/evaluation/insurance-credit-and-technology-adoption-malawi)
 
 **To read** · RCT (field experiment) · Malawi
 
@@ -976,9 +976,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Directly undercuts the novelty claim in docs/phd/phd-proposal-master.md that the literature raises but rarely tests loan-insurance bundling - it has been tested, experimentally, and mandatory bundling reduced take-up. Bears on OQ-16 (field anchor) and on EXP-01, whose design is precisely premium-financed-into-principal compulsory cover. Makes EXP-17 (separating the take-up effect from the protection effect) the live question rather than an add-on. See OQ-17.
 
-[source](https://www.povertyactionlab.org/evaluation/insurance-credit-and-technology-adoption-malawi) · relevance — product High, risk High, impact High
+[open source](https://www.povertyactionlab.org/evaluation/insurance-credit-and-technology-adoption-malawi) · relevance — product High, risk High, impact High
 
-#### LIT-025 — Banerjee, Duflo & Hornbeck 2014 - Bundling Health Insurance and Microfinance in India: There Cannot Be Adverse Selection If There Is No Demand (American Economic Review 104(5) 291-297)
+#### LIT-025 — [Banerjee, Duflo & Hornbeck 2014 - Bundling Health Insurance and Microfinance in India: There Cannot Be Adverse Selection If There Is No Demand (American Economic Review 104(5) 291-297)](https://www.aeaweb.org/articles?id=10.1257/aer.104.5.291)
 
 **To read** · RCT (field experiment) · India (Karnataka)
 
@@ -990,9 +990,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Answers LC-04's third question - yes, someone has measured bundling's effect on the lender's own book, and it was strongly negative. Any cash-flow model that assumes bundling is retention-neutral is unsupported. Feeds OQ-17 and the RT-6 assumptions.
 
-[source](https://www.aeaweb.org/articles?id=10.1257/aer.104.5.291) · relevance — product High, risk High, impact Medium
+[open source](https://www.aeaweb.org/articles?id=10.1257/aer.104.5.291) · relevance — product High, risk High, impact Medium
 
-#### LIT-026 — Karlan, Osei, Osei-Akoto & Udry 2014 - Agricultural Decisions after Relaxing Credit and Risk Constraints (Quarterly Journal of Economics 129(2) 597-652; NBER WP 18463)
+#### LIT-026 — [Karlan, Osei, Osei-Akoto & Udry 2014 - Agricultural Decisions after Relaxing Credit and Risk Constraints (Quarterly Journal of Economics 129(2) 597-652; NBER WP 18463)](https://www.nber.org/papers/w18463)
 
 **To read** · RCT (field experiment, multiple arms and years) · Ghana (northern)
 
@@ -1004,9 +1004,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Supplies the case FOR insurance in a credit-constrained setting and the mechanism our theory of change link 3 assumes. The contrast with LIT-024/LIT-025 - strong demand when offered separately, collapsed demand when compulsorily priced into a loan - is the sharpest single finding for our product design, and it is what EXP-17 is built to test. Feeds OQ-17.
 
-[source](https://www.nber.org/papers/w18463) · relevance — product High, risk Medium, impact High
+[open source](https://www.nber.org/papers/w18463) · relevance — product High, risk Medium, impact High
 
-#### LIT-027 — Carter, Cheng & Sarris 2016 - Where and how index insurance can boost the adoption of improved agricultural technologies (Journal of Development Economics 118(C) 59-71)
+#### LIT-027 — [Carter, Cheng & Sarris 2016 - Where and how index insurance can boost the adoption of improved agricultural technologies (Journal of Development Economics 118(C) 59-71)](https://ideas.repec.org/a/eee/deveco/v118y2016icp59-71.html)
 
 **To read** · Theoretical model · Theoretical (no single geography)
 
@@ -1018,7 +1018,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Reading the model is now a priority because it may reconcile LIT-024 with LIT-026: Gine and Yang attribute low insured-loan take-up to implicit insurance from limited liability, which is a collateral-environment argument of exactly the kind this paper formalises. Feeds LC-04 and OQ-17.
 
-[source](https://ideas.repec.org/a/eee/deveco/v118y2016icp59-71.html) · relevance — product High, risk Medium, impact Low
+[open source](https://ideas.repec.org/a/eee/deveco/v118y2016icp59-71.html) · relevance — product High, risk Medium, impact Low
 
 ### LC-24 — Coffee-sector economics and cooperative finance
 
@@ -1028,7 +1028,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **Questions.** How is smallholder coffee financed today and by whom? What climate exposures dominate (leaf rust, drought, temperature) and are they indexable? What traceability and certification data already exists and could it serve as an origination schema? What is the record of coffee price-risk instruments for smallholders? Do cooperatives in the target belts actually intermediate credit, or only marketing? Is certification (Fairtrade, Rainforest Alliance, organic) audit data obtainable at member level, and does it constitute a usable sampling frame? What is the realistic membership size of a single cooperative, and how many cooperatives would a powered design need?
 
-#### LIT-031 — Root Capital 2016 - Financing Farm Renovation: How to Build Resilience Using a Blend of Capital (Learning Report: The Coffee Farmer Resilience Initiative)
+#### LIT-031 — [Root Capital 2016 - Financing Farm Renovation: How to Build Resilience Using a Blend of Capital (Learning Report: The Coffee Farmer Resilience Initiative)](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf)
 
 **Reviewed** · Practitioner learning report (lender self-report, non-experimental) · Guatemala; Honduras; Mexico; Nicaragua; Peru
 
@@ -1040,9 +1040,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears directly on OQ-16: the co-operative credit rail the coffee anchor assumes does exist, but its data quality is the known weak point, which is the project's own thesis restated as a field risk. Feeds OQ-3 (canonical data schema) - an internal credit fund with informal records is precisely what a schema has to formalise. Feeds LC-08 and EXP-25: leaf rust is a textbook covariate shock and these figures are the correlation problem in its sharpest form.
 
-[source](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf) · relevance — product High, risk High, impact Medium
+[open source](https://rootcapital.org/wp-content/uploads/2018/01/Root-Capital-CFRI-Learning-Report-Full-Report.pdf) · relevance — product High, risk High, impact Medium
 
-#### LIT-032 — Oya, Schaefer, Skalidou, McCosker & Langer 2017 - Effects of certification schemes for agricultural production on socio-economic outcomes in low- and middle-income countries: a systematic review (3ie Systematic Review 34; Campbell Systematic Reviews 13)
+#### LIT-032 — [Oya, Schaefer, Skalidou, McCosker & Langer 2017 - Effects of certification schemes for agricultural production on socio-economic outcomes in low- and middle-income countries: a systematic review (3ie Systematic Review 34; Campbell Systematic Reviews 13)](https://www.3ieimpact.org/sites/default/files/2019-01/sr34-certification-schemes-agricultural-production_0.pdf)
 
 **Reviewed** · Systematic review with meta-analysis (Campbell/3ie Systematic Review 34) · Low- and middle-income countries; Latin America dominant in the included studies
 
@@ -1054,9 +1054,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears on OQ-16: certification is a usable organising structure but is NOT an income mechanism to build a welfare claim on - the total-household-income effect is not distinguishable from zero across the whole literature. Any coffee design that leans on the certification premium as the counterfactual improvement needs to say why it expects better than this. Also a methodological warning for the project's own design: a field of 43 studies with no RCT is a field where a well-powered randomised design is itself a contribution.
 
-[source](https://www.3ieimpact.org/sites/default/files/2019-01/sr34-certification-schemes-agricultural-production_0.pdf) · relevance — product Medium, risk Medium, impact High
+[open source](https://www.3ieimpact.org/sites/default/files/2019-01/sr34-certification-schemes-agricultural-production_0.pdf) · relevance — product Medium, risk Medium, impact High
 
-#### LIT-033 — Berihun 2024 - The Economic Impact of Sustainability Standards on Smallholder Coffee Producers: Evidence from Sidama Region, Ethiopia (IGC Working Paper ETH-22247)
+#### LIT-033 — [Berihun 2024 - The Economic Impact of Sustainability Standards on Smallholder Coffee Producers: Evidence from Sidama Region, Ethiopia (IGC Working Paper ETH-22247)](https://www.theigc.org/sites/default/files/2024-06/Berihun%20Working%20paper%20March%202024.pdf)
 
 **Reviewed** · Cross-sectional household survey with propensity score matching and nearest-neighbour matching · Ethiopia (Sidama Region)
 
@@ -1068,9 +1068,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears on OQ-16 and directly on power: 57 co-operatives and 85,000 farmers in one Ethiopian region is a large enough universe for a clustered design, and a 20-co-operative, 530-household study has already been executed there. Feeds the framework section 6 power calculation once an ICC is available. Leaves open whether member registers are equally obtainable in Latin American coffee belts, where the Root Capital evidence (LIT-031) sits.
 
-[source](https://www.theigc.org/sites/default/files/2024-06/Berihun%20Working%20paper%20March%202024.pdf) · relevance — product High, risk Low, impact Medium
+[open source](https://www.theigc.org/sites/default/files/2024-06/Berihun%20Working%20paper%20March%202024.pdf) · relevance — product High, risk Low, impact Medium
 
-#### LIT-034 — Jena & Grote 2022 - Do Certification Schemes Enhance Coffee Yields and Household Income? Lessons Learned Across Continents (Frontiers in Sustainable Food Systems)
+#### LIT-034 — [Jena & Grote 2022 - Do Certification Schemes Enhance Coffee Yields and Household Income? Lessons Learned Across Continents (Frontiers in Sustainable Food Systems)](https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2021.716904/full)
 
 **Reviewed** · Cross-sectional household survey with propensity score matching (radius, kernel and 5-nearest-neighbour), Rosenbaum bounds sensitivity analysis · Ethiopia; India; Nicaragua
 
@@ -1082,9 +1082,9 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Reinforces LIT-032 for OQ-16: certification does not reliably move total household income, and the effect that does appear is at the crop-revenue line. The Ethiopia result here is negative where LIT-033's Ethiopia result is positive - the two differ in region, sample size and year, and reconciling them is a real question for any Ethiopian siting decision. Also a caution on scale: 6 co-operatives and 250 households produced mostly nulls, which is the design the coffee anchor should NOT copy.
 
-[source](https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2021.716904/full) · relevance — product Medium, risk Low, impact Medium
+[open source](https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2021.716904/full) · relevance — product Medium, risk Low, impact Medium
 
-#### LIT-035 — International Coffee Organization 2020 - Coffee Development Report 2020: The Value of Coffee - Sustainability, Inclusiveness, and Resilience of the Coffee Global Value Chain
+#### LIT-035 — [International Coffee Organization 2020 - Coffee Development Report 2020: The Value of Coffee - Sustainability, Inclusiveness, and Resilience of the Coffee Global Value Chain](https://icocoffee.org/wp-content/uploads/2022/11/CDR2020.pdf)
 
 **Reviewed** · Flagship sector report (descriptive market and price statistics) · Global; Colombia detail
 
@@ -1096,7 +1096,7 @@ LC-24 section written 2026-08-22; the rest still outline. VERDICT ON THE COFFEE 
 
 **What it opens.** Bears on EXP-09: price risk is real and measurable, and a sovereign comparator already exists in Colombia, which is both a partner opportunity and a displacement risk under OQ-11's logic. Leaves open the farmgate-versus-world-price basis question, which is the price analogue of the basis risk LIT-030 measures for weather indices - and which would have to be settled before a price-stabilisation instrument could be indexed at all.
 
-[source](https://icocoffee.org/wp-content/uploads/2022/11/CDR2020.pdf) · relevance — product High, risk High, impact Low
+[open source](https://icocoffee.org/wp-content/uploads/2022/11/CDR2020.pdf) · relevance — product High, risk High, impact Low
 
 ### LC-16 — Agricultural value chains, warehouse receipts and price risk
 

@@ -72,6 +72,59 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration: none; }
+
+/* Citation chips: any LIT-0NN in rendered prose becomes a button that opens the
+   matrix row. Styled as a quiet inline token, not a link, because it does not
+   navigate away - it opens the evidence in place. */
+button.cite {
+  font: inherit; font-family: var(--mono); font-size: 0.92em;
+  color: var(--accent); background: var(--accent-soft);
+  border: 1px solid transparent; border-radius: 4px;
+  padding: 0 4px; cursor: pointer; white-space: nowrap;
+}
+button.cite:hover, button.cite:focus-visible {
+  border-color: var(--accent); outline: none;
+}
+button.cite[data-missing="1"] {
+  color: var(--critical); background: transparent;
+  border-color: var(--critical); border-style: dashed; cursor: help;
+}
+
+#citeOverlay {
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(0,0,0,0.45);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 6vh 16px 16px; overflow-y: auto;
+}
+#citeOverlay[hidden] { display: none; }
+#citeCard {
+  background: var(--raised); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  max-width: 820px; width: 100%;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+}
+#citeCard .ch {
+  display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
+  padding: 16px 18px; border-bottom: 1px solid var(--grid);
+}
+#citeCard .cb { padding: 16px 18px 20px; }
+#citeCard .cid { font-family: var(--mono); color: var(--muted); font-size: 0.85rem; }
+#citeCard h3 { margin: 2px 0 0; font-size: 1.05rem; line-height: 1.35; }
+#citeCard .cmeta { color: var(--text-2); font-size: 0.88rem; margin-top: 6px; }
+#citeClose {
+  flex: none; font: inherit; cursor: pointer; line-height: 1;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 6px; padding: 4px 9px;
+}
+#citeClose:hover { color: var(--text); border-color: var(--muted); }
+.cite-src { margin-top: 14px; }
+.cite-src a {
+  display: inline-block; padding: 7px 13px; border-radius: 6px;
+  background: var(--accent); color: #fff; font-weight: 600;
+}
+.cite-src a.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+#citeCard .ch .cite-src a { padding: 5px 11px; font-size: 0.88rem; white-space: nowrap; }
+#citeCard .ch .cite-src .hint { display: none; }   /* the caveat belongs in the body, not the header */
 a:hover { text-decoration: underline; }
 code {
   font-family: var(--mono);
@@ -393,6 +446,22 @@ footer.foot {
      file simply 404s and leaves the public data in place. -->
 <script src="data.js"></script>
 <script src="data.private.js"></script>
+<div id="citeOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="citeTitle">
+  <div id="citeCard">
+    <div class="ch">
+      <div>
+        <div class="cid" id="citeId"></div>
+        <h3 id="citeTitle"></h3>
+        <div class="cmeta" id="citeMeta"></div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex:none">
+        <span id="citeSrcTop" class="cite-src" style="margin:0"></span>
+        <button id="citeClose" type="button" aria-label="Close">Esc ✕</button>
+      </div>
+    </div>
+    <div class="cb" id="citeBody"></div>
+  </div>
+</div>
 <script>
 "use strict";
 var D = window.SFV_DATA || {};
@@ -431,6 +500,54 @@ function tierPill(v) {
 }
 
 /* ------------------------------------------------- minimal markdown render */
+/* ---- citation chips --------------------------------------------------
+   Every LIT-0NN token in rendered prose becomes a button that opens that
+   anchor's matrix row. The matrix is the sources reference; this just makes it
+   reachable from wherever a source is cited instead of only from the Evidence
+   base table.
+
+   Runs LAST in inlineMd, and skips anything already inside a tag or inside
+   <code>, so a ref written as `LIT-031` stays literal and a ref inside an href
+   is not mangled. */
+function litIndex() {
+  if (!litIndex._m) {
+    litIndex._m = {};
+    (D.literature || []).forEach(function (r) { litIndex._m[r.ID] = r; });
+  }
+  return litIndex._m;
+}
+function citeChips(html) {
+  var idx = litIndex(), out = "", i = 0;
+  while (i < html.length) {
+    var lt = html.indexOf("<", i);
+    if (lt < 0) { out += chip(html.slice(i)); break; }
+    out += chip(html.slice(i, lt));
+    // Copy the tag through untouched. For <code>, skip its whole body too.
+    var gt = html.indexOf(">", lt);
+    if (gt < 0) { out += html.slice(lt); break; }
+    var tag = html.slice(lt, gt + 1);
+    out += tag;
+    i = gt + 1;
+    if (/^<code[\s>]/i.test(tag)) {
+      var end = html.toLowerCase().indexOf("</code>", i);
+      if (end < 0) { out += html.slice(i); break; }
+      out += html.slice(i, end);
+      i = end;
+    }
+  }
+  return out;
+
+  function chip(text) {
+    return text.replace(/\bLIT-(\d{3})\b/g, function (m) {
+      var known = !!idx[m];
+      return '<button type="button" class="cite" data-lit="' + m + '"' +
+        (known ? '' : ' data-missing="1"') +
+        ' title="' + (known ? 'Show this source' : 'Not in the literature matrix') +
+        '">' + m + "</button>";
+    });
+  }
+}
+
 function inlineMd(s) {
   s = s.replace(/`([^`]+)`/g, function (m, c) { return "<code>" + c + "</code>"; });
   s = s.replace(/\[([^\]]*)\]\(([^)\s]+)\)/g,
@@ -439,7 +556,7 @@ function inlineMd(s) {
   s = s.replace(/~~([^~]+)~~/g, "<del>$1</del>");
   s = s.replace(/(^|[\s(])\*([^*\n]+)\*/g, "$1<em>$2</em>");
   s = s.replace(/(^|[\s(])_([^_\n]+)_/g, "$1<em>$2</em>");
-  return s;
+  return citeChips(s);
 }
 function splitRow(line) {
   return line.replace(/^\s*\|/, "").replace(/\|\s*$/, "").split("|").map(function (c) { return c.trim(); });
@@ -789,10 +906,41 @@ function installTableDelegation() {
 /* Kept for call-site compatibility; delegation is installed on first table build. */
 function wireTable() { installTableDelegation(); }
 function fields(pairs) {
+  /* citeChips here, not only in inlineMd: tracker detail rows (open-question
+     notes, component rationales, experiment specs) are rendered straight from
+     esc()'d CSV text and never touch the markdown path, and they are full of
+     LIT-0NN references. citeChips skips inside tags, so an href containing an ID
+     is left alone. */
   return '<div class="detail-grid">' + pairs.filter(function (p) { return p[1]; }).map(function (p) {
-    return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' + p[1] + "</div></div>";
+    return '<div class="field"><div class="fk">' + esc(p[0]) + '</div><div class="fv">' +
+      citeChips(p[1]) + "</div></div>";
   }).join("") + "</div>";
 }
+/* One definition of "what a source row shows", used by the Evidence base table
+   and by the citation modal. Two copies would drift. */
+function litSourceLink(r, opts) {
+  opts = opts || {};
+  var cls = opts.button ? "" : "";
+  if (r.URL) {
+    return '<a href="' + esc(r.URL) + '" target="_blank" rel="noopener noreferrer"' +
+      (cls ? ' class="' + cls + '"' : '') + '>Open source ↗</a>';
+  }
+  return '<a href="' + esc(scholarUrl(r.Link_Citation)) + '" target="_blank" rel="noopener noreferrer"' +
+    ' class="secondary">Search on Scholar ↗</a>' +
+    ' <span class="hint">no direct link recorded — the matrix leaves a URL blank rather than guessing</span>';
+}
+function litDetail(r) {
+  return fields([
+    ["Key findings", esc(r.Key_Findings)],
+    ["Limitations", esc(r.Limitations)],
+    ["Population / context", esc(r.Population_Context)],
+    ["Relevance", "Product: <strong>" + esc(r.Relevance_Product) + "</strong> · Risk: <strong>" +
+      esc(r.Relevance_Risk) + "</strong> · Impact: <strong>" + esc(r.Relevance_Impact) + "</strong>"],
+    ["What it makes answerable next", esc(r.Open_Questions)],
+    ["Link", litSourceLink(r)]
+  ]);
+}
+
 function matches(row, q) {
   if (!q) return true;
   q = q.toLowerCase();
@@ -1574,21 +1722,7 @@ function renderResearch() {
     { key: "Geography", label: "Geography" },
     { label: "Status", render: function (r) { return pill(r.Status); } }
   ];
-  function detail(r) {
-    var link = r.URL
-      ? '<a href="' + esc(r.URL) + '" target="_blank" rel="noopener noreferrer">Open source ↗</a>'
-      : '<a href="' + esc(scholarUrl(r.Link_Citation)) + '" target="_blank" rel="noopener noreferrer">Search on Scholar ↗</a>' +
-        ' <span class="hint">(no direct link recorded)</span>';
-    return fields([
-      ["Key findings", esc(r.Key_Findings)],
-      ["Limitations", esc(r.Limitations)],
-      ["Population / context", esc(r.Population_Context)],
-      ["Relevance", "Product: <strong>" + esc(r.Relevance_Product) + "</strong> · Risk: <strong>" +
-        esc(r.Relevance_Risk) + "</strong> · Impact: <strong>" + esc(r.Relevance_Impact) + "</strong>"],
-      ["What it makes answerable next", esc(r.Open_Questions)],
-      ["Link", link]
-    ]);
-  }
+  function detail(r) { return litDetail(r); }
 
   var html = researchQuestionsBlock() + litComponentsBlock() +
     '<section class="panel"><h2>Evidence base</h2>' +
@@ -2557,6 +2691,51 @@ function boot() {
     else document.documentElement.removeAttribute("data-theme");
     btn.textContent = next ? (next === "dark" ? "Dark" : "Light") : "Theme";
   });
+
+  /* ---- citation modal ------------------------------------------------
+     One delegated listener on document, so chips work in any tab and in
+     content rendered after boot (docs expand lazily). */
+  var citeOverlay = by("citeOverlay");
+  var citeLast = null;
+
+  function closeCite() {
+    citeOverlay.hidden = true;
+    if (citeLast && citeLast.isConnected) citeLast.focus();
+    citeLast = null;
+  }
+  function openCite(id) {
+    var r = litIndex()[id];
+    if (!r) return;
+    by("citeId").textContent = r.ID + " · " + (r.Axis || "");
+    by("citeTitle").textContent = r.Link_Citation || r.ID;
+    by("citeMeta").innerHTML =
+      [r.Status ? "<strong>" + esc(r.Status) + "</strong>" : "",
+       esc(r.Method || ""), esc(r.Geography || "")]
+      .filter(Boolean).join(" · ");
+    /* The link to the article goes in the HEADER, not the footer: these rows run
+       long, and a source link you have to scroll a screenful of findings to reach
+       is a link most readers never see. litDetail() carries its own Link field for
+       the table view, so this is the second copy by design, not by accident. */
+    by("citeSrcTop").innerHTML = litSourceLink(r);
+    by("citeBody").innerHTML = litDetail(r);
+    citeOverlay.hidden = false;
+    by("citeClose").focus();
+  }
+
+  document.addEventListener("click", function (e) {
+    var chip = e.target.closest && e.target.closest("button.cite");
+    if (chip) {
+      if (chip.dataset.missing === "1") return;
+      citeLast = chip;
+      openCite(chip.dataset.lit);
+      return;
+    }
+    if (e.target === citeOverlay) closeCite();
+  });
+  by("citeClose").addEventListener("click", closeCite);
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !citeOverlay.hidden) { e.stopPropagation(); closeCite(); }
+  }, true);
 
   var start = location.hash.slice(1);
   show(RENDER[start] ? start : "overview");
