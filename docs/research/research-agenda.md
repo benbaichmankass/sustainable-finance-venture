@@ -71,6 +71,13 @@ records could carry underwriting rather than only provenance. Reading is the che
 to test both before a field programme commits to them. If the assumptions hold, the
 cluster leads the field-anchor choice (OQ-16); if not, the scores were wrong.
 
+**That framing is now out of date, and the change is worth recording honestly.** On
+2026-08-22 OQ-16 was decided in coffee's favour *before* LC-24 was read. The component
+is unchanged in content but has changed in function: it no longer tests an assumption
+ahead of a decision, it audits one behind it. If the two assumptions above do not hold,
+the finding forces the anchor decision to be reversed. That is a worse position than the
+one this tier was designed to avoid, and it is why LC-24 now sits first in the P1 queue.
+
 ### P2 - needed for the thesis, not for the first email (11 components, 80 anchors)
 
 LC-10 securitisation law and true sale · LC-11 African and EM capital-market depth ·

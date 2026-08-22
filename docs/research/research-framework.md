@@ -353,8 +353,11 @@ deliberate: the cheap experiments that could kill the thesis should run first.
 
 **This is now the adopted work sequence, not a recommendation.** OQ-15 was resolved on
 2026-08-22 in exactly these terms: EXP-25 (correlation) and EXP-22 (capture cost) are
-`Selected` and run before any field commitment; a single field anchor follows, and
-which one is deliberately still open (OQ-16).
+`Selected` and run before any field commitment; a single field anchor follows. OQ-16
+then fixed the anchor's **setting** on 2026-08-22 - the coffee cooperative cluster -
+leaving only the instrument open between EXP-09 and EXP-10. Whichever is chosen carries
+the second randomisation layer above, since that layer is the design contribution and it
+needs a field setting to live in.
 
 ---
 

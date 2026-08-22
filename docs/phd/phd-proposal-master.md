@@ -25,8 +25,16 @@ The central research question this proposal poses is: **How should community-lev
 > **LIT-026** (Karlan et al. 2014, Ghana) is the counterweight: risk rather than capital is the
 > binding constraint, and demand for index insurance offered *separately* is strong.
 > The real distinction is **offered separately versus compulsorily priced into the loan** — and
-> the novelty claim has to move. Candidate relocations are in OQ-17; the choice is BB's.
+> the novelty claim has to move. Candidate relocations are in OQ-17.
 > A microinsurance economist will know these papers.
+>
+> **Hold status (2026-08-22): deliberate, not stalled.** The relocation was considered and
+> postponed until the four unread P1 components — **LC-05, LC-06, LC-07, LC-08** — are read,
+> because LC-08 in particular may move the answer again (LIT-030 already sits there and ties
+> basis risk to the pool's loss distribution, which is candidate relocation (b)). Tracked as
+> **M-35**. The standing front-runner, and the default if those reads do not displace it, is
+> candidate (c) — **EXP-17**'s three-arm separation of the take-up effect from the protection
+> effect, whose subsidised opt-in arm has the strongest prior of the three.
 
 # Background, Gap, and Significance
 
