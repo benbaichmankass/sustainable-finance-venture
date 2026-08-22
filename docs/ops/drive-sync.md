@@ -64,7 +64,7 @@ Why compare against a stored baseline instead of just "whichever timestamp is ne
 
 ## Resolving a conflict
 
-The issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.
+The issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — but first check the conflict is really about *content*. If the repo file carries a BOM or CRLF endings, the mismatch may be structural rather than editorial, in which case no amount of editing either side will clear it; see the normalisation rule above — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.
 
 ## Auto-commit, not auto-merge
 
@@ -75,6 +75,49 @@ Reconciled changes are committed straight to `main` by the workflow — no PR, n
 - The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.
 
 If a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.
+
+## Text is normalised at both ends, and markdown export never degrades
+
+Two rules the engine enforces on every byte crossing the boundary. Both were added on
+2026-08-22 after one document was silently corrupted and then wedged for a day.
+
+**1. Normalise before hashing and before writing.** A UTF-8 BOM is stripped and CRLF/CR
+is folded to LF, in `read_repo_file()`, `export_doc_text()` and `write_repo_file()`.
+
+This is not tidiness. `write_repo_file()` opens with `newline="\n"`, which does *not*
+strip a `\r` already inside the string, while `read_repo_file()` opens with universal
+newlines, which does. So a CRLF-bearing export written to disk and read back is a
+**different string** — its hash can never match the baseline recorded at write time, and
+`repo_changed` is therefore `True` on every run, for ever. The row cannot converge, and
+because the documented "edit one side to match the other" fix operates on *content*, it
+cannot clear a mismatch that is structural. Normalising both ends is what makes the
+round-trip stable.
+
+**2. A Doc that will not export as markdown is an error, not a plain-text pull.**
+`export_doc_text()` used to fall back to `text/plain` on any `HttpError`. That looks
+defensive and is the opposite: Google's plain-text export drops every heading marker,
+every bold marker and every table pipe, and adds a BOM and CRLF endings. A transient API
+error on one run would therefore overwrite a good markdown file with a formatting-stripped
+rendering, commit it to `main`, and report success.
+
+It now raises `MarkdownExportUnavailable`; `main()` catches it, marks the row `Error` and
+moves on. Losing a cycle on one document beats losing the document.
+
+### The incident these came from
+
+`DRV-11` (`docs/phd/phd-scoring-rubric.md`), 2026-08-21T07:13Z. The markdown export
+failed, the fallback pulled plain text, and the repo copy lost 8 headings, 4 tables and
+all bold, gaining 212 tab characters, a BOM and CRLF endings. Both baselines were then
+set to that degraded text, so the corruption became the recorded truth. From the next run
+onward the repo hash could never match its baseline, Drive was exporting proper markdown
+again, both sides read as changed, they disagreed — permanent `Conflict`.
+
+Recovering it needed the normalisation fix *plus* a deliberate re-baseline of both hashes
+to the normalised repo hash, which makes the engine see repo-unchanged / Drive-changed and
+take the pull branch. Note that re-baselining this way needs only a locally computable
+value — it is the one manoeuvre that does not require predicting Drive's export hash.
+
+Regression cover: `scripts/test_sync_drive.py` (stdlib only, no Drive credentials needed).
 
 ## Known constraint: the service account can't create new files
 
