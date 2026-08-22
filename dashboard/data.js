@@ -5635,9 +5635,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Business Plan — Working Draft",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "6a270cad48dea4e95d84f5c2734117c8181b490f673139b269747f26ac7c17a4",
-   "Baseline_Repo_Hash": "6a270cad48dea4e95d84f5c2734117c8181b490f673139b269747f26ac7c17a4",
-   "Last_Synced_At": "2026-08-09T20:13:47Z",
+   "Baseline_Drive_Hash": "436ed5008e1bedf06a2518cdf6d843a89bc828891db66bdcca75c4324393699f",
+   "Baseline_Repo_Hash": "e1a0a956683a83bcb863e616fbbc817fc29fb57bb3aeca2e83f24c2da91a31a4",
+   "Last_Synced_At": "2026-08-22T18:19:12Z",
    "Status": "Synced"
   },
   {
