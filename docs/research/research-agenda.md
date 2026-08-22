@@ -104,11 +104,11 @@ calibrated without it.
 
 ## Pace, and an honest word about the numbers
 
-206 cumulative target anchors. Of those, 44 slots are already filled, by 35 distinct
+206 cumulative target anchors. Of those, 51 slots are already filled, by 40 distinct
 sources - several sources serve more than one component, which is why the two numbers
 differ. That is a full PhD-scale literature base and it is not a six-week job.
 
-The near-term job is **P1: 96 targets, 26 filled, so 70 new rows.** At the 12 to 15
+The near-term job is **P1: 96 targets, 33 filled, so 63 new rows.** At the 12 to 15
 sources a week this repo's workflow has actually sustained, that is six to seven weeks
 of reading. The two-pass structure from v1 still applies and is what makes the number
 tractable:
