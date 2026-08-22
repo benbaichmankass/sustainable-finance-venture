@@ -13,7 +13,7 @@ a component this sequences:
 | Research questions | `docs/phd/research-questions.md` + `data/research-questions.csv` | Done |
 | Literature decomposition | `docs/research/research-agenda.md` v2 + `data/lit-components.csv` | Done - reading not started |
 | Research framework | `docs/research/research-framework.md` | Done - parameters uncalibrated |
-| Experiment menu | `data/experiments.csv` + `docs/research/experiment-spec-template.md` | Done - sequence settled (OQ-15), field anchor open (OQ-16) |
+| Experiment menu | `data/experiments.csv` + `docs/research/experiment-spec-template.md` | Done - sequence settled (OQ-15), anchor setting settled on coffee, instrument open between EXP-09 and EXP-10 (OQ-16) |
 | Application pack | `docs/phd/application-pack.md` + the Vault folder | Done - CV and specifics outstanding |
 
 ## The honest state of things
@@ -51,8 +51,10 @@ Order within the phase, which is not arbitrary:
    claim. Find out in week one, not week six.
 1b. **LC-24 early too** (coffee-sector economics). Promoted to P1 on 2026-08-22
    because the coffee cluster outscores every other field candidate on assumptions
-   nobody has tested. It feeds the field-anchor decision (OQ-16), so it wants to be
-   read before that decision, not after.
+   nobody has tested. It was meant to feed the field-anchor decision (OQ-16) - but on
+   2026-08-22 that decision went coffee's way *first*, so the read now verifies a live
+   commitment instead of informing an open choice. That makes it more urgent, not less:
+   a negative finding is now a reversal rather than a redirection.
 2. **LC-03 and LC-05** (index insurance; resilience measurement). These make the
    flagship experiments describable in a supervisor's own vocabulary.
 3. **LC-07 and LC-08** (credit-risk modelling; portfolio correlation). RQ-03 has no
@@ -74,9 +76,11 @@ the anchor count is hit.
 - **Draft the pre-registration template.** Feeds M-08.
 - **Spec three to five experiments** against the template, once OQ-15 is decided.
 - **OQ-15 is resolved** (2026-08-22): a sequenced portfolio. Two desk-executable
-  falsification tests first - EXP-25 and EXP-22 - then one field anchor. What remains
-  open is *which* field anchor, logged as OQ-16 and gated on an advisor, tested partner
-  access and the LC-04 and LC-24 reads.
+  falsification tests first - EXP-25 and EXP-22 - then one field anchor. **OQ-16 was
+  then partially resolved** (2026-08-22): the anchor setting is the coffee cooperative
+  cluster, which puts EXP-01 and EXP-06 out of contention. What remains open is the
+  instrument - EXP-09 or EXP-10 - still gated on an advisor, on tested partner access
+  and on the LC-24 read.
 
 ## Phase 3 - advisor outreach
 
@@ -155,7 +159,8 @@ did: read LC-04, and send a data-sharing request to one MFI network.
 | M-29 | Application pack complete and used for a first wave of three approaches |
 | M-30 | Three to five experiments specced against the template |
 | M-32 | Partner data access secured; EXP-25 and EXP-22 run |
-| M-33 | Field anchor chosen (OQ-16) |
+| M-33 | Anchor instrument chosen between EXP-09 and EXP-10 (OQ-16 residual) |
+| M-35 | LC-05 to LC-08 read, OQ-17 closed, proposal hold lifted |
 
 Existing milestones are not duplicated here: M-06 (supervisor outreach), M-11 (first
 applications), M-20 (verification partners), M-21 (anchor grant), M-19 (funder
