@@ -5388,9 +5388,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Dashboard — design plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "68ac29e88f7d546a1f21f40cefbeddb8c062d1cb41371f483ddf3d26c4ab50f5",
-   "Baseline_Repo_Hash": "a7ad6d56d92cb1dd7c9d4f07e802c17d1ad58f2924c2d440812377a5d6ac3594",
-   "Last_Synced_At": "2026-08-06T22:39:30Z",
+   "Baseline_Drive_Hash": "1897da21f142661c36aad62733dd0975fc5e4fbe4bb110695375be77abb0ec6b",
+   "Baseline_Repo_Hash": "027cdfced4026f04e2858272635327d44ffe9e7bd611bf10a6f54f8326c7b1d3",
+   "Last_Synced_At": "2026-08-22T19:59:04Z",
    "Status": "Synced"
   },
   {
