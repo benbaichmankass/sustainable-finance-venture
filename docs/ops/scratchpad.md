@@ -30,30 +30,11 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 
 *Nothing untriaged. Last cleared 2026-08-06: "testing the mechanism of community based risk management" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*
 
-## 2026-08-19
+## 2026-08-22
 
-Focus on coffee growers:
+*Nothing untriaged.*
 
-* Insurance products  
-* Price stabilization products  
-* Credit for agribusiness development and climate resilience  
-* Orgs that help coffee growers  
-* [https://library.sweetmarias.com/category/coffee-sourcing/coffee-atlas-origins/](https://library.sweetmarias.com/category/coffee-sourcing/coffee-atlas-origins/) 
+**Cleared 2026-08-22** - the 2026-08-19 entries were filed:
 
-Places I want to apply to:
-
-1. [HUJI](https://bschool.huji.ac.il/phd)  
-   1. [Orly Sade](https://bschool.huji.ac.il/people/%D7%90%D7%95%D7%A8%D7%9C%D7%99-%D7%A9%D7%93%D7%94)  
-   2. [Anat Bracha](https://bschool.huji.ac.il/people/%D7%A2%D7%A0%D7%AA-%D7%91%D7%A8%D7%9B%D7%94)  
-   3. [Yishai Yafe](https://bschool.huji.ac.il/people/%D7%99%D7%A9%D7%99-%D7%99%D7%A4%D7%94)  
-2. [Groningen](https://www.rug.nl/education/phd-programmes/prospective/phd-positions/phd-options)  
-   1. [Robert Lensink](https://research.rug.nl/en/persons/robert-lensink/publications/)  
-   2.   
-3. [TAU](https://coller.tau.ac.il/PhD-applicants/program/business-economics/?tab=1)  
-   1.   
-4. [Copenhagen](https://www.econ.ku.dk/derg/current-projects/)  
-5. [ZEW](https://www.zew.de/en/team/rdh)  
-   1. [Dr. Ralph de Haas](https://www.zew.de/en/team/rdh)  
-6. [Bacconi](https://www.unibocconi.it/en/programs/phd/admissions)  
-   1.   
-7. 
+- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows - **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) - plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.
+- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` - including where it disagrees with the scoring rubric, which is the part worth thinking about.

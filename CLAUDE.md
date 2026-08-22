@@ -65,6 +65,9 @@ risk-tools/                      One doc per risk tool (RT-1..RT-5) + convention
 data/                            Structured trackers — the dashboard reads these
   milestones.csv                 M-NN   60/90-day milestones
   open-questions.csv             OQ-N   unresolved decisions
+  research-questions.csv         RQ-NN  the research-question architecture
+  lit-components.csv             LC-NN  literature review broken into components
+  experiments.csv                EXP-NN candidate experiments, scored
   product-lines.csv              PL-N   product lines
   risk-tools.csv                 RT-N   risk management tools
   macro-indicators.csv           MAC-NN macro watchlist
@@ -90,6 +93,9 @@ scripts/                         Automation run outside the dashboard build (Dri
 | A paper, report, or evidence source | a new row in `literature/lit-matrix.csv` |
 | A conclusion drawn across several sources | a synthesis memo in `literature/notes/` |
 | An unresolved decision | a row in `data/open-questions.csv` |
+| A way of asking the research question, framed for a kind of advisor | a row in `data/research-questions.csv` + the map in `docs/phd/research-questions.md` |
+| A body of literature that needs its own review | a row in `data/lit-components.csv` — then anchors go in the matrix as usual |
+| A candidate experiment | a row in `data/experiments.csv`, scored via `scripts/score_experiments.py`; a shortlisted one also gets a spec under `docs/research/experiments/` |
 | An org worth talking to, and why | a row in `data/partner-tracker.csv` |
 | A person's name, or what they said | `private/partner-contacts.csv` — never `data/` |
 | A new product idea | a row in `data/product-lines.csv` + a doc in `product-design/product-lines/` |
@@ -108,6 +114,10 @@ scripts/                         Automation run outside the dashboard build (Dri
 ## 4. Data file conventions
 
 - All CSVs: **every field quoted**, header row required, UTF-8, LF line endings.
+  Four files predate this rule and still carry CRLF (`lit-matrix.csv`, `open-questions.csv`,
+  `synthesis-memos.csv`, `drive-links.csv`). Preserve a file's existing terminator when
+  editing it — normalising one while appending a row turns a one-line diff into a whole-file
+  diff and buries the actual change. Convert them deliberately, on their own, or not at all.
 - No commas-as-decimals, no smart quotes, no em-dashes inside CSV fields (they survive but make diffs noisy).
 - Cross-references go in dedicated columns (`Evidence_Refs`, `Linked_Refs`) as semicolon-separated IDs: `"LIT-009; LIT-010"`.
 - Status vocabularies are fixed. Use exactly these:
@@ -118,6 +128,9 @@ scripts/                         Automation run outside the dashboard build (Dri
   - Memo `Status`: `Outline` · `Drafted` · `Reviewed`
   - Risk tool `Status`: `Specified - not built` · `In development` · `Released` · `Deprecated`
   - Drive link `Status`: `Not synced` · `Synced` · `Conflict` · `Error`
+  - Research question `Status`: `Active` · `Lead` · `Parked` — at most one row is `Lead`
+  - Literature component `Status`: `Not started` · `Partially covered` · `In progress` · `Reviewed`
+  - Experiment `Status`: `Idea` · `Selected` · `Specified` · `Running` · `Dropped` — this is the *decision*; `Priority_Band` is the scoring rubric's separate view and the two may disagree
 
 **URLs are verified or absent.** Every tracker with a `URL` column follows the same rule as the literature matrix: a link is checked to resolve before it is committed, and a field left blank is honest. The dashboard renders a search fallback for blanks — never guess a URL to fill a cell.
 

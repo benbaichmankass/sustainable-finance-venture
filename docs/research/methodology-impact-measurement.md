@@ -1,10 +1,18 @@
 # Methodology: Measuring the SDG Impact of the Financial Products
 
-**Status:** Skeleton (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §3
+**Status:** Outcome-metric layer (week of 2026-08-02; re-scoped 2026-08-22) · **Owner:** BB
+**Parent:** `docs/phd/research-proposal.md` §3 · **Spine:** `docs/research/research-framework.md`
+
+> **Read the framework first.** As of 2026-08-22 the identification strategy, estimands,
+> power method, two-layer randomisation design, verification arrangement, data architecture
+> and falsification conditions live in `docs/research/research-framework.md`. This document
+> is no longer the whole methodology - it is the **outcome-metric layer**: what gets measured,
+> against which SDG frame, with what discipline. Sections 2 and 3 below are retained because
+> the framework refers back to them, and are summarised there rather than duplicated.
 
 ## Purpose
 
-The venture's credibility rests on a claim it must be able to *prove*: that the financial products it structures actually improve the climate-resilience and poverty outcomes they target — not just that loans were disbursed or premiums collected. This document is the skeleton of the research methodology for measuring that impact, so it is designed *before* any product is in the field, not reconstructed afterward.
+The venture's credibility rests on a claim it must be able to *prove*: that the financial products it structures actually improve the climate-resilience and poverty outcomes they target — not just that loans were disbursed or premiums collected. This document specifies what gets measured to prove it, designed *before* any product is in the field rather than reconstructed afterward. How that measurement is identified, powered and verified is the framework's job (`docs/research/research-framework.md`).
 
 It answers three questions: **impact on what**, **identified how**, and **verified by whom**.
 
@@ -51,4 +59,20 @@ The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 or
 
 ## Deliverable state
 
-Skeleton only. Remaining work: pick the outcome metrics per flagship experiment (after OQ-11), resolve OQ-4/OQ-5 with a prospective supervisor and verification partner, and draft the pre-registration template. Feeds milestone M-08 (pilot design doc).  
+**Re-scoped 2026-08-22.** The methodology this document was a skeleton of is now written in
+`docs/research/research-framework.md`, which supersedes the sketch versions of identification,
+verification and integration held here. What remains live in *this* document is the outcome-metric
+menu in §1 - the part the framework points back to.
+
+Remaining work on the metric layer specifically:
+
+- Fix **one primary outcome per estimand** with the verification partner before pre-registration
+  (framework §5). Section 1 above is a menu; a pre-registered study needs a choice.
+- Pin the **shock-measurement instrument** and its recall period - the load-bearing measurement,
+  since every resilience claim is conditional on a shock having been observed.
+- Settle **comprehension** as a first-class measured outcome, not a fieldwork detail (framework §10).
+- Add outcome definitions for the experiment types the 2026-08-22 menu introduced that are not
+  household-level at all: administrative-data studies, investor elicitation, and simulation
+  (`data/experiments.csv`, `docs/research/experiment-spec-template.md`).
+
+Still gated on OQ-7 (verification partner) and OQ-4. Feeds milestone M-08 (pilot design doc).  

@@ -6,15 +6,19 @@ This is the spine of the research proposal. It holds the argument and links out 
 
 **Scope decision (2026-08-02).** The proposal is anchored, for now, on goals related to **climate change** and **global poverty reduction**, with field sites in **Africa / MENA** first. Other SDG domains and geographies are deliberately out of the initial frame — not rejected, just not this proposal.
 
-**How this maps to the five deliverables:**
+**How this maps to the deliverables:**
 
 | Deliverable | Lives in | State |
 | :---- | :---- | :---- |
-| 1\. Literature review | §1 below \+ `literature/` (matrix \+ memos) | Anchors \+ memos exist; proposal-grade synthesis section drafted here |
-| 2\. Opportunity-mapping methodology | `docs/research/methodology-opportunity-mapping.md` | Skeleton |
-| 3\. Impact-measurement methodology | `docs/research/methodology-impact-measurement.md` | Skeleton |
-| 4\. 5–10 experiment ideas | `data/experiments.csv` (EXP-01…) | Populated |
-| 5\. Grant / funding plan | `docs/venture/funding-pipeline.md` \+ `data/funders.csv` | Plan \+ tracker |
+| 1\. Literature review | §1 below \+ `literature/` (matrix \+ memos), decomposed into components in `data/lit-components.csv` and planned in `docs/research/research-agenda.md` v2 | 23 anchors, 3 memos; **9 P1 components identified, ~77 anchors outstanding** (M-26) |
+| 2\. Opportunity-mapping methodology | `docs/research/methodology-opportunity-mapping.md` | Skeleton; weights resolved, first scoring pass run |
+| 3\. Impact-measurement methodology | `docs/research/research-framework.md` (spine) \+ `docs/research/methodology-impact-measurement.md` (outcome metrics) | **Framework written 2026-08-22**; power parameters uncalibrated (M-28) |
+| 4\. Experiment ideas | `data/experiments.csv` (EXP-01…EXP-30) \+ `docs/research/experiment-spec-template.md` | **Expanded to 30 and scored 2026-08-22**; sequence settled (OQ-15) - EXP-25 and EXP-22 selected, field anchor open (OQ-16) |
+| 5\. Grant / funding plan | `docs/venture/funding-pipeline.md` \+ `data/funders.csv` | Plan \+ tracker; funder-research pass outstanding (M-19) |
+| 6\. Research questions | `docs/phd/research-questions.md` \+ `data/research-questions.csv` | **Added 2026-08-22** - one core question, 7 strands, lead strand open (OQ-14) |
+| 7\. Application pack | `docs/phd/application-pack.md` \+ the Drive Vault | **Added 2026-08-22**; CV and personal sections outstanding (M-29) |
+
+**Sequencing across all of the above:** `docs/phd/proposal-workplan.md`.
 
 **Direction decided (2026-08-02).** Working through OQ-9/10/11 landed four choices that shape the rest:
 
@@ -26,6 +30,17 @@ This is the spine of the research proposal. It holds the argument and links out 
 ---
 
 ## 0\. Research question
+
+> **Superseded as the canonical statement (2026-08-22).** The question is now held as
+> an architecture rather than a sentence - one institution-neutral core question and
+> seven strands, each framed for a different advisor profile and all answerable from
+> the same fieldwork. See `docs/phd/research-questions.md` and `data/research-questions.csv`.
+> The version below remains the climate-and-poverty framing of the RQ-02 strand and is
+> retained because §1 to §5 of this document are written against it.
+>
+> The scope note above still holds as *a* framing, but geography and population are now
+> deliberately open and adaptable to the programme (decision of 2026-08-22), which is why
+> the experiment menu spans Africa, MENA, Latin America and South Asia rather than Africa/MENA alone.
 
 Carried from `docs/research/working-doc.md`, narrowed to the climate \+ poverty frame:
 
@@ -41,7 +56,7 @@ The proposal defends three claims in sequence:
 
 The evidence base already exists in this repo and does not need rebuilding — it needs *framing* for a proposal. The proposal's literature review is assembled from:
 
-- **`literature/lit-matrix.csv`** — 15 reviewed anchors across four axes (community finance / VSLAs; microfinance impact & RCT methods; microfinance securitization & ABS; blended finance & SDG capital).  
+- **`literature/lit-matrix.csv`** — 23 reviewed anchors across four axes (community finance / VSLAs; microfinance impact & RCT methods; microfinance securitization & ABS; blended finance & SDG capital).  
 - **The three synthesis memos** in `literature/notes/` (all Reviewed):  
   - Memo 1 — what VSLAs and savings groups actually achieve, and where they fail.  
   - Memo 2 — what microfinance RCTs and reviews say about impact and design.  
@@ -55,6 +70,10 @@ The evidence base already exists in this repo and does not need rebuilding — i
 - **SDG / climate financing-gap sizing** — authoritative gap estimates (adaptation finance gap, energy-access financing gap) to ground the opportunity map's "gap size" axis.  
 - **Impact-measurement methods for climate resilience** — outcome-metric literature specific to resilience and consumption-smoothing, beyond the general microfinance-RCT canon.
 
+These three gaps were decomposed on 2026-08-22 into named literature components with anchor targets and search terms: index insurance and basis risk is **LC-03**, financing-gap sizing is **LC-06**, and resilience measurement is **LC-05**. All three are P1. The full breakdown is `data/lit-components.csv` and the plan is `docs/research/research-agenda.md` v2.
+
+A fourth gap surfaced in that pass and is more serious than the original three: **LC-04, bundled credit and insurance**, has zero anchors. It is the component the proposal's central novelty claim rests on, and it is the first thing to read (M-26).
+
 These are logged as gaps, not filled with guesses — see the milestone tracker.
 
 ## 2\. Opportunity-mapping methodology (skeleton)
@@ -65,7 +84,7 @@ In one line: a two-axis prioritization that scores candidate climate-and-poverty
 
 ## 3\. Impact-measurement methodology (skeleton)
 
-Full skeleton in **`docs/research/methodology-impact-measurement.md`**.
+**Superseded 2026-08-22 by `docs/research/research-framework.md`**, which is the full framework rather than a skeleton: estimands, the two-layer randomisation design, the identification hierarchy, the power method, verification, the risk-modelling bridge and the falsification conditions. `docs/research/methodology-impact-measurement.md` remains the outcome-metric layer it points back to.
 
 In one line: how the research measures whether the financial products actually move the SDG outcomes they target — the causal-identification strategy (building on OQ-4 / OQ-5), the outcome metrics tied to specific climate and poverty goals, and the verification arrangement (OQ-7) that keeps the measurement independent.
 
@@ -79,4 +98,4 @@ Full plan in **`docs/venture/funding-pipeline.md`**, tracker in **`data/funders.
 
 ## Open questions this framework raises
 
-Logged in `data/open-questions.csv`: OQ-9 (mapping-score criteria and weights), OQ-10 (the internal go/no-go economics threshold), OQ-11 (which experiments become the flagship pilots).  
+Logged in `data/open-questions.csv`: OQ-9 (mapping-score criteria and weights), OQ-10 (the internal go/no-go economics threshold), OQ-11 (which experiments become the flagship pilots), OQ-14 (which research-question strand leads the primary proposal), OQ-15 (resolved: a sequenced portfolio rather than a swap), OQ-16 (which single field pilot is the anchor).  
