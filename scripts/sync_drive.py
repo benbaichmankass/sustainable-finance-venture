@@ -58,8 +58,30 @@ def now_iso():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def normalise(text):
+    """Canonical form for any text crossing the Drive <-> repo boundary.
+
+    Strips a UTF-8 BOM and folds CRLF/CR to LF. Both matter, and the second one
+    is not cosmetic: write_repo_file() opens with newline="\n", which does NOT
+    strip a \r already inside the string, while read_repo_file() opens with
+    universal newlines, which does. So a CRLF-bearing export written to disk and
+    read back is a DIFFERENT string, its hash never matches the baseline that was
+    recorded at write time, and repo_changed is True on every run forever.
+
+    That is what wedged DRV-11 (docs/phd/phd-scoring-rubric.md) in Conflict from
+    2026-08-21: the recorded baseline hashes the bytes as written, the engine
+    hashes them as read, and no amount of hand-editing either side can reconcile
+    the two. Normalising both ends of the round-trip is the fix.
+    """
+    if text is None:
+        return None
+    if text.startswith("\ufeff"):
+        text = text[1:]
+    return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
 def sha(text):
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+    return hashlib.sha256(normalise(text).encode("utf-8")).hexdigest()
 
 
 # --- manifest I/O -------------------------------------------------------
@@ -93,13 +115,35 @@ def load_creds():
 
 # --- Drive: docs -----------------------------------------------------------
 
+class MarkdownExportUnavailable(Exception):
+    """Drive would not give us markdown for a Doc we sync as markdown."""
+
+
 def export_doc_text(drive, file_id):
+    """Export a Doc as markdown. Never silently substitute plain text.
+
+    There used to be a fallback here: on any HttpError it re-exported as
+    text/plain and returned that. It looks harmless and is not. Google's
+    text/plain export drops every heading marker, every bold marker and every
+    table pipe, and adds a BOM and CRLF endings - so a transient API error on
+    one run would overwrite a perfectly good markdown file in the repo with a
+    formatting-stripped rendering, commit it to main, and report success.
+
+    That is exactly what happened to docs/phd/phd-scoring-rubric.md on
+    2026-08-21: 8 headings, 4 tables and all bold gone, replaced by 212 tabs.
+    A pull that destroys formatting is a data-loss event, not a sync, so it now
+    raises and the caller marks the row Error and moves on. Losing a cycle on
+    one document is strictly better than losing the document.
+    """
     try:
         data = drive.files().export(fileId=file_id, mimeType=DOC_EXPORT_MIME).execute()
-    except HttpError:
-        log("  ! markdown export unavailable for %s, falling back to plain text" % file_id)
-        data = drive.files().export(fileId=file_id, mimeType=DOC_EXPORT_FALLBACK_MIME).execute()
-    return data.decode("utf-8") if isinstance(data, (bytes, bytearray)) else data
+    except HttpError as exc:
+        raise MarkdownExportUnavailable(
+            "markdown export unavailable for %s (%s); refusing to fall back to "
+            "%s, which would strip all formatting" % (file_id, exc, DOC_EXPORT_FALLBACK_MIME)
+        )
+    text = data.decode("utf-8") if isinstance(data, (bytes, bytearray)) else data
+    return normalise(text)
 
 
 def create_doc(drive, parent_id, title, content):
@@ -150,14 +194,14 @@ def read_repo_file(rel_path):
     if not os.path.exists(full):
         return None
     with open(full, encoding="utf-8") as fh:
-        return fh.read()
+        return normalise(fh.read())
 
 
 def write_repo_file(rel_path, content):
     full = os.path.join(ROOT, rel_path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(content)
+        fh.write(normalise(content))
 
 
 # --- conflict reporting (plain GitHub REST call, no extra dependency) ------
@@ -314,6 +358,13 @@ def main():
             continue
         try:
             reconcile_row(row, id_index, drive, sheets)
+        except MarkdownExportUnavailable as e:
+            # Deliberately not fatal and deliberately not silent: the row is left
+            # untouched on both sides and flagged for a human, rather than pulled
+            # in a degraded form. See export_doc_text().
+            log("  ! %s: %s" % (row["ID"], e))
+            row["Status"] = "Error"
+            errors += 1
         except HttpError as e:
             log("  ! %s: Drive API error: %s" % (row["ID"], e))
             row["Status"] = "Error"
