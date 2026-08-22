@@ -309,6 +309,16 @@ def reconcile_row(row, id_index, drive, sheets):
     repo_changed = repo_hash != row["Baseline_Repo_Hash"]
 
     if not drive_changed and not repo_changed:
+        # Both sides hash to their baselines, so this row is genuinely in sync.
+        # A real conflict never lands here (in a conflict neither baseline matches),
+        # so it is safe - and necessary - to clear a stale Error left by an earlier
+        # transient failure. Without this, one Drive API hiccup marks a row Error
+        # forever, because nothing else ever writes Status on an unchanged row.
+        # Last_Synced_At is deliberately left alone: nothing moved, and touching it
+        # every run would commit 33 rows of churn every twenty minutes.
+        if row["Status"] != "Synced":
+            log("  %s: verified in sync - clearing stale %s" % (row["ID"], row["Status"]))
+            row["Status"] = "Synced"
         return
 
     if drive_changed and repo_changed:

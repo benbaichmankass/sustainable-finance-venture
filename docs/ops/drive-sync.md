@@ -1,6 +1,6 @@
 # Drive sync — bidirectional, automated, repo stays the source of truth
 
-**Status:** v1 — narrative docs only · **Last updated:** 2026-08-05
+**Status:** v1 — narrative docs only · **Last updated:** 2026-08-22
 
 ## What this is, and what it isn't
 
@@ -45,7 +45,7 @@ One row per synced item, plus one `folder`-type row for the master Drive folder 
 | `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |
 | `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |
 | `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |
-| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. |
+| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. `Error` is set by a failed run and cleared automatically by the next run that finds the row unchanged on both sides; `Conflict` is not — it needs a human. |
 
 ## The reconciliation algorithm
 
@@ -116,6 +116,33 @@ Recovering it needed the normalisation fix *plus* a deliberate re-baseline of bo
 to the normalised repo hash, which makes the engine see repo-unchanged / Drive-changed and
 take the pull branch. Note that re-baselining this way needs only a locally computable
 value — it is the one manoeuvre that does not require predicting Drive's export hash.
+
+**3. `Status` heals itself once a row verifies in sync.**
+When both sides hash to their baselines, `reconcile_row()` returns early — nothing to do.
+It used to return without touching `Status`, which meant a row marked `Error` by a
+one-off API failure kept saying `Error` for ever, because no later run ever writes
+`Status` on an unchanged row. It now clears a stale non-`Synced` status on the way out.
+This cannot mask a real conflict: in a genuine conflict neither baseline matches, so that
+branch is never reached. `Last_Synced_At` is deliberately *not* bumped — nothing moved,
+and touching it would commit all 33 rows every twenty minutes.
+
+### The second incident, which is the fix working
+
+`DRV-09` (`docs/phd/phd-funding-landscape.md`), 2026-08-22T14:53Z — the first scheduled
+run after the change above shipped. Google returned `HTTP 500 Internal Error` on the
+markdown export. Under the old code that would have been a silent `text/plain` pull and a
+second corrupted document on `main`. Instead the run logged
+
+```
+! DRV-09: markdown export unavailable for 1kq8...LdFs (<HttpError 500 ...
+  returned "Internal Error">); refusing to fall back to text/plain, which
+  would strip all formatting
+Done. 1 row(s) errored.
+```
+
+and left the file untouched. The export succeeded again on the next run 37 minutes later.
+The document was never at risk; only the `Status` field lagged, which is what change 3
+above fixes.
 
 Regression cover: `scripts/test_sync_drive.py` (stdlib only, no Drive credentials needed).
 
