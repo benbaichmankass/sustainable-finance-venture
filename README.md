@@ -80,7 +80,7 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 |---|---|
 | Research questions | 1 core, 7 strands, 21 sub-questions — lead strand open (OQ-14) |
 | Literature components | 26 — 10 are P1, needed before the proposal goes out |
-| Literature anchors | 27 logged (23 reviewed, 4 to read) — against a P1 target of ~96 |
+| Literature anchors | 30 logged (23 reviewed, 7 to read) — against a P1 target of ~96 |
 | Synthesis memos | 3 reviewed, 1 drafted, 5 outlined |
 | Open questions | 17 — 4 answered, 7 partially answered, 5 open, 1 dropped |
 | Milestones | 8 done, 4 in progress, 22 not started |

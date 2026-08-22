@@ -41,12 +41,12 @@ Full detail in `data/lit-components.csv`. Summary:
 |---|---|---|---|
 | LC-01 | Savings groups and community finance institutions | 4 | 10 |
 | LC-02 | Group-lending mechanisms: information, sanction, repeat interaction | 4 | 12 |
-| LC-03 | Index and parametric insurance: demand, basis risk, impact | 1 | 12 |
+| LC-03 | Index and parametric insurance: demand, basis risk, impact | 4 | 12 |
 | LC-04 | Bundled credit and insurance: theory and evidence | 4 | 10 |
 | LC-05 | Resilience and consumption-smoothing outcome measurement | 0 | 8 |
 | LC-06 | Climate and adaptation finance: gap sizing and instruments | 0 | 8 |
 | LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |
-| LC-08 | Portfolio correlation and covariate risk in microfinance | 1 | 8 |
+| LC-08 | Portfolio correlation and covariate risk in microfinance | 2 | 8 |
 | LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |
 | LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |
 
@@ -97,11 +97,11 @@ calibrated without it.
 
 ## Pace, and an honest word about the numbers
 
-206 cumulative target anchors. Of those, 35 slots are already filled, by 27 distinct
+206 cumulative target anchors. Of those, 39 slots are already filled, by 30 distinct
 sources - several sources serve more than one component, which is why the two numbers
 differ. That is a full PhD-scale literature base and it is not a six-week job.
 
-The near-term job is **P1: 96 targets, 17 filled, so 79 new rows.** At the 12 to 15
+The near-term job is **P1: 96 targets, 21 filled, so 75 new rows.** At the 12 to 15
 sources a week this repo's workflow has actually sustained, that is six to seven weeks
 of reading. The two-pass structure from v1 still applies and is what makes the number
 tractable:
@@ -172,7 +172,7 @@ open question that cited it - CLAUDE.md §7 flags these three as the ones that d
 - [x] v1 four-axis Tier-1 scan complete (23 anchors)
 - [x] Memos 1 to 3 drafted and reviewed
 - [x] Component breakdown defined (LC-01 … LC-26)
-- [ ] P1 components read (0 of 10 complete)
+- [ ] P1 components read (0 of 10 complete; LC-04 and LC-03 partially covered)
 - [ ] Memos 5, 6, 7 drafted - the P1 outputs
 - [ ] Deep-read anchor set selected (target 15 to 20)
 - [ ] P2 components read
