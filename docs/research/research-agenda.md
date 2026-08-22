@@ -1,116 +1,163 @@
-# Research Agenda: Literature Review Plan
+# Research Agenda: the literature review plan
+
+**Status:** v2 (2026-08-22) · **Owner:** BB · **Tracker:** `data/lit-components.csv` (LC-01 … LC-26)
+**Supersedes:** v1 (four-axis plan, 2026-07). The axes are kept as a classification; they are no longer the unit of work.
 
 ## Objective
 
-Build a structured, reusable literature base supporting: (1) a PhD proposal, (2) product and pilot design, and (3) an eventual investor-grade thesis for securitizing community-based financial products.
+Build a literature base that supports three different consumers: a PhD proposal a
+supervisor will take seriously, product and pilot design decisions, and an
+investor-grade thesis. Those are not the same reading list, but they overlap enough
+to be built once.
 
-## Review axes
+## What changed from v1, and why
 
-1. **Community-based finance / VSLAs / savings groups** \-- impact, governance, risk, scaling limits  
-2. **Microfinance outcomes & impact evaluation** \-- what RCTs and systematic reviews actually say  
-3. **Securitization & blended finance for development** \-- how microfinance assets have been securitized, challenges, best practices  
-4. **Impact-focused structured finance / SDG financing** \-- how DFIs/OECD conceptualize risk-sharing and capital mobilization
+v1 organised the review into four broad axes - community finance, microfinance
+impact, securitisation, blended finance. That was the right shape for a first pass
+and it worked: 23 anchors and three reviewed memos came out of it.
 
-## Prioritized reading lists
+It has stopped being useful for one specific reason: **an axis does not tell you
+what to read next.** "Securitisation" spans rating criteria, true-sale law, African
+market depth and portfolio correlation - four bodies of work with different
+questions, different sources and very different urgency. Meanwhile three gaps
+flagged in `docs/phd/research-proposal.md` §1 sat unaddressed for weeks precisely
+because no axis owned them.
 
-### Axis 1 \-- VSLAs / savings groups
+v2 replaces the axis with the **component** as the unit of work. A component is
+scoped so that reading it produces a working command of one identifiable body of
+knowledge, and so that its completion is a checkable event rather than a feeling.
 
-**Tier 1**
+Each component carries: why it matters to *this* project, which research-question
+strands it serves, the specific questions it must answer, search terms, its current
+anchors, a target, and the memo it feeds.
 
-- Ksoll et al., "Impact of Village Savings and Loan Associations" (2016)  
-- Brannen, "Evaluation of the impact of VSLAs" (2016)  
-- Hatlebakk (2024) evidence review on VSLAs  
-- Anyango et al. VSLA case study (Microsave / FindevGateway)
+## The components
 
-**Tier 2**
+Full detail in `data/lit-components.csv`. Summary:
 
-- Beyene, "Assessment on the Effects of VSLAs"  
-- Other geography-specific microfinance diagnostics
+### P1 - needed before the proposal goes out (9 components, 88 anchors cumulative)
 
-### Axis 2 \-- Microfinance outcomes & RCT methods
+| ID | Component | Have | Target |
+|---|---|---|---|
+| LC-01 | Savings groups and community finance institutions | 4 | 10 |
+| LC-02 | Group-lending mechanisms: information, sanction, repeat interaction | 4 | 12 |
+| LC-03 | Index and parametric insurance: demand, basis risk, impact | 1 | 12 |
+| LC-04 | Bundled credit and insurance: theory and evidence | 0 | 10 |
+| LC-05 | Resilience and consumption-smoothing outcome measurement | 0 | 8 |
+| LC-06 | Climate and adaptation finance: gap sizing and instruments | 0 | 8 |
+| LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |
+| LC-08 | Portfolio correlation and covariate risk in microfinance | 1 | 8 |
+| LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |
 
-**Tier 1**
+**LC-04 is the most important empty cell in this repo.** The master proposal
+already asserts that the literature raises but rarely tests loan-insurance
+bundling. That assertion is currently unverified, and bundling is what the flagship
+experiments actually do. If the claim turns out to be wrong - if someone has run
+this trial - the proposal's central novelty claim has to change. Read it first.
 
-- World Bank, "Impact Evaluation for Microfinance"  
-- Karlan et al., methodological reviews / RCT applications  
-- Stewart et al. / Duvendack et al., systematic reviews on microfinance impact  
-- J-PAL-type intro notes on RCTs for microfinance
+### P2 - needed for the thesis, not for the first email (11 components, 82 anchors)
 
-**Tier 2**
+LC-10 securitisation law and true sale · LC-11 African and EM capital-market depth ·
+LC-12 blended finance and first-loss · LC-13 microcredit impact and the
+meta-analytic record · LC-14 digital financial rails and data capture ·
+LC-15 PAYGO and energy-access receivables · LC-16 agricultural value chains,
+warehouse receipts and price risk · LC-17 over-indebtedness and consumer protection ·
+LC-18 financialisation of community institutions · LC-19 regulation of savings
+groups and microinsurance · LC-20 microfinance cost-to-serve and unit economics.
 
-- Ribeiro (2022), scientometric analysis and systematic review of microfinance outcomes  
-- Van Rooyen et al., "Impact of Microfinance in Sub-Saharan Africa"  
-- World Bank, "Microfinance: A Critical Literature Survey"  
-- Brau & Woller, comprehensive review
+**LC-18 is the one to not skip.** It holds the critique that external capital
+corrodes the institutions it enters. A proposal that does not engage it reads as
+naive, and RQ-04 is built on taking it seriously rather than dismissing it.
 
-### Axis 3 \-- Microfinance securitization & ABS
+### P3 - context (6 components, 36 anchors)
 
-**Tier 1**
+LC-21 microsavings and household financial behaviour · LC-22 remittances and migrant
+financial arrangements · LC-23 gender and group composition · LC-24 coffee-sector
+economics and cooperative finance · LC-25 data governance and consent ·
+LC-26 impact-evaluation method advances.
 
-- "Securitization and the Challenges Faced in Micro Finance"  
-- FSD Africa / BII reports on microfinance ABS and African securitization  
-- ABS primers / rating criteria (Fitch structured finance criteria, GCR trade receivables, S\&P methodology)
+LC-24 was added on 2026-08-22 when coffee-grower cooperatives were raised as a
+candidate population. It is P3 because it is a *site* question, not a *thesis*
+question - but if the coffee cluster (EXP-09 to EXP-11) is taken forward it
+promotes to P1 immediately.
 
-**Tier 2**
+## Pace, and an honest word about the numbers
 
-- Milken Institute / other reports on accelerating securitization in Africa  
-- Academic/policy papers on DFIs and private-sector mobilization
+206 cumulative target anchors, of which 13 already exist. That is a full PhD-scale
+literature base and it is not a six-week job.
 
-### Axis 4 \-- Blended finance & SDG capital
+What is a six-week job is **P1: about 77 new rows.** At the 12 to 15 sources a week
+this repo's workflow has actually sustained, that is five to six weeks of reading.
+The two-pass structure from v1 still applies and is what makes the number tractable:
 
-**Tier 1**
+- **Pass 1, breadth.** Abstract, introduction, conclusion, methods and limitations.
+  Enough to write an honest matrix row and know whether the source matters. Most
+  rows never get more than this, and that is fine - the row says so.
+- **Pass 2, depth.** 15 to 20 anchors total across all components get a full read
+  with detailed notes on design and assumptions. These are the sources the proposal
+  argues *with* rather than merely cites.
 
-- IFC, "Role of blended finance in an evolving global context"  
-- Convergence, "Advancing Development Through Blended Finance"  
-- OECD, "Scaling up blended finance in developing countries"  
-- Blended finance best-practice guides
-
-**Tier 2**
-
-- Climate/nature blended finance reports (LSE/Grantham, Amundi)  
-- UN / World Bank SDG financing reports
+Do not let the target numbers turn into a quota. A component with six honest rows
+and a clearly stated gap is worth more than ten rows padded to hit a number, and
+CLAUDE.md §6 is not negotiable: **nothing is logged that has not been read.**
 
 ## Workflow
 
-### Step 1 \-- Literature matrix
+**Adding a source** - use the `add-literature` skill. It enforces the field
+standard, the ID scheme and the no-fabrication rule. Every row gets `Axis` (the v1
+classification, retained) and should be cross-referenced from its component's row.
 
-Maintained in `/literature/lit-matrix.csv` (mirrored in the Master Reference Tracker Google Sheet). Fields: ID, Axis, Geography, Method, Population/Context, Key Findings, Limitations, Relevance (Product/Risk/Impact), Open Questions, Link/Citation.
+**Working a component** - read its `Questions_To_Answer` first; those are what the
+component is *for*. Use `Search_Terms` as the starting query set, then forward and
+backward citation search from whatever anchor turns out to be central. When the
+component's questions can be answered without hedging, mark it `Reviewed`.
 
-### Step 2 \-- First pass: breadth (target \~2-3 weeks)
+**Component status vocabulary:** `Not started` · `Partially covered` · `In progress`
+· `Reviewed`.
 
-Scan Tier 1 sources per axis: abstract, intro, conclusion, methods/limitations. Log each as a matrix row. Target: 30-50 entries.
+## Synthesis memos
 
-### Step 3 \-- Second pass: targeted deep dives (\~10-15 anchor pieces)
+Memos 1 to 3 exist and are Reviewed. v2 maps every component to a memo, extending
+the set to nine:
 
-- 3-4 on VSLAs / community finance  
-- 3-4 on microfinance RCTs / impact  
-- 2-3 on microfinance securitization / ABS  
-- 2-3 on blended finance / institutional capital
+| Memo | Covers | State |
+|---|---|---|
+| MEMO-1 | LC-01 - what savings groups achieve and where they fail | Reviewed, extend with LC-01 |
+| MEMO-2 | LC-13 - microfinance impact evidence | Reviewed, extend with LC-13 |
+| MEMO-3 | LC-12 partial - securitisation and blended finance as applied | Reviewed |
+| MEMO-4 | LC-02, LC-13, LC-17, LC-18, LC-21, LC-23 - the mechanism and its critics | To draft |
+| MEMO-5 | LC-03, LC-04, LC-05 - insurance, bundling and what resilience means | To draft (P1) |
+| MEMO-6 | LC-06, LC-26 - the climate financing gap and how to measure a response | To draft (P1) |
+| MEMO-7 | LC-07, LC-08, LC-09 - can these cash flows be modelled | To draft (P1) |
+| MEMO-8 | LC-10, LC-11, LC-19 - the legal and market preconditions | To draft |
+| MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 - sector and infrastructure notes | To draft |
 
-Capture detailed notes on design, assumptions, context; identify where this project can improve on prior design.
+Every memo carries an explicit "implications for this project" section. When a
+memo's conclusions change, update the memo, its `synthesis-memos.csv` row and any
+open question that cited it - CLAUDE.md §7 flags these three as the ones that drift.
 
-### Step 4 \-- Synthesis memos
+## Source access
 
-1. What VSLAs and similar structures actually achieve (and where they fail)  
-2. What microfinance RCTs and reviews say about impact and design  
-3. How securitization/blended finance has been applied to microfinance and what structural constraints remain
+- **Open access first**, and by preference: World Bank, OECD, IFC, CGAP, J-PAL,
+  FinDev Gateway, IPA, 3ie, UNEP, IAIS. They are citable by anyone reading this repo
+  later, which matters for a public repo.
+- **Working-paper versions** (NBER, IZA, SSRN, RePEc, institutional repositories)
+  are usually available where the journal version is not, and are acceptable as
+  anchors provided the row records which version was read.
+- **Paywalled** sources need institutional access. This is one of the concrete,
+  unglamorous arguments for the PhD affiliation, and worth noting: LC-07 and LC-08
+  in particular sit largely behind finance-journal paywalls.
+- Track citations forward and backward from anchors rather than relying on search
+  alone; the highest-value sources for LC-04 in particular are unlikely to surface
+  from a keyword query.
 
-Each memo: 2-4 pages, with an explicit "implications for this project" section. Store in `/literature/notes/`.
+## Status
 
-## Resource access notes
-
-- Many key sources are open access: World Bank, OECD, IFC, FindevGateway, J-PAL, CGAP.  
-- Paywalled sources (ScienceDirect, Springer, Taylor & Francis) require institutional access \-- use university/library credentials and Zotero to manage and export references.  
-- Google Scholar recommended for citation tracking (forward/backward citation search from anchor papers).
-
-## Status tracking
-
-- [ ] Axis 1 Tier 1 scanned  
-- [ ] Axis 2 Tier 1 scanned  
-- [ ] Axis 3 Tier 1 scanned  
-- [ ] Axis 4 Tier 1 scanned  
-- [ ] Anchor pieces selected for deep dive  
-- [ ] Synthesis memo 1 drafted  
-- [ ] Synthesis memo 2 drafted  
-- [ ] Synthesis memo 3 drafted
-
+- [x] v1 four-axis Tier-1 scan complete (23 anchors)
+- [x] Memos 1 to 3 drafted and reviewed
+- [x] Component breakdown defined (LC-01 … LC-26)
+- [ ] P1 components read (0 of 9 complete)
+- [ ] Memos 5, 6, 7 drafted - the P1 outputs
+- [ ] Deep-read anchor set selected (target 15 to 20)
+- [ ] P2 components read
+- [ ] Memos 4, 8, 9 drafted

@@ -844,7 +844,11 @@ function renderOverview() {
         hasPrivate ? contacted + " contacted" : "status in private overlay") +
       tile("PhD programs", (D.phdPrograms || []).length,
         hasPrivate ? "" : "status in private overlay") +
-      tile("Experiment ideas", (D.experiments || []).length, "climate + poverty, Africa/MENA") +
+      tile("Research questions", (D.researchQuestions || []).filter(function (r) { return r.Tier === "Strand"; }).length,
+        "strands under one core question") +
+      tile("Lit components", (D.litComponents || []).length,
+        (D.litComponents || []).filter(function (r) { return r.Priority === "P1"; }).length + " P1, before the proposal") +
+      tile("Experiment ideas", (D.experiments || []).length, "scored; site and population adaptable") +
       tile("Funders tracked", (D.funders || []).length, "grant pipeline") +
       tile("Documents", (D.docs || []).length, (c.totalWords || 0).toLocaleString() + " words") +
       tile("Resources", (D.resources || []).length, "incl. Drive vault") +
@@ -1422,6 +1426,140 @@ function renderLibrary() {
   return html;
 }
 
+/* The research-question architecture: one core question, seven strands, and the
+   sub-questions under each. Rendered above the literature because the questions are
+   what the reading is for. See docs/phd/research-questions.md. */
+function researchQuestionsBlock() {
+  var rqs = D.researchQuestions || [];
+  if (!rqs.length) return "";
+  var core = rqs.filter(function (r) { return r.Tier === "Core"; })[0];
+  var lead = rqs.filter(function (r) { return r.Status === "Lead"; })[0];
+
+  return '<section class="panel"><h2>Research questions</h2>' +
+    '<p class="lede">One core question and seven strands, each framed for a different kind of advisor. ' +
+    'The constraint that keeps this honest: <strong>every strand is answerable from the same fieldwork</strong> — ' +
+    'they are different questions about one body of evidence, not different projects. ' +
+    'See <code>docs/phd/research-questions.md</code>.</p>' +
+    (core ? '<div class="card" style="margin-bottom:16px;border-color:var(--accent)">' +
+      "<strong>" + esc(core.ID) + " — the core question</strong>" +
+      '<p style="margin:8px 0 0;font-size:14px;color:var(--text-1)">' + esc(core.Question) + "</p>" +
+      '<p class="hint" style="margin:8px 0 0">Institution-neutral by design. Every strand below is a narrowing of it.</p></div>' : "") +
+    decisionsCallout(["OQ-14"]) +
+    '<p class="hint" style="margin:0 0 10px">' +
+      (lead ? "Lead strand: <code>" + esc(lead.ID) + "</code> — " + esc(lead.Short_Form)
+            : "No lead strand chosen yet (OQ-14) — deliberately, until an advisor conversation is live.") +
+    "</p>" +
+    '<div id="rq-tbl"></div></section>';
+}
+function wireResearchQuestions() {
+  var rqs = D.researchQuestions || [];
+  var host = by("rq-tbl");
+  if (!host) return;
+  var strands = rqs.filter(function (r) { return r.Tier === "Strand"; });
+  var subsOf = function (id) {
+    return rqs.filter(function (r) { return r.Tier === "Sub" && r.Parent === id; });
+  };
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Short_Form", label: "The question, short", cls: "wrap-cell" },
+    { key: "Discipline_Frame", label: "Frame" },
+    { label: "Sub-questions", sortVal: function (r) { return subsOf(r.ID).length; },
+      render: function (r) { return String(subsOf(r.ID).length); } },
+    { label: "Status", render: function (r) { return pill(r.Status); } }
+  ];
+  function detail(r) {
+    var subs = subsOf(r.ID);
+    return fields([
+      ["Full question", esc(r.Question)],
+      ["Advisor profile", esc(r.Advisor_Profile)],
+      ["Method backbone", esc(r.Method_Implied)],
+      ["Fits programmes", esc(r.Fits_Programs)],
+      ["Literature components", esc(r.Component_Refs)],
+      ["Candidate experiments", esc(r.Experiment_Refs)],
+      ["Evidence", esc(r.Evidence_Refs)],
+      ["Sub-questions", subs.length
+        ? '<ul style="margin:0;padding-left:18px">' + subs.map(function (s) {
+            return "<li><code>" + esc(s.ID) + "</code> " + esc(s.Short_Form) + "</li>";
+          }).join("") + "</ul>"
+        : ""]
+    ]);
+  }
+  host.innerHTML = buildTable(strands, cols, detail);
+  wireTable();
+}
+
+/* The literature review broken into components, each with an anchor target. The
+   progress figure is deliberately "anchors logged / target", not a percentage of
+   anything — see docs/research/research-agenda.md on why the targets are not quotas. */
+function refCount(s) {
+  s = String(s || "").trim();
+  if (!s) return 0;
+  return s.split(";").filter(function (x) { return x.trim(); }).length;
+}
+function litComponentsBlock() {
+  var lcs = D.litComponents || [];
+  if (!lcs.length) return "";
+  var have = lcs.reduce(function (n, r) { return n + refCount(r.Current_Anchors); }, 0);
+  var target = lcs.reduce(function (n, r) { return n + (parseInt(r.Target_Anchors, 10) || 0); }, 0);
+  var p1 = lcs.filter(function (r) { return r.Priority === "P1"; });
+  var p1Have = p1.reduce(function (n, r) { return n + refCount(r.Current_Anchors); }, 0);
+  var p1Target = p1.reduce(function (n, r) { return n + (parseInt(r.Target_Anchors, 10) || 0); }, 0);
+
+  return '<section class="panel"><h2>Literature components</h2>' +
+    '<p class="lede">The review broken into units of work. An axis does not tell you what to read next; ' +
+    'a component does — it carries the questions it must answer, its search terms, its anchor target and ' +
+    'the memo it feeds. <strong>P1 gates the proposal</strong>; P2 gates the thesis. ' +
+    'Plan in <code>docs/research/research-agenda.md</code>.</p>' +
+    '<div class="grid g3" style="margin-bottom:14px">' +
+      '<div class="card"><strong>' + p1Have + " / " + p1Target + "</strong>" +
+        '<p class="hint" style="margin:4px 0 0">P1 anchors logged — the pre-proposal set</p></div>' +
+      '<div class="card"><strong>' + have + " / " + target + "</strong>" +
+        '<p class="hint" style="margin:4px 0 0">all components, cumulative</p></div>' +
+      '<div class="card"><strong>' + lcs.filter(function (r) { return r.Status === "Not started"; }).length +
+        " of " + lcs.length + "</strong>" +
+        '<p class="hint" style="margin:4px 0 0">components not yet started</p></div>' +
+    "</div>" +
+    '<div class="filters"><select class="pickr" id="lc-pri"><option value="">All priorities</option>' +
+      '<option value="P1">P1 — before the proposal</option>' +
+      '<option value="P2">P2 — for the thesis</option>' +
+      '<option value="P3">P3 — context</option></select>' +
+      '<span class="hint">Click a row for the questions it has to answer and its search terms.</span></div>' +
+    '<div id="lc-tbl"></div></section>';
+}
+function wireLitComponents() {
+  var lcs = D.litComponents || [];
+  var host = by("lc-tbl"), pri = by("lc-pri");
+  if (!host) return;
+  var cols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Component", label: "Component", cls: "wrap-cell" },
+    { key: "Priority", label: "Priority" },
+    { label: "Anchors", sortVal: function (r) { return refCount(r.Current_Anchors); },
+      render: function (r) {
+        return refCount(r.Current_Anchors) + " / " + esc(r.Target_Anchors);
+      } },
+    { key: "Output_Memo", label: "Feeds" },
+    { label: "Status", render: function (r) { return pill(r.Status); } }
+  ];
+  function detail(r) {
+    return fields([
+      ["Why it matters", esc(r.Why_It_Matters)],
+      ["Questions it has to answer", esc(r.Questions_To_Answer)],
+      ["Serves research questions", esc(r.Serves_RQs)],
+      ["Search terms", '<code style="font-size:12.5px">' + esc(r.Search_Terms) + "</code>"],
+      ["Anchors so far", esc(r.Current_Anchors)],
+      ["Axis", esc(r.Axis)]
+    ]);
+  }
+  function draw() {
+    var rows = lcs.filter(function (r) { return !pri.value || r.Priority === pri.value; });
+    host.innerHTML = buildTable(rows, cols, detail, { sortIdx: 2, sortDir: 1 });
+    wireTable();
+  }
+  pri.addEventListener("change", draw);
+  draw();
+}
+
 function renderResearch() {
   var lit = D.literature || [], memos = D.memos || [];
   var axes = [];
@@ -1452,7 +1590,8 @@ function renderResearch() {
     ]);
   }
 
-  var html = '<section class="panel"><h2>Research plan</h2>' +
+  var html = researchQuestionsBlock() + litComponentsBlock() +
+    '<section class="panel"><h2>Evidence base</h2>' +
     '<p class="lede">The literature matrix, the synthesis memos built on it, and the review workflow. ' +
     'Click any row to see findings, limitations and links.</p>' +
 
@@ -1473,6 +1612,8 @@ function renderResearch() {
     '<div id="lit-tbl"></div></section>';
 
   setTimeout(function () {
+    wireResearchQuestions();
+    wireLitComponents();
     var q = by("lit-q"), ax = by("lit-axis"), host = by("lit-tbl"), cnt = by("lit-count");
     function draw() {
       var rows = lit.filter(function (r) {
@@ -2169,47 +2310,90 @@ function decisionsCallout(ids) {
     }).join("") + "</ul></div>";
 }
 
+/* Priority_Band -> the same status hues, never a new palette slot. The band is the
+   scoring rubric's view; Status is the decision, and the two are allowed to disagree
+   (see OQ-15). That is why both columns are shown. */
+function bandPill(v) {
+  v = String(v || "").trim();
+  if (!v) return '<span class="hint">—</span>';
+  var cls = v === "Flagship candidate" ? "good" : v === "Strong" ? "warning" : "";
+  return '<span class="pill ' + cls + '"><span class="dot"></span>' + esc(v) + "</span>";
+}
 function renderExperiments() {
   var xs = D.experiments || [];
-  var geos = [];
-  xs.forEach(function (r) { if (geos.indexOf(r.Geography) < 0) geos.push(r.Geography); });
+  var geos = [], types = [];
+  xs.forEach(function (r) {
+    if (geos.indexOf(r.Geography) < 0) geos.push(r.Geography);
+    if (r.Type && types.indexOf(r.Type) < 0) types.push(r.Type);
+  });
+  types.sort();
 
   var cols = [
     { key: "ID", label: "ID", cls: "id" },
-    { key: "Community_Context", label: "Community", cls: "wrap-cell" },
-    { key: "Problem", label: "Problem", cls: "wrap-cell" },
-    { key: "SDG_Refs", label: "SDGs" },
+    { key: "Type", label: "Type" },
+    { key: "Population", label: "Population", cls: "wrap-cell" },
     { key: "Geography", label: "Geography" },
+    { key: "Composite", label: "Score" },
+    { label: "Band", sortKey: "Composite", render: function (r) { return bandPill(r.Priority_Band); } },
     { label: "Status", render: function (r) { return pill(r.Status); } }
   ];
+  function score(label, key, r) {
+    return '<span title="' + esc(label) + '">' + esc(label) + " <strong>" + esc(r[key] || "—") + "</strong>/5</span>";
+  }
   function detail(r) {
     return fields([
       ["Problem", esc(r.Problem)],
       ["Product concept", esc(r.Product_Concept)],
+      ["Design", esc(r.Design)],
+      ["Primary outcome", esc(r.Primary_Outcome)],
+      ["Community context", esc(r.Community_Context)],
       ["Toolbox fit", esc(r.Toolbox_Fit)],
-      ["Theme", esc(r.Theme)],
+      ["Scores", [
+        score("Significance", "Research_Significance", r),
+        score("PhD feasibility", "PhD_Feasibility", r),
+        score("Partner availability", "Partner_Availability", r),
+        score("Implementation ease", "Implementation_Ease", r),
+        score("Grant exposure", "Grant_Exposure", r)
+      ].join(" · ") + ' &nbsp;→&nbsp; <strong>' + esc(r.Composite) + "</strong> weighted"],
+      ["Candidate partners", esc(r.Candidate_Partners)],
+      ["Candidate funders", esc(r.Candidate_Funders)],
+      ["Research questions", esc(r.RQ_Refs)],
       ["SDG references", esc(r.SDG_Refs)],
       ["Linked records", esc(r.Linked_Refs)]
     ]);
   }
   var html = '<section class="panel"><h2>Research experiments</h2>' +
-    '<p class="lede">Candidate experiments for the research proposal: a community with a specified climate-or-poverty problem, ' +
-    'a financial product that could address it, and how the venture toolkit fits. These are ideas at concept stage — the raw ' +
-    'material the opportunity-mapping methodology scores and narrows to a flagship shortlist. See ' +
-    '<code>docs/phd/research-proposal.md</code> and <code>docs/research/methodology-opportunity-mapping.md</code>.</p>' +
-    decisionsCallout(["OQ-9", "OQ-11"]) +
-    '<div class="filters"><select class="pickr" id="exp-geo"><option value="">All geographies</option>' +
+    '<p class="lede">Thirty candidates, scored on research significance (35%), PhD feasibility (30%), partner ' +
+    'availability (15%), implementation ease (10%) and grant exposure (10%). <strong>The scores are our judgement, ' +
+    'not findings</strong> — the rubric behind each 1–5 anchor is in <code>docs/research/experiment-spec-template.md</code>, ' +
+    'and <code>scripts/score_experiments.py</code> recomputes the ranking. Note the spread of <em>types</em>: a PhD ' +
+    'cannot run eight field pilots, so the menu deliberately includes desk studies, investor experiments and simulations.</p>' +
+    '<div class="card" style="margin-bottom:16px">' +
+      '<strong>Band is not the decision.</strong> ' +
+      '<span class="hint">Priority_Band is the rubric\'s view; Status is what has actually been chosen. ' +
+      'They currently disagree — the OQ-11 flagship trio reads Selected with a Reserve band, because the rubric ' +
+      'weights PhD feasibility heavily and desk studies win that by construction. See OQ-15 before using this ' +
+      'ranking to pick a portfolio.</span></div>' +
+    decisionsCallout(["OQ-9", "OQ-11", "OQ-15"]) +
+    '<div class="filters">' +
+    '<select class="pickr" id="exp-type"><option value="">All types</option>' +
+    types.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +
+    '</select>' +
+    '<select class="pickr" id="exp-geo"><option value="">All geographies</option>' +
     geos.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +
-    '</select><span class="hint">Click a row for the product concept and toolbox fit.</span></div>' +
+    '</select><span class="hint" id="exp-count"></span></div>' +
     '<div id="exp-tbl"></div></section>';
   setTimeout(function () {
-    var geo = by("exp-geo"), host = by("exp-tbl");
+    var geo = by("exp-geo"), typ = by("exp-type"), host = by("exp-tbl"), cnt = by("exp-count");
     function draw() {
-      var rows = xs.filter(function (r) { return !geo.value || r.Geography === geo.value; });
-      host.innerHTML = buildTable(rows, cols, detail);
+      var rows = xs.filter(function (r) {
+        return (!geo.value || r.Geography === geo.value) && (!typ.value || r.Type === typ.value);
+      });
+      cnt.textContent = rows.length + " of " + xs.length + " — click a row for the design and score breakdown";
+      host.innerHTML = buildTable(rows, cols, detail, { sortIdx: 4, sortDir: -1 });
       wireTable(host);
     }
-    geo.addEventListener("change", draw); draw();
+    geo.addEventListener("change", draw); typ.addEventListener("change", draw); draw();
   }, 0);
   return html;
 }

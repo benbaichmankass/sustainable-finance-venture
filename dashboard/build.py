@@ -25,6 +25,8 @@ OUT_PRIVATE = os.path.join(ROOT, "dashboard", "data.private.js")
 # key -> path relative to repo root
 TABLES = {
     "literature": "literature/lit-matrix.csv",
+    "researchQuestions": "data/research-questions.csv",
+    "litComponents": "data/lit-components.csv",
     "openQuestions": "data/open-questions.csv",
     "productLines": "data/product-lines.csv",
     "riskTools": "data/risk-tools.csv",

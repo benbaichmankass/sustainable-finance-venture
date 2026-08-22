@@ -34,25 +34,29 @@ If it isn't in the repo, it isn't real. Google Docs and Sheets are inputs; this 
 CLAUDE.md                  How to work in this repo — conventions, standards, where things go
 dashboard/                 Generated status dashboard (open index.html)
 docs/                      Four groups, by what the doc is for
-  research/                The enquiry — thesis, agenda, methodology specs
-  phd/                     The academic track — proposal, rubric, funding landscape
+  research/                The enquiry — thesis, agenda, research framework, methodology specs
+  phd/                     The academic track — research questions, proposal, workplan,
+                           application pack, rubric, funding landscape
   venture/                 Building it — milestones, funding pipeline, macro watch
   ops/                     How the repo works — publishing, Drive sync, dashboard,
                            private overlay, scratchpad
 literature/
-  lit-matrix.csv           15 anchors (LIT-001 … LIT-015)
-  notes/memo-*.md          3 synthesis memos, all Reviewed
+  lit-matrix.csv           23 anchors (LIT-001 … LIT-023)
+  notes/memo-*.md          3 synthesis memos Reviewed, 6 more outlined
 product-design/
   business-plan.md         Venture-level plan, structuring assumptions, risks
   product-lines/           One doc per product line (PL-1 community, PL-2 agrivoltaic)
 risk-tools/
-  rt-*.md                  One spec per tool (RT-1..RT-5)
+  rt-*.md                  One spec per tool (RT-1..RT-6)
   schema/                  RT-1 origination schema (CSV) + design philosophy
   tools/                   Runnable toolchain: data generator, schema validator,
                            RT-2 scorecard, RT-3 monitor, RT-5 simulator, e2e tests
 data/                      Structured trackers — the dashboard reads these
   milestones.csv           M-NN    60/90-day milestones
   open-questions.csv       OQ-N    unresolved decisions
+  research-questions.csv   RQ-NN   the research-question architecture
+  lit-components.csv       LC-NN   the literature review, broken into units of work
+  experiments.csv          EXP-NN  candidate experiments, scored
   product-lines.csv        PL-N    product lines
   risk-tools.csv           RT-N    risk management tools
   macro-indicators.csv     MAC-NN  macro watchlist
@@ -74,22 +78,26 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 
 | | |
 |---|---|
-| Literature anchors | 15, all reviewed |
-| Synthesis memos | 3, all reviewed |
-| Open questions | 8 — 4 partially answered, 4 open |
-| Milestones | 2 done, 1 in progress, 8 not started |
+| Research questions | 1 core, 7 strands, 21 sub-questions — lead strand open (OQ-14) |
+| Literature components | 26 — 9 are P1, needed before the proposal goes out |
+| Literature anchors | 23, all reviewed — against a P1 target of ~88 |
+| Synthesis memos | 3 reviewed, 6 outlined |
+| Open questions | 15 — 3 answered, 7 partially answered, 4 open, 1 dropped |
+| Milestones | 7 done, 4 in progress, 19 not started |
+| Experiments | 30 candidates, scored — portfolio unresolved (OQ-15) |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
-| Risk tools | 5 specified, 0 built |
-| Macro watchlist | 12 indicators |
+| Risk tools | 6 — 5 in development, 1 specified |
+| Macro watchlist | 16 indicators |
 | Partners | 10 tracked (contact status in the private overlay) |
-| PhD programs | 9 shortlisted |
+| PhD programs | 52 scored and tiered |
 
-**The critical path:**
+**The critical path** (the PhD track's is sequenced in `docs/phd/proposal-workplan.md`):
 
-1. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape.
-2. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.
-3. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item.
-4. Choose the first instrument — loan, insurance, or bundled.
+1. Read LC-04 — bundled credit and insurance. Zero anchors, and it is the component the proposal's central novelty claim rests on. Find out in week one whether that claim survives.
+2. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item. Lead with a data-sharing request rather than a pilot proposal; it is a much smaller ask and it opens the same door.
+3. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape. Settle it against OQ-12 before any field deployment, because fields cannot be backfilled.
+4. Resolve OQ-15 — which experiments make the portfolio, and in what order.
+5. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.
 
 ## Open by default
 
