@@ -2369,12 +2369,13 @@ function renderExperiments() {
     'and <code>scripts/score_experiments.py</code> recomputes the ranking. Note the spread of <em>types</em>: a PhD ' +
     'cannot run eight field pilots, so the menu deliberately includes desk studies, investor experiments and simulations.</p>' +
     '<div class="card" style="margin-bottom:16px">' +
-      '<strong>Band is not the decision.</strong> ' +
-      '<span class="hint">Priority_Band is the rubric\'s view; Status is what has actually been chosen. ' +
-      'They currently disagree — the OQ-11 flagship trio reads Selected with a Reserve band, because the rubric ' +
-      'weights PhD feasibility heavily and desk studies win that by construction. See OQ-15 before using this ' +
-      'ranking to pick a portfolio.</span></div>' +
-    decisionsCallout(["OQ-9", "OQ-11", "OQ-15"]) +
+      '<strong>Band is not the decision — the portfolio is a sequence.</strong> ' +
+      '<span class="hint">Priority_Band is the rubric\'s view; Status is what has actually been chosen, and ' +
+      'the two are allowed to disagree. Resolved 2026-08-22 (OQ-15): because the rubric weights PhD feasibility ' +
+      'heavily, desk studies win by construction — so rather than swapping them in, the two that could ' +
+      '<em>falsify</em> the thesis run first (EXP-25 correlation, EXP-22 capture cost, both now Selected), and one ' +
+      'field anchor follows. Which field pilot is still open — OQ-16.</span></div>' +
+    decisionsCallout(["OQ-9", "OQ-15", "OQ-16"]) +
     '<div class="filters">' +
     '<select class="pickr" id="exp-type"><option value="">All types</option>' +
     types.map(function (g) { return '<option value="' + esc(g) + '">' + esc(g) + "</option>"; }).join("") +

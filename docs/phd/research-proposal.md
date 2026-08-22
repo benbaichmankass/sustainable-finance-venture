@@ -13,7 +13,7 @@ This is the spine of the research proposal. It holds the argument and links out 
 | 1\. Literature review | §1 below \+ `literature/` (matrix \+ memos), decomposed into components in `data/lit-components.csv` and planned in `docs/research/research-agenda.md` v2 | 23 anchors, 3 memos; **9 P1 components identified, ~77 anchors outstanding** (M-26) |
 | 2\. Opportunity-mapping methodology | `docs/research/methodology-opportunity-mapping.md` | Skeleton; weights resolved, first scoring pass run |
 | 3\. Impact-measurement methodology | `docs/research/research-framework.md` (spine) \+ `docs/research/methodology-impact-measurement.md` (outcome metrics) | **Framework written 2026-08-22**; power parameters uncalibrated (M-28) |
-| 4\. Experiment ideas | `data/experiments.csv` (EXP-01…EXP-30) \+ `docs/research/experiment-spec-template.md` | **Expanded to 30 and scored 2026-08-22**; portfolio unresolved (OQ-15) |
+| 4\. Experiment ideas | `data/experiments.csv` (EXP-01…EXP-30) \+ `docs/research/experiment-spec-template.md` | **Expanded to 30 and scored 2026-08-22**; sequence settled (OQ-15) - EXP-25 and EXP-22 selected, field anchor open (OQ-16) |
 | 5\. Grant / funding plan | `docs/venture/funding-pipeline.md` \+ `data/funders.csv` | Plan \+ tracker; funder-research pass outstanding (M-19) |
 | 6\. Research questions | `docs/phd/research-questions.md` \+ `data/research-questions.csv` | **Added 2026-08-22** - one core question, 7 strands, lead strand open (OQ-14) |
 | 7\. Application pack | `docs/phd/application-pack.md` \+ the Drive Vault | **Added 2026-08-22**; CV and personal sections outstanding (M-29) |
@@ -98,4 +98,4 @@ Full plan in **`docs/venture/funding-pipeline.md`**, tracker in **`data/funders.
 
 ## Open questions this framework raises
 
-Logged in `data/open-questions.csv`: OQ-9 (mapping-score criteria and weights), OQ-10 (the internal go/no-go economics threshold), OQ-11 (which experiments become the flagship pilots), OQ-14 (which research-question strand leads the primary proposal), OQ-15 (whether the 2026-08-22 scoring pass changes the flagship set).  
+Logged in `data/open-questions.csv`: OQ-9 (mapping-score criteria and weights), OQ-10 (the internal go/no-go economics threshold), OQ-11 (which experiments become the flagship pilots), OQ-14 (which research-question strand leads the primary proposal), OQ-15 (resolved: a sequenced portfolio rather than a swap), OQ-16 (which single field pilot is the anchor).  

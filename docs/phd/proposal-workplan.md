@@ -13,7 +13,7 @@ a component this sequences:
 | Research questions | `docs/phd/research-questions.md` + `data/research-questions.csv` | Done |
 | Literature decomposition | `docs/research/research-agenda.md` v2 + `data/lit-components.csv` | Done - reading not started |
 | Research framework | `docs/research/research-framework.md` | Done - parameters uncalibrated |
-| Experiment menu | `data/experiments.csv` + `docs/research/experiment-spec-template.md` | Done - portfolio unresolved (OQ-15) |
+| Experiment menu | `data/experiments.csv` + `docs/research/experiment-spec-template.md` | Done - sequence settled (OQ-15), field anchor open (OQ-16) |
 | Application pack | `docs/phd/application-pack.md` + the Vault folder | Done - CV and specifics outstanding |
 
 ## The honest state of things
@@ -49,6 +49,10 @@ Order within the phase, which is not arbitrary:
 
 1. **LC-04 first** (bundled credit and insurance). It can invalidate the novelty
    claim. Find out in week one, not week six.
+1b. **LC-24 early too** (coffee-sector economics). Promoted to P1 on 2026-08-22
+   because the coffee cluster outscores every other field candidate on assumptions
+   nobody has tested. It feeds the field-anchor decision (OQ-16), so it wants to be
+   read before that decision, not after.
 2. **LC-03 and LC-05** (index insurance; resilience measurement). These make the
    flagship experiments describable in a supervisor's own vocabulary.
 3. **LC-07 and LC-08** (credit-risk modelling; portfolio correlation). RQ-03 has no
@@ -69,8 +73,10 @@ the anchor count is hit.
   MDE is quotable, and quoting one would be decoration.
 - **Draft the pre-registration template.** Feeds M-08.
 - **Spec three to five experiments** against the template, once OQ-15 is decided.
-- **Resolve OQ-15** - the portfolio sequence. This is a decision, not research, and
-  it should not wait for the literature.
+- **OQ-15 is resolved** (2026-08-22): a sequenced portfolio. Two desk-executable
+  falsification tests first - EXP-25 and EXP-22 - then one field anchor. What remains
+  open is *which* field anchor, logged as OQ-16 and gated on an advisor, tested partner
+  access and the LC-04 and LC-24 reads.
 
 ## Phase 3 - advisor outreach
 
@@ -109,10 +115,13 @@ all been `Not started` for weeks.
   EXP-25 and EXP-26 need historical MIS data, not a field programme. That is a much
   smaller ask for a first contact and it opens the relationship.
 
-The last point is the most useful thing in this phase. Asking an MFI network for
-five years of anonymised portfolio data is a request they can say yes to in a week.
-Asking them to host a multi-year randomised pilot is a request that takes a year to
-answer. Lead with the former.
+The last point stopped being a tactic on 2026-08-22 and became the critical path.
+The resolved portfolio (OQ-15) puts EXP-25 and EXP-22 first, and both are partner-data
+studies - so partner access is no longer only the longest-lead item, it is the gate on
+the *first* piece of research the project does. Asking an MFI network for five years of
+anonymised portfolio data is a request they can say yes to in a week; asking them to
+host a multi-year randomised pilot takes a year to answer. Lead with the former, and
+lead with it now. Tracked as M-32.
 
 ## Phase 5 - grant applications
 
@@ -129,21 +138,24 @@ answer. Lead with the former.
 
 ## The critical path, in one line
 
-**LC-04 → memos 5 to 7 → first three approaches → verification partner → anchor grant.**
+**LC-04 → memos 5 to 7 → first three approaches → verification partner → anchor grant**,
+with **partner data access → EXP-25 and EXP-22** running underneath it from day one.
 
-Everything else is either parallel or downstream. The two things that can be done
-this week and unblock the most are: read LC-04, and send a data-sharing request to
-one MFI network.
+Everything else is either parallel or downstream. The two things that can be done this
+week and unblock the most are unchanged, and the second one now matters more than it
+did: read LC-04, and send a data-sharing request to one MFI network.
 
 ## Gates, as milestones
 
 | Milestone | Gate |
 |---|---|
 | M-26 | P1 literature components read; memos 5, 6, 7 drafted |
-| M-27 | OQ-15 resolved - the experiment portfolio and its sequence |
+| M-27 | OQ-15 resolved - the experiment portfolio and its sequence (**done 2026-08-22**) |
 | M-28 | Framework power parameters calibrated; pre-registration template drafted |
 | M-29 | Application pack complete and used for a first wave of three approaches |
 | M-30 | Three to five experiments specced against the template |
+| M-32 | Partner data access secured; EXP-25 and EXP-22 run |
+| M-33 | Field anchor chosen (OQ-16) |
 
 Existing milestones are not duplicated here: M-06 (supervisor outreach), M-11 (first
 applications), M-20 (verification partners), M-21 (anchor grant), M-19 (funder

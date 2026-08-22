@@ -351,6 +351,11 @@ Two of these - covariate dominance and the cost of capture - are testable **befo
 any field pilot, on administrative data and a costing exercise. That ordering is
 deliberate: the cheap experiments that could kill the thesis should run first.
 
+**This is now the adopted work sequence, not a recommendation.** OQ-15 was resolved on
+2026-08-22 in exactly these terms: EXP-25 (correlation) and EXP-22 (capture cost) are
+`Selected` and run before any field commitment; a single field anchor follows, and
+which one is deliberately still open (OQ-16).
+
 ---
 
 ## 12. What this framework still needs

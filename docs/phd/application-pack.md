@@ -136,6 +136,20 @@ effort: the HUJI PBC/Rotenstreich fellowship is citizens and permanent residents
 only, and German funding routes require a salaried TV-L position rather than a
 development scholarship (`docs/phd/phd-funding-landscape.md`).
 
+## The pack docs are not Drive-synced, and neither are their sources
+
+Worth knowing so nobody expects an edit to propagate. The thirteen pack documents live
+in the Vault and are deliberately outside `data/drive-links.csv` — that manifest is for
+the public bidirectional workfolder, and adding Vault content to it would publish the
+folder ID.
+
+Separately, five of the repo docs the pack is generated from
+(`research-questions.md`, `research-framework.md`, `proposal-workplan.md`,
+`application-pack.md`, `experiment-spec-template.md`) also have no Drive twin, so they
+cannot be edited from a phone. That is tracked as **M-34**, with the reason it could not
+be automated: the manifest row needs a baseline hash of Drive's own markdown export,
+which requires the service-account key.
+
 ## Keeping the pack in step with the repo
 
 The pack drifts the moment the repo moves. Regenerate documents 04, 05, 06, 07

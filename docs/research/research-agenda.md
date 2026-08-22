@@ -35,7 +35,7 @@ anchors, a target, and the memo it feeds.
 
 Full detail in `data/lit-components.csv`. Summary:
 
-### P1 - needed before the proposal goes out (9 components, 88 anchors cumulative)
+### P1 - needed before the proposal goes out (10 components, 96 anchors cumulative)
 
 | ID | Component | Have | Target |
 |---|---|---|---|
@@ -48,14 +48,24 @@ Full detail in `data/lit-components.csv`. Summary:
 | LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |
 | LC-08 | Portfolio correlation and covariate risk in microfinance | 1 | 8 |
 | LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |
+| LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |
 
 **LC-04 is the most important empty cell in this repo.** The master proposal
 already asserts that the literature raises but rarely tests loan-insurance
-bundling. That assertion is currently unverified, and bundling is what the flagship
+bundling. That assertion is currently unverified, and bundling is what the field
 experiments actually do. If the claim turns out to be wrong - if someone has run
 this trial - the proposal's central novelty claim has to change. Read it first.
 
-### P2 - needed for the thesis, not for the first email (11 components, 82 anchors)
+**LC-24 joined this tier on 2026-08-22, and the reason is worth stating.** It is here
+because coffee has *not* been chosen, not because it has. The coffee cluster (EXP-09,
+EXP-10, EXP-11) outscores every other field candidate, and those scores rest on two
+assumptions nobody has tested: that producer cooperative federations and value-chain
+lenders are reachable as partners, and that existing certification and traceability
+records could carry underwriting rather than only provenance. Reading is the cheap way
+to test both before a field programme commits to them. If the assumptions hold, the
+cluster leads the field-anchor choice (OQ-16); if not, the scores were wrong.
+
+### P2 - needed for the thesis, not for the first email (11 components, 80 anchors)
 
 LC-10 securitisation law and true sale · LC-11 African and EM capital-market depth ·
 LC-12 blended finance and first-loss · LC-13 microcredit impact and the
@@ -69,26 +79,26 @@ groups and microinsurance · LC-20 microfinance cost-to-serve and unit economics
 corrodes the institutions it enters. A proposal that does not engage it reads as
 naive, and RQ-04 is built on taking it seriously rather than dismissing it.
 
-### P3 - context (6 components, 36 anchors)
+### P3 - context (5 components, 30 anchors)
 
 LC-21 microsavings and household financial behaviour · LC-22 remittances and migrant
-financial arrangements · LC-23 gender and group composition · LC-24 coffee-sector
-economics and cooperative finance · LC-25 data governance and consent ·
-LC-26 impact-evaluation method advances.
+financial arrangements · LC-23 gender and group composition · LC-25 data governance and
+consent · LC-26 impact-evaluation method advances.
 
-LC-24 was added on 2026-08-22 when coffee-grower cooperatives were raised as a
-candidate population. It is P3 because it is a *site* question, not a *thesis*
-question - but if the coffee cluster (EXP-09 to EXP-11) is taken forward it
-promotes to P1 immediately.
+LC-26 is worth pulling forward despite the tier: it holds the power, clustering and
+multiple-hypothesis material, and the research framework's section 6 cannot be
+calibrated without it.
 
 ## Pace, and an honest word about the numbers
 
-206 cumulative target anchors, of which 13 already exist. That is a full PhD-scale
-literature base and it is not a six-week job.
+206 cumulative target anchors. Of those, 31 slots are already filled, by 23 distinct
+sources - several sources serve more than one component, which is why the two numbers
+differ. That is a full PhD-scale literature base and it is not a six-week job.
 
-What is a six-week job is **P1: about 77 new rows.** At the 12 to 15 sources a week
-this repo's workflow has actually sustained, that is five to six weeks of reading.
-The two-pass structure from v1 still applies and is what makes the number tractable:
+The near-term job is **P1: 96 targets, 13 filled, so 83 new rows.** At the 12 to 15
+sources a week this repo's workflow has actually sustained, that is six to seven weeks
+of reading. The two-pass structure from v1 still applies and is what makes the number
+tractable:
 
 - **Pass 1, breadth.** Abstract, introduction, conclusion, methods and limitations.
   Enough to write an honest matrix row and know whether the source matters. Most
@@ -130,7 +140,7 @@ the set to nine:
 | MEMO-6 | LC-06, LC-26 - the climate financing gap and how to measure a response | To draft (P1) |
 | MEMO-7 | LC-07, LC-08, LC-09 - can these cash flows be modelled | To draft (P1) |
 | MEMO-8 | LC-10, LC-11, LC-19 - the legal and market preconditions | To draft |
-| MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 - sector and infrastructure notes | To draft |
+| MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 - sector and infrastructure notes | To draft - its LC-24 section is P1 and lands earlier than the rest |
 
 Every memo carries an explicit "implications for this project" section. When a
 memo's conclusions change, update the memo, its `synthesis-memos.csv` row and any
@@ -156,7 +166,7 @@ open question that cited it - CLAUDE.md §7 flags these three as the ones that d
 - [x] v1 four-axis Tier-1 scan complete (23 anchors)
 - [x] Memos 1 to 3 drafted and reviewed
 - [x] Component breakdown defined (LC-01 … LC-26)
-- [ ] P1 components read (0 of 9 complete)
+- [ ] P1 components read (0 of 10 complete)
 - [ ] Memos 5, 6, 7 drafted - the P1 outputs
 - [ ] Deep-read anchor set selected (target 15 to 20)
 - [ ] P2 components read

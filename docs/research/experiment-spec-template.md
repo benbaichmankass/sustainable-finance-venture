@@ -94,16 +94,20 @@ Bands: `Flagship candidate` at 4.00 and above · `Strong` 3.40 to 3.99 ·
 ### Two things the rubric does not do
 
 **It does not decide.** `Priority_Band` is the rubric's view. `Status` is the
-decision, and they are allowed to disagree - EXP-01, EXP-02 and EXP-06 currently
-read `Selected` with a `Reserve` band because OQ-11's answer stands until it is
-deliberately revisited (see OQ-15).
+decision, and they are allowed to disagree. They did: the pass put the OQ-11 flagship
+trio in the `Reserve` band while it still read `Selected`, and that disagreement is
+what forced OQ-15.
 
 **It systematically favours desk studies**, because feasibility at 30% rewards not
 needing a field site. That is a real constraint, not a bug - but a portfolio built
 only from the top of the ranking would be a thesis with no field component, and
 several of the high scorers re-analyse data that only exists because somebody else
-ran the field pilot. Read the ranking as an ordering *within* type as much as across
-it, and read OQ-15 before using it to pick a portfolio.
+ran the field pilot.
+
+**That tension is now resolved, and the resolution is a sequence** (OQ-15, 2026-08-22).
+The two desk-executable falsification tests run first, because either can kill the
+thesis before field money is committed; one field anchor follows. So the ranking is
+read as an ordering *within* type, and the portfolio takes from both ends of it.
 
 ---
 
@@ -184,11 +188,18 @@ sunk-cost pilot from consuming a whole PhD.
 Three to five, no more. A proposal that specs everything reads as a candidate who
 cannot prioritise. The rest stay as tracker rows, which is what the tracker is for.
 
-Priority order for specs, pending OQ-15:
+Priority order for specs, settled by OQ-15:
 
-1. One falsification test that can run before any field money is committed - EXP-25
-   or EXP-22.
-2. One field anchor - the RQ-02 pilot, site chosen with the advisor.
-3. One desk study that is publishable independently - EXP-27 or EXP-28.
+1. **EXP-25** - default correlation on partner MIS. Tests whether the risk is
+   covariate rather than idiosyncratic, which is the falsification test the whole
+   pooling thesis turns on. `Selected`.
+2. **EXP-22** - securitisation-ready origination protocol with activity-based costing.
+   Tests whether investability costs more than it unlocks. `Selected`.
+3. **The field anchor** - one of EXP-01, EXP-06, EXP-09 or EXP-10, once OQ-16 resolves.
+   Cannot be specced until it is chosen, and it should carry the second randomisation
+   layer from `docs/research/research-framework.md` §3.
 4. Optionally, the investor-side study (EXP-23), which is unusual enough to be
    memorable in a proposal and costs almost nothing to run.
+
+Specs 1 and 2 can be written now - neither is waiting on a decision, only on partner
+data access (M-32).

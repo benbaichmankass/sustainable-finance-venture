@@ -79,12 +79,12 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 | | |
 |---|---|
 | Research questions | 1 core, 7 strands, 21 sub-questions — lead strand open (OQ-14) |
-| Literature components | 26 — 9 are P1, needed before the proposal goes out |
-| Literature anchors | 23, all reviewed — against a P1 target of ~88 |
+| Literature components | 26 — 10 are P1, needed before the proposal goes out |
+| Literature anchors | 23, all reviewed — against a P1 target of ~96 |
 | Synthesis memos | 3 reviewed, 6 outlined |
-| Open questions | 15 — 3 answered, 7 partially answered, 4 open, 1 dropped |
-| Milestones | 7 done, 4 in progress, 19 not started |
-| Experiments | 30 candidates, scored — portfolio unresolved (OQ-15) |
+| Open questions | 16 — 4 answered, 7 partially answered, 4 open, 1 dropped |
+| Milestones | 8 done, 4 in progress, 22 not started |
+| Experiments | 30 candidates, scored — 2 selected, field anchor open (OQ-16) |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
 | Risk tools | 6 — 5 in development, 1 specified |
 | Macro watchlist | 16 indicators |
@@ -96,7 +96,7 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 1. Read LC-04 — bundled credit and insurance. Zero anchors, and it is the component the proposal's central novelty claim rests on. Find out in week one whether that claim survives.
 2. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item. Lead with a data-sharing request rather than a pilot proposal; it is a much smaller ask and it opens the same door.
 3. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape. Settle it against OQ-12 before any field deployment, because fields cannot be backfilled.
-4. Resolve OQ-15 — which experiments make the portfolio, and in what order.
+4. Choose the field anchor (OQ-16) — the sequence is settled, the pilot is not.
 5. Jurisdiction scan with counsel (OQ-1) — blocks pilot site selection. The literature has taken this as far as it can.
 
 ## Open by default
