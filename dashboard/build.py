@@ -77,6 +77,14 @@ DOC_DIRS = [
 
 SKIP_FILES = {"data.js"}
 
+# Generated docs whose whole content is already in this payload as structured rows.
+# docs/research/literature-review.md is assembled from the literature matrix and the
+# component tracker by scripts/build_lit_review.py, so embedding it here would ship
+# every anchor twice - once as a literature row the dashboard renders, once as prose
+# nobody reads in the doc viewer. The duplication grows linearly with the matrix.
+# Read it in the repo or on GitHub; the dashboard has its own literature view.
+SKIP_PATHS = {"docs/research/literature-review.md"}
+
 # The library's two-level tree: (path prefix, group, section). Grouping is by
 # what a document is FOR, which is why the PhD track is its own group rather
 # than a corner of Research - writing the enquiry and applying to programmes are
@@ -221,8 +229,8 @@ def collect_docs():
                 if not filename.endswith(".md") or filename in SKIP_FILES:
                     continue
                 full = os.path.join(dirpath, filename)
-                rel = os.path.relpath(full, ROOT)
-                if rel in seen:
+                rel = os.path.relpath(full, ROOT).replace(os.sep, "/")
+                if rel in seen or rel in SKIP_PATHS:
                     continue
                 seen.add(rel)
                 with open(full, encoding="utf-8") as fh:

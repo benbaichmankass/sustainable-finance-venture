@@ -57,7 +57,7 @@ docs/                            Grouped by what the doc is FOR, not what it is 
     scratchpad.md                Untriaged ideas — cleared as items get filed
 literature/
   lit-matrix.csv                 THE literature matrix — one row per source
-  notes/memo-*.md                Synthesis memos
+  notes/memo-*.md                Synthesis memos — one per theme, MEMO-N in data/synthesis-memos.csv
 product-design/
   business-plan.md               Venture-level plan
   product-lines/                 One doc per product line (PL-1, PL-2)
@@ -144,6 +144,15 @@ After changing anything in `data/`, `literature/`, `docs/` or `product-design/`:
 python3 dashboard/fetch_macro.py      # optional: refresh live macro values
 python3 dashboard/build.py            # local: merges private overlay → data.private.js (gitignored)
 python3 dashboard/build.py --public   # before pushing: → data.js (committed)
+```
+
+`docs/research/literature-review.md` is **also generated** — never hand-edit it. It is the
+one readable end-to-end view of the review, assembled from `literature/lit-matrix.csv`,
+`data/lit-components.csv` and `data/synthesis-memos.csv`. Regenerate after any change to
+those three:
+
+```bash
+python3 scripts/build_lit_review.py   # → docs/research/literature-review.md
 ```
 
 Commit the source change together with the regenerated `dashboard/data.js`. Never commit `data.private.js`. Details in `docs/ops/dashboard-design.md`.
