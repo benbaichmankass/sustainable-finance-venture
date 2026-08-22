@@ -77,13 +77,15 @@ DOC_DIRS = [
 
 SKIP_FILES = {"data.js"}
 
-# Generated docs whose whole content is already in this payload as structured rows.
-# docs/research/literature-review.md is assembled from the literature matrix and the
-# component tracker by scripts/build_lit_review.py, so embedding it here would ship
-# every anchor twice - once as a literature row the dashboard renders, once as prose
-# nobody reads in the doc viewer. The duplication grows linearly with the matrix.
-# Read it in the repo or on GitHub; the dashboard has its own literature view.
-SKIP_PATHS = {"docs/research/literature-review.md"}
+# Paths excluded from the doc scan. Currently empty and deliberately so.
+#
+# docs/research/literature-review.md was excluded here briefly, because it is
+# generated from the literature matrix and so ships every anchor twice - once as a
+# structured literature row, once as prose. That saved payload but broke the thing
+# the document exists for: it has to be readable in the dashboard like every other
+# doc, not only in the repo. The duplication is the price of that and it is worth
+# paying. See docs/ops/dashboard-design.md.
+SKIP_PATHS = set()
 
 # The library's two-level tree: (path prefix, group, section). Grouping is by
 # what a document is FOR, which is why the PhD track is its own group rather
