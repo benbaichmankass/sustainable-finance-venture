@@ -80,9 +80,9 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 |---|---|
 | Research questions | 1 core, 7 strands, 21 sub-questions — lead strand open (OQ-14) |
 | Literature components | 26 — 10 are P1, needed before the proposal goes out |
-| Literature anchors | 23, all reviewed — against a P1 target of ~96 |
-| Synthesis memos | 3 reviewed, 6 outlined |
-| Open questions | 16 — 4 answered, 7 partially answered, 4 open, 1 dropped |
+| Literature anchors | 30 logged (23 reviewed, 7 to read) — against a P1 target of ~96 |
+| Synthesis memos | 3 reviewed, 1 drafted, 5 outlined |
+| Open questions | 17 — 4 answered, 7 partially answered, 5 open, 1 dropped |
 | Milestones | 8 done, 4 in progress, 22 not started |
 | Experiments | 30 candidates, scored — 2 selected, field anchor open (OQ-16) |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
@@ -93,7 +93,7 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 
 **The critical path** (the PhD track's is sequenced in `docs/phd/proposal-workplan.md`):
 
-1. Read LC-04 — bundled credit and insurance. Zero anchors, and it is the component the proposal's central novelty claim rests on. Find out in week one whether that claim survives.
+1. **Resolve OQ-17.** The LC-04 read found the proposal's novelty claim is false — bundling *has* been tested, twice, and compulsory bundling suppressed demand both times. The claim has to move before this goes to an advisor. Candidates are in OQ-17; synthesis in MEMO-5.
 2. Begin partner outreach (M-03) — 10 candidates logged, none contacted. Longest-lead item. Lead with a data-sharing request rather than a pilot proposal; it is a much smaller ask and it opens the same door.
 3. Draft the canonical data schema (OQ-3) — blocks the underwriting engine, pilot design and ABS data tape. Settle it against OQ-12 before any field deployment, because fields cannot be backfilled.
 4. Choose the field anchor (OQ-16) — the sequence is settled, the pilot is not.

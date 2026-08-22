@@ -14,6 +14,20 @@ This is the gap the research program addresses. The problem is not "do community
 
 The central research question this proposal poses is: **How should community-level lending and insurance arrangements be structured and modeled at origination so that their cash flows become standardized, verifiable, and poolable into securitizable assets — and under what conditions do such structures deliver risk-adjusted returns and development outcomes that justify the pooling?** A secondary, methodological question follows from it: what minimum data architecture, credit-enhancement design, and verification protocol are needed to move a community loan or insurance book from "informally functional" to "investor-legible" without distorting the social mechanisms that make it function in the first place.
 
+> **⚠️ CORRECTION PENDING (2026-08-22) — do not send this document to an advisor until it is resolved.**
+> Two claims below are contradicted by evidence read on 2026-08-22, logged as **OQ-17**.
+> The assertion that bundling is "a design question the existing literature raises but rarely
+> tests directly" (Expected Contributions) and that there is "little evidence on bundling"
+> (gap 2) are **both false as written**. Bundling has been tested experimentally at least twice,
+> and compulsory bundling suppressed demand in both: **LIT-024** (Giné & Yang 2009, Malawi —
+> take-up 13 points lower off a 33.0% base) and **LIT-025** (Banerjee, Duflo & Hornbeck 2014,
+> India — a 16-point, 23% rise in microfinance drop-out, measured on the *lender's* book).
+> **LIT-026** (Karlan et al. 2014, Ghana) is the counterweight: risk rather than capital is the
+> binding constraint, and demand for index insurance offered *separately* is strong.
+> The real distinction is **offered separately versus compulsorily priced into the loan** — and
+> the novelty claim has to move. Candidate relocations are in OQ-17; the choice is BB's.
+> A microinsurance economist will know these papers.
+
 # Background, Gap, and Significance
 
 Three strands of literature converge on this question, and each is well developed on its own terms.
@@ -27,7 +41,7 @@ Three strands of literature converge on this question, and each is well develope
 Between these three strands sit at least three specific gaps this research program is positioned to address:
 
 1. **No rigorous modeling of savings-group cash-flow risk in securitization terms.** The impact-evaluation literature measures whether savings groups help members; it does not produce default curves, delinquency hazard models, or loss-given-default estimates comparable to what a structured-finance analyst needs. This gap sits precisely at the intersection of applied econometrics and financial risk modeling.  
-2. **Little evidence on bundling loan and insurance products within community structures**, despite theoretical reasons to expect that bundled products could improve both risk-pooling (insurance offsets idiosyncratic shocks that would otherwise cause loan default) and the stability of the resulting cash-flow stream — a property that matters directly for securitization quality.  
+2. **Little evidence on bundling loan and insurance products within community structures** *(⚠️ contradicted — see the correction notice above and OQ-17; the honest version of this gap is about compulsory, premium-financed bundling specifically, and about lender-side cash-flow characterisation)*, despite theoretical reasons to expect that bundled products could improve both risk-pooling (insurance offsets idiosyncratic shocks that would otherwise cause loan default) and the stability of the resulting cash-flow stream — a property that matters directly for securitization quality.  
 3. **A missing empirical account of "securitization-readiness by design."** Existing securitized microfinance deals retrofit standardization onto originators that were not designed with pooling in mind. No study to date evaluates whether designing data capture, contract terms, and monitoring at origination — rather than after the fact — measurably improves the resulting asset's investability, and at what cost in operational complexity.
 
 **Significance.** Academically, this project contributes to development economics and empirical finance by producing one of the first studies to connect rigorous causal identification of community-finance outcomes directly to the risk-modeling and structuring questions that determine whether those cash flows can attract institutional capital. Practically, it aims to produce a tested prototype of a community-linked financial product built for securitization from the ground up, together with a general framework — a data schema, a risk-modeling approach, and a credit-enhancement logic — that NGOs, MFIs, DFIs, and investors could apply beyond the specific pilot sites. If the hypothesis holds even partially, it opens a mechanism for redirecting institutional capital toward proven sustainable-development interventions at a scale grant and DFI-only funding cannot reach.
@@ -65,7 +79,7 @@ The empirical strategy follows development-economics norms while adding a struct
 
 # Expected Contributions
 
-**Academic contributions.** The project contributes new causal evidence on the effect of bundling loan and insurance products within community financial structures — a design question the existing literature raises but rarely tests directly. It also contributes a methodological bridge that is currently underused in development economics: applying credit-risk and actuarial modeling techniques to data generated by rigorously evaluated community-finance interventions, rather than treating impact evaluation and risk/structuring analysis as separate literatures with separate audiences. The resulting risk-modeling framework — however provisional given the horizon limitations above — is itself a contribution, since almost no published work characterizes savings-group cash flows in a form comparable to a securitization loss curve.
+**Academic contributions.** The project contributes new causal evidence on the effect of bundling loan and insurance products within community financial structures — a design question the existing literature raises but rarely tests directly. *(⚠️ This sentence is false as written — see the correction notice above and OQ-17.)* It also contributes a methodological bridge that is currently underused in development economics: applying credit-risk and actuarial modeling techniques to data generated by rigorously evaluated community-finance interventions, rather than treating impact evaluation and risk/structuring analysis as separate literatures with separate audiences. The resulting risk-modeling framework — however provisional given the horizon limitations above — is itself a contribution, since almost no published work characterizes savings-group cash flows in a form comparable to a securitization loss curve.
 
 **Practical contributions.** The project is designed to leave behind artifacts beyond the dissertation itself: a tested prototype of one or two community-linked financial products with securitization-ready data capture; a transferable data schema and monitoring protocol that other originators could adopt; a validated (if provisional) risk-modeling approach that DFIs, impact investors, and originator NGOs could apply to their own portfolios; and a structuring framework — credit-enhancement sizing, pooling logic, diversification requirements — that translates the empirical risk findings into concrete guidance for anyone trying to bring a similar asset class to institutional capital.
 

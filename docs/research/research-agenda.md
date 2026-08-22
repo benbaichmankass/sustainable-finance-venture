@@ -41,20 +41,26 @@ Full detail in `data/lit-components.csv`. Summary:
 |---|---|---|---|
 | LC-01 | Savings groups and community finance institutions | 4 | 10 |
 | LC-02 | Group-lending mechanisms: information, sanction, repeat interaction | 4 | 12 |
-| LC-03 | Index and parametric insurance: demand, basis risk, impact | 1 | 12 |
-| LC-04 | Bundled credit and insurance: theory and evidence | 0 | 10 |
+| LC-03 | Index and parametric insurance: demand, basis risk, impact | 4 | 12 |
+| LC-04 | Bundled credit and insurance: theory and evidence | 4 | 10 |
 | LC-05 | Resilience and consumption-smoothing outcome measurement | 0 | 8 |
 | LC-06 | Climate and adaptation finance: gap sizing and instruments | 0 | 8 |
 | LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |
-| LC-08 | Portfolio correlation and covariate risk in microfinance | 1 | 8 |
+| LC-08 | Portfolio correlation and covariate risk in microfinance | 2 | 8 |
 | LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |
 | LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |
 
-**LC-04 is the most important empty cell in this repo.** The master proposal
-already asserts that the literature raises but rarely tests loan-insurance
-bundling. That assertion is currently unverified, and bundling is what the field
-experiments actually do. If the claim turns out to be wrong - if someone has run
-this trial - the proposal's central novelty claim has to change. Read it first.
+**LC-04 was the most important empty cell in this repo, and reading it first paid
+off immediately.** The master proposal asserted that the literature raises but rarely
+tests loan-insurance bundling. **That assertion is false.** Bundling has been tested
+experimentally at least twice and compulsory bundling suppressed demand both times -
+LIT-024 (Malawi, take-up 13 points lower off a 33.0% base) and LIT-025 (India, a
+16-point rise in microfinance drop-out, measured on the lender's own book). LIT-026 is
+the counterweight: risk rather than capital binds, and demand for *separately* offered
+index insurance is strong. The distinction that reconciles them - offered separately
+versus compulsorily priced into the loan - is the finding, and the proposal's novelty
+claim has to move. Logged as **OQ-17**; synthesis in **MEMO-5**. Four anchors of ten,
+all still `To read` because only abstracts were verified.
 
 **LC-24 joined this tier on 2026-08-22, and the reason is worth stating.** It is here
 because coffee has *not* been chosen, not because it has. The coffee cluster (EXP-09,
@@ -91,11 +97,11 @@ calibrated without it.
 
 ## Pace, and an honest word about the numbers
 
-206 cumulative target anchors. Of those, 31 slots are already filled, by 23 distinct
+206 cumulative target anchors. Of those, 39 slots are already filled, by 30 distinct
 sources - several sources serve more than one component, which is why the two numbers
 differ. That is a full PhD-scale literature base and it is not a six-week job.
 
-The near-term job is **P1: 96 targets, 13 filled, so 83 new rows.** At the 12 to 15
+The near-term job is **P1: 96 targets, 21 filled, so 75 new rows.** At the 12 to 15
 sources a week this repo's workflow has actually sustained, that is six to seven weeks
 of reading. The two-pass structure from v1 still applies and is what makes the number
 tractable:
@@ -136,7 +142,7 @@ the set to nine:
 | MEMO-2 | LC-13 - microfinance impact evidence | Reviewed, extend with LC-13 |
 | MEMO-3 | LC-12 partial - securitisation and blended finance as applied | Reviewed |
 | MEMO-4 | LC-02, LC-13, LC-17, LC-18, LC-21, LC-23 - the mechanism and its critics | To draft |
-| MEMO-5 | LC-03, LC-04, LC-05 - insurance, bundling and what resilience means | To draft (P1) |
+| MEMO-5 | LC-03, LC-04, LC-05 - insurance, bundling and what resilience means | **Drafted (partial)** - LC-04 read, LC-03 and LC-05 outstanding |
 | MEMO-6 | LC-06, LC-26 - the climate financing gap and how to measure a response | To draft (P1) |
 | MEMO-7 | LC-07, LC-08, LC-09 - can these cash flows be modelled | To draft (P1) |
 | MEMO-8 | LC-10, LC-11, LC-19 - the legal and market preconditions | To draft |
@@ -166,7 +172,7 @@ open question that cited it - CLAUDE.md §7 flags these three as the ones that d
 - [x] v1 four-axis Tier-1 scan complete (23 anchors)
 - [x] Memos 1 to 3 drafted and reviewed
 - [x] Component breakdown defined (LC-01 … LC-26)
-- [ ] P1 components read (0 of 10 complete)
+- [ ] P1 components read (0 of 10 complete; LC-04 and LC-03 partially covered)
 - [ ] Memos 5, 6, 7 drafted - the P1 outputs
 - [ ] Deep-read anchor set selected (target 15 to 20)
 - [ ] P2 components read
