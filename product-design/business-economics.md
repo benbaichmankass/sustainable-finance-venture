@@ -2,7 +2,7 @@
 
 **Status:** Model built (RT-6 v0.1) · **Owner:** BB · **Updated:** 2026-08-02
 
-This fills the "Financial plan — cost structure, revenue projections, funding ask" gap flagged in `business-plan.md §10`. It began as a plan for the analysis plus a benchmark skeleton; it now carries a **working unit-economics model (RT-6)** and a first, defensible answer to OQ-10. Its job is to tell us — with benchmarks, not vibes — whether and how this becomes a profitable business.
+This fills the "Financial plan — cost structure, revenue projections, funding ask" gap flagged in business-plan.md §10. It began as a plan for the analysis plus a benchmark skeleton; it now carries a **working unit-economics model (RT-6)** and a first, defensible answer to OQ-10. Its job is to tell us — with benchmarks, not vibes — whether and how this becomes a profitable business.
 
 The two questions the analysis exists to answer:
 
@@ -21,13 +21,13 @@ A "deal" is one pool of community-originated receivables that we structure, moni
 | Origination-partner economics | Variable | What the VSLA/MFI layer keeps; a revenue *share*, not our cost, but it sets the spread available |
 | Servicing & monitoring | Variable | RT-3 monitor runs this; largely our cost |
 | Credit enhancement / first-loss funding cost | Variable | The blended layer (OQ-6); DFI/philanthropic capital prices the junior risk |
-| Impact measurement | Semi-fixed | Grant-funded where possible (see `funding-pipeline.md`), so kept off the commercial P\&L |
+| Impact measurement | Semi-fixed | Grant-funded where possible (see funding-pipeline.md), so kept off the commercial P\&L |
 
 **The key structural fact:** the fixed stack is why OQ-2's "tens of millions, scaling to ≥USD 100m" band exists. The analysis has to locate the pool size at which fixed costs stop dominating.
 
 ## 2\. Revenue lines
 
-From `business-plan.md §4`, made quantifiable:
+From business-plan.md §4, made quantifiable:
 
 1. **Structuring & servicing fees** — as % of notional and/or bps on assets under management.  
 2. **Retained economic interest** — return on the strip we are required to hold (EU/UK risk-retention, Memo 3). Not optional; it is both a cost of capital and a return line.  
@@ -37,9 +37,9 @@ The analysis models each as a driver, so we can see which line actually carries 
 
 ## 3\. The unit-economics model (built — RT-6)
 
-Built as **RT-6** (`risk-tools/tools/economics_model.py`, doc `risk-tools/rt-6-economics-model.md`), a stdlib-only tool alongside RT-1…RT-5. It takes pool-level drivers and returns deal- and venture-level economics across **three scenarios** (Worst / Likely / Best).
+Built as **RT-6** (risk-tools/tools/economics\_model.py, doc risk-tools/rt-6-economics-model.md), a stdlib-only tool alongside RT-1…RT-5. It takes pool-level drivers and returns deal- and venture-level economics across **three scenarios** (Worst / Likely / Best).
 
-**Inputs (drivers):** pool notional; average ticket; weighted life; gross yield; expected loss; origination share of the spread; our cost-to-serve; fixed structuring cost; structuring and servicing fee %; retained-interest %; tranche sizes and coupons; junior hurdle; ramp (deals per year); overhead. Each driver is tagged `SOURCED` or `ASSUMED` in `economics-config.csv`.
+**Inputs (drivers):** pool notional; average ticket; weighted life; gross yield; expected loss; origination share of the spread; our cost-to-serve; fixed structuring cost; structuring and servicing fee %; retained-interest %; tranche sizes and coupons; junior hurdle; ramp (deals per year); overhead. Each driver is tagged SOURCED or ASSUMED in economics-config.csv.
 
 **Outputs:** net margin per deal; break-even pool size; deals- and years-to-breakeven; operating margin and return on capital-at-risk; the junior residual return against its hurdle; and a loss × fee-compression sensitivity grid.
 
@@ -53,7 +53,7 @@ Built as **RT-6** (`risk-tools/tools/economics_model.py`, doc `risk-tools/rt-6-e
 
 ## 4\. Benchmarks
 
-Starting values to *test*, not targets. The 2026-08-02 benchmark-research pass replaced most of the original **\[assumed\]** shopping list with open-access **\[sourced\]** anchors; what remains assumed is flagged honestly. Nothing here is stated as fact, and every figure feeds RT-6's `economics-config.csv`.
+Starting values to *test*, not targets. The 2026-08-02 benchmark-research pass replaced most of the original **\[assumed\]** shopping list with open-access **\[sourced\]** anchors; what remains assumed is flagged honestly. Nothing here is stated as fact, and every figure feeds RT-6's economics-config.csv.
 
 | Benchmark | Working value | Basis |
 | :---- | :---- | :---- |
@@ -108,4 +108,4 @@ What remains is calibration: replace the two stubborn **\[assumed\]** rows in §
 
 ## Deliverable state
 
-**Model built (RT-6 v0.1).** Benchmarks sourced where open-access data exists; go/no-go threshold decided; a three-scenario model produces a first, defensible answer to OQ-10 (conditional GO, §5). Feeds `business-plan.md §10` (financial plan) and connects to OQ-2 and OQ-6. Remaining work is calibration: the two stubborn assumed drivers, and tying the loss assumption to RT-5.  
+**Model built (RT-6 v0.1).** Benchmarks sourced where open-access data exists; go/no-go threshold decided; a three-scenario model produces a first, defensible answer to OQ-10 (conditional GO, §5). Feeds business-plan.md §10 (financial plan) and connects to OQ-2 and OQ-6. Remaining work is calibration: the two stubborn assumed drivers, and tying the loss assumption to RT-5.  
