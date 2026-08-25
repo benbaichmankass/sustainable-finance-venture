@@ -1,6 +1,6 @@
 # Research Agenda: the literature review plan
 
-**Status:** v2 (2026-08-22) · **Owner:** BB · **Tracker:** data/lit-components.csv (LC-01 … LC-26) **Supersedes:** v1 (four-axis plan, 2026-07). The axes are kept as a classification; they are no longer the unit of work.
+**Status:** v2 (2026-08-22) · **Owner:** BB · **Tracker:** `data/lit-components.csv` (LC-01 … LC-26) **Supersedes:** v1 (four-axis plan, 2026-07). The axes are kept as a classification; they are no longer the unit of work.
 
 ## Objective
 
@@ -10,7 +10,7 @@ Build a literature base that supports three different consumers: a PhD proposal 
 
 v1 organised the review into four broad axes \- community finance, microfinance impact, securitisation, blended finance. That was the right shape for a first pass and it worked: 23 anchors and three reviewed memos came out of it.
 
-It has stopped being useful for one specific reason: **an axis does not tell you what to read next.** "Securitisation" spans rating criteria, true-sale law, African market depth and portfolio correlation \- four bodies of work with different questions, different sources and very different urgency. Meanwhile three gaps flagged in docs/phd/research-proposal.md §1 sat unaddressed for weeks precisely because no axis owned them.
+It has stopped being useful for one specific reason: **an axis does not tell you what to read next.** "Securitisation" spans rating criteria, true-sale law, African market depth and portfolio correlation \- four bodies of work with different questions, different sources and very different urgency. Meanwhile three gaps flagged in `docs/phd/research-proposal.md` §1 sat unaddressed for weeks precisely because no axis owned them.
 
 v2 replaces the axis with the **component** as the unit of work. A component is scoped so that reading it produces a working command of one identifiable body of knowledge, and so that its completion is a checkable event rather than a feeling.
 
@@ -18,7 +18,7 @@ Each component carries: why it matters to *this* project, which research-questio
 
 ## The components
 
-Full detail in data/lit-components.csv. Summary:
+Full detail in `data/lit-components.csv`. Summary:
 
 ### P1 \- needed before the proposal goes out (10 components, 96 anchors cumulative)
 
@@ -35,7 +35,7 @@ Full detail in data/lit-components.csv. Summary:
 | LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |
 | LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |
 
-**LC-04 was the most important empty cell in this repo, and reading it first paid off immediately.** The master proposal asserted that the literature raises but rarely tests loan-insurance bundling. **That assertion is false.** Bundling has been tested experimentally at least twice and compulsory bundling suppressed demand both times \- LIT-024 (Malawi, take-up 13 points lower off a 33.0% base) and LIT-025 (India, a 16-point rise in microfinance drop-out, measured on the lender's own book). LIT-026 is the counterweight: risk rather than capital binds, and demand for *separately* offered index insurance is strong. The distinction that reconciles them \- offered separately versus compulsorily priced into the loan \- is the finding, and the proposal's novelty claim has to move. Logged as **OQ-17**; synthesis in **MEMO-5**. Four anchors of ten, all still To read because only abstracts were verified.
+**LC-04 was the most important empty cell in this repo, and reading it first paid off immediately.** The master proposal asserted that the literature raises but rarely tests loan-insurance bundling. **That assertion is false.** Bundling has been tested experimentally at least twice and compulsory bundling suppressed demand both times \- LIT-024 (Malawi, take-up 13 points lower off a 33.0% base) and LIT-025 (India, a 16-point rise in microfinance drop-out, measured on the lender's own book). LIT-026 is the counterweight: risk rather than capital binds, and demand for *separately* offered index insurance is strong. The distinction that reconciles them \- offered separately versus compulsorily priced into the loan \- is the finding, and the proposal's novelty claim has to move. Logged as **OQ-17**; synthesis in **MEMO-5**. Four anchors of ten, all still `To read` because only abstracts were verified.
 
 **LC-24 joined this tier on 2026-08-22, and the reason is worth stating.** It is here because coffee has *not* been chosen, not because it has. The coffee cluster (EXP-09, EXP-10, EXP-11) outscores every other field candidate, and those scores rest on two assumptions nobody has tested: that producer cooperative federations and value-chain lenders are reachable as partners, and that existing certification and traceability records could carry underwriting rather than only provenance. Reading is the cheap way to test both before a field programme commits to them. If the assumptions hold, the cluster leads the field-anchor choice (OQ-16); if not, the scores were wrong.
 
@@ -66,11 +66,11 @@ Do not let the target numbers turn into a quota. A component with six honest row
 
 ## Workflow
 
-**Adding a source** \- use the add-literature skill. It enforces the field standard, the ID scheme and the no-fabrication rule. Every row gets Axis (the v1 classification, retained) and should be cross-referenced from its component's row.
+**Adding a source** \- use the `add-literature` skill. It enforces the field standard, the ID scheme and the no-fabrication rule. Every row gets `Axis` (the v1 classification, retained) and should be cross-referenced from its component's row.
 
-**Working a component** \- read its Questions\_To\_Answer first; those are what the component is *for*. Use Search\_Terms as the starting query set, then forward and backward citation search from whatever anchor turns out to be central. When the component's questions can be answered without hedging, mark it Reviewed.
+**Working a component** \- read its `Questions_To_Answer` first; those are what the component is *for*. Use `Search_Terms` as the starting query set, then forward and backward citation search from whatever anchor turns out to be central. When the component's questions can be answered without hedging, mark it `Reviewed`.
 
-**Component status vocabulary:** Not started · Partially covered · In progress · Reviewed.
+**Component status vocabulary:** `Not started` · `Partially covered` · `In progress` · `Reviewed`.
 
 ## Synthesis memos
 
@@ -88,7 +88,7 @@ Memos 1 to 3 exist and are Reviewed. v2 maps every component to a memo, extendin
 | MEMO-8 | LC-10, LC-11, LC-19 \- the legal and market preconditions | To draft |
 | MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 \- sector and infrastructure notes | To draft \- its LC-24 section is P1 and lands earlier than the rest |
 
-Every memo carries an explicit "implications for this project" section. When a memo's conclusions change, update the memo, its synthesis-memos.csv row and any open question that cited it \- CLAUDE.md §7 flags these three as the ones that drift.
+Every memo carries an explicit "implications for this project" section. When a memo's conclusions change, update the memo, its `synthesis-memos.csv` row and any open question that cited it \- CLAUDE.md §7 flags these three as the ones that drift.
 
 ## Source access
 
