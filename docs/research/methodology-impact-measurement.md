@@ -1,24 +1,18 @@
 # Methodology: Measuring the SDG Impact of the Financial Products
 
-**Status:** Outcome-metric layer (week of 2026-08-02; re-scoped 2026-08-22) · **Owner:** BB
-**Parent:** `docs/phd/research-proposal.md` §3 · **Spine:** `docs/research/research-framework.md`
+**Status:** Outcome-metric layer (week of 2026-08-02; re-scoped 2026-08-22) · **Owner:** BB **Parent:** docs/phd/research-proposal.md §3 · **Spine:** docs/research/research-framework.md
 
-> **Read the framework first.** As of 2026-08-22 the identification strategy, estimands,
-> power method, two-layer randomisation design, verification arrangement, data architecture
-> and falsification conditions live in `docs/research/research-framework.md`. This document
-> is no longer the whole methodology - it is the **outcome-metric layer**: what gets measured,
-> against which SDG frame, with what discipline. Sections 2 and 3 below are retained because
-> the framework refers back to them, and are summarised there rather than duplicated.
+> **Read the framework first.** As of 2026-08-22 the identification strategy, estimands, power method, two-layer randomisation design, verification arrangement, data architecture and falsification conditions live in docs/research/research-framework.md. This document is no longer the whole methodology \- it is the **outcome-metric layer**: what gets measured, against which SDG frame, with what discipline. Sections 2 and 3 below are retained because the framework refers back to them, and are summarised there rather than duplicated.
 
 ## Purpose
 
-The venture's credibility rests on a claim it must be able to *prove*: that the financial products it structures actually improve the climate-resilience and poverty outcomes they target — not just that loans were disbursed or premiums collected. This document specifies what gets measured to prove it, designed *before* any product is in the field rather than reconstructed afterward. How that measurement is identified, powered and verified is the framework's job (`docs/research/research-framework.md`).
+The venture's credibility rests on a claim it must be able to *prove*: that the financial products it structures actually improve the climate-resilience and poverty outcomes they target — not just that loans were disbursed or premiums collected. This document specifies what gets measured to prove it, designed *before* any product is in the field rather than reconstructed afterward. How that measurement is identified, powered and verified is the framework's job (docs/research/research-framework.md).
 
 It answers three questions: **impact on what**, **identified how**, and **verified by whom**.
 
 ## 1\. Impact on what — outcome metrics
 
-Metrics are chosen to map onto the two SDG frames the proposal commits to. Each candidate product in `data/experiments.csv` will select from this menu; the menu is deliberately outcome-side, not output-side.
+Metrics are chosen to map onto the two SDG frames the proposal commits to. Each candidate product in data/experiments.csv will select from this menu; the menu is deliberately outcome-side, not output-side.
 
 | Frame | Primary outcomes | Notes |
 | :---- | :---- | :---- |
@@ -51,28 +45,21 @@ Impact the venture measures on its own products is not credible. The design sepa
 
 - An **independent verification partner** (academic field team / RCT lab) runs outcome measurement — this is OQ-7, and PT-05 (J-PAL) is the standing candidate.  
 - **IRB / ethics approval** and a **data-sharing agreement** are preconditions, not afterthoughts.  
-- Row-level participant data stays in the Vault (`05-raw-data`), never in the repo — only aggregate results come back (CLAUDE.md §8).
+- Row-level participant data stays in the Vault (05-raw-data), never in the repo — only aggregate results come back (CLAUDE.md §8).
 
 ## 4\. Integration with the toolkit
 
-The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 origination schema that makes receivables poolable also carries the baseline covariates the causal design needs; the RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing impact measurement and securitization-readiness together is design principle 2 of the venture (`docs/research/working-doc.md`).
+The impact module is one of the five risk-tools, not a bolt-on. The same RT-1 origination schema that makes receivables poolable also carries the baseline covariates the causal design needs; the RT-3 monitor timestamps the shocks the resilience metrics are measured against. Designing impact measurement and securitization-readiness together is design principle 2 of the venture (docs/research/working-doc.md).
 
 ## Deliverable state
 
-**Re-scoped 2026-08-22.** The methodology this document was a skeleton of is now written in
-`docs/research/research-framework.md`, which supersedes the sketch versions of identification,
-verification and integration held here. What remains live in *this* document is the outcome-metric
-menu in §1 - the part the framework points back to.
+**Re-scoped 2026-08-22.** The methodology this document was a skeleton of is now written in docs/research/research-framework.md, which supersedes the sketch versions of identification, verification and integration held here. What remains live in *this* document is the outcome-metric menu in §1 \- the part the framework points back to.
 
 Remaining work on the metric layer specifically:
 
-- Fix **one primary outcome per estimand** with the verification partner before pre-registration
-  (framework §5). Section 1 above is a menu; a pre-registered study needs a choice.
-- Pin the **shock-measurement instrument** and its recall period - the load-bearing measurement,
-  since every resilience claim is conditional on a shock having been observed.
-- Settle **comprehension** as a first-class measured outcome, not a fieldwork detail (framework §10).
-- Add outcome definitions for the experiment types the 2026-08-22 menu introduced that are not
-  household-level at all: administrative-data studies, investor elicitation, and simulation
-  (`data/experiments.csv`, `docs/research/experiment-spec-template.md`).
+- Fix **one primary outcome per estimand** with the verification partner before pre-registration (framework §5). Section 1 above is a menu; a pre-registered study needs a choice.  
+- Pin the **shock-measurement instrument** and its recall period \- the load-bearing measurement, since every resilience claim is conditional on a shock having been observed.  
+- Settle **comprehension** as a first-class measured outcome, not a fieldwork detail (framework §10).  
+- Add outcome definitions for the experiment types the 2026-08-22 menu introduced that are not household-level at all: administrative-data studies, investor elicitation, and simulation (data/experiments.csv, docs/research/experiment-spec-template.md).
 
 Still gated on OQ-7 (verification partner) and OQ-4. Feeds milestone M-08 (pilot design doc).  
