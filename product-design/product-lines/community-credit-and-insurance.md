@@ -1,6 +1,6 @@
 # Product Line 1 — Community Credit & Insurance
 
-**Status:** Concept, pilot design pending · **Origination layer:** VSLAs, MFIs, NGOs, employer networks · **Asset:** loan repayments and insurance premiums **Lineage:** `archive/google-drive/web3-vsla-business-plan.md` (Feb 2025\) · **Last updated:** 2026-07-30
+**Status:** Concept, pilot design pending · **Origination layer:** VSLAs, MFIs, NGOs, employer networks · **Asset:** loan repayments and insurance premiums **Lineage:** archive/google-drive/web3-vsla-business-plan.md (Feb 2025\) · **Last updated:** 2026-07-30
 
 ## Concept
 
