@@ -5664,7 +5664,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "c1c6d7ce18917698b3fde42845e053285aa64baa994fb030b2cb94f7e02b9f18",
    "Baseline_Repo_Hash": "c1c6d7ce18917698b3fde42845e053285aa64baa994fb030b2cb94f7e02b9f18",
    "Last_Synced_At": "2026-08-26T19:15:02Z",
-   "Status": "Synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-24",
@@ -12369,7 +12369,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-08-28",
+  "generated": "2026-08-29",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
