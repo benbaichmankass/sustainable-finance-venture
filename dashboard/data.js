@@ -12369,7 +12369,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-08-30",
+  "generated": "2026-08-31",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
