@@ -1966,12 +1966,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-29",
+   "As_Of": "2026-08-31",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.0",
    "Direction": "flat",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -1981,12 +1981,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-08-30",
+   "As_Of": "2026-08-31",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2001,7 +2001,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.28",
    "Chg_12m": "-0.47",
    "Direction": "down",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2016,7 +2016,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2031,7 +2031,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1657",
    "Chg_12m": "-0.5189",
    "Direction": "down",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2041,12 +2041,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-08-30",
+   "As_Of": "2026-08-31",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2061,7 +2061,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1",
    "Chg_12m": "1.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2069,14 +2069,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "2.968",
+   "Value": "2.988",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-28",
-   "Chg_1m": "-0.09",
-   "Chg_3m": "0.128",
-   "Chg_12m": "-0.42",
+   "As_Of": "2026-08-31",
+   "Chg_1m": "-0.085",
+   "Chg_3m": "0.154",
+   "Chg_12m": "-0.426",
    "Direction": "down",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2091,7 +2091,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.5",
    "Chg_12m": "7.3",
    "Direction": "up",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2106,7 +2106,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.11",
    "Chg_12m": "0.43",
    "Direction": "up",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2121,7 +2121,7 @@ window.SFV_DATA = {
    "Chg_3m": "-18.66",
    "Chg_12m": "20.12",
    "Direction": "down",
-   "Fetched_At": "2026-08-30T11:57:19+00:00",
+   "Fetched_At": "2026-08-31T13:56:27+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5401,9 +5401,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The Drive Vault — where non-repo artifacts live",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
-   "Baseline_Repo_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
-   "Last_Synced_At": "2026-08-31T06:57:09Z",
+   "Baseline_Drive_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
+   "Baseline_Repo_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
+   "Last_Synced_At": "2026-08-31T15:01:47Z",
    "Status": "Synced"
   },
   {
@@ -6385,7 +6385,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-08-29",
+    "2026-08-31",
     3.75
    ]
   ],
@@ -6963,7 +6963,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-08-30",
+    "2026-08-31",
     2.4
    ]
   ],
@@ -7493,7 +7493,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-08-30",
+    "2026-08-31",
     3.5
    ]
   ],
@@ -9955,8 +9955,8 @@ window.SFV_DATA = {
     3.057
    ],
    [
-    "2026-08-28",
-    2.968
+    "2026-08-31",
+    2.988
    ]
   ],
   "MAC-14": [
@@ -11843,7 +11843,7 @@ window.SFV_DATA = {
    "title": "The Drive Vault — where non-repo artifacts live",
    "summary": "",
    "words": 688,
-   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see docs/ops/publishing.md. The Vault is the private half of the system.\n\n**Vault links live in private/pointers.csv**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see docs/ops/drive-sync.md. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — literature/lit-matrix.csv for a paper, data/resources.csv for everything else. Where the pointer would itself be a private link, it goes in private/pointers.csv.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in 05-raw-data, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| 00-private-overlay | Canonical copies of the gitignored CSVs in private/ — contact status, application status, Vault pointers. Download these into private/ when setting up on a new machine. |\n| 01-literature-pdfs | Full-text PDFs of matrix entries. Name files LIT-0NN — short-title.pdf so they sort alongside the matrix. |\n| 02-applications-phd | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| 03-communications | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| 04-partner-materials | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| 05-raw-data | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| 06-legal-and-regulatory | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in private/pointers.csv.\n\n## Naming convention\n\nYYYY-MM-DD — \\<subject\\> — \\<source or counterparty\\>.\\<ext\\>\n\nFor literature, prefix with the matrix ID instead: LIT-011 — FSD Africa securitisation Africa.pdf.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from 01-literature-pdfs to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in 05-raw-data.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n05-raw-data is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
+   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/ops/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/ops/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
   },
   {
    "path": "docs/ops/publishing.md",
