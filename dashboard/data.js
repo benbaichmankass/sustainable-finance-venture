@@ -1966,12 +1966,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-08-31",
+   "As_Of": "2026-09-01",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.0",
    "Direction": "flat",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -1981,12 +1981,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-09-01",
+   "As_Of": "2026-09-02",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -1994,14 +1994,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "2.81",
+   "Value": "2.9",
    "Unit": "pp",
-   "As_Of": "2026-08-28",
-   "Chg_1m": "-0.3",
-   "Chg_3m": "-0.31",
-   "Chg_12m": "-0.47",
+   "As_Of": "2026-08-31",
+   "Chg_1m": "-0.23",
+   "Chg_3m": "-0.24",
+   "Chg_12m": "-0.39",
    "Direction": "down",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2016,7 +2016,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.28",
    "Chg_12m": "1.41",
    "Direction": "up",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2024,14 +2024,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4647",
+   "Value": "3.4938",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-08-31",
-   "Chg_1m": "-0.0579",
-   "Chg_3m": "0.1965",
-   "Chg_12m": "-0.4811",
+   "As_Of": "2026-09-01",
+   "Chg_1m": "-0.0176",
+   "Chg_3m": "0.2149",
+   "Chg_12m": "-0.4607",
    "Direction": "down",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2041,12 +2041,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.5",
    "Unit": "%",
-   "As_Of": "2026-09-01",
+   "As_Of": "2026-09-02",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2061,7 +2061,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1",
    "Chg_12m": "1.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2069,14 +2069,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "2.988",
+   "Value": "3.012",
    "Unit": "ILS per USD",
-   "As_Of": "2026-08-31",
-   "Chg_1m": "-0.085",
-   "Chg_3m": "0.154",
-   "Chg_12m": "-0.426",
+   "As_Of": "2026-09-01",
+   "Chg_1m": "-0.045",
+   "Chg_3m": "0.201",
+   "Chg_12m": "-0.392",
    "Direction": "down",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2091,7 +2091,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.5",
    "Chg_12m": "7.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2099,14 +2099,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.73",
+   "Value": "4.75",
    "Unit": "%",
-   "As_Of": "2026-08-28",
-   "Chg_1m": "0.06",
-   "Chg_3m": "0.23",
-   "Chg_12m": "0.44",
+   "As_Of": "2026-08-31",
+   "Chg_1m": "0.07",
+   "Chg_3m": "0.27",
+   "Chg_12m": "0.42",
    "Direction": "up",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2121,7 +2121,7 @@ window.SFV_DATA = {
    "Chg_3m": "-18.66",
    "Chg_12m": "20.12",
    "Direction": "down",
-   "Fetched_At": "2026-09-01T11:42:05+00:00",
+   "Fetched_At": "2026-09-02T11:22:33+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5813,10 +5813,6 @@ window.SFV_DATA = {
  "macroSeries": {
   "MAC-01": [
    [
-    "2014-09-30",
-    0.25
-   ],
-   [
     "2014-10-31",
     0.25
    ],
@@ -6386,6 +6382,10 @@ window.SFV_DATA = {
    ],
    [
     "2026-08-31",
+    3.75
+   ],
+   [
+    "2026-09-01",
     3.75
    ]
   ],
@@ -6963,7 +6963,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-01",
+    "2026-09-02",
     2.4
    ]
   ],
@@ -7497,7 +7497,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-01",
+    "2026-09-02",
     3.5
    ]
   ],
@@ -7643,8 +7643,8 @@ window.SFV_DATA = {
     2.99
    ],
    [
-    "2026-08-28",
-    2.81
+    "2026-08-31",
+    2.9
    ]
   ],
   "MAC-06": [
@@ -8805,10 +8805,6 @@ window.SFV_DATA = {
   ],
   "MAC-12": [
    [
-    "2014-09-30",
-    4.6474
-   ],
-   [
     "2014-10-31",
     4.7545
    ],
@@ -9379,13 +9375,13 @@ window.SFV_DATA = {
    [
     "2026-08-31",
     3.4647
+   ],
+   [
+    "2026-09-01",
+    3.4938
    ]
   ],
   "MAC-13": [
-   [
-    "2014-09-30",
-    3.695
-   ],
    [
     "2014-10-31",
     3.784
@@ -9957,6 +9953,10 @@ window.SFV_DATA = {
    [
     "2026-08-31",
     2.988
+   ],
+   [
+    "2026-09-01",
+    3.012
    ]
   ],
   "MAC-14": [
@@ -11111,8 +11111,8 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-08-28",
-    4.73
+    "2026-08-31",
+    4.75
    ]
   ],
   "MAC-16": [
