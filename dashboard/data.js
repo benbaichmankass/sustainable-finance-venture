@@ -1966,12 +1966,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "3.75",
    "Unit": "%",
-   "As_Of": "2026-09-05",
+   "As_Of": "2026-09-07",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.0",
    "Direction": "flat",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -1981,12 +1981,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.4",
    "Unit": "%",
-   "As_Of": "2026-09-06",
+   "As_Of": "2026-09-07",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2001,7 +2001,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.15",
    "Chg_12m": "-0.38",
    "Direction": "down",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2016,7 +2016,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2031,7 +2031,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1295",
    "Chg_12m": "-0.3901",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2041,12 +2041,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-09-06",
+   "As_Of": "2026-09-07",
    "Chg_1m": "-0.25",
    "Chg_3m": "-0.5",
    "Chg_12m": "-1.0",
    "Direction": "down",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2061,7 +2061,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.3",
    "Chg_12m": "3.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2076,7 +2076,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.133",
    "Chg_12m": "-0.412",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2091,7 +2091,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.1",
    "Chg_12m": "10.7",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2106,7 +2106,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.3",
    "Chg_12m": "0.48",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2121,7 +2121,7 @@ window.SFV_DATA = {
    "Chg_3m": "3.14",
    "Chg_12m": "28.41",
    "Direction": "up",
-   "Fetched_At": "2026-09-06T11:00:57+00:00",
+   "Fetched_At": "2026-09-07T12:38:23+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5648,9 +5648,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Product Line 2 — Agrivoltaic Project Finance (BFAV)",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "5850028f5929d5d7863620fef99b44e272708ba0e5dde4c438bba4c64fa355ab",
-   "Baseline_Repo_Hash": "5850028f5929d5d7863620fef99b44e272708ba0e5dde4c438bba4c64fa355ab",
-   "Last_Synced_At": "2026-09-07T10:09:50Z",
+   "Baseline_Drive_Hash": "09e6f28fa1e9ceb2a960c68d486fbd2904ebfb0ee0f179f219aa450848c281c2",
+   "Baseline_Repo_Hash": "09e6f28fa1e9ceb2a960c68d486fbd2904ebfb0ee0f179f219aa450848c281c2",
+   "Last_Synced_At": "2026-09-07T15:54:53Z",
    "Status": "Synced"
   },
   {
@@ -6385,7 +6385,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-09-05",
+    "2026-09-07",
     3.75
    ]
   ],
@@ -6963,7 +6963,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-06",
+    "2026-09-07",
     2.4
    ]
   ],
@@ -7497,7 +7497,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-06",
+    "2026-09-07",
     3.25
    ]
   ],
@@ -12317,7 +12317,7 @@ window.SFV_DATA = {
    "title": "Agrivoltaic Project Finance (BFAV)",
    "summary": "",
    "words": 1062,
-   "body": "# Product Line 2 — Agrivoltaic Project Finance (BFAV)\n\n**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** archive/google-drive/bfav-business-plan.md (Apr 2024\\) · **Last updated:** 2026-07-30\n\n## Why this belongs in the same venture\n\nBFAV looks like a different business from the VSLA line — solar developers and utilities rather than savings groups and microloans. It is the same thesis with a different origination layer.\n\nThe venture's claim is that certain sustainable-development assets are underfunded because nobody designed them at origination to be poolable. That claim is layer-agnostic. What matters is whether the origination layer produces cash flows that are **standardized, verifiable, and legally transferable**. Agrivoltaic projects do — arguably more cleanly than community loans:\n\n|  | Community credit line | Agrivoltaic line |\n| :---- | :---- | :---- |\n| Originator | VSLAs, MFIs, NGOs | Farmers / landholders, via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Counterparty credit | Many small, socially enforced | One utility, monopsony |\n| Standardization difficulty | High — data capture is the hard part | Low — PPAs are already standard contracts |\n| Tenor | Months | 15–25 years |\n| Precedent | LIT-004, LIT-006 | **LIT-008** (Rwanda distributed solar ABS) |\n\n**LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.\n\nThe predecessor sds-work-plan.md is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.\n\n## Concept\n\nA project finance and management firm that adds bifacial agrivoltaic solar capacity to working farmland, sells the electricity to the utility under a PPA, and manages the project through its life.\n\nThe differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.\n\nUnit economics reduce to: (Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt).\n\n## Market structure\n\nThe end customer is the electric utility buying the power. But revenue comes through relatively rigid PPAs in a monopsony market — the price is not negotiable in any meaningful sense, and there is only one buyer.\n\nThat has a consequence worth stating plainly: **growth is constrained by partner acquisition, not by sales.** The real customers are the farmers and investors whose participation creates projects. Marketing effort belongs there, not at the utility.\n\nThe monopsony also cuts the other way, and favourably for securitization: a single, regulated, creditworthy offtaker on a long-dated standard contract is a far more legible cash flow to an investor than thousands of small borrowers. The credit analysis largely collapses to the utility's credit plus operational/production risk.\n\n## Products and services\n\n1. **Capital investment and project management** — the core service.  \n2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.  \n3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.  \n4. **O\\&M** — operations and maintenance over project life.\n\n## Risks\n\n| Category | Risk | Note |\n| :---- | :---- | :---- |\n| Production | Solar yield below model | Bifacial gain on agricultural ground cover is site-specific; needs measured validation, not datasheet assumptions |\n| Agricultural | Crop yield loss under array, rotation incompatibility | The value proposition to the farmer fails if this isn't managed |\n| Offtake | PPA terms set by a monopsony buyer; tariff or policy revision | The single largest exposure — concentrated counterparty and regulatory risk in one place |\n| Political / regulatory | Land-use permitting, agricultural land protection rules, grid connection queues | Jurisdiction-specific; blocks projects rather than degrading them |\n| Financial | Interest-rate and construction-cost exposure on long-dated assets | Match funding tenor to asset tenor |\n| Concentration | Many projects, one offtaker | Undermines the \"uncorrelated idiosyncratic risk\" pooling logic if the whole portfolio faces one utility — see below |\n\n## The concentration problem — and why the two lines need each other\n\nA pure agrivoltaic portfolio is only superficially diversified. Many small projects, but one offtaker, one regulator, one tariff regime. Idiosyncratic risk is diversified; systematic risk is not. That is precisely the failure mode the SDS work plan warned about.\n\nThis is the strongest structural argument for running both product lines: community receivables and PPA-backed project cash flows have close to no shared risk driver. A blended pool is genuinely diversified in a way that either line alone is not.\n\nWhether a **blended vehicle** is desirable is a live question. Rating agencies and investors generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one rather than lifting the other. Recorded as OQ-8.\n\n## Not yet specified\n\nCarried forward from the 2024 plan and still open:\n\n- Financial plan — capex per MW, project IRR, revenue projections, the funding ask  \n- Competitive analysis — who else is doing agrivoltaic project finance in this market  \n- Team and organizational structure  \n- Legal structure of the project vehicle, and whether it can be the same entity as the community line  \n- Which jurisdiction — the original plan implies Israel, which would align with the community line's pilot site\n\n## Open questions\n\n- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?  \n- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?  \n- What does a utility's PPA actually allow in terms of assignment of receivables? This is the LIT-009 true-sale checklist applied to this asset — and it may be the binding constraint.\n\n"
+   "body": "# Product Line 2 — Agrivoltaic Project Finance (BFAV)\n\n**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** `archive/google-drive/bfav-business-plan.md` (Apr 2024\\) · **Last updated:** 2026-07-30\n\n## Why this belongs in the same venture\n\nBFAV looks like a different business from the VSLA line — solar developers and utilities rather than savings groups and microloans. It is the same thesis with a different origination layer.\n\nThe venture's claim is that certain sustainable-development assets are underfunded because nobody designed them at origination to be poolable. That claim is layer-agnostic. What matters is whether the origination layer produces cash flows that are **standardized, verifiable, and legally transferable**. Agrivoltaic projects do — arguably more cleanly than community loans:\n\n|  | Community credit line | Agrivoltaic line |\n| :---- | :---- | :---- |\n| Originator | VSLAs, MFIs, NGOs | Farmers / landholders, via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Counterparty credit | Many small, socially enforced | One utility, monopsony |\n| Standardization difficulty | High — data capture is the hard part | Low — PPAs are already standard contracts |\n| Tenor | Months | 15–25 years |\n| Precedent | LIT-004, LIT-006 | **LIT-008** (Rwanda distributed solar ABS) |\n\n**LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.\n\nThe predecessor `sds-work-plan.md` is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.\n\n## Concept\n\nA project finance and management firm that adds bifacial agrivoltaic solar capacity to working farmland, sells the electricity to the utility under a PPA, and manages the project through its life.\n\nThe differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.\n\nUnit economics reduce to: `(Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt)`.\n\n## Market structure\n\nThe end customer is the electric utility buying the power. But revenue comes through relatively rigid PPAs in a monopsony market — the price is not negotiable in any meaningful sense, and there is only one buyer.\n\nThat has a consequence worth stating plainly: **growth is constrained by partner acquisition, not by sales.** The real customers are the farmers and investors whose participation creates projects. Marketing effort belongs there, not at the utility.\n\nThe monopsony also cuts the other way, and favourably for securitization: a single, regulated, creditworthy offtaker on a long-dated standard contract is a far more legible cash flow to an investor than thousands of small borrowers. The credit analysis largely collapses to the utility's credit plus operational/production risk.\n\n## Products and services\n\n1. **Capital investment and project management** — the core service.  \n2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.  \n3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.  \n4. **O\\&M** — operations and maintenance over project life.\n\n## Risks\n\n| Category | Risk | Note |\n| :---- | :---- | :---- |\n| Production | Solar yield below model | Bifacial gain on agricultural ground cover is site-specific; needs measured validation, not datasheet assumptions |\n| Agricultural | Crop yield loss under array, rotation incompatibility | The value proposition to the farmer fails if this isn't managed |\n| Offtake | PPA terms set by a monopsony buyer; tariff or policy revision | The single largest exposure — concentrated counterparty and regulatory risk in one place |\n| Political / regulatory | Land-use permitting, agricultural land protection rules, grid connection queues | Jurisdiction-specific; blocks projects rather than degrading them |\n| Financial | Interest-rate and construction-cost exposure on long-dated assets | Match funding tenor to asset tenor |\n| Concentration | Many projects, one offtaker | Undermines the \"uncorrelated idiosyncratic risk\" pooling logic if the whole portfolio faces one utility — see below |\n\n## The concentration problem — and why the two lines need each other\n\nA pure agrivoltaic portfolio is only superficially diversified. Many small projects, but one offtaker, one regulator, one tariff regime. Idiosyncratic risk is diversified; systematic risk is not. That is precisely the failure mode the SDS work plan warned about.\n\nThis is the strongest structural argument for running both product lines: community receivables and PPA-backed project cash flows have close to no shared risk driver. A blended pool is genuinely diversified in a way that either line alone is not.\n\nWhether a **blended vehicle** is desirable is a live question. Rating agencies and investors generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one rather than lifting the other. Recorded as OQ-8.\n\n## Not yet specified\n\nCarried forward from the 2024 plan and still open:\n\n- Financial plan — capex per MW, project IRR, revenue projections, the funding ask  \n- Competitive analysis — who else is doing agrivoltaic project finance in this market  \n- Team and organizational structure  \n- Legal structure of the project vehicle, and whether it can be the same entity as the community line  \n- Which jurisdiction — the original plan implies Israel, which would align with the community line's pilot site\n\n## Open questions\n\n- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?  \n- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?  \n- What does a utility's PPA actually allow in terms of assignment of receivables? This is the LIT-009 true-sale checklist applied to this asset — and it may be the binding constraint.\n\n"
   }
  ],
  "docTree": [
