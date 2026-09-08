@@ -5,7 +5,24 @@
 `docs/venture/solo-operator-track.md` set out three operating models and recommended **(c)** —
 run the solo design-and-arranging practice now, convert to the capital-markets structurer at
 deal 3–4. This document is the detail behind that recommendation, written so the option can be
-judged rather than taken on trust. **Nothing here is decided.** OQ-19 remains Open.
+judged rather than taken on trust. OQ-19 remains Open.
+
+> **Steer recorded 2026-09-08: Phase 2 is the base case, not a waypoint.** Topping out as a
+> design, standard-setting and verification practice is an acceptable end state provided it is a
+> good business in its own right. Phase 3 is an option to be kept open only where keeping it open
+> is free. §4, §5, §6 and §8 below are written under that frame; the sequenced decisions it
+> produces are in [`decision-register.md`](decision-register.md).
+
+**The single largest consequence:** gate 6 below — identify and commit the retention strip — was
+the one line at which this business stopped being capital-light. Under a Phase-2-terminal plan
+that line never arrives, and **the venture has no capital requirement at all, end to end.**
+
+**The second largest:** revenue Lane D (the published standard, the tooling, certification and
+verification subscriptions) stops being a year-2 afterthought. Lanes A, B and C are all linear in
+your calendar, so at two to three concurrent engagements they are a well-paid job with a hard
+ceiling. Lane D is the only leg that earns without consuming a day, which makes it **the
+difference between a business and a job** once Phase 3 is not the destination. Its decisions move
+from month 18 to month 6.
 
 ---
 
@@ -100,6 +117,13 @@ from day one, and the EXP-25 estimate exists with a confidence interval.
 **Seven conditions.** Convert only when all seven hold. Each is checkable against evidence the
 plan already generates, and five of them are things Phase 1 and 2 produce as a by-product.
 
+Under the Phase-2-terminal frame these are no longer a roadmap to be worked toward. They are a
+**filter that mostly returns no**, and that is the intended behaviour: conversion should happen
+only if gates 1 and 7 arrive *unprompted* — the market pulling you into structuring rather than
+you pushing toward it. Gates 3 and 4 also change character: they were load-bearing because they
+sized tranches, and with no tranches to size they become research and credibility assets rather
+than blockers.
+
 | # | Gate | Why this threshold | Where the evidence comes from |
 | :---- | :---- | :---- | :---- |
 | **1** | **A contractible pipeline of ≥ USD 20m** across originators already diagnosed | RT-5's sweep: fixed costs dominate below ~USD 5m and flatten around USD 20–40m. Below the flattening point the SPV eats the economics. | RT-5 `--sweep`, refreshed with real numbers |
@@ -117,9 +141,22 @@ already committed to, arriving at the moment it can actually change a decision.
 
 ---
 
-## 5. Carry-forward — what Phase 1 must build for Phase 3
+## 5. Carry-forward — what Phase 1 must build anyway
 
-This is what makes C one business rather than two. Each item is cheap now and impossible later.
+Originally written as "what Phase 1 must build for Phase 3". Re-derived 2026-09-08 on
+**Phase-2-only** grounds, since that is now the base case — and the honest result is that most of
+the list survives on its own merits, which is itself the evidence that Phases 1–2 are coherent
+standalone rather than a stepping stone:
+
+| | Under Phase 2 as the end state |
+| :---- | :---- |
+| **5.1 Data rights** | **More important, not less.** It stops being feedstock for a pool and becomes the raw material of Lane D — benchmarking across clients, published aggregates, and the verification leg. It is now a primary revenue input. |
+| **5.2 Seasoning clock** | **Less urgent.** The 24-month threshold was gate 2. A lender in deal 2 still wants track record from deal 1, so it matters — but it is no longer the argument for closing deal 1 early. |
+| **5.3 Refinancing ROFR** | **More important.** Repeat mandates on facilities you already arranged are exactly the recurring revenue a practice needs when there is no pool to graduate into. |
+| **5.4 Published standard** | **Unchanged — it is now the business itself**, not a moat around a future one. See D-16. |
+| **5.5 Correlation pipeline** | **Demoted.** Valuable as research, credibility and marketing for theories 2 and 3; no longer load-bearing for revenue, because nothing depends on sizing a first-loss layer. |
+
+Each item is still cheap now and expensive or impossible later.
 
 ### 5.1 Data rights — the clause that matters most
 
@@ -193,8 +230,11 @@ Five things that look like good early revenue and foreclose Phase 3:
 | **A data clause limited to the engagement** | §5.1. The single irreversible mistake available in year one. |
 | **Equity in an originator** | Turns an asset-light practice into an investor, and creates a conflict at exactly the moment you structure that originator's book for third-party capital. |
 | **Becoming servicer of record** | Operationally heavy, needs staff, and breaks the no-hiring constraint. Supply the monitoring tooling; do not become the collections operation. |
-| **Exclusivity with one originator** | Kills the multi-originator pool before OQ-18 has even been asked. |
+| **Exclusivity with one originator** | Under Phase 3 this killed the multi-originator pool. Under Phase 2 the reason changes but the answer does not: exclusivity caps your addressable market, removes the cross-client benchmarking that Lane D sells, and makes a one-person business dependent on one counterparty. |
 | **A first facility structured as a securitisation** | §4 of `solo-operator-track.md` and gate 1 above. Arithmetically wrong at achievable scale, and a failed first structure is more damaging than a slow one. |
+
+Re-checked 2026-09-08 against the Phase-2-terminal frame: all five hold. Only the *reason* for
+refusing exclusivity changes.
 
 ---
 
@@ -235,6 +275,12 @@ capital itself**. Gate 6 exists because that number has to be known before the p
 `SOURCED` / `ASSUMED` discipline as the existing config. Logged as **M-41**. Until it exists, no
 Phase 1 profitability claim should be made, in either direction.
 
+Under the Phase-2-terminal frame M-41 is promoted: it is no longer a companion to RT-6 but **the
+only economics model that matters**, since the securitisation P&L RT-6 currently computes may
+never be run in anger. It should carry a Lane D line — subscription and certification revenue that
+does not consume billable days — because that line is what separates a business from a job (§0 of
+`decision-register.md`), and a model without it will systematically understate the plan.
+
 ---
 
 ## 8. Decision points — and why stopping is allowed
@@ -248,7 +294,7 @@ main way people talk themselves out of it.
 | **D1** | Month ~12 | Do Lanes A and B clear the cash floor? | The model is wrong, not slow. `solo-operator-track.md` §9 names the test: if no originator will pay for a diagnostic, Lane A does not exist. Restructure or stop. |
 | **D2** | Month ~30–36 | Convert to Phase 3, against the seven gates? | **Stay a practice.** See below. |
 
-### Stopping at Phase 2 is a legitimate terminal state
+### Phase 2 as the base case (confirmed 2026-09-08)
 
 A profitable design, standard-setting and verification practice — theories 7, 3 and 6 — is a real
 business with recurring revenue, no balance sheet, and no key-person capital requirement. It is
@@ -259,8 +305,16 @@ gets treated as a waiting room: under-priced, under-marketed, and staffed with w
 is left over. That is the actual failure mode of Track C, and it is more likely than any of the
 market risks.
 
-The honest framing: **Phase 1 and 2 are the business. Phase 3 is an option that Phase 1 and 2 pay
-for and keep open.** Gates 3 and 4 may close it on the evidence, and that is a result, not a loss.
+The honest framing, and now the recorded position: **Phase 1 and 2 are the business. Phase 3 is an
+option that Phase 1 and 2 keep open at no cost.**
+
+That said, a practice is not automatically a good business just because it is profitable. Lanes A,
+B and C are linear in your calendar and bounded by it. What makes Phase 2 worth stopping at is
+**Lane D** — the standard, the tooling, certification and verification subscriptions — because it
+is the only revenue that scales without your time. If the decisions at D-16 and D-17 are not
+taken, Phase 2 is a consultancy with a ceiling, and "stopping there" is a weaker outcome than it
+needs to be. The steer to accept Phase 2 as the end state is therefore also a commitment to
+productise, not merely to stay small. Gates 3 and 4 may close it on the evidence, and that is a result, not a loss.
 
 ---
 
@@ -292,3 +346,9 @@ identical under both:
 4. **M-41** — the RT-6 services variant (§7), so D1 can be judged against a model rather than a feeling.
 5. **M-42** — a one-page Phase 3 gate scorecard, checked at D2 and at each annual review, so the
    seven gates are tracked from the start rather than reconstructed at the end.
+6. **M-44** — the Lane D productisation decision (open core, and which paid layer first), which
+   under the Phase-2-terminal frame moves forward to month 6. See `decision-register.md` D-16/D-17
+   and OQ-24.
+
+The sequenced decision list, with what blocks what, is in
+[`decision-register.md`](decision-register.md).
