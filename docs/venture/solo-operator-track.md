@@ -2,6 +2,13 @@
 
 **Status:** Option under evaluation, not a decision · **Owner:** BB · **Drafted:** 2026-09-08 · **Decision:** OQ-19
 
+> **Scope correction, 2026-09-09.** This document was written with the repo's research
+> apparatus attached. The business scoping — where to play, who it reaches, and what the first
+> pilots are — is now in [`market-scan-and-pilots.md`](market-scan-and-pilots.md). What survives
+> here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked:
+> the experimental designs. Read the market scan first.
+
+
 This document answers a specific question put to the project on 2026-09-08:
 
 > If the PhD track is dropped for now, and the business focuses on **designing financial
