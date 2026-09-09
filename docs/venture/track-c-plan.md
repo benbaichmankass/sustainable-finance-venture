@@ -2,6 +2,13 @@
 
 **Status:** Detail for a decision not yet taken (OQ-19) · **Owner:** BB · **Drafted:** 2026-09-08
 
+> **Scope correction, 2026-09-09.** This document was written with the repo's research
+> apparatus attached. The business scoping — where to play, who it reaches, and what the first
+> pilots are — is now in [`market-scan-and-pilots.md`](market-scan-and-pilots.md). What survives
+> here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked:
+> the experimental designs. Read the market scan first.
+
+
 `docs/venture/solo-operator-track.md` set out three operating models and recommended **(c)** —
 run the solo design-and-arranging practice now, convert to the capital-markets structurer at
 deal 3–4. This document is the detail behind that recommendation, written so the option can be

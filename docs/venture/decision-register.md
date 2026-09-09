@@ -2,6 +2,13 @@
 
 **Status:** Live register · **Owner:** BB · **Drafted:** 2026-09-08
 
+> **Scope correction, 2026-09-09.** This document was written with the repo's research
+> apparatus attached. The business scoping — where to play, who it reaches, and what the first
+> pilots are — is now in [`market-scan-and-pilots.md`](market-scan-and-pilots.md). What survives
+> here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked:
+> the experimental designs. Read the market scan first.
+
+
 Every decision the work plan needs, sequenced by **when it binds** rather than by importance.
 Companion to `docs/venture/track-c-plan.md`; open questions carrying the substance live in
 `data/open-questions.csv`.

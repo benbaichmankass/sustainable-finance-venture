@@ -39,7 +39,8 @@ docs/                      Four groups, by what the doc is for
                            application pack, rubric, funding landscape,
                            the publication route (OQ-21)
   venture/                 Building it — milestones, funding pipeline, macro watch,
-                           the solo design-and-arranging alternative, its phased
+                           the market scan and pilot sequence (start here), the
+                           solo design-and-arranging alternative, the phased
                            Track C plan and the decision register (OQ-19)
   ops/                     How the repo works — publishing, Drive sync, dashboard,
                            private overlay, scratchpad
@@ -85,16 +86,18 @@ Every record has a stable ID. IDs are never reused or renumbered — cross-refer
 | Literature components | 26 — 10 are P1, needed before the proposal goes out |
 | Literature anchors | 44 logged (37 reviewed, 7 to read) — against a P1 target of ~96 |
 | Synthesis memos | 3 reviewed, 3 drafted, 3 outlined — all 9 files exist; assembled in [`docs/research/literature-review.md`](docs/research/literature-review.md) |
-| Open questions | 26 — 4 answered, 8 partially answered, 13 open, 1 dropped |
-| Milestones | 8 done, 7 in progress, 29 not started |
-| Experiments | 30 candidates, scored — 2 specified (EXP-25, EXP-22); anchor setting is the coffee cluster, instrument open between EXP-09 and EXP-10 (OQ-16) |
+| Open questions | 26 — 4 answered, 9 partially answered, 12 open, 1 dropped |
+| Milestones | 8 done, 6 in progress, 27 not started, 3 blocked |
+| Experiments | 30 candidates, scored — the randomised designs are parked as of 2026-09-09 (EXP-22, EXP-09, EXP-10 dropped; EXP-25 demoted). Trials are a research partner's project, not this venture's cost; the commercial substitute is the three-pilot sequence in `docs/venture/market-scan-and-pilots.md` |
 | Product lines | 2 — community credit/insurance, agrivoltaic project finance |
 | Risk tools | 6 — 5 in development, 1 specified |
 | Macro watchlist | 16 indicators |
 | Partners | 23 tracked across origination, capital, risk carriers, standards and research (contact status in the private overlay) |
 | PhD programs | 52 scored and tiered |
 
-**Above the critical path sits one decision (OQ-19):** which operating model the venture runs — the capital-markets structurer in `product-design/business-plan.md`, a solo design-and-arranging practice that drops the PhD for now, or the first converting into the second once there is a track record. The alternative is worked out in full in [`docs/venture/solo-operator-track.md`](docs/venture/solo-operator-track.md), and the recommended phased option in [`docs/venture/track-c-plan.md`](docs/venture/track-c-plan.md) — conversion gates, what the practice phase has to build for the structuring phase, and what it must refuse. It changes the order of everything below it, and items 1 and 2 of the list point in different directions depending on how it resolves. **Recorded 2026-09-08: Phase 2 of that plan is the base case, not a waypoint** — a design, standard-setting and verification practice is an acceptable end state, and the structuring phase is an option kept open only where that is free. Two consequences: the venture then has no capital requirement at all, and revenue Lane D (the published standard, tooling and certification) becomes the difference between a business and a job. The sequenced decisions, and the five that actually block everything else, are in [`docs/venture/decision-register.md`](docs/venture/decision-register.md). Deferring rather than dropping the PhD keeps a publication route open at near-zero cost; what that route is, and the authorship term that can close it by accident, are in [`docs/phd/phd-by-publication.md`](docs/phd/phd-by-publication.md).
+**Above the critical path sits one decision (OQ-19):** which operating model the venture runs — the capital-markets structurer in `product-design/business-plan.md`, a solo design-and-arranging practice that drops the PhD for now, or the first converting into the second once there is a track record. The alternative is worked out in full in [`docs/venture/solo-operator-track.md`](docs/venture/solo-operator-track.md), and the recommended phased option in [`docs/venture/track-c-plan.md`](docs/venture/track-c-plan.md) — conversion gates, what the practice phase has to build for the structuring phase, and what it must refuse. It changes the order of everything below it, and items 1 and 2 of the list point in different directions depending on how it resolves. **Scoped as a business, 2026-09-09.** The earlier framing carried this repo's research apparatus into what is a business question. [`docs/venture/market-scan-and-pilots.md`](docs/venture/market-scan-and-pilots.md) is the current scoping: which sectors, populations and geographies this can reach, and what the first three pilots are. Its filter — **follow the visible, contractible cash flow, not the neediest population** — puts agricultural value chains with a formal off-taker in the lead, because that is the only setting where a poor household's income arrives as a documented payment from an identifiable counterparty. The randomised designs are parked; impact is reported from portfolio data and benchmarked against the literature, without claiming attribution.
+
+**Recorded 2026-09-08: Phase 2 of that plan is the base case, not a waypoint** — a design, standard-setting and verification practice is an acceptable end state, and the structuring phase is an option kept open only where that is free. Two consequences: the venture then has no capital requirement at all, and revenue Lane D (the published standard, tooling and certification) becomes the difference between a business and a job. The sequenced decisions, and the five that actually block everything else, are in [`docs/venture/decision-register.md`](docs/venture/decision-register.md). Deferring rather than dropping the PhD keeps a publication route open at near-zero cost; what that route is, and the authorship term that can close it by accident, are in [`docs/phd/phd-by-publication.md`](docs/phd/phd-by-publication.md).
 
 **The critical path** (the PhD track's is sequenced in `docs/phd/proposal-workplan.md`):
 
