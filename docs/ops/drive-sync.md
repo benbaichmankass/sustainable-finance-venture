@@ -163,6 +163,45 @@ The script iterates over the rows in `data/drive-links.csv` and nothing else. It
 
 Sync is bidirectional *per registered pair*, not per folder. Registration is the manual half, and it's manual on purpose — it's what keeps an arbitrary Drive upload from landing in a public repo without anyone deciding it should.
 
+## Two documents in the manifest are GENERATED — do not edit them in Drive
+
+`docs/research/literature-review.md` (DRV-43) is assembled by `scripts/build_lit_review.py`
+from `literature/lit-matrix.csv`, `data/lit-components.csv` and `data/synthesis-memos.csv`.
+It is registered for sync because reading the whole review on a phone is genuinely useful.
+
+**But the sync is bidirectional, and this file is not a source.** An edit made in the Drive
+Doc syncs into the repo like any other, and is then silently destroyed the next time the
+build script runs. That is a data-loss path with no conflict marker and no warning, because
+as far as the sync engine is concerned nothing went wrong.
+
+So: read it in Drive, never edit it there. To change what it says, change one of the three
+CSVs it is built from and re-run the generator. The same rule applies to any future generated
+file added to the manifest.
+
+## Seeding a new Doc without the service-account key
+
+The three-step below assumes you can compute `Baseline_Drive_Hash` from a real
+`files.export(mimeType='text/markdown')`, which used to mean holding `GDRIVE_SA_KEY`.
+It does not. An interactive Drive connector's `download_file_content` **with an explicit
+`exportMimeType`** returns exactly those bytes (its `read_file_content` does not — that is
+the distinction M-34 got wrong). Verified against DRV-27, one of the rows whose Drive and
+repo hashes differ, so a clean round trip could not have masked a mismatch.
+
+That makes a simpler seeding route available, and it is how DRV-35..DRV-54 were registered:
+
+1. **Create the Doc empty** from an account with storage quota.
+2. **Set `Baseline_Drive_Hash` to the empty-doc export hash**
+   (`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, i.e. sha256 of the
+   empty string) and **leave `Baseline_Repo_Hash` blank**.
+3. **Let the workflow run.** `reconcile_row()` reads `drive_changed=False, repo_changed=True`,
+   takes the push branch, writes the repo content into the Doc, and re-baselines both sides
+   from the confirmed export.
+
+The engine computes both baselines itself, so no hash is ever guessed and no document content
+has to be pushed through the connector. Note the asymmetry that makes guessing dangerous: a
+wrong `Baseline_Drive_Hash` against a *correct* repo hash reads as Drive-changed and pulls,
+overwriting the repo file with Drive's re-rendering and committing it.
+
 ## Adding a new synced document
 
 Because of the quota constraint above, adding a new synced doc is a three-step:

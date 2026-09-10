@@ -4363,8 +4363,8 @@ window.SFV_DATA = {
    "ID": "M-34",
    "Phase": "Days 1-30",
    "Milestone": "Register the five new narrative docs in the Drive sync manifest",
-   "Detail": "docs/phd/research-questions.md, docs/phd/proposal-workplan.md, docs/phd/application-pack.md, docs/research/research-framework.md and docs/research/experiment-spec-template.md have no Drive twin, so they cannot be edited from a phone - which is the workfolder's whole purpose. data/drive-links.csv is the whole world for the sync engine and nothing is auto-discovered, so they need DRV-35..DRV-39 rows. WHY THIS WAS NOT DONE ON 2026-08-22: the row needs both baseline hashes populated, and Baseline_Drive_Hash must be sha256 of Drive's own files.export(mimeType='text/markdown') output - see reconcile_row() in scripts/sync_drive.py. That export call needs the service-account key and is not reachable through an interactive Drive connector, whose read-back returns a different representation (verified against DRV-31, where the true export equals the repo file byte-for-byte but the connector's read-back does not). Guessing the hash wrong is not harmless: the engine would read Drive-changed / repo-unchanged and PULL, overwriting the repo markdown with Drive's re-rendering and auto-committing it to main. Several existing rows (DRV-16, DRV-17, DRV-25, DRV-27, DRV-28, DRV-30) show the round-trip is not always clean, and all five new docs are table-heavy. HOW TO FINISH IT: either (a) run the three-step in docs/ops/drive-sync.md from a machine holding GDRIVE_SA_KEY, computing Baseline_Drive_Hash from a real export; or (b) simpler - create the five Docs by hand in the workfolder from an account with quota, add the rows with Drive_ID filled and both baselines computed the same way, then run the workflow manually and confirm each row comes back Synced with no conflict issue opened.",
-   "Status": "Not started",
+   "Detail": "docs/phd/research-questions.md, docs/phd/proposal-workplan.md, docs/phd/application-pack.md, docs/research/research-framework.md and docs/research/experiment-spec-template.md have no Drive twin, so they cannot be edited from a phone - which is the workfolder's whole purpose. data/drive-links.csv is the whole world for the sync engine and nothing is auto-discovered, so they need DRV-35..DRV-39 rows. WHY THIS WAS NOT DONE ON 2026-08-22: the row needs both baseline hashes populated, and Baseline_Drive_Hash must be sha256 of Drive's own files.export(mimeType='text/markdown') output - see reconcile_row() in scripts/sync_drive.py. That export call needs the service-account key and is not reachable through an interactive Drive connector, whose read-back returns a different representation (verified against DRV-31, where the true export equals the repo file byte-for-byte but the connector's read-back does not). Guessing the hash wrong is not harmless: the engine would read Drive-changed / repo-unchanged and PULL, overwriting the repo markdown with Drive's re-rendering and auto-committing it to main. Several existing rows (DRV-16, DRV-17, DRV-25, DRV-27, DRV-28, DRV-30) show the round-trip is not always clean, and all five new docs are table-heavy. HOW TO FINISH IT: either (a) run the three-step in docs/ops/drive-sync.md from a machine holding GDRIVE_SA_KEY, computing Baseline_Drive_Hash from a real export; or (b) simpler - create the five Docs by hand in the workfolder from an account with quota, add the rows with Drive_ID filled and both baselines computed the same way, then run the workflow manually and confirm each row comes back Synced with no conflict issue opened. DONE 2026-09-10, and the stated blocker was WRONG. This milestone recorded that Baseline_Drive_Hash could only be computed from a machine holding GDRIVE_SA_KEY, because an interactive Drive connector's read-back returns a different representation than files.export(mimeType='text/markdown'). That is true of the connector's read_file_content, but NOT of download_file_content with an explicit exportMimeType, which reproduces the export byte for byte. VERIFIED against DRV-27 - chosen deliberately because it is one of the ten doc rows whose Drive and repo hashes DIFFER, so a byte-clean round trip could not mask a mismatch - and the connector export hashed to 02673e4e29ceb4b96849eb4362eccc59f793aa4aea2f71960cb3234c7dfa4706, exactly the stored baseline. Two further checks made the method safe rather than lucky. First, reconcile_row() was read end to end: a WRONG Baseline_Drive_Hash against a correct repo hash reads drive_changed and not repo_changed, which PULLS and overwrites the repo markdown with Drive's re-rendering, then auto-commits it - so guessing really is destructive, as this milestone warned. Second, assuming a byte-clean round trip was measured and rejected: only 23 of 33 doc rows are clean, the 10 dirty ones are the table-heavy docs, and every doc registered here is table-heavy. THE SEEDING ROUTE USED: create each Doc EMPTY through the connector from an account with storage quota (the service account has none, which was the other half of the blocker), set Baseline_Drive_Hash to the empty-doc export hash and leave Baseline_Repo_Hash BLANK. reconcile_row() then reads drive_changed=False, repo_changed=True, takes the push branch, writes the repo content into the Doc and re-baselines both sides from the confirmed export. The engine does the work, so no hash is guessed and none of the ~425KB of document content has to be piped through the connector. The empty-doc export was confirmed to be zero bytes rather than a newline by probing a doc containing a single character, which exported as 'x  \\n' - the connector returns even a 4-byte export faithfully, so an omitted content field means empty. SCOPE: all 20 unregistered docs were registered as DRV-35..DRV-54, not just the five this milestone named - the backlog had grown to include all six synthesis memos, the generated literature review, both experiment specs and the five venture/PhD docs added in PRs #47-#50. The five named here are DRV-36, DRV-38, DRV-39, DRV-40 and DRV-44; the DRV-35..DRV-39 numbering this milestone anticipated was not preserved because the set is larger.",
+   "Status": "Done",
    "Owner": "BB",
    "Linked_Refs": "DRV-01; M-26"
   },
@@ -6106,6 +6106,266 @@ window.SFV_DATA = {
    "Baseline_Repo_Hash": "c025d979018de9eabc9928e57b8e62d4d9b7a43d70b46810bab2de7b06abefb1",
    "Last_Synced_At": "2026-09-04T20:51:20Z",
    "Status": "Synced"
+  },
+  {
+   "ID": "DRV-35",
+   "Drive_ID": "1QKbX9gf86atKN36PHfMi5kv5RnN7jQEWeBSnBEfd9AQ",
+   "Repo_Path": "docs/ops/drive-sync.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Drive sync — bidirectional, automated, repo stays the source of truth",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-36",
+   "Drive_ID": "1ikXOBC9ecygRNtO_go2e4E0_5ac99-Erxti9rsxNqvc",
+   "Repo_Path": "docs/phd/application-pack.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "The application pack",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-37",
+   "Drive_ID": "1zgcxQ8iHNyQ5BI1E6lM8as8AiwsSvEtkj2ZcNWRS0oA",
+   "Repo_Path": "docs/phd/phd-by-publication.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "The PhD by Publication Route",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-38",
+   "Drive_ID": "1214K_cvONjpOdC-iuqgMjgHX3G3pkD4hl87dL8qzc74",
+   "Repo_Path": "docs/phd/proposal-workplan.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Proposal workplan: from here to a supervisor saying yes",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-39",
+   "Drive_ID": "1pJXHC7sNwrT-JZ4LyKPacgMebK45dko5Ku142d-DIqY",
+   "Repo_Path": "docs/phd/research-questions.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Research questions: one project, seven ways to ask about it",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-40",
+   "Drive_ID": "17N8lh9gjPSZRb2wdDNh5GZF84GNKCyThXFC0WNkauMQ",
+   "Repo_Path": "docs/research/experiment-spec-template.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Experiment specs: the scoring rubric and the write-up template",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-41",
+   "Drive_ID": "1q7bZF7ZJaN2HPhnp-4M9bZ18LeCagW_KtS8iSsHUDuc",
+   "Repo_Path": "docs/research/experiments/exp-22-origination-protocol-costing.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "EXP-22 — Securitisation-ready origination protocol: randomised comparison with activity-based costing",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-42",
+   "Drive_ID": "1CmmOJqWRtPHMqopOEy1aIbyOaP5sf4oGRZsq0SORgec",
+   "Repo_Path": "docs/research/experiments/exp-25-default-correlation.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "EXP-25 — Default correlation on partner management-information-system data",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-43",
+   "Drive_ID": "1M0bmmKhvCEub2gAee5ZWapOBKzQa61ToAllBaq_Zknk",
+   "Repo_Path": "docs/research/literature-review.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Literature review",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-44",
+   "Drive_ID": "1GNqH-r92i73maFuTuEIFRkdvevcpEQ7dwitCU8DcL74",
+   "Repo_Path": "docs/research/research-framework.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Research framework",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-45",
+   "Drive_ID": "1yIMCWHNNVU3qku2xVRfpGk4DCHR1abx9Q1kE_5RDpd4",
+   "Repo_Path": "docs/venture/decision-register.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Decision Register — What Has To Be Settled, and When",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-46",
+   "Drive_ID": "125vbTr1MBrXeaRVM54Hhhw4a1As0hO75ZC5vlp2DlIA",
+   "Repo_Path": "docs/venture/market-scan-and-pilots.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Where To Play, and What the First Pilots Look Like",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-47",
+   "Drive_ID": "1k-P_ZPM1HpTD9jlBm5weZ5-2iIs7ofPsMDHUDXvk8y0",
+   "Repo_Path": "docs/venture/solo-operator-track.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Solo Operator Track — Product Design and Arranging, Without the PhD",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-48",
+   "Drive_ID": "1QkfC33-b-fRYCBFtolJ9dzKa_RiiPmNhrRhunejYQsQ",
+   "Repo_Path": "docs/venture/track-c-plan.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Track C — Practice First, Structurer Later",
+   "Category": "Planning",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-49",
+   "Drive_ID": "1JsOttWs819JfWNN-JlqWBzsNQKK7eWEGAnk_ox2H2vs",
+   "Repo_Path": "literature/notes/memo-4-the-repayment-mechanism-and-its-critics.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Memo 4: The repayment mechanism and its critics",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-50",
+   "Drive_ID": "1ec8cPsuvw6gpA3bsblCOoUmRJT2JAzcO2Fq0yM1jTT8",
+   "Repo_Path": "literature/notes/memo-5-insurance-bundling-resilience.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Memo 5: Insurance, bundling, and what resilience means",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-51",
+   "Drive_ID": "1CQxw0XBUedELTAuP2IdUcJQUgvwO6moyYzrdw27KvQ8",
+   "Repo_Path": "literature/notes/memo-6-the-climate-financing-gap-and-how-to-measure-a-response.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Memo 6: The climate financing gap and how to measure a response",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-52",
+   "Drive_ID": "1H4c8X_O-agMHESBc8UG6r7HD01dHyX3Tu-YHi6GBrv8",
+   "Repo_Path": "literature/notes/memo-7-can-these-cash-flows-be-modelled.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Memo 7: Can these cash flows be modelled?",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-53",
+   "Drive_ID": "1c3W1BD_k1njNEhrWUp2gsO7CsP7eObTra0-_cTa1LHs",
+   "Repo_Path": "literature/notes/memo-8-legal-and-market-preconditions.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "Memo 8: Legal and market preconditions",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
+  },
+  {
+   "ID": "DRV-54",
+   "Drive_ID": "1RlAkC0RZ7y3qmK211PPd0d8sjyfPwW1mdEtDmdfSdRU",
+   "Repo_Path": "literature/notes/memo-9-sector-and-infrastructure-notes.md",
+   "Type": "doc",
+   "Parent_ID": "DRV-01",
+   "Title": "MEMO-9 — Sector and infrastructure notes",
+   "Category": "Synthesis memos",
+   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "Baseline_Repo_Hash": "",
+   "Last_Synced_At": "",
+   "Status": "Not synced"
   }
  ],
  "macroSeries": {
@@ -12134,8 +12394,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Drive sync — bidirectional, automated, repo stays the source of truth",
    "summary": "",
-   "words": 3054,
-   "body": "# Drive sync — bidirectional, automated, repo stays the source of truth\n\n**Status:** v1 — narrative docs only · **Last updated:** 2026-08-22\n\n## What this is, and what it isn't\n\nThe **Drive Vault** (`docs/ops/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.\n\nThe point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:\n\n**Reconciliation is mechanical, not editorial.** A script compares hashes against the last-synced baseline and moves content in whichever direction actually changed. There is no model in this loop and no judgment call about which version is \"better\" — if both sides changed since the last sync, the script does not guess; it stops and flags it for a human.\n\n## Architecture\n\n```\ndata/drive-links.csv  ── manifest: one row per synced item ─┐\n                                                              │\nscripts/sync_drive.py ── the reconciliation engine ──────────┤\n  (service-account auth, hash comparison, pull/push/conflict) │\n                                                              │\n.github/workflows/sync-drive.yml ── runs it ─────────────────┘\n  (on push to a synced path + hourly poll + manual dispatch;\n   commits straight to main. See \"Cadence\" - the poll is\n   best-effort and routinely much slower than hourly.)\n\ndashboard/build.py reads data/drive-links.csv like any other tracker ─→\n  Resources tab: master folder link + every item, each linking out to\n  its Drive copy and its repo file.\n```\n\nNothing here talks to Claude. The workflow, the script, and the credential all live in this repo and GitHub's infrastructure; an AI agent might *write* the manifest row for a new doc, same as any other repo edit, but the reconciliation itself runs unattended.\n\n## The manifest — `data/drive-links.csv`\n\nOne row per synced item, plus one `folder`-type row for the master Drive folder itself (used only for navigation, never reconciled).\n\n| Column | Meaning |\n|---|---|\n| `ID` | Stable ID, `DRV-NN`. Never reused, same rule as every other tracker. |\n| `Drive_ID` | The Drive file/folder ID. Blank means \"not created yet\" — the next sync run creates it from the repo file. |\n| `Repo_Path` | The repo file this row reconciles with. Blank for the folder row. |\n| `Type` | `folder` (navigation only) · `doc` (Google Doc ↔ markdown) · `sheet` (Google Sheet ↔ CSV). |\n| `Parent_ID` | The `ID` of the folder row a new file gets created inside. |\n| `Title` | Display title — also the Doc/Sheet's name when it's first created. |\n| `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |\n| `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |\n| `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |\n| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. `Error` is set by a failed run and cleared automatically by the next run that finds the row unchanged on both sides; `Conflict` is not — it needs a human. |\n\n## The reconciliation algorithm\n\nEvery run, for every non-folder row, the script computes the current hash of both sides and compares each against its stored baseline — not against each other directly:\n\n| Drive vs. baseline | Repo vs. baseline | Result |\n|---|---|---|\n| unchanged | unchanged | nothing to do |\n| changed | unchanged | **pull** — Drive was edited, overwrite the repo file |\n| unchanged | changed | **push** — the repo was edited, overwrite the Drive file |\n| changed | changed, but Drive now equals repo | not a real conflict — both sides independently landed on the same content; just re-baseline |\n| changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |\n| — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious \"changed\" on the very next run) |\n\nWhy compare against a stored baseline instead of just \"whichever timestamp is newer\": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same polling window — and that window is hours wide, not minutes, so the odds of it happening are not academic — with whichever wrote last winning and no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.\n\n## Resolving a conflict\n\nThe issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — but first check the conflict is really about *content*. If the repo file carries a BOM or CRLF endings, the mismatch may be structural rather than editorial, in which case no amount of editing either side will clear it; see the normalisation rule above — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.\n\n## Auto-commit, not auto-merge\n\nReconciled changes are committed straight to `main` by the workflow — no PR, no review gate, for either direction. That's deliberately different from how a normal content change to this repo works (see `CLAUDE.md` §7, \"ask before committing when the change is substantive\"). It's safe here specifically because:\n\n- The only things a sync run can touch are the markdown docs and Sheets explicitly listed in the manifest — nothing structural, nothing with an ID scheme to corrupt.\n- Every commit is a plain content diff, fully revertable with `git revert`.\n- The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.\n\nIf a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.\n\n## Text is normalised at both ends, and markdown export never degrades\n\nTwo rules the engine enforces on every byte crossing the boundary. Both were added on\n2026-08-22 after one document was silently corrupted and then wedged for a day.\n\n**1. Normalise before hashing and before writing.** A UTF-8 BOM is stripped and CRLF/CR\nis folded to LF, in `read_repo_file()`, `export_doc_text()` and `write_repo_file()`.\n\nThis is not tidiness. `write_repo_file()` opens with `newline=\"\\n\"`, which does *not*\nstrip a `\\r` already inside the string, while `read_repo_file()` opens with universal\nnewlines, which does. So a CRLF-bearing export written to disk and read back is a\n**different string** — its hash can never match the baseline recorded at write time, and\n`repo_changed` is therefore `True` on every run, for ever. The row cannot converge, and\nbecause the documented \"edit one side to match the other\" fix operates on *content*, it\ncannot clear a mismatch that is structural. Normalising both ends is what makes the\nround-trip stable.\n\n**2. A Doc that will not export as markdown is an error, not a plain-text pull.**\n`export_doc_text()` used to fall back to `text/plain` on any `HttpError`. That looks\ndefensive and is the opposite: Google's plain-text export drops every heading marker,\nevery bold marker and every table pipe, and adds a BOM and CRLF endings. A transient API\nerror on one run would therefore overwrite a good markdown file with a formatting-stripped\nrendering, commit it to `main`, and report success.\n\nIt now raises `MarkdownExportUnavailable`; `main()` catches it, marks the row `Error` and\nmoves on. Losing a cycle on one document beats losing the document.\n\n### The incident these came from\n\n`DRV-11` (`docs/phd/phd-scoring-rubric.md`), 2026-08-21T07:13Z. The markdown export\nfailed, the fallback pulled plain text, and the repo copy lost 8 headings, 4 tables and\nall bold, gaining 212 tab characters, a BOM and CRLF endings. Both baselines were then\nset to that degraded text, so the corruption became the recorded truth. From the next run\nonward the repo hash could never match its baseline, Drive was exporting proper markdown\nagain, both sides read as changed, they disagreed — permanent `Conflict`.\n\nRecovering it needed the normalisation fix *plus* a deliberate re-baseline of both hashes\nto the normalised repo hash, which makes the engine see repo-unchanged / Drive-changed and\ntake the pull branch. Note that re-baselining this way needs only a locally computable\nvalue — it is the one manoeuvre that does not require predicting Drive's export hash.\n\n**3. `Status` heals itself once a row verifies in sync.**\nWhen both sides hash to their baselines, `reconcile_row()` returns early — nothing to do.\nIt used to return without touching `Status`, which meant a row marked `Error` by a\none-off API failure kept saying `Error` for ever, because no later run ever writes\n`Status` on an unchanged row. It now clears a stale non-`Synced` status on the way out.\nThis cannot mask a real conflict: in a genuine conflict neither baseline matches, so that\nbranch is never reached. `Last_Synced_At` is deliberately *not* bumped — nothing moved,\nand touching it would commit all 33 rows every twenty minutes.\n\n### The second incident, which is the fix working\n\n`DRV-09` (`docs/phd/phd-funding-landscape.md`), 2026-08-22T14:53Z — the first scheduled\nrun after the change above shipped. Google returned `HTTP 500 Internal Error` on the\nmarkdown export. Under the old code that would have been a silent `text/plain` pull and a\nsecond corrupted document on `main`. Instead the run logged\n\n```\n! DRV-09: markdown export unavailable for 1kq8...LdFs (<HttpError 500 ...\n  returned \"Internal Error\">); refusing to fall back to text/plain, which\n  would strip all formatting\nDone. 1 row(s) errored.\n```\n\nand left the file untouched. The export succeeded again on the next run 37 minutes later.\nThe document was never at risk; only the `Status` field lagged, which is what change 3\nabove fixes.\n\nRegression cover: `scripts/test_sync_drive.py` (stdlib only, no Drive credentials needed).\n\n## Known constraint: the service account can't create new files\n\nA standalone Google service account — one not backed by a Google Workspace organization with a **Shared Drive** — has **zero Drive storage quota of its own**. Editing a file it doesn't own costs it nothing (the file's storage counts against whoever owns it), but *creating* a new file makes the service account the owner by default, and Google rejects that with `storageQuotaExceeded` even though it has full Editor access to the folder. This isn't a permissions bug; it surfaced on the very first live run of this system (every one of the 32 initial docs failed to create, cleanly, with that exact error, while everything else — auth, the commit, the push — worked).\n\nShared Drives fix this properly (files there are owned by the Shared Drive, not any one account), but Shared Drives are a Workspace-only feature, unavailable on a plain Google account. So for a plain account, the practical rule is:\n\n**New files must be created by a real account with its own quota, then the service account only ever edits what already exists.** The initial 32 docs were seeded this way (via an authenticated Drive connection to the folder owner's real account) rather than through the automated workflow.\n\n## The manifest is the whole world — nothing is auto-discovered\n\nThe script iterates over the rows in `data/drive-links.csv` and nothing else. It never lists the workfolder's contents, so:\n\n- **A Doc you create by hand in the Drive workfolder will not appear in the repo.** It sits there, unseen, until someone adds a `DRV-NN` row pointing at it. There is no scan step that would notice it.\n- **A markdown file you add to the repo will not appear in Drive**, for the same reason.\n\nSync is bidirectional *per registered pair*, not per folder. Registration is the manual half, and it's manual on purpose — it's what keeps an arbitrary Drive upload from landing in a public repo without anyone deciding it should.\n\n## Adding a new synced document\n\nBecause of the quota constraint above, adding a new synced doc is a three-step:\n\n1. **Create the Doc first, from an account with storage quota** — directly in Drive (File → New → Google Doc, inside the workfolder), or via an agent holding a real Drive connection rather than the service-account key. Note the file ID from its URL (`docs.google.com/document/d/<ID>/edit`). Seed it with the repo file's content in the same move, so the two sides start out saying the same thing.\n2. **Baseline both sides before the first run.** Add the row with `Drive_ID` filled in, a fresh `DRV-NN`, `Repo_Path`, `Parent_ID` pointing at the folder row, `Type`, and — this is the part that matters — **both baseline hashes already populated**, `Status: Synced`.\n\n   Leaving the baselines blank does *not* produce a clean first sync. Blank baselines make both sides read as changed, and since a markdown → Google Doc → markdown round-trip is never quite byte-identical, the two hashes won't match either — which is precisely the conflict signature. The very first scheduled run would open a conflict issue on a document nobody had edited yet.\n\n   So compute them by hand: `Baseline_Repo_Hash` is the SHA-256 of the repo file's bytes; `Baseline_Drive_Hash` is the SHA-256 of the Doc **exported as `text/markdown`** — Drive's own rendering, not the content you uploaded. Getting one slightly wrong is survivable (the next run just pulls or pushes, and re-baselines itself); leaving both blank is the case that actually jams.\n3. **Trigger the workflow** (scheduled, or Actions tab → Drive sync → Run workflow) and confirm the row comes back clean. With correct baselines this run is a no-op, which is the point — the row is already reconciled and the automation takes over from there.\n\nLeaving `Drive_ID` blank and letting the workflow create the file will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive. The `create` branch in `reconcile_row()` is still correct code — it just can't run on this account.\n\n## Cadence — and why the two directions are not symmetric\n\nThe two directions have different trigger mechanics, and conflating them is what produced the wrong latency figure this section used to quote.\n\n**Repo → Drive is push-triggered and effectively immediate.** A commit to `main` touching `docs/`, `literature/notes/`, `product-design/`, `risk-tools/` or the manifest runs the workflow directly. No scheduler involved, so no scheduler to be let down by. (The job's own commit can't loop back: pushes authenticated with `GITHUB_TOKEN` don't retrigger workflows.)\n\n**Drive → repo has to be polled**, because there's no signal to react to. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep, to speed up the direction that's used less. Not worth it yet.\n\n### What the cron actually delivers\n\nThe poll is **hourly**, and that number is deliberately modest, because a more aggressive one was measured and found to be fiction. The schedule used to read `7,22,37,52 * * * *` — four times an hour. Measured over 18.7 hours on 2026-08-06:\n\n| | |\n|---|---|\n| Scheduled runs in the window | 74 |\n| Runs that actually fired | 10 |\n| **Dropped** | **87%** |\n| Claimed gap | 15 min |\n| Observed gap | 60–205 min, mean 124 |\n\nThe runs that did fire didn't land on the cron minutes either. This is documented GitHub behaviour, not a repo bug: `schedule` is best-effort, it's deprioritised under load, and high-frequency crons are dropped hardest. Asking for four runs an hour bought nothing but scheduler pressure and a latency figure in this document that was never true.\n\nSo: **assume up to a couple of hours for a Drive-side edit to reach the repo**, and don't design anything around a tighter bound. If you need it now, run the workflow by hand — Actions tab → Drive sync → Run workflow. A repo-side edit, by contrast, syncs on the push.\n\n### When Actions is down\n\nBoth triggers are dead during a GitHub Actions outage, and a run queued when the incident starts may be cancelled rather than eventually run. Nothing is lost when this happens — reconciliation is a pure function of current state against the stored baselines, so a skipped run is simply caught by the next one. Check <https://www.githubstatus.com> before debugging a sync that appears stuck; on 2026-08-06 an Actions/Pages major outage from 15:22Z stalled both this workflow and the Pages deploy for hours, and it looked exactly like a broken workflow from inside the repo.\n\n## One-time setup (already done for this repo)\n\n1. A Google Cloud project with the Drive API (and Sheets API, for the `sheet` path) enabled — no billing account required.\n2. A service account (`sfv-drive-sync-bot@sustainable-finance-venture.iam.gserviceaccount.com`) with a JSON key.\n3. That service account invited as **Editor** on the master Drive folder — this is what actually grants access; the key alone gets nowhere without it.\n4. The key stored as the `GDRIVE_SA_KEY` GitHub Actions secret on this repo.\n5. Repo Settings → Actions → General → Workflow permissions set to **Read and write permissions**, so the workflow's `GITHUB_TOKEN` can push to `main` and open issues.\n\nSetting this up again from scratch (a new project, a rotated key) is the same five steps.\n"
+   "words": 3403,
+   "body": "# Drive sync — bidirectional, automated, repo stays the source of truth\n\n**Status:** v1 — narrative docs only · **Last updated:** 2026-08-22\n\n## What this is, and what it isn't\n\nThe **Drive Vault** (`docs/ops/drive-vault.md`) holds artifacts that don't belong in git at all — PDFs, correspondence, personal documents. This is a different thing: a set of repo documents that also have a live, editable copy in Google Drive, kept in sync automatically in both directions. Vault content is private and one-way (Direction 2 in the `sync-drive` skill). Workfolder content is public and bidirectional. Don't conflate the two folders.\n\nThe point is to let editing happen wherever's convenient — the repo directly, or a Google Doc on a phone on a train — without the repo ever losing its status as the record. That works because of one rule:\n\n**Reconciliation is mechanical, not editorial.** A script compares hashes against the last-synced baseline and moves content in whichever direction actually changed. There is no model in this loop and no judgment call about which version is \"better\" — if both sides changed since the last sync, the script does not guess; it stops and flags it for a human.\n\n## Architecture\n\n```\ndata/drive-links.csv  ── manifest: one row per synced item ─┐\n                                                              │\nscripts/sync_drive.py ── the reconciliation engine ──────────┤\n  (service-account auth, hash comparison, pull/push/conflict) │\n                                                              │\n.github/workflows/sync-drive.yml ── runs it ─────────────────┘\n  (on push to a synced path + hourly poll + manual dispatch;\n   commits straight to main. See \"Cadence\" - the poll is\n   best-effort and routinely much slower than hourly.)\n\ndashboard/build.py reads data/drive-links.csv like any other tracker ─→\n  Resources tab: master folder link + every item, each linking out to\n  its Drive copy and its repo file.\n```\n\nNothing here talks to Claude. The workflow, the script, and the credential all live in this repo and GitHub's infrastructure; an AI agent might *write* the manifest row for a new doc, same as any other repo edit, but the reconciliation itself runs unattended.\n\n## The manifest — `data/drive-links.csv`\n\nOne row per synced item, plus one `folder`-type row for the master Drive folder itself (used only for navigation, never reconciled).\n\n| Column | Meaning |\n|---|---|\n| `ID` | Stable ID, `DRV-NN`. Never reused, same rule as every other tracker. |\n| `Drive_ID` | The Drive file/folder ID. Blank means \"not created yet\" — the next sync run creates it from the repo file. |\n| `Repo_Path` | The repo file this row reconciles with. Blank for the folder row. |\n| `Type` | `folder` (navigation only) · `doc` (Google Doc ↔ markdown) · `sheet` (Google Sheet ↔ CSV). |\n| `Parent_ID` | The `ID` of the folder row a new file gets created inside. |\n| `Title` | Display title — also the Doc/Sheet's name when it's first created. |\n| `Category` | Groups items in the dashboard (`Planning`, `Synthesis memos`, `Product & business`, `Risk tools`). |\n| `Baseline_Drive_Hash` / `Baseline_Repo_Hash` | SHA-256 of each side's content **as of the last successful sync**. This is what makes three-way comparison possible — see below. |\n| `Last_Synced_At` | UTC timestamp of the last successful reconciliation. |\n| `Status` | `Not synced` · `Synced` · `Conflict` · `Error`. `Error` is set by a failed run and cleared automatically by the next run that finds the row unchanged on both sides; `Conflict` is not — it needs a human. |\n\n## The reconciliation algorithm\n\nEvery run, for every non-folder row, the script computes the current hash of both sides and compares each against its stored baseline — not against each other directly:\n\n| Drive vs. baseline | Repo vs. baseline | Result |\n|---|---|---|\n| unchanged | unchanged | nothing to do |\n| changed | unchanged | **pull** — Drive was edited, overwrite the repo file |\n| unchanged | changed | **push** — the repo was edited, overwrite the Drive file |\n| changed | changed, but Drive now equals repo | not a real conflict — both sides independently landed on the same content; just re-baseline |\n| changed | changed, and they disagree | **conflict** — open a GitHub issue, touch neither side, wait for a human |\n| — (`Drive_ID` blank) | — | **create** — make a new Doc/Sheet under the parent folder from the current repo content, then baseline both sides to the post-creation export (Drive's own text, not the pre-upload source — a markdown → Google Doc → markdown round-trip isn't always byte-identical, and baselining to what Drive actually has avoids a spurious \"changed\" on the very next run) |\n\nWhy compare against a stored baseline instead of just \"whichever timestamp is newer\": a bare timestamp race can silently discard an edit — two people (or a person and an automated commit) touching both sides within the same polling window — and that window is hours wide, not minutes, so the odds of it happening are not academic — with whichever wrote last winning and no record of what was lost. The baseline comparison instead *detects* that both sides moved and refuses to pick a winner. See `scripts/sync_drive.py`'s `reconcile_row()` for the actual implementation — it's about 40 lines, worth reading before changing the merge rules.\n\n## Resolving a conflict\n\nThe issue the script opens links both the Drive doc and the repo file, and says how to close it out: **edit one side to match the other, or merge by hand so both agree**, then let the next scheduled run pick it up — but first check the conflict is really about *content*. If the repo file carries a BOM or CRLF endings, the mismatch may be structural rather than editorial, in which case no amount of editing either side will clear it; see the normalisation rule above — it re-baselines automatically once the two sides actually agree. The issue itself doesn't auto-close; close it once you've confirmed the next run synced cleanly.\n\n## Auto-commit, not auto-merge\n\nReconciled changes are committed straight to `main` by the workflow — no PR, no review gate, for either direction. That's deliberately different from how a normal content change to this repo works (see `CLAUDE.md` §7, \"ask before committing when the change is substantive\"). It's safe here specifically because:\n\n- The only things a sync run can touch are the markdown docs and Sheets explicitly listed in the manifest — nothing structural, nothing with an ID scheme to corrupt.\n- Every commit is a plain content diff, fully revertable with `git revert`.\n- The conflict path is the actual safety valve: anything ambiguous stops and asks, rather than getting silently auto-committed.\n\nIf a CSV tracker (one with the ID/status-vocabulary invariants) is ever added as a `sheet` row, that calculus changes — a bad Sheet paste can break those invariants in a way a markdown edit can't. Don't add a `data/*.csv` tracker to the manifest without adding a schema-validation step to the script first; right now it will accept anything a Sheet contains and write it straight to the CSV.\n\n## Text is normalised at both ends, and markdown export never degrades\n\nTwo rules the engine enforces on every byte crossing the boundary. Both were added on\n2026-08-22 after one document was silently corrupted and then wedged for a day.\n\n**1. Normalise before hashing and before writing.** A UTF-8 BOM is stripped and CRLF/CR\nis folded to LF, in `read_repo_file()`, `export_doc_text()` and `write_repo_file()`.\n\nThis is not tidiness. `write_repo_file()` opens with `newline=\"\\n\"`, which does *not*\nstrip a `\\r` already inside the string, while `read_repo_file()` opens with universal\nnewlines, which does. So a CRLF-bearing export written to disk and read back is a\n**different string** — its hash can never match the baseline recorded at write time, and\n`repo_changed` is therefore `True` on every run, for ever. The row cannot converge, and\nbecause the documented \"edit one side to match the other\" fix operates on *content*, it\ncannot clear a mismatch that is structural. Normalising both ends is what makes the\nround-trip stable.\n\n**2. A Doc that will not export as markdown is an error, not a plain-text pull.**\n`export_doc_text()` used to fall back to `text/plain` on any `HttpError`. That looks\ndefensive and is the opposite: Google's plain-text export drops every heading marker,\nevery bold marker and every table pipe, and adds a BOM and CRLF endings. A transient API\nerror on one run would therefore overwrite a good markdown file with a formatting-stripped\nrendering, commit it to `main`, and report success.\n\nIt now raises `MarkdownExportUnavailable`; `main()` catches it, marks the row `Error` and\nmoves on. Losing a cycle on one document beats losing the document.\n\n### The incident these came from\n\n`DRV-11` (`docs/phd/phd-scoring-rubric.md`), 2026-08-21T07:13Z. The markdown export\nfailed, the fallback pulled plain text, and the repo copy lost 8 headings, 4 tables and\nall bold, gaining 212 tab characters, a BOM and CRLF endings. Both baselines were then\nset to that degraded text, so the corruption became the recorded truth. From the next run\nonward the repo hash could never match its baseline, Drive was exporting proper markdown\nagain, both sides read as changed, they disagreed — permanent `Conflict`.\n\nRecovering it needed the normalisation fix *plus* a deliberate re-baseline of both hashes\nto the normalised repo hash, which makes the engine see repo-unchanged / Drive-changed and\ntake the pull branch. Note that re-baselining this way needs only a locally computable\nvalue — it is the one manoeuvre that does not require predicting Drive's export hash.\n\n**3. `Status` heals itself once a row verifies in sync.**\nWhen both sides hash to their baselines, `reconcile_row()` returns early — nothing to do.\nIt used to return without touching `Status`, which meant a row marked `Error` by a\none-off API failure kept saying `Error` for ever, because no later run ever writes\n`Status` on an unchanged row. It now clears a stale non-`Synced` status on the way out.\nThis cannot mask a real conflict: in a genuine conflict neither baseline matches, so that\nbranch is never reached. `Last_Synced_At` is deliberately *not* bumped — nothing moved,\nand touching it would commit all 33 rows every twenty minutes.\n\n### The second incident, which is the fix working\n\n`DRV-09` (`docs/phd/phd-funding-landscape.md`), 2026-08-22T14:53Z — the first scheduled\nrun after the change above shipped. Google returned `HTTP 500 Internal Error` on the\nmarkdown export. Under the old code that would have been a silent `text/plain` pull and a\nsecond corrupted document on `main`. Instead the run logged\n\n```\n! DRV-09: markdown export unavailable for 1kq8...LdFs (<HttpError 500 ...\n  returned \"Internal Error\">); refusing to fall back to text/plain, which\n  would strip all formatting\nDone. 1 row(s) errored.\n```\n\nand left the file untouched. The export succeeded again on the next run 37 minutes later.\nThe document was never at risk; only the `Status` field lagged, which is what change 3\nabove fixes.\n\nRegression cover: `scripts/test_sync_drive.py` (stdlib only, no Drive credentials needed).\n\n## Known constraint: the service account can't create new files\n\nA standalone Google service account — one not backed by a Google Workspace organization with a **Shared Drive** — has **zero Drive storage quota of its own**. Editing a file it doesn't own costs it nothing (the file's storage counts against whoever owns it), but *creating* a new file makes the service account the owner by default, and Google rejects that with `storageQuotaExceeded` even though it has full Editor access to the folder. This isn't a permissions bug; it surfaced on the very first live run of this system (every one of the 32 initial docs failed to create, cleanly, with that exact error, while everything else — auth, the commit, the push — worked).\n\nShared Drives fix this properly (files there are owned by the Shared Drive, not any one account), but Shared Drives are a Workspace-only feature, unavailable on a plain Google account. So for a plain account, the practical rule is:\n\n**New files must be created by a real account with its own quota, then the service account only ever edits what already exists.** The initial 32 docs were seeded this way (via an authenticated Drive connection to the folder owner's real account) rather than through the automated workflow.\n\n## The manifest is the whole world — nothing is auto-discovered\n\nThe script iterates over the rows in `data/drive-links.csv` and nothing else. It never lists the workfolder's contents, so:\n\n- **A Doc you create by hand in the Drive workfolder will not appear in the repo.** It sits there, unseen, until someone adds a `DRV-NN` row pointing at it. There is no scan step that would notice it.\n- **A markdown file you add to the repo will not appear in Drive**, for the same reason.\n\nSync is bidirectional *per registered pair*, not per folder. Registration is the manual half, and it's manual on purpose — it's what keeps an arbitrary Drive upload from landing in a public repo without anyone deciding it should.\n\n## Two documents in the manifest are GENERATED — do not edit them in Drive\n\n`docs/research/literature-review.md` (DRV-43) is assembled by `scripts/build_lit_review.py`\nfrom `literature/lit-matrix.csv`, `data/lit-components.csv` and `data/synthesis-memos.csv`.\nIt is registered for sync because reading the whole review on a phone is genuinely useful.\n\n**But the sync is bidirectional, and this file is not a source.** An edit made in the Drive\nDoc syncs into the repo like any other, and is then silently destroyed the next time the\nbuild script runs. That is a data-loss path with no conflict marker and no warning, because\nas far as the sync engine is concerned nothing went wrong.\n\nSo: read it in Drive, never edit it there. To change what it says, change one of the three\nCSVs it is built from and re-run the generator. The same rule applies to any future generated\nfile added to the manifest.\n\n## Seeding a new Doc without the service-account key\n\nThe three-step below assumes you can compute `Baseline_Drive_Hash` from a real\n`files.export(mimeType='text/markdown')`, which used to mean holding `GDRIVE_SA_KEY`.\nIt does not. An interactive Drive connector's `download_file_content` **with an explicit\n`exportMimeType`** returns exactly those bytes (its `read_file_content` does not — that is\nthe distinction M-34 got wrong). Verified against DRV-27, one of the rows whose Drive and\nrepo hashes differ, so a clean round trip could not have masked a mismatch.\n\nThat makes a simpler seeding route available, and it is how DRV-35..DRV-54 were registered:\n\n1. **Create the Doc empty** from an account with storage quota.\n2. **Set `Baseline_Drive_Hash` to the empty-doc export hash**\n   (`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, i.e. sha256 of the\n   empty string) and **leave `Baseline_Repo_Hash` blank**.\n3. **Let the workflow run.** `reconcile_row()` reads `drive_changed=False, repo_changed=True`,\n   takes the push branch, writes the repo content into the Doc, and re-baselines both sides\n   from the confirmed export.\n\nThe engine computes both baselines itself, so no hash is ever guessed and no document content\nhas to be pushed through the connector. Note the asymmetry that makes guessing dangerous: a\nwrong `Baseline_Drive_Hash` against a *correct* repo hash reads as Drive-changed and pulls,\noverwriting the repo file with Drive's re-rendering and committing it.\n\n## Adding a new synced document\n\nBecause of the quota constraint above, adding a new synced doc is a three-step:\n\n1. **Create the Doc first, from an account with storage quota** — directly in Drive (File → New → Google Doc, inside the workfolder), or via an agent holding a real Drive connection rather than the service-account key. Note the file ID from its URL (`docs.google.com/document/d/<ID>/edit`). Seed it with the repo file's content in the same move, so the two sides start out saying the same thing.\n2. **Baseline both sides before the first run.** Add the row with `Drive_ID` filled in, a fresh `DRV-NN`, `Repo_Path`, `Parent_ID` pointing at the folder row, `Type`, and — this is the part that matters — **both baseline hashes already populated**, `Status: Synced`.\n\n   Leaving the baselines blank does *not* produce a clean first sync. Blank baselines make both sides read as changed, and since a markdown → Google Doc → markdown round-trip is never quite byte-identical, the two hashes won't match either — which is precisely the conflict signature. The very first scheduled run would open a conflict issue on a document nobody had edited yet.\n\n   So compute them by hand: `Baseline_Repo_Hash` is the SHA-256 of the repo file's bytes; `Baseline_Drive_Hash` is the SHA-256 of the Doc **exported as `text/markdown`** — Drive's own rendering, not the content you uploaded. Getting one slightly wrong is survivable (the next run just pulls or pushes, and re-baselines itself); leaving both blank is the case that actually jams.\n3. **Trigger the workflow** (scheduled, or Actions tab → Drive sync → Run workflow) and confirm the row comes back clean. With correct baselines this run is a no-op, which is the point — the row is already reconciled and the automation takes over from there.\n\nLeaving `Drive_ID` blank and letting the workflow create the file will fail with the quota error above unless the service account has since been moved to a Workspace Shared Drive. The `create` branch in `reconcile_row()` is still correct code — it just can't run on this account.\n\n## Cadence — and why the two directions are not symmetric\n\nThe two directions have different trigger mechanics, and conflating them is what produced the wrong latency figure this section used to quote.\n\n**Repo → Drive is push-triggered and effectively immediate.** A commit to `main` touching `docs/`, `literature/notes/`, `product-design/`, `risk-tools/` or the manifest runs the workflow directly. No scheduler involved, so no scheduler to be let down by. (The job's own commit can't loop back: pushes authenticated with `GITHUB_TOKEN` don't retrigger workflows.)\n\n**Drive → repo has to be polled**, because there's no signal to react to. A true push (Drive API `watch` channels) would mean near-instant reconciliation, but it needs a permanently hosted webhook receiver and a subscription that expires and must be renewed at least every 24 hours — a second piece of infrastructure with its own upkeep, to speed up the direction that's used less. Not worth it yet.\n\n### What the cron actually delivers\n\nThe poll is **hourly**, and that number is deliberately modest, because a more aggressive one was measured and found to be fiction. The schedule used to read `7,22,37,52 * * * *` — four times an hour. Measured over 18.7 hours on 2026-08-06:\n\n| | |\n|---|---|\n| Scheduled runs in the window | 74 |\n| Runs that actually fired | 10 |\n| **Dropped** | **87%** |\n| Claimed gap | 15 min |\n| Observed gap | 60–205 min, mean 124 |\n\nThe runs that did fire didn't land on the cron minutes either. This is documented GitHub behaviour, not a repo bug: `schedule` is best-effort, it's deprioritised under load, and high-frequency crons are dropped hardest. Asking for four runs an hour bought nothing but scheduler pressure and a latency figure in this document that was never true.\n\nSo: **assume up to a couple of hours for a Drive-side edit to reach the repo**, and don't design anything around a tighter bound. If you need it now, run the workflow by hand — Actions tab → Drive sync → Run workflow. A repo-side edit, by contrast, syncs on the push.\n\n### When Actions is down\n\nBoth triggers are dead during a GitHub Actions outage, and a run queued when the incident starts may be cancelled rather than eventually run. Nothing is lost when this happens — reconciliation is a pure function of current state against the stored baselines, so a skipped run is simply caught by the next one. Check <https://www.githubstatus.com> before debugging a sync that appears stuck; on 2026-08-06 an Actions/Pages major outage from 15:22Z stalled both this workflow and the Pages deploy for hours, and it looked exactly like a broken workflow from inside the repo.\n\n## One-time setup (already done for this repo)\n\n1. A Google Cloud project with the Drive API (and Sheets API, for the `sheet` path) enabled — no billing account required.\n2. A service account (`sfv-drive-sync-bot@sustainable-finance-venture.iam.gserviceaccount.com`) with a JSON key.\n3. That service account invited as **Editor** on the master Drive folder — this is what actually grants access; the key alone gets nowhere without it.\n4. The key stored as the `GDRIVE_SA_KEY` GitHub Actions secret on this repo.\n5. Repo Settings → Actions → General → Workflow permissions set to **Read and write permissions**, so the workflow's `GITHUB_TOKEN` can push to `main` and open issues.\n\nSetting this up again from scratch (a new project, a rotated key) is the same five steps.\n"
   },
   {
    "path": "docs/ops/drive-vault.md",
@@ -12721,7 +12981,7 @@ window.SFV_DATA = {
   }
  ],
  "meta": {
-  "generated": "2026-09-09",
+  "generated": "2026-09-10",
   "repo": "benbaichmankass/sustainable-finance-venture",
   "private": false,
   "overlays": [],
@@ -12744,15 +13004,15 @@ window.SFV_DATA = {
     "Answered": 4
    },
    "milestonesByStatus": {
-    "Done": 8,
-    "Not started": 27,
+    "Done": 9,
+    "Not started": 26,
     "In progress": 6,
     "Blocked": 3
    },
    "partnersByStatus": {
     "Unspecified": 23
    },
-   "totalWords": 114883
+   "totalWords": 115232
   }
  }
 };
