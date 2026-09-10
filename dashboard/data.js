@@ -5868,9 +5868,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Sustainable Finance Product Research and Venture Working Document",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "dd059931e2d76b877062bad50ba9d94aa27dae7b05127347ca80dcdd34b7016b",
-   "Baseline_Repo_Hash": "dd059931e2d76b877062bad50ba9d94aa27dae7b05127347ca80dcdd34b7016b",
-   "Last_Synced_At": "2026-09-08T07:01:57Z",
+   "Baseline_Drive_Hash": "de58bf309792b15fc20ddc025db0ddc6b73a3130bb8d6b4f4bc37c0f000350b9",
+   "Baseline_Repo_Hash": "de58bf309792b15fc20ddc025db0ddc6b73a3130bb8d6b4f4bc37c0f000350b9",
+   "Last_Synced_At": "2026-09-10T13:09:35Z",
    "Status": "Synced"
   },
   {
@@ -6115,10 +6115,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Drive sync — bidirectional, automated, repo stays the source of truth",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "122025fc1da7838897e4269828a2d9f19c2d39c0533340b17ca2231197475ee8",
+   "Baseline_Repo_Hash": "8795168f4f9eb8e4cb4724c95da813c4c92d4fc12545995f0e2e3f3e30f49917",
+   "Last_Synced_At": "2026-09-10T13:10:00Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-36",
@@ -6128,10 +6128,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The application pack",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "5a1468f426554f346efd749e3c5d8716f2e66d2cd46b58293cef64ccdaaeec95",
+   "Baseline_Repo_Hash": "fc4a40461f8f7ecf0628c0380a73853463dd76d889d58e67ee37afbd71bd2b4e",
+   "Last_Synced_At": "2026-09-10T13:10:04Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-37",
@@ -6141,10 +6141,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The PhD by Publication Route",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "85cb04bdb1e4da8d61d78deb467dda85eeb05eba39e2d7dbb940a3dc866f5761",
+   "Baseline_Repo_Hash": "f73c9a901e7d496e0832575d8afcc71766ae02cb3c1a7d50d06adf3e0568c856",
+   "Last_Synced_At": "2026-09-10T13:10:09Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-38",
@@ -6154,10 +6154,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Proposal workplan: from here to a supervisor saying yes",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "44cfd12d8cccbd7b53f0b9d7cf8c339f6a0e49c5736e17820394a656fb41b8a2",
+   "Baseline_Repo_Hash": "7fa5f12dcc777f33c934339f1e660e6684a583abd625c8e6741858222b9b00a1",
+   "Last_Synced_At": "2026-09-10T13:10:12Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-39",
@@ -6167,10 +6167,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research questions: one project, seven ways to ask about it",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "5c594da46778864f8f1a4f9d0c5afdee02ae48867566810b3935216bdf514b8c",
+   "Baseline_Repo_Hash": "af916ffacba623cce6f60a189874951e1ca2d2cc2fa603fc617199e9f20b4fb5",
+   "Last_Synced_At": "2026-09-10T13:10:16Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-40",
@@ -6180,10 +6180,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Experiment specs: the scoring rubric and the write-up template",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "c9a4ae3737c90afd89c29632be6c30cdb196145fb6fd1e9e5a75fc9ba4482e3a",
+   "Baseline_Repo_Hash": "695432802ae1e3ca9a0dbd1e8490d73e1b0e2c59558104cd53df41d6d2142107",
+   "Last_Synced_At": "2026-09-10T13:10:20Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-41",
@@ -6193,10 +6193,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "EXP-22 — Securitisation-ready origination protocol: randomised comparison with activity-based costing",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "cc5d799a5e2d35da8175b6d9d6e489b52abf5150556286ca31d50cdedb6e2e25",
+   "Baseline_Repo_Hash": "959d31f71878826942a102d88d15e67928fe5645ee98e8307ee97168fe28a0cc",
+   "Last_Synced_At": "2026-09-10T13:10:23Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-42",
@@ -6206,10 +6206,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "EXP-25 — Default correlation on partner management-information-system data",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "fb23643c2530010554894e3f9b044777c74fb9c000ffc6a70620c6b22d0466e7",
+   "Baseline_Repo_Hash": "c00d7dc59fca3d72f092170cedf7f16e4ffac8a8d8dcb9a2a0b4f5a4ab21328a",
+   "Last_Synced_At": "2026-09-10T13:10:27Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-43",
@@ -6219,10 +6219,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Literature review",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "6e83564cdbad171c4f03abcf7942e6036d8a2947fe94a20a6c0a663c2d37e00c",
+   "Baseline_Repo_Hash": "f9fb2e0b05964028bb8be9a214fd680cfd79eedd3f6eea12a1ace89e64ba245d",
+   "Last_Synced_At": "2026-09-10T13:10:33Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-44",
@@ -6232,10 +6232,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research framework",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "27da42142e8b064af1702c11c3cd6bc0bdab42158122f1ea6c96e88759eb92cb",
+   "Baseline_Repo_Hash": "1bc65a45103c66c42d9041029083af1981db4025f000f59ae54661a10c2d3bc1",
+   "Last_Synced_At": "2026-09-10T13:10:37Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-45",
@@ -6245,10 +6245,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Decision Register — What Has To Be Settled, and When",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "a426174c3e36b44fcd296a2f7f319c8473d0103ced19c73ffc62f41f55ecfb48",
+   "Baseline_Repo_Hash": "7ac8d941eec62c4361c285537a969a5aac999dd401fcb699c4c1102b98b4acbf",
+   "Last_Synced_At": "2026-09-10T13:10:41Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-46",
@@ -6258,10 +6258,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Where To Play, and What the First Pilots Look Like",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "5ef7b74e450ab55ad03aed19666208d03f8bd712bec6ca5135e2e0241e0dd57c",
+   "Baseline_Repo_Hash": "37e450cd0bd2b81c8a085d87cb19036a41a169fde072a5401f287f5f26c6e97d",
+   "Last_Synced_At": "2026-09-10T13:10:45Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-47",
@@ -6271,10 +6271,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Solo Operator Track — Product Design and Arranging, Without the PhD",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "2048bc04d17c9c8a15843369ce451088a652c7e7134a0b3bad6d919f23054bd3",
+   "Baseline_Repo_Hash": "ee1f7d332ba615fce97a7c31797e6f05772e958f9326f182f530f3d6faf08e5d",
+   "Last_Synced_At": "2026-09-10T13:10:49Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-48",
@@ -6284,10 +6284,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Track C — Practice First, Structurer Later",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "91e5128ae026651d90eaca3454c774a37054afb7ca30e77df658a698493f8e77",
+   "Baseline_Repo_Hash": "aa4da99a41d98a2a8a55b4780d58f41d3c906b296faa3118c77c0cdb90255556",
+   "Last_Synced_At": "2026-09-10T13:10:52Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-49",
@@ -6297,10 +6297,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 4: The repayment mechanism and its critics",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "2b85f93efc2502c5edcf2d305d7a1c3492840b75889ce5765f50ad05b1a7ceea",
+   "Baseline_Repo_Hash": "b8a47ef666ca3160ce6c52bbe8f87ebdc318923950c02bba05bd4ab69c5f67c5",
+   "Last_Synced_At": "2026-09-10T13:10:56Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-50",
@@ -6310,10 +6310,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 5: Insurance, bundling, and what resilience means",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "f827b08b71ba61445909611d3b8f664022d312331796a822d4e3599856d5270f",
+   "Baseline_Repo_Hash": "f395cfff3d7e1faf88dc4c1fd3e29c9bc958032a70ff14a7ca65a09e7a2c05c0",
+   "Last_Synced_At": "2026-09-10T13:10:59Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-51",
@@ -6323,10 +6323,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 6: The climate financing gap and how to measure a response",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "94707665c8d5d685e6feb110f782d2ab5dd6ed88c359f5757c395faac502ecb5",
+   "Baseline_Repo_Hash": "fe0c7a44781c7ca0e54e8f25c8fd8e0ecb852aaf439d47581efd3f983a1e8a23",
+   "Last_Synced_At": "2026-09-10T13:11:04Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-52",
@@ -6336,10 +6336,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 7: Can these cash flows be modelled?",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "171ffd60fbcb8ea94887cad923df163777119b3ec2a897a8c19801214562d50b",
+   "Baseline_Repo_Hash": "11985500965bde59819b4e06285bdd669535c44041ab346d20818ec0e10c8d79",
+   "Last_Synced_At": "2026-09-10T13:11:09Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-53",
@@ -6349,10 +6349,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 8: Legal and market preconditions",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "233c8ab20b4ac48a88781f02ada3398eeec1d73686d1e2fd535d246572f28b4f",
+   "Baseline_Repo_Hash": "bc05fc03a2df37f49dd5ad12b537250bd8afecb8afe8c171ca28e3fe1c0cd47b",
+   "Last_Synced_At": "2026-09-10T13:11:12Z",
+   "Status": "Synced"
   },
   {
    "ID": "DRV-54",
@@ -6362,10 +6362,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "MEMO-9 — Sector and infrastructure notes",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "45e0164fdfd8ee7dbdd73eeb84a327e3f5b190b4d1756392984fcff6fd72b6d2",
+   "Baseline_Repo_Hash": "e51a7bd79ec408c2d5bf064210e4862769fea395d1ffa38bd9a5d1bc4e0195da",
+   "Last_Synced_At": "2026-09-10T13:11:16Z",
+   "Status": "Synced"
   }
  ],
  "macroSeries": {
@@ -12712,10 +12712,10 @@ window.SFV_DATA = {
    "group": "Research",
    "section": "Programme & method",
    "docId": "",
-   "title": "dSustainable Finance Product Research and Venture Working Document",
+   "title": "Sustainable Finance Product Research and Venture Working Document",
    "summary": "",
    "words": 985,
-   "body": "# dSustainable Finance Product Research and Venture Working Document\n\n## Purpose\n\nThis document is a living planning artifact for a project focused on identifying sustainable-development solutions that remain underfunded because financing, insurance, and risk-management structures are missing or misaligned. The working hypothesis is that community-based financial structures such as Village Savings and Loan Associations (VSLAs) may help manage idiosyncratic risk well enough to support scalable lending and insurance products, which could later be aggregated into securitizable assets.\n\nThe project is being shaped around three explicit design constraints. First, product families should be designed with eventual pooling and securitization in mind. Second, the research program should be empirical and verification-heavy, using rigorous impact evaluation methods and external research partners. Third, the operating role should initially focus on analytics, structuring, and project management, while local partners manage regulated operations, customer relationships, and compliance.\n\n## Current project thesis\n\nThe central thesis is that some sustainable-development problems persist not because solutions are absent, but because the market lacks the right financial product design, underwriting logic, distribution mechanisms, and de-risking structures to channel capital toward them.\n\nCommunity-based finance is a promising starting point because VSLAs and related informal savings systems already create governance, monitoring, and social-enforcement mechanisms at the local level.\n\n## Design principles\n\n### 1\\. Securitization-readiness\n\nAny pilot product should be designed as a future underlying asset for an asset-backed structure: standardized contracts, digital audit trails, consistent data fields, predictable cash flows, and legal transferability.\n\nTwo-layer architecture: local origination layer (VSLAs, NGOs, MFIs, worker networks) and an aggregation layer (liquidity pools, SPVs) that pools receivables for outside investors.\n\n### 2\\. Verification-first research design\n\nTreat product design, impact evaluation, and risk verification as one integrated system. Realistic standard: cluster-randomized rollout, blinded outcome assessment where feasible, and strong quasi-experimental methods when full randomization is not practical.\n\n### 3\\. Role specialization\n\nInitial role sits in the structuring layer, not the licensed operating layer: analytics, underwriting logic, monitoring systems, partner coordination, and risk-sharing/first-loss structure design. Regulated entities handle origination, claims, collections, compliance.\n\n## Preliminary literature themes (see /literature/lit-matrix.csv for full detail)\n\n### Well established\n\n- Persistent sustainable-development financing gap (risk allocation & intermediation problem, not just capital shortage)  \n- Community-based savings/lending structures (VSLAs, susu, ekub) can work and are durable  \n- Microfinance impact evaluation methods are mature (RCTs, pipeline designs)  \n- Securitization and blended finance are established financial technologies\n\n### Partially explored\n\n- Microfinance securitization exists but is limited/uneven, especially in Africa  \n- Microfinance outcomes are mixed, not uniformly positive  \n- Insurance integration into group-based models is recognized but under-mapped\n\n### Likely clearest gaps\n\n1. From community trust to investor-grade data  \n2. Product design for securitization-readiness at origination (not retrofitted later)  \n3. Integrated causal testing across the full product lifecycle (origination \\-\\> repayment/claims \\-\\> structuring \\-\\> investor suitability)  \n4. A partner-based model for analytics-driven de-risking (asset-light intermediary layer)\n\n## Candidate pilot directions\n\n### Africa-focused pilots\n\nDeep traditions of community-based finance, high financial exclusion, aligns with blended finance/SDG capital mobilization narrative. Securitization markets still nascent \\-\\> potential first-mover advantage in standard-setting.\n\n### Israel migrant-worker pilot\n\nLogistical proximity, easier hands-on PM, existing regulatory environment around foreign-worker insurance. Good controlled environment to develop research protocol and tooling before African expansion.\n\n**Working decision:** Consider anchoring PhD/pilot methodology development in Israel (migrant worker communities) first, then replicate in an African country as a second field site once framework is proven.\n\n## Working hypotheses\n\n1. Community-based groups reduce screening/monitoring costs enough to improve economics of small-ticket lending/insurance vs. atomized individual underwriting.  \n2. The bottleneck is not raw demand for finance but the absence of standardized, verifiable, poolable product structures institutional capital can price.  \n3. Investment-grade structures are unlikely to emerge from raw community portfolios without credit enhancement, first-loss protection, and high-quality servicing data.  \n4. The most defensible business position is a structuring/verification layer, not a retail financial institution.\n\n## PhD framing\n\n**Candidate research question:** How can community-based lending and insurance arrangements be structured into standardized, securitizable assets that mobilize private capital for sustainable development, and under what conditions do these structures improve risk-adjusted returns and development impact?\n\n**Design constraints:** empirical-heavy, RCT/quasi-experimental where possible, double-blind where feasible, academic/research institutions as formal \"research and verification partners\" alongside community and commercial partners.\n\n**Candidate programs/supervisors to evaluate:**\n\n- Israel: Hebrew University of Jerusalem (Economics; Business School finance/risk), Tel Aviv University (New Environmental School; Coller School), Ben-Gurion University (Public Policy and Management; Economics)  \n- International: Oxford (Smith School / Oxford Sustainable Finance Group), LSE (Finance / International Development), Cambridge (Judge Business School / CISL), Geneva Finance Research Institute, IESEG/Lille, Loughborough Business School\n\n## Business model framing\n\nThree-layer structure:\n\n- **Origination layer:** VSLAs, NGOs, MFIs, community banks, employer networks \\-- handle KYC, disbursement, collections, claims, local compliance  \n- **Risk layer (my role):** underwriting rules, monitoring dashboards, early-warning systems, risk-sharing/tranching design, first-loss structuring  \n- **Product layer:** loans, insurance, bundled products, priced using group-behavior data\n\n**Target end state:** investment-grade tranches sellable to institutional investors, with DFI/philanthropic capital absorbing first-loss/junior risk and private capital in mezzanine.\n\n**My value-add / toolkit to build:**\n\n1. Standardized data schema for loans/insurance (ABS-data-tape-ready)  \n2. Underwriting engine (rules-based \\+ ML scoring incorporating community signals)  \n3. Monitoring & early-warning system (DPD tracking, delinquency/claim pattern alerts)  \n4. Impact evaluation module (randomization infrastructure, pre-registered designs with academic partners)  \n5. Securitization modeling (cash-flow waterfall models, loss/prepayment simulations)\n\n## Open questions for next phase\n\n- Which use cases have the best combination of social need, unit economics, and securitization potential?  \n- Which communities/partner types generate the most reliable screening and servicing signals?  \n- What data schema is required to make future pooling and rating feasible?  \n- Which impact metrics should be tracked alongside financial metrics from day one?  \n- What minimum credit enhancement is likely needed to approach investment-grade notes?  \n- Israel pilot vs. Africa pilot as the first site \\-- final decision pending contact/access assessment  \n- Loan vs. insurance vs. bundled product as the first instrument\n\n## Change log\n\n- Initial version drafted via research/planning conversation (pre-lit-review)\n\n"
+   "body": "# Sustainable Finance Product Research and Venture Working Document\n\n## Purpose\n\nThis document is a living planning artifact for a project focused on identifying sustainable-development solutions that remain underfunded because financing, insurance, and risk-management structures are missing or misaligned. The working hypothesis is that community-based financial structures such as Village Savings and Loan Associations (VSLAs) may help manage idiosyncratic risk well enough to support scalable lending and insurance products, which could later be aggregated into securitizable assets.\n\nThe project is being shaped around three explicit design constraints. First, product families should be designed with eventual pooling and securitization in mind. Second, the research program should be empirical and verification-heavy, using rigorous impact evaluation methods and external research partners. Third, the operating role should initially focus on analytics, structuring, and project management, while local partners manage regulated operations, customer relationships, and compliance.\n\n## Current project thesis\n\nThe central thesis is that some sustainable-development problems persist not because solutions are absent, but because the market lacks the right financial product design, underwriting logic, distribution mechanisms, and de-risking structures to channel capital toward them.\n\nCommunity-based finance is a promising starting point because VSLAs and related informal savings systems already create governance, monitoring, and social-enforcement mechanisms at the local level.\n\n## Design principles\n\n### 1\\. Securitization-readiness\n\nAny pilot product should be designed as a future underlying asset for an asset-backed structure: standardized contracts, digital audit trails, consistent data fields, predictable cash flows, and legal transferability.\n\nTwo-layer architecture: local origination layer (VSLAs, NGOs, MFIs, worker networks) and an aggregation layer (liquidity pools, SPVs) that pools receivables for outside investors.\n\n### 2\\. Verification-first research design\n\nTreat product design, impact evaluation, and risk verification as one integrated system. Realistic standard: cluster-randomized rollout, blinded outcome assessment where feasible, and strong quasi-experimental methods when full randomization is not practical.\n\n### 3\\. Role specialization\n\nInitial role sits in the structuring layer, not the licensed operating layer: analytics, underwriting logic, monitoring systems, partner coordination, and risk-sharing/first-loss structure design. Regulated entities handle origination, claims, collections, compliance.\n\n## Preliminary literature themes (see /literature/lit-matrix.csv for full detail)\n\n### Well established\n\n- Persistent sustainable-development financing gap (risk allocation & intermediation problem, not just capital shortage)  \n- Community-based savings/lending structures (VSLAs, susu, ekub) can work and are durable  \n- Microfinance impact evaluation methods are mature (RCTs, pipeline designs)  \n- Securitization and blended finance are established financial technologies\n\n### Partially explored\n\n- Microfinance securitization exists but is limited/uneven, especially in Africa  \n- Microfinance outcomes are mixed, not uniformly positive  \n- Insurance integration into group-based models is recognized but under-mapped\n\n### Likely clearest gaps\n\n1. From community trust to investor-grade data  \n2. Product design for securitization-readiness at origination (not retrofitted later)  \n3. Integrated causal testing across the full product lifecycle (origination \\-\\> repayment/claims \\-\\> structuring \\-\\> investor suitability)  \n4. A partner-based model for analytics-driven de-risking (asset-light intermediary layer)\n\n## Candidate pilot directions\n\n### Africa-focused pilots\n\nDeep traditions of community-based finance, high financial exclusion, aligns with blended finance/SDG capital mobilization narrative. Securitization markets still nascent \\-\\> potential first-mover advantage in standard-setting.\n\n### Israel migrant-worker pilot\n\nLogistical proximity, easier hands-on PM, existing regulatory environment around foreign-worker insurance. Good controlled environment to develop research protocol and tooling before African expansion.\n\n**Working decision:** Consider anchoring PhD/pilot methodology development in Israel (migrant worker communities) first, then replicate in an African country as a second field site once framework is proven.\n\n## Working hypotheses\n\n1. Community-based groups reduce screening/monitoring costs enough to improve economics of small-ticket lending/insurance vs. atomized individual underwriting.  \n2. The bottleneck is not raw demand for finance but the absence of standardized, verifiable, poolable product structures institutional capital can price.  \n3. Investment-grade structures are unlikely to emerge from raw community portfolios without credit enhancement, first-loss protection, and high-quality servicing data.  \n4. The most defensible business position is a structuring/verification layer, not a retail financial institution.\n\n## PhD framing\n\n**Candidate research question:** How can community-based lending and insurance arrangements be structured into standardized, securitizable assets that mobilize private capital for sustainable development, and under what conditions do these structures improve risk-adjusted returns and development impact?\n\n**Design constraints:** empirical-heavy, RCT/quasi-experimental where possible, double-blind where feasible, academic/research institutions as formal \"research and verification partners\" alongside community and commercial partners.\n\n**Candidate programs/supervisors to evaluate:**\n\n- Israel: Hebrew University of Jerusalem (Economics; Business School finance/risk), Tel Aviv University (New Environmental School; Coller School), Ben-Gurion University (Public Policy and Management; Economics)  \n- International: Oxford (Smith School / Oxford Sustainable Finance Group), LSE (Finance / International Development), Cambridge (Judge Business School / CISL), Geneva Finance Research Institute, IESEG/Lille, Loughborough Business School\n\n## Business model framing\n\nThree-layer structure:\n\n- **Origination layer:** VSLAs, NGOs, MFIs, community banks, employer networks \\-- handle KYC, disbursement, collections, claims, local compliance  \n- **Risk layer (my role):** underwriting rules, monitoring dashboards, early-warning systems, risk-sharing/tranching design, first-loss structuring  \n- **Product layer:** loans, insurance, bundled products, priced using group-behavior data\n\n**Target end state:** investment-grade tranches sellable to institutional investors, with DFI/philanthropic capital absorbing first-loss/junior risk and private capital in mezzanine.\n\n**My value-add / toolkit to build:**\n\n1. Standardized data schema for loans/insurance (ABS-data-tape-ready)  \n2. Underwriting engine (rules-based \\+ ML scoring incorporating community signals)  \n3. Monitoring & early-warning system (DPD tracking, delinquency/claim pattern alerts)  \n4. Impact evaluation module (randomization infrastructure, pre-registered designs with academic partners)  \n5. Securitization modeling (cash-flow waterfall models, loss/prepayment simulations)\n\n## Open questions for next phase\n\n- Which use cases have the best combination of social need, unit economics, and securitization potential?  \n- Which communities/partner types generate the most reliable screening and servicing signals?  \n- What data schema is required to make future pooling and rating feasible?  \n- Which impact metrics should be tracked alongside financial metrics from day one?  \n- What minimum credit enhancement is likely needed to approach investment-grade notes?  \n- Israel pilot vs. Africa pilot as the first site \\-- final decision pending contact/access assessment  \n- Loan vs. insurance vs. bundled product as the first instrument\n\n## Change log\n\n- Initial version drafted via research/planning conversation (pre-lit-review)\n\n"
   },
   {
    "path": "risk-tools/schema/README.md",

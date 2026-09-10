@@ -1,4 +1,4 @@
-# dSustainable Finance Product Research and Venture Working Document
+# Sustainable Finance Product Research and Venture Working Document
 
 ## Purpose
 
