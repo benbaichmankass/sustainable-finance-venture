@@ -39,3 +39,26 @@ If an idea can't be written without crossing one of those lines, put it in `priv
 - *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  
 - *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \- including where it disagrees with the scoring rubric, which is the part worth thinking about.
 
+## 2026-09-14
+
+Draft Business Plan
+
+1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   
+   1. Mission Statement
+
+Our mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. 
+
+2. Goals
+
+Our goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. 
+
+2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  
+   1. Strategy  
+   2. Economics (Financial Viability)  
+3. Market Analysis: Research on your industry, target audience, and main competitors.  
+4. Organization and Management: Your company's legal structure and the background of your leadership team.  
+5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.  
+6. Marketing and Sales Strategy: How you plan to attract, reach, and retain customers.  
+7. Funding Request: The amount of money you need and how you plan to use it   
+8. Financial Projections: Expected income statements, cash flow statements, and startup costs.   
+   
