@@ -1,6 +1,6 @@
 # RT-5 simulator — what it is, what it is not
 
-**Status:** Scaffold built, running · **Model version:** 0.1 · **Calibration: none** **Code:** `risk-tools/tools/simulate_portfolio.py` · **Config:** `risk-tools/tools/portfolio-config.csv` · **Scenarios:** `data/macro-scenarios.csv`
+**Status:** Scaffold built, running · **Model version:** 0.1 · **Calibration: none** **Code:** risk-tools/tools/simulate\_portfolio.py · **Config:** risk-tools/tools/portfolio-config.csv · **Scenarios:** data/macro-scenarios.csv
 
 ## What it is
 
@@ -19,7 +19,7 @@ python3 risk-tools/tools/simulate\_portfolio.py \--sweep      \# pool size vs fi
 
 python3 risk-tools/tools/simulate\_portfolio.py \--write-loans
 
-Headline results are written to `data/rt5-scenario-results.csv` and surface on the dashboard. The loan-level tape is gitignored — it is regenerable from the seed, and committing 36,000 synthetic rows would bury the real data in the repo.
+Headline results are written to data/rt5-scenario-results.csv and surface on the dashboard. The loan-level tape is gitignored — it is regenerable from the seed, and committing 36,000 synthetic rows would bury the real data in the repo.
 
 ## What it is not
 
@@ -29,13 +29,13 @@ Headline results are written to `data/rt5-scenario-results.csv` and surface on t
 
 **It is not a rating model.** No agency methodology is implemented. Whether to target one is still open (Memo 3).
 
-**Its outputs are not evidence.** They belong in a design conversation, not in a document that makes claims to an investor. Every output row carries `Basis: SYNTHETIC` for exactly this reason.
+**Its outputs are not evidence.** They belong in a design conversation, not in a document that makes claims to an investor. Every output row carries Basis: SYNTHETIC for exactly this reason.
 
 ## What the scaffold has already shown
 
 Two things worth recording, both of which are properties of the structure rather than of the placeholder parameters:
 
-**1\. The fixed-cost floor is real and steep.** From `--sweep`:
+**1\. The fixed-cost floor is real and steep.** From \--sweep:
 
 | Groups | Pool | Fixed cost as % of pool | Base junior loss | Stressed junior loss |
 | :---- | :---- | :---- | :---- | :---- |
