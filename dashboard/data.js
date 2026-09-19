@@ -2046,12 +2046,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-09-17",
+   "As_Of": "2026-09-18",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-09-18",
+   "As_Of": "2026-09-19",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2074,14 +2074,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "2.81",
+   "Value": "2.85",
    "Unit": "pp",
-   "As_Of": "2026-09-16",
-   "Chg_1m": "-0.04",
-   "Chg_3m": "-0.2",
-   "Chg_12m": "-0.2",
+   "As_Of": "2026-09-17",
+   "Chg_1m": "-0.03",
+   "Chg_3m": "-0.1",
+   "Chg_12m": "-0.13",
    "Direction": "down",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2104,14 +2104,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4825",
+   "Value": "3.4812",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-09-17",
-   "Chg_1m": "0.019",
-   "Chg_3m": "0.0971",
-   "Chg_12m": "-0.42",
+   "As_Of": "2026-09-18",
+   "Chg_1m": "0.0146",
+   "Chg_3m": "0.1078",
+   "Chg_12m": "-0.4223",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2121,12 +2121,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-09-18",
+   "As_Of": "2026-09-19",
    "Chg_1m": "-0.25",
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "down",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2141,7 +2141,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.3",
    "Chg_12m": "3.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2156,7 +2156,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.116",
    "Chg_12m": "-0.372",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2171,7 +2171,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.1",
    "Chg_12m": "10.7",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2179,14 +2179,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "5.01",
+   "Value": "4.94",
    "Unit": "%",
-   "As_Of": "2026-09-16",
-   "Chg_1m": "0.33",
-   "Chg_3m": "0.56",
-   "Chg_12m": "0.73",
+   "As_Of": "2026-09-17",
+   "Chg_1m": "0.22",
+   "Chg_3m": "0.46",
+   "Chg_12m": "0.72",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "42.16",
    "Chg_12m": "64.39",
    "Direction": "up",
-   "Fetched_At": "2026-09-18T11:19:37+00:00",
+   "Fetched_At": "2026-09-19T11:03:42+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5816,9 +5816,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The private overlay — collaborator onboarding",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "7aebe4d4f1abc104c05c73395e48aaf7be29c4a32c439819f19f7bd262853b21",
-   "Baseline_Repo_Hash": "7aebe4d4f1abc104c05c73395e48aaf7be29c4a32c439819f19f7bd262853b21",
-   "Last_Synced_At": "2026-09-10T06:04:46Z",
+   "Baseline_Drive_Hash": "a27e571bb60a0a56547c3f8a893f80505e6dda62743ad46bfaae5abb8c6ff88a",
+   "Baseline_Repo_Hash": "a27e571bb60a0a56547c3f8a893f80505e6dda62743ad46bfaae5abb8c6ff88a",
+   "Last_Synced_At": "2026-09-19T14:00:28Z",
    "Status": "Synced"
   },
   {
@@ -5946,9 +5946,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Product Line 2 — Agrivoltaic Project Finance (BFAV)",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "09e6f28fa1e9ceb2a960c68d486fbd2904ebfb0ee0f179f219aa450848c281c2",
-   "Baseline_Repo_Hash": "09e6f28fa1e9ceb2a960c68d486fbd2904ebfb0ee0f179f219aa450848c281c2",
-   "Last_Synced_At": "2026-09-07T15:54:53Z",
+   "Baseline_Drive_Hash": "5850028f5929d5d7863620fef99b44e272708ba0e5dde4c438bba4c64fa355ab",
+   "Baseline_Repo_Hash": "5850028f5929d5d7863620fef99b44e272708ba0e5dde4c438bba4c64fa355ab",
+   "Last_Synced_At": "2026-09-19T14:00:38Z",
    "Status": "Synced"
   },
   {
@@ -6943,7 +6943,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-09-17",
+    "2026-09-18",
     4.0
    ]
   ],
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-18",
+    "2026-09-19",
     2.65
    ]
   ],
@@ -8051,7 +8051,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-18",
+    "2026-09-19",
     3.25
    ]
   ],
@@ -8201,8 +8201,8 @@ window.SFV_DATA = {
     2.9
    ],
    [
-    "2026-09-16",
-    2.81
+    "2026-09-17",
+    2.85
    ]
   ],
   "MAC-06": [
@@ -9935,8 +9935,8 @@ window.SFV_DATA = {
     3.4647
    ],
    [
-    "2026-09-17",
-    3.4825
+    "2026-09-18",
+    3.4812
    ]
   ],
   "MAC-13": [
@@ -11669,8 +11669,8 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-09-16",
-    5.01
+    "2026-09-17",
+    4.94
    ]
   ],
   "MAC-16": [
@@ -12421,7 +12421,7 @@ window.SFV_DATA = {
    "title": "The private overlay — collaborator onboarding",
    "summary": "",
    "words": 1100,
-   "body": "# The private overlay — collaborator onboarding\n\n**Audience:** anyone working in this repo, human or agent · **Last updated:** 2026-07-30\n\nThis repo is public. A short private tier is not, and it is not private because it is commercially precious — it is private because **it is about people**. This document explains how the two fit together and how to work with both without leaking one into the other.\n\nPolicy and reasoning: `docs/ops/publishing.md`. This is the operational how-to.\n\n## The one-sentence rule\n\n**Does it name a person and say something about them? Private. Does it name an organization and explain why it is relevant? Public.**\n\n> \"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — **public**. It is a research observation.  \n>   \n> \"Spoke to \\[name\\] on 12 March, lukewarm on the data standard, revisit after pilot\" — **private**. It is a fact about our relationship with a person.\n\n## What goes where\n\n| Public repo | `private/` (gitignored) | Drive Vault |\n| :---- | :---- | :---- |\n| Organizations, and why they matter | A named individual's status | PDFs of copyrighted sources |\n| Methods, schemas, code, models | Who was approached, who declined | CVs, transcripts, applications |\n| Literature matrix and memos | Contact people and roles | Correspondence threads |\n| Open questions and reasoning | Application status | Signed documents, term sheets |\n| Aggregate findings | Vault and tracker links | **Row-level participant data** |\n\n**Never committed, under any circumstance:** row-level pilot data, anything identifying a research participant, credentials or tokens, Drive folder IDs, or a person's name attached to our outreach status.\n\nRow-level participant data does not belong in `private/` either — it lives only in the Vault's `05-raw-data`. `private/` is for the working overlay, not for personal data.\n\n## How the overlay works\n\nThe two tiers are joined **by ID at build time**, not duplicated:\n\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter   (public, committed)\n\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes   (gitignored)\n\n                                       │\n\n                                       └── dashboard/build.py merges on ID\n\n                                              ↓\n\n                                    the full picture, locally only\n\nThree overlays exist today:\n\n| Overlay file | Extends | Adds |\n| :---- | :---- | :---- |\n| `private/partner-contacts.csv` | `data/partner-tracker.csv` | `Contact_Status`, `Contact_Person`, `Private_Notes` |\n| `private/phd-applications.csv` | `data/phd-programs.csv` | `Candidate_Supervisors`, `Application_Status`, `Outreach_Plan`, `Private_Notes` |\n| `private/pointers.csv` | `data/resources.csv` | `URL` for Vault and tracker rows |\n\n**Overlays fill in columns on rows that already exist publicly. They never add rows.** That is deliberate: the public tier keeps the row and its description, so a reader can see that a partner or a Vault folder exists and what it is for. Only the private column is withheld. An overlay that added rows would let the public tier silently under-report what the project is doing.\n\n## Setting up locally\n\nA fresh clone has no `private/` contents — only this repo's `README.md` and the `.example.csv` templates.\n\ngit clone https://github.com/benbaichmankass/sustainable-finance-venture\n\ncd sustainable-finance-venture\n\n\\# 1\\. Get the overlay files from the Vault's 00-private-overlay folder\n\n\\#    and put them in private/. The Vault is canonical for these.\n\n\\# 2\\. Build. With the overlay present this writes data.private.js:\n\npython3 dashboard/build.py\n\n\\# 3\\. Open dashboard/index.html. The header chip should read \"Private view\".\n\nWithout step 1 nothing breaks — you get the public view, and the Partners and PhD tabs show a banner explaining what is missing.\n\n## What happens when private data is absent\n\nBy design, gracefully and visibly:\n\n|  | With overlay | Without |\n| :---- | :---- | :---- |\n| Build output | `dashboard/data.private.js` (gitignored) | `dashboard/data.js` (committed) |\n| Header chip | **Private view**, amber border | **Public view** |\n| Partners tab | Contact column \\+ status breakdown | Banner: \"Contact status is in the private overlay\" |\n| PhD tab | Supervisors, status, outreach plan | Banner explaining the same |\n| Resources tab | Vault links resolve | Rows present, links blank |\n\nThe header chip is the thing to check before screenshotting or sharing anything. **Private view means the screenshot contains names and relationship status.**\n\n## Before pushing\n\nAlways rebuild the public tier, or the committed `data.js` goes stale:\n\npython3 dashboard/build.py \\--public\n\nThen run the audit — the `publish-check` skill automates most of it:\n\ngrep \\-rn \"drive\\\\.google\\\\.com\\\\|docs\\\\.google\\\\.com\" \\--include=\"\\*.md\" \\--include=\"\\*.csv\" . | grep \\-v \"^./private/\"\n\ngrep \\-l \"Contact\\_Person\\\\|Private\\_Notes\\\\|Application\\_Status\" data/\\*.csv\n\ngit ls-files private/          \\# expect only README.md and \\*.example.csv\n\nCI enforces the same checks in `.github/workflows/pages.yml` and fails the deploy if a private file or column ever reaches it. That is a backstop, not the first line of defence — `private/` being gitignored is.\n\n## Adding a new private-only field\n\nWorked example. Say partner rows need a `Last_Contact_Date`.\n\n**1\\. Decide the tier.** Does it name a person or describe our relationship with one? A contact date is relationship status → private.\n\n**2\\. Add it to the overlay file only.**\n\n\"ID\",\"Contact\\_Status\",\"Contact\\_Person\",\"Private\\_Notes\",\"Last\\_Contact\\_Date\"\n\n\"PT-03\",\"In conversation\",\"A. Example, Programme Director\",\"Warm on the data standard.\",\"2026-08-14\"\n\n**3\\. Update the template** `private/partner-contacts.example.csv` with the same column and **fake data only**, so a new collaborator sees the schema without seeing anyone's details.\n\n**4\\. Nothing in `build.py` needs changing.** The merge copies every non-`ID` column from the overlay, so new fields flow through automatically.\n\n**5\\. Render it if useful** — add it to the relevant detail panel in `dashboard/index.html`, and guard on presence so the public build degrades cleanly:\n\n\\[\"Last contact\", esc(r.Last\\_Contact\\_Date)\\]   // fields() drops empty values\n\n**6\\. Document it** in the overlay table above and in `private/README.md`.\n\n**7\\. Upload the changed overlay to the Vault**, which is canonical. There is no sync automation — it is a deliberate act, which is the point.\n\n## Adding a whole new overlay\n\nIf a public tracker needs a private companion:\n\n1. Create `private/<name>.csv` keyed by the public tracker's `ID`.  \n2. Commit `private/<name>.example.csv` with fake rows.  \n3. Register it in `OVERLAYS` in `dashboard/build.py`.  \n4. Confirm `.gitignore` still excludes the real file — `private/*` with negations for `README.md` and `*.example.csv` already covers it.  \n5. Run `python3 dashboard/build.py --public` and confirm the new columns do **not** appear in `dashboard/data.js`.\n\n## If something private is committed by accident\n\n1. **Do not just delete it in a new commit.** Git history is public; removing it later does not unpublish it.  \n2. Assess what it actually was. A Drive folder ID is untidy; a person's contact details or participant data is an incident.  \n3. For anything genuinely sensitive: rotate first (move the Vault folder, revoke the credential) so the exposed value stops being useful, then decide about history rewriting.  \n4. Tell the repo owner. Do not quietly rewrite published history.\n\n"
+   "body": "# The private overlay — collaborator onboarding\n\n**Audience:** anyone working in this repo, human or agent · **Last updated:** 2026-07-30\n\nThis repo is public. A short private tier is not, and it is not private because it is commercially precious — it is private because **it is about people**. This document explains how the two fit together and how to work with both without leaking one into the other.\n\nPolicy and reasoning: docs/ops/publishing.md. This is the operational how-to.\n\n## The one-sentence rule\n\n**Does it name a person and say something about them? Private. Does it name an organization and explain why it is relevant? Public.**\n\n> \"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — **public**. It is a research observation.  \n>   \n> \"Spoke to \\[name\\] on 12 March, lukewarm on the data standard, revisit after pilot\" — **private**. It is a fact about our relationship with a person.\n\n## What goes where\n\n| Public repo | private/ (gitignored) | Drive Vault |\n| :---- | :---- | :---- |\n| Organizations, and why they matter | A named individual's status | PDFs of copyrighted sources |\n| Methods, schemas, code, models | Who was approached, who declined | CVs, transcripts, applications |\n| Literature matrix and memos | Contact people and roles | Correspondence threads |\n| Open questions and reasoning | Application status | Signed documents, term sheets |\n| Aggregate findings | Vault and tracker links | **Row-level participant data** |\n\n**Never committed, under any circumstance:** row-level pilot data, anything identifying a research participant, credentials or tokens, Drive folder IDs, or a person's name attached to our outreach status.\n\nRow-level participant data does not belong in private/ either — it lives only in the Vault's 05-raw-data. private/ is for the working overlay, not for personal data.\n\n## How the overlay works\n\nThe two tiers are joined **by ID at build time**, not duplicated:\n\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter   (public, committed)\n\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes   (gitignored)\n\n                                       │\n\n                                       └── dashboard/build.py merges on ID\n\n                                              ↓\n\n                                    the full picture, locally only\n\nThree overlays exist today:\n\n| Overlay file | Extends | Adds |\n| :---- | :---- | :---- |\n| private/partner-contacts.csv | data/partner-tracker.csv | Contact\\_Status, Contact\\_Person, Private\\_Notes |\n| private/phd-applications.csv | data/phd-programs.csv | Candidate\\_Supervisors, Application\\_Status, Outreach\\_Plan, Private\\_Notes |\n| private/pointers.csv | data/resources.csv | URL for Vault and tracker rows |\n\n**Overlays fill in columns on rows that already exist publicly. They never add rows.** That is deliberate: the public tier keeps the row and its description, so a reader can see that a partner or a Vault folder exists and what it is for. Only the private column is withheld. An overlay that added rows would let the public tier silently under-report what the project is doing.\n\n## Setting up locally\n\nA fresh clone has no private/ contents — only this repo's README.md and the .example.csv templates.\n\ngit clone https://github.com/benbaichmankass/sustainable-finance-venture\n\ncd sustainable-finance-venture\n\n\\# 1\\. Get the overlay files from the Vault's 00-private-overlay folder\n\n\\#    and put them in private/. The Vault is canonical for these.\n\n\\# 2\\. Build. With the overlay present this writes data.private.js:\n\npython3 dashboard/build.py\n\n\\# 3\\. Open dashboard/index.html. The header chip should read \"Private view\".\n\nWithout step 1 nothing breaks — you get the public view, and the Partners and PhD tabs show a banner explaining what is missing.\n\n## What happens when private data is absent\n\nBy design, gracefully and visibly:\n\n|  | With overlay | Without |\n| :---- | :---- | :---- |\n| Build output | dashboard/data.private.js (gitignored) | dashboard/data.js (committed) |\n| Header chip | **Private view**, amber border | **Public view** |\n| Partners tab | Contact column \\+ status breakdown | Banner: \"Contact status is in the private overlay\" |\n| PhD tab | Supervisors, status, outreach plan | Banner explaining the same |\n| Resources tab | Vault links resolve | Rows present, links blank |\n\nThe header chip is the thing to check before screenshotting or sharing anything. **Private view means the screenshot contains names and relationship status.**\n\n## Before pushing\n\nAlways rebuild the public tier, or the committed data.js goes stale:\n\npython3 dashboard/build.py \\--public\n\nThen run the audit — the publish-check skill automates most of it:\n\ngrep \\-rn \"drive\\\\.google\\\\.com\\\\|docs\\\\.google\\\\.com\" \\--include=\"\\*.md\" \\--include=\"\\*.csv\" . | grep \\-v \"^./private/\"\n\ngrep \\-l \"Contact\\_Person\\\\|Private\\_Notes\\\\|Application\\_Status\" data/\\*.csv\n\ngit ls-files private/          \\# expect only README.md and \\*.example.csv\n\nCI enforces the same checks in .github/workflows/pages.yml and fails the deploy if a private file or column ever reaches it. That is a backstop, not the first line of defence — private/ being gitignored is.\n\n## Adding a new private-only field\n\nWorked example. Say partner rows need a Last\\_Contact\\_Date.\n\n**1\\. Decide the tier.** Does it name a person or describe our relationship with one? A contact date is relationship status → private.\n\n**2\\. Add it to the overlay file only.**\n\n\"ID\",\"Contact\\_Status\",\"Contact\\_Person\",\"Private\\_Notes\",\"Last\\_Contact\\_Date\"\n\n\"PT-03\",\"In conversation\",\"A. Example, Programme Director\",\"Warm on the data standard.\",\"2026-08-14\"\n\n**3\\. Update the template** private/partner-contacts.example.csv with the same column and **fake data only**, so a new collaborator sees the schema without seeing anyone's details.\n\n**4\\. Nothing in build.py needs changing.** The merge copies every non-ID column from the overlay, so new fields flow through automatically.\n\n**5\\. Render it if useful** — add it to the relevant detail panel in dashboard/index.html, and guard on presence so the public build degrades cleanly:\n\n\\[\"Last contact\", esc(r.Last\\_Contact\\_Date)\\]   // fields() drops empty values\n\n**6\\. Document it** in the overlay table above and in private/README.md.\n\n**7\\. Upload the changed overlay to the Vault**, which is canonical. There is no sync automation — it is a deliberate act, which is the point.\n\n## Adding a whole new overlay\n\nIf a public tracker needs a private companion:\n\n1. Create private/\\<name\\>.csv keyed by the public tracker's ID.  \n2. Commit private/\\<name\\>.example.csv with fake rows.  \n3. Register it in OVERLAYS in dashboard/build.py.  \n4. Confirm .gitignore still excludes the real file — private/\\* with negations for README.md and \\*.example.csv already covers it.  \n5. Run python3 dashboard/build.py \\--public and confirm the new columns do **not** appear in dashboard/data.js.\n\n## If something private is committed by accident\n\n1. **Do not just delete it in a new commit.** Git history is public; removing it later does not unpublish it.  \n2. Assess what it actually was. A Drive folder ID is untidy; a person's contact details or participant data is an incident.  \n3. For anything genuinely sensitive: rotate first (move the Vault folder, revoke the credential) so the exposed value stops being useful, then decide about history rewriting.  \n4. Tell the repo owner. Do not quietly rewrite published history.\n\n"
   },
   {
    "path": "LICENSE-CONTENT.md",
@@ -12921,7 +12921,7 @@ window.SFV_DATA = {
    "title": "Agrivoltaic Project Finance (BFAV)",
    "summary": "",
    "words": 1062,
-   "body": "# Product Line 2 — Agrivoltaic Project Finance (BFAV)\n\n**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** `archive/google-drive/bfav-business-plan.md` (Apr 2024\\) · **Last updated:** 2026-07-30\n\n## Why this belongs in the same venture\n\nBFAV looks like a different business from the VSLA line — solar developers and utilities rather than savings groups and microloans. It is the same thesis with a different origination layer.\n\nThe venture's claim is that certain sustainable-development assets are underfunded because nobody designed them at origination to be poolable. That claim is layer-agnostic. What matters is whether the origination layer produces cash flows that are **standardized, verifiable, and legally transferable**. Agrivoltaic projects do — arguably more cleanly than community loans:\n\n|  | Community credit line | Agrivoltaic line |\n| :---- | :---- | :---- |\n| Originator | VSLAs, MFIs, NGOs | Farmers / landholders, via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Counterparty credit | Many small, socially enforced | One utility, monopsony |\n| Standardization difficulty | High — data capture is the hard part | Low — PPAs are already standard contracts |\n| Tenor | Months | 15–25 years |\n| Precedent | LIT-004, LIT-006 | **LIT-008** (Rwanda distributed solar ABS) |\n\n**LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.\n\nThe predecessor `sds-work-plan.md` is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.\n\n## Concept\n\nA project finance and management firm that adds bifacial agrivoltaic solar capacity to working farmland, sells the electricity to the utility under a PPA, and manages the project through its life.\n\nThe differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.\n\nUnit economics reduce to: `(Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt)`.\n\n## Market structure\n\nThe end customer is the electric utility buying the power. But revenue comes through relatively rigid PPAs in a monopsony market — the price is not negotiable in any meaningful sense, and there is only one buyer.\n\nThat has a consequence worth stating plainly: **growth is constrained by partner acquisition, not by sales.** The real customers are the farmers and investors whose participation creates projects. Marketing effort belongs there, not at the utility.\n\nThe monopsony also cuts the other way, and favourably for securitization: a single, regulated, creditworthy offtaker on a long-dated standard contract is a far more legible cash flow to an investor than thousands of small borrowers. The credit analysis largely collapses to the utility's credit plus operational/production risk.\n\n## Products and services\n\n1. **Capital investment and project management** — the core service.  \n2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.  \n3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.  \n4. **O\\&M** — operations and maintenance over project life.\n\n## Risks\n\n| Category | Risk | Note |\n| :---- | :---- | :---- |\n| Production | Solar yield below model | Bifacial gain on agricultural ground cover is site-specific; needs measured validation, not datasheet assumptions |\n| Agricultural | Crop yield loss under array, rotation incompatibility | The value proposition to the farmer fails if this isn't managed |\n| Offtake | PPA terms set by a monopsony buyer; tariff or policy revision | The single largest exposure — concentrated counterparty and regulatory risk in one place |\n| Political / regulatory | Land-use permitting, agricultural land protection rules, grid connection queues | Jurisdiction-specific; blocks projects rather than degrading them |\n| Financial | Interest-rate and construction-cost exposure on long-dated assets | Match funding tenor to asset tenor |\n| Concentration | Many projects, one offtaker | Undermines the \"uncorrelated idiosyncratic risk\" pooling logic if the whole portfolio faces one utility — see below |\n\n## The concentration problem — and why the two lines need each other\n\nA pure agrivoltaic portfolio is only superficially diversified. Many small projects, but one offtaker, one regulator, one tariff regime. Idiosyncratic risk is diversified; systematic risk is not. That is precisely the failure mode the SDS work plan warned about.\n\nThis is the strongest structural argument for running both product lines: community receivables and PPA-backed project cash flows have close to no shared risk driver. A blended pool is genuinely diversified in a way that either line alone is not.\n\nWhether a **blended vehicle** is desirable is a live question. Rating agencies and investors generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one rather than lifting the other. Recorded as OQ-8.\n\n## Not yet specified\n\nCarried forward from the 2024 plan and still open:\n\n- Financial plan — capex per MW, project IRR, revenue projections, the funding ask  \n- Competitive analysis — who else is doing agrivoltaic project finance in this market  \n- Team and organizational structure  \n- Legal structure of the project vehicle, and whether it can be the same entity as the community line  \n- Which jurisdiction — the original plan implies Israel, which would align with the community line's pilot site\n\n## Open questions\n\n- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?  \n- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?  \n- What does a utility's PPA actually allow in terms of assignment of receivables? This is the LIT-009 true-sale checklist applied to this asset — and it may be the binding constraint.\n\n"
+   "body": "# Product Line 2 — Agrivoltaic Project Finance (BFAV)\n\n**Status:** Concept, partially specified · **Origination layer:** farmers / landholders · **Asset:** PPA-backed project cash flows **Lineage:** archive/google-drive/bfav-business-plan.md (Apr 2024\\) · **Last updated:** 2026-07-30\n\n## Why this belongs in the same venture\n\nBFAV looks like a different business from the VSLA line — solar developers and utilities rather than savings groups and microloans. It is the same thesis with a different origination layer.\n\nThe venture's claim is that certain sustainable-development assets are underfunded because nobody designed them at origination to be poolable. That claim is layer-agnostic. What matters is whether the origination layer produces cash flows that are **standardized, verifiable, and legally transferable**. Agrivoltaic projects do — arguably more cleanly than community loans:\n\n|  | Community credit line | Agrivoltaic line |\n| :---- | :---- | :---- |\n| Originator | VSLAs, MFIs, NGOs | Farmers / landholders, via our project vehicle |\n| Underlying cash flow | Loan repayments, insurance premiums | PPA revenue from the utility |\n| Counterparty credit | Many small, socially enforced | One utility, monopsony |\n| Standardization difficulty | High — data capture is the hard part | Low — PPAs are already standard contracts |\n| Tenor | Months | 15–25 years |\n| Precedent | LIT-004, LIT-006 | **LIT-008** (Rwanda distributed solar ABS) |\n\n**LIT-008 is a direct precedent for this line, not an analogy.** It pools many small, geographically dispersed solar receivables from multiple originators into one tradable ABS. That is structurally what a portfolio of agrivoltaic projects is. The requirement it identifies — a standardized origination protocol across developers plus a donor/DFI anchor — is the same requirement here.\n\nThe predecessor sds-work-plan.md is the bridge document: it argued for combining projects with uncorrelated idiosyncratic risk (by timeline, type and geography) into pooled securities. A portfolio containing both community receivables and agrivoltaic PPAs is a concrete instance of exactly that.\n\n## Concept\n\nA project finance and management firm that adds bifacial agrivoltaic solar capacity to working farmland, sells the electricity to the utility under a PPA, and manages the project through its life.\n\nThe differentiator is risk allocation: **the investment is de-risked for the landholder**. The farmer contributes land use without carrying development or capital risk, which is what makes projects actually move. Crop rotations are selected to be compatible with the array rather than displaced by it, so the land keeps producing.\n\nUnit economics reduce to: (Solar Area Coverage) × (Solar Productivity in Watts) × (Price per Watt).\n\n## Market structure\n\nThe end customer is the electric utility buying the power. But revenue comes through relatively rigid PPAs in a monopsony market — the price is not negotiable in any meaningful sense, and there is only one buyer.\n\nThat has a consequence worth stating plainly: **growth is constrained by partner acquisition, not by sales.** The real customers are the farmers and investors whose participation creates projects. Marketing effort belongs there, not at the utility.\n\nThe monopsony also cuts the other way, and favourably for securitization: a single, regulated, creditworthy offtaker on a long-dated standard contract is a far more legible cash flow to an investor than thousands of small borrowers. The credit analysis largely collapses to the utility's credit plus operational/production risk.\n\n## Products and services\n\n1. **Capital investment and project management** — the core service.  \n2. **Partnership models** — yield modelling across PV and crop to design the most appropriate and profitable configuration for a given plot.  \n3. **Asset securitization** — the layer this venture exists to build. Present in the original 2024 plan as a line item; here it is the point.  \n4. **O\\&M** — operations and maintenance over project life.\n\n## Risks\n\n| Category | Risk | Note |\n| :---- | :---- | :---- |\n| Production | Solar yield below model | Bifacial gain on agricultural ground cover is site-specific; needs measured validation, not datasheet assumptions |\n| Agricultural | Crop yield loss under array, rotation incompatibility | The value proposition to the farmer fails if this isn't managed |\n| Offtake | PPA terms set by a monopsony buyer; tariff or policy revision | The single largest exposure — concentrated counterparty and regulatory risk in one place |\n| Political / regulatory | Land-use permitting, agricultural land protection rules, grid connection queues | Jurisdiction-specific; blocks projects rather than degrading them |\n| Financial | Interest-rate and construction-cost exposure on long-dated assets | Match funding tenor to asset tenor |\n| Concentration | Many projects, one offtaker | Undermines the \"uncorrelated idiosyncratic risk\" pooling logic if the whole portfolio faces one utility — see below |\n\n## The concentration problem — and why the two lines need each other\n\nA pure agrivoltaic portfolio is only superficially diversified. Many small projects, but one offtaker, one regulator, one tariff regime. Idiosyncratic risk is diversified; systematic risk is not. That is precisely the failure mode the SDS work plan warned about.\n\nThis is the strongest structural argument for running both product lines: community receivables and PPA-backed project cash flows have close to no shared risk driver. A blended pool is genuinely diversified in a way that either line alone is not.\n\nWhether a **blended vehicle** is desirable is a live question. Rating agencies and investors generally prefer homogeneous pools, and mixing an unproven asset class with a legible one may contaminate the legible one rather than lifting the other. Recorded as OQ-8.\n\n## Not yet specified\n\nCarried forward from the 2024 plan and still open:\n\n- Financial plan — capex per MW, project IRR, revenue projections, the funding ask  \n- Competitive analysis — who else is doing agrivoltaic project finance in this market  \n- Team and organizational structure  \n- Legal structure of the project vehicle, and whether it can be the same entity as the community line  \n- Which jurisdiction — the original plan implies Israel, which would align with the community line's pilot site\n\n## Open questions\n\n- **OQ-8** — should agrivoltaic and community receivables be pooled in one vehicle, or kept in separate homogeneous pools?  \n- Does the LIT-008 origination-protocol standard transfer directly to agrivoltaic projects, or does long-tenor PPA paper need a different template?  \n- What does a utility's PPA actually allow in terms of assignment of receivables? This is the LIT-009 true-sale checklist applied to this asset — and it may be the binding constraint.\n\n"
   }
  ],
  "docTree": [
