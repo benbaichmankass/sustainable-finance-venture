@@ -14,27 +14,9 @@ This is the gap the research program addresses. The problem is not "do community
 
 The central research question this proposal poses is: **How should community-level lending and insurance arrangements be structured and modeled at origination so that their cash flows become standardized, verifiable, and poolable into securitizable assets — and under what conditions do such structures deliver risk-adjusted returns and development outcomes that justify the pooling?** A secondary, methodological question follows from it: what minimum data architecture, credit-enhancement design, and verification protocol are needed to move a community loan or insurance book from "informally functional" to "investor-legible" without distorting the social mechanisms that make it function in the first place.
 
-> **⚠️ CORRECTION PENDING (2026-08-22) — do not send this document to an advisor until it is resolved.**
-> Two claims below are contradicted by evidence read on 2026-08-22, logged as **OQ-17**.
-> The assertion that bundling is "a design question the existing literature raises but rarely
-> tests directly" (Expected Contributions) and that there is "little evidence on bundling"
-> (gap 2) are **both false as written**. Bundling has been tested experimentally at least twice,
-> and compulsory bundling suppressed demand in both: **LIT-024** (Giné & Yang 2009, Malawi —
-> take-up 13 points lower off a 33.0% base) and **LIT-025** (Banerjee, Duflo & Hornbeck 2014,
-> India — a 16-point, 23% rise in microfinance drop-out, measured on the *lender's* book).
-> **LIT-026** (Karlan et al. 2014, Ghana) is the counterweight: risk rather than capital is the
-> binding constraint, and demand for index insurance offered *separately* is strong.
-> The real distinction is **offered separately versus compulsorily priced into the loan** — and
-> the novelty claim has to move. Candidate relocations are in OQ-17.
-> A microinsurance economist will know these papers.
->
-> **Hold status (2026-08-22): deliberate, not stalled.** The relocation was considered and
-> postponed until the four unread P1 components — **LC-05, LC-06, LC-07, LC-08** — are read,
-> because LC-08 in particular may move the answer again (LIT-030 already sits there and ties
-> basis risk to the pool's loss distribution, which is candidate relocation (b)). Tracked as
-> **M-35**. The standing front-runner, and the default if those reads do not displace it, is
-> candidate (c) — **EXP-17**'s three-arm separation of the take-up effect from the protection
-> effect, whose subsidised opt-in arm has the strongest prior of the three.
+> **⚠️ CORRECTION PENDING (2026-08-22) — do not send this document to an advisor until it is resolved.** Two claims below are contradicted by evidence read on 2026-08-22, logged as **OQ-17**. The assertion that bundling is "a design question the existing literature raises but rarely tests directly" (Expected Contributions) and that there is "little evidence on bundling" (gap 2\) are **both false as written**. Bundling has been tested experimentally at least twice, and compulsory bundling suppressed demand in both: **LIT-024** (Giné & Yang 2009, Malawi — take-up 13 points lower off a 33.0% base) and **LIT-025** (Banerjee, Duflo & Hornbeck 2014, India — a 16-point, 23% rise in microfinance drop-out, measured on the *lender's* book). **LIT-026** (Karlan et al. 2014, Ghana) is the counterweight: risk rather than capital is the binding constraint, and demand for index insurance offered *separately* is strong. The real distinction is **offered separately versus compulsorily priced into the loan** — and the novelty claim has to move. Candidate relocations are in OQ-17. A microinsurance economist will know these papers.  
+>   
+> **Hold status (2026-08-22): deliberate, not stalled.** The relocation was considered and postponed until the four unread P1 components — **LC-05, LC-06, LC-07, LC-08** — are read, because LC-08 in particular may move the answer again (LIT-030 already sits there and ties basis risk to the pool's loss distribution, which is candidate relocation (b)). Tracked as **M-35**. The standing front-runner, and the default if those reads do not displace it, is candidate (c) — **EXP-17**'s three-arm separation of the take-up effect from the protection effect, whose subsidised opt-in arm has the strongest prior of the three.
 
 # Background, Gap, and Significance
 
@@ -134,4 +116,4 @@ Field access negotiation, ethics approval, and partner data-sharing agreements a
 - Convergence Blended Finance (2021). The State of Blended Finance.  
 - GIIN (2020). Annual Impact Investor Survey.
 
-*Placeholder list — to be replaced with entries from `literature/lit-matrix.csv` as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*  
+*Placeholder list — to be replaced with entries from literature/lit-matrix.csv as the matrix is extended to cover the securitization, climate-risk-insurance, and impact-measurement axes noted as gaps above.*  
