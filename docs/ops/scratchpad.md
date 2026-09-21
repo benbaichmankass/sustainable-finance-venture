@@ -53,12 +53,61 @@ Our mission is to decrease global poverty and climate change risk through locali
 Our goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. 
 
 2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  
-   1. Strategy  
-   2. Economics (Financial Viability)  
-3. Market Analysis: Research on your industry, target audience, and main competitors.  
-4. Organization and Management: Your company's legal structure and the background of your leadership team.  
-5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.  
-6. Marketing and Sales Strategy: How you plan to attract, reach, and retain customers.  
-7. Funding Request: The amount of money you need and how you plan to use it   
-8. Financial Projections: Expected income statements, cash flow statements, and startup costs.   
-   
+   1. Strategy
+
+Our strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. 
+
+2. Economics (Financial Viability)
+
+The business economics of this venture rely on two main pillars:
+
+1. Absorbing risk at a premium  
+   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   
+   3. Operating Model
+
+This firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. 
+
+4. Risk Management  
+   5. Loan Supervision
+
+3. Market Analysis: Research on your industry, target audience, and main competitors.
+
+4. Organization and Management: Your company's legal structure and the background of your leadership team.
+
+5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.
+
+The first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:
+
+1. Operating Loans 
+
+To improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)
+
+2.  Capital Loans 
+
+To help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). 
+
+6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  
+   1. Investors 
+
+This will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. 
+
+2. Collectives 
+
+This will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.
+
+7. Funding Request: The amount of money you need and how you plan to use it 
+
+8. Financial Projections: Expected income statements, cash flow statements, and startup costs. 
+
+Task List:
+
+- [ ] Pilot projects \- research and choose a limited number of use cases, come up with project structure and work plan  
+- [ ] Risk management \- risk matrix and mitigation tools  
+- [ ] Research potential partners:  
+      - [ ] Investors   
+      - [ ] NGOs  
+      - [ ] Collectives  
+      - [ ] Microfinance institutions to partner with  
+- [ ] Impact \- definitions and measurements  
+- [ ]   
+      

@@ -2046,12 +2046,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-09-19",
+   "As_Of": "2026-09-21",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-09-20",
+   "As_Of": "2026-09-21",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2081,7 +2081,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.1",
    "Chg_12m": "-0.13",
    "Direction": "down",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2111,7 +2111,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.1078",
    "Chg_12m": "-0.4223",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2121,12 +2121,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-09-20",
+   "As_Of": "2026-09-21",
    "Chg_1m": "-0.25",
    "Chg_3m": "-0.25",
    "Chg_12m": "-1.0",
    "Direction": "down",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2141,7 +2141,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.3",
    "Chg_12m": "3.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2156,7 +2156,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.116",
    "Chg_12m": "-0.372",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2171,7 +2171,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.1",
    "Chg_12m": "10.7",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2186,7 +2186,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.46",
    "Chg_12m": "0.72",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "42.16",
    "Chg_12m": "64.39",
    "Direction": "up",
-   "Fetched_At": "2026-09-20T11:28:33+00:00",
+   "Fetched_At": "2026-09-21T12:53:10+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -6102,9 +6102,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "fe71968d15d166ee6f68db8b51176661f6d2273dada1d84d70cad00b899ba085",
-   "Baseline_Repo_Hash": "fe71968d15d166ee6f68db8b51176661f6d2273dada1d84d70cad00b899ba085",
-   "Last_Synced_At": "2026-09-14T12:38:39Z",
+   "Baseline_Drive_Hash": "6895d501e87427dad6a3944d25ab03f4f0fc8c3326a3e18b910cd60ea4e1b16d",
+   "Baseline_Repo_Hash": "6895d501e87427dad6a3944d25ab03f4f0fc8c3326a3e18b910cd60ea4e1b16d",
+   "Last_Synced_At": "2026-09-21T14:00:02Z",
    "Status": "Synced"
   },
   {
@@ -6274,7 +6274,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "2048bc04d17c9c8a15843369ce451088a652c7e7134a0b3bad6d919f23054bd3",
    "Baseline_Repo_Hash": "2048bc04d17c9c8a15843369ce451088a652c7e7134a0b3bad6d919f23054bd3",
    "Last_Synced_At": "2026-09-14T12:38:55Z",
-   "Status": "Synced"
+   "Status": "Error"
   },
   {
    "ID": "DRV-48",
@@ -6943,7 +6943,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-09-19",
+    "2026-09-21",
     4.0
    ]
   ],
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-20",
+    "2026-09-21",
     2.65
    ]
   ],
@@ -8051,7 +8051,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-20",
+    "2026-09-21",
     3.25
    ]
   ],
@@ -12380,8 +12380,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Scratchpad",
    "summary": "",
-   "words": 776,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy  \n   2. Economics (Financial Viability)  \n3. Market Analysis: Research on your industry, target audience, and main competitors.  \n4. Organization and Management: Your company's legal structure and the background of your leadership team.  \n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.  \n6. Marketing and Sales Strategy: How you plan to attract, reach, and retain customers.  \n7. Funding Request: The amount of money you need and how you plan to use it   \n8. Financial Projections: Expected income statements, cash flow statements, and startup costs.   \n   "
+   "words": 1300,
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix and mitigation tools  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n      "
   },
   {
    "path": "docs/ops/drive-sync.md",
@@ -13008,7 +13008,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 23
    },
-   "totalWords": 115498
+   "totalWords": 116022
   }
  }
 };
