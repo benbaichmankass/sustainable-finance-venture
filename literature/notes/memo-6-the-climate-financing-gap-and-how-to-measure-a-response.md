@@ -2,7 +2,7 @@
 
 **Status:** Outline — not yet written · **Covers:** LC-06 (Climate and adaptation finance: gap sizing and instruments), LC-26 (Impact-evaluation method advances) · **Last updated:** 2026-08-22
 
-> **This is a stub, and deliberately so.** The memo has a row in data/synthesis-memos.csv and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.
+> **This is a stub, and deliberately so.** The memo has a row in `data/synthesis-memos.csv` and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.
 
 The financing-gap number and how to measure a response to it. The gap side now has an authoritative anchor; the measurement side has none.
 
@@ -28,5 +28,5 @@ The financing-gap number and how to measure a response to it. The gap side now h
 
 ## Sources on file
 
-- **LIT-040** — Climate Policy Initiative 2024 \- Global Landscape of Climate Finance 2024: Insights for COP29 (Reviewed)
+- **LIT-040** — Climate Policy Initiative 2024 \- Global Landscape of Climate Finance 2024: Insights for COP29 (`Reviewed`)
 
