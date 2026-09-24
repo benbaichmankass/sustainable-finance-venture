@@ -8,7 +8,7 @@ Randomisation infrastructure and pre-registered analysis, so that impact claims 
 
 ## Why this is a tool and not a report
 
-The project's credibility rests on the evidence being trustworthy (CLAUDE.md §6). The literature is full of microfinance impact claims that did not survive scrutiny — Memo 2 exists because average effects on income turn out small and heterogeneous while the marketing rarely says so.
+The project's credibility rests on the evidence being trustworthy (`CLAUDE.md` §6). The literature is full of microfinance impact claims that did not survive scrutiny — Memo 2 exists because average effects on income turn out small and heterogeneous while the marketing rarely says so.
 
 The way to not repeat that is procedural, and the procedure has to be built before enrolment starts:
 
@@ -35,7 +35,7 @@ OQ-4 and OQ-5 both ask cluster randomisation versus stepped-wedge. They interact
 ## Ethics
 
 - Consent basis, retention period and access must be stated before any participant data is collected. Tracked as part of M-08.  
-- Row-level participant data lives in the Vault's 05-raw-data and never enters the repo — not as a CSV, a summary, or a dashboard row.  
+- Row-level participant data lives in the Vault's `05-raw-data` and never enters the repo — not as a CSV, a summary, or a dashboard row.  
 - IRB or equivalent review via the academic partner (PT-05, PT-06).  
 - Aggregate results come back to the repo. Individual records do not.
 

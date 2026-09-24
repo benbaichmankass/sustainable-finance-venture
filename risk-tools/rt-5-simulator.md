@@ -39,15 +39,15 @@ Two things worth recording, both of which are properties of the structure rather
 
 | Groups | Pool | Fixed cost as % of pool | Base junior loss | Stressed junior loss |
 | :---- | :---- | :---- | :---- | :---- |
-| 250 | $1.2m | 20.9% | 100% | 100% |
-| 500 | $2.3m | 10.8% | 82% | 95% |
-| 1,000 | $4.6m | 5.5% | 47% | 66% |
-| 2,000 | $9.3m | 2.7% | 27% | 48% |
-| 4,000 | $18.7m | 1.3% | 20% | 36% |
-| 8,000 | $37.3m | 0.7% | 15% | 35% |
-| 16,000 | $74.7m | 0.3% | 13% | 31% |
+| 250 | \$1.2m | 20.9% | 100% | 100% |
+| 500 | \$2.3m | 10.8% | 82% | 95% |
+| 1,000 | \$4.6m | 5.5% | 47% | 66% |
+| 2,000 | \$9.3m | 2.7% | 27% | 48% |
+| 4,000 | \$18.7m | 1.3% | 20% | 36% |
+| 8,000 | \$37.3m | 0.7% | 15% | 35% |
+| 16,000 | \$74.7m | 0.3% | 13% | 31% |
 
-Below roughly $5m the junior tranche is destroyed by **costs, not credit**. The curve flattens around $20–40m, where credit loss takes over as the binding constraint. That is a derived answer to OQ-2 rather than a borrowed one — the existing working band came from central tendencies across deals that do not resemble this asset (LIT-011, LIT-012).
+Below roughly \$5m the junior tranche is destroyed by **costs, not credit**. The curve flattens around \$20–40m, where credit loss takes over as the binding constraint. That is a derived answer to OQ-2 rather than a borrowed one — the existing working band came from central tendencies across deals that do not resemble this asset (LIT-011, LIT-012).
 
 It also reframes the question. A pilot pool of 20–50 groups is not "too small to securitise" by a little; it is smaller than the fixed-cost floor by two orders of magnitude. The warehousing bridge is not an optimisation, it is the only path.
 
@@ -71,7 +71,7 @@ In order of how much each would improve the model:
 
 1. **Observed default and recovery rates** from a real pilot cohort, by cycle. Replaces the two most load-bearing placeholders. Requires RT-1 to be in the field.  
 2. **An empirical correlation estimate** — needs several groups across several geographies observed through at least one common shock. This is the hardest input to get and the one that matters most, and it plausibly requires SAVIX historical data rather than our own pilot.  
-3. **Real cost quotes** — legal, rating, listing, servicing, from actual providers in the target jurisdiction (PT-09). The fixed-cost term drives the OQ-2 answer, and $250,000 is currently a guess.  
+3. **Real cost quotes** — legal, rating, listing, servicing, from actual providers in the target jurisdiction (PT-09). The fixed-cost term drives the OQ-2 answer, and \$250,000 is currently a guess.  
 4. **A structuring review** of the waterfall convention against what an investor would actually accept (PT-08).
 
 Until (1) and (3), treat every level this produces as illustrative. The *shapes* — cost floor steepness, correlation sensitivity — are more robust than the levels and are what the tool is currently good for.

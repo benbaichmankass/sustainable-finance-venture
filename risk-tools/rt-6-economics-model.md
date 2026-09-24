@@ -54,7 +54,7 @@ Running `economics_model.py` on the committed config:
 |  | Worst | Likely | Best |
 | :---- | :---- | :---- | :---- |
 | Deal net margin (% of notional) | −0.95% | \+1.9% | \+4.1% |
-| Break-even pool size | \~$38m | \~$8.6m | \~$3.2m |
+| Break-even pool size | \~\$38m | \~\$8.6m | \~\$3.2m |
 | Gate (cover costs within 3y) | **fail** | **pass** (yr 1\) | **pass** (yr 1\) |
 | KPI1 operating margin (t. 30%) | −101% | 34% | 69% |
 | KPI2 return on capital-at-risk (t. 15%) | −30% | 16% | 44% |
