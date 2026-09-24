@@ -4,7 +4,7 @@
 
 > **Scope warning.** **LC-04 (bundling)** and **LC-03 (index insurance demand and basis risk)** have each had a first pass. **LC-05 (resilience measurement)** is unread and its section is a placeholder. The memo exists because LC-04's findings contradict a live claim in the proposal and should not sit only in a CSV.  
 >   
-> All four sources were verified from **published abstracts and authoritative summary pages, not full texts**, so their matrix rows are To read. Everything below is quotable to that standard and no further.
+> All four sources were verified from **published abstracts and authoritative summary pages, not full texts**, so their matrix rows are `To read`. Everything below is quotable to that standard and no further.
 
 ## Sources
 
