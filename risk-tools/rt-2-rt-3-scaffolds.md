@@ -57,7 +57,7 @@ Most of the scorecard is unsurprising — track record, leverage, group maturity
 
 Every decision is explainable:
 
-$ score\_loans.py \--data /tmp/synth \--explain LN-0000000003
+\$ score\_loans.py \--data /tmp/synth \--explain LN-0000000003
 
 Loan LN-0000000003 \- score 93.0 \-\> approve
 
@@ -97,7 +97,7 @@ At the end of May in this run (300 groups, seed 20260730), **nothing has been wr
 
 \[WARNING \] 3 groups above 25% arrears \- worst GRP-000010 at 29%
 
-By the time write-offs reach $51k, PAR30 has already peaked and started falling. The arrears signal leads the realised loss by roughly four to seven months here.
+By the time write-offs reach \$51k, PAR30 has already peaked and started falling. The arrears signal leads the realised loss by roughly four to seven months here.
 
 Whether write-offs are *exactly* zero at a given date depends on the seed and the sample size, so `test_toolchain.py` asserts the durable property instead: at the early date, arrears are already accumulating while under 20% of eventual write-offs have been booked. A write-off is not a warning — it is an outcome, and by then the only remaining question is how to report it.
 

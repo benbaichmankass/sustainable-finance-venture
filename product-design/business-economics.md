@@ -63,11 +63,11 @@ Starting values to *test*, not targets. The 2026-08-02 benchmark-research pass r
 | Track record before first tranche | 2–3 years clean repayment data | **\[sourced\]** LIT-004, LIT-006 |
 | Portfolio gross yield (MFI to borrower) | \~20% Africa / 19.2% global | **\[sourced\]** LIT-016 (MIX 2017-18) |
 | Expected loss / PAR | PAR30 6.0% global → \~5% net loss modelled | **\[sourced\]** LIT-016; net-loss value **\[assumed\]** |
-| Cost-to-serve (operating expense ratio) | 10.6% global / 14.5% Africa; \~$87/borrower | **\[sourced\]** LIT-016 |
+| Cost-to-serve (operating expense ratio) | 10.6% global / 14.5% Africa; \~\$87/borrower | **\[sourced\]** LIT-016 |
 | Structuring / servicing fee | MIV TER 2.4%; Fixed-Income fund fee 1.2% | **\[sourced\]** LIT-017 (Symbiotics 2019\) |
 | Senior coupon | \~7% (MIV wholesale yield 7.6%) | **\[sourced\]** LIT-017 |
-| DFI mobilization ratio (private $ per DFI $) | \~1.8× private / 4.1× commercial; guarantees lead | **\[sourced\]** LIT-018, LIT-019 |
-| Fixed legal / SPV set-up cost | \~$250k/deal (working) | **\[assumed\]** — no open-access benchmark exists; get from counsel (PT-09) alongside OQ-1 |
+| DFI mobilization ratio (private \$ per DFI \$) | \~1.8× private / 4.1× commercial; guarantees lead | **\[sourced\]** LIT-018, LIT-019 |
+| Fixed legal / SPV set-up cost | \~\$250k/deal (working) | **\[assumed\]** — no open-access benchmark exists; get from counsel (PT-09) alongside OQ-1 |
 | Origination share of the spread | \~5% of the \~20% yield | **\[assumed\]** — informed by OER; get from partner MIS (PT-03, PT-04) |
 
 **Two rows resisted sourcing and remain the priority shopping list:** the **fixed structuring cost per deal** (genuinely absent from open-access literature — a we-assume, not a the-literature-says) and the **origination layer's share of the spread** (needs real partner MIS). These are also the two drivers RT-6's sensitivity flags as most load-bearing. The vintage caveat matters: the MIX and Symbiotics anchors are 2017-18 data — the last comprehensive public editions — so they predate the current rate cycle.
@@ -87,13 +87,13 @@ Starting values to *test*, not targets. The 2026-08-02 benchmark-research pass r
 |  | Worst | Likely | Best |
 | :---- | :---- | :---- | :---- |
 | Deal net margin (% of notional) | −0.95% | **\+1.9%** | \+4.1% |
-| Break-even pool size | \~$38m | **\~$8.6m** | \~$3.2m |
+| Break-even pool size | \~\$38m | **\~\$8.6m** | \~\$3.2m |
 | Gate — cover costs within 3y | fail | **pass (yr 1\)** | pass (yr 1\) |
 | KPI1 operating margin (t. 30%) | −101% | **34%** | 69% |
 | KPI2 return on capital-at-risk (t. 15%) | −30% | **16%** | 44% |
 | Junior residual vs 10% hurdle | −21% (no deal) | **8.7% (short)** | 18% (clears) |
 
-**A first, defensible answer to OQ-10: a conditional GO.** Under the most-likely assumptions the gate passes and both KPIs are met — the structuring layer is a business at a reachable scale (roughly four $25m warehouse-scale deals a year). But the answer rests on two conditions the model makes explicit: (1) it holds only above \~$8.6m per deal — pilots sit 14–50× below that (the warehousing bridge is the only path, per OQ-2); and (2) the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss** — the blended-finance case stated as arithmetic. The worst case does not merely thin the margin; it fails the clearing test, so there is no deal at all. This is a first answer to calibrate, not a verdict — 18 of 23 drivers are still assumed.
+**A first, defensible answer to OQ-10: a conditional GO.** Under the most-likely assumptions the gate passes and both KPIs are met — the structuring layer is a business at a reachable scale (roughly four \$25m warehouse-scale deals a year). But the answer rests on two conditions the model makes explicit: (1) it holds only above \~\$8.6m per deal — pilots sit 14–50× below that (the warehousing bridge is the only path, per OQ-2); and (2) the junior tranche returns 8.7% against a 10% hurdle, so **the deal exists only with concessional first-loss** — the blended-finance case stated as arithmetic. The worst case does not merely thin the margin; it fails the clearing test, so there is no deal at all. This is a first answer to calibrate, not a verdict — 18 of 23 drivers are still assumed.
 
 What remains is calibration: replace the two stubborn **\[assumed\]** rows in §4 (fixed structuring cost; origination share) with partner and counsel numbers, and tie the loss assumption to RT-5 directly.
 

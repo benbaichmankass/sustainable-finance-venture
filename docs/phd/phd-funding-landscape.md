@@ -41,7 +41,7 @@ A high stipend in an expensive city can net out worse than a modest one in a che
 Honest gaps to close before relying on a number for a decision:
 
 - Exact **FNRS** monthly amount (indexed; not machine-readable this pass) — Belgian rows.  
-- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection); SINGA figures (S$2,700→3,200) are confirmed and are the relevant international route.  
+- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection); SINGA figures (S\$2,700→3,200) are confirmed and are the relevant international route.  
 - **UEA** Home/International PGR tuition (rendered via JavaScript; SeNSS funding waives it).  
 - Whether senior/emeritus supervisors still take students: **Balkenhol** (Geneva), **Tarp** (Copenhagen), **Zeller** (Hohenheim), **de Haas** availability (Mannheim/ZEW).  
 - The two German-town TV-L net figures are estimates from standard public-pay tables, not program-published numbers.
