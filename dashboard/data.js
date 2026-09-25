@@ -2046,12 +2046,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-09-23",
+   "As_Of": "2026-09-24",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-09-24",
+   "As_Of": "2026-09-25",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2074,14 +2074,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "2.81",
+   "Value": "2.78",
    "Unit": "pp",
-   "As_Of": "2026-09-22",
-   "Chg_1m": "-0.06",
-   "Chg_3m": "-0.14",
-   "Chg_12m": "-0.17",
+   "As_Of": "2026-09-23",
+   "Chg_1m": "-0.09",
+   "Chg_3m": "-0.23",
+   "Chg_12m": "-0.24",
    "Direction": "down",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2104,14 +2104,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4417",
+   "Value": "3.4649",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-09-23",
-   "Chg_1m": "-0.0484",
-   "Chg_3m": "0.0276",
-   "Chg_12m": "-0.5054",
+   "As_Of": "2026-09-24",
+   "Chg_1m": "-0.0132",
+   "Chg_3m": "0.0802",
+   "Chg_12m": "-0.4934",
    "Direction": "down",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2121,12 +2121,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-09-24",
-   "Chg_1m": "-0.25",
+   "As_Of": "2026-09-25",
+   "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
-   "Chg_12m": "-1.0",
-   "Direction": "down",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Chg_12m": "-0.75",
+   "Direction": "flat",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2141,7 +2141,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.3",
    "Chg_12m": "3.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2149,14 +2149,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.017",
+   "Value": "3.033",
    "Unit": "ILS per USD",
-   "As_Of": "2026-09-23",
-   "Chg_1m": "0.025",
-   "Chg_3m": "0.073",
-   "Chg_12m": "-0.389",
+   "As_Of": "2026-09-25",
+   "Chg_1m": "0.039",
+   "Chg_3m": "0.067",
+   "Chg_12m": "-0.336",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2171,7 +2171,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.1",
    "Chg_12m": "10.7",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2179,14 +2179,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "4.96",
+   "Value": "5.11",
    "Unit": "%",
-   "As_Of": "2026-09-22",
-   "Chg_1m": "0.27",
-   "Chg_3m": "0.47",
-   "Chg_12m": "0.91",
+   "As_Of": "2026-09-23",
+   "Chg_1m": "0.37",
+   "Chg_3m": "0.65",
+   "Chg_12m": "1.03",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "34.43",
    "Chg_12m": "47.64",
    "Direction": "up",
-   "Fetched_At": "2026-09-24T11:50:44+00:00",
+   "Fetched_At": "2026-09-25T11:54:18+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5712,9 +5712,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Grant & Funding Plan for Research Experiments",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "aa33a88745d69638eb883cb8944c578669b41e179c6a3eb5b482c46f5bd3ca10",
-   "Baseline_Repo_Hash": "aa33a88745d69638eb883cb8944c578669b41e179c6a3eb5b482c46f5bd3ca10",
-   "Last_Synced_At": "2026-09-25T10:30:31Z",
+   "Baseline_Drive_Hash": "e9c7edb4d992205497366509edb842c4a41ffda19174f6c354d1424a20223f13",
+   "Baseline_Repo_Hash": "e9c7edb4d992205497366509edb842c4a41ffda19174f6c354d1424a20223f13",
+   "Last_Synced_At": "2026-09-25T15:30:24Z",
    "Status": "Synced"
   },
   {
@@ -6943,7 +6943,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-09-23",
+    "2026-09-24",
     4.0
    ]
   ],
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-24",
+    "2026-09-25",
     2.65
    ]
   ],
@@ -8051,7 +8051,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-24",
+    "2026-09-25",
     3.25
    ]
   ],
@@ -8201,8 +8201,8 @@ window.SFV_DATA = {
     2.9
    ],
    [
-    "2026-09-22",
-    2.81
+    "2026-09-23",
+    2.78
    ]
   ],
   "MAC-06": [
@@ -9935,8 +9935,8 @@ window.SFV_DATA = {
     3.4647
    ],
    [
-    "2026-09-23",
-    3.4417
+    "2026-09-24",
+    3.4649
    ]
   ],
   "MAC-13": [
@@ -10513,8 +10513,8 @@ window.SFV_DATA = {
     2.988
    ],
    [
-    "2026-09-23",
-    3.017
+    "2026-09-25",
+    3.033
    ]
   ],
   "MAC-14": [
@@ -11669,8 +11669,8 @@ window.SFV_DATA = {
     4.75
    ],
    [
-    "2026-09-22",
-    4.96
+    "2026-09-23",
+    5.11
    ]
   ],
   "MAC-16": [
@@ -12841,7 +12841,7 @@ window.SFV_DATA = {
    "title": "Grant & Funding Plan for Research Experiments",
    "summary": "",
    "words": 625,
-   "body": "# Grant & Funding Plan for Research Experiments\n\n**Status:** Plan (week of 2026-08-02) · **Owner:** BB · **Parent:** docs/phd/research-proposal.md §5\n\nThis is the plan for raising the non-dilutive funding that pays for the research experiments — the field pilots and impact evaluations, distinct from the blended/DFI capital that funds the *investment* structures themselves (that is the business-economics workstream and OQ-6). Grants here buy evidence; investor capital buys assets. Keep them separate in the ask.\n\nFunder candidates are tracked in **data/funders.csv** (FUND-01 … FUND-10). This document holds the strategy around that tracker.\n\n## What we are raising for\n\n| Cost bucket | What it pays for | Rough stage |\n| :---- | :---- | :---- |\n| Study design & pre-registration | Methodology, IRB, pre-analysis plan | Before pilot |\n| Baseline & endline data collection | Independent field team (verification partner) | Pilot |\n| Randomization / evaluation infrastructure | Sampling, survey instruments, monitoring | Pilot |\n| Small pilot capital (revolving) | The actual loans/premiums under test | Pilot |\n| Analysis & dissemination | Synthesis, publication, investor-facing evidence | Post-pilot |\n\nDollar figures are deliberately absent until the business-economics analysis sizes a pilot — putting numbers here before that would be guessing. This plan fixes the *structure* of the ask.\n\n## Funder landscape (four lanes)\n\nThe tracker sorts into four kinds of money, each with a different pitch:\n\n1. **Impact-evaluation funders** (FUND-02 3ie, FUND-03 J-PAL K-CAI) — the cleanest fit. They fund exactly the causal-measurement work in methodology-impact-measurement.md. Lead with the research design, not the venture.  \n2. **Development-research funders / DFI research desks** (FUND-01 IDRC, FUND-10 AFD/Proparco) — fund the research program broadly; can bridge to the structuring thesis.  \n3. **Climate \\+ poverty foundations** (FUND-05 Mastercard, FUND-06 IKEA, FUND-07 Shell, FUND-09 Rockefeller) — fund the *outcome*, not the method. Lead with the climate-resilience / poverty-reduction story and the community, not the securitization.  \n4. **Climate funds** (FUND-08 GCF) — project- and readiness-oriented; usually need an accredited entity, so more likely accessed *through* a partner than applied to directly.\n\n## Sequencing\n\n1. **Now — research the tracker.** Each FUND row is Not researched. First pass: confirm each funder is live, find current calls, deadlines and typical grant size, and verify a URL before committing it (blank until then — the repo rule). → milestone.  \n2. **Match to lane and stage.** Tag each funder with which cost bucket(s) it credibly covers.  \n3. **Anchor on lane 1\\.** An impact-evaluation grant (3ie / K-CAI type) is the highest-fit, highest-credibility first ask because the deliverable *is* the research. It also pulls in a verification partner (PT-05), doing double duty.  \n4. **Sequence foundations behind a flagship.** Foundation asks land better once there is a named flagship experiment (OQ-11) and a community partner, not a menu of eight ideas.  \n5. **Keep climate funds as partner-routed** rather than direct applications in the near term.\n\n## Coordination with the rest of the repo\n\n- Contact *people* at these funders — names, warm intros, who said what — go to the private overlay, never to data/funders.csv (CLAUDE.md §8 and the publishing rule). The tracker holds the org and why it matters; the relationship is private.  \n- The PhD route is a parallel, complementary funding lane: a funded PhD covers the researcher's own time in a way none of these grants do. Kept in data/phd-programs.csv; noted here so the two pipelines are not double-counted.  \n- Grant asks must be sized by the business-economics analysis (product-design/business-economics.md) before submission — that is the dependency, and why no numbers appear above yet.\n\n## Deliverable state\n\nPlan \\+ populated tracker. Remaining work: the funder-research pass (verify each is live, find calls/deadlines/sizes, add verified URLs), then lane/stage tagging and a first anchor application once a flagship experiment is chosen.  \n"
+   "body": "# Grant & Funding Plan for Research Experiments\n\n**Status:** Plan (week of 2026-08-02) · **Owner:** BB · **Parent:** `docs/phd/research-proposal.md` §5\n\nThis is the plan for raising the non-dilutive funding that pays for the research experiments — the field pilots and impact evaluations, distinct from the blended/DFI capital that funds the *investment* structures themselves (that is the business-economics workstream and OQ-6). Grants here buy evidence; investor capital buys assets. Keep them separate in the ask.\n\nFunder candidates are tracked in **`data/funders.csv`** (FUND-01 … FUND-10). This document holds the strategy around that tracker.\n\n## What we are raising for\n\n| Cost bucket | What it pays for | Rough stage |\n| :---- | :---- | :---- |\n| Study design & pre-registration | Methodology, IRB, pre-analysis plan | Before pilot |\n| Baseline & endline data collection | Independent field team (verification partner) | Pilot |\n| Randomization / evaluation infrastructure | Sampling, survey instruments, monitoring | Pilot |\n| Small pilot capital (revolving) | The actual loans/premiums under test | Pilot |\n| Analysis & dissemination | Synthesis, publication, investor-facing evidence | Post-pilot |\n\nDollar figures are deliberately absent until the business-economics analysis sizes a pilot — putting numbers here before that would be guessing. This plan fixes the *structure* of the ask.\n\n## Funder landscape (four lanes)\n\nThe tracker sorts into four kinds of money, each with a different pitch:\n\n1. **Impact-evaluation funders** (FUND-02 3ie, FUND-03 J-PAL K-CAI) — the cleanest fit. They fund exactly the causal-measurement work in `methodology-impact-measurement.md`. Lead with the research design, not the venture.  \n2. **Development-research funders / DFI research desks** (FUND-01 IDRC, FUND-10 AFD/Proparco) — fund the research program broadly; can bridge to the structuring thesis.  \n3. **Climate \\+ poverty foundations** (FUND-05 Mastercard, FUND-06 IKEA, FUND-07 Shell, FUND-09 Rockefeller) — fund the *outcome*, not the method. Lead with the climate-resilience / poverty-reduction story and the community, not the securitization.  \n4. **Climate funds** (FUND-08 GCF) — project- and readiness-oriented; usually need an accredited entity, so more likely accessed *through* a partner than applied to directly.\n\n## Sequencing\n\n1. **Now — research the tracker.** Each FUND row is `Not researched`. First pass: confirm each funder is live, find current calls, deadlines and typical grant size, and verify a URL before committing it (blank until then — the repo rule). → milestone.  \n2. **Match to lane and stage.** Tag each funder with which cost bucket(s) it credibly covers.  \n3. **Anchor on lane 1\\.** An impact-evaluation grant (3ie / K-CAI type) is the highest-fit, highest-credibility first ask because the deliverable *is* the research. It also pulls in a verification partner (PT-05), doing double duty.  \n4. **Sequence foundations behind a flagship.** Foundation asks land better once there is a named flagship experiment (OQ-11) and a community partner, not a menu of eight ideas.  \n5. **Keep climate funds as partner-routed** rather than direct applications in the near term.\n\n## Coordination with the rest of the repo\n\n- Contact *people* at these funders — names, warm intros, who said what — go to the private overlay, never to `data/funders.csv` (CLAUDE.md §8 and the publishing rule). The tracker holds the org and why it matters; the relationship is private.  \n- The PhD route is a parallel, complementary funding lane: a funded PhD covers the researcher's own time in a way none of these grants do. Kept in `data/phd-programs.csv`; noted here so the two pipelines are not double-counted.  \n- Grant asks must be sized by the business-economics analysis (`product-design/business-economics.md`) before submission — that is the dependency, and why no numbers appear above yet.\n\n## Deliverable state\n\nPlan \\+ populated tracker. Remaining work: the funder-research pass (verify each is live, find calls/deadlines/sizes, add verified URLs), then lane/stage tagging and a first anchor application once a flagship experiment is chosen.  \n"
   },
   {
    "path": "docs/venture/macro-watch.md",
