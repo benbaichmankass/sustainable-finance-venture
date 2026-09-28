@@ -2046,12 +2046,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-09-27",
+   "As_Of": "2026-09-28",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-09-27",
+   "As_Of": "2026-09-28",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2081,7 +2081,7 @@ window.SFV_DATA = {
    "Chg_3m": "-0.24",
    "Chg_12m": "-0.32",
    "Direction": "down",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2104,14 +2104,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4594",
+   "Value": "3.4854",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-09-25",
-   "Chg_1m": "-0.0112",
-   "Chg_3m": "0.0841",
-   "Chg_12m": "-0.4864",
-   "Direction": "down",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "As_Of": "2026-09-28",
+   "Chg_1m": "0.022",
+   "Chg_3m": "0.0675",
+   "Chg_12m": "-0.4342",
+   "Direction": "up",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2121,12 +2121,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-09-27",
+   "As_Of": "2026-09-28",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2141,7 +2141,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.3",
    "Chg_12m": "3.3",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2149,14 +2149,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.033",
+   "Value": "3.066",
    "Unit": "ILS per USD",
-   "As_Of": "2026-09-25",
-   "Chg_1m": "0.039",
-   "Chg_3m": "0.067",
-   "Chg_12m": "-0.336",
+   "As_Of": "2026-09-28",
+   "Chg_1m": "0.08",
+   "Chg_3m": "0.075",
+   "Chg_12m": "-0.28",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2171,7 +2171,7 @@ window.SFV_DATA = {
    "Chg_3m": "2.1",
    "Chg_12m": "10.7",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2186,7 +2186,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.67",
    "Chg_12m": "1.14",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "34.43",
    "Chg_12m": "47.64",
    "Direction": "up",
-   "Fetched_At": "2026-09-27T12:06:40+00:00",
+   "Fetched_At": "2026-09-28T14:00:51+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5777,9 +5777,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "PhD funding landscape — how the money actually works",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "584c7a6401bb46c797d789b6a1f20066fa79d9be6cd23a1dcd45709e308777c8",
-   "Baseline_Repo_Hash": "584c7a6401bb46c797d789b6a1f20066fa79d9be6cd23a1dcd45709e308777c8",
-   "Last_Synced_At": "2026-09-28T08:37:03Z",
+   "Baseline_Drive_Hash": "7e3d47aea66adb932b1e729773c320fd644fd5584c115df99edb3ff5d0238b6f",
+   "Baseline_Repo_Hash": "7e3d47aea66adb932b1e729773c320fd644fd5584c115df99edb3ff5d0238b6f",
+   "Last_Synced_At": "2026-09-28T16:59:45Z",
    "Status": "Synced"
   },
   {
@@ -6943,7 +6943,7 @@ window.SFV_DATA = {
     3.75
    ],
    [
-    "2026-09-27",
+    "2026-09-28",
     4.0
    ]
   ],
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.4
    ],
    [
-    "2026-09-27",
+    "2026-09-28",
     2.65
    ]
   ],
@@ -8051,7 +8051,7 @@ window.SFV_DATA = {
     3.5
    ],
    [
-    "2026-09-27",
+    "2026-09-28",
     3.25
    ]
   ],
@@ -9935,8 +9935,8 @@ window.SFV_DATA = {
     3.4647
    ],
    [
-    "2026-09-25",
-    3.4594
+    "2026-09-28",
+    3.4854
    ]
   ],
   "MAC-13": [
@@ -10513,8 +10513,8 @@ window.SFV_DATA = {
     2.988
    ],
    [
-    "2026-09-25",
-    3.033
+    "2026-09-28",
+    3.066
    ]
   ],
   "MAC-14": [
@@ -12471,7 +12471,7 @@ window.SFV_DATA = {
    "title": "PhD funding landscape — how the money actually works",
    "summary": "",
    "words": 822,
-   "body": "# PhD funding landscape — how the money actually works\n\n**Status:** first pass · **Last updated:** 2026-08-03 · **Applicant frame:** Israel-based, running a parallel venture\n\nThis note sits behind the four financial columns now in data/phd-programs.csv (Tuition, Scholarships\\_Grants, TA\\_RA\\_Opportunities, Net\\_Earnings\\_Estimate). The per-program numbers live in the tracker and on the dashboard's **PhD pipeline** tab (open a row → *Financial setup*). This doc records the patterns that cut across programs — the things a row-by-row read misses — and, importantly, the **eligibility rules that quietly rule some funding out for an Israeli applicant**.\n\nEvery figure here is sourced from official program/scholarship pages checked in August 2026, or flagged (est.) / *unverified* where it is an estimate or the page could not be confirmed. Take-home figures are **net of tax and any tuition**, with a cost-of-living flag, per the framing chosen for this pass. FX is approximate.\n\n## The five funding models\n\nWhich model a program uses matters more than its headline number, because the models differ in whether you are a *paid employee*, a *tax-free fellow*, or a *fee-payer*.\n\n| Model | Where | You are… | Typical net take-home | Non-EU/Israeli eligible? |\n| :---- | :---- | :---- | :---- | :---- |\n| **Salaried-PhD (Dutch CAO)** | Groningen, Wageningen; UNU-MERIT full-time | An employee (scale P, EUR 3,059→3,881/mo gross) | \\~EUR 29–34k/yr | Yes — vacancy-based |\n| **Salaried-PhD (Nordic)** | NHH Bergen, Gothenburg, Copenhagen | An employee | \\~USD 30–40k/yr | Yes — vacancy-based |\n| **French contrat doctoral** | CERDI, TSE/PSE, Paris-Dauphine | A salaried doctoral contractee | \\~EUR 22k/yr (Paris tighter) | Yes |\n| **Belgian FNRS fellowship** | CERMi (ULB/UMons), Namur; Belgian legs generally | A tax-free fellow | \\~EUR 28–31k/yr | **Yes — FNRS has no EEA-degree bar** |\n| **Merit scholarship** | Frankfurt School, Bocconi, IHEID, Mannheim | A tax-free scholarship-holder | \\~EUR 18–27k/yr | Yes |\n| **Fee-paying** | ISS Rotterdam, UNU-MERIT *Dual Career* | A paying student | **Negative** | Yes, but you pay |\n\n## Eligibility traps worth knowing before applying\n\nThese are the places where a program looks funded but the specific instrument does **not** admit an Israeli applicant. They are the reason several otherwise-strong rows carry a funding caveat in the tracker.\n\n- **German DAAD \"development-country\" scholarships (EPOS) exclude Israel.** EPOS and most development-scholarship streams require DAC/developing-or-newly-industrialised nationality; Israel is high-income and non-DAC, so the applicant is **not eligible**. At Passau, Bonn/ZEF, Hohenheim and Göttingen the realistic funded route is therefore a **salaried TV-L E13 research position** (a paid job with teaching/research duties, \\~EUR 23–27k/yr net), not a development scholarship. Frankfurt School and Mannheim/GESS are the German exceptions — they fund via **merit scholarships open to internationals**.  \n- **Flemish FWO (Belgium) is degree-restricted; French-community FNRS is not.** FWO fundamental-research fellowships generally require an EEA/Switzerland degree, which can exclude a straight non-EEA route (relevant at KU Leuven and Antwerp — use BOF/project funding instead). The **F.R.S.-FNRS** ASP/FRESH fellowships (CERMi, Namur, ULB/UMons) carry **no such nationality bar** — a genuine strategic edge for this applicant.  \n- **UK ESRC DTP studentships are open to internationals but capped \\~30%.** Since 2021/22 UKRI studentships admit international students (fees at the home rate \\+ a \\~GBP 20,780 UKRI stipend, London-weighted higher), but each Doctoral Training Partnership caps international intake near 30% — so at SOAS, Manchester, UEA and Bath the funded route exists but is competitive. **Felix (SOAS) and Commonwealth scholarships do not fit** an Israel-based, non-Indian, non-Commonwealth applicant.  \n- **Israel's PBC/Rotenstreich fellowship (HUJI) is for citizens/permanent residents.** Fine if the applicant is an Israeli citizen/PR; not a route for a non-citizen.\n\n## Reading the cost-of-living flag\n\nA high stipend in an expensive city can net out worse than a modest one in a cheap town. The pattern from this pass:\n\n- **Comfortably covers:** Nordic salaried posts (NHH, Copenhagen, Gothenburg), Dutch salaried posts (Groningen, Wageningen), Passau and Göttingen (low-cost German towns), Clermont-Ferrand, Bocconi, the Belgian FNRS cities, Manchester/Norwich (UK, if funded).  \n- **Tight even when funded:** Geneva (both UNIGE and IHEID — Swiss rents dominate), Paris (PSE, Paris-Dauphine), London (SOAS), Jerusalem on the fellowship alone.  \n- **Costs you money:** ISS Rotterdam (\\~EUR 8k/yr tuition, no stipend) and the UNU-MERIT *Dual Career* part-time track (EUR 9k then 7k/yr) — these only make sense if external funding is brought, or (Dual Career) as a deliberately venture-parallel degree.\n\n## What still needs confirming\n\nHonest gaps to close before relying on a number for a decision:\n\n- Exact **FNRS** monthly amount (indexed; not machine-readable this pass) — Belgian rows.  \n- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection); SINGA figures (S\\$2,700→3,200) are confirmed and are the relevant international route.  \n- **UEA** Home/International PGR tuition (rendered via JavaScript; SeNSS funding waives it).  \n- Whether senior/emeritus supervisors still take students: **Balkenhol** (Geneva), **Tarp** (Copenhagen), **Zeller** (Hohenheim), **de Haas** availability (Mannheim/ZEW).  \n- The two German-town TV-L net figures are estimates from standard public-pay tables, not program-published numbers.\n\n"
+   "body": "# PhD funding landscape — how the money actually works\n\n**Status:** first pass · **Last updated:** 2026-08-03 · **Applicant frame:** Israel-based, running a parallel venture\n\nThis note sits behind the four financial columns now in `data/phd-programs.csv` (`Tuition`, `Scholarships_Grants`, `TA_RA_Opportunities`, `Net_Earnings_Estimate`). The per-program numbers live in the tracker and on the dashboard's **PhD pipeline** tab (open a row → *Financial setup*). This doc records the patterns that cut across programs — the things a row-by-row read misses — and, importantly, the **eligibility rules that quietly rule some funding out for an Israeli applicant**.\n\nEvery figure here is sourced from official program/scholarship pages checked in August 2026, or flagged `(est.)` / *unverified* where it is an estimate or the page could not be confirmed. Take-home figures are **net of tax and any tuition**, with a cost-of-living flag, per the framing chosen for this pass. FX is approximate.\n\n## The five funding models\n\nWhich model a program uses matters more than its headline number, because the models differ in whether you are a *paid employee*, a *tax-free fellow*, or a *fee-payer*.\n\n| Model | Where | You are… | Typical net take-home | Non-EU/Israeli eligible? |\n| :---- | :---- | :---- | :---- | :---- |\n| **Salaried-PhD (Dutch CAO)** | Groningen, Wageningen; UNU-MERIT full-time | An employee (scale P, EUR 3,059→3,881/mo gross) | \\~EUR 29–34k/yr | Yes — vacancy-based |\n| **Salaried-PhD (Nordic)** | NHH Bergen, Gothenburg, Copenhagen | An employee | \\~USD 30–40k/yr | Yes — vacancy-based |\n| **French contrat doctoral** | CERDI, TSE/PSE, Paris-Dauphine | A salaried doctoral contractee | \\~EUR 22k/yr (Paris tighter) | Yes |\n| **Belgian FNRS fellowship** | CERMi (ULB/UMons), Namur; Belgian legs generally | A tax-free fellow | \\~EUR 28–31k/yr | **Yes — FNRS has no EEA-degree bar** |\n| **Merit scholarship** | Frankfurt School, Bocconi, IHEID, Mannheim | A tax-free scholarship-holder | \\~EUR 18–27k/yr | Yes |\n| **Fee-paying** | ISS Rotterdam, UNU-MERIT *Dual Career* | A paying student | **Negative** | Yes, but you pay |\n\n## Eligibility traps worth knowing before applying\n\nThese are the places where a program looks funded but the specific instrument does **not** admit an Israeli applicant. They are the reason several otherwise-strong rows carry a funding caveat in the tracker.\n\n- **German DAAD \"development-country\" scholarships (EPOS) exclude Israel.** EPOS and most development-scholarship streams require DAC/developing-or-newly-industrialised nationality; Israel is high-income and non-DAC, so the applicant is **not eligible**. At Passau, Bonn/ZEF, Hohenheim and Göttingen the realistic funded route is therefore a **salaried TV-L E13 research position** (a paid job with teaching/research duties, \\~EUR 23–27k/yr net), not a development scholarship. Frankfurt School and Mannheim/GESS are the German exceptions — they fund via **merit scholarships open to internationals**.  \n- **Flemish FWO (Belgium) is degree-restricted; French-community FNRS is not.** FWO fundamental-research fellowships generally require an EEA/Switzerland degree, which can exclude a straight non-EEA route (relevant at KU Leuven and Antwerp — use BOF/project funding instead). The **F.R.S.-FNRS** ASP/FRESH fellowships (CERMi, Namur, ULB/UMons) carry **no such nationality bar** — a genuine strategic edge for this applicant.  \n- **UK ESRC DTP studentships are open to internationals but capped \\~30%.** Since 2021/22 UKRI studentships admit international students (fees at the home rate \\+ a \\~GBP 20,780 UKRI stipend, London-weighted higher), but each Doctoral Training Partnership caps international intake near 30% — so at SOAS, Manchester, UEA and Bath the funded route exists but is competitive. **Felix (SOAS) and Commonwealth scholarships do not fit** an Israel-based, non-Indian, non-Commonwealth applicant.  \n- **Israel's PBC/Rotenstreich fellowship (HUJI) is for citizens/permanent residents.** Fine if the applicant is an Israeli citizen/PR; not a route for a non-citizen.\n\n## Reading the cost-of-living flag\n\nA high stipend in an expensive city can net out worse than a modest one in a cheap town. The pattern from this pass:\n\n- **Comfortably covers:** Nordic salaried posts (NHH, Copenhagen, Gothenburg), Dutch salaried posts (Groningen, Wageningen), Passau and Göttingen (low-cost German towns), Clermont-Ferrand, Bocconi, the Belgian FNRS cities, Manchester/Norwich (UK, if funded).  \n- **Tight even when funded:** Geneva (both UNIGE and IHEID — Swiss rents dominate), Paris (PSE, Paris-Dauphine), London (SOAS), Jerusalem on the fellowship alone.  \n- **Costs you money:** ISS Rotterdam (\\~EUR 8k/yr tuition, no stipend) and the UNU-MERIT *Dual Career* part-time track (EUR 9k then 7k/yr) — these only make sense if external funding is brought, or (Dual Career) as a deliberately venture-parallel degree.\n\n## What still needs confirming\n\nHonest gaps to close before relying on a number for a decision:\n\n- Exact **FNRS** monthly amount (indexed; not machine-readable this pass) — Belgian rows.  \n- School-specific stipend at **SMU** and the **SMU DBA** fee (site behind bot protection); SINGA figures (S\\$2,700→3,200) are confirmed and are the relevant international route.  \n- **UEA** Home/International PGR tuition (rendered via JavaScript; SeNSS funding waives it).  \n- Whether senior/emeritus supervisors still take students: **Balkenhol** (Geneva), **Tarp** (Copenhagen), **Zeller** (Hohenheim), **de Haas** availability (Mannheim/ZEW).  \n- The two German-town TV-L net figures are estimates from standard public-pay tables, not program-published numbers.\n\n"
   },
   {
    "path": "docs/phd/proposal-workplan.md",
