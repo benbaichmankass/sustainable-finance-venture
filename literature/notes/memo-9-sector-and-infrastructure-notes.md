@@ -119,7 +119,7 @@ There is also a live comparator: **Colombia launched a Coffee Price Stabilizatio
 2. Certification cannot carry the welfare claim. It organises the population; the outcome has to come from somewhere else.  
 3. Coffee's risk is dominated by two covariate shocks. This makes it the hardest case for poolability and the best case for measuring correlation — and which of those the project wants is an open decision, not a settled one.
 
-**Still unread for this component:** the record of coffee price-risk instruments for smallholders as *evaluated* rather than announced; whether Latin American member registers are obtainable; and any published loss or default data on cooperative internal credit funds, which on this evidence may not exist publicly at all. Status is `Partially covered`, five anchors of eight.
+**Still unread for this component:** the record of coffee price-risk instruments for smallholders as *evaluated* rather than announced; whether Latin American member registers are obtainable; and any published loss or default data on cooperative internal credit funds, which on this evidence may not exist publicly at all. Status is Partially covered, five anchors of eight.
 
 ---
 
