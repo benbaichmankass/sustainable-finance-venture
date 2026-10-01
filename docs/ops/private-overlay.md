@@ -58,7 +58,7 @@ Three overlays exist today:
 
 A fresh clone has no `private/` contents — only this repo's `README.md` and the `.example.csv` templates.
 
-git clone https://github.com/benbaichmankass/sustainable-finance-venture
+git clone https\://github.com/benbaichmankass/sustainable-finance-venture
 
 cd sustainable-finance-venture
 

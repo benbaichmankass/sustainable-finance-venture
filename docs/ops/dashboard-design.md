@@ -115,7 +115,7 @@ The `buildTable(rows, cols, detailFn)` helper handles the common case — a comp
 
 ## Deliberately not built
 
-- **~~No hosting.~~** **Superseded.** The repo is public and GitHub Pages serves `dashboard/` at [https://benbaichmankass.github.io/sustainable-finance-venture/](https://benbaichmankass.github.io/sustainable-finance-venture/), built by `.github/workflows/pages.yml` from the `--public` tier. The partner-name concern that made this a deliberate non-goal is handled by the private overlay: names live in gitignored `private/` and never reach the published build. Opening the file locally still works and still shows the private view.  
+- **~~No hosting.~~** **Superseded.** The repo is public and GitHub Pages serves `dashboard/` at [https\://benbaichmankass.github.io/sustainable-finance-venture/](https://benbaichmankass.github.io/sustainable-finance-venture/), built by `.github/workflows/pages.yml` from the `--public` tier. The partner-name concern that made this a deliberate non-goal is handled by the private overlay: names live in gitignored `private/` and never reach the published build. Opening the file locally still works and still shows the private view.  
 - **No editing from the browser.** Writes would need a backend, and the repo would stop being the source of truth.  
 - **No live Drive/Sheet reads.** They'd break the offline-from-a-clone property, and they'd reintroduce the drift problem the whole design exists to solve. Sync is a deliberate act — see the `sync-drive` skill.  
 - **No time-series charts yet.** There's no time-series data. When pilot data exists, that's the moment to add them.

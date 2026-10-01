@@ -199,7 +199,7 @@ So: **assume up to a couple of hours for a Drive-side edit to reach the repo**, 
 
 ### When Actions is down
 
-Both triggers are dead during a GitHub Actions outage, and a run queued when the incident starts may be cancelled rather than eventually run. Nothing is lost when this happens — reconciliation is a pure function of current state against the stored baselines, so a skipped run is simply caught by the next one. Check [https://www.githubstatus.com](https://www.githubstatus.com) before debugging a sync that appears stuck; on 2026-08-06 an Actions/Pages major outage from 15:22Z stalled both this workflow and the Pages deploy for hours, and it looked exactly like a broken workflow from inside the repo.
+Both triggers are dead during a GitHub Actions outage, and a run queued when the incident starts may be cancelled rather than eventually run. Nothing is lost when this happens — reconciliation is a pure function of current state against the stored baselines, so a skipped run is simply caught by the next one. Check [https\://www\.githubstatus.com](https://www.githubstatus.com) before debugging a sync that appears stuck; on 2026-08-06 an Actions/Pages major outage from 15:22Z stalled both this workflow and the Pages deploy for hours, and it looked exactly like a broken workflow from inside the repo.
 
 ## One-time setup (already done for this repo)
 
