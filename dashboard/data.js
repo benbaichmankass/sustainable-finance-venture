@@ -2051,7 +2051,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-02",
+   "As_Of": "2026-10-03",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2074,14 +2074,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.19",
+   "Value": "3.41",
    "Unit": "pp",
-   "As_Of": "2026-09-30",
-   "Chg_1m": "0.29",
-   "Chg_3m": "0.08",
-   "Chg_12m": "-0.09",
+   "As_Of": "2026-10-01",
+   "Chg_1m": "0.51",
+   "Chg_3m": "0.32",
+   "Chg_12m": "0.15",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.34",
    "Chg_12m": "1.91",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2112,21 +2112,21 @@ window.SFV_DATA = {
    "Chg_12m": "-0.4618",
    "Direction": "down",
    "Fetched_At": "2026-10-02T12:40:26+00:00",
-   "Status": "ok",
+   "Status": "stale",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
-   "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
+   "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors. | last refresh failed: The read operation timed out"
   },
   {
    "ID": "MAC-03",
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-02",
+   "As_Of": "2026-10-03",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2134,17 +2134,17 @@ window.SFV_DATA = {
   {
    "ID": "MAC-06",
    "Label": "FAO Food Price Index",
-   "Value": "133.3",
+   "Value": "136.0",
    "Unit": "index 2014-2016=100",
-   "As_Of": "2026-08",
-   "Chg_1m": "2.5",
-   "Chg_3m": "2.3",
-   "Chg_12m": "3.3",
+   "As_Of": "2026-09",
+   "Chg_1m": "2.0",
+   "Chg_3m": "5.9",
+   "Chg_12m": "7.4",
    "Direction": "up",
-   "Fetched_At": "2026-10-01T13:21:48+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
+   "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress. | last refresh failed: HTTP Error 404: Not Found"
+   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
   },
   {
    "ID": "MAC-13",
@@ -2156,7 +2156,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.081",
    "Chg_12m": "-0.326",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2164,29 +2164,29 @@ window.SFV_DATA = {
   {
    "ID": "MAC-14",
    "Label": "FAO Cereals Price Index",
-   "Value": "116.3",
+   "Value": "122.8",
    "Unit": "index 2014-2016=100",
-   "As_Of": "2026-08",
-   "Chg_1m": "2.5",
-   "Chg_3m": "2.1",
-   "Chg_12m": "10.7",
+   "As_Of": "2026-09",
+   "Chg_1m": "6.0",
+   "Chg_3m": "12.8",
+   "Chg_12m": "18.0",
    "Direction": "up",
-   "Fetched_At": "2026-10-01T13:21:48+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
+   "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-   "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort. | last refresh failed: HTTP Error 404: Not Found"
+   "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
   },
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "5.29",
+   "Value": "5.24",
    "Unit": "%",
-   "As_Of": "2026-09-30",
-   "Chg_1m": "0.56",
-   "Chg_3m": "0.91",
-   "Chg_12m": "1.25",
+   "As_Of": "2026-10-01",
+   "Chg_1m": "0.49",
+   "Chg_3m": "0.86",
+   "Chg_12m": "1.18",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "43.8",
    "Chg_12m": "46.13",
    "Direction": "up",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
+   "Fetched_At": "2026-10-03T11:42:57+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5816,9 +5816,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The private overlay — collaborator onboarding",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "c45a6545e4f583cc12d975d738be0ec4bff35bc706905f8099adf313b72bcccb",
-   "Baseline_Repo_Hash": "c45a6545e4f583cc12d975d738be0ec4bff35bc706905f8099adf313b72bcccb",
-   "Last_Synced_At": "2026-10-01T11:51:21Z",
+   "Baseline_Drive_Hash": "8a6f8875bbe5e384398c27c0edaa08faf6ae615910b8e0260e37d854f4135b0f",
+   "Baseline_Repo_Hash": "8a6f8875bbe5e384398c27c0edaa08faf6ae615910b8e0260e37d854f4135b0f",
+   "Last_Synced_At": "2026-10-03T13:17:55Z",
    "Status": "Synced"
   },
   {
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-02",
+    "2026-10-03",
     2.65
    ]
   ],
@@ -8055,7 +8055,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-02",
+    "2026-10-03",
     3.25
    ]
   ],
@@ -8203,13 +8203,13 @@ window.SFV_DATA = {
    [
     "2026-09-30",
     3.19
+   ],
+   [
+    "2026-10-01",
+    3.41
    ]
   ],
   "MAC-06": [
-   [
-    "2014-09",
-    109.2
-   ],
    [
     "2014-10",
     109.3
@@ -8776,11 +8776,15 @@ window.SFV_DATA = {
    ],
    [
     "2026-07",
-    130.8
+    131.7
    ],
    [
     "2026-08",
-    133.3
+    134.0
+   ],
+   [
+    "2026-09",
+    136.0
    ]
   ],
   "MAC-07": [
@@ -10519,10 +10523,6 @@ window.SFV_DATA = {
   ],
   "MAC-14": [
    [
-    "2014-09",
-    107.4
-   ],
-   [
     "2014-10",
     108.2
    ],
@@ -11092,14 +11092,14 @@ window.SFV_DATA = {
    ],
    [
     "2026-08",
-    116.3
+    116.8
+   ],
+   [
+    "2026-09",
+    122.8
    ]
   ],
   "MAC-15": [
-   [
-    "2014-10-31",
-    2.35
-   ],
    [
     "2014-11-28",
     2.18
@@ -11671,6 +11671,10 @@ window.SFV_DATA = {
    [
     "2026-09-30",
     5.29
+   ],
+   [
+    "2026-10-01",
+    5.24
    ]
   ],
   "MAC-16": [
@@ -12421,7 +12425,7 @@ window.SFV_DATA = {
    "title": "The private overlay — collaborator onboarding",
    "summary": "",
    "words": 1100,
-   "body": "# The private overlay — collaborator onboarding\n\n**Audience:** anyone working in this repo, human or agent · **Last updated:** 2026-07-30\n\nThis repo is public. A short private tier is not, and it is not private because it is commercially precious — it is private because **it is about people**. This document explains how the two fit together and how to work with both without leaking one into the other.\n\nPolicy and reasoning: `docs/ops/publishing.md`. This is the operational how-to.\n\n## The one-sentence rule\n\n**Does it name a person and say something about them? Private. Does it name an organization and explain why it is relevant? Public.**\n\n> \"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — **public**. It is a research observation.  \n>   \n> \"Spoke to \\[name\\] on 12 March, lukewarm on the data standard, revisit after pilot\" — **private**. It is a fact about our relationship with a person.\n\n## What goes where\n\n| Public repo | `private/` (gitignored) | Drive Vault |\n| :---- | :---- | :---- |\n| Organizations, and why they matter | A named individual's status | PDFs of copyrighted sources |\n| Methods, schemas, code, models | Who was approached, who declined | CVs, transcripts, applications |\n| Literature matrix and memos | Contact people and roles | Correspondence threads |\n| Open questions and reasoning | Application status | Signed documents, term sheets |\n| Aggregate findings | Vault and tracker links | **Row-level participant data** |\n\n**Never committed, under any circumstance:** row-level pilot data, anything identifying a research participant, credentials or tokens, Drive folder IDs, or a person's name attached to our outreach status.\n\nRow-level participant data does not belong in `private/` either — it lives only in the Vault's `05-raw-data`. `private/` is for the working overlay, not for personal data.\n\n## How the overlay works\n\nThe two tiers are joined **by ID at build time**, not duplicated:\n\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter   (public, committed)\n\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes   (gitignored)\n\n                                       │\n\n                                       └── dashboard/build.py merges on ID\n\n                                              ↓\n\n                                    the full picture, locally only\n\nThree overlays exist today:\n\n| Overlay file | Extends | Adds |\n| :---- | :---- | :---- |\n| `private/partner-contacts.csv` | `data/partner-tracker.csv` | `Contact_Status`, `Contact_Person`, `Private_Notes` |\n| `private/phd-applications.csv` | `data/phd-programs.csv` | `Candidate_Supervisors`, `Application_Status`, `Outreach_Plan`, `Private_Notes` |\n| `private/pointers.csv` | `data/resources.csv` | `URL` for Vault and tracker rows |\n\n**Overlays fill in columns on rows that already exist publicly. They never add rows.** That is deliberate: the public tier keeps the row and its description, so a reader can see that a partner or a Vault folder exists and what it is for. Only the private column is withheld. An overlay that added rows would let the public tier silently under-report what the project is doing.\n\n## Setting up locally\n\nA fresh clone has no `private/` contents — only this repo's `README.md` and the `.example.csv` templates.\n\ngit clone https\\://github.com/benbaichmankass/sustainable-finance-venture\n\ncd sustainable-finance-venture\n\n\\# 1\\. Get the overlay files from the Vault's 00-private-overlay folder\n\n\\#    and put them in private/. The Vault is canonical for these.\n\n\\# 2\\. Build. With the overlay present this writes data.private.js:\n\npython3 dashboard/build.py\n\n\\# 3\\. Open dashboard/index.html. The header chip should read \"Private view\".\n\nWithout step 1 nothing breaks — you get the public view, and the Partners and PhD tabs show a banner explaining what is missing.\n\n## What happens when private data is absent\n\nBy design, gracefully and visibly:\n\n|  | With overlay | Without |\n| :---- | :---- | :---- |\n| Build output | `dashboard/data.private.js` (gitignored) | `dashboard/data.js` (committed) |\n| Header chip | **Private view**, amber border | **Public view** |\n| Partners tab | Contact column \\+ status breakdown | Banner: \"Contact status is in the private overlay\" |\n| PhD tab | Supervisors, status, outreach plan | Banner explaining the same |\n| Resources tab | Vault links resolve | Rows present, links blank |\n\nThe header chip is the thing to check before screenshotting or sharing anything. **Private view means the screenshot contains names and relationship status.**\n\n## Before pushing\n\nAlways rebuild the public tier, or the committed `data.js` goes stale:\n\npython3 dashboard/build.py \\--public\n\nThen run the audit — the `publish-check` skill automates most of it:\n\ngrep \\-rn \"drive\\\\.google\\\\.com\\\\|docs\\\\.google\\\\.com\" \\--include=\"\\*.md\" \\--include=\"\\*.csv\" . | grep \\-v \"^./private/\"\n\ngrep \\-l \"Contact\\_Person\\\\|Private\\_Notes\\\\|Application\\_Status\" data/\\*.csv\n\ngit ls-files private/          \\# expect only README.md and \\*.example.csv\n\nCI enforces the same checks in `.github/workflows/pages.yml` and fails the deploy if a private file or column ever reaches it. That is a backstop, not the first line of defence — `private/` being gitignored is.\n\n## Adding a new private-only field\n\nWorked example. Say partner rows need a `Last_Contact_Date`.\n\n**1\\. Decide the tier.** Does it name a person or describe our relationship with one? A contact date is relationship status → private.\n\n**2\\. Add it to the overlay file only.**\n\n\"ID\",\"Contact\\_Status\",\"Contact\\_Person\",\"Private\\_Notes\",\"Last\\_Contact\\_Date\"\n\n\"PT-03\",\"In conversation\",\"A. Example, Programme Director\",\"Warm on the data standard.\",\"2026-08-14\"\n\n**3\\. Update the template** `private/partner-contacts.example.csv` with the same column and **fake data only**, so a new collaborator sees the schema without seeing anyone's details.\n\n**4\\. Nothing in `build.py` needs changing.** The merge copies every non-`ID` column from the overlay, so new fields flow through automatically.\n\n**5\\. Render it if useful** — add it to the relevant detail panel in `dashboard/index.html`, and guard on presence so the public build degrades cleanly:\n\n\\[\"Last contact\", esc(r.Last\\_Contact\\_Date)\\]   // fields() drops empty values\n\n**6\\. Document it** in the overlay table above and in `private/README.md`.\n\n**7\\. Upload the changed overlay to the Vault**, which is canonical. There is no sync automation — it is a deliberate act, which is the point.\n\n## Adding a whole new overlay\n\nIf a public tracker needs a private companion:\n\n1. Create `private/<name>.csv` keyed by the public tracker's `ID`.  \n2. Commit `private/<name>.example.csv` with fake rows.  \n3. Register it in `OVERLAYS` in `dashboard/build.py`.  \n4. Confirm `.gitignore` still excludes the real file — `private/*` with negations for `README.md` and `*.example.csv` already covers it.  \n5. Run `python3 dashboard/build.py --public` and confirm the new columns do **not** appear in `dashboard/data.js`.\n\n## If something private is committed by accident\n\n1. **Do not just delete it in a new commit.** Git history is public; removing it later does not unpublish it.  \n2. Assess what it actually was. A Drive folder ID is untidy; a person's contact details or participant data is an incident.  \n3. For anything genuinely sensitive: rotate first (move the Vault folder, revoke the credential) so the exposed value stops being useful, then decide about history rewriting.  \n4. Tell the repo owner. Do not quietly rewrite published history.\n\n"
+   "body": "# The private overlay — collaborator onboarding\n\n**Audience:** anyone working in this repo, human or agent · **Last updated:** 2026-07-30\n\nThis repo is public. A short private tier is not, and it is not private because it is commercially precious — it is private because **it is about people**. This document explains how the two fit together and how to work with both without leaking one into the other.\n\nPolicy and reasoning: docs/ops/publishing.md. This is the operational how-to.\n\n## The one-sentence rule\n\n**Does it name a person and say something about them? Private. Does it name an organization and explain why it is relevant? Public.**\n\n> \"CARE's VSLA network is the largest established methodology network and a candidate origination partner\" — **public**. It is a research observation.  \n>   \n> \"Spoke to \\[name\\] on 12 March, lukewarm on the data standard, revisit after pilot\" — **private**. It is a fact about our relationship with a person.\n\n## What goes where\n\n| Public repo | private/ (gitignored) | Drive Vault |\n| :---- | :---- | :---- |\n| Organizations, and why they matter | A named individual's status | PDFs of copyrighted sources |\n| Methods, schemas, code, models | Who was approached, who declined | CVs, transcripts, applications |\n| Literature matrix and memos | Contact people and roles | Correspondence threads |\n| Open questions and reasoning | Application status | Signed documents, term sheets |\n| Aggregate findings | Vault and tracker links | **Row-level participant data** |\n\n**Never committed, under any circumstance:** row-level pilot data, anything identifying a research participant, credentials or tokens, Drive folder IDs, or a person's name attached to our outreach status.\n\nRow-level participant data does not belong in private/ either — it lives only in the Vault's 05-raw-data. private/ is for the working overlay, not for personal data.\n\n## How the overlay works\n\nThe two tiers are joined **by ID at build time**, not duplicated:\n\ndata/partner-tracker.csv        PT-01 … PT-10   who they are, why they matter   (public, committed)\n\nprivate/partner-contacts.csv    PT-01 … PT-10   status, contact person, notes   (gitignored)\n\n                                       │\n\n                                       └── dashboard/build.py merges on ID\n\n                                              ↓\n\n                                    the full picture, locally only\n\nThree overlays exist today:\n\n| Overlay file | Extends | Adds |\n| :---- | :---- | :---- |\n| private/partner-contacts.csv | data/partner-tracker.csv | Contact\\_Status, Contact\\_Person, Private\\_Notes |\n| private/phd-applications.csv | data/phd-programs.csv | Candidate\\_Supervisors, Application\\_Status, Outreach\\_Plan, Private\\_Notes |\n| private/pointers.csv | data/resources.csv | URL for Vault and tracker rows |\n\n**Overlays fill in columns on rows that already exist publicly. They never add rows.** That is deliberate: the public tier keeps the row and its description, so a reader can see that a partner or a Vault folder exists and what it is for. Only the private column is withheld. An overlay that added rows would let the public tier silently under-report what the project is doing.\n\n## Setting up locally\n\nA fresh clone has no private/ contents — only this repo's README.md and the .example.csv templates.\n\ngit clone https\\://github.com/benbaichmankass/sustainable-finance-venture\n\ncd sustainable-finance-venture\n\n\\# 1\\. Get the overlay files from the Vault's 00-private-overlay folder\n\n\\#    and put them in private/. The Vault is canonical for these.\n\n\\# 2\\. Build. With the overlay present this writes data.private.js:\n\npython3 dashboard/build.py\n\n\\# 3\\. Open dashboard/index.html. The header chip should read \"Private view\".\n\nWithout step 1 nothing breaks — you get the public view, and the Partners and PhD tabs show a banner explaining what is missing.\n\n## What happens when private data is absent\n\nBy design, gracefully and visibly:\n\n|  | With overlay | Without |\n| :---- | :---- | :---- |\n| Build output | dashboard/data.private.js (gitignored) | dashboard/data.js (committed) |\n| Header chip | **Private view**, amber border | **Public view** |\n| Partners tab | Contact column \\+ status breakdown | Banner: \"Contact status is in the private overlay\" |\n| PhD tab | Supervisors, status, outreach plan | Banner explaining the same |\n| Resources tab | Vault links resolve | Rows present, links blank |\n\nThe header chip is the thing to check before screenshotting or sharing anything. **Private view means the screenshot contains names and relationship status.**\n\n## Before pushing\n\nAlways rebuild the public tier, or the committed data.js goes stale:\n\npython3 dashboard/build.py \\--public\n\nThen run the audit — the publish-check skill automates most of it:\n\ngrep \\-rn \"drive\\\\.google\\\\.com\\\\|docs\\\\.google\\\\.com\" \\--include=\"\\*.md\" \\--include=\"\\*.csv\" . | grep \\-v \"^./private/\"\n\ngrep \\-l \"Contact\\_Person\\\\|Private\\_Notes\\\\|Application\\_Status\" data/\\*.csv\n\ngit ls-files private/          \\# expect only README.md and \\*.example.csv\n\nCI enforces the same checks in .github/workflows/pages.yml and fails the deploy if a private file or column ever reaches it. That is a backstop, not the first line of defence — private/ being gitignored is.\n\n## Adding a new private-only field\n\nWorked example. Say partner rows need a Last\\_Contact\\_Date.\n\n**1\\. Decide the tier.** Does it name a person or describe our relationship with one? A contact date is relationship status → private.\n\n**2\\. Add it to the overlay file only.**\n\n\"ID\",\"Contact\\_Status\",\"Contact\\_Person\",\"Private\\_Notes\",\"Last\\_Contact\\_Date\"\n\n\"PT-03\",\"In conversation\",\"A. Example, Programme Director\",\"Warm on the data standard.\",\"2026-08-14\"\n\n**3\\. Update the template** private/partner-contacts.example.csv with the same column and **fake data only**, so a new collaborator sees the schema without seeing anyone's details.\n\n**4\\. Nothing in build.py needs changing.** The merge copies every non-ID column from the overlay, so new fields flow through automatically.\n\n**5\\. Render it if useful** — add it to the relevant detail panel in dashboard/index.html, and guard on presence so the public build degrades cleanly:\n\n\\[\"Last contact\", esc(r.Last\\_Contact\\_Date)\\]   // fields() drops empty values\n\n**6\\. Document it** in the overlay table above and in private/README.md.\n\n**7\\. Upload the changed overlay to the Vault**, which is canonical. There is no sync automation — it is a deliberate act, which is the point.\n\n## Adding a whole new overlay\n\nIf a public tracker needs a private companion:\n\n1. Create private/\\<name\\>.csv keyed by the public tracker's ID.  \n2. Commit private/\\<name\\>.example.csv with fake rows.  \n3. Register it in OVERLAYS in dashboard/build.py.  \n4. Confirm .gitignore still excludes the real file — private/\\* with negations for README.md and \\*.example.csv already covers it.  \n5. Run python3 dashboard/build.py \\--public and confirm the new columns do **not** appear in dashboard/data.js.\n\n## If something private is committed by accident\n\n1. **Do not just delete it in a new commit.** Git history is public; removing it later does not unpublish it.  \n2. Assess what it actually was. A Drive folder ID is untidy; a person's contact details or participant data is an incident.  \n3. For anything genuinely sensitive: rotate first (move the Vault folder, revoke the credential) so the exposed value stops being useful, then decide about history rewriting.  \n4. Tell the repo owner. Do not quietly rewrite published history.\n\n"
   },
   {
    "path": "LICENSE-CONTENT.md",
