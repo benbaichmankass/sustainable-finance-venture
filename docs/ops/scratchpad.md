@@ -110,4 +110,11 @@ Task List:
       - [ ] Microfinance institutions to partner with  
 - [ ] Impact \- definitions and measurements  
 - [ ]   
+        
       
+
+2026-10-05
+
+* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structur  
+    
+  
