@@ -2046,12 +2046,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-10-04",
+   "As_Of": "2026-10-05",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2061,12 +2061,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-04",
+   "As_Of": "2026-10-05",
    "Chg_1m": "0.25",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2074,14 +2074,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.41",
+   "Value": "3.38",
    "Unit": "pp",
-   "As_Of": "2026-10-01",
-   "Chg_1m": "0.51",
-   "Chg_3m": "0.32",
-   "Chg_12m": "0.15",
+   "As_Of": "2026-10-02",
+   "Chg_1m": "0.48",
+   "Chg_3m": "0.26",
+   "Chg_12m": "0.09",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2096,7 +2096,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2104,29 +2104,29 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4755",
+   "Value": "3.431",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-01",
-   "Chg_1m": "-0.0183",
-   "Chg_3m": "0.0855",
-   "Chg_12m": "-0.4618",
+   "As_Of": "2026-10-05",
+   "Chg_1m": "-0.0759",
+   "Chg_3m": "-0.0021",
+   "Chg_12m": "-0.4982",
    "Direction": "down",
-   "Fetched_At": "2026-10-02T12:40:26+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
+   "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
-   "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors. | last refresh failed: The read operation timed out"
+   "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
   },
   {
    "ID": "MAC-03",
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-04",
+   "As_Of": "2026-10-05",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2142,21 +2142,21 @@ window.SFV_DATA = {
    "Chg_12m": "7.4",
    "Direction": "up",
    "Fetched_At": "2026-10-04T12:25:34+00:00",
-   "Status": "ok",
+   "Status": "stale",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
+   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress. | last refresh failed: HTTP Error 404: Not Found"
   },
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.06",
+   "Value": "3.059",
    "Unit": "ILS per USD",
-   "As_Of": "2026-10-02",
-   "Chg_1m": "0.072",
+   "As_Of": "2026-10-05",
+   "Chg_1m": "0.047",
    "Chg_3m": "0.081",
-   "Chg_12m": "-0.326",
+   "Chg_12m": "-0.312",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2171,7 +2171,7 @@ window.SFV_DATA = {
    "Chg_3m": "12.8",
    "Chg_12m": "18.0",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2186,7 +2186,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.86",
    "Chg_12m": "1.18",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2201,7 +2201,7 @@ window.SFV_DATA = {
    "Chg_3m": "43.8",
    "Chg_12m": "46.13",
    "Direction": "up",
-   "Fetched_At": "2026-10-04T12:25:34+00:00",
+   "Fetched_At": "2026-10-05T14:46:01+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -5699,9 +5699,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The Drive Vault — where non-repo artifacts live",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
-   "Baseline_Repo_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
-   "Last_Synced_At": "2026-10-05T14:25:23Z",
+   "Baseline_Drive_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
+   "Baseline_Repo_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
+   "Last_Synced_At": "2026-10-05T21:36:19Z",
    "Status": "Synced"
   },
   {
@@ -5998,9 +5998,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "RT-2 and RT-3 scaffolds — scorecard and monitor",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "d666fb730effafb5e55d214d5c049f543f7ec36eaf0a23fcb2ec8b075e249f7d",
-   "Baseline_Repo_Hash": "d666fb730effafb5e55d214d5c049f543f7ec36eaf0a23fcb2ec8b075e249f7d",
-   "Last_Synced_At": "2026-10-05T14:25:53Z",
+   "Baseline_Drive_Hash": "623d9d807c10c2e77e0697d40f31116cd6f0c744d2f77e99dc6a4dc84eee32fb",
+   "Baseline_Repo_Hash": "623d9d807c10c2e77e0697d40f31116cd6f0c744d2f77e99dc6a4dc84eee32fb",
+   "Last_Synced_At": "2026-10-05T21:36:54Z",
    "Status": "Synced"
   },
   {
@@ -6943,7 +6943,7 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-10-04",
+    "2026-10-05",
     4.0
    ]
   ],
@@ -7521,7 +7521,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-04",
+    "2026-10-05",
     2.65
    ]
   ],
@@ -8055,7 +8055,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-04",
+    "2026-10-05",
     3.25
    ]
   ],
@@ -8205,8 +8205,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-01",
-    3.41
+    "2026-10-02",
+    3.38
    ]
   ],
   "MAC-06": [
@@ -9939,8 +9939,8 @@ window.SFV_DATA = {
     3.4901
    ],
    [
-    "2026-10-01",
-    3.4755
+    "2026-10-05",
+    3.431
    ]
   ],
   "MAC-13": [
@@ -10517,8 +10517,8 @@ window.SFV_DATA = {
     3.063
    ],
    [
-    "2026-10-02",
-    3.06
+    "2026-10-05",
+    3.059
    ]
   ],
   "MAC-14": [
@@ -12405,7 +12405,7 @@ window.SFV_DATA = {
    "title": "The Drive Vault — where non-repo artifacts live",
    "summary": "",
    "words": 688,
-   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see docs/ops/publishing.md. The Vault is the private half of the system.\n\n**Vault links live in private/pointers.csv**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see docs/ops/drive-sync.md. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — literature/lit-matrix.csv for a paper, data/resources.csv for everything else. Where the pointer would itself be a private link, it goes in private/pointers.csv.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in 05-raw-data, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| 00-private-overlay | Canonical copies of the gitignored CSVs in private/ — contact status, application status, Vault pointers. Download these into private/ when setting up on a new machine. |\n| 01-literature-pdfs | Full-text PDFs of matrix entries. Name files LIT-0NN — short-title.pdf so they sort alongside the matrix. |\n| 02-applications-phd | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| 03-communications | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| 04-partner-materials | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| 05-raw-data | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| 06-legal-and-regulatory | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in private/pointers.csv.\n\n## Naming convention\n\nYYYY-MM-DD — \\<subject\\> — \\<source or counterparty\\>.\\<ext\\>\n\nFor literature, prefix with the matrix ID instead: LIT-011 — FSD Africa securitisation Africa.pdf.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from 01-literature-pdfs to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in 05-raw-data.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n05-raw-data is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
+   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/ops/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/ops/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
   },
   {
    "path": "docs/ops/publishing.md",
@@ -12765,7 +12765,7 @@ window.SFV_DATA = {
    "title": "Scaffolds - scorecard and monitor",
    "summary": "",
    "words": 1202,
-   "body": "# RT-2 and RT-3 scaffolds — scorecard and monitor\n\n**Status:** Scaffolds built, running against synthetic data · **Version:** 0.1 · **Calibration: none** **Code:** tools/score\\_loans.py, tools/monitor\\_portfolio.py · **Data:** tools/generate\\_dataset.py\n\n## The chain now runs end to end\n\nRT-1 schema  ──►  generate\\_dataset.py  ──►  validate\\_schema.py \\--data   (schema is executable)\n\n                          │\n\n                          ├──►  score\\_loans.py       RT-2: decision \\+ reasons \\+ limit\n\n                          ├──►  monitor\\_portfolio.py RT-3: PAR, arrears, alerts\n\n                          └──►  simulate\\_portfolio.py RT-5: waterfall, tranches, stress\n\npython3 risk-tools/tools/generate\\_dataset.py \\--out /tmp/synth \\--groups 300\n\npython3 risk-tools/tools/validate\\_schema.py \\--data /tmp/synth\n\npython3 risk-tools/tools/score\\_loans.py \\--data /tmp/synth\n\npython3 risk-tools/tools/monitor\\_portfolio.py \\--data /tmp/synth \\--as-of 2027-05-31\n\n**The validation step is the point.** The generator writes data claiming to conform to the 57-field schema; the validator checks it does. That makes RT-1 executable rather than a document, and it is the only way to know a field contract is still coherent before anyone tries to collect against it in a village. Corrupting the generated data — a bad enum, a missing required field, a dangling foreign key, a non-ISO date — fails the check, so it has teeth.\n\n---\n\n## RT-2 — rules-based scorecard\n\nTakes a loan plus its member and group from RT-1, returns a **score, a band, a limit, and the reasons in both directions**.\n\n### Rules-based on purpose, not as a stepping stone to ML\n\nThere is no repayment history to train or validate on. A model fitted on borrowed priors would be a confident guess wearing the costume of a measurement — and impossible to explain to a borrower who was declined. LIT-014 puts consumer protection, not systemic risk, at the centre of savings-group regulation, and *\"the model said no\"* is not a reason anyone can contest.\n\nWhen a real track record exists, the honest upgrade is to **backtest this scorecard against it first**. A scorecard that beats chance is the baseline any model has to clear.\n\n### Two rules that only exist because of the schema\n\nMost of the scorecard is unsurprising — track record, leverage, group maturity, guarantee. Two rules are worth calling out because a generic credit scorecard could not express them:\n\n**The share-out constraint.** A loan maturing at or past the end of the savings cycle has to survive the moment the group empties its box. The joint-liability backing is at its weakest exactly when the loan falls due. This is only visible because RT-1 captures group\\_cycle\\_length\\_months alongside loan\\_term\\_days — and it is a concrete argument for keeping that field required.\n\n**Correlated exposure.** An agriculture\\_input loan to a smallholder\\_farming borrower is repaid from the same harvest it funds. That is correlated risk hiding inside an apparently diversified pool, and it is exactly the parameter RT-5 shows the junior tranche is most sensitive to. Two fields the schema already has, combined.\n\n### Output on synthetic data\n\n| Band | Share |\n| :---- | :---- |\n| approve | 78.7% |\n| approve with conditions | 17.0% |\n| refer | 4.0% |\n| decline | 0.3% |\n\n**That distribution is a property of the generator, not a finding.** The generator draws borrower attributes roughly uniformly, so the population is healthier than any real cohort. The useful output is the *reason distribution* — \"no completed savings cycles\" and \"first loan for this borrower\" dominate, which is what you would expect from a synthetic population with no history, and is a sanity check that the rules fire on the inputs they claim to.\n\nEvery decision is explainable:\n\n\\$ score\\_loans.py \\--data /tmp/synth \\--explain LN-0000000003\n\nLoan LN-0000000003 \\- score 93.0 \\-\\> approve\n\n  in favour:\n\n    \\+ member has completed 2 prior cycle(s)\n\n    \\+ 3 prior loans in this group\n\n    \\+ loan is 1.3x savings \\- conservative\n\n    \\+ group is in cycle 6 \\- has survived 5 share-outs\n\n---\n\n## RT-3 — monitoring and early warning\n\nWalks the event stream in date order, tracks per-loan state, and reports portfolio at risk, arrears concentration by group / region / originator, and threshold breaches. Supports \\--as-of for point-in-time evaluation.\n\n### It fires before the loss lands\n\nThis is the whole claim, and it is testable. Running the same dataset at successive dates:\n\n| As at | PAR30 | Written off | Alerts |\n| :---- | :---- | :---- | :---- |\n| 2027-05-31 | 1.66% | **0** | **2** |\n| 2027-07-31 | 3.49% | 4,814 | 1 |\n| 2027-09-30 | 5.73% | 23,291 | 1 |\n| 2027-12-31 | 1.88% | 51,325 | 1 |\n| 2028-06-30 | 0.82% | 54,788 | 1 |\n\nAt the end of May in this run (300 groups, seed 20260730), **nothing has been written off at all** — and the monitor is already flagging:\n\n\\[SERIOUS \\] new arrears rose from 30 to 52 month-on-month (+73%) \\- leading indicator,\n\n           before any write-off lands\n\n\\[WARNING \\] 3 groups above 25% arrears \\- worst GRP-000010 at 29%\n\nBy the time write-offs reach \\$51k, PAR30 has already peaked and started falling. The arrears signal leads the realised loss by roughly four to seven months here.\n\nWhether write-offs are *exactly* zero at a given date depends on the seed and the sample size, so test\\_toolchain.py asserts the durable property instead: at the early date, arrears are already accumulating while under 20% of eventual write-offs have been booked. A write-off is not a warning — it is an outcome, and by then the only remaining question is how to report it.\n\nThat lead time is also what makes the junior tranche fundable. LIT-013 is explicit that a documented monitoring regime is part of what a first-loss provider is buying: they are taking the risk, so they need to see it moving before it arrives.\n\n### The alert that matters most for a pooled structure\n\nSeveral regions deteriorating *simultaneously* escalates to critical, with an explicit note that this is consistent with a correlated shock rather than idiosyncratic default. That is the scenario RT-5 shows the junior tranche is most sensitive to, and RT-3 is where it becomes visible first.\n\n### Thresholds are judgement\n\nAll six live at the top of the file rather than buried, because they are the first thing that should be argued about and the first thing real data should replace. Every alert states the number that tripped it, so it can be contested rather than believed.\n\n---\n\n## What would move these from scaffold to usable\n\n**RT-2**, in order of impact:\n\n1. **Observed repayment outcomes** to backtest the scorecard against. Until then the weights encode which signals the literature says should matter, in what rough order — not what does.  \n2. **A field review of the reason strings.** They are consumer-facing, and phrasing that reads as reasonable in English may not survive translation or the relationship it lands in.  \n3. **A limit policy conversation with originators.** The limit-as-multiple-of-savings convention is inherited from savings-group practice, not derived.\n\n**RT-3**:\n\n1. **Threshold calibration** against an observed delinquency distribution. Six numbers currently doing a lot of work.  \n2. **Vintage curves** — arrears by months-on-book across disbursement cohorts. Implementable now, and the standard view an investor asks for.  \n3. **A false-positive review.** An alert nobody acts on is worse than no alert, because it trains people to ignore the panel.\n\nBoth remain **uncalibrated**. Every output is labelled synthetic. Neither should be shown to a partner or an investor as a result.  \n"
+   "body": "# RT-2 and RT-3 scaffolds — scorecard and monitor\n\n**Status:** Scaffolds built, running against synthetic data · **Version:** 0.1 · **Calibration: none** **Code:** `tools/score_loans.py`, `tools/monitor_portfolio.py` · **Data:** `tools/generate_dataset.py`\n\n## The chain now runs end to end\n\nRT-1 schema  ──►  generate\\_dataset.py  ──►  validate\\_schema.py \\--data   (schema is executable)\n\n                          │\n\n                          ├──►  score\\_loans.py       RT-2: decision \\+ reasons \\+ limit\n\n                          ├──►  monitor\\_portfolio.py RT-3: PAR, arrears, alerts\n\n                          └──►  simulate\\_portfolio.py RT-5: waterfall, tranches, stress\n\npython3 risk-tools/tools/generate\\_dataset.py \\--out /tmp/synth \\--groups 300\n\npython3 risk-tools/tools/validate\\_schema.py \\--data /tmp/synth\n\npython3 risk-tools/tools/score\\_loans.py \\--data /tmp/synth\n\npython3 risk-tools/tools/monitor\\_portfolio.py \\--data /tmp/synth \\--as-of 2027-05-31\n\n**The validation step is the point.** The generator writes data claiming to conform to the 57-field schema; the validator checks it does. That makes RT-1 executable rather than a document, and it is the only way to know a field contract is still coherent before anyone tries to collect against it in a village. Corrupting the generated data — a bad enum, a missing required field, a dangling foreign key, a non-ISO date — fails the check, so it has teeth.\n\n---\n\n## RT-2 — rules-based scorecard\n\nTakes a loan plus its member and group from RT-1, returns a **score, a band, a limit, and the reasons in both directions**.\n\n### Rules-based on purpose, not as a stepping stone to ML\n\nThere is no repayment history to train or validate on. A model fitted on borrowed priors would be a confident guess wearing the costume of a measurement — and impossible to explain to a borrower who was declined. LIT-014 puts consumer protection, not systemic risk, at the centre of savings-group regulation, and *\"the model said no\"* is not a reason anyone can contest.\n\nWhen a real track record exists, the honest upgrade is to **backtest this scorecard against it first**. A scorecard that beats chance is the baseline any model has to clear.\n\n### Two rules that only exist because of the schema\n\nMost of the scorecard is unsurprising — track record, leverage, group maturity, guarantee. Two rules are worth calling out because a generic credit scorecard could not express them:\n\n**The share-out constraint.** A loan maturing at or past the end of the savings cycle has to survive the moment the group empties its box. The joint-liability backing is at its weakest exactly when the loan falls due. This is only visible because RT-1 captures `group_cycle_length_months` alongside `loan_term_days` — and it is a concrete argument for keeping that field required.\n\n**Correlated exposure.** An `agriculture_input` loan to a `smallholder_farming` borrower is repaid from the same harvest it funds. That is correlated risk hiding inside an apparently diversified pool, and it is exactly the parameter RT-5 shows the junior tranche is most sensitive to. Two fields the schema already has, combined.\n\n### Output on synthetic data\n\n| Band | Share |\n| :---- | :---- |\n| approve | 78.7% |\n| approve with conditions | 17.0% |\n| refer | 4.0% |\n| decline | 0.3% |\n\n**That distribution is a property of the generator, not a finding.** The generator draws borrower attributes roughly uniformly, so the population is healthier than any real cohort. The useful output is the *reason distribution* — \"no completed savings cycles\" and \"first loan for this borrower\" dominate, which is what you would expect from a synthetic population with no history, and is a sanity check that the rules fire on the inputs they claim to.\n\nEvery decision is explainable:\n\n\\$ score\\_loans.py \\--data /tmp/synth \\--explain LN-0000000003\n\nLoan LN-0000000003 \\- score 93.0 \\-\\> approve\n\n  in favour:\n\n    \\+ member has completed 2 prior cycle(s)\n\n    \\+ 3 prior loans in this group\n\n    \\+ loan is 1.3x savings \\- conservative\n\n    \\+ group is in cycle 6 \\- has survived 5 share-outs\n\n---\n\n## RT-3 — monitoring and early warning\n\nWalks the event stream in date order, tracks per-loan state, and reports portfolio at risk, arrears concentration by group / region / originator, and threshold breaches. Supports `--as-of` for point-in-time evaluation.\n\n### It fires before the loss lands\n\nThis is the whole claim, and it is testable. Running the same dataset at successive dates:\n\n| As at | PAR30 | Written off | Alerts |\n| :---- | :---- | :---- | :---- |\n| 2027-05-31 | 1.66% | **0** | **2** |\n| 2027-07-31 | 3.49% | 4,814 | 1 |\n| 2027-09-30 | 5.73% | 23,291 | 1 |\n| 2027-12-31 | 1.88% | 51,325 | 1 |\n| 2028-06-30 | 0.82% | 54,788 | 1 |\n\nAt the end of May in this run (300 groups, seed 20260730), **nothing has been written off at all** — and the monitor is already flagging:\n\n\\[SERIOUS \\] new arrears rose from 30 to 52 month-on-month (+73%) \\- leading indicator,\n\n           before any write-off lands\n\n\\[WARNING \\] 3 groups above 25% arrears \\- worst GRP-000010 at 29%\n\nBy the time write-offs reach \\$51k, PAR30 has already peaked and started falling. The arrears signal leads the realised loss by roughly four to seven months here.\n\nWhether write-offs are *exactly* zero at a given date depends on the seed and the sample size, so `test_toolchain.py` asserts the durable property instead: at the early date, arrears are already accumulating while under 20% of eventual write-offs have been booked. A write-off is not a warning — it is an outcome, and by then the only remaining question is how to report it.\n\nThat lead time is also what makes the junior tranche fundable. LIT-013 is explicit that a documented monitoring regime is part of what a first-loss provider is buying: they are taking the risk, so they need to see it moving before it arrives.\n\n### The alert that matters most for a pooled structure\n\nSeveral regions deteriorating *simultaneously* escalates to `critical`, with an explicit note that this is consistent with a correlated shock rather than idiosyncratic default. That is the scenario RT-5 shows the junior tranche is most sensitive to, and RT-3 is where it becomes visible first.\n\n### Thresholds are judgement\n\nAll six live at the top of the file rather than buried, because they are the first thing that should be argued about and the first thing real data should replace. Every alert states the number that tripped it, so it can be contested rather than believed.\n\n---\n\n## What would move these from scaffold to usable\n\n**RT-2**, in order of impact:\n\n1. **Observed repayment outcomes** to backtest the scorecard against. Until then the weights encode which signals the literature says should matter, in what rough order — not what does.  \n2. **A field review of the reason strings.** They are consumer-facing, and phrasing that reads as reasonable in English may not survive translation or the relationship it lands in.  \n3. **A limit policy conversation with originators.** The limit-as-multiple-of-savings convention is inherited from savings-group practice, not derived.\n\n**RT-3**:\n\n1. **Threshold calibration** against an observed delinquency distribution. Six numbers currently doing a lot of work.  \n2. **Vintage curves** — arrears by months-on-book across disbursement cohorts. Implementable now, and the standard view an investor asks for.  \n3. **A false-positive review.** An alert nobody acts on is worse than no alert, because it trains people to ignore the panel.\n\nBoth remain **uncalibrated**. Every output is labelled synthetic. Neither should be shown to a partner or an investor as a result.  \n"
   },
   {
    "path": "risk-tools/rt-3-monitoring-early-warning.md",
