@@ -44,6 +44,7 @@ TABLES = {
     "rt7Sensitivity": "data/rt7-sensitivity.csv",
     "dataCatalog": "data/data-catalog.csv",
     "rt7Calibration": "data/rt7-calibration.csv",
+    "rt7LiteratureInputs": "data/rt7-literature-inputs.csv",
     "collectiveMarketMap": "data/collective-market-map.csv",
     "collectiveProducts": "data/collective-products.csv",
     "riskAllocation": "data/risk-allocation.csv",

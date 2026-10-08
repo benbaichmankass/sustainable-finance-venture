@@ -8,15 +8,16 @@ RT-7 has 105 parameters and every one of them is currently an assumption. The mo
 
 It adapts the data-provenance standard that came in with the RT-7 prototype (`archive/prototype-2026-10/data-provenance-standard.md`) to this repo's conventions: the catalogue is a tracker with stable IDs, raw data lives in the Vault, and the Master Reference Tracker Sheet is a mirror.
 
-## The three-tier basis
+## The four-tier basis
 
 Every parameter in a model tracker carries a `Basis`:
 
 | Basis | Means | What has to be true |
 |---|---|---|
 | `assumption` | A number someone chose | The row says why, and names the `Target_Source` that would replace it |
-| `literature` | Taken or derived from a source in the literature matrix | `Source_Refs` names the LIT IDs; the matrix row states the number |
-| `observed` | Computed from a catalogued dataset | `Source_Refs` names the `DS-NN` row and the processed file; the catalogue row is `Validated` |
+| `literature` | Taken or derived from a source in the literature matrix | `Source_Refs` names the LIT IDs; the matrix row states the figures, and any arithmetic from them is written out in `data/rt7-literature-inputs.csv` |
+| `proxy` | Computed from a catalogued dataset about a *similar* population, not the one modelled (a Kiva loan book for the loan-size distribution, a household survey from the same region for farm sizes and incomes) | `Source_Refs` names the `DS-NN` or LIT row; the `Note` says what population it is and why it stands in |
+| `observed` | Computed from a catalogued dataset about the thing modelled (the reference price series, the national yield series, the collective's own records when they arrive) | `Source_Refs` names the `DS-NN` row and the processed file; the catalogue row is `Validated` |
 
 A literature *reference point* that bears on a value without estimating it (LIT-035's price range next to `price_vol`) stays `assumption` with the LIT ID in `Source_Refs`. Promotion to `literature` requires the source to state the number.
 
@@ -75,13 +76,18 @@ A parameter's lineage is readable from its row in the model tracker without open
 | `ds01_faostat_yields.py` | DS-01 FAOSTAT coffee, green | Publisher bulk zip, filtered to the three countries (the query API now needs an authorization header) | `data/processed/ds-01-coffee-national-yields.csv` |
 | `ds03_nasa_power.py` | DS-03 NASA POWER monthly | Point API at six district centroids, one raw file of verbatim responses | `data/processed/ds-03-district-climate-monthly.csv` |
 | `ds04_pink_sheet.py` | DS-04 World Bank Pink Sheet | XLSX; the doc id changes per release and is read off the landing page | `data/processed/ds-04-coffee-prices-monthly.csv` |
-| `calibrate_rt7.py` | all three | Turns the series into observed RT-7 parameters and observation-only statistics | `data/rt7-calibration.csv`, and with `--apply` the parameter tracker |
+| `ds09_exchange_rates.py` | DS-09 exchange rates | Banco de la Republica TRM daily (Socrata API, averaged to months) and World Bank WDI official rates, annual | `data/processed/ds-09-exchange-rates.csv` |
+| `ds10_fnc_colombia.py` | DS-10 FNC coffee statistics | Monthly workbook; the file name carries the month and is read off the statistics page; sheets parsed by header detection | `data/processed/ds-10-colombia-coffee-prices-monthly.csv`, `ds-10-colombia-coffee-area-by-department.csv` |
+| `ds11_kiva_loans.py` | DS-11 Kiva loans (proxy) | GraphQL, 3,000 newest Agriculture loans per country with partner metrics; names and towns stay in the raw file | `data/processed/ds-11-kiva-agriculture-loans.csv`, `ds-11-kiva-partners.csv` |
+| `calibrate_rt7.py` | all of the above plus `data/rt7-literature-inputs.csv` | Turns the series into observed and proxy RT-7 parameters, applies the literature inputs marked for application, and records observation-only statistics | `data/rt7-calibration.csv`, and with `--apply` the parameter tracker |
 
-Run order: the three fetchers, then `calibrate_rt7.py --apply`, then `risk-tools/collective/run_region.py`, then the dashboard build.
+**Literature inputs.** A `literature` value that needs arithmetic (a per-household cost over a coffee area, a poverty line times a household size, a currency conversion at a dated rate) gets a row in `data/rt7-literature-inputs.csv`: ID (`LI-NN`), region, parameter, value, unit, basis, the LIT and DS IDs it rests on, the source figures as stated, the arithmetic written out, the reference year, whether it is applied, and a note on what the number is and is not. The source figures must be in the literature matrix row; the arithmetic must be reproducible from the row alone. `calibrate_rt7.py` applies the rows marked `Apply: yes` and carries the rest as observations.
+
+Run order: the fetchers, then `calibrate_rt7.py --apply`, then `risk-tools/collective/run_region.py`, then the dashboard build.
 
 **The query logs are committed; the raw bytes are not.** `data/raw/*/*.query.json` is tracked, everything else under `data/raw/` is gitignored. The log is the record of what was fetched; the bytes are reproducible from it.
 
-**Vault copies of public datasets.** The rule is raw bytes in the Vault, and for partner data that is absolute. For a public, re-fetchable publisher file the query log's URL and SHA-256 already make the extract reproducible, and an agent pushing hundreds of kilobytes through a Drive connector is a poor use of anyone's time. So: the agent uploads a Vault copy when the file is small, records in the query log's `vault_copy` field when it has not, and a human with Drive access drops the larger files into `05-raw-data/<DS-NN>-<slug>/` when convenient. The folders exist for DS-01, DS-03 and DS-04.
+**Vault copies of public datasets.** The rule is raw bytes in the Vault, and for partner data that is absolute. For a public, re-fetchable publisher file the query log's URL and SHA-256 already make the extract reproducible, and an agent pushing hundreds of kilobytes through a Drive connector is a poor use of anyone's time. So: the agent uploads a Vault copy when the file is small, records in the query log's `vault_copy` field when it has not, and a human with Drive access drops the larger files into `05-raw-data/<DS-NN>-<slug>/` when convenient. The folders exist for DS-01, DS-03 and DS-04; DS-09 to DS-11 are re-fetchable from their query logs and their raw files are not yet in the Vault.
 
 ## What this does not yet do
 

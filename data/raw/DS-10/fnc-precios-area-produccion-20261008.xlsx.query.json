@@ -1,0 +1,15 @@
+{
+ "dataset_id": "DS-10",
+ "raw_file": "data/raw/DS-10/fnc-precios-area-produccion-20261008.xlsx",
+ "retrieved_at_utc": "2026-10-08T08:49:32Z",
+ "request": {
+  "url": "https://federaciondecafeteros.org/wp-content/uploads/2026/09/Precios-area-y-produccion-de-cafe-Septiembre-2026.xlsx",
+  "method": "GET",
+  "found_on": "https://federaciondecafeteros.org/wp/estadisticas-cafeteras/"
+ },
+ "bytes": 465516,
+ "sha256": "d5d023a76856abe5802b85d2400b9f42f496b96560d9435bec13d9e6b8dc0563",
+ "code_version": "1905e3f",
+ "vault_copy": "",
+ "notes": "Whole workbook as published by the FNC."
+}

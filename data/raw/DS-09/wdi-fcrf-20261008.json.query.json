@@ -1,0 +1,14 @@
+{
+ "dataset_id": "DS-09",
+ "raw_file": "data/raw/DS-09/wdi-fcrf-20261008.json",
+ "retrieved_at_utc": "2026-10-08T08:48:53Z",
+ "request": {
+  "url": "https://api.worldbank.org/v2/country/COL;ETH;VNM/indicator/PA.NUS.FCRF?format=json&per_page=200&date=2000:2025",
+  "method": "GET"
+ },
+ "bytes": 18604,
+ "sha256": "b15e2e8cb6efff98ad24d0829d8cb3ba74d1f67172665428fdfcfe02d28bccd8",
+ "code_version": "1905e3f",
+ "vault_copy": "",
+ "notes": "Verbatim World Bank API JSON response."
+}

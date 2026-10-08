@@ -1,0 +1,8 @@
+"Partner_ID","Partner_Name","Countries","Default_Rate_Pct","Arrears_Rate_Pct","Loans_At_Risk_Rate_Pct","Average_Loan_Size_USD","Average_Loan_Term_Months","Loans_Posted","Start_Date","Risk_Rating","Status"
+"121","Thanh Hoa Microfinance Institution","VN","0","0.083","0.238","898.96","16","26408","2008-11-14","3.5","active"
+"342","Entrepreneurs du Monde - Anh Chi Em","VN","0","67.935","98.18","355.97","13","2814","2013-12-13","2","paused"
+"621","FINAMIGA UNI2","CO","4.107","8.985","84.661","727.55","18","12062","2021-05-13","3.5","active"
+"667","Confiamos Colombia SAS","CO","1.024","10.151","19.283","768.02","16","1090","2023-09-11","2","active"
+"688","Fintra","CO","0","2.814","15.21","1027.92","17","355","2025-05-15","2.5","active"
+"690","Agricapital","CO","0","2.824","18.285","695.89","20","1255","2025-06-04","2","active"
+"701","Corporacion Interactuar","CO","0","2.828","39.05","581.74","14","2156","2026-01-16","2.5","active"
