@@ -1,6 +1,6 @@
 # RT-7 — Collective facility risk model
 
-**Status:** Built, running · **Version:** 0.2 · **Calibration: none** · **Product lines:** PL-1 · **Code:** `risk-tools/collective/` (Python reference) and `dashboard/rt7-model.js` (browser port) · **Parameters:** `data/rt7-parameters.csv` · **Scenarios:** `data/rt7-scenarios.csv` · **Results:** `data/rt7-region-results.csv`, `data/rt7-sensitivity.csv` · **Interactive:** the dashboard's *Collective model* tab
+**Status:** Built, running · **Version:** 0.2 · **Calibration: partial** (world prices and national yields observed; everything else assumed) · **Product lines:** PL-1 · **Code:** `risk-tools/collective/` (Python reference) and `dashboard/rt7-model.js` (browser port) · **Parameters:** `data/rt7-parameters.csv` · **Scenarios:** `data/rt7-scenarios.csv` · **Results:** `data/rt7-region-results.csv`, `data/rt7-sensitivity.csv` · **Interactive:** the dashboard's *Collective model* tab
 
 ## Purpose
 
@@ -16,7 +16,7 @@ The model exists for three jobs, in order:
 
 ## What it is not
 
-**It is not calibrated.** All 105 rows of `data/rt7-parameters.csv` carry `Basis: assumption`. Two parameters cite literature as a *reference point* (LIT-035 for price variability, LIT-036 and LIT-037 for the residual correlation channel), not as an estimate. Every number this model produces is a statement about the model, not about any coffee collective.
+**It is only partly calibrated.** Since 2026-10-08, 12 of the 105 rows of `data/rt7-parameters.csv` are `Basis: observed`: the reference price level and its volatility (DS-04, World Bank Pink Sheet) and the national yield level and its year-to-year variability (DS-01, FAOSTAT), per region. Every loan, cost, household, delivery, buffer and credit parameter is still an assumption, and two of those cite literature only as a *reference point* (LIT-035, LIT-036 and LIT-037). The observed inputs make the model's *scale* real; the assumed ones still decide its *losses*. Every number this model produces remains a statement about the model, not about any coffee collective.
 
 **It is not a forecast.** The stress scenarios are deterministic shifts, chosen for coherence. RS-2 does not predict a leaf-rust year; it asks what one would do.
 
@@ -82,34 +82,38 @@ The prototype uploaded on 2026-10-07 (archived verbatim at `archive/prototype-20
 
 The consequence of the first four together: v0.1's loss numbers did not respond to climate or price at all, while looking as if they did.
 
-## What the model shows at v0.2 defaults
+## What the model shows
 
-Shapes, not levels. From `data/rt7-region-results.csv` and `data/rt7-sensitivity.csv` (5,000 paths, seed 42; sensitivities at 3,000 paths):
+Shapes, not levels. From `data/rt7-region-results.csv` and `data/rt7-sensitivity.csv` (5,000 paths, seed 42; sensitivities at 3,000 paths), after the 2026-10-08 calibration.
 
-**1. The tail is delivery risk, not credit risk.** In every region the top sensitivity for expected loss is `price_vol` or `side_sell_elasticity`, and the scenario that produces the largest tail loss is the *price spike* (RS-4), not the price crash. A forward book sized at half of expected deliveries, with members free to side-sell, turns a price rise into the largest loss the facility can take, because the collective must cover the shortfall at the very price that caused it. This is the research plan's "delivery and side-selling risk" row made quantitative, and it argues for delivery enforcement (collection-account control, buyer-paid premiums on delivery) ahead of any credit enhancement.
+**0. Calibration moved the price level, not the cost base, and the base case shows it.** The prototype assumed a 4,000 USD/t reference price; the observed Arabica reference over the twelve months to September 2026 is 7,750 USD/t (Robusta 4,046). Member revenue roughly doubled while production cost, household floor and loan sizes stayed at the prototype's levels, so a normal year now gives Colombia a median cover above 5× and a normal-year PD of 1.1 percent against priors of 3 and 6. Base-case expected loss fell from 3.3 percent of pool to 0.35 percent. That is not good news about coffee lending; it is the assumption set disagreeing with itself in the other direction. Loan sizes, costs and the household floor have to be re-anchored to the price level, and only partner data (DS-07, DS-08) can do that. Until then the base-case *level* says nothing, and the structural findings below are what the model is for.
 
-**2. A poor season roughly triples expected loss; a leaf-rust-scale year multiplies it by six.** Colombia: 3.3 percent base, 10.6 percent at RS-1, 20.3 percent at RS-2. The buffer is exhausted early in a bad year because the collective's own margin falls with volume at the same time as member defaults rise — the two are not independent, which is the covariate point in a single collective.
+**1. The tail is delivery risk, not credit risk, and calibration made that sharper.** In every region the top sensitivities for expected loss are `side_sell_elasticity` and `price_vol`, with `fwd_share` third; the credit parameters (base PDs, LGDs, residual correlation) are at the bottom of the tornado. The price *spike* (RS-4) is the only scenario that still wipes out the pool in every region. A forward book without delivery enforcement makes the collective cover its shortfall at the very price that caused it. Delivery enforcement comes before credit enhancement.
 
-**3. The collective buffer is thin by construction.** At a 3 percent margin on sales the collective absorbs a few thousand dollars of member losses in a normal year and nothing in a bad one. Whether a real collective holds reserves of this order is a Gate-2 question in the business-research plan, and `reserve_share_of_margin` is where the answer goes.
+**2. The forward book makes the facility's exposure asymmetric.** A price crash (RS-3) raises member losses (Colombia 0.6 to 1.6 percent of pool) and *lowers* the facility's expected loss (0.35 to 0.24 percent), because the crash removes side-selling while the forward book protects the collective's revenue on contracted volume. A spike does the reverse. The members and the lender are exposed to opposite halves of the price distribution, which is a design fact about forward-selling collectives, not a modelling artefact. `test_rt7.py` now asserts the member-side direction rather than the facility-side one for this reason.
 
-**4. Normal-year PD exposes assumption drift.** For Ethiopia the leverage distribution implies a normal-year PD of about 10 percent against base priors of 4 and 8 percent — the loan-size and income assumptions do not agree with the PD prior. That is a defect in the assumptions, surfaced rather than hidden, and it is what calibration against DS-07 would settle.
+**3. A leaf-rust-scale year still breaks Colombia and barely touches Ethiopia, and the second half of that is an artefact.** Colombia at RS-2: 7.4 percent expected loss, forward shortfall in half of all paths, 96 percent first-loss needed for a 25 bp senior target. Ethiopia at RS-2: 0.4 percent. The difference is the observed national yield CV (0.16 against 0.10), and a national series smooths over districts: it is a floor on the regional factor the model wants, not an estimate of it. LIT-031's figures (80 percent output drops at some financed producer organisations) are what a district-level factor would have to reproduce. DS-02 with a district boundary is the next calibration step for this reason.
 
-**5. The senior target is unattainable where the tail reaches the pool.** With a 25 bp senior EL target, Colombia needs a first-loss layer of about half the pool and Vietnam cannot reach it at all, because 1 percent of base-case paths lose everything through the forward book. Compare RT-5's 10–20 percent first-loss working range (LIT-013, LIT-015): the gap is the delivery channel, and it is the design problem to solve before the structuring one.
+**4. Price volatility was assumed slightly high; price jumps were assumed far too timid.** Observed annualised log volatility is 0.21 for Arabica and 0.19 for Robusta over 2005 to 2026, against the prototype's 0.25 to 0.30. But 14 percent of rolling twelve-month windows moved by more than 40 percent in log terms, where the model's jump assumption (5 percent per season, +15 percent mean) implies far fewer. The jump parameters stay assumptions, with the observed distribution recorded next to them in `data/rt7-calibration.csv`.
 
-Caveat on all five: these are relationships between the model's own parameters. They are believable as shapes and worthless as levels.
+**5. The senior target is attainable in a normal year and not in a stressed one.** At calibrated prices Colombia needs an 18 percent first-loss layer for a 25 bp senior expected loss in the base case, 57 percent in a poor season, and cannot reach it at all under a price spike. The gap between the first number and RT-5's 10 to 20 percent working range (LIT-013, LIT-015) has closed; the gap between the first and the second is the delivery channel again.
+
+Caveat on all of it: these are relationships between the model's own parameters, twelve of which are now observed. Believable as shapes; the levels still rest on the assumed cost and loan base.
 
 ## Data source mapping
 
 Every parameter in `data/rt7-parameters.csv` carries four provenance fields, which the dashboard renders as the *Data sources* table:
 
-- `Basis` — `assumption` · `literature` · `observed`. Currently all assumption.
+- `Basis` — `assumption` · `literature` · `observed`. Twelve observed per region set (price level and volatility, yield level and variability), the rest assumption.
 - `Source_Refs` — LIT IDs that bear on the value today (reference points, not estimates).
 - `Target_Source` — where the number should come from, as a `DS-NN` row in `data/data-catalog.csv` or a partner data class.
 - `Note` — the parameter's history (prototype placeholder, introduced in v0.2, hard-coded in v0.1).
 
-The catalogue rows that calibrate this model, all `Proposed`: DS-01 (FAOSTAT yields), DS-02 and DS-03 (CHIRPS, NASA POWER for the climate factor), DS-04 (World Bank Pink Sheet Arabica and Robusta prices), DS-07 (partner loan book) and DS-08 (partner member register and delivery records). The first four are open data and are the Phase 3 work; the last two need a partner and a data-sharing agreement, and their row-level content never enters the repo (`docs/ops/data-provenance.md`).
+The catalogue rows that calibrate this model: DS-01 (FAOSTAT national yields), DS-03 (NASA POWER district climate) and DS-04 (World Bank Pink Sheet Arabica and Robusta prices) are `Validated` and pulled by `scripts/ingest/`; `scripts/ingest/calibrate_rt7.py` turns them into `data/rt7-calibration.csv` and, with `--apply`, into the parameter tracker. DS-02 (CHIRPS) waits on a documented district boundary. DS-07 (partner loan book) and DS-08 (partner member register and delivery records) need a partner and a data-sharing agreement, and their row-level content never enters the repo (`docs/ops/data-provenance.md`).
 
-The order in which calibration would improve the model most: (1) DS-08 delivery records across at least one high-price season, which is the only way to put a number on side-selling; (2) DS-07 repayment history, for the PD anchor and curve; (3) DS-04 price history, for volatility and jumps, which is also the easiest; (4) DS-01 with DS-02/03 for the yield factor.
+What the calibration file also records without writing into the model: the long-window price mean, the distribution of twelve-month price changes and the share of large moves (for the jump assumption), the annual rainfall CV at the district centroids, and the correlations of national yield residuals with rainfall anomalies and with price changes (weak everywhere, as a two-point rainfall index against a national yield should be).
+
+The order in which further calibration would improve the model most: (1) DS-08 delivery records across at least one high-price season, which is the only way to put a number on side-selling; (2) DS-07 repayment history, for the PD anchor and curve, and to re-anchor loan sizes and costs to the observed price level; (3) a district-level yield factor from DS-02 with a boundary, because the national CV is a floor; (4) a farm-gate price series next to DS-04, for the basis.
 
 ## Running it
 
@@ -138,6 +142,7 @@ The interactive tab runs the JavaScript port on the committed parameter rows. Ed
 |---|---|---|
 | 2026-10-07 | 0.1 | Prototype uploaded as `sfv_risk_models` (Colombia, Ethiopia, Vietnam notebooks). Archived at `archive/prototype-2026-10/`. |
 | 2026-10-08 | 0.2 | Registered as RT-7. Risk chain repaired (see *What v0.1 got wrong*). Parameters moved to `data/rt7-parameters.csv` with per-parameter provenance. Scenarios RS-0..RS-5. Tornado over 16 parameters. JavaScript port and parity test. Dashboard tab. |
+| 2026-10-08 | 0.2 (calibrated) | Phase 3: DS-01, DS-03 and DS-04 ingested with provenance; price level and volatility and national yield level and variability set to observed values per region via `scripts/ingest/calibrate_rt7.py`. No change to the model; the base case moved because the price level did. |
 
 ## Tests
 

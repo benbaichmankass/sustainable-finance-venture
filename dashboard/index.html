@@ -2947,6 +2947,22 @@ function rt7Sources() {
     "</div>" +
     '<p class="lede">Every input carries three provenance fields: what kind of number it is, what it rests on today, and where it should come from. Click a row for its history. The rule is in <code>docs/ops/data-provenance.md</code>; promotion from <em>assumption</em> to <em>observed</em> goes through <code>data/data-catalog.csv</code>.</p>' +
     buildTable(rows, cols, function (r) { return fields([["History", esc(r.Note)], ["Should come from", esc(r.Target_Source)], ["Reference points", esc(r.Source_Refs)]]); }, { sortIdx: 3 }) +
+    (function () {
+      var cal = (D.rt7Calibration || []).filter(function (r) { return r.Region === U.region; });
+      if (!cal.length) return "";
+      var ccols = [
+        { key: "Parameter", label: "Quantity", cls: "id" },
+        { label: "Observed", render: function (r) { var v = parseFloat(r.Observed_Value); return "<strong>" + (isNaN(v) ? esc(r.Observed_Value) : (Math.abs(v) >= 100 ? Math.round(v).toLocaleString() : v.toFixed(3))) + "</strong>"; } },
+        { key: "Unit", label: "Unit" },
+        { key: "Dataset", label: "From", cls: "id" },
+        { key: "Window", label: "Window" },
+        { label: "Used as", render: function (r) { return r.Apply_As ? basisPill(r.Apply_As) : '<span class="hint">observation only</span>'; }, sortKey: "Apply_As" }
+      ];
+      return '<h4 class="sub4">Calibration from the catalogued series</h4>' +
+        '<p class="lede">What <code>scripts/ingest/calibrate_rt7.py</code> computed from the processed files on ' + esc(cal[0].Computed_At.slice(0, 10)) +
+        '. Rows marked <em>observed</em> are written into the parameter tracker; <em>observation only</em> rows have no model parameter yet and are here so the next modelling step starts from numbers.</p>' +
+        buildTable(cal, ccols, function (r) { return fields([["Method", esc(r.Method)], ["Caveat", esc(r.Note)]]); });
+    })() +
     '<h4 class="sub4">Data catalogue</h4>' +
     buildTable(cat, catCols, function (r) {
       return fields([["Variables", esc(r.Variables)], ["Access", esc(r.Access_Method)], ["Coverage", esc(r.Temporal_Coverage)],
@@ -2998,7 +3014,12 @@ function renderCollective() {
     "This tab runs the model in your browser on the parameter rows committed in the repo. Change an input and it re-runs. Nothing you change here is saved: the CSV is the record, this is a scratchpad.</p>" +
 
     '<div class="card" style="margin-bottom:16px;border-color:var(--warning)"><strong>Every figure on this page is synthetic and uncalibrated.</strong>' +
-    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">All ' + (D.rt7Parameters || []).length + " parameter rows are assumptions. Two cite literature as a reference point, none as an estimate. " +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' + (function () {
+      var rows = RT7.provenance(D.rt7Parameters || [], U.region), c = { assumption: 0, literature: 0, observed: 0 };
+      rows.forEach(function (r) { c[r.Basis] = (c[r.Basis] || 0) + 1; });
+      return "Of " + rows.length + " parameters for this region, " + c.observed + " are observed from catalogued open data (world prices and national yields), " +
+        c.literature + " come from the literature, and " + c.assumption + " are assumptions - including every loan, cost, delivery and credit parameter. ";
+    })() +
     "The outputs describe the <em>model</em>, not any collective: useful for which structural choices move the loss distribution and in which direction, not usable as evidence. " +
     "Full specification, decisions and the list of what the prototype got wrong: <code>risk-tools/rt-7-collective-facility-model.md</code>.</p></div>" +
 
@@ -3062,13 +3083,14 @@ function renderCollective() {
 
     '<h3 class="sub">What it shows so far</h3>' +
     '<div class="card"><div class="md">' +
-      "<p>Shapes, not levels, from the committed runs at v0.2 defaults:</p><ol>" +
-      "<li><strong>The tail is delivery risk, not credit risk.</strong> In every region the top sensitivity is price volatility or side-selling, and the worst tail comes from a price <em>spike</em>, not a crash: a forward book without delivery enforcement makes the collective cover its shortfall at the very price that caused it. Delivery enforcement comes before credit enhancement.</li>" +
-      "<li><strong>A poor season roughly triples expected loss; a leaf-rust-scale year multiplies it by six</strong>, because the collective's margin falls with volume at the same moment member defaults rise.</li>" +
-      "<li><strong>The collective buffer is thin by construction</strong> at a 3 percent margin, and vanishes in a bad year. Whether a real collective holds reserves of this order is a Gate-2 question in the business-research plan.</li>" +
-      "<li><strong>Normal-year PD exposes assumption drift</strong>: for Ethiopia the leverage distribution implies a PD above both base priors. The assumptions disagree with each other; calibration against a loan book would settle it.</li>" +
-      "<li><strong>A senior target of 25 bp is unattainable where the tail reaches the pool.</strong> Against RT-5's 10–20 percent first-loss working range, the gap is the delivery channel, and it is the design problem to solve before the structuring one.</li>" +
-      "</ol><p>All five are relationships between the model's own parameters: believable as shapes, worthless as levels.</p></div></div>" +
+      "<p>Shapes, not levels, from the committed runs after the 2026-10-08 calibration:</p><ol>" +
+      "<li><strong>Calibration moved the price level, not the cost base.</strong> The observed Arabica reference (7,750 USD/t over the twelve months to September 2026) is nearly double the prototype's 4,000 while loan sizes, costs and the household floor stayed put, so the base-case expected loss collapsed and the normal-year PD sits far below the priors. The assumption set disagrees with itself; only partner data can re-anchor it. Read the base-case level as nothing and the shapes below as the output.</li>" +
+      "<li><strong>The tail is delivery risk, not credit risk, and more sharply than before.</strong> Side-selling and price volatility top the sensitivity in every region, the credit parameters sit at the bottom, and the price <em>spike</em> is the only scenario that still wipes the pool. Delivery enforcement comes before credit enhancement.</li>" +
+      "<li><strong>The forward book makes exposure asymmetric.</strong> A price crash raises member losses and <em>lowers</em> the facility's, because it removes side-selling while contracted volume keeps its price; a spike does the reverse. Members and lender hold opposite halves of the price distribution.</li>" +
+      "<li><strong>A leaf-rust-scale year still breaks Colombia and barely touches Ethiopia</strong>, and the second half is an artefact: the observed national yield CVs (0.16 and 0.10) smooth over districts and are a floor on the regional factor the model wants. A district-level factor (DS-02 with a boundary) is the next calibration step.</li>" +
+      "<li><strong>Price volatility was assumed slightly high, price jumps far too timid.</strong> Observed annualised volatility is about 0.21 (Arabica) and 0.19 (Robusta), but 14 percent of twelve-month windows moved more than 40 percent in log terms, well beyond the model's jump assumption. The jump parameters stay assumptions with the observed distribution recorded beside them.</li>" +
+      "<li><strong>The senior target is attainable in a normal year and not in a stressed one</strong>: Colombia needs an 18 percent first-loss layer for 25 bp in the base case, 57 percent in a poor season, and cannot reach it under a price spike.</li>" +
+      "</ol><p>All of these are relationships between the model's own parameters, twelve of which are now observed: believable as shapes; the levels still rest on the assumed cost and loan base.</p></div></div>" +
 
     '<h3 class="sub">Data sources</h3><div id="rt7-sources">' + rt7Sources() + "</div>" +
     '<h3 class="sub">Reference results from the Python pipeline</h3><div id="rt7-ref">' + rt7Reference() + "</div>" +
