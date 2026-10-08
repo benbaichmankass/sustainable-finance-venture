@@ -221,6 +221,7 @@ h3.sub {
 }
 .grid { display: grid; gap: 12px; }
 .g4 { grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); }
+.g5 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .g2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
 /* stat tiles */
@@ -2761,7 +2762,7 @@ var RT7_GROUP_BLURB = {
 function pctf(x, nd) { if (x == null || isNaN(x)) return "—"; return (100 * x).toFixed(nd == null ? 1 : nd) + "%"; }
 function usdf(x) { if (x == null || isNaN(x)) return "—"; return "$" + Math.round(x).toLocaleString(); }
 function basisPill(b) {
-  var cls = b === "observed" ? "good" : b === "literature" ? "" : "warning";
+  var cls = b === "observed" ? "good" : (b === "literature" || b === "proxy") ? "" : "warning";
   return '<span class="pill ' + cls + '"><span class="dot"></span>' + esc(b || "assumption") + "</span>";
 }
 function rt7Scenario(id) {
@@ -2903,7 +2904,7 @@ function rt7Controls() {
   return RT7_GROUPS.filter(function (g) { return byGroup[g]; }).map(function (g) {
     var ctls = byGroup[g].map(function (r) {
       var k = r.Parameter, v = U.params[k], mod = Math.abs(v - defaults[k]) > 1e-12;
-      var title = (r.Note || "") + "\n\nToday: " + (r.Source_Refs ? r.Source_Refs + " (reference point)" : "assumption") +
+      var title = (r.Note || "") + "\n\nToday: " + (r.Source_Refs ? r.Source_Refs + (r.Basis === "assumption" ? " (reference point)" : "") : "assumption") +
         "\nShould come from: " + (r.Target_Source || "—");
       return '<label class="ctl' + (mod ? " mod" : "") + '" title="' + esc(title) + '">' +
         '<span class="ctl-k"><code>' + esc(k) + "</code> " + basisPill(r.Basis) + "</span>" +
@@ -2921,7 +2922,7 @@ function rt7Controls() {
 
 function rt7Sources() {
   var U = RT7_UI, rows = RT7.provenance(D.rt7Parameters || [], U.region);
-  var counts = { assumption: 0, literature: 0, observed: 0 };
+  var counts = { assumption: 0, literature: 0, proxy: 0, observed: 0 };
   rows.forEach(function (r) { counts[r.Basis] = (counts[r.Basis] || 0) + 1; });
   var cols = [
     { key: "Parameter", label: "Parameter", cls: "id" },
@@ -2929,7 +2930,7 @@ function rt7Sources() {
     { key: "Unit", label: "Unit" },
     { key: "Group", label: "Group" },
     { label: "Basis", render: function (r) { return basisPill(r.Basis); }, sortKey: "Basis" },
-    { label: "Rests on today", render: function (r) { return r.Source_Refs ? esc(r.Source_Refs) + ' <span class="hint">(reference point)</span>' : '<span class="hint">nothing — chosen</span>'; } },
+    { label: "Rests on today", render: function (r) { return r.Source_Refs ? esc(r.Source_Refs) + (r.Basis === "assumption" ? ' <span class="hint">(reference point)</span>' : "") : '<span class="hint">nothing — chosen</span>'; } },
     { key: "Target_Source", label: "Should come from", cls: "wrap-cell" }
   ];
   var cat = D.dataCatalog || [];
@@ -2939,11 +2940,12 @@ function rt7Sources() {
     { label: "Status", render: function (r) { return pill(r.Status); } },
     { label: "Link", render: function (r) { return r.URL ? extLink(r.URL, r.Source_Organization) : '<span class="hint">' + esc(r.Source_Organization) + " · no public URL</span>"; } }
   ];
-  return '<div class="grid g4" style="margin-bottom:12px">' +
+  return '<div class="grid g5" style="margin-bottom:12px">' +
     tile("Assumptions", counts.assumption, "chosen numbers with a named target source") +
-    tile("Literature", counts.literature, "stated by a source in the matrix") +
+    tile("Literature", counts.literature, "derived from figures a source states") +
+    tile("Proxy", counts.proxy, "from a dataset on a similar population") +
     tile("Observed", counts.observed, "computed from a validated dataset") +
-    tile("Datasets catalogued", cat.length, cat.filter(function (r) { return r.Status === "Proposed"; }).length + " proposed, none yet downloaded") +
+    tile("Datasets catalogued", cat.length, cat.filter(function (r) { return r.Status === "Validated"; }).length + " validated, " + cat.filter(function (r) { return r.Status === "Proposed"; }).length + " proposed") +
     "</div>" +
     '<p class="lede">Every input carries three provenance fields: what kind of number it is, what it rests on today, and where it should come from. Click a row for its history. The rule is in <code>docs/ops/data-provenance.md</code>; promotion from <em>assumption</em> to <em>observed</em> goes through <code>data/data-catalog.csv</code>.</p>' +
     buildTable(rows, cols, function (r) { return fields([["History", esc(r.Note)], ["Should come from", esc(r.Target_Source)], ["Reference points", esc(r.Source_Refs)]]); }, { sortIdx: 3 }) +
@@ -2960,8 +2962,24 @@ function rt7Sources() {
       ];
       return '<h4 class="sub4">Calibration from the catalogued series</h4>' +
         '<p class="lede">What <code>scripts/ingest/calibrate_rt7.py</code> computed from the processed files on ' + esc(cal[0].Computed_At.slice(0, 10)) +
-        '. Rows marked <em>observed</em> are written into the parameter tracker; <em>observation only</em> rows have no model parameter yet and are here so the next modelling step starts from numbers.</p>' +
+        '. Rows marked <em>observed</em>, <em>proxy</em> or <em>literature</em> are written into the parameter tracker; <em>observation only</em> rows have no model parameter, or were judged too weak to apply, and are here so the next modelling step starts from numbers.</p>' +
         buildTable(cal, ccols, function (r) { return fields([["Method", esc(r.Method)], ["Caveat", esc(r.Note)]]); });
+    })() +
+    (function () {
+      var li = (D.rt7LiteratureInputs || []).filter(function (r) { return r.Region === U.region; });
+      if (!li.length) return "";
+      var lcols = [
+        { key: "ID", label: "ID", cls: "id" },
+        { key: "Parameter", label: "Quantity", cls: "id" },
+        { label: "Value", render: function (r) { var v = parseFloat(r.Value); return "<strong>" + (isNaN(v) ? esc(r.Value) : (Math.abs(v) >= 100 ? Math.round(v).toLocaleString() : v.toFixed(3))) + "</strong>"; } },
+        { key: "Unit", label: "Unit" },
+        { key: "Source_Refs", label: "Rests on", cls: "id" },
+        { key: "Reference_Year", label: "Year" },
+        { label: "Applied", render: function (r) { return r.Apply === "yes" ? basisPill(r.Basis) : '<span class="hint">observation only</span>'; }, sortKey: "Apply" }
+      ];
+      return '<h4 class="sub4">Literature inputs, with the arithmetic</h4>' +
+        '<p class="lede">Values derived from figures a published source states, from <code>data/rt7-literature-inputs.csv</code>. Click a row for the source figures, the arithmetic and what the number is not. Subsistence floors are applied; living-income benchmarks are recorded beside them as the scenario to run.</p>' +
+        buildTable(li, lcols, function (r) { return fields([["Source figures", esc(r.Source_Figures)], ["Arithmetic", esc(r.Arithmetic)], ["Note", esc(r.Note)]]); });
     })() +
     '<h4 class="sub4">Data catalogue</h4>' +
     buildTable(cat, catCols, function (r) {
@@ -3083,21 +3101,23 @@ function renderCollective() {
 
     '<h3 class="sub">What it shows so far</h3>' +
     '<div class="card"><div class="md">' +
-      "<p>Shapes, not levels, from the committed runs after the 2026-10-08 calibration:</p><ol>" +
-      "<li><strong>Calibration moved the price level, not the cost base.</strong> The observed Arabica reference (7,750 USD/t over the twelve months to September 2026) is nearly double the prototype's 4,000 while loan sizes, costs and the household floor stayed put, so the base-case expected loss collapsed and the normal-year PD sits far below the priors. The assumption set disagrees with itself; only partner data can re-anchor it. Read the base-case level as nothing and the shapes below as the output.</li>" +
-      "<li><strong>The tail is delivery risk, not credit risk, and more sharply than before.</strong> Side-selling and price volatility top the sensitivity in every region, the credit parameters sit at the bottom, and the price <em>spike</em> is the only scenario that still wipes the pool. Delivery enforcement comes before credit enhancement.</li>" +
-      "<li><strong>The forward book makes exposure asymmetric.</strong> A price crash raises member losses and <em>lowers</em> the facility's, because it removes side-selling while contracted volume keeps its price; a spike does the reverse. Members and lender hold opposite halves of the price distribution.</li>" +
-      "<li><strong>A leaf-rust-scale year still breaks Colombia and barely touches Ethiopia</strong>, and the second half is an artefact: the observed national yield CVs (0.16 and 0.10) smooth over districts and are a floor on the regional factor the model wants. A district-level factor (DS-02 with a boundary) is the next calibration step.</li>" +
-      "<li><strong>Price volatility was assumed slightly high, price jumps far too timid.</strong> Observed annualised volatility is about 0.21 (Arabica) and 0.19 (Robusta), but 14 percent of twelve-month windows moved more than 40 percent in log terms, well beyond the model's jump assumption. The jump parameters stay assumptions with the observed distribution recorded beside them.</li>" +
-      "<li><strong>The senior target is attainable in a normal year and not in a stressed one</strong>: Colombia needs an 18 percent first-loss layer for 25 bp in the base case, 57 percent in a poor season, and cannot reach it under a price spike.</li>" +
-      "</ol><p>All of these are relationships between the model's own parameters, twelve of which are now observed: believable as shapes; the levels still rest on the assumed cost and loan base.</p></div></div>" +
+      "<p>Shapes first, levels with a caveat, from the committed runs after the 2026-10-08 calibration and the same day's re-anchoring of the cost base on literature and proxy data:</p><ol>" +
+      "<li><strong>Re-anchoring put the base case back on a credible level.</strong> The first calibration doubled the reference price while costs, floors and loan sizes stayed at prototype levels, and Colombian expected loss collapsed to 0.35 percent. With farm size, production cost, household floor, loan size, arrears and basis now from published sources and a proxy loan book, Colombia's base case is 1.5 percent of pool at a normal-year PD of 5.7 percent (the Kiva-partner arrears proxy is 7.7), Ethiopia 1.1 percent. Vietnam stays at 0.2 because Robusta revenue per hectare dwarfs any plausible cost base: a price-and-delivery case, not a credit one.</li>" +
+      "<li><strong>The household floor binds for the smallest farms.</strong> At a subsistence floor (the DANE rural poverty line for four) and a 1.28 ha mean farm, 27 percent of Colombian members have cover below 1 in a normal year: a sub-half-hectare farm cannot carry a household on coffee alone. What makes those households creditworthy is off-farm income, which is still an assumption in Colombia and Vietnam and the first thing a partner survey should measure.</li>" +
+      "<li><strong>The tail is still delivery risk, but the cost base now matters.</strong> The price spike remains the one scenario that wipes the pool everywhere, through side-selling against the forward book. In Colombia the top of the tornado is now the collective's fixed cost (expected loss 1.0 to 4.1 percent across its range), the one input left with no source at all, then the delivered share, price volatility and the floor.</li>" +
+      "<li><strong>The forward book makes exposure asymmetric, and re-anchoring reversed half of it.</strong> A price crash raises member losses and now raises the facility's too (Colombia 1.5 to 5.4 percent), because the forward book no longer insulates the collective enough to cover them; a spike still cuts member losses while breaking the collective.</li>" +
+      "<li><strong>A leaf-rust-scale year breaks Colombia (15.5 percent, shortfall in 46 percent of paths) and touches Ethiopia (5.5)</strong>; the observed national yield CVs (0.16 and 0.10) smooth over districts and are a floor on the regional factor. A district-level factor (DS-02 with a boundary) is the next calibration step.</li>" +
+      "<li><strong>The Colombian farm-gate basis is about 10 percent, twice the assumption.</strong> Thirty months of the FNC internal price, converted at factor 94 and the TRM, sit 9.6 percent below the Pink Sheet Arabica series. Ethiopia's implied basis is unusable at the official 2023 exchange rate and Vietnam's single observation sits in a spike; both stay assumptions.</li>" +
+      "<li><strong>Price volatility was assumed slightly high, price jumps far too timid.</strong> Observed annualised volatility is about 0.21 (Arabica) and 0.19 (Robusta), but 14 percent of twelve-month windows moved more than 40 percent in log terms. The jump parameters stay assumptions with the observed distribution recorded beside them.</li>" +
+      "<li><strong>The senior target is attainable in a normal year and not in a stressed one</strong>: Colombia needs an 8.5 percent first-loss layer for 25 bp in the base case (inside RT-5's 10 to 20 percent working range), 20 percent in a poor season, 37 in a leaf-rust year, and cannot reach it under a price spike.</li>" +
+      "</ol><p>Per region, four or five inputs are observed, two to five come from literature arithmetic, two (Colombia) from a proxy loan book, and about forty remain assumptions. The level is defensible as an order of magnitude; the loan mix, rates, tenors, LGDs and the collective's own costs still rest on the prototype's choices.</p></div></div>" +
 
     '<h3 class="sub">Data sources</h3><div id="rt7-sources">' + rt7Sources() + "</div>" +
     '<h3 class="sub">Reference results from the Python pipeline</h3><div id="rt7-ref">' + rt7Reference() + "</div>" +
 
     '<h3 class="sub">What it is not</h3>' +
     '<div class="card"><div class="md"><ul>' +
-      "<li><strong>Not calibrated.</strong> No field data exists for any parameter. Every number is a statement about the model.</li>" +
+      "<li><strong>Not calibrated to a partner.</strong> Prices, yields and the Colombian basis are observed, costs and floors come from published figures and loan terms from a proxy book; no collective's own records are in it yet. Every level is a statement about the model.</li>" +
       "<li><strong>Not a forecast.</strong> Scenarios are deterministic shifts chosen for coherence, not probability-weighted views.</li>" +
       "<li><strong>Not a rating model and not a product.</strong> The tranche cut is a design yardstick.</li>" +
       "<li><strong>Not evidence.</strong> Nothing here belongs in a document that makes a claim to a partner or an investor.</li>" +

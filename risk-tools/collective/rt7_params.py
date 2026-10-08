@@ -20,7 +20,7 @@ PARAMS_CSV = os.path.join(ROOT, "data", "rt7-parameters.csv")
 REGIONS_CSV = os.path.join(ROOT, "data", "rt7-regions.csv")
 SCENARIOS_CSV = os.path.join(ROOT, "data", "rt7-scenarios.csv")
 
-BASIS_VOCAB = ("assumption", "literature", "observed")
+BASIS_VOCAB = ("assumption", "literature", "proxy", "observed")
 
 INTEGER_PARAMS = {"n_members", "capex_tenor_years", "opex_tenor_years"}
 

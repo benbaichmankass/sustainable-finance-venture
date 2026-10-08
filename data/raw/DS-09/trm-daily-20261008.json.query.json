@@ -1,0 +1,14 @@
+{
+ "dataset_id": "DS-09",
+ "raw_file": "data/raw/DS-09/trm-daily-20261008.json",
+ "retrieved_at_utc": "2026-10-08T08:48:53Z",
+ "request": {
+  "url": "https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=20000&$order=vigenciadesde%20ASC&$where=vigenciadesde%20%3E%3D%20%272003-01-01%27",
+  "method": "GET"
+ },
+ "bytes": 676085,
+ "sha256": "f39b814c93fd47b6b6f77d2437e78a1107ae94f86b805c37f177ae78992ba475",
+ "code_version": "1905e3f",
+ "vault_copy": "",
+ "notes": "Verbatim Socrata JSON response; TRM is published by Banco de la Republica."
+}

@@ -24,6 +24,20 @@ calibration file so the next modelling step starts from numbers:
   yield_price_corr               DS-01 x DS-04  correlation of yield residuals with the
                                   annual log change of the region's reference price
 
+Phase 3b added two more sources of values:
+
+  basis_local (Colombia)  DS-10 x DS-09 x DS-04  mean discount of the FNC internal price,
+                          converted to USD per tonne of green coffee at the TRM, to the
+                          Pink Sheet Arabica price, months from 2024-04 (factor 94 documented)
+  avg_opex_size, base_pd_opex (Colombia)  DS-11  Kiva coffee-loan mean size and the
+                          loans-posted-weighted arrears rate of the Colombian partners;
+                          Basis proxy. Viet Nam's Kiva coffee loans all sit with one
+                          distressed partner and are reported as observations only
+  literature inputs       data/rt7-literature-inputs.csv  values derived by stated
+                          arithmetic from published figures (Fairtrade, DANE, LIT-033 ...);
+                          rows with Apply = yes are applied with their Basis, the rest are
+                          carried as observations
+
 Arabica is the reference for Colombia and Ethiopia, Robusta for Viet Nam
 (data/rt7-regions.csv). Python 3 stdlib.
 """
@@ -45,6 +59,10 @@ JUMP_THRESHOLD = 0.40
 OUT = os.path.join(C.ROOT, "data", "rt7-calibration.csv")
 PARAMS = os.path.join(C.ROOT, "data", "rt7-parameters.csv")
 REGIONS = os.path.join(C.ROOT, "data", "rt7-regions.csv")
+LIT_INPUTS = os.path.join(C.ROOT, "data", "rt7-literature-inputs.csv")
+KG_EXCELSO_PER_CARGA = 93.09   # FNC: a carga of 125 kg parchment at factor 94 yields 93.09 kg excelso (RES-33)
+LB_PER_T = 2204.62
+KIVA_COUNTRY = {"colombia": "CO", "vietnam": "VN"}
 
 
 def mean(x): return sum(x) / len(x)
@@ -121,6 +139,50 @@ def rain_anomaly(region):
     return {y: (annual[y] - m) / s for y in ys}, {"mean_mm": m, "cv": s / m, "window": "%d to %d" % (ys[0], ys[-1])}
 
 
+def colombia_basis():
+    """Discount of the Colombian farm-gate (FNC internal base price) to the world reference,
+    month by month, for months where the base yield factor is 94 and all three series exist."""
+    p10 = {r["Month"]: r for r in C.read_processed("ds-10-colombia-coffee-prices-monthly")}
+    fx = {r["Period"]: float(r["LCU_per_USD"]) for r in C.read_processed("ds-09-exchange-rates")
+          if r["Currency"] == "COP" and r["Frequency"] == "monthly"}
+    p4 = {r["Month"]: r for r in C.read_processed("ds-04-coffee-prices-monthly")}
+    vs_ref, vs_milds, months = [], [], []
+    for m in sorted(p10):
+        r = p10[m]
+        if r["Base_Yield_Factor_Assumed"] != "94" or not r["Internal_Price_COP_per_carga"] or m not in fx or m not in p4 \
+                or not p4[m]["Arabica_USD_per_t"] or not r["ICO_Colombian_Milds_USc_per_lb"]:
+            continue
+        usd_t = float(r["Internal_Price_COP_per_carga"]) / KG_EXCELSO_PER_CARGA * 1000 / fx[m]
+        vs_ref.append(1 - usd_t / float(p4[m]["Arabica_USD_per_t"]))
+        vs_milds.append(1 - usd_t / (float(r["ICO_Colombian_Milds_USc_per_lb"]) / 100 * LB_PER_T))
+        months.append(m)
+    return {"n": len(months), "window": "%s to %s" % (months[0], months[-1]),
+            "vs_ref": mean(vs_ref), "vs_ref_sd": sd(vs_ref), "vs_milds": mean(vs_milds), "vs_milds_sd": sd(vs_milds)}
+
+
+def kiva_stats(country):
+    loans = [r for r in C.read_processed("ds-11-kiva-agriculture-loans") if r["Country"] == country]
+    partners = [r for r in C.read_processed("ds-11-kiva-partners") if country in r["Countries"].split(";")]
+    coffee = [r for r in loans if r["Coffee_Mention"] == "yes"]
+    amt = [float(r["Amount_USD"]) for r in coffee]
+    term = [float(r["Term_Months"]) for r in coffee if r["Term_Months"]]
+    posted = {p["Partner_ID"]: float(p["Loans_Posted"] or 0) for p in partners}
+    tot = sum(posted.values())
+    w_arr = sum(posted[p["Partner_ID"]] * float(p["Arrears_Rate_Pct"]) for p in partners) / tot / 100
+    w_def = sum(posted[p["Partner_ID"]] * float(p["Default_Rate_Pct"]) for p in partners) / tot / 100
+    dates = sorted(r["Raised_Date"] for r in coffee if r["Raised_Date"])
+    return {"n_loans": len(loans), "n_coffee": len(coffee), "window": "%s to %s" % (dates[0], dates[-1]),
+            "amt_mean": mean(amt), "amt_median": pct(amt, 0.5), "amt_logsd": sd([math.log(a) for a in amt]),
+            "term_median": pct(term, 0.5), "w_arrears": w_arr, "w_default": w_def, "n_partners": len(partners),
+            "group_share": sum(1 for r in coffee if r["Borrower_Count"] not in ("", "1")) / len(coffee),
+            "partners": partners}
+
+
+def literature_inputs():
+    with open(LIT_INPUTS, newline="", encoding="utf-8") as fh:
+        return list(csv.DictReader(fh))
+
+
 def main():
     apply = "--apply" in sys.argv
     regions = list(csv.DictReader(open(REGIONS, newline="", encoding="utf-8")))
@@ -183,6 +245,51 @@ def main():
             "corr(yield trend residual, annual log change of the %s reference), same year, %d years" % (label, len(yrs)),
             "%d to %d" % (yrs[0], yrs[-1]), "DS-01; DS-04",
             "Observation only, bearing on climate_price_correlation (assumed 0). A small origin's bad year barely moves the world price; a large one's can.")
+
+        # --- Phase 3b: farm-gate basis, Kiva proxies, literature inputs ---
+        if region == "colombia":
+            cb = colombia_basis()
+            add(region, "basis_local", cb["vs_ref"], "share below reference price",
+                "mean over %d months of 1 - (FNC internal price / %.2f kg excelso per carga x 1000 / TRM) / Pink Sheet Arabica" % (cb["n"], KG_EXCELSO_PER_CARGA),
+                cb["window"], "DS-10; DS-09; DS-04",
+                "Month-to-month sd %.3f. The internal price is the FNC base purchase price at factor 94, i.e. what a grower is paid for standard parchment; premia for quality or certification sit on top, and a cooperative's own margin comes off. Nominal, so no inflation adjustment is needed." % cb["vs_ref_sd"], "observed")
+            add(region, "basis_vs_ico_colombian_milds", cb["vs_milds"], "share below ICO Colombian milds",
+                "same conversion against the ICO Colombian milds indicator (DS-10)", cb["window"], "DS-10; DS-09",
+                "Observation only (sd %.3f): the discount to the group the coffee actually belongs to. The model prices off the Pink Sheet Arabica series, which follows other milds, hence the applied basis above." % cb["vs_milds_sd"])
+        if region in KIVA_COUNTRY:
+            ks = kiva_stats(KIVA_COUNTRY[region])
+            applied = region == "colombia"
+            why = ("Kiva borrowers of microfinance partners, not cooperative members; %d coffee-purpose loans among the %d newest agriculture loans."
+                   % (ks["n_coffee"], ks["n_loans"]))
+            if not applied:
+                why += " NOT applied: every Vietnamese coffee loan sits with one partner that Kiva lists as paused with 68 percent of its book in arrears, and 91 percent are group loans, so neither size nor repayment is a fair proxy for a Dak Lak collective."
+            add(region, "avg_opex_size", ks["amt_mean"], "USD",
+                "mean amount of Kiva loans whose use text mentions coffee (median %.0f, log sd %.2f)" % (ks["amt_median"], ks["amt_logsd"]),
+                ks["window"], "DS-11", why, "proxy" if applied else None)
+            add(region, "opex_term_months", ks["term_median"], "months",
+                "median lender repayment term of the coffee-purpose loans", ks["window"], "DS-11",
+                "Observation only. The model treats the OpEx loan as a one-season bullet; these loans amortise monthly over about a year and a half, which lowers exposure at any one point and spreads the repayment test across more than one harvest. Group loans: %.0f percent." % (100 * ks["group_share"]))
+            add(region, "base_pd_opex", ks["w_arrears"], "probability per year",
+                "arrears rate of the %d Kiva partners in the country, weighted by loans posted" % ks["n_partners"], "snapshot at retrieval", "DS-11",
+                ("Portfolio-at-risk stands in for a normal-year PD: some arrears cure, so this overstates loss events, while the partners' default rate (%.1f percent of ended amounts, same weighting) understates them because write-offs lag. Kiva-funded books only. "
+                 % (100 * ks["w_default"])) + ("" if applied else why), "proxy" if applied else None)
+            add(region, "kiva_default_rate", ks["w_default"], "share of ended loan amount",
+                "default rate of the same partners, weighted by loans posted", "partner history to retrieval", "DS-11",
+                "Observation only; the lower bound to base_pd_opex above.")
+        if region == "vietnam":
+            p4 = {r["Month"]: r for r in C.read_processed("ds-04-coffee-prices-monthly")}
+            li = [r for r in literature_inputs() if r["ID"] == "LI-18"]
+            if li and p4.get("2024-11", {}).get("Robusta_USD_per_t"):
+                fg = float(li[0]["Value"]); ref = float(p4["2024-11"]["Robusta_USD_per_t"])
+                add(region, "basis_check_nov_2024", 1 - fg / ref, "share below reference price",
+                    "1 - LI-18 farm-gate (%.0f USD/t) / Pink Sheet Robusta 2024-11 (%.0f USD/t)" % (fg, ref), "2024-11", "LIT-054; DS-09; DS-04",
+                    "Observation only: a single month in a spike, when the Dak Lak farm-gate reportedly exceeded the monthly reference average. Says the assumed basis of 0.06 is not large, not what it is. A monthly farm-gate series is needed.")
+        for li in literature_inputs():
+            if li["Region"] != region:
+                continue
+            add(region, li["Parameter"], float(li["Value"]), li["Unit"],
+                "%s (data/rt7-literature-inputs.csv): %s" % (li["ID"], li["Arithmetic"]), li["Reference_Year"], li["Source_Refs"],
+                li["Note"], li["Basis"] if li["Apply"] == "yes" else None)
 
     with open(OUT, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(out[0].keys()), quoting=csv.QUOTE_ALL, lineterminator="\n")

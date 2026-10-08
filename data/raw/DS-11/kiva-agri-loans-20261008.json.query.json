@@ -1,0 +1,16 @@
+{
+ "dataset_id": "DS-11",
+ "raw_file": "data/raw/DS-11/kiva-agri-loans-20261008.json",
+ "retrieved_at_utc": "2026-10-08T08:51:46Z",
+ "request": {
+  "api": "https://api.kivaws.org/graphql",
+  "method": "POST GraphQL, paged",
+  "filters": "country in ['CO', 'VN']; sector 1 Agriculture; status all; sortBy newest; 3000 newest per country",
+  "fields": "id loanAmount use status delinquent raisedDate disbursalDate defaultedDate endedDate borrowerCount repaymentInterval lenderRepaymentTerm sector { id name } activity { id name } geocode { city state country { isoCode name } } terms { currency disbursalAmount lenderRepaymentTerm repaymentCount graceMonths } ... on LoanPartner { partnerId partnerName partner { id name defaultRate arrearsRate loansAtRiskRate averageLoanSize averageLoanTermMonths loansPosted startDate riskRating status countries { isoCode } } }"
+ },
+ "bytes": 6600531,
+ "sha256": "2fb6a77aded0d97116bfaa69c09c9f3e44d603d06e872fae022bc0d9969c7bbc",
+ "code_version": "1905e3f",
+ "vault_copy": "",
+ "notes": "Verbatim loan objects as returned, including borrower first names and towns: raw only, never processed into the repo."
+}

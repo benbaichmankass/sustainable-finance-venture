@@ -1,6 +1,6 @@
 # MEMO-9 — Sector and infrastructure notes
 
-**Status:** Drafted (LC-24 section only) · **Covers:** LC-24 coffee-sector economics and cooperative finance · **Last updated:** 2026-08-22
+**Status:** Drafted (LC-24 section only) · **Covers:** LC-24 coffee-sector economics and cooperative finance · **Last updated:** 2026-10-08
 
 This memo is the practical-rails memo: digital capture, PAYGO receivables, value-chain and warehouse finance, cost-to-serve, remittances, the coffee sector, and data governance. Only the **coffee section is written**. The rest is still outline.
 
@@ -123,6 +123,20 @@ There is also a live comparator: **Colombia launched a Coffee Price Stabilizatio
 
 ---
 
+## 7\. Cost and income anchors for the coffee model (added 2026-10-08)
+
+RT-7 needed farm sizes, production costs, a household floor and loan terms for its three coffee regions, and the prototype had assumed all of them. The sources below were read for those numbers; the derivations are in `data/rt7-literature-inputs.csv` and the resulting parameter changes in `data/rt7-parameters.csv`. Three things are worth recording here rather than only there.
+
+**Normative and observed costs differ by an order of magnitude, and the difference is family labour.** Fairtrade's living income reference price models (LIT-045 Colombia, LIT-046 Ethiopia) cost all labour at a living wage: 108,030 Birr per hectare of garden coffee in Ethiopia. The Sidama household survey (LIT-033) reports what households actually paid: 7,655 Birr per household, about 12,350 per hectare, of which hired labour is under half. A credit model that deducts a household floor before debt service should use the cash figure and let the floor carry family labour; using the normative figure would double-count. The same split exists in Colombia, where LIT-045's 2022 per-farm costs (7.77 million pesos of inputs on 2.8 ha after a 122 percent fertiliser-price rise) are those of an intensive farm and the harvest labour scales with yield.
+
+**A subsistence floor and a living income are different questions, and the model asks the first.** DANE's 2024 rural poverty line (LIT-052; 291,998 pesos per person per month) and Vietnam's Decree 07/2021 income criterion (LIT-053; 1.5 million dong per person per month) give subsistence floors of about 3,400 and 3,000 dollars a year for a household of four; the living-income benchmarks for the same households (LIT-045, LIT-049, LIT-048 for Sidama) are roughly double. Even at the subsistence floor, a quarter of the Colombian members in the model cannot cover debt from coffee alone, because the farm-size mean is 1.28 ha (LIT-050, LIT-051) with a long small tail. What makes those households creditworthy in practice is off-farm income, which no open source quantifies for Colombian or Vietnamese coffee households and which LIT-033 puts at about 550 dollars cash for Sidama.
+
+**Open proxies for repayment exist for Colombia and not for the other two.** Kiva's Colombian agriculture partners (DS-11) show a loans-posted-weighted arrears rate of 7.7 percent and a default rate of 3 percent on Kiva-funded books, with coffee-purpose loans of about 760 dollars over 18 months. That is a microfinance book, not a cooperative's, and it is the closest open number to the normal-year PD the model needs. Ethiopia has no Kiva presence; Vietnam's coffee loans all sit with one paused partner in arrears on two thirds of its book and were not applied. LIT-031's point stands: cooperative on-lending repayment data is not published anywhere, and a pilot has to collect it.
+
+Vietnam remains the thinnest case: its cost figure is a 2021 press report of farmer statements (LIT-055), its only yield and farm-gate numbers are from a 2024 newspaper article (LIT-054), and the provincial economic-technical norms that would give a proper cost basis (Decision 25/2021, replacing LIT-056) were not retrieved. That is consistent with Vietnam's role as a modelling comparator rather than a market candidate.
+
+---
+
 ## Sources
 
 - **LIT-031** — Root Capital 2016, *Financing Farm Renovation: How to Build Resilience Using a Blend of Capital* (Coffee Farmer Resilience Initiative learning report)  
@@ -130,4 +144,15 @@ There is also a live comparator: **Colombia launched a Coffee Price Stabilizatio
 - **LIT-033** — Berihun 2024, *The Economic Impact of Sustainability Standards on Smallholder Coffee Producers: Evidence from Sidama Region, Ethiopia* (IGC Working Paper ETH-22247)  
 - **LIT-034** — Jena & Grote 2022, *Do Certification Schemes Enhance Coffee Yields and Household Income? Lessons Learned Across Continents* (Frontiers in Sustainable Food Systems)  
 - **LIT-035** — International Coffee Organization 2020, *Coffee Development Report 2020: The Value of Coffee*
-
+- **LIT-045** — Fairtrade International 2022, *Living Income Reference Price for Coffee from Colombia: Update December 2022*
+- **LIT-046** — Fairtrade International 2023, *Living Income Reference Price for Coffee from Ethiopia: Explanatory Note*
+- **LIT-047** — Fairtrade International 2025, *Living Income Reference Price update, forest coffee, Ethiopia*
+- **LIT-048** — Global Living Wage Coalition 2025, *Living Income Report for Rural Sidama, Ethiopia* (landing page figures)
+- **LIT-049** — Global Living Wage Coalition 2025, *Living Wage Report for Minimum Wage Region 4, Vietnam* (landing page figures)
+- **LIT-050** — Federacion Nacional de Cafeteros (Uribe) 2025, *Extension y asistencia tecnica para la productividad sostenible* (presentation)
+- **LIT-051** — StoneX 2023, *Coffee study maps structural shifts in Colombia's coffee sector*
+- **LIT-052** — DANE 2025, *Pobreza monetaria y pobreza monetaria extrema 2024*
+- **LIT-053** — Government of Viet Nam 2021, *Decree 07/2021/ND-CP on the multidimensional poverty standard for 2021-2025*
+- **LIT-054** — Nhan Dan 2024, *Dak Lak thuc day cac giai phap phat trien ben vung nganh hang ca phe*
+- **LIT-055** — VietnamNet 2021, *Coffee farmers suffer poor crop, low price*
+- **LIT-056** — Dak Lak Provincial People's Committee 2013, *Decision 38/2013/QD-UBND on economic-technical norms for main crops and livestock*
