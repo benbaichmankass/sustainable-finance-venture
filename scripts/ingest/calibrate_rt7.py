@@ -38,6 +38,17 @@ Phase 3b added two more sources of values:
                           rows with Apply = yes are applied with their Basis, the rest are
                           carried as observations
 
+Phase 4 (model v0.3) added the climate and persistence parameters:
+
+  climate_rain_beta       DS-01 x DS-02  correlation of national yield trend residuals with the
+                          region's district rainfall anomaly (data/rt7-climate-history.csv),
+                          signed; applied as observed with its standard error in the note
+  portfolio_climate_cross_corr  DS-02  mean pairwise correlation of the three regions' rainfall
+                          anomalies (floored at 0), for the portfolio layer's shared climate factor
+  collective_climate_idio_share  DS-02  1 - correlation of the two districts' anomalies within
+                          a region: the share of a district's climate year not shared with its region
+  price_persistence       DS-04  lag-1 autocorrelation of detrended annual log price, 20-year window
+
 Arabica is the reference for Colombia and Ethiopia, Robusta for Viet Nam
 (data/rt7-regions.csv). Python 3 stdlib.
 """
@@ -178,6 +189,42 @@ def kiva_stats(country):
             "partners": partners}
 
 
+def climate_history():
+    path = os.path.join(C.ROOT, "data", "rt7-climate-history.csv")
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    with open(path, newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            out.setdefault(r["Region"], {})[int(r["Year"])] = float(r["Rain_Anomaly_Z"])
+    return out
+
+
+def district_annual():
+    try:
+        rows = C.read_processed("ds-02-district-rainfall-annual")
+    except FileNotFoundError:
+        return {}
+    out = {}
+    for r in rows:
+        out.setdefault((r["Region"], r["District"]), {})[int(r["Year"])] = float(r["Anomaly_Z"])
+    return out
+
+
+def price_persistence(series_key):
+    """Lag-1 autocorrelation of annual mean log price around a linear trend."""
+    rows = [r for r in C.read_processed("ds-04-coffee-prices-monthly") if r[series_key]]
+    annual = {}
+    for r in rows:
+        annual.setdefault(int(r["Month"][:4]), []).append(float(r[series_key]))
+    last = max(y for y, v in annual.items() if len(v) == 12)
+    ys = [y for y in sorted(annual) if len(annual[y]) == 12 and y > last - PRICE_WINDOW_YEARS]
+    lp = [math.log(mean(annual[y])) for y in ys]
+    a, b = linfit(ys, lp)
+    res = [v - (a + b * y) for y, v in zip(ys, lp)]
+    return corr(res[:-1], res[1:]), "%d to %d" % (ys[0], ys[-1]), len(ys)
+
+
 def literature_inputs():
     with open(LIT_INPUTS, newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
@@ -284,6 +331,36 @@ def main():
                 add(region, "basis_check_nov_2024", 1 - fg / ref, "share below reference price",
                     "1 - LI-18 farm-gate (%.0f USD/t) / Pink Sheet Robusta 2024-11 (%.0f USD/t)" % (fg, ref), "2024-11", "LIT-054; DS-09; DS-04",
                     "Observation only: a single month in a spike, when the Dak Lak farm-gate reportedly exceeded the monthly reference average. Says the assumed basis of 0.06 is not large, not what it is. A monthly farm-gate series is needed.")
+        # --- Phase 4: district climate factor and persistence ---
+        ch = climate_history().get(region)
+        if ch:
+            yrs = sorted(y for y in ys["resid"] if y in ch)
+            if len(yrs) >= 15:
+                b = corr([ys["resid"][y] for y in yrs], [ch[y] for y in yrs])
+                se = 1.0 / math.sqrt(len(yrs) - 3)
+                add(region, "climate_rain_beta", b, "correlation",
+                    "corr(national yield trend residual, district rainfall anomaly averaged over the region's two districts), same calendar year, %d years" % len(yrs),
+                    "%d to %d" % (yrs[0], yrs[-1]), "DS-01; DS-02",
+                    "Signed. Standard error about %.2f, so a value inside that band is not distinguishable from zero and the empirical factor then barely differs from the normal one; the sign says whether wet or dry years are the bad years for this origin. National yield against district rain: a district yield series would sharpen it." % se, "observed")
+                zs = [ch[y] for y in sorted(ch)]
+                add(region, "district_rain_anomaly_p10", pct(zs, 0.10), "standard deviations",
+                    "10th percentile of the region's standardised annual rainfall anomaly (%d years)" % len(zs), "%d to %d" % (min(ch), max(ch)), "DS-02",
+                    "Observation: how deep a one-in-ten dry year is at the district (a normal factor puts it at -1.28); the gap is what the empirical factor carries.")
+                add(region, "district_rain_anomaly_skew", mean([z ** 3 for z in zs]) / (sd(zs) ** 3), "skewness",
+                    "skewness of the region's standardised annual rainfall anomaly", "%d to %d" % (min(ch), max(ch)), "DS-02",
+                    "Observation only; negative means the dry tail is the long one.")
+            da = district_annual()
+            pair = [k for k in da if k[0] == region]
+            if len(pair) == 2:
+                yy = sorted(set(da[pair[0]]) & set(da[pair[1]]))
+                r_dd = corr([da[pair[0]][y] for y in yy], [da[pair[1]][y] for y in yy])
+                add(region, "collective_climate_idio_share", max(0.0, min(1.0, 1 - r_dd)), "share of climate-factor variance",
+                    "1 - corr(%s anomaly, %s anomaly), %d years" % (pair[0][1], pair[1][1], len(yy)), "%d to %d" % (yy[0], yy[-1]), "DS-02",
+                    "Share of one district's rainfall year not shared with the other district of the region: the stand-in for how much two collectives in a region differ. The parameter is a shared default; the regional values are averaged into it.", None)
+        pp, pw, pn = price_persistence("Arabica_USD_per_t" if sk == "arabica" else "Robusta_USD_per_t")
+        add(region, "price_persistence", pp, "AR(1) coefficient",
+            "lag-1 autocorrelation of annual mean log %s price around a linear trend, %d years" % (label, pn), pw, "DS-04",
+            "Season-to-season persistence of the price factor for the multi-season horizon. Shared parameter: the applied value is the Arabica estimate (two of three regions); the Robusta figure sits beside it.", "observed" if sk == "arabica" else None)
         for li in literature_inputs():
             if li["Region"] != region:
                 continue
@@ -291,6 +368,23 @@ def main():
                 "%s (data/rt7-literature-inputs.csv): %s" % (li["ID"], li["Arithmetic"]), li["Reference_Year"], li["Source_Refs"],
                 li["Note"], li["Basis"] if li["Apply"] == "yes" else None)
 
+    # Shared (Region "all") climate parameters for the portfolio layer
+    chh = climate_history()
+    if len(chh) >= 2:
+        regs = sorted(chh); pairs = []
+        for i in range(len(regs)):
+            for j in range(i + 1, len(regs)):
+                yy = sorted(set(chh[regs[i]]) & set(chh[regs[j]]))
+                pairs.append((regs[i], regs[j], corr([chh[regs[i]][y] for y in yy], [chh[regs[j]][y] for y in yy]), len(yy)))
+        add("all", "portfolio_climate_cross_corr", max(0.0, mean([c for _, _, c, _ in pairs])), "correlation",
+            "mean pairwise correlation of the regions' annual rainfall anomalies, floored at 0 (%s)" % "; ".join("%s-%s %.2f" % (a, b, c) for a, b, c, _ in pairs),
+            "%d years" % min(n for _, _, _, n in pairs), "DS-02",
+            "Rainfall anomalies, not yield anomalies: the climate factors' shared component in the portfolio layer. Pairwise values are in the method; a negative mean is floored because the model's construction needs a non-negative shared share.", "observed")
+        idio = [r for r in out if r["Parameter"] == "collective_climate_idio_share"]
+        if idio:
+            add("all", "collective_climate_idio_share", mean([float(r["Observed_Value"]) for r in idio]), "share of climate-factor variance",
+                "mean over regions of 1 - corr(district A, district B) annual rainfall anomalies", "see region rows", "DS-02",
+                "Shared parameter applied as the regional mean; the region rows above are the observations it rests on.", "observed")
     with open(OUT, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(out[0].keys()), quoting=csv.QUOTE_ALL, lineterminator="\n")
         w.writeheader(); w.writerows(out)

@@ -16,7 +16,9 @@ Writes (gitignored, regenerable):
         git commit - "a result without its assumptions is not a result"
     risk-tools/collective/output/<region>/summary.md          a short readable summary
 
-Every output row carries Basis: SYNTHETIC. Nothing here is calibrated.
+Every output row carries Basis: SYNTHETIC. The parameters are partially
+calibrated; the collective is synthetic. The empirical climate factor reads
+data/rt7-climate-history.csv when it exists (DS-02).
 """
 
 from __future__ import annotations
@@ -87,6 +89,10 @@ def result_row(region, scen, r, seed):
         "Senior_EL_Pct": pct(t["senior"]["el_pct"], 3),
         "Senior_UL99_Pct": pct(t["senior"]["ul99_pct"], 2),
         "Attachment_For_Senior_Target_Pct": "" if att >= 1.0 else pct(att, 1),
+        "Horizon_Seasons": str(r.get("horizon_seasons", 1)),
+        "EL_Annualised_Pct": pct(r.get("el_annualised_pct", r["el_pct"])),
+        "EL_Per_Season_Pct": "; ".join(pct(x, 3) for x in r.get("el_per_season_pct", [r["el_pct"]])),
+        "Shortfall_Outside_Facility_USD": "%.0f" % r.get("mean_shortfall_outside_facility_usd", 0.0),
         "N_Paths": str(r["n_paths"]),
         "Seed": str(seed),
         "Model_Version": r["model_version"],
@@ -171,14 +177,16 @@ def main():
 
     commit = git_commit()
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    histories = P.load_climate_history()
 
     for reg in wanted:
         region = reg["Region"]
         p = P.region_params(region)
         print("== %s" % reg["Label"])
         scen_rows = []
+        hist = histories.get(region)
         for s in scenarios:
-            r = M.simulate(p, args.paths, args.seed, s)
+            r = M.simulate(p, args.paths, args.seed, s, climate_history=hist)
             scen_rows.append((s, r))
             print("   %-6s %-28s EL %6s%%  UL99 %6s%%  shortfall %4s%%" % (
                 s["id"], s["name"], pct(r["el_pct"], 2), pct(r["ul99_pct"], 1), pct(r["p_shortfall"], 0)))
@@ -187,7 +195,7 @@ def main():
 
         trows = []
         if not args.no_tornado:
-            _, trows = M.tornado(p, args.tornado_paths, args.seed, scenarios[0])
+            _, trows = M.tornado(p, args.tornado_paths, args.seed, scenarios[0], climate_history=hist)
             existing_s[region] = [{
                 "Region": region, "Parameter": t["parameter"], "How": t["how"],
                 "Value_Low": "%g" % t["value_low"], "Value_High": "%g" % t["value_high"],
@@ -204,6 +212,7 @@ def main():
             "region": reg, "model_version": M.MODEL_VERSION, "git_commit": commit, "run_at_utc": stamp,
             "n_paths": args.paths, "tornado_paths": args.tornado_paths, "seed": args.seed, "basis": BASIS,
             "parameters": P.provenance(region),
+            "climate_history_years": len(hist) if hist else 0,
             "scenarios": [{"scenario": s, "result": {k: v for k, v in r.items() if k != "loss_histogram"}}
                           for s, r in scen_rows],
             "sensitivity": trows,

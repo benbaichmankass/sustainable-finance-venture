@@ -1,0 +1,15 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/geoBoundaries-VNM-ADM1_simplified-20261008.geojson",
+ "retrieved_at_utc": "2026-10-08T09:28:51Z",
+ "request": {
+  "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1_simplified.geojson",
+  "method": "GET",
+  "commit": "9469f09"
+ },
+ "bytes": 536751,
+ "sha256": "010bff8d3244064bc8001033ba79acc1215a1fb6e568f6f8a90da7ecec2c2fc5",
+ "code_version": "dedc215",
+ "vault_copy": "",
+ "notes": "Whole-country simplified boundary file as published."
+}

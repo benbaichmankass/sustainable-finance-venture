@@ -2749,7 +2749,7 @@ function renderBizResearch() {
    Every figure is synthetic and the page says so above the first number. */
 var RT7_UI = { region: null, scenario: "RS-0", nPaths: 3000, seed: 42, params: null, result: null,
                scen: null, torn: null, timer: null };
-var RT7_GROUPS = ["Collective", "Loans", "Marketing", "Yield and price", "Credit", "Buffer", "Structure"];
+var RT7_GROUPS = ["Collective", "Loans", "Marketing", "Yield and price", "Credit", "Buffer", "Structure", "Portfolio"];
 var RT7_GROUP_BLURB = {
   "Collective": "Who the members are: how many, how much land, how productive, what it costs them to farm and to live.",
   "Loans": "The two products the collective on-lends: a seasonal OpEx bullet and an amortising CapEx asset loan. Sizes scale with farm area.",
@@ -2757,8 +2757,13 @@ var RT7_GROUP_BLURB = {
   "Yield and price": "The two systematic factors - a regional climate year and a global reference price - and the member-level noise around them.",
   "Credit": "How cover turns into default: the normal-year PD priors, the anchor DSCR, how steeply PD climbs as cover collapses, loss severities, and the correlation the factors do not explain.",
   "Buffer": "How much of the collective's own cash flow stands in front of the lender.",
-  "Structure": "Illustrative only: where a first-loss and a mezzanine layer would detach, and the senior expected-loss target used to solve for first-loss thickness."
+  "Structure": "Illustrative only: where a first-loss and a mezzanine layer would detach, and the senior expected-loss target used to solve for first-loss thickness.",
+  "Portfolio": "Used only by the Python portfolio layer (rt7_portfolio.py): how much climate the three regions share, and how much of a collective's climate year is its own rather than its region's."
 };
+function rt7ClimateHist(region) {
+  return (D.rt7ClimateHistory || []).filter(function (r) { return r.Region === region && r.Rain_Anomaly_Z !== ""; })
+    .map(function (r) { return parseFloat(r.Rain_Anomaly_Z); });
+}
 function pctf(x, nd) { if (x == null || isNaN(x)) return "—"; return (100 * x).toFixed(nd == null ? 1 : nd) + "%"; }
 function usdf(x) { if (x == null || isNaN(x)) return "—"; return "$" + Math.round(x).toLocaleString(); }
 function basisPill(b) {
@@ -2773,7 +2778,7 @@ function rt7Scenario(id) {
 function rt7Defaults(region) { return RT7.mergeParams(D.rt7Parameters || [], region); }
 function rt7Run() {
   var U = RT7_UI;
-  U.result = RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(U.scenario) });
+  U.result = RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(U.scenario), climateHistory: rt7ClimateHist(U.region) });
   U.scen = null; U.torn = null;
 }
 
@@ -2841,19 +2846,25 @@ function rt7ResultsHtml() {
   var t = r.tranches, att = r.attachment_for_senior_target;
   var deficitNote = r.p_loss_capped_at_pool > 0
     ? '<p class="hint" style="margin-top:8px">In ' + pctf(r.p_loss_capped_at_pool, 1) + ' of paths the uncovered forward book exceeded the whole pool; the facility loss is capped at what it lent and the excess (mean ' + usdf(r.mean_collective_deficit_usd) + ' per path, all paths) falls on the collective and its buyer.</p>' : "";
+  var T = r.horizon_seasons || 1;
   var decomp = [
     ["Member loan losses (EL)", r.mean_member_loss_usd],
     ["Absorbed by the collective's cash flow", -r.mean_buffer_absorbed_usd],
     ["Added by the collective's own deficit", r.mean_collective_deficit_usd],
     ["Facility expected loss", r.el_usd]
   ];
+  if (r.mean_shortfall_outside_facility_usd > 0) decomp.splice(3, 0, ["Forward shortfall carried by buyer or collective equity (outside the facility)", -r.mean_shortfall_outside_facility_usd]);
+  var horizonNote = T > 1
+    ? '<p class="hint" style="margin-top:8px">Cumulative over ' + T + ' seasons as a share of the initial pool: per season ' +
+      r.el_per_season_pct.map(function (x, i) { return "S" + (i + 1) + " " + pctf(x, 2); }).join(" · ") + "; annualised " + pctf(r.el_annualised_pct, 2) +
+      ". Defaulted members leave, CapEx balances amortise, OpEx renews, and the collective's reserve carries forward (mean " + usdf(r.mean_reserve_end_usd) + " at the end).</p>" : "";
   var maxAbs = Math.max.apply(null, decomp.map(function (d) { return Math.abs(d[1]); })) || 1;
   var decompHtml = decomp.map(function (d, i) {
     var w = Math.max(1, Math.round(100 * Math.abs(d[1]) / maxAbs));
     return '<div class="dec-row"><span class="dec-k">' + esc(d[0]) + '</span><span class="dec-bar"><span style="width:' + w + '%;opacity:' + (i === 3 ? 1 : 0.55) + '"></span></span><span class="dec-v">' + (d[1] < 0 ? "−" : "") + usdf(Math.abs(d[1])) + "</span></div>";
   }).join("");
   return '<div class="grid g4" style="margin-bottom:12px">' +
-    tile("Expected loss", pctf(r.el_pct, 2), usdf(r.el_usd) + " on a " + usdf(r.pool_notional_usd) + " pool") +
+    tile(T > 1 ? "Expected loss, " + T + " seasons" : "Expected loss", pctf(r.el_pct, 2), usdf(r.el_usd) + " on a " + usdf(r.pool_notional_usd) + " pool" + (T > 1 ? " · " + pctf(r.el_annualised_pct, 2) + " a season" : "")) +
     tile("UL95 / UL99", pctf(r.ul95_pct, 1) + " / " + pctf(r.ul99_pct, 1), "loss not exceeded in 95% / 99% of paths") +
     tile("Normal-year PD", pctf(r.normal_year_pd, 1), "implied by leverage; priors " + pctf(p.base_pd_capex, 0) + " CapEx · " + pctf(p.base_pd_opex, 0) + " OpEx") +
     tile("Cover below 1×", pctf(r.share_dscr_below_1, 1), "borrower-paths with DSCR under 1; median normal-year DSCR " + (isFinite(r.normal_year_median_dscr) ? r.normal_year_median_dscr.toFixed(2) : "—")) +
@@ -2867,7 +2878,7 @@ function rt7ResultsHtml() {
     '<div class="chart-grid" style="margin-bottom:14px">' +
       '<div class="chart-card"><div class="ct"><strong>Distribution of facility loss</strong><span class="hint">' + U.nPaths.toLocaleString() + " paths · seed " + U.seed + "</span></div>" + rt7Histogram(r) + "</div>" +
       '<div class="chart-card"><div class="ct"><strong>Where the expected loss comes from</strong><span class="hint">mean per path, USD</span></div><div class="dec">' + decompHtml + "</div>" +
-        '<p class="hint" style="margin:10px 0 0">Member defaults are the source; the collective\'s positive cash flow absorbs them first (OQ-13\'s mechanism), its deficit in a short year adds to them, and the lender takes the remainder.</p>' + deficitNote + "</div>" +
+        '<p class="hint" style="margin:10px 0 0">Member defaults are the source; the collective\'s positive cash flow absorbs them first (OQ-13\'s mechanism), its deficit in a short year adds to them, and the lender takes the remainder.</p>' + deficitNote + horizonNote + "</div>" +
     "</div>" +
     '<h4 class="sub4">Illustrative tranche cut</h4>' +
     '<div class="tbl-wrap"><table><thead><tr><th>Layer</th><th>Attach</th><th>Detach</th><th>EL (% of layer)</th><th>UL99 (% of layer)</th><th>P(any loss)</th><th>P(wiped out)</th></tr></thead><tbody>' +
@@ -2988,6 +2999,57 @@ function rt7Sources() {
     });
 }
 
+function rt7Portfolio() {
+  var U = RT7_UI, all = D.rt7PortfolioResults || [];
+  if (!all.length) return '<p class="empty">No portfolio results in the build. Run <code>python3 risk-tools/collective/rt7_portfolio.py</code>.</p>';
+  var sid = U.scenario, rows = all.filter(function (r) { return r.Scenario_ID === sid; });
+  if (!rows.length) { sid = "RS-0"; rows = all.filter(function (r) { return r.Scenario_ID === sid; }); }
+  var port = rows.filter(function (r) { return r.Level === "portfolio"; })[0];
+  var regs = rows.filter(function (r) { return r.Level === "region"; });
+  var cols_ = rows.filter(function (r) { return r.Level === "collective"; });
+  var hist = (D.rt7PortfolioHistogram || []).filter(function (r) { return r.Scenario_ID === sid; });
+  var n = parseInt(port.N_Paths, 10) || 5000;
+  var fake = { loss_histogram: { edges: hist.map(function (r) { return parseFloat(r.Bin_Low_Pct) / 100; }).concat([parseFloat(hist[hist.length - 1].Bin_High_Pct) / 100]),
+                                 counts: hist.map(function (r) { return Math.round(parseFloat(r.Share_Of_Paths_Pct) / 100 * n); }), n: n },
+               el_pct: parseFloat(port.EL_Pct) / 100, ul95_pct: parseFloat(port.UL95_Pct) / 100, ul99_pct: parseFloat(port.UL99_Pct) / 100 };
+  var spec = D.rt7Portfolio || [];
+  var rcols = [
+    { key: "Name", label: "Level" },
+    { label: "Pool", render: function (r) { return usdf(parseFloat(r.Pool_USD)); } },
+    { label: "EL", render: function (r) { return "<strong>" + r.EL_Pct + "%</strong>"; }, sortVal: function (r) { return parseFloat(r.EL_Pct); } },
+    { label: "UL99", render: function (r) { return r.UL99_Pct + "%"; } },
+    { label: "Sum of standalone UL99", render: function (r) { return r.Sum_Standalone_UL99_Pct ? r.Sum_Standalone_UL99_Pct + "%" : "—"; } },
+    { label: "Share of portfolio EL", render: function (r) { return r.Share_Of_Portfolio_EL_Pct ? r.Share_Of_Portfolio_EL_Pct + "%" : "—"; } },
+    { label: "Senior EL", render: function (r) { return r.Senior_EL_Pct ? r.Senior_EL_Pct + "%" : "—"; } },
+    { label: "First-loss for target", render: function (r) { return r.Attachment_For_Senior_Target_Pct ? r.Attachment_For_Senior_Target_Pct + "%" : (r.Level === "collective" ? "—" : '<span class="hint">not attainable</span>'); } }
+  ];
+  var ccols = [
+    { key: "Name", label: "Collective", cls: "id" }, { key: "Region", label: "Region" },
+    { label: "Pool", render: function (r) { return usdf(parseFloat(r.Pool_USD)); } },
+    { label: "EL", render: function (r) { return r.EL_Pct + "%"; }, sortVal: function (r) { return parseFloat(r.EL_Pct); } },
+    { label: "UL99", render: function (r) { return r.UL99_Pct + "%"; } },
+    { label: "Share of portfolio EL", render: function (r) { return r.Share_Of_Portfolio_EL_Pct + "%"; } }
+  ];
+  var sname = (D.rt7Scenarios || []).filter(function (x) { return x.ID === sid; })[0] || {};
+  return '<p class="lede">' + spec.length + " synthetic collectives across the three regions pooled into one loss distribution (<code>risk-tools/collective/rt7_portfolio.py</code>, " + esc(port.N_Paths) + " paths, " +
+      esc(port.Horizon_Seasons) + " season" + (port.Horizon_Seasons === "1" ? "" : "s") + ", scenario <strong>" + esc(sname.Scenario || sid) + "</strong>). " +
+      "Every collective shares the global price factor and its region's climate factor (<code>portfolio_climate_cross_corr</code> ties the regions, <code>collective_climate_idio_share</code> keeps part of each collective's year its own). " +
+      "This is EXP-27's simulation and the distribution RT-5's waterfall consumes; OQ-18 asks whether the pool diversifies on the right axis.</p>" +
+    '<div class="grid g4" style="margin-bottom:12px">' +
+      tile("Portfolio EL", port.EL_Pct + "%", usdf(parseFloat(port.Pool_USD)) + " pool, " + port.N_Collectives + " collectives") +
+      tile("Portfolio UL99", port.UL99_Pct + "%", "loss not exceeded in 99% of paths") +
+      tile("Sum of standalone UL99", port.Sum_Standalone_UL99_Pct + "%", "no diversification credit at all") +
+      tile("UL99 if independent", port.Independent_UL99_Pct + "%", "the pool with the shared factors switched off; the gap to the portfolio figure is what the shared factors cost") +
+    "</div>" +
+    '<div class="chart-grid" style="margin-bottom:14px">' +
+      '<div class="chart-card"><div class="ct"><strong>Distribution of portfolio loss</strong><span class="hint">' + esc(sname.Scenario || sid) + "</span></div>" + rt7Histogram(fake) + "</div>" +
+      '<div class="chart-card"><div class="ct"><strong>By region and collective</strong><span class="hint">share of portfolio EL</span></div>' +
+        buildTable([port].concat(regs), rcols, null) + "</div>" +
+    "</div>" +
+    '<details><summary class="hint">Each collective standalone</summary>' + buildTable(cols_, ccols, null, { sortIdx: 3, sortDir: -1 }) + "</details>" +
+    '<p class="hint" style="margin-top:8px">The collectives are synthetic (<code>data/rt7-portfolio.csv</code>): four per region at 0.6, 1, 1.5 and 2 times the region\'s member count. Pick another scenario above to see the pool under stress; the price spike is the case where pooling buys nothing, because every collective side-sells against the same price.</p>';
+}
+
 function rt7Reference() {
   var U = RT7_UI, rows = (D.rt7Results || []).filter(function (r) { return r.Region === U.region; });
   if (!rows.length) return "";
@@ -3031,29 +3093,29 @@ function renderCollective() {
     '<p class="lede">What loss distribution does a lender take on by financing a producer collective that on-lends to its members and markets their crop, part of it sold forward? ' +
     "This tab runs the model in your browser on the parameter rows committed in the repo. Change an input and it re-runs. Nothing you change here is saved: the CSV is the record, this is a scratchpad.</p>" +
 
-    '<div class="card" style="margin-bottom:16px;border-color:var(--warning)"><strong>Every figure on this page is synthetic and uncalibrated.</strong>' +
+    '<div class="card" style="margin-bottom:16px;border-color:var(--warning)"><strong>Every figure on this page describes a synthetic collective; the inputs are partially calibrated.</strong>' +
     '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">' + (function () {
-      var rows = RT7.provenance(D.rt7Parameters || [], U.region), c = { assumption: 0, literature: 0, observed: 0 };
+      var rows = RT7.provenance(D.rt7Parameters || [], U.region), c = { assumption: 0, literature: 0, proxy: 0, observed: 0 };
       rows.forEach(function (r) { c[r.Basis] = (c[r.Basis] || 0) + 1; });
-      return "Of " + rows.length + " parameters for this region, " + c.observed + " are observed from catalogued open data (world prices and national yields), " +
-        c.literature + " come from the literature, and " + c.assumption + " are assumptions - including every loan, cost, delivery and credit parameter. ";
+      return "Of " + rows.length + " parameters for this region, " + c.observed + " are observed from catalogued open data (prices, yields, rainfall, the Colombian basis), " +
+        c.literature + " are derived from published figures, " + c.proxy + " come from a proxy loan book, and " + c.assumption + " are assumptions - including the loan mix, rates, LGDs and the collective's own costs. ";
     })() +
     "The outputs describe the <em>model</em>, not any collective: useful for which structural choices move the loss distribution and in which direction, not usable as evidence. " +
     "Full specification, decisions and the list of what the prototype got wrong: <code>risk-tools/rt-7-collective-facility-model.md</code>.</p></div>" +
 
     '<h3 class="sub">What it models</h3>' +
-    '<div class="card"><p style="margin:0 0 10px">One coffee collective, one crop season, thousands of Monte Carlo paths. The collective is the borrower of record (OQ-13: attach one level up, so the community\'s own screening and enforcement stay in the structure). Each path runs the chain below.</p>' +
+    '<div class="card"><p style="margin:0 0 10px">One coffee collective, one crop season or several in a row (<code>horizon_seasons</code>), thousands of Monte Carlo paths. The collective is the borrower of record (OQ-13: attach one level up, so the community\'s own screening and enforcement stay in the structure). Each path runs the chain below, once per season.</p>' +
     '<ol class="chain">' +
-      '<li><strong>Two factors</strong><span>a regional climate year and a global reference price, drawn once per path</span></li>' +
+      '<li><strong>Two factors</strong><span>a regional climate year and a global reference price, drawn once per path and season; the climate year can bootstrap the district\'s own rainfall history (DS-02, <code>climate_rain_beta</code>), the price factor persists across seasons</span></li>' +
       '<li><strong>Yield and price</strong><span>regional yield and spot price, lognormal around their bases; price can jump; local spot sits a basis below the reference</span></li>' +
       '<li><strong>Production</strong><span>each member: area × persistent productivity × the regional year × own noise</span></li>' +
       '<li><strong>Forward book</strong><span>contracted before the season on <em>expected</em> deliveries, at a fixed price</span></li>' +
       '<li><strong>Side-selling</strong><span>when spot runs above forward past a threshold, members divert committed crop to the spot market</span></li>' +
-      '<li><strong>Collective sales</strong><span>deliveries fill the forward book first; undelivered volume costs cover plus penalty; the collective keeps a margin and pays fixed costs</span></li>' +
+      '<li><strong>Collective sales</strong><span>deliveries fill the forward book first; undelivered volume costs cover plus penalty, of which <code>fwd_shortfall_facility_share</code> reaches the cash flow in front of the lender (RA-05); the collective keeps a margin and pays fixed costs</span></li>' +
       '<li><strong>Member cash flow</strong><span>revenue less production cost less a household floor, divided by debt service: the DSCR</span></li>' +
       '<li><strong>PD from cover</strong><span>an anchored curve: base PD at DSCR 1.5, lower with stronger cover, up to a ceiling as cover collapses</span></li>' +
       '<li><strong>Correlated defaults</strong><span>a residual correlation on top, for the market-level channel the two factors do not capture (LIT-036, LIT-037)</span></li>' +
-      '<li><strong>Buffer and facility loss</strong><span>member losses (EAD × LGD), absorbed first by the collective\'s net cash flow; the remainder, capped at the pool, is the lender\'s loss</span></li>' +
+      '<li><strong>Buffer and facility loss</strong><span>member losses (EAD × LGD), absorbed first by the collective\'s net cash flow and any reserve carried from earlier seasons; the remainder, capped at the pool, is the lender\'s loss. Defaulted members leave; the next season re-contracts the forward book on the survivors</span></li>' +
     "</ol>" +
     '<p class="hint" style="margin:10px 0 0">Two correlation channels are therefore explicit and separable: an <em>environmental</em> one through yield and price into cover, and an <em>institutional</em> one in the residual. That separation is what EXP-25 says the evidence requires.</p></div>' +
 
@@ -3114,6 +3176,7 @@ function renderCollective() {
 
     '<h3 class="sub">Data sources</h3><div id="rt7-sources">' + rt7Sources() + "</div>" +
     '<h3 class="sub">Reference results from the Python pipeline</h3><div id="rt7-ref">' + rt7Reference() + "</div>" +
+    '<h3 class="sub">Portfolio layer</h3><div id="rt7-port">' + rt7Portfolio() + "</div>" +
 
     '<h3 class="sub">What it is not</h3>' +
     '<div class="card"><div class="md"><ul>' +
@@ -3121,7 +3184,7 @@ function renderCollective() {
       "<li><strong>Not a forecast.</strong> Scenarios are deterministic shifts chosen for coherence, not probability-weighted views.</li>" +
       "<li><strong>Not a rating model and not a product.</strong> The tranche cut is a design yardstick.</li>" +
       "<li><strong>Not evidence.</strong> Nothing here belongs in a document that makes a claim to a partner or an investor.</li>" +
-      "<li><strong>Not multi-season.</strong> CapEx loans amortise over years; the model takes one season. Open question in the spec.</li>" +
+      "<li><strong>Multi-season only in the simplest sense.</strong> With a horizon above one, defaults are absorbing and balances amortise, but there is no prepayment, restructuring or re-borrowing state (the competing-risks point from LIT-043), and the forward price is the same every season.</li>" +
     "</ul></div></div>" +
     (spec ? '<p class="hint" style="margin-top:10px">Full specification: <strong>' + esc(spec.title) + "</strong> in the Library and on the Risk tools tab.</p>" : "") +
     "</section>";
@@ -3132,6 +3195,7 @@ function renderCollective() {
     function redraw() {
       by("rt7-results").innerHTML = rt7ResultsHtml();
       by("rt7-scen-out").innerHTML = rt7ScenarioTable();
+      if (by("rt7-port")) by("rt7-port").innerHTML = rt7Portfolio();
       by("rt7-torn-out").innerHTML = U.torn ? '<h4 class="sub4">Sensitivity on the current inputs</h4><div class="chart-card">' + rt7Tornado(U.torn.rows, U.torn.base.el_pct) +
         '<p class="hint" style="margin:8px 0 0">One parameter moved at a time, the rest at their current values, members regenerated from the same seed. Sorted by swing in expected loss.</p></div>' : "";
       by("rt7-controls").innerHTML = rt7Controls();
@@ -3170,7 +3234,7 @@ function renderCollective() {
       setTimeout(function () {
         var t0 = Date.now();
         U.scen = (D.rt7Scenarios || []).map(function (s) {
-          return { id: s.ID, name: s.Scenario, res: RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(s.ID) }) };
+          return { id: s.ID, name: s.Scenario, res: RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(s.ID), climateHistory: rt7ClimateHist(U.region) }) };
         });
         redraw(); setStatus("ran " + U.scen.length + " scenarios in " + (Date.now() - t0) + " ms");
       }, 10);
@@ -3179,7 +3243,7 @@ function renderCollective() {
       setStatus("running sensitivity (" + (RT7.TORNADO.length * 2 + 1) + " runs)…");
       setTimeout(function () {
         var t0 = Date.now();
-        U.torn = RT7.tornado(U.params, { nPaths: Math.min(U.nPaths, 3000), seed: U.seed, scenario: rt7Scenario(U.scenario) });
+        U.torn = RT7.tornado(U.params, { nPaths: Math.min(U.nPaths, 3000), seed: U.seed, scenario: rt7Scenario(U.scenario), climateHistory: rt7ClimateHist(U.region) });
         redraw(); setStatus("sensitivity done in " + (Date.now() - t0) + " ms");
       }, 10);
     });

@@ -1,0 +1,15 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/geoBoundaries-COL-ADM1_simplified-20261008.geojson",
+ "retrieved_at_utc": "2026-10-08T09:28:50Z",
+ "request": {
+  "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/COL/ADM1/geoBoundaries-COL-ADM1_simplified.geojson",
+  "method": "GET",
+  "commit": "9469f09"
+ },
+ "bytes": 1226180,
+ "sha256": "038b7692a8e3bdc52b072b8de305d0dd8e88fe3e869c8c4889ff18cddd7f5a81",
+ "code_version": "dedc215",
+ "vault_copy": "",
+ "notes": "Whole-country simplified boundary file as published."
+}

@@ -26,3 +26,18 @@ analysis of them.
 Full texts of cited sources are deliberately not distributed with this
 repository. The matrix links to the publisher's copy where a public one
 exists.
+
+--------------------------------------------------------------------------
+
+Third-party data redistributed in processed form
+
+data/processed/ds-02-district-boundaries.geojson contains six administrative
+polygons copied from geoBoundaries (www.geoboundaries.org), gbOpen release,
+commit 9469f09, simplified geometries. Runfola D. et al. (2020) geoBoundaries:
+A global database of political administrative boundaries. PLoS ONE 15(4):
+e0231866. The per-country source licences are recorded in the gbOpen metadata
+(Colombia: OpenStreetMap contributors, ODbL; Ethiopia: Open Africa / Code for
+Ethiopia, CC BY; Viet Nam: geoBoundaries / Wikipedia). The rainfall series
+derived inside those polygons come from CHIRPS v2.0 (Climate Hazards Center,
+UC Santa Barbara; Funk C. et al. 2015, Scientific Data 2:150066), read through
+the IRI Data Library; CHIRPS is in the public domain.
