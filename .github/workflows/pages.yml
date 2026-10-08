@@ -93,6 +93,15 @@ jobs:
       - name: RT toolchain end-to-end check
         run: python3 risk-tools/tools/test_toolchain.py
 
+      # RT-7 is the one tool with a dependency (numpy) and a JavaScript port.
+      # The check validates the parameter tracker, the model's invariants, and
+      # that the browser port agrees with the Python reference (node is on the
+      # runner). A few seconds.
+      - name: RT-7 collective model checks
+        run: |
+          python3 -m pip install --quiet -r risk-tools/collective/requirements.txt
+          python3 risk-tools/collective/test_rt7.py
+
       - name: Build public dashboard data
         run: python3 dashboard/build.py --public
 

@@ -14,6 +14,7 @@ The toolkit that makes community-originated cash flows underwritable. Registry: 
 | RT-4 | Impact evaluation module | RT-1 | OQ-4/5/7 |
 | RT-5 | Securitisation cash-flow model | RT-1 | RT-1 |
 | RT-6 | Unit-economics model | benchmarks; RT-5 loss shape | partner/counsel data for calibration |
+| RT-7 | Collective facility risk model | parameter tracker; later DS-07/DS-08 partner data | calibration data (data catalogue) |
 
 **RT-1 is the critical path.** Everything consumes its output. Get the field list wrong and every downstream tool inherits the error — and unlike code, an origination schema cannot be fixed retroactively, because the data you failed to capture is simply gone.
 
@@ -42,6 +43,8 @@ Every tool document carries a version history table with date, version, change a
 - Backtests against held-out data for anything predictive — and no predictive model ships without one.  
 - Synthetic-data tests so tools are testable before real portfolios exist.
 
+**Dependencies.** RT-1 to RT-6 are Python stdlib only, on purpose - a researcher with bare Python must be able to run them in five years. RT-7 takes numpy (and nothing else) because it is vectorised over members and paths; its JavaScript port, which the dashboard runs, has no dependencies at all. Any further dependency needs the same justification written into the tool's doc.
+
 **No model without a backtest** is the rule that matters most. The temptation with thin data is to ship a plausible-looking scorecard. A model that has never been validated out-of-sample is a guess wearing a number, and it would be used to price other people's risk.
 
 ## Adding a tool
@@ -59,6 +62,7 @@ Every tool document carries a version history table with date, version, change a
 | RT-3 | Portfolio monitor: PAR, arrears concentration, alerts | [`tools/monitor_portfolio.py`](http://tools/monitor_portfolio.py), [`rt-2-rt-3-scaffolds.md`](http://rt-2-rt-3-scaffolds.md) |
 | RT-5 | Synthetic portfolio simulator \+ waterfall \+ 6 stress scenarios | [`tools/simulate_portfolio.py`](http://tools/simulate_portfolio.py), [`rt-5-simulator.md`](http://rt-5-simulator.md) |
 | RT-6 | Three-scenario unit-economics P\&L \+ pilot yardstick \+ sensitivity | [`tools/economics_model.py`](http://tools/economics_model.py), [`rt-6-economics-model.md`](http://rt-6-economics-model.md) |
+| RT-7 | Collective facility model: yield and price factors, DSCR-driven PD, two correlation channels, forward book and side-selling, collective buffer, scenarios, tornado, JS port for the dashboard | [`collective/`](collective/), [`rt-7-collective-facility-model.md`](rt-7-collective-facility-model.md) |
 
 RT-4 remains at specification stage — it is gated on a pre-registered design with an academic partner, not on code.
 
@@ -77,5 +81,9 @@ python3 risk-tools/tools/simulate\_portfolio.py                  \# RT-5
 python3 risk-tools/tools/economics\_model.py                     \# RT-6
 
 python3 risk-tools/tools/test\_toolchain.py                      \# end-to-end checks (CI)
+
+python3 risk-tools/collective/run\_region.py                     \# RT-7 (needs numpy)
+
+python3 risk-tools/collective/test\_rt7.py                       \# RT-7 checks incl. JS parity (CI)
 
 **Nothing here is calibrated and nothing is field-tested.** Every tool says so in its own output and its own doc, rather than relying on the reader to infer it. None of these outputs should be shown to a partner or an investor as a result.  

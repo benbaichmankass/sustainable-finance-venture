@@ -1,0 +1,3 @@
+# RT-7 collective facility model. The one dependency the risk toolchain takes
+# on purpose - see risk-tools/rt-7-collective-facility-model.md, "Stack".
+numpy>=1.24
