@@ -229,7 +229,8 @@ def main():
     committed = {(r["Region"], r["Scenario_ID"]): r for r in _csv.DictReader(
         open(os.path.join(os.path.dirname(os.path.dirname(HERE)), "data", "rt7-region-results.csv"), newline="", encoding="utf-8"))}
     one = dict(p, horizon_seasons=1)
-    r1 = M.simulate(one, 5000, 42, scen["RS-0"])
+    hist_co = P.load_climate_history().get("colombia")      # the committed run uses the DS-02 history when it exists
+    r1 = M.simulate(one, 5000, 42, scen["RS-0"], climate_history=hist_co)
     cm = committed.get(("colombia", "RS-0"))
     if cm and cm["N_Paths"] == "5000" and cm["Seed"] == "42":
         check("one-season horizon reproduces the committed Colombia base case to 3 decimals",
@@ -260,7 +261,7 @@ def main():
           abs(draws.std() - 1.0) < 0.02 and abs(draws.mean()) < 0.02 and skew_d < -0.3 and abs(skew_d - 0.9 ** 3 * skew_h) < 0.25,
           "sd %.3f, mean %.3f, skew %.2f (history %.2f)" % (draws.std(), draws.mean(), skew_d, skew_h))
     check("with beta 0 the climate factor is the plain normal draw",
-          bool(np.array_equal(M.climate_factor(np.random.default_rng(9), 100, p, hist),
+          bool(np.array_equal(M.climate_factor(np.random.default_rng(9), 100, dict(p, climate_rain_beta=0.0), hist),
                               np.random.default_rng(9).standard_normal(100))))
     if node:
         p3 = dict(p, horizon_seasons=3, price_persistence=0.5, fwd_shortfall_facility_share=0.5, climate_rain_beta=0.4)

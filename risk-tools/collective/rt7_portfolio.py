@@ -27,7 +27,11 @@ portfolio loss is the sum of the facility losses; "standalone" is the sum of
 each collective's own UL99 (no diversification credit at all); "independent"
 is the pooled UL99 if the collectives' losses were independent (each
 collective's paths permuted on their own), which shows what the shared factors
-cost. This is EXP-27's simulation and the loss distribution RT-5's waterfall
+cost. Tails are reported both as UL99 (a quantile, which is not subadditive:
+for losses as lumpy as a single collective's, the quantile of an independent
+sum can exceed the sum of the quantiles) and as ES99, the mean loss beyond the
+99th percentile, which is coherent and is the figure to compare across the
+three. This is EXP-27's simulation and the loss distribution RT-5's waterfall
 consumes (OQ-18: does pooling diversify on the right axis?).
 
 Dependency: numpy.
@@ -60,6 +64,13 @@ BASIS = "SYNTHETIC - illustrative portfolio of synthetic collectives"
 
 def pct(x, nd=3):
     return "%.*f" % (nd, 100.0 * x)
+
+
+def es99(x):
+    """Expected shortfall at 99 percent: mean of the worst 1 percent of paths."""
+    x = np.sort(np.asarray(x, dtype=float))
+    k = max(1, int(math.ceil(0.01 * len(x))))
+    return float(x[-k:].mean())
 
 
 def load_spec():
@@ -131,18 +142,20 @@ def run_portfolio(spec, scenario, n_paths, seed, histories):
         "summary": M.summarise(port, L.sum(axis=0), pool, p_all),
         "indep_ul99": float(np.percentile(indep, 99)) / pool,
         "indep_ul95": float(np.percentile(indep, 95)) / pool,
+        "es99": es99(port) / pool, "indep_es99": es99(indep) / pool,
+        "sum_standalone_es99": float(sum(es99(l) for l in losses)) / pool,
         "sum_standalone_ul99": sum_standalone_ul99, "sum_standalone_ul95": sum_standalone_ul95,
         "regions": {}, "collectives": [], "histogram": M.histogram(lf),
     }
     for r in regions:
         idx = [i for i, c in enumerate(spec) if c["Region"] == r]
         sub = L[idx].sum(axis=0); sp = float(sum(pools[i] for i in idx))
-        out["regions"][r] = {"pool": sp, "n": len(idx), "summary": M.summarise(sub, sub, sp, p_all),
+        out["regions"][r] = {"pool": sp, "n": len(idx), "summary": M.summarise(sub, sub, sp, p_all), "es99": es99(sub) / sp,
                              "share_of_portfolio_el": float(sub.mean() / port.mean()) if port.mean() > 0 else 0.0,
                              "sum_standalone_ul99": float(sum(np.percentile(L[i], 99) for i in idx)) / sp}
     for (c, r), l, pl in zip(per_c, losses, pools):
         out["collectives"].append({"id": c["Collective_ID"], "region": c["Region"], "label": c["Label"], "pool": pl,
-                                   "n_members": r["n_members"], "el_pct": r["el_pct"], "ul99_pct": r["ul99_pct"],
+                                   "n_members": r["n_members"], "el_pct": r["el_pct"], "ul99_pct": r["ul99_pct"], "es99": es99(l) / pl,
                                    "share_of_portfolio_el": float(l.mean() / port.mean()) if port.mean() > 0 else 0.0})
     return out
 
@@ -152,7 +165,8 @@ def row(level, name, region, scen, o, s, pool, n, extra):
     d = {"Scenario_ID": scen["id"], "Scenario": scen["name"], "Level": level, "Name": name, "Region": region,
          "Pool_USD": "%.0f" % pool, "N_Collectives": str(n), "Horizon_Seasons": str(o["T"]),
          "EL_Pct": pct(s["el_pct"]), "UL95_Pct": pct(s["ul95_pct"]), "UL99_Pct": pct(s["ul99_pct"]),
-         "Sum_Standalone_UL99_Pct": "", "Independent_UL99_Pct": "", "Share_Of_Portfolio_EL_Pct": "",
+         "ES99_Pct": "", "Sum_Standalone_UL99_Pct": "", "Independent_UL99_Pct": "", "Sum_Standalone_ES99_Pct": "", "Independent_ES99_Pct": "",
+         "Share_Of_Portfolio_EL_Pct": "",
          "Equity_EL_Pct": pct(t["equity"]["el_pct"], 2), "Mezz_EL_Pct": pct(t["mezz"]["el_pct"], 2),
          "Senior_EL_Pct": pct(t["senior"]["el_pct"], 3), "Attachment_For_Senior_Target_Pct": "" if att >= 1 else pct(att, 1)}
     d.update(extra)
@@ -178,24 +192,25 @@ def main():
         o = run_portfolio(spec, scen, args.paths, args.seed, histories)
         s = o["summary"]
         rows.append(row("portfolio", "Portfolio of %d collectives" % o["n_collectives"], "all", scen, o, s, o["pool"], o["n_collectives"],
-                        {"Sum_Standalone_UL99_Pct": pct(o["sum_standalone_ul99"]), "Independent_UL99_Pct": pct(o["indep_ul99"]),
+                        {"ES99_Pct": pct(o["es99"]), "Sum_Standalone_UL99_Pct": pct(o["sum_standalone_ul99"]), "Independent_UL99_Pct": pct(o["indep_ul99"]),
+                         "Sum_Standalone_ES99_Pct": pct(o["sum_standalone_es99"]), "Independent_ES99_Pct": pct(o["indep_es99"]),
                          "Share_Of_Portfolio_EL_Pct": "100.0"}))
         for r, d in o["regions"].items():
             rows.append(row("region", r, r, scen, o, d["summary"], d["pool"], d["n"],
-                            {"Sum_Standalone_UL99_Pct": pct(d["sum_standalone_ul99"]), "Share_Of_Portfolio_EL_Pct": pct(d["share_of_portfolio_el"], 1)}))
+                            {"ES99_Pct": pct(d["es99"]), "Sum_Standalone_UL99_Pct": pct(d["sum_standalone_ul99"]), "Share_Of_Portfolio_EL_Pct": pct(d["share_of_portfolio_el"], 1)}))
         for c in o["collectives"]:
             rows.append(row("collective", c["id"] + " " + c["label"], c["region"], scen, o,
                             {"el_pct": c["el_pct"], "ul95_pct": float("nan"), "ul99_pct": c["ul99_pct"],
                              "tranches": {"equity": {"el_pct": float("nan")}, "mezz": {"el_pct": float("nan")}, "senior": {"el_pct": float("nan")}},
                              "attachment_for_senior_target": 1.0},
-                            c["pool"], 1, {"Share_Of_Portfolio_EL_Pct": pct(c["share_of_portfolio_el"], 1), "UL95_Pct": "",
+                            c["pool"], 1, {"Share_Of_Portfolio_EL_Pct": pct(c["share_of_portfolio_el"], 1), "UL95_Pct": "", "ES99_Pct": pct(c["es99"]),
                                            "Equity_EL_Pct": "", "Mezz_EL_Pct": "", "Senior_EL_Pct": ""}))
         h = o["histogram"]
         for i, cnt in enumerate(h["counts"]):
             hrows.append({"Scenario_ID": scen["id"], "Bin_Low_Pct": pct(h["edges"][i], 2), "Bin_High_Pct": pct(h["edges"][i + 1], 2),
                           "Share_Of_Paths_Pct": pct(cnt / h["n"], 3)})
-        print("   %-6s %-28s EL %6s%%  UL99 %6s%%  standalone sum %6s%%  independent %6s%%" % (
-            scen["id"], scen["name"], pct(s["el_pct"], 2), pct(s["ul99_pct"], 1), pct(o["sum_standalone_ul99"], 1), pct(o["indep_ul99"], 1)))
+        print("   %-6s %-28s EL %6s%%  UL99 %6s%%  ES99 %6s%% (standalone sum %6s%%, independent %6s%%)" % (
+            scen["id"], scen["name"], pct(s["el_pct"], 2), pct(s["ul99_pct"], 1), pct(o["es99"], 1), pct(o["sum_standalone_es99"], 1), pct(o["indep_es99"], 1)))
     for r in rows:
         r.update({"N_Paths": str(args.paths), "Seed": str(args.seed), "Model_Version": M.MODEL_VERSION, "Computed_At": stamp, "Basis": BASIS})
     for path, rs in ((RESULTS_CSV, rows), (HIST_CSV, hrows)):

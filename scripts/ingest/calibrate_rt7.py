@@ -334,12 +334,18 @@ def main():
         # --- Phase 4: district climate factor and persistence ---
         ch = climate_history().get(region)
         if ch:
-            yrs = sorted(y for y in ys["resid"] if y in ch)
+            # Residuals from a trend fitted over the whole overlap with the rainfall record
+            # (1981 onward), not the 25-year calibration window: the correlation needs every year it can get.
+            yrows = [r for r in C.read_processed("ds-01-coffee-national-yields") if r["Region"] == region and r["Yield_t_ha"] and int(r["Year"]) in ch]
+            xs_ = [int(r["Year"]) for r in yrows]; ly = [math.log(float(r["Yield_t_ha"])) for r in yrows]
+            a_, b_ = linfit(xs_, ly)
+            resid_full = {x: y - (a_ + b_ * x) for x, y in zip(xs_, ly)}
+            yrs = sorted(resid_full)
             if len(yrs) >= 15:
-                b = corr([ys["resid"][y] for y in yrs], [ch[y] for y in yrs])
+                b = corr([resid_full[y] for y in yrs], [ch[y] for y in yrs])
                 se = 1.0 / math.sqrt(len(yrs) - 3)
                 add(region, "climate_rain_beta", b, "correlation",
-                    "corr(national yield trend residual, district rainfall anomaly averaged over the region's two districts), same calendar year, %d years" % len(yrs),
+                    "corr(national yield residual from a log-linear trend over the overlap, district rainfall anomaly averaged over the region's two districts), same calendar year, %d years" % len(yrs),
                     "%d to %d" % (yrs[0], yrs[-1]), "DS-01; DS-02",
                     "Signed. Standard error about %.2f, so a value inside that band is not distinguishable from zero and the empirical factor then barely differs from the normal one; the sign says whether wet or dry years are the bad years for this origin. National yield against district rain: a district yield series would sharpen it." % se, "observed")
                 zs = [ch[y] for y in sorted(ch)]
@@ -360,7 +366,7 @@ def main():
         pp, pw, pn = price_persistence("Arabica_USD_per_t" if sk == "arabica" else "Robusta_USD_per_t")
         add(region, "price_persistence", pp, "AR(1) coefficient",
             "lag-1 autocorrelation of annual mean log %s price around a linear trend, %d years" % (label, pn), pw, "DS-04",
-            "Season-to-season persistence of the price factor for the multi-season horizon. Shared parameter: the applied value is the Arabica estimate (two of three regions); the Robusta figure sits beside it.", "observed" if sk == "arabica" else None)
+            "Observation for this region's reference series; the shared parameter is applied from the Arabica estimate (see the 'all' row).")
         for li in literature_inputs():
             if li["Region"] != region:
                 continue
@@ -368,7 +374,11 @@ def main():
                 "%s (data/rt7-literature-inputs.csv): %s" % (li["ID"], li["Arithmetic"]), li["Reference_Year"], li["Source_Refs"],
                 li["Note"], li["Basis"] if li["Apply"] == "yes" else None)
 
-    # Shared (Region "all") climate parameters for the portfolio layer
+    # Shared (Region "all") parameters: price persistence from the Arabica series, climate from DS-02
+    pp, pw, pn = price_persistence("Arabica_USD_per_t")
+    add("all", "price_persistence", pp, "AR(1) coefficient",
+        "lag-1 autocorrelation of annual mean log Arabica price around a linear trend, %d years" % pn, pw, "DS-04",
+        "Season-to-season persistence of the price factor for the multi-season horizon. Arabica is the reference for two of three regions; the Robusta estimate is recorded on the Vietnam row. About 20 annual observations, so the figure is indicative.", "observed")
     chh = climate_history()
     if len(chh) >= 2:
         regs = sorted(chh); pairs = []

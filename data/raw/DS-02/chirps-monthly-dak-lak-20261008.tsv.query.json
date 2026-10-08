@@ -1,0 +1,20 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/chirps-monthly-dak-lak-20261008.tsv",
+ "retrieved_at_utc": "2026-10-08T09:41:04Z",
+ "request": {
+  "url": "https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/X/107.432/109.066/RANGEEDGES/Y/12.118/13.483/RANGEEDGES/T/(Jan%201981)/(Dec%202026)/RANGEEDGES/gridtable.tsv",
+  "method": "GET",
+  "bbox": [
+   107.48185270114129,
+   109.01624646755536,
+   12.167887265584909,
+   13.432528493994823
+  ]
+ },
+ "bytes": 34432046,
+ "sha256": "ccd1421282d0fb1c932392a7b6bb9e66452b07d6c64899e7fe0b71d800492efb",
+ "code_version": "0ef54eb",
+ "vault_copy": "",
+ "notes": "IRI gridtable over the district bounding box; cells outside the polygon are discarded at processing."
+}
