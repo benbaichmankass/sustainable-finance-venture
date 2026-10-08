@@ -381,6 +381,40 @@ tr.detail > td { background: var(--page); padding: 0 14px 16px; }
 .chart-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
 .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
 .chart-card .ct { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+
+/* RT-7 collective model tab: the chain, the controls, the two small charts. */
+.chain { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: 6px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.chain li { counter-increment: step; position: relative; padding: 8px 10px 8px 34px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--surface); font-size: 13px; line-height: 1.4; }
+.chain li::before { content: counter(step); position: absolute; left: 10px; top: 9px; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 650; display: flex; align-items: center; justify-content: center; }
+.chain li strong { display: block; font-size: 13px; }
+.chain li span { color: var(--text-2); font-size: 12.5px; }
+.sub4 { font-size: 13.5px; font-weight: 640; margin: 16px 0 8px; color: var(--text); }
+.ctl-group { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 10px 14px; margin-bottom: 10px; }
+.ctl-group summary { cursor: pointer; font-size: 14px; padding: 4px 0; }
+.ctl-grid { display: grid; gap: 10px 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.ctl { display: flex; flex-direction: column; gap: 4px; padding: 8px 10px; border: 1px solid var(--grid); border-radius: 8px; background: var(--page); }
+.ctl.mod { border-color: var(--warning); }
+.ctl-k { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12px; }
+.ctl-k code { font-size: 11.5px; }
+.ctl-k .pill { font-size: 10.5px; padding: 1px 7px; }
+.ctl-row { display: flex; align-items: center; gap: 8px; }
+.ctl-row input { width: 110px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text);
+  font: inherit; font-size: 13px; font-variant-numeric: tabular-nums; }
+.ctl-row input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.ctl-u { font-size: 11.5px; color: var(--muted); }
+.ctl-mod { font-size: 11px; color: var(--text-2); }
+.hist, .torn { width: 100%; display: block; overflow: visible; }
+.hist { height: 220px; }
+.hist text.ax, .torn text.ax { font-size: 10.5px; fill: var(--muted); font-family: var(--sans); }
+.dec { display: grid; gap: 8px; margin-top: 8px; }
+.dec-row { display: grid; grid-template-columns: minmax(150px, 1.4fr) 2fr auto; gap: 10px; align-items: center; font-size: 13px; }
+.dec-k { color: var(--text-2); }
+.dec-bar { display: block; height: 10px; background: var(--grid); border-radius: 4px; overflow: hidden; }
+.dec-bar span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.dec-v { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .chart-card .ct strong { font-size: 13.5px; }
 .chart-card .cv { font-size: 19px; font-weight: 640; letter-spacing: -0.01em; }
 
@@ -446,6 +480,7 @@ footer.foot {
      file simply 404s and leaves the public data in place. -->
 <script src="data.js"></script>
 <script src="data.private.js"></script>
+<script src="rt7-model.js"></script>
 <div id="citeOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="citeTitle">
   <div id="citeCard">
     <div class="ch">
@@ -955,8 +990,10 @@ var TABS = [
   { id: "experiments", label: "Experiments", count: function () { return (D.experiments || []).length; } },
   { id: "products",  label: "Product lines",  count: function () { return (D.productLines || []).length; } },
   { id: "risktools", label: "Risk tools",     count: function () { return (D.riskTools || []).length; } },
+  { id: "collective", label: "Collective model", count: null },
   { id: "macro",     label: "Macro watch",    count: function () { return (D.macroIndicators || []).length; } },
   { id: "business",  label: "Business plan",  count: null },
+  { id: "bizresearch", label: "Business research", count: function () { return (D.collectiveMarketMap || []).length; } },
   { id: "questions", label: "Open questions", count: function () { return (D.openQuestions || []).length; } },
   { id: "partners",  label: "Partners",       count: function () { return (D.partners || []).length; } },
   { id: "funders",   label: "Funders",        count: function () { return (D.funders || []).length; } },
@@ -2584,10 +2621,537 @@ function renderFunders() {
   return html;
 }
 
+/* ------------------------------------------------ Business research tab */
+/* The business-research unit: the plan doc (Drive-synced) plus its three
+   trackers - the collective market map with the readiness scorecard, the
+   products observed, and who holds each risk in a cash-flow chain. Everything
+   here is organisation-level; relationship status lives in the private tier. */
+function bandPill(b) {
+  if (!b) return '<span class="hint">unscored</span>';
+  var cls = /Structured/.test(b) ? "good" : /Limited/.test(b) ? "warning" : "";
+  return '<span class="pill ' + cls + '"><span class="dot"></span>' + esc(b) + "</span>";
+}
+function renderBizResearch() {
+  var mm = D.collectiveMarketMap || [], cp = D.collectiveProducts || [], ra = D.riskAllocation || [];
+  var doc = (D.docs || []).filter(function (d) { return d.path === "docs/venture/business-research.md"; })[0];
+  var method = (D.docs || []).filter(function (d) { return d.path === "docs/research/methodology-collective-screening.md"; })[0];
+  var drv = (D.driveLinks || []).filter(function (r) { return r.Repo_Path === "docs/venture/business-research.md"; })[0];
+  var byStatus = {}; mm.forEach(function (r) { byStatus[r.Research_Status] = (byStatus[r.Research_Status] || 0) + 1; });
+  var scored = mm.filter(function (r) { return r.Score_Total; }).length;
+  var countries = {}; mm.forEach(function (r) { if (r.Country) countries[r.Country] = 1; });
+
+  var mmCols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Entity_Name", label: "Entity", cls: "wrap-cell" },
+    { key: "Entity_Type", label: "Type" },
+    { key: "Country", label: "Country" },
+    { label: "Status", render: function (r) { return pill(r.Research_Status); }, sortKey: "Research_Status" },
+    { label: "Score", render: function (r) { return r.Score_Total ? "<strong>" + esc(r.Score_Total) + "</strong>/50" : '<span class="hint">—</span>'; }, sortVal: function (r) { return parseFloat(r.Score_Total) || -1; } },
+    { label: "Band", render: function (r) { return bandPill(r.Readiness_Band); }, sortKey: "Readiness_Band" },
+    { key: "Evidence_Refs", label: "Evidence", cls: "id" }
+  ];
+  function mmDetail(r) {
+    return fields([
+      ["Why it matters here", esc(r.SFV_Opportunity_Hypothesis)],
+      ["Services", esc(r.Services_Provided)], ["Financial products", esc(r.Financial_Products)],
+      ["Marketing or export role", esc(r.Marketing_Or_Export_Role)], ["Cash-flow cycle", esc(r.Cash_Flow_Cycle)],
+      ["Members", esc(r.Member_Count)], ["Legal form", esc(r.Legal_Form)], ["Sector", esc(r.Sector_Or_Crop)],
+      ["Existing funders", esc(r.Existing_Funders)], ["Buyers / offtakers", esc(r.Buyer_Or_Offtaker_Relationships)],
+      ["Data availability", esc(r.Data_Availability)], ["Collateral or control rights", esc(r.Collateral_Or_Control_Rights)],
+      ["Climate exposure", esc(r.Climate_Exposure)], ["Price and FX exposure", esc(r.Price_And_FX_Exposure)],
+      ["Regulatory status", esc(r.Regulatory_Status)], ["Current constraints", esc(r.Current_Constraints)],
+      ["Scorecard", r.Score_Total ? ["Observability", "Contractability", "Diversification", "Governance", "Loss_History", "Climate_Measurability", "Price_Control", "Servicing", "Regulatory", "Member_Alignment"].map(function (d) {
+        return esc(d.replace(/_/g, " ")) + " " + esc(r["Score_" + d]);
+      }).join(" · ") : '<span class="hint">not scored - scoring happens after a deep dive, never from a desk read</span>'],
+      ["Notes", esc(r.Notes)]
+    ]);
+  }
+  var cpCols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Product_Name", label: "Product", cls: "wrap-cell" },
+    { key: "Provider", label: "Provider" },
+    { key: "Collective_Or_Borrower_Type", label: "Borrower", cls: "wrap-cell" },
+    { key: "Tenor", label: "Tenor", cls: "wrap-cell" },
+    { label: "Prototype?", render: function (r) { return esc(r.SFV_Prototype_Candidate).slice(0, 40); } },
+    { key: "Evidence_Refs", label: "Evidence", cls: "id" }
+  ];
+  function cpDetail(r) {
+    return fields([
+      ["Use of funds", esc(r.Use_Of_Funds)], ["Ticket size", esc(r.Ticket_Size)], ["Repayment", esc(r.Repayment_Schedule)],
+      ["Pricing", esc(r.Pricing)], ["Security", esc(r.Security_Or_Collateral)], ["Funding source", esc(r.Funding_Source)],
+      ["Servicer", esc(r.Servicer)], ["Loss sharing", esc(r.Loss_Sharing_Structure)],
+      ["Climate / price / offtaker linkage", esc(r.Climate_Linkage) + " · " + esc(r.Price_Linkage) + " · " + esc(r.Offtaker_Linkage)],
+      ["Data available", esc(r.Data_Available)], ["Observed default or recovery", esc(r.Observed_Default_Or_Recovery)],
+      ["Key unpriced risk", esc(r.Key_Unpriced_Risk)], ["RT-7 mapping", esc(r.RT7_Mapping)],
+      ["Prototype candidate", esc(r.SFV_Prototype_Candidate)], ["Notes", esc(r.Notes)]
+    ]);
+  }
+  var raCols = [
+    { key: "ID", label: "ID", cls: "id" },
+    { key: "Risk_Type", label: "Risk", cls: "wrap-cell" },
+    { key: "Risk_Owner_Today", label: "Held today by", cls: "wrap-cell" },
+    { key: "Residual_Risk_Holder", label: "Residual" },
+    { label: "Observable", render: function (r) { return esc(r.Observability_Score) + "/5"; }, sortVal: function (r) { return parseFloat(r.Observability_Score); } },
+    { label: "Priced", render: function (r) { return esc(r.Pricing_Quality_Score) + "/5"; }, sortVal: function (r) { return parseFloat(r.Pricing_Quality_Score); } },
+    { key: "Basis", label: "Basis" }
+  ];
+  function raDetail(r) {
+    return fields([
+      ["Transfer mechanism today", esc(r.Transfer_Mechanism_Today)], ["Data availability", esc(r.Data_Availability)],
+      ["How RT-7 treats it", esc(r.RT7_Treatment)], ["Potential SFV intervention", esc(r.Potential_SFV_Intervention)],
+      ["Evidence", esc(r.Evidence_Refs)], ["Notes", esc(r.Notes)]
+    ]);
+  }
+
+  var html = '<section class="panel"><h2>Business research</h2>' +
+    '<p class="lede">Which collective institutions can originate, monitor, aggregate, hedge and service member-level risk well enough to support external risk-sharing, and eventually investable pools? ' +
+    "This unit maps the market (who the collectives and their providers are), the products they use, and who holds each risk in the cash-flow chain, then scores candidates on a readiness scorecard. " +
+    "RT-7 is its quantitative companion: a collective that screens well is one whose parameters can be observed rather than assumed.</p>" +
+    '<div class="grid g4" style="margin-bottom:16px">' +
+      tile("Entities mapped", mm.length, Object.keys(countries).length + " countr" + (Object.keys(countries).length === 1 ? "y" : "ies") + " · " + (byStatus["Desk reviewed"] || 0) + " desk reviewed · " + (byStatus["Deep dive"] || 0) + " deep dives") +
+      tile("Scored", scored + " of " + mm.length, scored ? "" : "scoring happens after a deep dive") +
+      tile("Products observed", cp.length, cp.filter(function (r) { return /^Yes/.test(r.SFV_Prototype_Candidate); }).length + " prototype candidates") +
+      tile("Risks allocated", ra.length, ra.filter(function (r) { return /RT-7/.test(r.Basis) && !/Not in/.test(r.Basis); }).length + " as RT-7 assumes them · " + ra.filter(function (r) { return /Not in/.test(r.Basis); }).length + " gaps in the model") +
+    "</div>" +
+    '<div class="card" style="margin-bottom:16px">' +
+      "<strong>Organisations, not relationships.</strong> " +
+      '<span style="font-size:13.5px;color:var(--text-2)">Every row here names an organisation and says why it matters, with a source. Whether we have spoken to them, who, and what they said is the private tier (<code>private/partner-contacts.csv</code>) and never appears on this page. ' +
+      "The plan document is synced with a Google Doc" + (drv && drv.Drive_ID ? " (" + pill(drv.Status || "Not synced") + ")" : "") + " so it can be worked on from anywhere; the trackers are the structured record.</span></div>" +
+
+    '<h3 class="sub">Collective market map</h3>' +
+    '<p class="lede">One row per collective, union, lender, buyer, insurer, fund or public program. Click a row for the full profile. Scores follow <code>docs/research/methodology-collective-screening.md</code> and are computed by <code>scripts/score_collectives.py</code>; a longlist row stays unscored on purpose.</p>' +
+    '<div id="biz-mm"></div>' +
+    '<h3 class="sub">Products and facilities observed</h3>' +
+    '<p class="lede">What collectives borrow and on what terms, with the RT-7 parameters each product would calibrate.</p>' +
+    '<div id="biz-cp"></div>' +
+    '<h3 class="sub">Risk allocation</h3>' +
+    '<p class="lede">For each risk in the chain: who holds it today, through what mechanism, who is left with the residual, how observable and how well priced it is. The first ten rows are what RT-7 <em>assumes</em>; a partner deep dive is what contradicts them.</p>' +
+    '<div id="biz-ra"></div>' +
+    (doc ? '<h3 class="sub">The plan</h3><div class="card"><div class="md">' + renderMd(doc.body) + "</div></div>" : "") +
+    (method ? '<h3 class="sub">Screening method</h3><div class="card"><div class="md">' + renderMd(method.body) + "</div></div>" : "") +
+    "</section>";
+
+  setTimeout(function () {
+    by("biz-mm").innerHTML = buildTable(mm, mmCols, mmDetail);
+    by("biz-cp").innerHTML = buildTable(cp, cpCols, cpDetail);
+    by("biz-ra").innerHTML = buildTable(ra, raCols, raDetail);
+    wireTable(by("view"));
+  }, 0);
+  return html;
+}
+
+/* ------------------------------------------------- RT-7 collective model tab */
+/* The one tab that computes rather than displays. It runs dashboard/rt7-model.js
+   (a port of risk-tools/collective/rt7_model.py) in the browser on the committed
+   parameter rows, lets the reader edit inputs, and re-runs. Nothing a reader
+   changes here is written anywhere: the CSV is the record, this is a scratchpad.
+   Every figure is synthetic and the page says so above the first number. */
+var RT7_UI = { region: null, scenario: "RS-0", nPaths: 3000, seed: 42, params: null, result: null,
+               scen: null, torn: null, timer: null };
+var RT7_GROUPS = ["Collective", "Loans", "Marketing", "Yield and price", "Credit", "Buffer", "Structure"];
+var RT7_GROUP_BLURB = {
+  "Collective": "Who the members are: how many, how much land, how productive, what it costs them to farm and to live.",
+  "Loans": "The two products the collective on-lends: a seasonal OpEx bullet and an amortising CapEx asset loan. Sizes scale with farm area.",
+  "Marketing": "How the crop reaches market: the share delivered through the collective, the share sold forward, the forward price, basis, penalties, the collective's margin and fixed costs, and how members behave when spot runs above forward.",
+  "Yield and price": "The two systematic factors - a regional climate year and a global reference price - and the member-level noise around them.",
+  "Credit": "How cover turns into default: the normal-year PD priors, the anchor DSCR, how steeply PD climbs as cover collapses, loss severities, and the correlation the factors do not explain.",
+  "Buffer": "How much of the collective's own cash flow stands in front of the lender.",
+  "Structure": "Illustrative only: where a first-loss and a mezzanine layer would detach, and the senior expected-loss target used to solve for first-loss thickness."
+};
+function pctf(x, nd) { if (x == null || isNaN(x)) return "—"; return (100 * x).toFixed(nd == null ? 1 : nd) + "%"; }
+function usdf(x) { if (x == null || isNaN(x)) return "—"; return "$" + Math.round(x).toLocaleString(); }
+function basisPill(b) {
+  var cls = b === "observed" ? "good" : b === "literature" ? "" : "warning";
+  return '<span class="pill ' + cls + '"><span class="dot"></span>' + esc(b || "assumption") + "</span>";
+}
+function rt7Scenario(id) {
+  var s = (D.rt7Scenarios || []).filter(function (r) { return r.ID === id; })[0] || {};
+  return { id: id, name: s.Scenario || id, climate_shift: parseFloat(s.Climate_Factor_Shift || 0),
+           price_shift: parseFloat(s.Price_Shift_Pct || 0) / 100 };
+}
+function rt7Defaults(region) { return RT7.mergeParams(D.rt7Parameters || [], region); }
+function rt7Run() {
+  var U = RT7_UI;
+  U.result = RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(U.scenario) });
+  U.scen = null; U.torn = null;
+}
+
+/* Loss histogram: one hue, 2px surface gaps, EL / UL95 / UL99 as thin solid
+   marker lines labelled at the top. Y is share of paths so two runs with
+   different path counts read the same. */
+function rt7Histogram(res) {
+  var h = res.loss_histogram, W = 720, H = 220, L = 40, R = 14, T = 26, B = 30;
+  var n = h.counts.length, cap = h.edges[n], maxc = Math.max.apply(null, h.counts) || 1;
+  var x = function (v) { return L + v / cap * (W - L - R); };
+  var y = function (c) { return T + (1 - c / maxc) * (H - T - B); };
+  var bw = (W - L - R) / n;
+  var bars = h.counts.map(function (c, i) {
+    if (!c) return "";
+    var x0 = L + i * bw + 1, hgt = (H - B) - y(c);
+    return '<rect x="' + x0.toFixed(1) + '" y="' + y(c).toFixed(1) + '" width="' + Math.max(0.5, bw - 2).toFixed(1) +
+      '" height="' + hgt.toFixed(1) + '" rx="2" fill="var(--accent)"/>';
+  }).join("");
+  var ticks = [0, 0.25, 0.5, 0.75, 1].map(function (f) {
+    var v = f * cap;
+    return '<text x="' + x(v).toFixed(1) + '" y="' + (H - 10) + '" text-anchor="middle" class="ax">' + (100 * v).toFixed(0) + "%</text>";
+  }).join("");
+  var yt = [0, 0.5, 1].map(function (f) {
+    var c = f * maxc;
+    return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(c).toFixed(1) + '" y2="' + y(c).toFixed(1) + '" stroke="var(--grid)"/>' +
+      '<text x="' + (L - 6) + '" y="' + (y(c) + 3.5).toFixed(1) + '" text-anchor="end" class="ax">' + (100 * c / h.n).toFixed(0) + "%</text>";
+  }).join("");
+  function marker(v, label, dy) {
+    if (v > cap) return '<text x="' + (W - R) + '" y="' + (T - 14 + dy) + '" text-anchor="end" class="ax">' + label + " " + pctf(v, 1) + " (off scale) →</text>";
+    return '<line x1="' + x(v).toFixed(1) + '" x2="' + x(v).toFixed(1) + '" y1="' + (T - 4) + '" y2="' + (H - B) + '" stroke="var(--text)" stroke-width="1"/>' +
+      '<text x="' + (x(v) + 4).toFixed(1) + '" y="' + (T - 14 + dy) + '" class="ax" style="fill:var(--text)">' + label + " " + pctf(v, 1) + "</text>";
+  }
+  return '<svg viewBox="0 0 ' + W + " " + H + '" class="hist" role="img" aria-label="Distribution of facility loss as a share of pool">' +
+    yt + bars + marker(res.el_pct, "EL", 0) + marker(res.ul95_pct, "UL95", 12) + marker(res.ul99_pct, "UL99", 24) + ticks +
+    '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 0) + '" text-anchor="middle" class="ax">facility loss, % of pool · ' + h.n.toLocaleString() + " paths</text></svg>";
+}
+
+/* Tornado: one bar per parameter from EL at the low setting to EL at the high
+   setting, base EL as a vertical rule. Sorted by swing. */
+function rt7Tornado(rows, base) {
+  if (!rows || !rows.length) return "";
+  var W = 720, rowH = 24, L = 190, R = 70, T = 26, H = T + rows.length * rowH + 28;
+  var lo = Math.min.apply(null, rows.map(function (r) { return Math.min(r.el_low, r.el_high); }).concat([base]));
+  var hi = Math.max.apply(null, rows.map(function (r) { return Math.max(r.el_low, r.el_high); }).concat([base]));
+  var pad = (hi - lo) * 0.06 || 0.001; lo = Math.max(0, lo - pad); hi += pad;
+  var x = function (v) { return L + (v - lo) / (hi - lo) * (W - L - R); };
+  var out = rows.map(function (r, i) {
+    var yc = T + i * rowH + rowH / 2;
+    var a = Math.min(r.el_low, r.el_high), b = Math.max(r.el_low, r.el_high);
+    var lowIsLeft = r.el_low <= r.el_high;
+    return '<text x="' + (L - 8) + '" y="' + (yc + 4) + '" text-anchor="end" class="ax" style="fill:var(--text-2)">' + esc(r.parameter) + "</text>" +
+      '<rect x="' + x(a).toFixed(1) + '" y="' + (yc - 7) + '" width="' + Math.max(1, x(b) - x(a)).toFixed(1) + '" height="14" rx="3" fill="var(--accent)" opacity="0.85"/>' +
+      '<text x="' + (x(a) - 4).toFixed(1) + '" y="' + (yc + 3.5) + '" text-anchor="end" class="ax">' + (lowIsLeft ? "↓ " : "↑ ") + pctf(a, 1) + "</text>" +
+      '<text x="' + (x(b) + 4).toFixed(1) + '" y="' + (yc + 3.5) + '" class="ax">' + pctf(b, 1) + (lowIsLeft ? " ↑" : " ↓") + "</text>";
+  }).join("");
+  return '<svg viewBox="0 0 ' + W + " " + H + '" class="torn" style="height:' + H + 'px" role="img" aria-label="One-at-a-time sensitivity of expected loss">' +
+    '<line x1="' + x(base).toFixed(1) + '" x2="' + x(base).toFixed(1) + '" y1="' + (T - 8) + '" y2="' + (H - 22) + '" stroke="var(--text)" stroke-width="1"/>' +
+    '<text x="' + x(base).toFixed(1) + '" y="' + (T - 12) + '" text-anchor="middle" class="ax" style="fill:var(--text)">base EL ' + pctf(base, 2) + "</text>" + out +
+    '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 4) + '" text-anchor="middle" class="ax">expected loss, % of pool, at each parameter\'s low (↓) and high (↑) setting</text></svg>';
+}
+
+function rt7ResultsHtml() {
+  var U = RT7_UI, r = U.result, p = U.params;
+  if (!r) return '<p class="empty">Not run yet.</p>';
+  var t = r.tranches, att = r.attachment_for_senior_target;
+  var deficitNote = r.p_loss_capped_at_pool > 0
+    ? '<p class="hint" style="margin-top:8px">In ' + pctf(r.p_loss_capped_at_pool, 1) + ' of paths the uncovered forward book exceeded the whole pool; the facility loss is capped at what it lent and the excess (mean ' + usdf(r.mean_collective_deficit_usd) + ' per path, all paths) falls on the collective and its buyer.</p>' : "";
+  var decomp = [
+    ["Member loan losses (EL)", r.mean_member_loss_usd],
+    ["Absorbed by the collective's cash flow", -r.mean_buffer_absorbed_usd],
+    ["Added by the collective's own deficit", r.mean_collective_deficit_usd],
+    ["Facility expected loss", r.el_usd]
+  ];
+  var maxAbs = Math.max.apply(null, decomp.map(function (d) { return Math.abs(d[1]); })) || 1;
+  var decompHtml = decomp.map(function (d, i) {
+    var w = Math.max(1, Math.round(100 * Math.abs(d[1]) / maxAbs));
+    return '<div class="dec-row"><span class="dec-k">' + esc(d[0]) + '</span><span class="dec-bar"><span style="width:' + w + '%;opacity:' + (i === 3 ? 1 : 0.55) + '"></span></span><span class="dec-v">' + (d[1] < 0 ? "−" : "") + usdf(Math.abs(d[1])) + "</span></div>";
+  }).join("");
+  return '<div class="grid g4" style="margin-bottom:12px">' +
+    tile("Expected loss", pctf(r.el_pct, 2), usdf(r.el_usd) + " on a " + usdf(r.pool_notional_usd) + " pool") +
+    tile("UL95 / UL99", pctf(r.ul95_pct, 1) + " / " + pctf(r.ul99_pct, 1), "loss not exceeded in 95% / 99% of paths") +
+    tile("Normal-year PD", pctf(r.normal_year_pd, 1), "implied by leverage; priors " + pctf(p.base_pd_capex, 0) + " CapEx · " + pctf(p.base_pd_opex, 0) + " OpEx") +
+    tile("Cover below 1×", pctf(r.share_dscr_below_1, 1), "borrower-paths with DSCR under 1; median normal-year DSCR " + (isFinite(r.normal_year_median_dscr) ? r.normal_year_median_dscr.toFixed(2) : "—")) +
+    "</div>" +
+    '<div class="grid g4" style="margin-bottom:14px">' +
+    tile("Side-selling", pctf(r.p_side_selling, 0) + " of paths", "mean " + pctf(r.mean_diverted_share, 1) + " of committed crop diverted") +
+    tile("Forward shortfall", pctf(r.p_shortfall, 0) + " of paths", "book " + r.fwd_book_t.toFixed(0) + " t of " + r.expected_delivered_t.toFixed(0) + " t expected deliveries") +
+    tile("Collective in deficit", pctf(r.p_collective_deficit, 0) + " of paths", "mean net cash flow " + usdf(r.mean_collective_net_cf_usd)) +
+    tile("First-loss for " + p.senior_el_target_bp + " bp senior EL", att >= 1 ? "not attainable" : pctf(att, 1), att >= 1 ? "the tail reaches the whole pool" : "of pool, so a senior tranche above it carries ≤ " + p.senior_el_target_bp + " bp expected loss") +
+    "</div>" +
+    '<div class="chart-grid" style="margin-bottom:14px">' +
+      '<div class="chart-card"><div class="ct"><strong>Distribution of facility loss</strong><span class="hint">' + U.nPaths.toLocaleString() + " paths · seed " + U.seed + "</span></div>" + rt7Histogram(r) + "</div>" +
+      '<div class="chart-card"><div class="ct"><strong>Where the expected loss comes from</strong><span class="hint">mean per path, USD</span></div><div class="dec">' + decompHtml + "</div>" +
+        '<p class="hint" style="margin:10px 0 0">Member defaults are the source; the collective\'s positive cash flow absorbs them first (OQ-13\'s mechanism), its deficit in a short year adds to them, and the lender takes the remainder.</p>' + deficitNote + "</div>" +
+    "</div>" +
+    '<h4 class="sub4">Illustrative tranche cut</h4>' +
+    '<div class="tbl-wrap"><table><thead><tr><th>Layer</th><th>Attach</th><th>Detach</th><th>EL (% of layer)</th><th>UL99 (% of layer)</th><th>P(any loss)</th><th>P(wiped out)</th></tr></thead><tbody>' +
+    ["equity", "mezz", "senior"].map(function (k) {
+      var v = t[k];
+      return "<tr><td>" + esc(k === "equity" ? "First loss" : k === "mezz" ? "Mezzanine" : "Senior") + "</td><td>" + pctf(v.attach, 0) + "</td><td>" + pctf(v.detach, 0) +
+        "</td><td><strong>" + pctf(v.el_pct, 2) + "</strong></td><td>" + pctf(v.ul99_pct, 1) + "</td><td>" + pctf(v.p_any_loss, 1) + "</td><td>" + pctf(v.p_wipeout, 1) + "</td></tr>";
+    }).join("") + "</tbody></table></div>" +
+    '<p class="hint" style="margin-top:6px">Not a proposed security. Securitisation is not part of the business pilot; the cut is kept so a facility designed now can be pooled later, and because the loss distribution above is exactly what RT-5\'s waterfall would consume.</p>';
+}
+
+function rt7ScenarioTable() {
+  var U = RT7_UI;
+  if (!U.scen) return "";
+  var cols = [
+    { key: "id", label: "ID", cls: "id" }, { key: "name", label: "Scenario" },
+    { label: "EL", render: function (r) { return "<strong>" + pctf(r.res.el_pct, 2) + "</strong>"; }, sortVal: function (r) { return r.res.el_pct; } },
+    { label: "UL99", render: function (r) { return pctf(r.res.ul99_pct, 1); }, sortVal: function (r) { return r.res.ul99_pct; } },
+    { label: "Cover < 1×", render: function (r) { return pctf(r.res.share_dscr_below_1, 0); } },
+    { label: "Shortfall", render: function (r) { return pctf(r.res.p_shortfall, 0); } },
+    { label: "Collective deficit", render: function (r) { return pctf(r.res.p_collective_deficit, 0); } },
+    { label: "Senior EL", render: function (r) { return pctf(r.res.tranches.senior.el_pct, 2); } }
+  ];
+  return '<h4 class="sub4">Stress scenarios on the current inputs</h4>' + buildTable(U.scen, cols, function (r) {
+    var s = (D.rt7Scenarios || []).filter(function (x) { return x.ID === r.id; })[0] || {};
+    return fields([["What the scenario is", esc(s.Description)], ["Why this size", esc(s.Rationale)], ["Refs", esc(s.Refs)]]);
+  });
+}
+
+function rt7Controls() {
+  var U = RT7_UI, rows = RT7.provenance(D.rt7Parameters || [], U.region), defaults = rt7Defaults(U.region);
+  var byGroup = {};
+  rows.forEach(function (r) { (byGroup[r.Group] = byGroup[r.Group] || []).push(r); });
+  return RT7_GROUPS.filter(function (g) { return byGroup[g]; }).map(function (g) {
+    var ctls = byGroup[g].map(function (r) {
+      var k = r.Parameter, v = U.params[k], mod = Math.abs(v - defaults[k]) > 1e-12;
+      var title = (r.Note || "") + "\n\nToday: " + (r.Source_Refs ? r.Source_Refs + " (reference point)" : "assumption") +
+        "\nShould come from: " + (r.Target_Source || "—");
+      return '<label class="ctl' + (mod ? " mod" : "") + '" title="' + esc(title) + '">' +
+        '<span class="ctl-k"><code>' + esc(k) + "</code> " + basisPill(r.Basis) + "</span>" +
+        '<span class="ctl-row"><input type="number" step="any" data-param="' + esc(k) + '" value="' + esc(String(v)) + '">' +
+        '<span class="ctl-u">' + esc(r.Unit) + "</span></span>" +
+        (mod ? '<span class="ctl-mod">edited · repo value ' + esc(String(defaults[k])) + "</span>" : "") +
+        "</label>";
+    }).join("");
+    return '<details class="ctl-group"' + (g === "Marketing" || g === "Credit" ? " open" : "") + "><summary><strong>" + esc(g) +
+      "</strong> <span class=\"hint\">" + byGroup[g].length + " parameters</span></summary>" +
+      '<p class="hint" style="margin:4px 0 10px">' + esc(RT7_GROUP_BLURB[g] || "") + "</p>" +
+      '<div class="ctl-grid">' + ctls + "</div></details>";
+  }).join("");
+}
+
+function rt7Sources() {
+  var U = RT7_UI, rows = RT7.provenance(D.rt7Parameters || [], U.region);
+  var counts = { assumption: 0, literature: 0, observed: 0 };
+  rows.forEach(function (r) { counts[r.Basis] = (counts[r.Basis] || 0) + 1; });
+  var cols = [
+    { key: "Parameter", label: "Parameter", cls: "id" },
+    { key: "Value", label: "Repo value", sortVal: function (r) { return parseFloat(r.Value); } },
+    { key: "Unit", label: "Unit" },
+    { key: "Group", label: "Group" },
+    { label: "Basis", render: function (r) { return basisPill(r.Basis); }, sortKey: "Basis" },
+    { label: "Rests on today", render: function (r) { return r.Source_Refs ? esc(r.Source_Refs) + ' <span class="hint">(reference point)</span>' : '<span class="hint">nothing — chosen</span>'; } },
+    { key: "Target_Source", label: "Should come from", cls: "wrap-cell" }
+  ];
+  var cat = D.dataCatalog || [];
+  var catCols = [
+    { key: "ID", label: "ID", cls: "id" }, { key: "Dataset", label: "Dataset", cls: "wrap-cell" }, { key: "Domain", label: "Domain" },
+    { key: "Regions", label: "Regions" }, { key: "Frequency", label: "Frequency" },
+    { label: "Status", render: function (r) { return pill(r.Status); } },
+    { label: "Link", render: function (r) { return r.URL ? extLink(r.URL, r.Source_Organization) : '<span class="hint">' + esc(r.Source_Organization) + " · no public URL</span>"; } }
+  ];
+  return '<div class="grid g4" style="margin-bottom:12px">' +
+    tile("Assumptions", counts.assumption, "chosen numbers with a named target source") +
+    tile("Literature", counts.literature, "stated by a source in the matrix") +
+    tile("Observed", counts.observed, "computed from a validated dataset") +
+    tile("Datasets catalogued", cat.length, cat.filter(function (r) { return r.Status === "Proposed"; }).length + " proposed, none yet downloaded") +
+    "</div>" +
+    '<p class="lede">Every input carries three provenance fields: what kind of number it is, what it rests on today, and where it should come from. Click a row for its history. The rule is in <code>docs/ops/data-provenance.md</code>; promotion from <em>assumption</em> to <em>observed</em> goes through <code>data/data-catalog.csv</code>.</p>' +
+    buildTable(rows, cols, function (r) { return fields([["History", esc(r.Note)], ["Should come from", esc(r.Target_Source)], ["Reference points", esc(r.Source_Refs)]]); }, { sortIdx: 3 }) +
+    '<h4 class="sub4">Data catalogue</h4>' +
+    buildTable(cat, catCols, function (r) {
+      return fields([["Variables", esc(r.Variables)], ["Access", esc(r.Access_Method)], ["Coverage", esc(r.Temporal_Coverage)],
+                     ["Licence or terms", esc(r.License_Or_Terms)], ["Used by", esc(r.Used_By)], ["Notes", esc(r.Notes)]]);
+    });
+}
+
+function rt7Reference() {
+  var U = RT7_UI, rows = (D.rt7Results || []).filter(function (r) { return r.Region === U.region; });
+  if (!rows.length) return "";
+  var cols = [
+    { key: "Scenario_ID", label: "ID", cls: "id" }, { key: "Scenario", label: "Scenario" },
+    { label: "EL", render: function (r) { return "<strong>" + r.EL_Pct + "%</strong>"; }, sortVal: function (r) { return parseFloat(r.EL_Pct); } },
+    { label: "UL99", render: function (r) { return r.UL99_Pct + "%"; } },
+    { label: "Normal-year PD", render: function (r) { return r.Normal_Year_PD_Pct + "%"; } },
+    { label: "Shortfall", render: function (r) { return r.P_Shortfall_Pct + "%"; } },
+    { label: "Senior EL", render: function (r) { return r.Senior_EL_Pct + "%"; } },
+    { label: "First-loss for target", render: function (r) { return r.Attachment_For_Senior_Target_Pct ? r.Attachment_For_Senior_Target_Pct + "%" : '<span class="hint">not attainable</span>'; } }
+  ];
+  var sens = (D.rt7Sensitivity || []).filter(function (r) { return r.Region === U.region; });
+  var scols = [
+    { key: "Parameter", label: "Parameter", cls: "id" },
+    { key: "Value_Low", label: "Low" }, { key: "Value_High", label: "High" },
+    { label: "EL at low", render: function (r) { return r.EL_Low_Pct + "%"; } },
+    { label: "EL at high", render: function (r) { return r.EL_High_Pct + "%"; } },
+    { label: "Swing", render: function (r) { return "<strong>" + r.Swing_EL_Pct + " pp</strong>"; }, sortVal: function (r) { return parseFloat(r.Swing_EL_Pct); } },
+    { label: "UL99 low → high", render: function (r) { return r.UL99_Low_Pct + "% → " + r.UL99_High_Pct + "%"; } }
+  ];
+  return '<p class="lede">The committed results from the Python pipeline (<code>risk-tools/collective/run_region.py</code>, ' + esc(rows[0].N_Paths) + " paths, seed " + esc(rows[0].Seed) +
+    ", model v" + esc(rows[0].Model_Version) + "). The browser run above should agree within Monte Carlo error; <code>test_rt7.py</code> checks that it does, in CI.</p>" +
+    buildTable(rows, cols, null) +
+    (sens.length ? '<h4 class="sub4">Committed sensitivity (one at a time)</h4>' + buildTable(sens, scols, null, { sortIdx: 5, sortDir: -1 }) : "");
+}
+
+function renderCollective() {
+  var U = RT7_UI, regions = D.rt7Regions || [];
+  if (!window.RT7) {
+    return '<section class="panel"><h2>Collective facility model</h2><p class="empty">rt7-model.js did not load. The tab needs it to run the model in the browser.</p></section>';
+  }
+  if (!regions.length || !(D.rt7Parameters || []).length) {
+    return '<section class="panel"><h2>Collective facility model</h2><p class="empty">No RT-7 parameter rows in the build. Run <code>python3 dashboard/build.py</code>.</p></section>';
+  }
+  if (!U.region) { U.region = regions[0].Region; U.params = rt7Defaults(U.region); rt7Run(); }
+  var reg = regions.filter(function (r) { return r.Region === U.region; })[0] || regions[0];
+  var spec = (D.docs || []).filter(function (d) { return d.path === "risk-tools/rt-7-collective-facility-model.md"; })[0];
+
+  var html = '<section class="panel"><h2>Collective facility model <span class="hint" style="font-weight:400">RT-7 · v' + esc(RT7.version) + "</span></h2>" +
+    '<p class="lede">What loss distribution does a lender take on by financing a producer collective that on-lends to its members and markets their crop, part of it sold forward? ' +
+    "This tab runs the model in your browser on the parameter rows committed in the repo. Change an input and it re-runs. Nothing you change here is saved: the CSV is the record, this is a scratchpad.</p>" +
+
+    '<div class="card" style="margin-bottom:16px;border-color:var(--warning)"><strong>Every figure on this page is synthetic and uncalibrated.</strong>' +
+    '<p style="margin:6px 0 0;font-size:13.5px;color:var(--text-2)">All ' + (D.rt7Parameters || []).length + " parameter rows are assumptions. Two cite literature as a reference point, none as an estimate. " +
+    "The outputs describe the <em>model</em>, not any collective: useful for which structural choices move the loss distribution and in which direction, not usable as evidence. " +
+    "Full specification, decisions and the list of what the prototype got wrong: <code>risk-tools/rt-7-collective-facility-model.md</code>.</p></div>" +
+
+    '<h3 class="sub">What it models</h3>' +
+    '<div class="card"><p style="margin:0 0 10px">One coffee collective, one crop season, thousands of Monte Carlo paths. The collective is the borrower of record (OQ-13: attach one level up, so the community\'s own screening and enforcement stay in the structure). Each path runs the chain below.</p>' +
+    '<ol class="chain">' +
+      '<li><strong>Two factors</strong><span>a regional climate year and a global reference price, drawn once per path</span></li>' +
+      '<li><strong>Yield and price</strong><span>regional yield and spot price, lognormal around their bases; price can jump; local spot sits a basis below the reference</span></li>' +
+      '<li><strong>Production</strong><span>each member: area × persistent productivity × the regional year × own noise</span></li>' +
+      '<li><strong>Forward book</strong><span>contracted before the season on <em>expected</em> deliveries, at a fixed price</span></li>' +
+      '<li><strong>Side-selling</strong><span>when spot runs above forward past a threshold, members divert committed crop to the spot market</span></li>' +
+      '<li><strong>Collective sales</strong><span>deliveries fill the forward book first; undelivered volume costs cover plus penalty; the collective keeps a margin and pays fixed costs</span></li>' +
+      '<li><strong>Member cash flow</strong><span>revenue less production cost less a household floor, divided by debt service: the DSCR</span></li>' +
+      '<li><strong>PD from cover</strong><span>an anchored curve: base PD at DSCR 1.5, lower with stronger cover, up to a ceiling as cover collapses</span></li>' +
+      '<li><strong>Correlated defaults</strong><span>a residual correlation on top, for the market-level channel the two factors do not capture (LIT-036, LIT-037)</span></li>' +
+      '<li><strong>Buffer and facility loss</strong><span>member losses (EAD × LGD), absorbed first by the collective\'s net cash flow; the remainder, capped at the pool, is the lender\'s loss</span></li>' +
+    "</ol>" +
+    '<p class="hint" style="margin:10px 0 0">Two correlation channels are therefore explicit and separable: an <em>environmental</em> one through yield and price into cover, and an <em>institutional</em> one in the residual. That separation is what EXP-25 says the evidence requires.</p></div>' +
+
+    '<h3 class="sub">Run it</h3>' +
+    '<div class="filters">' +
+      '<select class="pickr" id="rt7-region">' + regions.map(function (r) {
+        return '<option value="' + esc(r.Region) + '"' + (r.Region === U.region ? " selected" : "") + ">" + esc(r.Label) + (r.Role === "Modelling case" ? " · modelling case" : "") + "</option>";
+      }).join("") + "</select>" +
+      '<select class="pickr" id="rt7-scen">' + (D.rt7Scenarios || []).map(function (s) {
+        return '<option value="' + esc(s.ID) + '"' + (s.ID === U.scenario ? " selected" : "") + ">" + esc(s.ID + " · " + s.Scenario) + "</option>";
+      }).join("") + "</select>" +
+      '<select class="pickr" id="rt7-paths">' + [1000, 3000, 5000, 10000].map(function (n) {
+        return '<option value="' + n + '"' + (n === U.nPaths ? " selected" : "") + ">" + n.toLocaleString() + " paths</option>";
+      }).join("") + "</select>" +
+      '<label class="hint">seed <input class="search" id="rt7-seed" type="number" value="' + U.seed + '" style="width:84px;padding:6px 8px"></label>' +
+      '<button class="ghost" id="rt7-run">Run</button>' +
+      '<button class="ghost" id="rt7-all">Run all scenarios</button>' +
+      '<button class="ghost" id="rt7-torn">Run sensitivity</button>' +
+      '<button class="ghost" id="rt7-reset">Reset to repo values</button>' +
+      '<span class="hint" id="rt7-status"></span>' +
+    "</div>" +
+    '<p class="hint" style="margin:-6px 0 14px">' + esc(reg.Label) + " · " + esc(reg.Variety) + " · " + esc(reg.Role) + (reg.Notes ? " · " + esc(reg.Notes) : "") + "</p>" +
+
+    '<h3 class="sub">Results</h3><div id="rt7-results">' + rt7ResultsHtml() + "</div>" +
+    '<div id="rt7-scen-out"></div>' +
+    '<div id="rt7-torn-out"></div>' +
+
+    '<h3 class="sub">Inputs</h3>' +
+    '<p class="lede">Grouped by what they describe. Hover a parameter for its history and where its number should come from; the badge says what kind of number it is today. An edited value is marked and the repo value shown. Edits re-run the model after a moment.</p>' +
+    '<div id="rt7-controls">' + rt7Controls() + "</div>" +
+
+    '<h3 class="sub">Decisions, and why</h3>' +
+    '<div class="card"><div class="md"><ul>' +
+      "<li><strong>Attach one level up.</strong> The borrower is the collective; member loans are its assets. The facility's loss is what the collective cannot cover, so the community's own risk management stays in the arithmetic rather than being replaced by it.</li>" +
+      "<li><strong>Cover drives PD, not revenue.</strong> Production cost and a household floor come off before debt service. A DSCR on gross revenue is always comfortable and never moves, which is how the prototype's losses came out indifferent to climate and price.</li>" +
+      "<li><strong>The base PD is a normal-year prior, anchored at DSCR 1.5.</strong> The curve says how fast PD climbs when the year is not normal. The <em>normal-year PD</em> tile compares what the leverage distribution implies against that prior, so inconsistent loan-size and income assumptions show up as a number instead of hiding.</li>" +
+      "<li><strong>Loan sizes scale with the farm.</strong> Drawn independently, as in v0.1, a USD 2,500 asset loan lands on a 0.3 ha plot and the leverage distribution means nothing.</li>" +
+      "<li><strong>Forward book on expected volume, deliveries on realised volume.</strong> That asymmetry is the whole of forward-delivery risk and the reason the collective's cash flow can go negative in a short year.</li>" +
+      "<li><strong>Side-selling is linear in the premium above a threshold.</strong> Simple and inspectable. It is also the model's most consequential assumption, and only a partner's delivery records across a high-price season can replace it (DS-08).</li>" +
+      "<li><strong>Residual correlation on top of a structural PD, not instead of it.</strong> A single copula ρ hides the mechanism; a pure structural model claims the factors explain everything. Keeping both lets EXP-25 estimate what is left over.</li>" +
+      "<li><strong>Facility loss is capped at the pool.</strong> A lender cannot lose more than it lent. The collective's uncovered forward book beyond that is reported, not dropped.</li>" +
+      "<li><strong>Tranches are illustrative.</strong> Securitisation is not part of the business pilot. The cut stays so a facility designed now can be pooled later without redesign, and because this loss distribution is what RT-5's waterfall consumes.</li>" +
+      "<li><strong>numpy in Python, nothing in the browser.</strong> The reference model takes the toolchain's one dependency; this page runs a dependency-free port, and a CI test holds the two to agreement.</li>" +
+    "</ul></div></div>" +
+
+    '<h3 class="sub">What it shows so far</h3>' +
+    '<div class="card"><div class="md">' +
+      "<p>Shapes, not levels, from the committed runs at v0.2 defaults:</p><ol>" +
+      "<li><strong>The tail is delivery risk, not credit risk.</strong> In every region the top sensitivity is price volatility or side-selling, and the worst tail comes from a price <em>spike</em>, not a crash: a forward book without delivery enforcement makes the collective cover its shortfall at the very price that caused it. Delivery enforcement comes before credit enhancement.</li>" +
+      "<li><strong>A poor season roughly triples expected loss; a leaf-rust-scale year multiplies it by six</strong>, because the collective's margin falls with volume at the same moment member defaults rise.</li>" +
+      "<li><strong>The collective buffer is thin by construction</strong> at a 3 percent margin, and vanishes in a bad year. Whether a real collective holds reserves of this order is a Gate-2 question in the business-research plan.</li>" +
+      "<li><strong>Normal-year PD exposes assumption drift</strong>: for Ethiopia the leverage distribution implies a PD above both base priors. The assumptions disagree with each other; calibration against a loan book would settle it.</li>" +
+      "<li><strong>A senior target of 25 bp is unattainable where the tail reaches the pool.</strong> Against RT-5's 10–20 percent first-loss working range, the gap is the delivery channel, and it is the design problem to solve before the structuring one.</li>" +
+      "</ol><p>All five are relationships between the model's own parameters: believable as shapes, worthless as levels.</p></div></div>" +
+
+    '<h3 class="sub">Data sources</h3><div id="rt7-sources">' + rt7Sources() + "</div>" +
+    '<h3 class="sub">Reference results from the Python pipeline</h3><div id="rt7-ref">' + rt7Reference() + "</div>" +
+
+    '<h3 class="sub">What it is not</h3>' +
+    '<div class="card"><div class="md"><ul>' +
+      "<li><strong>Not calibrated.</strong> No field data exists for any parameter. Every number is a statement about the model.</li>" +
+      "<li><strong>Not a forecast.</strong> Scenarios are deterministic shifts chosen for coherence, not probability-weighted views.</li>" +
+      "<li><strong>Not a rating model and not a product.</strong> The tranche cut is a design yardstick.</li>" +
+      "<li><strong>Not evidence.</strong> Nothing here belongs in a document that makes a claim to a partner or an investor.</li>" +
+      "<li><strong>Not multi-season.</strong> CapEx loans amortise over years; the model takes one season. Open question in the spec.</li>" +
+    "</ul></div></div>" +
+    (spec ? '<p class="hint" style="margin-top:10px">Full specification: <strong>' + esc(spec.title) + "</strong> in the Library and on the Risk tools tab.</p>" : "") +
+    "</section>";
+
+  setTimeout(function () {
+    var status = by("rt7-status");
+    function setStatus(t) { if (status) status.textContent = t; }
+    function redraw() {
+      by("rt7-results").innerHTML = rt7ResultsHtml();
+      by("rt7-scen-out").innerHTML = rt7ScenarioTable();
+      by("rt7-torn-out").innerHTML = U.torn ? '<h4 class="sub4">Sensitivity on the current inputs</h4><div class="chart-card">' + rt7Tornado(U.torn.rows, U.torn.base.el_pct) +
+        '<p class="hint" style="margin:8px 0 0">One parameter moved at a time, the rest at their current values, members regenerated from the same seed. Sorted by swing in expected loss.</p></div>' : "";
+      by("rt7-controls").innerHTML = rt7Controls();
+      wireInputs();
+    }
+    function rerun(reason) {
+      setStatus("running…");
+      setTimeout(function () {
+        var t0 = Date.now(); rt7Run(); redraw();
+        setStatus("ran " + U.nPaths.toLocaleString() + " paths in " + (Date.now() - t0) + " ms" + (reason ? " · " + reason : ""));
+      }, 10);
+    }
+    function wireInputs() {
+      Array.prototype.forEach.call(document.querySelectorAll("#rt7-controls input[data-param]"), function (inp) {
+        inp.addEventListener("input", function () {
+          var v = parseFloat(inp.value);
+          if (isNaN(v)) return;
+          U.params[inp.dataset.param] = v;
+          clearTimeout(U.timer);
+          U.timer = setTimeout(function () { rerun("after editing " + inp.dataset.param); }, 450);
+        });
+      });
+    }
+    by("rt7-region").addEventListener("change", function (e) {
+      U.region = e.target.value; U.params = rt7Defaults(U.region); U.scen = null; U.torn = null;
+      rt7Run();
+      show("collective");
+    });
+    by("rt7-scen").addEventListener("change", function (e) { U.scenario = e.target.value; rerun("scenario " + U.scenario); });
+    by("rt7-paths").addEventListener("change", function (e) { U.nPaths = parseInt(e.target.value, 10); rerun(); });
+    by("rt7-seed").addEventListener("change", function (e) { var v = parseInt(e.target.value, 10); if (!isNaN(v)) { U.seed = v; rerun("seed " + v); } });
+    by("rt7-run").addEventListener("click", function () { rerun(); });
+    by("rt7-reset").addEventListener("click", function () { U.params = rt7Defaults(U.region); rerun("reset to repo values"); });
+    by("rt7-all").addEventListener("click", function () {
+      setStatus("running all scenarios…");
+      setTimeout(function () {
+        var t0 = Date.now();
+        U.scen = (D.rt7Scenarios || []).map(function (s) {
+          return { id: s.ID, name: s.Scenario, res: RT7.simulate(U.params, { nPaths: U.nPaths, seed: U.seed, scenario: rt7Scenario(s.ID) }) };
+        });
+        redraw(); setStatus("ran " + U.scen.length + " scenarios in " + (Date.now() - t0) + " ms");
+      }, 10);
+    });
+    by("rt7-torn").addEventListener("click", function () {
+      setStatus("running sensitivity (" + (RT7.TORNADO.length * 2 + 1) + " runs)…");
+      setTimeout(function () {
+        var t0 = Date.now();
+        U.torn = RT7.tornado(U.params, { nPaths: Math.min(U.nPaths, 3000), seed: U.seed, scenario: rt7Scenario(U.scenario) });
+        redraw(); setStatus("sensitivity done in " + (Date.now() - t0) + " ms");
+      }, 10);
+    });
+    wireInputs();
+    setStatus("ran " + U.nPaths.toLocaleString() + " paths on load");
+  }, 0);
+  return html;
+}
+
 var RENDER = {
   overview: renderOverview, library: renderLibrary, research: renderResearch,
   experiments: renderExperiments, products: renderProducts, risktools: renderRiskTools,
-  macro: renderMacro, business: renderBusiness, questions: renderQuestions,
+  macro: renderMacro, collective: renderCollective, business: renderBusiness, bizresearch: renderBizResearch,
+  questions: renderQuestions,
   partners: renderPartners, funders: renderFunders, phd: renderPhd, resources: renderResources
 };
 

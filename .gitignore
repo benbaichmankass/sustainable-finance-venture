@@ -17,3 +17,6 @@ __pycache__/
 
 # RT-5 synthetic loan tape - regenerable from the seed, not worth committing.
 risk-tools/tools/output/
+
+# RT-7 run outputs - regenerable from the seed and the parameter tracker.
+risk-tools/collective/output/

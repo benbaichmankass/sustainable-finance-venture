@@ -37,6 +37,15 @@ TABLES = {
     "macroScenarios": "data/macro-scenarios.csv",
     "rt5Results": "data/rt5-scenario-results.csv",
     "rt6Results": "data/rt6-economics-results.csv",
+    "rt7Parameters": "data/rt7-parameters.csv",
+    "rt7Regions": "data/rt7-regions.csv",
+    "rt7Scenarios": "data/rt7-scenarios.csv",
+    "rt7Results": "data/rt7-region-results.csv",
+    "rt7Sensitivity": "data/rt7-sensitivity.csv",
+    "dataCatalog": "data/data-catalog.csv",
+    "collectiveMarketMap": "data/collective-market-map.csv",
+    "collectiveProducts": "data/collective-products.csv",
+    "riskAllocation": "data/risk-allocation.csv",
     "partners": "data/partner-tracker.csv",
     "phdPrograms": "data/phd-programs.csv",
     "milestones": "data/milestones.csv",
@@ -72,6 +81,7 @@ DOC_DIRS = [
     ("product-design", True),
     ("risk-tools", True),
     ("archive/google-drive", True),
+    ("archive/prototype-2026-10", True),
     (".claude/skills", True),
 ]
 
@@ -106,16 +116,19 @@ DOC_TREE = [
 
     ("product-design/product-lines/",   "Venture",     "Product lines"),
     ("product-design/",                 "Venture",     "Plan & economics"),
+    ("docs/venture/business-research.md", "Venture",   "Business research"),
     ("docs/venture/",                   "Venture",     "Delivery & funding"),
 
     ("risk-tools/README.md",            "Risk tools",  "Overview & schema"),
     ("risk-tools/schema/",              "Risk tools",  "Overview & schema"),
+    ("risk-tools/collective/",          "Risk tools",  "Code notes"),
     ("risk-tools/",                     "Risk tools",  "Tool specs"),
 
     ("docs/ops/publishing.md",          "Operations",  "Publishing & privacy"),
     ("docs/ops/private-overlay.md",     "Operations",  "Publishing & privacy"),
     ("docs/ops/drive-sync.md",          "Operations",  "Drive & sync"),
     ("docs/ops/drive-vault.md",         "Operations",  "Drive & sync"),
+    ("docs/ops/data-provenance.md",     "Operations",  "Data provenance"),
     ("docs/ops/",                       "Operations",  "Dashboard & capture"),
     ("CLAUDE.md",                       "Operations",  "Repo conventions"),
     ("README.md",                       "Operations",  "Repo conventions"),
@@ -123,6 +136,7 @@ DOC_TREE = [
 
     (".claude/skills/",                 "AI skills",   "Working procedures"),
     ("archive/google-drive/",           "Archive",     "Superseded source docs"),
+    ("archive/prototype-2026-10/",      "Archive",     "RT-7 prototype (Oct 2026)"),
 ]
 
 # Which family a document belongs to, where it belongs to one. These are display
@@ -141,6 +155,8 @@ DOC_FAMILY = {
     "risk-tools/rt-5-securitisation-model.md":          "RT-5a",
     "risk-tools/rt-5-simulator.md":                     ("RT-5b", "Simulator - what it is, what it is not"),
     "risk-tools/rt-6-economics-model.md":               "RT-6",
+    "risk-tools/rt-7-collective-facility-model.md":     "RT-7",
+    "risk-tools/collective/README.md":                  ("RT-7", "Collective facility model - code notes"),
     "literature/notes/memo-1-vslas.md":                 "MEMO-1",
     "literature/notes/memo-2-microfinance-impact.md":   "MEMO-2",
     "literature/notes/memo-3-securitization-blended-finance.md": "MEMO-3",
