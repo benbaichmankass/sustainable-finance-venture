@@ -22,7 +22,8 @@ SCENARIOS_CSV = os.path.join(ROOT, "data", "rt7-scenarios.csv")
 
 BASIS_VOCAB = ("assumption", "literature", "proxy", "observed")
 
-INTEGER_PARAMS = {"n_members", "capex_tenor_years", "opex_tenor_years"}
+INTEGER_PARAMS = {"n_members", "capex_tenor_years", "opex_tenor_years", "horizon_seasons"}
+CLIMATE_CSV = os.path.join(ROOT, "data", "rt7-climate-history.csv")
 
 
 def _read(path):
@@ -50,6 +51,20 @@ def load_scenarios(path=SCENARIOS_CSV):
             "rationale": r["Rationale"],
             "refs": r["Refs"],
         })
+    return out
+
+
+def load_climate_history(path=CLIMATE_CSV):
+    """{region: [standardised district rainfall anomaly per year]} from
+    data/rt7-climate-history.csv (written by scripts/ingest/ds02_chirps.py), or
+    {} when the file does not exist yet. The model's empirical climate factor
+    bootstraps from these; with no history the factor stays normal."""
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    for r in _read(path):
+        if r["Rain_Anomaly_Z"] != "":
+            out.setdefault(r["Region"], []).append(float(r["Rain_Anomaly_Z"]))
     return out
 
 
@@ -103,6 +118,8 @@ REQUIRED = [
     "base_pd_capex", "base_pd_opex", "pd_anchor_dscr", "pd_dscr_sensitivity",
     "pd_max", "pd_floor_share", "lgd_capex", "lgd_opex", "residual_correlation",
     "tranche_equity_detach", "tranche_mezz_detach", "senior_el_target_bp",
+    "fwd_shortfall_facility_share", "horizon_seasons", "price_persistence", "climate_rain_beta",
+    "portfolio_climate_cross_corr", "collective_climate_idio_share",
 ]
 
 
@@ -134,7 +151,9 @@ def validate(rows=None):
         for k in ("capex_share", "opex_share", "fwd_share", "hedge_ratio_mean", "basis_local",
                   "collective_margin_rate", "reserve_share_of_margin", "base_pd_capex",
                   "base_pd_opex", "pd_max", "pd_floor_share", "lgd_capex", "lgd_opex",
-                  "residual_correlation", "tranche_equity_detach", "tranche_mezz_detach"):
+                  "residual_correlation", "tranche_equity_detach", "tranche_mezz_detach",
+                  "fwd_shortfall_facility_share", "portfolio_climate_cross_corr",
+                  "collective_climate_idio_share"):
             if k in p and not (0.0 <= p[k] <= 1.0):
                 problems.append("%s/%s: %s outside [0, 1]" % (region, k, p[k]))
         if "tranche_equity_detach" in p and "tranche_mezz_detach" in p and \
@@ -142,6 +161,12 @@ def validate(rows=None):
             problems.append("%s: tranche detachments must satisfy equity < mezz < 1" % region)
         if "climate_price_correlation" in p and not (-1.0 < p["climate_price_correlation"] < 1.0):
             problems.append("%s: climate_price_correlation outside (-1, 1)" % region)
+        if "climate_rain_beta" in p and not (-1.0 < p["climate_rain_beta"] < 1.0):
+            problems.append("%s: climate_rain_beta outside (-1, 1)" % region)
+        if "price_persistence" in p and not (-1.0 < p["price_persistence"] < 1.0):
+            problems.append("%s: price_persistence outside (-1, 1)" % region)
+        if "horizon_seasons" in p and not (1 <= p["horizon_seasons"] <= 10):
+            problems.append("%s: horizon_seasons outside 1..10" % region)
     return problems
 
 

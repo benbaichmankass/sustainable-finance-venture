@@ -1,0 +1,20 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/chirps-monthly-huila-20261008.tsv",
+ "retrieved_at_utc": "2026-10-08T09:33:23Z",
+ "request": {
+  "url": "https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/X/-76.674/-74.363/RANGEEDGES/Y/1.505/3.895/RANGEEDGES/T/(Jan%201981)/(Dec%202026)/RANGEEDGES/gridtable.tsv",
+  "method": "GET",
+  "bbox": [
+   -76.624259,
+   -74.4128443,
+   1.5554725,
+   3.8448472
+  ]
+ },
+ "bytes": 84067694,
+ "sha256": "d74c3805437cee6ed11bb24f2c8f049a47e1d0fc2235be16dc3641f59a2e0c5b",
+ "code_version": "dedc215",
+ "vault_copy": "",
+ "notes": "IRI gridtable over the district bounding box; cells outside the polygon are discarded at processing."
+}

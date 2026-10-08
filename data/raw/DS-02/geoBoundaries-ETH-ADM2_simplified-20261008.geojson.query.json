@@ -1,0 +1,15 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/geoBoundaries-ETH-ADM2_simplified-20261008.geojson",
+ "retrieved_at_utc": "2026-10-08T09:28:50Z",
+ "request": {
+  "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09/releaseData/gbOpen/ETH/ADM2/geoBoundaries-ETH-ADM2_simplified.geojson",
+  "method": "GET",
+  "commit": "9469f09"
+ },
+ "bytes": 880586,
+ "sha256": "ff3ba99f2f83e6e9891f5694720b4d12f8b051e27e977d553f18408b596c72ef",
+ "code_version": "dedc215",
+ "vault_copy": "",
+ "notes": "Whole-country simplified boundary file as published."
+}

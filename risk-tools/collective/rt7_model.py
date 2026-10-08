@@ -25,7 +25,25 @@ Two correlation channels are therefore explicit and separable, which is what
 EXP-25 says the evidence requires: an ENVIRONMENTAL channel (yield and price,
 through DSCR) and an INSTITUTIONAL channel (residual_correlation).
 
-Everything is uncalibrated. See risk-tools/rt-7-collective-facility-model.md.
+v0.3 adds, each behind a parameter whose default reproduces v0.2:
+
+  horizon_seasons            the chain above runs season after season: defaults are
+                             absorbing, CapEx balances amortise, OpEx renews, the
+                             collective's reserve carries forward, the price factor
+                             persists (price_persistence, AR(1)), the forward book is
+                             re-contracted each season on the surviving members
+  fwd_shortfall_facility_share  how much of the collective's uncovered forward
+                             shortfall cost reaches the facility (RA-05): 1 = all of it,
+                             0 = the buyer or the collective's own equity carries it
+  climate_rain_beta          the regional climate factor is a mix of a bootstrapped
+                             DISTRICT rainfall anomaly (DS-02 history, passed in as
+                             climate_history) and a normal residual: beta is the observed
+                             correlation of yield residuals with that anomaly
+  factors                    the systematic draws can be supplied from outside, which is
+                             how rt7_portfolio.py makes many collectives share a price
+                             factor and regional climate factors
+
+Partially calibrated. See risk-tools/rt-7-collective-facility-model.md.
 
 Dependency: numpy. The JavaScript port in dashboard/rt7-model.js implements
 the same model for the interactive tab; test_rt7.py checks the two agree.
@@ -37,7 +55,7 @@ import math
 
 import numpy as np
 
-MODEL_VERSION = "0.2"
+MODEL_VERSION = "0.3"
 
 
 # --- small numerics ----------------------------------------------------------
@@ -84,6 +102,45 @@ def annuity_payment(principal, rate, years):
     if rate <= 0:
         return principal / years
     return principal * rate / (1.0 - (1.0 + rate) ** (-years))
+
+
+def _g(p, key, default):
+    """Parameter with a default, so a v0.2 parameter set still runs."""
+    v = p.get(key)
+    return default if v is None else v
+
+
+def capex_balance(principal, rate, years, paid):
+    """Outstanding principal of a level-annuity loan after `paid` payments."""
+    if paid <= 0:
+        return principal
+    if paid >= years:
+        return 0.0
+    if rate <= 0:
+        return principal * (1.0 - paid / years)
+    return principal * (1.0 - ((1.0 + rate) ** paid - 1.0) / ((1.0 + rate) ** years - 1.0))
+
+
+def climate_factor(rng, S, p, climate_history=None):
+    """One season's regional climate factor for S paths: a standard normal, or,
+    when climate_rain_beta > 0 and a district rainfall-anomaly history is given,
+    beta x (bootstrapped, jittered anomaly) + sqrt(1 - beta^2) x normal. The
+    bootstrap keeps the district's own skew and tail frequency (an El Nino
+    deficit year is as likely as it was in the record); the jitter (Silverman's
+    bandwidth, rescaled so the mixture keeps unit variance) stops the factor
+    taking only the record's values. Draws nothing extra when beta is 0, so the
+    v0.2 random stream is unchanged."""
+    beta = float(_g(p, "climate_rain_beta", 0.0))
+    eps = rng.standard_normal(S)
+    if beta == 0.0 or climate_history is None or len(climate_history) < 10:
+        return eps
+    h = np.asarray(climate_history, dtype=float)
+    h = (h - h.mean()) / h.std(ddof=1)
+    bw = 0.9 * len(h) ** (-0.2)
+    r = h[rng.integers(0, len(h), S)] + bw * rng.standard_normal(S)
+    r = r / math.sqrt(1.0 + bw * bw)
+    beta = max(min(beta, 0.99), -0.99)       # a negative beta means wet years are the bad years
+    return beta * r + math.sqrt(1.0 - beta * beta) * eps
 
 
 def pd_curve(dscr, base_pd, p):
@@ -164,125 +221,203 @@ def generate_members(p, seed):
 
 # --- the simulation ----------------------------------------------------------
 
-def simulate(p, n_paths=5000, seed=42, scenario=None, members=None, return_paths=False):
+def season_exposure(m, p, t):
+    """Per-member exposure in season t: CapEx balance after t annuity payments
+    (and the payment due while the loan runs), a renewed OpEx bullet, and the
+    EAD-weighted PD prior and LGD for that mix. t = 0 reproduces generate_members."""
+    n = m["n"]
+    rate, years = p["capex_rate"], int(p["capex_tenor_years"])
+    if t == 0:
+        bal, ds_capex = m["capex"], m["debt_service"] - m["opex"] * (1.0 + p["opex_rate"])
+    else:
+        bal = np.array([capex_balance(c, rate, years, t) if c > 0 else 0.0 for c in m["capex"]])
+        ds_capex = np.where(bal > 0, m["debt_service"] - m["opex"] * (1.0 + p["opex_rate"]), 0.0)
+    opex = m["opex"]
+    ead = bal + opex
+    with np.errstate(invalid="ignore", divide="ignore"):
+        w = np.where(ead > 0, bal / np.where(ead > 0, ead, 1.0), 0.0)
+    return {
+        "ead": ead, "debt_service": ds_capex + opex * (1.0 + p["opex_rate"]),
+        "base_pd": w * p["base_pd_capex"] + (1 - w) * p["base_pd_opex"],
+        "lgd": w * p["lgd_capex"] + (1 - w) * p["lgd_opex"], "has_loan": ead > 0,
+    }
+
+
+def simulate(p, n_paths=5000, seed=42, scenario=None, members=None, return_paths=False,
+             climate_history=None, factors=None):
     """Run the model. Returns a results dict (see summarise). The member set is
     generated from `seed` unless passed in, so a sensitivity sweep can hold the
-    collective fixed while a parameter moves."""
+    collective fixed while a parameter moves.
+
+    climate_history: standardised district rainfall anomalies (one per year) for
+        the empirical climate factor; ignored unless climate_rain_beta > 0.
+    factors: optional {"z_c": (T,S), "z_p": (T,S), "jump": (T,S)} systematic draws
+        supplied by a portfolio run; the scenario shift is still applied here.
+    """
     scenario = scenario or {"climate_shift": 0.0, "price_shift": 0.0}
     m = members if members is not None else generate_members(p, seed)
     rng = np.random.default_rng(seed + 1_000_003)
     n, S = m["n"], int(n_paths)
+    T = max(1, int(_g(p, "horizon_seasons", 1)))
+    fac_share = float(_g(p, "fwd_shortfall_facility_share", 1.0))
+    rho_p = float(_g(p, "price_persistence", 0.0))
 
-    # 1. Systematic factors. One climate factor (regional) and one price factor
-    #    (global) per path, optionally correlated.
-    z_c = rng.standard_normal(S) + scenario["climate_shift"]
-    rho_cp = p["climate_price_correlation"]
-    z_p = rho_cp * (z_c - scenario["climate_shift"]) + math.sqrt(1 - rho_cp * rho_cp) * rng.standard_normal(S)
-
-    # 2. Regional yield and reference price (lognormal, mean-preserving).
     s_y = lognormal_sigma(p["yield_vol"])
-    regional_yield = p["base_yield_t_ha"] * np.exp(s_y * z_c - 0.5 * s_y * s_y)
     s_p = p["price_vol"]
-    jump = (rng.uniform(size=S) < p["price_jump_prob"]) * rng.normal(p["price_jump_mean"], p["price_jump_sd"], S)
-    ref_price = p["price_base_usd_per_t"] * (1 + scenario["price_shift"]) * np.exp(s_p * z_p - 0.5 * s_p * s_p + jump)
-    spot = ref_price * (1 - p["basis_local"])               # local farm-gate spot
-
-    # 3. Member production: area x persistent productivity x regional year x own noise.
     s_i = lognormal_sigma(p["member_yield_idio_vol"])
-    idio = rng.lognormal(-0.5 * s_i * s_i, s_i, (S, n))
-    production = m["area"][None, :] * m["productivity"][None, :] * regional_yield[:, None] * idio
-
-    # 4. Forward book, contracted on EXPECTED deliveries before the season.
-    expected_prod = m["area"] * m["productivity"] * p["base_yield_t_ha"]
-    fwd_book = p["fwd_share"] * float(np.sum(m["hedge"] * expected_prod))   # tonnes
-    fwd_price = p["fwd_price_usd_per_t"]
-
-    # 5. Side-selling: when spot runs above forward by more than the threshold,
-    #    members divert part of their committed crop to the spot market.
-    premium = spot / fwd_price - 1.0
-    diverted = np.clip(p["side_sell_elasticity"] * (premium - p["side_sell_threshold"]), 0.0, 1.0)   # (S,)
-    committed = m["hedge"][None, :] * production                                 # tonnes a member owes the collective
-    delivered_i = committed * (1 - diverted[:, None])
-    sidesold_i = committed * diverted[:, None]
-    own_spot_i = (1 - m["hedge"][None, :]) * production
-    delivered = delivered_i.sum(axis=1)                                          # (S,)
-
-    # 6. Collective sales, shortfall and margin.
-    fwd_sold = np.minimum(delivered, fwd_book)
-    spot_sold = np.maximum(delivered - fwd_book, 0.0)
-    shortfall_t = np.maximum(fwd_book - delivered, 0.0)
-    shortfall_cost = shortfall_t * (np.maximum(spot - fwd_price, 0.0) + p["penalty_per_ton_short"])
-    gross_sales = fwd_sold * fwd_price + spot_sold * spot
-    margin = p["collective_margin_rate"] * gross_sales
-    payout_per_t = np.where(delivered > 0, (gross_sales - margin) / np.where(delivered > 0, delivered, 1.0), 0.0)
-    net_cf = margin - shortfall_cost - p["collective_fixed_cost_usd"]
-
-    # 7. Member cash flow available for debt service.
-    revenue = (delivered_i * payout_per_t[:, None] + (sidesold_i + own_spot_i) * spot[:, None]
-               + m["other_income"][None, :])
-    cfads = revenue - m["area"][None, :] * p["production_cost_per_ha"] - p["household_floor_usd"]
-    ds = m["debt_service"][None, :]
-    # Members without debt get a large finite cover rather than inf, so the PD
-    # curve never multiplies 0 x inf; their PD is masked to zero below anyway.
-    dscr = np.where(ds > 0, cfads / np.where(ds > 0, ds, 1.0), 1e9)
-
-    # 8. Conditional PD and correlated defaults.
-    pd = np.where(m["has_loan"][None, :], pd_curve(dscr, m["base_pd"][None, :], p), 0.0)
+    rho_cp = p["climate_price_correlation"]
     rho = p["residual_correlation"]
-    z_r = rng.standard_normal(S)
-    latent = math.sqrt(rho) * z_r[:, None] + math.sqrt(1 - rho) * rng.standard_normal((S, n))
-    defaults = (latent < norm_ppf(pd)) & m["has_loan"][None, :]
+    fwd_price = p["fwd_price_usd_per_t"]
+    expected_prod = m["area"] * m["productivity"] * p["base_yield_t_ha"]
+    pool0 = float(m["ead"].sum())
 
-    # 9. Losses and the collective buffer.
-    member_loss = (defaults * m["ead"][None, :] * m["lgd"][None, :]).sum(axis=1)
-    buffer = p["reserve_share_of_margin"] * np.maximum(net_cf, 0.0) - np.maximum(-net_cf, 0.0)
-    pool = float(m["ead"].sum())
-    # The facility cannot lose more than it lent. The collective's deficit beyond
-    # that (an uncovered forward book in a price spike) falls on the collective
-    # and its buyer, and is reported separately rather than silently dropped.
-    uncapped = np.maximum(member_loss - buffer, 0.0)
-    facility_loss = np.minimum(uncapped, pool)
-    absorbed = np.minimum(member_loss, np.maximum(buffer, 0.0))
+    alive = np.ones((S, n), dtype=bool)
+    reserve = np.zeros(S)
+    z_p_prev = None
+    fl_cum = np.zeros(S); ml_cum = np.zeros(S); absorbed_cum = np.zeros(S); deficit_cum = np.zeros(S)
+    outside_cum = np.zeros(S); shortcost_cum = np.zeros(S)
+    per_season = []
+    acc = {"pd_sum": 0.0, "pd_n": 0, "dscr_below": 0, "short": 0, "side": 0, "deficit": 0, "capped": 0,
+           "diverted": 0.0, "net_cf": 0.0, "yield": 0.0, "spot": 0.0, "defaults": 0, "borrower_paths": 0}
+    first = {}
 
-    # Normal-year reference: factors at zero, no noise - what the PD prior
-    # implies for THIS collective's leverage. Exposes inconsistency between the
-    # base PD and the loan-size / cost assumptions.
+    for t in range(T):
+        ex = season_exposure(m, p, t)
+        has_loan = ex["has_loan"][None, :] & alive
+        ead_t = ex["ead"][None, :] * alive
+        pool_t = ead_t.sum(axis=1)
+
+        # 1. Systematic factors: one regional climate factor and one global price
+        #    factor per path and season, optionally correlated; the price factor
+        #    persists across seasons as an AR(1).
+        if factors is not None:
+            z_c = np.asarray(factors["z_c"])[t] + scenario["climate_shift"]
+            z_p = np.asarray(factors["z_p"])[t]
+            jump = np.asarray(factors["jump"])[t] if "jump" in factors else None
+        else:
+            z_c = climate_factor(rng, S, p, climate_history) + scenario["climate_shift"]
+            innov = rho_cp * (z_c - scenario["climate_shift"]) + math.sqrt(1 - rho_cp * rho_cp) * rng.standard_normal(S)
+            z_p = innov if z_p_prev is None else rho_p * z_p_prev + math.sqrt(1 - rho_p * rho_p) * innov
+            jump = None
+        z_p_prev = z_p
+        if jump is None:
+            jump = (rng.uniform(size=S) < p["price_jump_prob"]) * rng.normal(p["price_jump_mean"], p["price_jump_sd"], S)
+
+        # 2. Regional yield and reference price (lognormal, mean-preserving).
+        regional_yield = p["base_yield_t_ha"] * np.exp(s_y * z_c - 0.5 * s_y * s_y)
+        ref_price = p["price_base_usd_per_t"] * (1 + scenario["price_shift"]) * np.exp(s_p * z_p - 0.5 * s_p * s_p + jump)
+        spot = ref_price * (1 - p["basis_local"])
+
+        # 3. Member production: area x persistent productivity x regional year x own noise.
+        idio = rng.lognormal(-0.5 * s_i * s_i, s_i, (S, n))
+        production = m["area"][None, :] * m["productivity"][None, :] * regional_yield[:, None] * idio * alive
+
+        # 4. Forward book, contracted before the season on EXPECTED deliveries of
+        #    the members still in the collective.
+        fwd_book = p["fwd_share"] * (alive * (m["hedge"] * expected_prod)[None, :]).sum(axis=1)
+
+        # 5. Side-selling when spot runs above forward by more than the threshold.
+        premium = spot / fwd_price - 1.0
+        diverted = np.clip(p["side_sell_elasticity"] * (premium - p["side_sell_threshold"]), 0.0, 1.0)
+        committed = m["hedge"][None, :] * production
+        delivered_i = committed * (1 - diverted[:, None])
+        sidesold_i = committed * diverted[:, None]
+        own_spot_i = (1 - m["hedge"][None, :]) * production
+        delivered = delivered_i.sum(axis=1)
+
+        # 6. Collective sales, shortfall and margin. The uncovered forward
+        #    obligation costs cover plus penalty; fwd_shortfall_facility_share of
+        #    that reaches the collective's cash flow in front of the lender, the
+        #    rest is carried outside the facility (buyer waiver, collective equity).
+        fwd_sold = np.minimum(delivered, fwd_book)
+        spot_sold = np.maximum(delivered - fwd_book, 0.0)
+        shortfall_t = np.maximum(fwd_book - delivered, 0.0)
+        shortfall_cost = shortfall_t * (np.maximum(spot - fwd_price, 0.0) + p["penalty_per_ton_short"])
+        gross_sales = fwd_sold * fwd_price + spot_sold * spot
+        margin = p["collective_margin_rate"] * gross_sales
+        payout_per_t = np.where(delivered > 0, (gross_sales - margin) / np.where(delivered > 0, delivered, 1.0), 0.0)
+        net_cf = margin - fac_share * shortfall_cost - p["collective_fixed_cost_usd"]
+
+        # 7. Member cash flow available for debt service.
+        revenue = (delivered_i * payout_per_t[:, None] + (sidesold_i + own_spot_i) * spot[:, None]
+                   + m["other_income"][None, :])
+        cfads = revenue - m["area"][None, :] * p["production_cost_per_ha"] - p["household_floor_usd"]
+        ds = ex["debt_service"][None, :]
+        dscr = np.where(ds > 0, cfads / np.where(ds > 0, ds, 1.0), 1e9)
+
+        # 8. Conditional PD and correlated defaults; a default is absorbing.
+        pd = np.where(has_loan, pd_curve(dscr, ex["base_pd"][None, :], p), 0.0)
+        z_r = rng.standard_normal(S)
+        latent = math.sqrt(rho) * z_r[:, None] + math.sqrt(1 - rho) * rng.standard_normal((S, n))
+        defaults = (latent < norm_ppf(pd)) & has_loan
+
+        # 9. Losses, the carried reserve, and the facility loss for the season.
+        member_loss = (defaults * ead_t * ex["lgd"][None, :]).sum(axis=1)
+        buffer = reserve + p["reserve_share_of_margin"] * np.maximum(net_cf, 0.0) - np.maximum(-net_cf, 0.0)
+        uncapped = np.maximum(member_loss - buffer, 0.0)
+        facility_loss = np.minimum(uncapped, pool_t)
+        absorbed = np.minimum(member_loss, np.maximum(buffer, 0.0))
+        reserve = np.maximum(buffer - member_loss, 0.0)
+        alive = alive & ~defaults
+
+        fl_cum += facility_loss; ml_cum += member_loss; absorbed_cum += absorbed
+        deficit_cum += np.maximum(-net_cf, 0.0); outside_cum += (1 - fac_share) * shortfall_cost
+        shortcost_cum += shortfall_cost
+        per_season.append(float(facility_loss.mean() / pool0) if pool0 else 0.0)
+        acc["pd_sum"] += float(pd[has_loan].sum()); acc["pd_n"] += int(has_loan.sum())
+        acc["dscr_below"] += int((dscr[has_loan] < 1.0).sum())
+        acc["short"] += int((shortfall_t > 0).sum()); acc["side"] += int((diverted > 0).sum())
+        acc["deficit"] += int((net_cf < 0).sum()); acc["capped"] += int((uncapped > pool_t).sum())
+        acc["diverted"] += float(diverted.sum()); acc["net_cf"] += float(net_cf.sum())
+        acc["yield"] += float(regional_yield.sum()); acc["spot"] += float(spot.sum())
+        acc["defaults"] += int(defaults.sum()); acc["borrower_paths"] += int(has_loan.sum())
+        if t == 0:
+            first = {"fwd_book": float(fwd_book[0]), "regional_yield": regional_yield, "spot": spot, "dscr": dscr,
+                     "pd": pd, "defaults": defaults, "shortfall_t": shortfall_t, "diverted": diverted,
+                     "net_cf": net_cf, "member_loss": member_loss, "facility_loss": facility_loss}
+
     ref = _normal_year(p, m)
-
-    res = summarise(facility_loss, member_loss, pool, p)
+    ST = S * T
+    res = summarise(fl_cum, ml_cum, pool0, p)
     res.update({
         "model_version": MODEL_VERSION,
         "n_paths": S,
+        "horizon_seasons": T,
         "n_members": n,
         "n_borrowers": int(m["has_loan"].sum()),
-        "pool_notional_usd": pool,
-        "fwd_book_t": fwd_book,
+        "pool_notional_usd": pool0,
+        "fwd_book_t": first["fwd_book"],
         "expected_delivered_t": float(np.sum(m["hedge"] * expected_prod)),
-        "mean_default_rate": float(defaults.sum(axis=1).mean() / max(1, m["has_loan"].sum())),
-        "mean_pd": float(pd[:, m["has_loan"]].mean()) if m["has_loan"].any() else 0.0,
+        "mean_default_rate": acc["defaults"] / max(1, acc["borrower_paths"]),
+        "mean_pd": acc["pd_sum"] / acc["pd_n"] if acc["pd_n"] else 0.0,
         "normal_year_pd": ref["pd"],
         "normal_year_median_dscr": ref["median_dscr"],
-        "share_dscr_below_1": float((dscr[:, m["has_loan"]] < 1.0).mean()) if m["has_loan"].any() else 0.0,
-        "p_shortfall": float((shortfall_t > 0).mean()),
-        "mean_shortfall_cost_usd": float(shortfall_cost.mean()),
-        "mean_diverted_share": float(diverted.mean()),
-        "p_side_selling": float((diverted > 0).mean()),
-        "mean_collective_net_cf_usd": float(net_cf.mean()),
-        "p_collective_deficit": float((net_cf < 0).mean()),
-        "mean_collective_deficit_usd": float(np.maximum(-net_cf, 0.0).mean()),
-        "p_loss_capped_at_pool": float((uncapped > pool).mean()),
-        "mean_buffer_absorbed_usd": float(absorbed.mean()),
-        "mean_member_loss_usd": float(member_loss.mean()),
-        "member_el_pct": float(member_loss.mean() / pool) if pool else 0.0,
-        "mean_regional_yield_t_ha": float(regional_yield.mean()),
-        "mean_spot_usd_per_t": float(spot.mean()),
-        "loss_histogram": histogram(facility_loss / pool if pool else facility_loss),
+        "share_dscr_below_1": acc["dscr_below"] / acc["pd_n"] if acc["pd_n"] else 0.0,
+        "p_shortfall": acc["short"] / ST,
+        "mean_shortfall_cost_usd": float(shortcost_cum.mean()),
+        "mean_shortfall_outside_facility_usd": float(outside_cum.mean()),
+        "mean_diverted_share": acc["diverted"] / ST,
+        "p_side_selling": acc["side"] / ST,
+        "mean_collective_net_cf_usd": acc["net_cf"] / ST,
+        "p_collective_deficit": acc["deficit"] / ST,
+        "mean_collective_deficit_usd": float(deficit_cum.mean()),
+        "p_loss_capped_at_pool": acc["capped"] / ST,
+        "mean_buffer_absorbed_usd": float(absorbed_cum.mean()),
+        "mean_member_loss_usd": float(ml_cum.mean()),
+        "member_el_pct": float(ml_cum.mean() / pool0) if pool0 else 0.0,
+        "el_per_season_pct": per_season,
+        "el_annualised_pct": res["el_pct"] / T,
+        "mean_reserve_end_usd": float(reserve.mean()),
+        "mean_regional_yield_t_ha": acc["yield"] / ST,
+        "mean_spot_usd_per_t": acc["spot"] / ST,
+        "loss_histogram": histogram(fl_cum / pool0 if pool0 else fl_cum),
     })
     if return_paths:
         res["paths"] = {
-            "facility_loss": facility_loss, "member_loss": member_loss, "net_cf": net_cf,
-            "regional_yield": regional_yield, "spot": spot, "dscr": dscr, "pd": pd,
-            "defaults": defaults, "shortfall_t": shortfall_t, "diverted": diverted,
+            "facility_loss": fl_cum, "member_loss": ml_cum, "net_cf": first["net_cf"],
+            "regional_yield": first["regional_yield"], "spot": first["spot"], "dscr": first["dscr"], "pd": first["pd"],
+            "defaults": first["defaults"], "shortfall_t": first["shortfall_t"], "diverted": first["diverted"],
+            "facility_loss_season_1": first["facility_loss"], "member_loss_season_1": first["member_loss"],
         }
         res["members"] = m
     return res
@@ -397,10 +532,12 @@ TORNADO = [
     ("side_sell_elasticity", "set", 0.0, 2.0),
     ("collective_fixed_cost_usd", "mul", 0.5, 2.0),
     ("pd_dscr_sensitivity", "mul", 0.5, 1.5),
+    ("fwd_shortfall_facility_share", "set", 0.0, 1.0),
+    ("climate_rain_beta", "set", 0.0, 0.5),
 ]
 
 CLAMP_01 = {"hedge_ratio_mean", "fwd_share", "basis_local", "base_pd_opex", "base_pd_capex",
-            "lgd_opex", "lgd_capex", "residual_correlation"}
+            "lgd_opex", "lgd_capex", "residual_correlation", "fwd_shortfall_facility_share"}
 
 
 def shocked(p, name, how, v):
@@ -415,7 +552,7 @@ def shocked(p, name, how, v):
     return q
 
 
-def tornado(p, n_paths=3000, seed=42, scenario=None):
+def tornado(p, n_paths=3000, seed=42, scenario=None, climate_history=None):
     """One-at-a-time sensitivity of EL and UL99 to each entry in TORNADO.
 
     The member set is regenerated from the same seed on every run rather than
@@ -423,13 +560,15 @@ def tornado(p, n_paths=3000, seed=42, scenario=None):
     the same set of draws, and a parameter that acts at generation (hedge
     ratio, base PD, LGD, loan size) moves the attribute it should move instead
     of being silently frozen. Returns rows sorted by swing in EL."""
-    base = simulate(p, n_paths, seed, scenario)
+    base = simulate(p, n_paths, seed, scenario, climate_history=climate_history)
     rows = []
     for name, how, lo, hi in TORNADO:
         if name not in p:
             continue
-        r_lo = simulate(shocked(p, name, how, lo), n_paths, seed, scenario)
-        r_hi = simulate(shocked(p, name, how, hi), n_paths, seed, scenario)
+        if name == "climate_rain_beta" and climate_history is None:
+            continue
+        r_lo = simulate(shocked(p, name, how, lo), n_paths, seed, scenario, climate_history=climate_history)
+        r_hi = simulate(shocked(p, name, how, hi), n_paths, seed, scenario, climate_history=climate_history)
         rows.append({
             "parameter": name, "how": how, "low": lo, "high": hi,
             "value_low": shocked(p, name, how, lo)[name], "value_high": shocked(p, name, how, hi)[name],

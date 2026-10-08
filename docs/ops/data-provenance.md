@@ -73,6 +73,7 @@ A parameter's lineage is readable from its row in the model tracker without open
 
 | Script | Dataset | Route | Processed file |
 |---|---|---|---|
+| `ds02_chirps.py` | DS-02 CHIRPS district rainfall | geoBoundaries polygons (pinned commit, served from GitHub's LFS media host) committed as `data/processed/ds-02-district-boundaries.geojson`; CHIRPS v2.0 monthly through the IRI Data Library's grid table over each bounding box, masked to the polygon | `data/processed/ds-02-district-rainfall-monthly.csv`, `-annual.csv`, `data/rt7-climate-history.csv` |
 | `ds01_faostat_yields.py` | DS-01 FAOSTAT coffee, green | Publisher bulk zip, filtered to the three countries (the query API now needs an authorization header) | `data/processed/ds-01-coffee-national-yields.csv` |
 | `ds03_nasa_power.py` | DS-03 NASA POWER monthly | Point API at six district centroids, one raw file of verbatim responses | `data/processed/ds-03-district-climate-monthly.csv` |
 | `ds04_pink_sheet.py` | DS-04 World Bank Pink Sheet | XLSX; the doc id changes per release and is read off the landing page | `data/processed/ds-04-coffee-prices-monthly.csv` |
@@ -91,6 +92,7 @@ Run order: the fetchers, then `calibrate_rt7.py --apply`, then `risk-tools/colle
 
 ## What this does not yet do
 
-- DS-02 (CHIRPS) needs a documented district boundary before an extraction means anything; it stays `Proposed`. DS-05 (ICO) and DS-06 (Our World in Data) are cross-checks, not yet pulled.
+- DS-05 (ICO) and DS-06 (Our World in Data) are cross-checks, not yet pulled.
+- DS-02 uses calendar-year rainfall totals; a flowering-to-harvest window per origin would be the refinement, once a partner's harvest calendar is known.
 - No automated checksum verification on re-run: a second fetch on a later date lands as a new raw file and the two hashes are compared by eye.
 - The Vault folder `05-raw-data/<DS-NN>-<slug>/` convention is not yet reflected in `docs/ops/drive-vault.md`.

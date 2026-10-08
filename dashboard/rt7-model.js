@@ -9,10 +9,15 @@
    deliberately match the Python result dict, snake_case and all, so the two
    can be compared field by field.
 
-   Nothing here is calibrated. See risk-tools/rt-7-collective-facility-model.md. */
+   v0.3: multi-season horizon (horizon_seasons, price_persistence), the share of
+   the forward shortfall that reaches the facility (fwd_shortfall_facility_share)
+   and an empirical district climate factor (climate_rain_beta with
+   opts.climateHistory). Each defaults to the v0.2 behaviour.
+
+   Partially calibrated. See risk-tools/rt-7-collective-facility-model.md. */
 (function (root) {
   "use strict";
-  var RT7 = { version: "0.2" };
+  var RT7 = { version: "0.3" };
 
   /* ---------------------------------------------------------------- rng */
   /* mulberry32: small, fast, good enough for a Monte Carlo of this size and
@@ -74,6 +79,36 @@
     if (rate <= 0) return principal / years;
     return principal * rate / (1 - Math.pow(1 + rate, -years));
   };
+
+  function g(p, k, d) { var v = p[k]; return (v == null || isNaN(v)) ? d : v; }
+
+  /* Outstanding principal of a level-annuity loan after `paid` payments. */
+  RT7.capexBalance = function (principal, rate, years, paid) {
+    if (paid <= 0) return principal;
+    if (paid >= years) return 0;
+    if (rate <= 0) return principal * (1 - paid / years);
+    return principal * (1 - (Math.pow(1 + rate, paid) - 1) / (Math.pow(1 + rate, years) - 1));
+  };
+
+  /* Standardise a climate history once; the bootstrap draws from it per path. */
+  function prepHistory(h) {
+    if (!h || h.length < 10) return null;
+    var n = h.length, m = mean(h), v = 0, i;
+    for (i = 0; i < n; i++) v += (h[i] - m) * (h[i] - m);
+    var sd = Math.sqrt(v / (n - 1)), out = [];
+    for (i = 0; i < n; i++) out.push((h[i] - m) / sd);
+    var bw = 0.9 * Math.pow(n, -0.2);
+    return { z: out, bw: bw, scale: 1 / Math.sqrt(1 + bw * bw) };
+  }
+  /* beta x (bootstrapped, jittered district anomaly) + sqrt(1 - beta^2) x normal;
+     draws nothing extra when beta is 0, like the python. */
+  function climateFactor(rng, beta, hist) {
+    var eps = rng.normal();
+    if (beta === 0 || !hist) return eps;
+    var r = (hist.z[Math.floor(rng.uniform() * hist.z.length)] + hist.bw * rng.normal()) * hist.scale;
+    beta = Math.max(Math.min(beta, 0.99), -0.99);   /* negative: wet years are the bad years */
+    return beta * r + Math.sqrt(1 - beta * beta) * eps;
+  }
 
   /* Anchored logistic: PD == basePd at pd_anchor_dscr, floor pd_floor_share x
      basePd as cover strengthens, ceiling pd_max as it collapses. */
@@ -160,100 +195,141 @@
   };
 
   /* ----------------------------------------------------------- simulate */
+  /* Per-member exposure in season t: CapEx balance after t payments, renewed
+     OpEx bullet, EAD-weighted PD prior and LGD. t = 0 equals generateMembers. */
+  RT7.seasonExposure = function (m, p, t) {
+    var n = m.n, years = Math.round(p.capex_tenor_years), i;
+    var ead = [], ds = [], basePd = [], lgd = [], hasLoan = [];
+    for (i = 0; i < n; i++) {
+      var dsO = m.opex[i] * (1 + p.opex_rate);
+      var bal = t === 0 ? m.capex[i] : (m.capex[i] > 0 ? RT7.capexBalance(m.capex[i], p.capex_rate, years, t) : 0);
+      var dsC = bal > 0 ? m.debt_service[i] - dsO : 0;
+      var e = bal + m.opex[i], w = e > 0 ? bal / e : 0;
+      ead.push(e); ds.push(dsC + dsO);
+      basePd.push(w * p.base_pd_capex + (1 - w) * p.base_pd_opex);
+      lgd.push(w * p.lgd_capex + (1 - w) * p.lgd_opex);
+      hasLoan.push(e > 0);
+    }
+    return { ead: ead, debt_service: ds, base_pd: basePd, lgd: lgd, has_loan: hasLoan };
+  };
+
   RT7.simulate = function (p, opts) {
     opts = opts || {};
     var S = opts.nPaths || 5000, seed = (opts.seed == null ? 42 : opts.seed);
     var scen = opts.scenario || { climate_shift: 0, price_shift: 0 };
     var m = opts.members || RT7.generateMembers(p, seed);
     var rng = makeRng(seed + 1000003);
-    var n = m.n, i, s;
+    var n = m.n, i, s, t;
+    var T = Math.max(1, Math.round(g(p, "horizon_seasons", 1)));
+    var facShare = g(p, "fwd_shortfall_facility_share", 1), rhoP = g(p, "price_persistence", 0);
+    var beta = g(p, "climate_rain_beta", 0), hist = prepHistory(opts.climateHistory);
 
     var expectedProd = [], expectedDelivered = 0;
     for (i = 0; i < n; i++) { expectedProd.push(m.area[i] * m.productivity[i] * p.base_yield_t_ha); expectedDelivered += m.hedge[i] * expectedProd[i]; }
-    var fwdBook = p.fwd_share * expectedDelivered, fwdPrice = p.fwd_price_usd_per_t;
+    var fwdPrice = p.fwd_price_usd_per_t;
     var sY = lognormalSigma(p.yield_vol), sP = p.price_vol, sI = lognormalSigma(p.member_yield_idio_vol);
     var rhoCP = p.climate_price_correlation, rho = p.residual_correlation;
     var sqRho = Math.sqrt(rho), sq1Rho = Math.sqrt(1 - rho);
     var nBorrowers = 0; for (i = 0; i < n; i++) if (m.has_loan[i]) nBorrowers++;
+    var ex = []; for (t = 0; t < T; t++) ex.push(RT7.seasonExposure(m, p, t));
+    var pool0 = 0; for (i = 0; i < n; i++) pool0 += m.ead[i];
 
     var facilityLoss = [], memberLoss = [], netCfs = [], yields = [], spots = [], shortfalls = [], diverteds = [];
-    var sumPd = 0, cntPd = 0, cntDscrBelow1 = 0, sumDefaults = 0, sumAbsorbed = 0, sumShortCost = 0, sumDeficit = 0, capped = 0;
-    var pool = 0; for (i = 0; i < n; i++) pool += m.ead[i];
+    var sumPd = 0, cntPd = 0, cntDscrBelow1 = 0, sumDefaults = 0, sumAbsorbed = 0, sumShortCost = 0, sumOutside = 0, sumDeficit = 0, capped = 0;
+    var perSeason = [], fwdBook0 = 0, sumReserve = 0;
+    for (t = 0; t < T; t++) perSeason.push(0);
 
     for (s = 0; s < S; s++) {
-      var zc = rng.normal() + scen.climate_shift;
-      var zp = rhoCP * (zc - scen.climate_shift) + Math.sqrt(1 - rhoCP * rhoCP) * rng.normal();
-      var regionalYield = p.base_yield_t_ha * Math.exp(sY * zc - 0.5 * sY * sY);
-      var jump = (rng.uniform() < p.price_jump_prob) ? (p.price_jump_mean + p.price_jump_sd * rng.normal()) : 0;
-      /* the python draws the jump size for every path; drawing only when it
-         fires changes the stream but not the distribution */
-      var refPrice = p.price_base_usd_per_t * (1 + scen.price_shift) * Math.exp(sP * zp - 0.5 * sP * sP + jump);
-      var spot = refPrice * (1 - p.basis_local);
+      var alive = new Array(n); for (i = 0; i < n; i++) alive[i] = true;
+      var reserve = 0, zpPrev = null, flCum = 0, mlCum = 0;
+      for (t = 0; t < T; t++) {
+        var e = ex[t], pool = 0;
+        for (i = 0; i < n; i++) if (alive[i]) pool += e.ead[i];
+        var zc = climateFactor(rng, beta, hist) + scen.climate_shift;
+        var innov = rhoCP * (zc - scen.climate_shift) + Math.sqrt(1 - rhoCP * rhoCP) * rng.normal();
+        var zp = zpPrev === null ? innov : rhoP * zpPrev + Math.sqrt(1 - rhoP * rhoP) * innov;
+        zpPrev = zp;
+        var regionalYield = p.base_yield_t_ha * Math.exp(sY * zc - 0.5 * sY * sY);
+        var jump = (rng.uniform() < p.price_jump_prob) ? (p.price_jump_mean + p.price_jump_sd * rng.normal()) : 0;
+        /* the python draws the jump size for every path; drawing only when it
+           fires changes the stream but not the distribution */
+        var refPrice = p.price_base_usd_per_t * (1 + scen.price_shift) * Math.exp(sP * zp - 0.5 * sP * sP + jump);
+        var spot = refPrice * (1 - p.basis_local);
 
-      var premium = spot / fwdPrice - 1;
-      var diverted = Math.min(1, Math.max(0, p.side_sell_elasticity * (premium - p.side_sell_threshold)));
+        var premium = spot / fwdPrice - 1;
+        var diverted = Math.min(1, Math.max(0, p.side_sell_elasticity * (premium - p.side_sell_threshold)));
 
-      var production = new Array(n), delivered = 0;
-      for (i = 0; i < n; i++) {
-        var idio = rng.lognormal(-0.5 * sI * sI, sI);
-        production[i] = m.area[i] * m.productivity[i] * regionalYield * idio;
-        delivered += m.hedge[i] * production[i] * (1 - diverted);
+        var production = new Array(n), delivered = 0, fwdBook = 0;
+        for (i = 0; i < n; i++) {
+          var idio = rng.lognormal(-0.5 * sI * sI, sI);
+          production[i] = alive[i] ? m.area[i] * m.productivity[i] * regionalYield * idio : 0;
+          if (alive[i]) { delivered += m.hedge[i] * production[i] * (1 - diverted); fwdBook += m.hedge[i] * expectedProd[i]; }
+        }
+        fwdBook *= p.fwd_share;
+        if (s === 0 && t === 0) fwdBook0 = fwdBook;
+        var fwdSold = Math.min(delivered, fwdBook);
+        var spotSold = Math.max(delivered - fwdBook, 0);
+        var shortT = Math.max(fwdBook - delivered, 0);
+        var shortCost = shortT * (Math.max(spot - fwdPrice, 0) + p.penalty_per_ton_short);
+        var gross = fwdSold * fwdPrice + spotSold * spot;
+        var margin = p.collective_margin_rate * gross;
+        var payoutPerT = delivered > 0 ? (gross - margin) / delivered : 0;
+        var netCf = margin - facShare * shortCost - p.collective_fixed_cost_usd;
+
+        var zr = rng.normal(), mLoss = 0, nDef = 0;
+        for (i = 0; i < n; i++) {
+          var eps = rng.normal();                       /* drawn for every member, as in python */
+          if (!alive[i] || !e.has_loan[i]) continue;
+          var committed = m.hedge[i] * production[i];
+          var revenue = committed * (1 - diverted) * payoutPerT + (committed * diverted + (1 - m.hedge[i]) * production[i]) * spot + m.other_income[i];
+          var cfads = revenue - m.area[i] * p.production_cost_per_ha - p.household_floor_usd;
+          var dscr = cfads / e.debt_service[i];
+          var pd = RT7.pdCurve(dscr, e.base_pd[i], p);
+          sumPd += pd; cntPd++;
+          if (dscr < 1) cntDscrBelow1++;
+          var latent = sqRho * zr + sq1Rho * eps;
+          if (latent < RT7.normPpf(pd)) { nDef++; mLoss += e.ead[i] * e.lgd[i]; alive[i] = false; }
+        }
+        var buffer = reserve + p.reserve_share_of_margin * Math.max(netCf, 0) - Math.max(-netCf, 0);
+        var uncapped = Math.max(mLoss - buffer, 0);
+        var fl = Math.min(uncapped, pool);
+        if (uncapped > pool) capped++;
+        sumAbsorbed += Math.min(mLoss, Math.max(buffer, 0));
+        reserve = Math.max(buffer - mLoss, 0);
+        flCum += fl; mlCum += mLoss; perSeason[t] += fl;
+        netCfs.push(netCf); yields.push(regionalYield); spots.push(spot); shortfalls.push(shortT); diverteds.push(diverted);
+        sumDefaults += nDef; sumShortCost += shortCost; sumOutside += (1 - facShare) * shortCost; sumDeficit += Math.max(-netCf, 0);
       }
-      var fwdSold = Math.min(delivered, fwdBook);
-      var spotSold = Math.max(delivered - fwdBook, 0);
-      var shortT = Math.max(fwdBook - delivered, 0);
-      var shortCost = shortT * (Math.max(spot - fwdPrice, 0) + p.penalty_per_ton_short);
-      var gross = fwdSold * fwdPrice + spotSold * spot;
-      var margin = p.collective_margin_rate * gross;
-      var payoutPerT = delivered > 0 ? (gross - margin) / delivered : 0;
-      var netCf = margin - shortCost - p.collective_fixed_cost_usd;
-
-      var zr = rng.normal(), mLoss = 0, nDef = 0;
-      for (i = 0; i < n; i++) {
-        var eps = rng.normal();                       /* drawn for every member, as in python */
-        if (!m.has_loan[i]) continue;
-        var committed = m.hedge[i] * production[i];
-        var revenue = committed * (1 - diverted) * payoutPerT + (committed * diverted + (1 - m.hedge[i]) * production[i]) * spot + m.other_income[i];
-        var cfads = revenue - m.area[i] * p.production_cost_per_ha - p.household_floor_usd;
-        var dscr = cfads / m.debt_service[i];
-        var pd = RT7.pdCurve(dscr, m.base_pd[i], p);
-        sumPd += pd; cntPd++;
-        if (dscr < 1) cntDscrBelow1++;
-        var latent = sqRho * zr + sq1Rho * eps;
-        if (latent < RT7.normPpf(pd)) { nDef++; mLoss += m.ead[i] * m.lgd[i]; }
-      }
-      var buffer = p.reserve_share_of_margin * Math.max(netCf, 0) - Math.max(-netCf, 0);
-      var uncapped = Math.max(mLoss - buffer, 0);
-      var fl = Math.min(uncapped, pool);
-      if (uncapped > pool) capped++;
-      facilityLoss.push(fl); memberLoss.push(mLoss); netCfs.push(netCf);
-      yields.push(regionalYield); spots.push(spot); shortfalls.push(shortT); diverteds.push(diverted);
-      sumDefaults += nDef; sumAbsorbed += Math.min(mLoss, Math.max(buffer, 0));
-      sumShortCost += shortCost; sumDeficit += Math.max(-netCf, 0);
+      facilityLoss.push(flCum); memberLoss.push(mlCum); sumReserve += reserve;
     }
 
     var ref = normalYear(p, m);
-    var res = summarise(facilityLoss, memberLoss, pool, p);
-    var lf = facilityLoss.map(function (x) { return pool > 0 ? x / pool : x; });
+    var res = summarise(facilityLoss, memberLoss, pool0, p);
+    var lf = facilityLoss.map(function (x) { return pool0 > 0 ? x / pool0 : x; });
     var cnt = function (arr, f) { var c = 0; for (var k = 0; k < arr.length; k++) if (f(arr[k])) c++; return c / arr.length; };
+    var ST = S * T;
     res.model_version = RT7.version;
-    res.n_paths = S; res.n_members = n; res.n_borrowers = nBorrowers;
-    res.pool_notional_usd = pool; res.fwd_book_t = fwdBook; res.expected_delivered_t = expectedDelivered;
-    res.mean_default_rate = nBorrowers ? sumDefaults / S / nBorrowers : 0;
+    res.n_paths = S; res.horizon_seasons = T; res.n_members = n; res.n_borrowers = nBorrowers;
+    res.pool_notional_usd = pool0; res.fwd_book_t = fwdBook0; res.expected_delivered_t = expectedDelivered;
+    res.mean_default_rate = cntPd ? sumDefaults / cntPd : 0;
     res.mean_pd = cntPd ? sumPd / cntPd : 0;
     res.normal_year_pd = ref.pd; res.normal_year_median_dscr = ref.median_dscr;
     res.share_dscr_below_1 = cntPd ? cntDscrBelow1 / cntPd : 0;
     res.p_shortfall = cnt(shortfalls, function (x) { return x > 0; });
     res.mean_shortfall_cost_usd = sumShortCost / S;
+    res.mean_shortfall_outside_facility_usd = sumOutside / S;
     res.mean_diverted_share = mean(diverteds);
     res.p_side_selling = cnt(diverteds, function (x) { return x > 0; });
     res.mean_collective_net_cf_usd = mean(netCfs);
     res.p_collective_deficit = cnt(netCfs, function (x) { return x < 0; });
     res.mean_collective_deficit_usd = sumDeficit / S;
-    res.p_loss_capped_at_pool = capped / S;
+    res.p_loss_capped_at_pool = capped / ST;
     res.mean_buffer_absorbed_usd = sumAbsorbed / S;
     res.mean_member_loss_usd = mean(memberLoss);
-    res.member_el_pct = pool ? mean(memberLoss) / pool : 0;
+    res.member_el_pct = pool0 ? mean(memberLoss) / pool0 : 0;
+    res.el_per_season_pct = perSeason.map(function (x) { return pool0 ? x / S / pool0 : 0; });
+    res.el_annualised_pct = res.el_pct / T;
+    res.mean_reserve_end_usd = sumReserve / S;
     res.mean_regional_yield_t_ha = mean(yields);
     res.mean_spot_usd_per_t = mean(spots);
     res.loss_histogram = histogram(lf);
@@ -344,10 +420,11 @@
     ["lgd_opex", "abs", -0.15, 0.15], ["lgd_capex", "abs", -0.15, 0.15],
     ["residual_correlation", "set", 0.0, 0.30], ["household_floor_usd", "mul", 0.75, 1.25],
     ["production_cost_per_ha", "mul", 0.75, 1.25], ["side_sell_elasticity", "set", 0.0, 2.0],
-    ["collective_fixed_cost_usd", "mul", 0.5, 2.0], ["pd_dscr_sensitivity", "mul", 0.5, 1.5]
+    ["collective_fixed_cost_usd", "mul", 0.5, 2.0], ["pd_dscr_sensitivity", "mul", 0.5, 1.5],
+    ["fwd_shortfall_facility_share", "set", 0.0, 1.0], ["climate_rain_beta", "set", 0.0, 0.5]
   ];
   var CLAMP_01 = { hedge_ratio_mean: 1, fwd_share: 1, basis_local: 1, base_pd_opex: 1, base_pd_capex: 1,
-                   lgd_opex: 1, lgd_capex: 1, residual_correlation: 1 };
+                   lgd_opex: 1, lgd_capex: 1, residual_correlation: 1, fwd_shortfall_facility_share: 1 };
   RT7.shocked = function (p, name, how, v) {
     var q = {}, k; for (k in p) if (Object.prototype.hasOwnProperty.call(p, k)) q[k] = p[k];
     var base = p[name], val = how === "abs" ? base + v : how === "mul" ? base * v : v;
@@ -362,6 +439,7 @@
     for (var i = 0; i < RT7.TORNADO.length; i++) {
       var t = RT7.TORNADO[i], name = t[0], how = t[1], lo = t[2], hi = t[3];
       if (!(name in p)) continue;
+      if (name === "climate_rain_beta" && !(opts.climateHistory && opts.climateHistory.length >= 10)) continue;
       var pl = RT7.shocked(p, name, how, lo), ph = RT7.shocked(p, name, how, hi);
       var rl = RT7.simulate(pl, opts), rh = RT7.simulate(ph, opts);
       rows.push({ parameter: name, how: how, low: lo, high: hi, value_low: pl[name], value_high: ph[name],

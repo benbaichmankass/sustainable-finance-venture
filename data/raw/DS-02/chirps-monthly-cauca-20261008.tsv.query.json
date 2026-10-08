@@ -1,0 +1,20 @@
+{
+ "dataset_id": "DS-02",
+ "raw_file": "data/raw/DS-02/chirps-monthly-cauca-20261008.tsv",
+ "retrieved_at_utc": "2026-10-08T09:36:34Z",
+ "request": {
+  "url": "https://iridl.ldeo.columbia.edu/SOURCES/.UCSB/.CHIRPS/.v2p0/.monthly/.global/.precipitation/X/-77.978/-75.698/RANGEEDGES/Y/0.909/3.379/RANGEEDGES/T/(Jan%201981)/(Dec%202026)/RANGEEDGES/gridtable.tsv",
+  "method": "GET",
+  "bbox": [
+   -77.92788390467042,
+   -75.7475052,
+   0.958594,
+   3.3289846
+  ]
+ },
+ "bytes": 84552126,
+ "sha256": "fa4e50ebf7c769098c1e0a9264b7ac695165491a89ba440e6ee4b98c756e1300",
+ "code_version": "0ef54eb",
+ "vault_copy": "",
+ "notes": "IRI gridtable over the district bounding box; cells outside the polygon are discarded at processing."
+}

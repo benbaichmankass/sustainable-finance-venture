@@ -15,7 +15,7 @@ process.stdin.on("data", function (c) { chunks.push(c); });
 process.stdin.on("end", function () {
   var inp = JSON.parse(chunks.join(""));
   var res = RT7.simulate(inp.params, { nPaths: inp.nPaths, seed: inp.seed, scenario: inp.scenario,
-                                       members: inp.members || null });
+                                       members: inp.members || null, climateHistory: inp.climate_history || null });
   delete res.loss_histogram;
   var out = { result: res, version: RT7.version };
   if (inp.pd_probe) {

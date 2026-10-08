@@ -24,6 +24,12 @@ they broke.
   8. The JavaScript port agrees with this implementation: exactly on the
      deterministic pieces, within Monte Carlo error on the simulation. Skipped
      with a notice if node is not installed.
+  9. v0.3 additions: a one-season horizon reproduces the committed v0.2 results
+     exactly; a multi-season run is cumulative and never below the first
+     season; the forward-shortfall share moves the facility's loss and the
+     amount carried outside the facility in the right directions; the
+     empirical climate factor keeps unit variance and reproduces the history's
+     skew; the JS port agrees on a three-season run with shared members.
 
 Dependencies: numpy; node optional for check 8.
 """
@@ -217,6 +223,73 @@ def main():
                   abs(py["p_side_selling"] - js["p_side_selling"]) < 0.02 and abs(py["p_shortfall"] - js["p_shortfall"]) < 0.02,
                   "side-sell py %.1f%% js %.1f%%; shortfall py %.1f%% js %.1f%%" % (
                       100 * py["p_side_selling"], 100 * js["p_side_selling"], 100 * py["p_shortfall"], 100 * js["p_shortfall"]))
+
+    # --- 9. v0.3: horizon, shortfall share, empirical climate --------------------------------------
+    import csv as _csv
+    committed = {(r["Region"], r["Scenario_ID"]): r for r in _csv.DictReader(
+        open(os.path.join(os.path.dirname(os.path.dirname(HERE)), "data", "rt7-region-results.csv"), newline="", encoding="utf-8"))}
+    one = dict(p, horizon_seasons=1)
+    hist_co = P.load_climate_history().get("colombia")      # the committed run uses the DS-02 history when it exists
+    r1 = M.simulate(one, 5000, 42, scen["RS-0"], climate_history=hist_co)
+    cm = committed.get(("colombia", "RS-0"))
+    if cm and cm["N_Paths"] == "5000" and cm["Seed"] == "42":
+        check("one-season horizon reproduces the committed Colombia base case to 3 decimals",
+              abs(100 * r1["el_pct"] - float(cm["EL_Pct"])) < 0.0015 and abs(100 * r1["ul99_pct"] - float(cm["UL99_Pct"])) < 0.0015,
+              "EL %.3f vs %s, UL99 %.3f vs %s" % (100 * r1["el_pct"], cm["EL_Pct"], 100 * r1["ul99_pct"], cm["UL99_Pct"]))
+    else:
+        skip("one-season horizon reproduces the committed base case", "committed row not at 5000 paths / seed 42")
+    r3 = M.simulate(dict(p, horizon_seasons=3, price_persistence=0.5), 3000, 42, scen["RS-0"])
+    check("three-season loss is cumulative: not below season one, and the seasons add up",
+          r3["el_pct"] >= r3["el_per_season_pct"][0] - 1e-12 and abs(sum(r3["el_per_season_pct"]) - r3["el_pct"]) < 1e-9
+          and len(r3["el_per_season_pct"]) == 3,
+          "cumulative %.2f%%, seasons %s" % (100 * r3["el_pct"], ["%.2f" % (100 * x) for x in r3["el_per_season_pct"]]))
+    check("members who default leave: cumulative member loss is below three times a single season",
+          r3["member_el_pct"] < 3 * r1["member_el_pct"],
+          "%.2f%% vs 3 x %.2f%%" % (100 * r3["member_el_pct"], 100 * r1["member_el_pct"]))
+    sp_all = M.simulate(dict(p, fwd_shortfall_facility_share=1.0), 4000, 42, scen["RS-4"])
+    sp_none = M.simulate(dict(p, fwd_shortfall_facility_share=0.0), 4000, 42, scen["RS-4"])
+    check("moving the forward shortfall off the facility lowers its loss in a price spike",
+          sp_none["el_pct"] < sp_all["el_pct"] and sp_all["mean_shortfall_outside_facility_usd"] == 0.0
+          and abs(sp_none["mean_shortfall_outside_facility_usd"] - sp_none["mean_shortfall_cost_usd"]) < 1e-6,
+          "EL %.2f%% -> %.2f%%; outside %.0f" % (100 * sp_all["el_pct"], 100 * sp_none["el_pct"], sp_none["mean_shortfall_outside_facility_usd"]))
+    rng = np.random.default_rng(3)
+    hist = np.concatenate([rng.normal(0.3, 0.6, 40), [-2.5, -2.2, -1.9, -2.8, -2.1]])   # skewed: a few deep deficits
+    draws = M.climate_factor(np.random.default_rng(5), 200000, dict(p, climate_rain_beta=0.9), hist)
+    hz = (hist - hist.mean()) / hist.std(ddof=1)
+    skew_h = float(np.mean(hz ** 3)); skew_d = float(np.mean(((draws - draws.mean()) / draws.std()) ** 3))
+    check("empirical climate factor keeps unit variance and the history's skew",
+          abs(draws.std() - 1.0) < 0.02 and abs(draws.mean()) < 0.02 and skew_d < -0.3 and abs(skew_d - 0.9 ** 3 * skew_h) < 0.25,
+          "sd %.3f, mean %.3f, skew %.2f (history %.2f)" % (draws.std(), draws.mean(), skew_d, skew_h))
+    check("with beta 0 the climate factor is the plain normal draw",
+          bool(np.array_equal(M.climate_factor(np.random.default_rng(9), 100, dict(p, climate_rain_beta=0.0), hist),
+                              np.random.default_rng(9).standard_normal(100))))
+    if node:
+        p3 = dict(p, horizon_seasons=3, price_persistence=0.5, fwd_shortfall_facility_share=0.5, climate_rain_beta=0.4)
+        mem3 = M.generate_members(p3, 42)
+        payload = {"params": p3, "nPaths": 20000, "seed": 42, "scenario": scen["RS-0"],
+                   "members": {k: (v.tolist() if hasattr(v, "tolist") else v) for k, v in mem3.items()},
+                   "climate_history": hist.tolist()}
+        proc = subprocess.run([node, os.path.join(HERE, "parity_runner.js")], input=json.dumps(payload),
+                              capture_output=True, text=True)
+        if proc.returncode != 0:
+            check("JS parity on a three-season run executes", False, proc.stderr.strip()[-200:])
+        else:
+            js3 = json.loads(proc.stdout)["result"]
+            py3 = M.simulate(p3, 20000, 42, scen["RS-0"], members=mem3, climate_history=hist)
+            se3 = math.sqrt(2) * py3["sd_pct"] / math.sqrt(20000)
+            check("JS agrees on a three-season run with shortfall share and empirical climate (EL within MC error)",
+                  abs(py3["el_pct"] - js3["el_pct"]) < 5 * se3 + 0.002 and js3["horizon_seasons"] == 3,
+                  "py %.2f%% vs js %.2f%% (tol %.2f pp); seasons py %s js %s" % (
+                      100 * py3["el_pct"], 100 * js3["el_pct"], 100 * (5 * se3 + 0.002),
+                      ["%.2f" % (100 * x) for x in py3["el_per_season_pct"]], ["%.2f" % (100 * x) for x in js3["el_per_season_pct"]]))
+            # The reserve is a mean over every path (tight); the shortfall carried
+            # outside is driven by the few spike paths, so its tolerance is wider.
+            check("JS agrees on the carried reserve (10 percent) and the shortfall carried outside the facility (30 percent)",
+                  abs(py3["mean_reserve_end_usd"] - js3["mean_reserve_end_usd"]) < 0.1 * max(py3["mean_reserve_end_usd"], 1)
+                  and abs(py3["mean_shortfall_outside_facility_usd"] - js3["mean_shortfall_outside_facility_usd"]) < 0.3 * max(py3["mean_shortfall_outside_facility_usd"], 1) + 20,
+                  "reserve py %.0f js %.0f; outside py %.0f js %.0f" % (
+                      py3["mean_reserve_end_usd"], js3["mean_reserve_end_usd"],
+                      py3["mean_shortfall_outside_facility_usd"], js3["mean_shortfall_outside_facility_usd"]))
 
     print("\n%d passed, %d failed, %d skipped" % (len(PASS), len(FAIL), len(SKIP)))
     return 1 if FAIL else 0
