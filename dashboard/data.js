@@ -9023,9 +9023,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Risk management tools",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "11a9ea3a495e5fcc8fc67a78d3e44e2bbea9f0a446be1bd8b21a9072a39b7517",
-   "Baseline_Repo_Hash": "11a9ea3a495e5fcc8fc67a78d3e44e2bbea9f0a446be1bd8b21a9072a39b7517",
-   "Last_Synced_At": "2026-09-14T12:38:27Z",
+   "Baseline_Drive_Hash": "7347f26c984e782b12e97791699abeb0fa922f987c39b3b85f7161c60fcb6d3b",
+   "Baseline_Repo_Hash": "3549e70ffd401dcd8b20a475754e545b7f5e0e572abbd9b450f79e67dee4dee3",
+   "Last_Synced_At": "2026-10-08T07:09:37Z",
    "Status": "Synced"
   },
   {
@@ -9426,10 +9426,10 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Business research — collective finance, risk intermediation and securitisation readiness",
    "Category": "Product & business",
-   "Baseline_Drive_Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-   "Baseline_Repo_Hash": "",
-   "Last_Synced_At": "",
-   "Status": "Not synced"
+   "Baseline_Drive_Hash": "24426c4cdb12ed9fd8a13112ebd63dccdde55089032fe018e20b32fc104e28c5",
+   "Baseline_Repo_Hash": "78d1cf2013f53611efa67d7fe9ba95eca9cb4021039c6b287b89dd06e962c5f9",
+   "Last_Synced_At": "2026-10-08T07:10:41Z",
+   "Status": "Synced"
   }
  ],
  "macroSeries": {
@@ -15862,36 +15862,6 @@ window.SFV_DATA = {
    "body": "# RT-7 — collective facility risk model (code)\n\nSpecification, decisions and findings: [`../rt-7-collective-facility-model.md`](../rt-7-collective-facility-model.md). Registry row: `RT-7` in `data/risk-tools.csv`.\n\n| File | Does |\n|---|---|\n| `rt7_params.py` | Reads `data/rt7-parameters.csv`, `rt7-regions.csv`, `rt7-scenarios.csv`; merges shared and regional rows; validates the tracker |\n| `rt7_model.py` | The model: members, one-season simulation, summaries, tornado. numpy |\n| `run_region.py` | Pipeline: every region × scenario + sensitivities → `data/rt7-region-results.csv`, `data/rt7-sensitivity.csv`, per-run manifests under `output/` (gitignored) |\n| `test_rt7.py` | Checks, run in CI. Includes JS/Python parity when `node` is present |\n| `parity_runner.js` | Node shim that runs `dashboard/rt7-model.js` on inputs from `test_rt7.py` |\n| `requirements.txt` | `numpy` |\n\n```bash\npip install -r risk-tools/collective/requirements.txt\npython3 risk-tools/collective/run_region.py\npython3 risk-tools/collective/test_rt7.py\n```\n\n**Edit parameters in the CSV, not in code.** The browser tab (`dashboard/rt7-model.js`) is a port of `rt7_model.py` for interactive use; Python is the reference. If you change the model, change both and let `test_rt7.py` tell you whether they still agree.\n\n**Nothing here is calibrated.** Every output row says `Basis: SYNTHETIC`.\n"
   },
   {
-   "path": "risk-tools/collective/output/colombia/summary.md",
-   "group": "Risk tools",
-   "section": "Code notes",
-   "docId": "",
-   "title": "RT-7 run summary: Colombia (Huila / Cauca)",
-   "summary": "",
-   "words": 228,
-   "body": "# RT-7 run summary: Colombia (Huila / Cauca)\n\n**Basis: SYNTHETIC.** Every parameter is an assumption until the data catalogue says otherwise. These figures describe the model, not the collective.\n\n| | |\n|---|---|\n| Pool notional | USD 162,040 across 94 borrowers of 100 members |\n| Expected loss | 3.27 of pool |\n| UL95 / UL99 | 13.8 / 26.6 |\n| Normal-year PD implied by leverage | 5.1 (base PD priors 3.0 CapEx, 6.0 OpEx) |\n| Paths with side-selling / forward shortfall | 28 / 2 |\n| First-loss needed for a 25 bp senior EL | 51.5 |\n\n## Scenarios\n\n| Scenario | EL | UL99 | P(shortfall) | P(collective deficit) |\n|---|---|---|---|---|\n| Base | 3.27 | 26.6 | 2 | 3 |\n| Poor season | 10.64 | 42.3 | 8 | 10 |\n| Leaf-rust scale shock | 20.32 | 61.6 | 40 | 55 |\n| Price crash | 8.79 | 26.3 | 0 | 0 |\n| Price spike | 12.73 | 100.0 | 25 | 27 |\n| Poor season and price fall | 14.06 | 29.6 | 1 | 3 |\n\n## Sensitivity (one at a time, EL in percent of pool)\n\n| Parameter | Low | High | EL at low | EL at high |\n|---|---|---|---|---|\n\nRun: 5000 paths, seed 42, model v0.2, 2026-10-08T06:46:04Z.\n"
-  },
-  {
-   "path": "risk-tools/collective/output/ethiopia/summary.md",
-   "group": "Risk tools",
-   "section": "Code notes",
-   "docId": "",
-   "title": "RT-7 run summary: Ethiopia (Jimma / Sidama)",
-   "summary": "",
-   "words": 228,
-   "body": "# RT-7 run summary: Ethiopia (Jimma / Sidama)\n\n**Basis: SYNTHETIC.** Every parameter is an assumption until the data catalogue says otherwise. These figures describe the model, not the collective.\n\n| | |\n|---|---|\n| Pool notional | USD 81,980 across 88 borrowers of 100 members |\n| Expected loss | 5.92 of pool |\n| UL95 / UL99 | 18.8 / 29.6 |\n| Normal-year PD implied by leverage | 9.8 (base PD priors 4.0 CapEx, 8.0 OpEx) |\n| Paths with side-selling / forward shortfall | 31 / 2 |\n| First-loss needed for a 25 bp senior EL | 24.9 |\n\n## Scenarios\n\n| Scenario | EL | UL99 | P(shortfall) | P(collective deficit) |\n|---|---|---|---|---|\n| Base | 5.92 | 29.6 | 2 | 4 |\n| Poor season | 14.24 | 35.9 | 8 | 27 |\n| Leaf-rust scale shock | 22.70 | 41.8 | 42 | 88 |\n| Price crash | 11.97 | 31.3 | 0 | 2 |\n| Price spike | 8.99 | 75.9 | 21 | 27 |\n| Poor season and price fall | 17.75 | 34.8 | 1 | 29 |\n\n## Sensitivity (one at a time, EL in percent of pool)\n\n| Parameter | Low | High | EL at low | EL at high |\n|---|---|---|---|---|\n\nRun: 5000 paths, seed 42, model v0.2, 2026-10-08T06:46:05Z.\n"
-  },
-  {
-   "path": "risk-tools/collective/output/vietnam/summary.md",
-   "group": "Risk tools",
-   "section": "Code notes",
-   "docId": "",
-   "title": "RT-7 run summary: Vietnam (Dak Lak / Lam Dong)",
-   "summary": "",
-   "words": 231,
-   "body": "# RT-7 run summary: Vietnam (Dak Lak / Lam Dong)\n\n**Basis: SYNTHETIC.** Every parameter is an assumption until the data catalogue says otherwise. These figures describe the model, not the collective.\n\n| | |\n|---|---|\n| Pool notional | USD 201,938 across 95 borrowers of 100 members |\n| Expected loss | 2.37 of pool |\n| UL95 / UL99 | 5.2 / 98.4 |\n| Normal-year PD implied by leverage | 1.3 (base PD priors 3.5 CapEx, 7.0 OpEx) |\n| Paths with side-selling / forward shortfall | 30 / 5 |\n| First-loss needed for a 25 bp senior EL | not attainable |\n\n## Scenarios\n\n| Scenario | EL | UL99 | P(shortfall) | P(collective deficit) |\n|---|---|---|---|---|\n| Base | 2.37 | 98.4 | 5 | 5 |\n| Poor season | 6.10 | 100.0 | 15 | 15 |\n| Leaf-rust scale shock | 17.07 | 100.0 | 67 | 65 |\n| Price crash | 1.00 | 11.5 | 0 | 0 |\n| Price spike | 18.03 | 100.0 | 28 | 28 |\n| Poor season and price fall | 4.16 | 22.3 | 6 | 5 |\n\n## Sensitivity (one at a time, EL in percent of pool)\n\n| Parameter | Low | High | EL at low | EL at high |\n|---|---|---|---|---|\n\nRun: 5000 paths, seed 42, model v0.2, 2026-10-08T06:46:06Z.\n"
-  },
-  {
    "path": "risk-tools/schema/README.md",
    "group": "Risk tools",
    "section": "Overview & schema",
@@ -16210,7 +16180,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 23
    },
-   "totalWords": 130948
+   "totalWords": 130261
   }
  }
 };
