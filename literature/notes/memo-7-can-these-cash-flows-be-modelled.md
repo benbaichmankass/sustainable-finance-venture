@@ -50,7 +50,7 @@ The rationale transfers cleanly to our asset class, and it is worth stating exac
 
 This is the memo's central finding, and it arrived by three independent routes that did not start out looking related.
 
-**Route one — the method takes it as an input.** For a portfolio with zero or very few observed defaults, the standard approach is Pluto–Tasche (LIT-038): estimate the probability of default as an *upper confidence bound*. Two estimators are available, one assuming obligor independence, one assuming conditional independence given a systematic factor. In the second, the default event is a threshold crossing of √ϱ·S \+ √(1−ϱ)·ξ, the loss distribution is Vasicek, and **ϱ — the asset correlation — is supplied by assumption, not estimated from the data.** In a thin-data portfolio that assumption is doing most of the work.
+**Route one — the method takes it as an input.** For a portfolio with zero or very few observed defaults, the standard approach is Pluto–Tasche (LIT-038): estimate the probability of default as an *upper confidence bound*. Two estimators are available, one assuming obligor independence, one assuming conditional independence given a systematic factor. In the second, the default event is a threshold crossing of `√ϱ·S + √(1−ϱ)·ξ`, the loss distribution is Vasicek, and **ϱ — the asset correlation — is supplied by assumption, not estimated from the data.** In a thin-data portfolio that assumption is doing most of the work.
 
 **Route two — the historical record says the correlation is large, and not where you would look for it.** LIT-036 studies four national repayment crises (Nicaragua, Morocco, Bosnia, Pakistan). Portfolio-at-risk over 30 days exceeded 10% in three of the four by June 2009; Nicaragua's crisis affected *all 22 major MFIs*; Bosnia's nearly all 12 largest. And the report **explicitly rejects the macroeconomy** as the cause — the MIX median PAR rose only to about 3%, "mild compared to the delinquency crises in our four countries", and most managers interviewed did not name the global crisis. The named drivers are concentrated market competition, multiple borrowing and erosion of lending discipline. Contagion is a mechanism with a boundary: mobile phones and social networks escalated a local Punjab problem into a regional one, and the same networks stopped it reaching rural areas.
 
@@ -150,7 +150,7 @@ LC-07 stands at five anchors of ten, LC-08 at six of eight, LC-09 at three of te
 
 So this memo does not become the only place these live:
 
-- **EXP-25** respecced to a variance decomposition separating the institutional from the environmental channel, needing two lenders per market and two markets (docs/research/experiments/exp-25-default-correlation.md).  
+- **EXP-25** respecced to a variance decomposition separating the institutional from the environmental channel, needing two lenders per market and two markets (`docs/research/experiments/exp-25-default-correlation.md`).  
 - **RT-1** gains the event-type field requirement from §2.  
 - **RT-5** keeps the correlation sweep and the no-point-estimate discipline from §5.  
 - **OQ-17** — §3 strengthens candidate relocation (b), now with regulatory backing.  

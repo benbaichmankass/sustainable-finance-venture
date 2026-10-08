@@ -1,10 +1,10 @@
 # Research framework
 
-**Status:** v1 (2026-08-22) · **Owner:** BB **Parent:** docs/phd/research-questions.md · **Detail layer:** docs/research/methodology-impact-measurement.md **Implements:** RT-4 (impact evaluation module) · **Feeds:** RT-1 schema, RT-5 waterfall
+**Status:** v1 (2026-08-22) · **Owner:** BB **Parent:** `docs/phd/research-questions.md` · **Detail layer:** `docs/research/methodology-impact-measurement.md` **Implements:** RT-4 (impact evaluation module) · **Feeds:** RT-1 schema, RT-5 waterfall
 
 ## What this document is for
 
-docs/phd/research-questions.md says what the project asks. This says how it would answer it, in enough detail that a methods-minded supervisor can find the holes.
+`docs/phd/research-questions.md` says what the project asks. This says how it would answer it, in enough detail that a methods-minded supervisor can find the holes.
 
 It is written to a specific standard: **a reader should be able to tell what would have to happen for this project to fail.** Section 11 states that explicitly, and the rest of the document is written so that section is answerable.
 
@@ -129,7 +129,7 @@ Per pilot, in strict order of preference. The condition that forces each fallbac
 
 ## 5\. Outcomes and instruments
 
-The full metric menu lives in methodology-impact-measurement.md §1 and is not duplicated here. What this section adds is the discipline around it.
+The full metric menu lives in `methodology-impact-measurement.md` §1 and is not duplicated here. What this section adds is the discipline around it.
 
 **One primary outcome per estimand.** Provisionally: for Estimand A, a consumption-smoothing measure conditional on shock exposure; for Estimand B, 90-day-past-due incidence over the loan cycle. Both to be fixed with the verification partner before pre-registration, not after seeing data.
 
@@ -164,7 +164,7 @@ Impact the venture measures on its own products is not evidence. The design sepa
 - An **independent verification partner** runs outcome measurement (OQ-7, currently gating; PT-05 is the standing candidate).  
 - **Pre-registration** before enrolment, with the analysis plan attached.  
 - **IRB / ethics approval** and a **data-sharing agreement** are preconditions, not parallel tasks.  
-- **Row-level participant data never enters this repo** \- Vault 05-raw-data only, aggregate results back (CLAUDE.md §8).
+- **Row-level participant data never enters this repo** \- Vault `05-raw-data` only, aggregate results back (CLAUDE.md §8).
 
 The reason to accept the cost and delay: the project's commercial thesis depends on an investor believing the impact claim. A claim the venture verified itself is worth approximately nothing to that reader, so the independence is a commercial asset and not only an academic nicety.
 
@@ -230,7 +230,7 @@ The section that makes the rest of the document checkable. Any one of these resu
 
 Two of these \- covariate dominance and the cost of capture \- are testable **before** any field pilot, on administrative data and a costing exercise. That ordering is deliberate: the cheap experiments that could kill the thesis should run first.
 
-**This is now the adopted work sequence, not a recommendation.** OQ-15 was resolved on 2026-08-22 in exactly these terms: EXP-25 (correlation) and EXP-22 (capture cost) are Selected and run before any field commitment; a single field anchor follows. OQ-16 then fixed the anchor's **setting** on 2026-08-22 \- the coffee cooperative cluster \- leaving only the instrument open between EXP-09 and EXP-10. Whichever is chosen carries the second randomisation layer above, since that layer is the design contribution and it needs a field setting to live in.
+**This is now the adopted work sequence, not a recommendation.** OQ-15 was resolved on 2026-08-22 in exactly these terms: EXP-25 (correlation) and EXP-22 (capture cost) are `Selected` and run before any field commitment; a single field anchor follows. OQ-16 then fixed the anchor's **setting** on 2026-08-22 \- the coffee cooperative cluster \- leaving only the instrument open between EXP-09 and EXP-10. Whichever is chosen carries the second randomisation layer above, since that layer is the design contribution and it needs a field setting to live in.
 
 ---
 

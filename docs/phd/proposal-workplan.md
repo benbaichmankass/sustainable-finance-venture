@@ -8,11 +8,11 @@ The coordination backbone for the PhD track. Everything else added on 2026-08-22
 
 | Deliverable | Lives in | State |
 | :---- | :---- | :---- |
-| Research questions | docs/phd/research-questions.md \+ data/research-questions.csv | Done |
-| Literature decomposition | docs/research/research-agenda.md v2 \+ data/lit-components.csv | Done \- reading not started |
-| Research framework | docs/research/research-framework.md | Done \- parameters uncalibrated |
-| Experiment menu | data/experiments.csv \+ docs/research/experiment-spec-template.md | Done \- sequence settled (OQ-15), anchor setting settled on coffee, instrument open between EXP-09 and EXP-10 (OQ-16) |
-| Application pack | docs/phd/application-pack.md \+ the Vault folder | Done \- CV and specifics outstanding |
+| Research questions | `docs/phd/research-questions.md` \+ `data/research-questions.csv` | Done |
+| Literature decomposition | `docs/research/research-agenda.md` v2 \+ `data/lit-components.csv` | Done \- reading not started |
+| Research framework | `docs/research/research-framework.md` | Done \- parameters uncalibrated |
+| Experiment menu | `data/experiments.csv` \+ `docs/research/experiment-spec-template.md` | Done \- sequence settled (OQ-15), anchor setting settled on coffee, instrument open between EXP-09 and EXP-10 (OQ-16) |
+| Application pack | `docs/phd/application-pack.md` \+ the Vault folder | Done \- CV and specifics outstanding |
 
 ## The honest state of things
 
@@ -30,7 +30,7 @@ Worth being direct about where this actually stands, because the artifacts can m
 
 **Weeks 1 to 6\. Gates: a credible proposal. Blocks: Phase 3\.**
 
-Nine components, roughly 77 new anchors. docs/research/research-agenda.md has the pace argument and the two-pass method.
+Nine components, roughly 77 new anchors. `docs/research/research-agenda.md` has the pace argument and the two-pass method.
 
 Order within the phase, which is not arbitrary:
 
@@ -41,7 +41,7 @@ Order within the phase, which is not arbitrary:
 
 Output: memos 5, 6 and 7 drafted. Each memo ends with an implications section \- that section is what actually gets reused in the proposal.
 
-**Done when:** the nine components are Reviewed and the three memos exist. Not when the anchor count is hit.
+**Done when:** the nine components are `Reviewed` and the three memos exist. Not when the anchor count is hit.
 
 ## Phase 2 \- harden the framework
 
@@ -58,9 +58,9 @@ Output: memos 5, 6 and 7 drafted. Each memo ends with an implications section \-
 
 A first email does not need a finished power calculation. It needs a question the recipient recognises as theirs, evidence that the sender knows their field, and a specific reason for writing to *them*.
 
-1. Pick the lead strand per target (docs/phd/research-questions.md), and resolve **OQ-14** by marking one RQ row Lead once a conversation is live.  
-2. Work the Priority tier from docs/phd/phd-scoring-rubric.md \- 13 programmes. Verify the supervisor is active and taking students before writing; the rubric already caps unverified supervisor fits at 3 for exactly this reason.  
-3. Customise from the pack, log through the partner-outreach skill. Contact status goes to private/phd-applications.csv, never to data/.  
+1. Pick the lead strand per target (`docs/phd/research-questions.md`), and resolve **OQ-14** by marking one RQ row `Lead` once a conversation is live.  
+2. Work the Priority tier from `docs/phd/phd-scoring-rubric.md` \- 13 programmes. Verify the supervisor is active and taking students before writing; the rubric already caps unverified supervisor fits at 3 for exactly this reason.  
+3. Customise from the pack, log through the `partner-outreach` skill. Contact status goes to `private/phd-applications.csv`, never to `data/`.  
 4. Record which pack version each recipient received, so a reply six weeks later can be matched to what they actually read.
 
 **Sequencing note:** do not send all thirteen at once. Send three, learn from the replies, revise the pack, send the next three. The first three should be programmes you would be happy with but are not your top choice.
@@ -69,7 +69,7 @@ A first email does not need a finished power calculation. It needs a question th
 
 **From day one, continuous. Gates: everything downstream.**
 
-This is the longest-lead item and the one most likely to determine the timeline, and it has not started. OQ-7 (verification partner) is gating; M-03, M-04 and M-09 have all been Not started for weeks.
+This is the longest-lead item and the one most likely to determine the timeline, and it has not started. OQ-7 (verification partner) is gating; M-03, M-04 and M-09 have all been `Not started` for weeks.
 
 - Approach verification candidates **in parallel**, not in sequence (the decision already recorded on OQ-7).  
 - Approach originator candidates in parallel with those.  
@@ -81,9 +81,9 @@ The last point stopped being a tactic on 2026-08-22 and became the critical path
 
 **From month 5\. Gated on Phase 4\.**
 
-- **M-19** first: data/funders.csv has ten rows all marked Not researched, and no URLs. Deadlines and eligibility cannot be planned around until that is fixed.  
+- **M-19** first: `data/funders.csv` has ten rows all marked `Not researched`, and no URLs. Deadlines and eligibility cannot be planned around until that is fixed.  
 - Anchor evaluation grant (M-21), gated on the verification partner.  
-- Note the eligibility traps already documented in docs/phd/phd-funding-landscape.md \- several instruments that look open are not open to an Israeli applicant, and the same care is needed on the research-grant side.
+- Note the eligibility traps already documented in `docs/phd/phd-funding-landscape.md` \- several instruments that look open are not open to an Israeli applicant, and the same care is needed on the research-grant side.
 
 ---
 
@@ -111,8 +111,8 @@ Existing milestones are not duplicated here: M-06 (supervisor outreach), M-11 (f
 ## How we work through this together
 
 - One phase at a time, but Phase 4 runs continuously underneath the others.  
-- Literature goes in through the add-literature skill, one component per session \- a component is a session-sized unit, which is why it is the unit of work.  
-- Outreach goes through the partner-outreach skill so nothing gets contacted twice.  
-- Every session that changes data/, literature/ or the dashboard ends with a rebuild and publish-check.  
-- When a memo's conclusions change, the memo, its synthesis-memos.csv row and any open question citing it all move together. These three drift apart otherwise.
+- Literature goes in through the `add-literature` skill, one component per session \- a component is a session-sized unit, which is why it is the unit of work.  
+- Outreach goes through the `partner-outreach` skill so nothing gets contacted twice.  
+- Every session that changes `data/`, `literature/` or the dashboard ends with a rebuild and `publish-check`.  
+- When a memo's conclusions change, the memo, its `synthesis-memos.csv` row and any open question citing it all move together. These three drift apart otherwise.
 
