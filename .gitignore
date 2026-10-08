@@ -20,3 +20,11 @@ risk-tools/tools/output/
 
 # RT-7 run outputs - regenerable from the seed and the parameter tracker.
 risk-tools/collective/output/
+
+# Raw data extracts - immutable, catalogued, copied to the Vault's 05-raw-data.
+# The query logs beside them (*.query.json) ARE committed: they are the record
+# of what was fetched, when, and with what hash. See docs/ops/data-provenance.md.
+data/raw/*
+!data/raw/*/
+data/raw/*/*
+!data/raw/*/*.query.json

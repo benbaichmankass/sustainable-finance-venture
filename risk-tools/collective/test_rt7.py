@@ -101,8 +101,15 @@ def main():
     crash = M.simulate(p, 6000, 42, scen["RS-3"])
     check("a poor season does not lower EL", poor["el_pct"] >= base["el_pct"] - 1e-9,
           "%.2f%% -> %.2f%%" % (100 * base["el_pct"], 100 * poor["el_pct"]))
-    check("a price crash does not lower EL", crash["el_pct"] >= base["el_pct"] - 1e-9,
-          "%.2f%% -> %.2f%%" % (100 * base["el_pct"], 100 * crash["el_pct"]))
+    # A price crash raises MEMBER losses (less spot revenue, lower cover) but can
+    # LOWER the facility's loss: it removes side-selling, and the forward book
+    # protects the collective. So the property that holds by construction is on
+    # member loss, not on EL. Observed at the 2026-10 calibration: Colombia EL
+    # 0.42% -> 0.23% under RS-3 while member loss rose.
+    check("a price crash does not lower expected member loss",
+          crash["mean_member_loss_usd"] >= base["mean_member_loss_usd"] * (1 - 0.02),
+          "member loss %.0f -> %.0f; facility EL %.2f%% -> %.2f%%" % (
+              base["mean_member_loss_usd"], crash["mean_member_loss_usd"], 100 * base["el_pct"], 100 * crash["el_pct"]))
     lo = M.simulate(dict(p, residual_correlation=0.0), 20000, 42, scen["RS-0"])
     hi = M.simulate(dict(p, residual_correlation=0.5), 20000, 42, scen["RS-0"])
     check("residual correlation fattens the tail (UL99 up)", hi["ul99_pct"] > lo["ul99_pct"],

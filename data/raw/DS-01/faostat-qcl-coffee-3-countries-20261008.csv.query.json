@@ -1,0 +1,18 @@
+{
+ "dataset_id": "DS-01",
+ "raw_file": "data/raw/DS-01/faostat-qcl-coffee-3-countries-20261008.csv",
+ "retrieved_at_utc": "2026-10-08T07:25:28Z",
+ "request": {
+  "bulk_url": "https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip",
+  "bulk_member": "Production_Crops_Livestock_E_All_Data_(Normalized).csv",
+  "bulk_bytes": 33921825,
+  "bulk_sha256": "c5835418c18f9322e7decbd6800f93a216eaae3cdfa31acb08f0518c0c6d6853",
+  "method": "GET bulk zip, filter rows",
+  "filter": "Area in (Colombia, Ethiopia, Viet Nam) and Item startswith 'Coffee' and Element in (Area harvested, Production, Yield)"
+ },
+ "bytes": 56250,
+ "sha256": "cefd3fc37918ab58ac4b8b07e78797ae84b33565eaf2865596c12e8923e54dab",
+ "code_version": "40d0220",
+ "vault_copy": "Vault copy: uploaded gzipped (faostat-qcl-coffee-3-countries-20261008.csv.gz) to 05-raw-data/DS-01-faostat-coffee on 2026-10-08.",
+ "notes": "Raw extract is the filtered subset of the publisher's bulk file, rows unchanged; 480 rows kept."
+}

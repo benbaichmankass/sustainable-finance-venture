@@ -1,0 +1,14 @@
+{
+ "dataset_id": "DS-04",
+ "raw_file": "data/raw/DS-04/CMO-Historical-Data-Monthly-20261008.xlsx",
+ "retrieved_at_utc": "2026-10-08T07:26:55Z",
+ "request": {
+  "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+  "method": "GET"
+ },
+ "bytes": 586099,
+ "sha256": "ea1c350827878ea3bbe30e3cda16a13fd3bd5b409b8458940dc94a36b5a33154",
+ "code_version": "40d0220",
+ "vault_copy": "Vault copy: not uploaded by the agent (publisher workbook, 586 KB); re-fetchable from the logged URL, SHA-256 logged. A human with Drive access can drop the file into 05-raw-data/DS-04-world-bank-pink-sheet.",
+ "notes": "Whole workbook kept as published; only the two coffee series are processed."
+}

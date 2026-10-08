@@ -1,0 +1,21 @@
+{
+ "dataset_id": "DS-03",
+ "raw_file": "data/raw/DS-03/nasa-power-monthly-20261008.json",
+ "retrieved_at_utc": "2026-10-08T07:25:12Z",
+ "request": {
+  "urls": [
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=-75.65&latitude=2.45&start=1981&end=2025&format=JSON",
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=-76.6&latitude=2.45&start=1981&end=2025&format=JSON",
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=36.83&latitude=7.67&start=1981&end=2025&format=JSON",
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=38.4&latitude=6.8&start=1981&end=2025&format=JSON",
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=108.05&latitude=12.67&start=1981&end=2025&format=JSON",
+   "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=PRECTOTCORR,T2M,T2M_MAX&community=AG&longitude=108.44&latitude=11.95&start=1981&end=2025&format=JSON"
+  ],
+  "method": "GET"
+ },
+ "bytes": 180752,
+ "sha256": "68998bdd0e849275f079a8024c7c495b7b24ddc5da701a600a3c57a498108925",
+ "code_version": "40d0220",
+ "vault_copy": "Vault copy: not uploaded by the agent (180 KB of verbatim API responses would have to pass through the model's context); re-fetchable from the logged URLs, SHA-256 logged. A human with Drive access can drop the file into 05-raw-data/DS-03-nasa-power.",
+ "notes": "Verbatim API responses, one per point, keyed by request URL."
+}

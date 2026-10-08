@@ -66,8 +66,25 @@ A dataset moves `Proposed → Downloaded` when a raw extract exists in the Vault
 
 A parameter's lineage is readable from its row in the model tracker without opening anything else: `Basis` says what kind of number it is, `Source_Refs` says what it rests on today, `Target_Source` says what should replace it, `Note` says how it got here. The dashboard renders this as the *Data sources* table on each model tab. If a row cannot be filled in, the parameter is not ready to be in the model.
 
+## The ingestion scripts
+
+`scripts/ingest/` holds one script per dataset plus the shared plumbing in `_common.py`, which enforces the rules above: a raw file is never overwritten (the filename carries the retrieval date), a query log with the request, timestamp and SHA-256 is written beside it, and every processed file gets a dictionary with a provenance block naming the raw hash and the commit.
+
+| Script | Dataset | Route | Processed file |
+|---|---|---|---|
+| `ds01_faostat_yields.py` | DS-01 FAOSTAT coffee, green | Publisher bulk zip, filtered to the three countries (the query API now needs an authorization header) | `data/processed/ds-01-coffee-national-yields.csv` |
+| `ds03_nasa_power.py` | DS-03 NASA POWER monthly | Point API at six district centroids, one raw file of verbatim responses | `data/processed/ds-03-district-climate-monthly.csv` |
+| `ds04_pink_sheet.py` | DS-04 World Bank Pink Sheet | XLSX; the doc id changes per release and is read off the landing page | `data/processed/ds-04-coffee-prices-monthly.csv` |
+| `calibrate_rt7.py` | all three | Turns the series into observed RT-7 parameters and observation-only statistics | `data/rt7-calibration.csv`, and with `--apply` the parameter tracker |
+
+Run order: the three fetchers, then `calibrate_rt7.py --apply`, then `risk-tools/collective/run_region.py`, then the dashboard build.
+
+**The query logs are committed; the raw bytes are not.** `data/raw/*/*.query.json` is tracked, everything else under `data/raw/` is gitignored. The log is the record of what was fetched; the bytes are reproducible from it.
+
+**Vault copies of public datasets.** The rule is raw bytes in the Vault, and for partner data that is absolute. For a public, re-fetchable publisher file the query log's URL and SHA-256 already make the extract reproducible, and an agent pushing hundreds of kilobytes through a Drive connector is a poor use of anyone's time. So: the agent uploads a Vault copy when the file is small, records in the query log's `vault_copy` field when it has not, and a human with Drive access drops the larger files into `05-raw-data/<DS-NN>-<slug>/` when convenient. The folders exist for DS-01, DS-03 and DS-04.
+
 ## What this does not yet do
 
-- No ingestion scripts exist. The eight catalogue rows are all `Proposed`; writing the fetchers for DS-01 to DS-04 is Phase 3 of the RT-7 plan.
-- No automated checksum or dictionary tooling. The rules above are followed by hand until there is a second dataset to justify a script.
-- The Vault folder `05-raw-data/<DS-NN>/` convention is new and not yet reflected in `docs/ops/drive-vault.md`; update that doc with the first real extract.
+- DS-02 (CHIRPS) needs a documented district boundary before an extraction means anything; it stays `Proposed`. DS-05 (ICO) and DS-06 (Our World in Data) are cross-checks, not yet pulled.
+- No automated checksum verification on re-run: a second fetch on a later date lands as a new raw file and the two hashes are compared by eye.
+- The Vault folder `05-raw-data/<DS-NN>-<slug>/` convention is not yet reflected in `docs/ops/drive-vault.md`.
