@@ -102,7 +102,9 @@ This will include both existing collectives that would benefit from these financ
 Task List:
 
 - [ ] Pilot projects \- research and choose a limited number of use cases, come up with project structure and work plan  
-- [ ] Risk management \- risk matrix and mitigation tools  
+- [ ] Risk management \- risk matrix, models and mitigation tools  
+- [ ] Project/product architecture \- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   
+- [ ] Financial modeling of cash flows and balance sheets  
 - [ ] Research potential partners:  
       - [ ] Investors   
       - [ ] NGOs  
