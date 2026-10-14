@@ -2,19 +2,19 @@
 
 **Status:** Option under evaluation, not a decision · **Owner:** BB · **Drafted:** 2026-09-08 · **Decision:** OQ-19
 
-> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [market-scan-and-pilots.md](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
+> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [`market-scan-and-pilots.md`](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
 
 This document answers a specific question put to the project on 2026-09-08:
 
 > If the PhD track is dropped for now, and the business focuses on **designing financial products and building the partnerships between investors and the organisations that distribute them** — non-capital-intensive, solo, no hiring — what does the business plan, the work plan, the partnership map, the pilot portfolio and the research collaboration look like?
 
-It is written as a **live alternative** to the configuration in product-design/business-plan.md, not as a replacement for it. The thesis does not change. The *layer we occupy*, the *revenue sequencing* and the *role in the research* all do. Nothing in business-plan.md has been edited; §10 of this document lists exactly what would change there if OQ-19 resolves this way.
+It is written as a **live alternative** to the configuration in `product-design/business-plan.md`, not as a replacement for it. The thesis does not change. The *layer we occupy*, the *revenue sequencing* and the *role in the research* all do. Nothing in `business-plan.md` has been edited; §10 of this document lists exactly what would change there if OQ-19 resolves this way.
 
 ---
 
 ## 1\. The short version
 
-The existing plan puts us in the **structuring layer** with an end state of investment-grade tranches (business-plan.md §3). That is a capital-markets business. It needs a pool, an SPV, counsel, a rating conversation, and — because EU/UK risk-retention rules bite on a sponsor — a retained economic interest, which is balance sheet (business-plan.md §4.2, MEMO-3).
+The existing plan puts us in the **structuring layer** with an end state of investment-grade tranches (`business-plan.md` §3). That is a capital-markets business. It needs a pool, an SPV, counsel, a rating conversation, and — because EU/UK risk-retention rules bite on a sponsor — a retained economic interest, which is balance sheet (`business-plan.md` §4.2, MEMO-3).
 
 The solo track puts us one step earlier, in the **design and arranging layer**: we design the product, we specify how it is originated and monitored, we assemble the counterparties, and somebody else carries it. That is a services business. It has no pool, no SPV of our own, no retention requirement, and it can bill in month three.
 
@@ -24,23 +24,23 @@ The solo track puts us one step earlier, in the **design and arranging layer**: 
 
 ## 2\. What survives the move, and what does not
 
-business-plan.md §5 sets out seven theories of a pricing edge and concludes the stack should be **7 → 3 → 5, with 2 as the research engine underneath**. Re-read that table against a one-person, no-balance-sheet practice:
+`business-plan.md` §5 sets out seven theories of a pricing edge and concludes the stack should be **7 → 3 → 5, with 2 as the research engine underneath**. Re-read that table against a one-person, no-balance-sheet practice:
 
 | \# | Theory | Survives solo? | Why |
 | :---- | :---- | :---- | :---- |
 | **7** | **Instrumentation** — cause the data to exist by supplying the origination protocol | **Yes, fully** | This *is* a services business already. RT-1 is the product; EXP-22 is the engagement. No capital required. |
 | **3** | **Standard-setting** — define the format the asset is described in | **Yes, fully** | Adoption is the moat, and adoption is won by publishing and being early, not by deploying capital. Being small is not a disadvantage here; being late is. |
-| **6** | **Verification** — be the party investors trust to attest the data | **Yes** | business-plan.md already notes this "needs no new capability" and requires no balance sheet. Recurring revenue. |
+| **6** | **Verification** — be the party investors trust to attest the data | **Yes** | `business-plan.md` already notes this "needs no new capability" and requires no balance sheet. Recurring revenue. |
 | **2** | **Parameter monopoly** — know the correlation structure | **Partly — only through a research partner** | The estimate itself (EXP-25) needs econometric capacity, data access and publication credibility. See §7: this is exactly what the PhD was buying, and it has to be re-bought some other way. |
 | **5** | **Tranching precision** — size first-loss tightly | **No** | You have to be structuring the pool to monetise this. It comes back at deal 3–4 (§4), not at the start. |
-| 1 | Borrower-level information | Already dropped | business-plan.md §5 drops it on LIT-037. |
+| 1 | Borrower-level information | Already dropped | `business-plan.md` §5 drops it on LIT-037. |
 | 4 | Correlation arbitrage | Already dropped | Same. |
 
 So the solo track keeps **7, 3 and 6** — the three legs that are services, standards and trust — and defers **5** while making **2** conditional on a research partnership. The project's own reading already concluded that 7 is "the theory this project's evidence most supports" and that 6 needs no new capability. The solo configuration is therefore aligned with the evidence, not a compromise against it.
 
 **Two concrete consequences worth stating plainly:**
 
-1. **Risk retention stops being mandatory.** business-plan.md §4 says retained economic interest "is not optional" because EU/UK rules require a sponsor/originator to hold a minimum economic interest when senior notes are placed with those investors. That obligation attaches to *being the sponsor of a securitisation*. A design-and-arranging practice that stops short of sponsoring one does not trigger it. This removes the only balance-sheet requirement in the current plan — which is precisely the "not capital intensive" constraint being asked for. *(This is a structural reading of the rule as recorded in MEMO-3, not counsel's advice. Confirm with PT-09 alongside OQ-1 before relying on it.)*  
+1. **Risk retention stops being mandatory.** `business-plan.md` §4 says retained economic interest "is not optional" because EU/UK rules require a sponsor/originator to hold a minimum economic interest when senior notes are placed with those investors. That obligation attaches to *being the sponsor of a securitisation*. A design-and-arranging practice that stops short of sponsoring one does not trigger it. This removes the only balance-sheet requirement in the current plan — which is precisely the "not capital intensive" constraint being asked for. *(This is a structural reading of the rule as recorded in MEMO-3, not counsel's advice. Confirm with PT-09 alongside OQ-1 before relying on it.)*  
      
 2. **The research question stops being ours to answer alone.** EXP-25 does not disappear; the PI does. §7 deals with this.
 
@@ -54,8 +54,8 @@ Three sellable things, all already built or half-built in this repo:
 
 | Sold thing | Repo asset it is made of | Buyer |
 | :---- | :---- | :---- |
-| **Investment-readiness diagnostic** — "here is what it would cost your book to become investable, field by field" | RT-1 schema \+ validate\_schema.py \+ EXP-22's activity-based costing method | Originators (MFIs, co-op unions, VSLA networks) and the funders who want their grantees investable |
-| **Product design mandate** — design a credit / insurance / bundled product and the facility that funds it | product-lines/, RT-2 underwriting engine, RT-3 monitor, RT-5 waterfall, RT-6 economics | DFIs, foundations, TA facilities, insurers entering a segment |
+| **Investment-readiness diagnostic** — "here is what it would cost your book to become investable, field by field" | RT-1 schema \+ `validate_schema.py` \+ EXP-22's activity-based costing method | Originators (MFIs, co-op unions, VSLA networks) and the funders who want their grantees investable |
+| **Product design mandate** — design a credit / insurance / bundled product and the facility that funds it | `product-lines/`, RT-2 underwriting engine, RT-3 monitor, RT-5 waterfall, RT-6 economics | DFIs, foundations, TA facilities, insurers entering a segment |
 | **Arranging** — assemble originator \+ capital \+ risk carrier \+ verification into a closed facility | The whole toolkit plus relationships | The originator or the funder (see §3.3 on who may pay) |
 
 The distinctive claim is narrow and defensible: **most parties in this market can tell an originator that it is not investable. Very few can tell it what specifically to change, price the change, and then bring the money that is unlocked by making it.** That is the offer.
@@ -95,7 +95,7 @@ This is **OQ-20**, and it is a first-30-days question because it determines how 
 | Subcontractors — local counsel, field enumerators, a statistician for EXP-25 | Engagement-funded, never on payroll. |
 | Toolkit maintenance | Already sunk. RT-1…RT-6 exist. |
 
-The RT-6 model carries an **\[assumed\]** \~USD 250k fixed structuring cost per deal. That is the cost of standing up a *securitisation SPV*, and in the solo track **it is the client's cost, not ours** — or it does not arise at all, because deal 1 is not a securitisation (§4). Removing that line is most of what makes the solo configuration light.
+The `RT-6` model carries an **\[assumed\]** \~USD 250k fixed structuring cost per deal. That is the cost of standing up a *securitisation SPV*, and in the solo track **it is the client's cost, not ours** — or it does not arise at all, because deal 1 is not a securitisation (§4). Removing that line is most of what makes the solo configuration light.
 
 ### 3.5 What "solo" actually constrains
 
@@ -110,7 +110,7 @@ Not money — **calendar**. One person can hold roughly two to three concurrent 
 
 This follows from the project's own model and is the most load-bearing structural conclusion here.
 
-**RT-5's sweep already found that fixed costs dominate the junior tranche below roughly USD 5m of pool and flatten only around USD 20–40m** (data/risk-tools.csv, RT-5; this is the derived answer to OQ-2). A solo operator will not assemble a USD 20–40m pool as a first transaction. So a securitisation as deal 1 is arithmetically the wrong instrument, independent of skill or effort.
+**RT-5's sweep already found that fixed costs dominate the junior tranche below roughly USD 5m of pool and flatten only around USD 20–40m** (`data/risk-tools.csv`, RT-5; this is the derived answer to OQ-2). A solo operator will not assemble a USD 20–40m pool as a first transaction. So a securitisation as deal 1 is arithmetically the wrong instrument, independent of skill or effort.
 
 The smallest structure that proves the same capability, without the fixed-cost floor:
 
@@ -128,11 +128,11 @@ Three tiers, distinguished by **who pays** — which is the only distinction tha
 
 ### 5.1 Tier 1 — the commercial pilot (self-funding): EXP-22
 
-**Run EXP-22 as a paid engagement, not as a research experiment.** It is already specified (docs/research/experiments/exp-22-\*.md) and it is a near-perfect fit for Lane A:
+**Run EXP-22 as a paid engagement, not as a research experiment.** It is already specified (`docs/research/experiments/exp-22-*.md`) and it is a near-perfect fit for Lane A:
 
 - The ask of the partner is minimal — permission to vary a process and observe it. No historical data disclosure. M-32 already identified this as the right opening ask.  
 - The deliverable is immediately useful to the originator: a costed answer to what it would take for their book to be investable, a validated field list, and a time-and-motion baseline of their own origination that most originators do not have.  
-- It field-tests RT-1 and moves the schema from v0.1 to v1.0 (data/risk-tools.csv, RT-1).  
+- It field-tests RT-1 and moves the schema from v0.1 to v1.0 (`data/risk-tools.csv`, RT-1).  
 - It produces the **ranked per-field cost curve**, which is what lets originators adopt the standard incrementally — the adoption mechanism for theory 3\.
 
 Screen candidates for **cluster count before enthusiasm** (10–40 branches; it is the binding design constraint, per the EXP-22 spec) and remember it needs HR or staff-representation approval for officer time measurement.
@@ -157,7 +157,7 @@ EXP-09 (pre-harvest credit with a climate trigger and price floor) or EXP-10 (an
 
 ### 6.1 The shape of the map: depth in one market first
 
-business-plan.md §9 records a real constraint — at scale in one market you *become* the correlation, because LIT-037 finds market penetration above roughly 10% of population predicts repayment problems. That argues for breadth across markets before depth within one.
+`business-plan.md` §9 records a real constraint — at scale in one market you *become* the correlation, because LIT-037 finds market penetration above roughly 10% of population predicts repayment problems. That argues for breadth across markets before depth within one.
 
 **At solo scale that constraint does not bind for years.** A one-person practice will not approach 10% of any market's population. Meanwhile three things all argue for concentrating on one market first: travel cost is the main variable expense; EXP-25 *requires* two lenders in the same market; and a club facility (§4, deal 2\) needs several originators who share a jurisdiction and a legal opinion. So: **depth in one market now, breadth later, with own-market share tracked as a risk limit rather than a growth metric** — which is what §9 asks for anyway. The switch point is when the practice's aggregate originator book approaches a material share of the market, and it should be written into the plan as a limit before it is ever approached.
 
@@ -224,9 +224,9 @@ Lead with what is scarce on their side, not what is impressive on yours:
 ### Days 1–30 — decide, define, and clear the legal question
 
 1. **Resolve OQ-20 (regulatory perimeter)** with counsel — one scoping call, bundled with the OQ-1 jurisdiction scan (PT-09). Everything about how engagements are papered depends on it.  
-2. **Choose the market** (OQ-19's sub-decision). The Israel-vs-Africa working decision in business-plan.md §7 was made for a research-first configuration and should be re-taken on commercial criteria: where are there originators with 10–40 branches, two lenders in one market for EXP-25, and a live TA facility paying for design work?  
+2. **Choose the market** (OQ-19's sub-decision). The Israel-vs-Africa working decision in `business-plan.md` §7 was made for a research-first configuration and should be re-taken on commercial criteria: where are there originators with 10–40 branches, two lenders in one market for EXP-25, and a live TA facility paying for design work?  
 3. **Write the offer.** Two pages per Lane A and Lane B service: scope, deliverable, timeline, fee basis. Not a pitch deck — a scope of work a buyer can sign.  
-4. **Package the toolkit as a client deliverable.** RT-1 \+ validate\_schema.py \+ the RT-2 scorecard, presented as a readiness assessment output rather than as a repo.  
+4. **Package the toolkit as a client deliverable.** RT-1 \+ `validate_schema.py` \+ the RT-2 scorecard, presented as a readiness assessment output rather than as a repo.  
 5. **Set up:** entity, PI insurance, engagement-letter template.
 
 ### Days 31–60 — outreach wave 1
@@ -234,7 +234,7 @@ Lead with what is scarce on their side, not what is impressive on yours:
 6. **Class 4 (standards / TA), 6–8 approaches.** Ask for the market map and for whether they fund design work. Do not pitch.  
 7. **Class 1 (originators), 12–15 approaches**, led with the EXP-22 diagnostic as a paid or part-funded engagement. Screen for cluster count first.  
 8. **Class 5 (research), 4–5 approaches**, offering §7.2's four things. Ask for Form 1 or Form 3; do not open with a grant proposal.  
-9. Log every contact through the partner-outreach skill into private/partner-contacts.csv.
+9. Log every contact through the `partner-outreach` skill into `private/partner-contacts.csv`.
 
 ### Days 61–90 — convert
 
@@ -269,12 +269,12 @@ Lead with what is scarce on their side, not what is impressive on yours:
 | **Regulatory perimeter breach on arranging fees** | A solo unlicensed operator taking placement fees from the capital side | OQ-20 in the first 30 days; bill the originator/funder side |
 | **The single-person bottleneck** | Two to three concurrent engagements is a hard ceiling | Toolkit leverage; decline non-toolkit work; subcontract |
 | **Key-person risk is the whole business** | Investors will not commit to a facility whose arranger is one person with no succession | Publish the standard and the tools openly, so the method outlives the person — which also happens to be theory 3 |
-| **Standards race lost** | business-plan.md §5: a DFI or ratings agency publishes a competing standard first; adoption is winner-take-most | Publish RT-1 early and openly; this is the argument for step 15 |
+| **Standards race lost** | `business-plan.md` §5: a DFI or ratings agency publishes a competing standard first; adoption is winner-take-most | Publish RT-1 early and openly; this is the argument for step 15 |
 | **Research partner never materialises** | Without one there is no IRB, no PI, no impact validation — one of three revenue legs fails | Approach 4–5 in parallel from day 31; Form 3 affiliation is the low-cost fallback |
-| **Concessional capital contraction** | Lane B and the first-loss layer both depend on DFI and philanthropic budgets | Track against data/macro-indicators.csv; keep Lane A (originator-paid) as the lane that does not depend on aid budgets |
+| **Concessional capital contraction** | Lane B and the first-loss layer both depend on DFI and philanthropic budgets | Track against `data/macro-indicators.csv`; keep Lane A (originator-paid) as the lane that does not depend on aid budgets |
 | **Impact claims outrun the evidence** | Sharper here than in the PhD track — a commercial party making impact claims without an independent evaluator is the classic failure | Frame around resilience and smoothing, which MEMO-2 supports; never claim what the evaluation has not returned |
 
-**What would falsify this configuration specifically** (distinct from the thesis falsifiers in business-plan.md §5):
+**What would falsify this configuration specifically** (distinct from the thesis falsifiers in `business-plan.md` §5):
 
 - **No originator will pay for a diagnostic.** If readiness assessment is valued at zero, Lane A does not exist and the cash floor collapses. This is testable in 90 days and cheaply — which is the main argument for running the outreach wave before committing to anything else.  
 - **Funders want implementation, not design.** If TA facilities only fund parties who deliver, an arranging-only practice has no Lane B.  
@@ -288,15 +288,15 @@ Nothing has been edited yet. If this track is chosen:
 
 | File | Change |
 | :---- | :---- |
-| product-design/business-plan.md §3 | Three-layer table: our layer becomes "design and arranging", not "risk/structuring". Structuring returns at deal 3\. |
-| product-design/business-plan.md §4 | Retained economic interest moves from "not optional" to "not applicable until we sponsor a securitisation". Advisory and design fees become revenue line 1\. |
-| product-design/business-plan.md §5 | The stack becomes **7 → 3 → 6, with 5 deferred and 2 outsourced to a research partner**. |
-| product-design/business-plan.md §7 | Site decision re-taken on commercial criteria (§8.2 above). |
-| product-design/business-plan.md §11 | Financial plan, org/management and BD strategy are substantially answered by §3 and §8 here; competitive analysis and operating-company legal structure remain genuinely open. |
-| product-design/business-economics.md | RT-6 is modelling the wrong entity for deal 1\. Needs a services-P\&L variant: utilisation, day rate, engagement mix, and no per-deal SPV cost. |
-| data/milestones.csv | M-06, M-11, M-29 (PhD outreach and applications) go to Blocked or Dropped, not deleted. M-36…M-40 activate. |
-| data/open-questions.csv | OQ-14 (which RQ strand leads the proposal) and OQ-17 (the novelty claim) stop being critical-path; they become research-partner questions. |
-| docs/phd/ | Retained intact. Nothing here forecloses re-entry, and §7.3 argues actively for keeping it open. |
+| `product-design/business-plan.md` §3 | Three-layer table: our layer becomes "design and arranging", not "risk/structuring". Structuring returns at deal 3\. |
+| `product-design/business-plan.md` §4 | Retained economic interest moves from "not optional" to "not applicable until we sponsor a securitisation". Advisory and design fees become revenue line 1\. |
+| `product-design/business-plan.md` §5 | The stack becomes **7 → 3 → 6, with 5 deferred and 2 outsourced to a research partner**. |
+| `product-design/business-plan.md` §7 | Site decision re-taken on commercial criteria (§8.2 above). |
+| `product-design/business-plan.md` §11 | Financial plan, org/management and BD strategy are substantially answered by §3 and §8 here; competitive analysis and operating-company legal structure remain genuinely open. |
+| `product-design/business-economics.md` | RT-6 is modelling the wrong entity for deal 1\. Needs a services-P\&L variant: utilisation, day rate, engagement mix, and no per-deal SPV cost. |
+| `data/milestones.csv` | M-06, M-11, M-29 (PhD outreach and applications) go to `Blocked` or `Dropped`, not deleted. M-36…M-40 activate. |
+| `data/open-questions.csv` | OQ-14 (which RQ strand leads the proposal) and OQ-17 (the novelty claim) stop being critical-path; they become research-partner questions. |
+| `docs/phd/` | Retained intact. Nothing here forecloses re-entry, and §7.3 argues actively for keeping it open. |
 
 ---
 
@@ -304,7 +304,7 @@ Nothing has been edited yet. If this track is chosen:
 
 **OQ-19 — operating model.** Three options, not two:
 
-- **(a) Structurer** — the current business-plan.md. Highest ceiling, needs capital and a team, slowest to first revenue.  
+- **(a) Structurer** — the current `business-plan.md`. Highest ceiling, needs capital and a team, slowest to first revenue.  
 - **(b) Designer-arranger** — this document. Fastest to revenue, solo-compatible, gives up theory 5 until deal 3, and requires a research partner to keep theory 2 alive.  
 - **(c) Designer-arranger now, structurer later** — run (b), and let deal 3–4 convert the practice into (a) once there is a track record and a pool worth an SPV.
 
