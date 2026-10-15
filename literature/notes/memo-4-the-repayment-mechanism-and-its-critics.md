@@ -2,7 +2,7 @@
 
 **Status:** Outline — not yet written · **Covers:** LC-02 (Group-lending mechanisms: information, sanction, repeat interaction), LC-13 (Microcredit impact evidence and the meta-analytic record), LC-17 (Over-indebtedness, consumer protection and credit ethics), LC-18 (Financialisation of community institutions), LC-21 (Microsavings and household financial behaviour), LC-23 (Gender, group composition and intra-household allocation) · **Last updated:** 2026-08-22
 
-> **This is a stub, and deliberately so.** The memo has a row in data/synthesis-memos.csv and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.
+> **This is a stub, and deliberately so.** The memo has a row in `data/synthesis-memos.csv` and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.
 
 This memo is about the *mechanism*, not the impact. Group lending works, where it works, through information the lender does not have and sanctions the lender cannot apply. Whether that mechanism survives being financed from outside is the question the whole venture turns on, and it is not yet answered here.
 
@@ -36,9 +36,9 @@ This memo is about the *mechanism*, not the impact. Group lending works, where i
 
 ## Sources on file
 
-- **LIT-020** — Gine & Karlan 2009 \- Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014\) (Reviewed)  
-- **LIT-021** — Feigenberg, Field & Pande 2010 \- Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483) (Reviewed)  
-- **LIT-022** — Ghatak & Guinnane 1999 \- The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228) (Reviewed)  
-- **LIT-023** — Tankha 2012 \- Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE) (Reviewed)  
-- **LIT-003** — Duvendack et al. \- What is the evidence of microfinance impact (Reviewed)
+- **LIT-020** — Gine & Karlan 2009 \- Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014\) (`Reviewed`)  
+- **LIT-021** — Feigenberg, Field & Pande 2010 \- Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483) (`Reviewed`)  
+- **LIT-022** — Ghatak & Guinnane 1999 \- The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228) (`Reviewed`)  
+- **LIT-023** — Tankha 2012 \- Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE) (`Reviewed`)  
+- **LIT-003** — Duvendack et al. \- What is the evidence of microfinance impact (`Reviewed`)
 
