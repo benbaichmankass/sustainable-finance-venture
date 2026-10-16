@@ -2251,12 +2251,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-10-14",
+   "As_Of": "2026-10-15",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-15",
+   "As_Of": "2026-10-16",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.29",
+   "Value": "3.32",
    "Unit": "pp",
-   "As_Of": "2026-10-13",
-   "Chg_1m": "0.53",
-   "Chg_3m": "0.25",
-   "Chg_12m": "-0.29",
+   "As_Of": "2026-10-14",
+   "Chg_1m": "0.52",
+   "Chg_3m": "0.23",
+   "Chg_12m": "-0.26",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4443",
+   "Value": "3.4769",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-14",
-   "Chg_1m": "-0.0827",
-   "Chg_3m": "0.007",
-   "Chg_12m": "-0.3786",
+   "As_Of": "2026-10-15",
+   "Chg_1m": "-0.0324",
+   "Chg_3m": "0.0543",
+   "Chg_12m": "-0.3405",
    "Direction": "down",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2326,12 +2326,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-15",
+   "As_Of": "2026-10-16",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2346,7 +2346,7 @@ window.SFV_DATA = {
    "Chg_3m": "5.9",
    "Chg_12m": "7.4",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2354,14 +2354,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.075",
+   "Value": "3.089",
    "Unit": "ILS per USD",
-   "As_Of": "2026-10-14",
-   "Chg_1m": "0.052",
-   "Chg_3m": "0.043",
-   "Chg_12m": "-0.252",
+   "As_Of": "2026-10-16",
+   "Chg_1m": "0.04",
+   "Chg_3m": "0.064",
+   "Chg_12m": "-0.254",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2376,7 +2376,7 @@ window.SFV_DATA = {
    "Chg_3m": "12.8",
    "Chg_12m": "18.0",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2384,14 +2384,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "5.21",
+   "Value": "5.19",
    "Unit": "%",
-   "As_Of": "2026-10-13",
-   "Chg_1m": "0.26",
-   "Chg_3m": "0.67",
-   "Chg_12m": "1.01",
+   "As_Of": "2026-10-14",
+   "Chg_1m": "0.23",
+   "Chg_3m": "0.63",
+   "Chg_12m": "1.04",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2399,14 +2399,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-16",
    "Label": "Brent crude oil price",
-   "Value": "125.44",
+   "Value": "126.55",
    "Unit": "USD/barrel",
-   "As_Of": "2026-10-06",
-   "Chg_1m": "23.2",
-   "Chg_3m": "56.76",
-   "Chg_12m": "54.96",
+   "As_Of": "2026-10-14",
+   "Chg_1m": "5.3",
+   "Chg_3m": "44.93",
+   "Chg_12m": "60.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-15T11:34:02+00:00",
+   "Fetched_At": "2026-10-16T11:28:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -15643,9 +15643,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "The Drive Vault — where non-repo artifacts live",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
-   "Baseline_Repo_Hash": "4824931e59dd7b65bf55b7e2eba7c41f12ea63ec6103a402b720945e9913ba47",
-   "Last_Synced_At": "2026-10-14T21:49:33Z",
+   "Baseline_Drive_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
+   "Baseline_Repo_Hash": "a8966ee1966e6970a43c9485737f9b1938d5e10a0f32284ddc315b692e176f7b",
+   "Last_Synced_At": "2026-10-16T14:56:12Z",
    "Status": "Synced"
   },
   {
@@ -15929,9 +15929,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "RT-1 — Origination data schema",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "fbf33eedd87379278d81d0d4d1e4ff89d35016239f725410e85f3263c7fda9e8",
-   "Baseline_Repo_Hash": "fbf33eedd87379278d81d0d4d1e4ff89d35016239f725410e85f3263c7fda9e8",
-   "Last_Synced_At": "2026-10-16T09:58:20Z",
+   "Baseline_Drive_Hash": "2fc8901beae11e3e8e5c2317394d16db84d2fdbf2a0dfb90ed8e43a9ec37d462",
+   "Baseline_Repo_Hash": "2fc8901beae11e3e8e5c2317394d16db84d2fdbf2a0dfb90ed8e43a9ec37d462",
+   "Last_Synced_At": "2026-10-16T14:56:42Z",
    "Status": "Synced"
   },
   {
@@ -16111,9 +16111,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research questions: one project, seven ways to ask about it",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "12d548b5cdf8481a915006f3af77bc4f03962c76799088962e3358693d3b0cff",
-   "Baseline_Repo_Hash": "12d548b5cdf8481a915006f3af77bc4f03962c76799088962e3358693d3b0cff",
-   "Last_Synced_At": "2026-10-16T09:58:43Z",
+   "Baseline_Drive_Hash": "5c594da46778864f8f1a4f9d0c5afdee02ae48867566810b3935216bdf514b8c",
+   "Baseline_Repo_Hash": "5c594da46778864f8f1a4f9d0c5afdee02ae48867566810b3935216bdf514b8c",
+   "Last_Synced_At": "2026-10-16T14:56:57Z",
    "Status": "Synced"
   },
   {
@@ -16900,7 +16900,7 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-10-14",
+    "2026-10-15",
     4.0
    ]
   ],
@@ -17478,7 +17478,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-15",
+    "2026-10-16",
     2.65
    ]
   ],
@@ -18008,7 +18008,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-15",
+    "2026-10-16",
     3.25
    ]
   ],
@@ -18158,8 +18158,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-13",
-    3.29
+    "2026-10-14",
+    3.32
    ]
   ],
   "MAC-06": [
@@ -19892,8 +19892,8 @@ window.SFV_DATA = {
     3.4901
    ],
    [
-    "2026-10-14",
-    3.4443
+    "2026-10-15",
+    3.4769
    ]
   ],
   "MAC-13": [
@@ -20470,8 +20470,8 @@ window.SFV_DATA = {
     3.063
    ],
    [
-    "2026-10-14",
-    3.075
+    "2026-10-16",
+    3.089
    ]
   ],
   "MAC-14": [
@@ -21626,8 +21626,8 @@ window.SFV_DATA = {
     5.29
    ],
    [
-    "2026-10-13",
-    5.21
+    "2026-10-14",
+    5.19
    ]
   ],
   "MAC-16": [
@@ -22204,8 +22204,8 @@ window.SFV_DATA = {
     115.91
    ],
    [
-    "2026-10-06",
-    125.44
+    "2026-10-14",
+    126.55
    ]
   ]
  },
@@ -22418,7 +22418,7 @@ window.SFV_DATA = {
    "title": "The Drive Vault — where non-repo artifacts live",
    "summary": "",
    "words": 688,
-   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see `docs/ops/publishing.md`. The Vault is the private half of the system.\n\n**Vault links live in `private/pointers.csv`**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see `docs/ops/drive-sync.md`. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — `literature/lit-matrix.csv` for a paper, `data/resources.csv` for everything else. Where the pointer would itself be a private link, it goes in `private/pointers.csv`.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in `05-raw-data`, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| `00-private-overlay` | Canonical copies of the gitignored CSVs in `private/` — contact status, application status, Vault pointers. Download these into `private/` when setting up on a new machine. |\n| `01-literature-pdfs` | Full-text PDFs of matrix entries. Name files `LIT-0NN — short-title.pdf` so they sort alongside the matrix. |\n| `02-applications-phd` | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| `03-communications` | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| `04-partner-materials` | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| `05-raw-data` | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| `06-legal-and-regulatory` | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in `private/pointers.csv`.\n\n## Naming convention\n\n`YYYY-MM-DD — <subject> — <source or counterparty>.<ext>`\n\nFor literature, prefix with the matrix ID instead: `LIT-011 — FSD Africa securitisation Africa.pdf`.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from `01-literature-pdfs` to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in `05-raw-data`.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n`05-raw-data` is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
+   "body": "# The Drive Vault — where non-repo artifacts live\n\n**Created:** 2026-07-30\n\nSome project material should not live in git: copyrighted PDFs, large binaries, personal application documents, and correspondence with named individuals. Those live in a single Google Drive folder — the **Vault** — which is indexed from this repo so nothing gets lost.\n\nThis matters more than it would in a private repo, because **this repo is intended to be public** — see docs/ops/publishing.md. The Vault is the private half of the system.\n\n**Vault links live in private/pointers.csv**, which is gitignored. They're deliberately not in this file: publishing a folder ID invites access requests and serves no purpose.\n\n**Not to be confused with the Drive workfolder.** A separate Drive folder holds live, editable copies of this repo's *public* narrative docs, synced automatically in both directions — see docs/ops/drive-sync.md. That folder's link is public on purpose (it's linked from the dashboard); this Vault's is not. Same underlying platform, opposite privacy posture — don't point one skill's logic at the other's folder.\n\n## The rule\n\n| Put it in the repo | Put it in the Vault |\n| :---- | :---- |\n| Anything you wrote: notes, memos, plans, schemas | Anything someone else wrote and holds copyright over |\n| Structured trackers (CSV) | PDFs of papers and reports |\n| Anything you want diffed, reviewed, or versioned | Large binaries (\\>5 MB), media, scans |\n| Anything an AI agent needs to read to do its job | Personal documents — CVs, transcripts, application drafts |\n| Public-facing text | Correspondence with named individuals |\n| Links and citations | Signed documents, term sheets, legal drafts |\n\n**The repo always holds the pointer.** A PDF in the Vault is only findable if something in the repo references it — literature/lit-matrix.csv for a paper, data/resources.csv for everything else. Where the pointer would itself be a private link, it goes in private/pointers.csv.\n\n**How research actually works across the boundary.** The tooling is public and the inputs are private: the schema, analysis code and methodology live in the repo, you point them at a dataset in 05-raw-data, and the aggregate result comes back into the repo. Nothing about the boundary prevents doing the work — it just decides where each piece rests.\n\n## Folder structure\n\n| Folder | Holds |\n| :---- | :---- |\n| 00-private-overlay | Canonical copies of the gitignored CSVs in private/ — contact status, application status, Vault pointers. Download these into private/ when setting up on a new machine. |\n| 01-literature-pdfs | Full-text PDFs of matrix entries. Name files LIT-0NN — short-title.pdf so they sort alongside the matrix. |\n| 02-applications-phd | PhD applications, CVs, statements of purpose, transcripts, supervisor correspondence drafts. |\n| 03-communications | Partner and funder correspondence, meeting notes, call recordings/transcripts. |\n| 04-partner-materials | Materials received from partners: NGO reports, MFI portfolio data summaries, pitch decks. |\n| 05-raw-data | Raw pilot data, exports, anything with personal data in it. **Never** commit this to the repo. |\n| 06-legal-and-regulatory | Counsel memos, jurisdiction scans, draft term sheets, regulatory filings. |\n\nLinks in private/pointers.csv.\n\n## Naming convention\n\nYYYY-MM-DD — \\<subject\\> — \\<source or counterparty\\>.\\<ext\\>\n\nFor literature, prefix with the matrix ID instead: LIT-011 — FSD Africa securitisation Africa.pdf.\n\n## Working with an AI agent\n\nAn agent with Drive access can read from the Vault and write back to it. Two standing rules:\n\n1. **Read freely, write deliberately.** Fetching a paper from 01-literature-pdfs to summarise it needs no permission. Adding, moving or overwriting a file does — say what you are about to do first.  \n2. **Personal data stays in 05-raw-data.** Never copy its contents into the repo, into a summary that will be committed, or into a dashboard. If a pilot dataset needs analysis, the aggregate result comes back to the repo; the row-level data does not.\n\n## Anything with personal data\n\n05-raw-data is the only place row-level pilot data belongs. Before any of it is collected, the pilot design doc needs to state the consent basis, the retention period, and who has access — that work is tracked as M-08.  \n"
   },
   {
    "path": "docs/ops/publishing.md",
@@ -22508,7 +22508,7 @@ window.SFV_DATA = {
    "title": "Research questions: one project, seven ways to ask about it",
    "summary": "",
    "words": 1292,
-   "body": "# Research questions: one project, seven ways to ask about it\n\n**Status:** v1 (2026-08-22) · **Owner:** BB · **Tracker:** data/research-questions.csv (RQ-01 … RQ-29)\n\n## Why this document exists\n\nThree documents in this repo state the project's research question, and they do not quite agree. docs/research/working-doc.md asks how community arrangements can be *structured into securitizable assets*. docs/phd/phd-proposal-master.md asks how they should be *structured and modelled at origination*. docs/phd/research-proposal.md narrows both to climate and poverty in Africa and MENA.\n\nNone of those is wrong. The problem is that a supervisor in an actuarial-science department and a supervisor in a development-economics RCT lab will not respond to the same sentence, and sending both the same paragraph guarantees that at least one of them reads it as somebody else's project.\n\nSo the question is held as **an architecture, not a sentence**: one core question, seven strands, and a rule for which strand leads a given approach.\n\n## The constraint that makes this honest\n\nAdaptable research questions are usually a warning sign. They suggest a candidate who will say whatever gets them admitted.\n\nThe thing that makes this architecture defensible instead is a hard constraint:\n\n> **Every strand must be answerable from the same fieldwork.**\n\nOne pilot \\- a community-originated credit product with cover bundled in, captured under a securitisation-ready schema, randomised at group level \\- generates the household outcomes RQ-02 needs, the loan-level performance data RQ-03 needs, the mechanism variation RQ-04 needs, the cost data RQ-06 needs, and the trigger series RQ-07 needs. The strands are different *questions about one body of evidence*, not different projects.\n\nWhere a strand needs something the core pilot does not produce, that is stated in its row rather than glossed. RQ-05 needs investor-side data the pilot cannot generate; RQ-08 needs a second site.\n\n## The core question\n\n> **RQ-01.** Can the credit and insurance cash flows originated by community financial structures be made investor-legible \\- standardised, verifiable, poolable \\- without degrading the social mechanisms that make them perform, and what does that trade-off cost in risk terms and in welfare terms?\n\nTwo things about this phrasing are deliberate.\n\n**It contains a tension, not a task.** \"How do we securitise VSLA loans\" is an engineering problem and reads like consultancy. The version above carries the possibility that the answer is *no* \\- and that possibility is grounded in this repo's own evidence, not manufactured for effect. Memo 2 establishes that the joint-liability contract is not the active ingredient in repayment (LIT-020); what seems to matter is repeated interaction and the informal risk-sharing it builds (LIT-021). Ghatak and Guinnane (LIT-022) show the information and sanction channels can trade against each other. Tankha (LIT-023) records that the longest-running successful joint-liability institution in the record funded itself from local deposits and did not take external wholesale money into the group layer.\n\nSecuritisation is precisely the act of replacing community money with outside money. Whether the mechanism survives that substitution is an open empirical question \\- logged here as OQ-12 and OQ-13 \\- and it is the intellectual core of the thesis rather than a caveat at the end of it.\n\n**It is institution-neutral.** It names no country, no crop, no product and no discipline. Every strand below is a narrowing of it, and the geography, population and instrument are all adaptable to the programme (decision of 2026-08-22).\n\n## The seven strands\n\n| ID | Strand | The question, short | Method backbone |\n| :---- | :---- | :---- | :---- |\n| RQ-02 | Impact evaluation | Does bundling cover into group credit improve resilience and repayment stability? | Cluster RCT, pre-registered |\n| RQ-03 | Credit risk | Can these cash flows be modelled and enhanced to investment grade? | Hazard models, LGD, Monte Carlo waterfall |\n| RQ-04 | Mechanism | What drives repayment, and does it survive external capital? | Lab-in-field plus randomised funding source |\n| RQ-05 | Capital mobilisation | When does first-loss capital mobilise rather than substitute, and who captures the gain? | Deal-level panel, investor elicitation |\n| RQ-06 | Data architecture | What must be captured at origination, and what does it cost? | Design science, randomised protocol comparison |\n| RQ-07 | Adaptation finance | Can pooling household climate risk make adaptation finance work at household scale? | Spatial correlation, capital simulation |\n| RQ-08 | Transferability | What travels across institutional forms and sites, and what must be re-estimated? | Multi-site replication, hierarchical pooling |\n\nEach strand carries roughly three sub-questions in the tracker (RQ-09 … RQ-29). Those are the chapter-level questions \\- the thing a supervisor will actually ask you to be specific about in a second meeting.\n\n## Which strand leads which approach\n\nScored programmes come from data/phd-programs.csv and the rubric in docs/phd/phd-scoring-rubric.md. The Fits\\_Programs column in the tracker holds the full mapping; this is the summary.\n\n| If the advisor is… | Lead with | Keep in reserve | Example programmes |\n| :---- | :---- | :---- | :---- |\n| A field-experiment / RCT economist | **RQ-02** | RQ-04, RQ-08 | UEA (PHD-15), Groningen (PHD-22), IHEID (PHD-21), Wageningen (PHD-27), Passau (PHD-44), NHH (PHD-48), Namur (PHD-52), Bocconi (PHD-51) |\n| A structured-finance or actuarial researcher | **RQ-03** | RQ-07, RQ-06 | HUJI Business School (PHD-10), Bayes (PHD-18), Reading ICMA (PHD-17), Geneva GFRI (PHD-07), SMU (PHD-31) |\n| A microfinance mechanism / contract theorist | **RQ-04** | RQ-02 | CERMi (PHD-20), Namur (PHD-52), KU Leuven (PHD-24), TSE/PSE (PHD-41) |\n| A development-finance or policy scholar | **RQ-05** | RQ-08 | SOAS (PHD-13), Manchester GDI (PHD-14), Antwerp IOB (PHD-23), UNU-MERIT (PHD-26) |\n| A data / decision-science or fintech researcher | **RQ-06** | RQ-03 | Technion FDDS (PHD-12), Krea/LEAD (PHD-30), Manchester (PHD-14) |\n| A sustainable- or climate-finance centre | **RQ-07** | RQ-05 | Oxford Smith School (PHD-04), LSE (PHD-05), SOAS (PHD-13), NTU CSFI (PHD-33) |\n| A development-studies / replication researcher | **RQ-08** | RQ-02 | Manchester GDI (PHD-14), UNU-MERIT (PHD-26), Bath CDS (PHD-16) |\n\n**The rule for a specific approach:** lead with one strand, name one reserve, and state RQ-01 once so the coherence is visible. Do not present the menu. An advisor who sees seven questions sees a candidate who has not chosen; an advisor who sees one question and a coherent programme behind it sees a candidate who has.\n\nThe exception is a second or third conversation, where showing the architecture is an asset \\- it demonstrates the project has more than one chapter in it and that the candidate has thought about where a co-supervisor would fit.\n\n## Where the co-supervisor goes\n\nThe rubric already records that no single department combines all four pillars this project needs. The strand structure is what makes that tractable: the lead strand picks the primary supervisor, and the reserve strand names the co-supervisor's territory. An RQ-02 primary at a development-economics department pairs naturally with an RQ-03 co-supervisor in finance or actuarial science, and the pairing is easier to propose when both halves are already written down as questions.\n\n## What is not yet decided\n\n**Which strand leads the primary proposal** is logged as **OQ-14** and is deliberately open. It should be settled by which advisor engages first, not chosen in advance \\- that is the whole point of building the architecture this way.\n\n## Maintenance\n\n- New sub-questions get the next free RQ number. IDs are never reused (CLAUDE.md §3).  \n- When a strand is dropped, mark its Status Parked with a reason; do not delete the row \\- the Component\\_Refs and Experiment\\_Refs on it are cross-referenced.  \n- Status vocabulary: Active · Lead · Parked. Exactly one row may be Lead.  \n- When a literature component (data/lit-components.csv) or experiment (data/experiments.csv) is added, check whether it belongs in a strand's refs.\n\n"
+   "body": "# Research questions: one project, seven ways to ask about it\n\n**Status:** v1 (2026-08-22) · **Owner:** BB · **Tracker:** `data/research-questions.csv` (RQ-01 … RQ-29)\n\n## Why this document exists\n\nThree documents in this repo state the project's research question, and they do not quite agree. `docs/research/working-doc.md` asks how community arrangements can be *structured into securitizable assets*. `docs/phd/phd-proposal-master.md` asks how they should be *structured and modelled at origination*. `docs/phd/research-proposal.md` narrows both to climate and poverty in Africa and MENA.\n\nNone of those is wrong. The problem is that a supervisor in an actuarial-science department and a supervisor in a development-economics RCT lab will not respond to the same sentence, and sending both the same paragraph guarantees that at least one of them reads it as somebody else's project.\n\nSo the question is held as **an architecture, not a sentence**: one core question, seven strands, and a rule for which strand leads a given approach.\n\n## The constraint that makes this honest\n\nAdaptable research questions are usually a warning sign. They suggest a candidate who will say whatever gets them admitted.\n\nThe thing that makes this architecture defensible instead is a hard constraint:\n\n> **Every strand must be answerable from the same fieldwork.**\n\nOne pilot \\- a community-originated credit product with cover bundled in, captured under a securitisation-ready schema, randomised at group level \\- generates the household outcomes RQ-02 needs, the loan-level performance data RQ-03 needs, the mechanism variation RQ-04 needs, the cost data RQ-06 needs, and the trigger series RQ-07 needs. The strands are different *questions about one body of evidence*, not different projects.\n\nWhere a strand needs something the core pilot does not produce, that is stated in its row rather than glossed. RQ-05 needs investor-side data the pilot cannot generate; RQ-08 needs a second site.\n\n## The core question\n\n> **RQ-01.** Can the credit and insurance cash flows originated by community financial structures be made investor-legible \\- standardised, verifiable, poolable \\- without degrading the social mechanisms that make them perform, and what does that trade-off cost in risk terms and in welfare terms?\n\nTwo things about this phrasing are deliberate.\n\n**It contains a tension, not a task.** \"How do we securitise VSLA loans\" is an engineering problem and reads like consultancy. The version above carries the possibility that the answer is *no* \\- and that possibility is grounded in this repo's own evidence, not manufactured for effect. Memo 2 establishes that the joint-liability contract is not the active ingredient in repayment (LIT-020); what seems to matter is repeated interaction and the informal risk-sharing it builds (LIT-021). Ghatak and Guinnane (LIT-022) show the information and sanction channels can trade against each other. Tankha (LIT-023) records that the longest-running successful joint-liability institution in the record funded itself from local deposits and did not take external wholesale money into the group layer.\n\nSecuritisation is precisely the act of replacing community money with outside money. Whether the mechanism survives that substitution is an open empirical question \\- logged here as OQ-12 and OQ-13 \\- and it is the intellectual core of the thesis rather than a caveat at the end of it.\n\n**It is institution-neutral.** It names no country, no crop, no product and no discipline. Every strand below is a narrowing of it, and the geography, population and instrument are all adaptable to the programme (decision of 2026-08-22).\n\n## The seven strands\n\n| ID | Strand | The question, short | Method backbone |\n| :---- | :---- | :---- | :---- |\n| RQ-02 | Impact evaluation | Does bundling cover into group credit improve resilience and repayment stability? | Cluster RCT, pre-registered |\n| RQ-03 | Credit risk | Can these cash flows be modelled and enhanced to investment grade? | Hazard models, LGD, Monte Carlo waterfall |\n| RQ-04 | Mechanism | What drives repayment, and does it survive external capital? | Lab-in-field plus randomised funding source |\n| RQ-05 | Capital mobilisation | When does first-loss capital mobilise rather than substitute, and who captures the gain? | Deal-level panel, investor elicitation |\n| RQ-06 | Data architecture | What must be captured at origination, and what does it cost? | Design science, randomised protocol comparison |\n| RQ-07 | Adaptation finance | Can pooling household climate risk make adaptation finance work at household scale? | Spatial correlation, capital simulation |\n| RQ-08 | Transferability | What travels across institutional forms and sites, and what must be re-estimated? | Multi-site replication, hierarchical pooling |\n\nEach strand carries roughly three sub-questions in the tracker (RQ-09 … RQ-29). Those are the chapter-level questions \\- the thing a supervisor will actually ask you to be specific about in a second meeting.\n\n## Which strand leads which approach\n\nScored programmes come from `data/phd-programs.csv` and the rubric in `docs/phd/phd-scoring-rubric.md`. The `Fits_Programs` column in the tracker holds the full mapping; this is the summary.\n\n| If the advisor is… | Lead with | Keep in reserve | Example programmes |\n| :---- | :---- | :---- | :---- |\n| A field-experiment / RCT economist | **RQ-02** | RQ-04, RQ-08 | UEA (PHD-15), Groningen (PHD-22), IHEID (PHD-21), Wageningen (PHD-27), Passau (PHD-44), NHH (PHD-48), Namur (PHD-52), Bocconi (PHD-51) |\n| A structured-finance or actuarial researcher | **RQ-03** | RQ-07, RQ-06 | HUJI Business School (PHD-10), Bayes (PHD-18), Reading ICMA (PHD-17), Geneva GFRI (PHD-07), SMU (PHD-31) |\n| A microfinance mechanism / contract theorist | **RQ-04** | RQ-02 | CERMi (PHD-20), Namur (PHD-52), KU Leuven (PHD-24), TSE/PSE (PHD-41) |\n| A development-finance or policy scholar | **RQ-05** | RQ-08 | SOAS (PHD-13), Manchester GDI (PHD-14), Antwerp IOB (PHD-23), UNU-MERIT (PHD-26) |\n| A data / decision-science or fintech researcher | **RQ-06** | RQ-03 | Technion FDDS (PHD-12), Krea/LEAD (PHD-30), Manchester (PHD-14) |\n| A sustainable- or climate-finance centre | **RQ-07** | RQ-05 | Oxford Smith School (PHD-04), LSE (PHD-05), SOAS (PHD-13), NTU CSFI (PHD-33) |\n| A development-studies / replication researcher | **RQ-08** | RQ-02 | Manchester GDI (PHD-14), UNU-MERIT (PHD-26), Bath CDS (PHD-16) |\n\n**The rule for a specific approach:** lead with one strand, name one reserve, and state RQ-01 once so the coherence is visible. Do not present the menu. An advisor who sees seven questions sees a candidate who has not chosen; an advisor who sees one question and a coherent programme behind it sees a candidate who has.\n\nThe exception is a second or third conversation, where showing the architecture is an asset \\- it demonstrates the project has more than one chapter in it and that the candidate has thought about where a co-supervisor would fit.\n\n## Where the co-supervisor goes\n\nThe rubric already records that no single department combines all four pillars this project needs. The strand structure is what makes that tractable: the lead strand picks the primary supervisor, and the reserve strand names the co-supervisor's territory. An RQ-02 primary at a development-economics department pairs naturally with an RQ-03 co-supervisor in finance or actuarial science, and the pairing is easier to propose when both halves are already written down as questions.\n\n## What is not yet decided\n\n**Which strand leads the primary proposal** is logged as **OQ-14** and is deliberately open. It should be settled by which advisor engages first, not chosen in advance \\- that is the whole point of building the architecture this way.\n\n## Maintenance\n\n- New sub-questions get the next free RQ number. IDs are never reused (CLAUDE.md §3).  \n- When a strand is dropped, mark its `Status` `Parked` with a reason; do not delete the row \\- the `Component_Refs` and `Experiment_Refs` on it are cross-referenced.  \n- `Status` vocabulary: `Active` · `Lead` · `Parked`. Exactly one row may be `Lead`.  \n- When a literature component (`data/lit-components.csv`) or experiment (`data/experiments.csv`) is added, check whether it belongs in a strand's refs.\n\n"
   },
   {
    "path": "docs/phd/phd-by-publication.md",
@@ -22778,7 +22778,7 @@ window.SFV_DATA = {
    "title": "Origination data schema",
    "summary": "",
    "words": 1147,
-   "body": "# RT-1 — Origination data schema\n\n**Status:** v0 built, not field-tested · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3 **Schema:** [schema/rt-1-origination-schema.csv](http://schema/rt-1-origination-schema.csv) — 57 fields, 5 entities · **Philosophy:** [schema/README.md](http://schema/README.md) · **Validator:** risk-tools/tools/validate\\_schema.py\n\n## Purpose\n\nDefine every field captured at the moment a loan is disbursed or a policy is written, so that a pool of these assets is legible to a rating agency and an investor without retrofitting.\n\nThis is the tool that decides whether the venture works. The securitisation literature is unanimous that a standardisation layer is a precondition, not a nice-to-have (LIT-004, LIT-006, LIT-008). And unlike every other tool here, **a schema failure cannot be repaired later** — data not captured at origination is gone. A field added in year two produces a portfolio with two years of nulls, which for a rating agency is a portfolio with no history.\n\n## Design constraints\n\nThree constraints pull in different directions, and the schema has to satisfy all three.\n\n**1\\. ABS legibility.** The end state is a loan-level data tape a rating agency will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they represent a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised group records, delegated to local authorities, NGOs and federations. A schema that only works inside a supervised financial institution will not reach the groups we need. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already receives.\n\n**3\\. Privacy.** Personal data lives in the Vault's 05-raw-data, never the repo (CLAUDE.md §8). The schema must therefore separate a **stable pseudonymous ID** from the identifying record, so analysis and pooling can run on the pseudonymous layer alone.\n\nConstraint 2 is the binding one. It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting.\n\n## Structure\n\nFive tables, joined on IDs. Field counts are as built in v0.1.\n\n| Table | Fields | Grain | Holds |\n| :---- | :---- | :---- | :---- |\n| originator | 4 | one row per originating institution | type, country, regulated status |\n| group | 15 | one row per VSLA / originating unit | formation date, cycle number and length, size, governance, meeting cadence, savings balance, coarse geography, SAVIX link |\n| member | 9 | one row per member | pseudonymous ID, join date, role, banded demographics, livelihood, prior cycles; **no name, no contact, no exact DOB** |\n| loan | 19 | one row per loan | principal, disbursement date, term, charge rate and basis, purpose, guarantee structure, borrower savings, prior-loan count |\n| event | 10 | one row per repayment, arrears, restructure, write-off, claim | loan ID, date, type, amount, balance after, DPD, who recorded it |\n\n**48 of 57 fields are required; 45 are critical path** — meaning they cannot be reconstructed after origination. That ratio is high deliberately: a field that *can* be rebuilt later does not belong in a v0 schema.\n\nThe event table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.\n\nFor PL-2 the same shape applies with project replacing group and PPA settlement events replacing repayments — the structural analogy is deliberate and is what lets one toolkit serve both lines.\n\n## Field-level rules\n\n- **Every field has a defined domain.** Enumerations, not free text, wherever a category is meant. Free text is unpoolable.  \n- **Money carries a currency code and a date.** No bare amounts.  \n- **Dates are ISO 8601\\.** No local formats.  \n- **Nulls are distinguishable from zeros.** \"No repayment recorded\" and \"repayment of zero\" are different facts.  \n- **Every row carries schema\\_version.** Without it a mixed-vintage portfolio is uninterpretable.\n\n## Versioning\n\ndata/risk-tools.csv holds the current version. This schema is a **data contract with people in the field**, so version changes are more expensive than code changes:\n\n| Bump | Means | Cost |\n| :---- | :---- | :---- |\n| Major | Field removed, domain changed, meaning changed | Retraining, possibly reprinted forms, migration note required |\n| Minor | Optional field added | New field is null for prior vintages — acceptable, must be documented |\n| Patch | Clarified description, corrected typo | None |\n\n**Batch changes.** A major bump every quarter destroys field trust. Accumulate and release deliberately.\n\nEvery version records: what changed, why, which vintages are affected, and how to interpret the join across the boundary.\n\n### History\n\n| Date | Version | Change |\n| :---- | :---- | :---- |\n| 2026-07-30 | 0.0 | Initial specification. Structure and constraints only. |\n| 2026-07-30 | 0.1 | First concrete field list: 57 fields across 5 entities, with validator. Not yet field-tested — see schema/README.md for what would move it to v1. |\n\n## Tests\n\n**Built** (risk-tools/tools/validate\\_schema.py, runs in CI):\n\n- **Schema self-check** — field IDs are unique lower\\_snake\\_case; every entity, type, requiredness, capture mode and privacy class is in its allowed set; enums actually declare values; derived fields carry a formula; every entity has a schema\\_version field. It also enforces that every field explains why it exists — a rationale under 60 characters fails the build, which caught five lazy entries on the first run.  \n- **Dataset validation** (\\--data \\<dir\\>) — required fields present, enums respected, ISO dates, referential integrity across all five tables.\n\nStill planned:\n\n- **Round-trip** — export to the ABS tape format and back without loss.  \n- **Adversarial field data** — the suite must include the messy cases that actually occur: a member leaving mid-cycle, a loan repaid by someone else, a group splitting, a cycle ending early.  \n- **Cross-version join** — records at two schema versions must be joinable, or the migration note is wrong.\n\n## Open questions\n\n- Which fields are genuinely required versus nice-to-have? Every required field is a tax on the group secretary, and the schema fails if the tax is too high. v0.1 puts 48 fields in the required column; that number is a proposal and should be argued down, not up, once a real secretary has used it.  \n- Can we align with SAVIX (RES-31) so existing savings-group MIS data maps in without re-collection? This could be the difference between a pilot cohort of 20 and a pool of hundreds.  \n- What does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record? (Open in Memo 3.)  \n- PL-2: does a utility PPA permit assignment of receivables at all? That is the LIT-009 true-sale checklist applied to this asset, and it may be the binding constraint on the whole product line.\n\n"
+   "body": "# RT-1 — Origination data schema\n\n**Status:** v0 built, not field-tested · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3 **Schema:** [`schema/rt-1-origination-schema.csv`](http://schema/rt-1-origination-schema.csv) — 57 fields, 5 entities · **Philosophy:** [`schema/README.md`](http://schema/README.md) · **Validator:** `risk-tools/tools/validate_schema.py`\n\n## Purpose\n\nDefine every field captured at the moment a loan is disbursed or a policy is written, so that a pool of these assets is legible to a rating agency and an investor without retrofitting.\n\nThis is the tool that decides whether the venture works. The securitisation literature is unanimous that a standardisation layer is a precondition, not a nice-to-have (LIT-004, LIT-006, LIT-008). And unlike every other tool here, **a schema failure cannot be repaired later** — data not captured at origination is gone. A field added in year two produces a portfolio with two years of nulls, which for a rating agency is a portfolio with no history.\n\n## Design constraints\n\nThree constraints pull in different directions, and the schema has to satisfy all three.\n\n**1\\. ABS legibility.** The end state is a loan-level data tape a rating agency will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they represent a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised group records, delegated to local authorities, NGOs and federations. A schema that only works inside a supervised financial institution will not reach the groups we need. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already receives.\n\n**3\\. Privacy.** Personal data lives in the Vault's `05-raw-data`, never the repo (`CLAUDE.md` §8). The schema must therefore separate a **stable pseudonymous ID** from the identifying record, so analysis and pooling can run on the pseudonymous layer alone.\n\nConstraint 2 is the binding one. It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting.\n\n## Structure\n\nFive tables, joined on IDs. Field counts are as built in v0.1.\n\n| Table | Fields | Grain | Holds |\n| :---- | :---- | :---- | :---- |\n| `originator` | 4 | one row per originating institution | type, country, regulated status |\n| `group` | 15 | one row per VSLA / originating unit | formation date, cycle number and length, size, governance, meeting cadence, savings balance, coarse geography, SAVIX link |\n| `member` | 9 | one row per member | pseudonymous ID, join date, role, banded demographics, livelihood, prior cycles; **no name, no contact, no exact DOB** |\n| `loan` | 19 | one row per loan | principal, disbursement date, term, charge rate and basis, purpose, guarantee structure, borrower savings, prior-loan count |\n| `event` | 10 | one row per repayment, arrears, restructure, write-off, claim | loan ID, date, type, amount, balance after, DPD, who recorded it |\n\n**48 of 57 fields are required; 45 are critical path** — meaning they cannot be reconstructed after origination. That ratio is high deliberately: a field that *can* be rebuilt later does not belong in a v0 schema.\n\nThe `event` table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.\n\nFor PL-2 the same shape applies with `project` replacing `group` and PPA settlement events replacing repayments — the structural analogy is deliberate and is what lets one toolkit serve both lines.\n\n## Field-level rules\n\n- **Every field has a defined domain.** Enumerations, not free text, wherever a category is meant. Free text is unpoolable.  \n- **Money carries a currency code and a date.** No bare amounts.  \n- **Dates are ISO 8601\\.** No local formats.  \n- **Nulls are distinguishable from zeros.** \"No repayment recorded\" and \"repayment of zero\" are different facts.  \n- **Every row carries `schema_version`.** Without it a mixed-vintage portfolio is uninterpretable.\n\n## Versioning\n\n`data/risk-tools.csv` holds the current version. This schema is a **data contract with people in the field**, so version changes are more expensive than code changes:\n\n| Bump | Means | Cost |\n| :---- | :---- | :---- |\n| Major | Field removed, domain changed, meaning changed | Retraining, possibly reprinted forms, migration note required |\n| Minor | Optional field added | New field is null for prior vintages — acceptable, must be documented |\n| Patch | Clarified description, corrected typo | None |\n\n**Batch changes.** A major bump every quarter destroys field trust. Accumulate and release deliberately.\n\nEvery version records: what changed, why, which vintages are affected, and how to interpret the join across the boundary.\n\n### History\n\n| Date | Version | Change |\n| :---- | :---- | :---- |\n| 2026-07-30 | 0.0 | Initial specification. Structure and constraints only. |\n| 2026-07-30 | 0.1 | First concrete field list: 57 fields across 5 entities, with validator. Not yet field-tested — see `schema/README.md` for what would move it to v1. |\n\n## Tests\n\n**Built** (`risk-tools/tools/validate_schema.py`, runs in CI):\n\n- **Schema self-check** — field IDs are unique lower\\_snake\\_case; every entity, type, requiredness, capture mode and privacy class is in its allowed set; enums actually declare values; derived fields carry a formula; every entity has a `schema_version` field. It also enforces that every field explains why it exists — a rationale under 60 characters fails the build, which caught five lazy entries on the first run.  \n- **Dataset validation** (`--data <dir>`) — required fields present, enums respected, ISO dates, referential integrity across all five tables.\n\nStill planned:\n\n- **Round-trip** — export to the ABS tape format and back without loss.  \n- **Adversarial field data** — the suite must include the messy cases that actually occur: a member leaving mid-cycle, a loan repaid by someone else, a group splitting, a cycle ending early.  \n- **Cross-version join** — records at two schema versions must be joinable, or the migration note is wrong.\n\n## Open questions\n\n- Which fields are genuinely required versus nice-to-have? Every required field is a tax on the group secretary, and the schema fails if the tax is too high. v0.1 puts 48 fields in the required column; that number is a proposal and should be argued down, not up, once a real secretary has used it.  \n- Can we align with SAVIX (RES-31) so existing savings-group MIS data maps in without re-collection? This could be the difference between a pilot cohort of 20 and a pool of hundreds.  \n- What does a rating agency actually require of VSLA-level receivables, and will any agency engage pre-track-record? (Open in Memo 3.)  \n- PL-2: does a utility PPA permit assignment of receivables at all? That is the LIT-009 true-sale checklist applied to this asset, and it may be the binding constraint on the whole product line.\n\n"
   },
   {
    "path": "risk-tools/rt-2-underwriting-engine.md",

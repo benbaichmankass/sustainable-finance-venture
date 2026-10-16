@@ -1,6 +1,6 @@
 # RT-1 — Origination data schema
 
-**Status:** v0 built, not field-tested · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3 **Schema:** [schema/rt-1-origination-schema.csv](http://schema/rt-1-origination-schema.csv) — 57 fields, 5 entities · **Philosophy:** [schema/README.md](http://schema/README.md) · **Validator:** risk-tools/tools/validate\_schema.py
+**Status:** v0 built, not field-tested · **Version:** 0.1 · **Product lines:** PL-1, PL-2 · **Resolves:** OQ-3 **Schema:** [`schema/rt-1-origination-schema.csv`](http://schema/rt-1-origination-schema.csv) — 57 fields, 5 entities · **Philosophy:** [`schema/README.md`](http://schema/README.md) · **Validator:** `risk-tools/tools/validate_schema.py`
 
 ## Purpose
 
@@ -16,7 +16,7 @@ Three constraints pull in different directions, and the schema has to satisfy al
 
 **2\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised group records, delegated to local authorities, NGOs and federations. A schema that only works inside a supervised financial institution will not reach the groups we need. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already receives.
 
-**3\. Privacy.** Personal data lives in the Vault's 05-raw-data, never the repo (CLAUDE.md §8). The schema must therefore separate a **stable pseudonymous ID** from the identifying record, so analysis and pooling can run on the pseudonymous layer alone.
+**3\. Privacy.** Personal data lives in the Vault's `05-raw-data`, never the repo (`CLAUDE.md` §8). The schema must therefore separate a **stable pseudonymous ID** from the identifying record, so analysis and pooling can run on the pseudonymous layer alone.
 
 Constraint 2 is the binding one. It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting.
 
@@ -26,17 +26,17 @@ Five tables, joined on IDs. Field counts are as built in v0.1.
 
 | Table | Fields | Grain | Holds |
 | :---- | :---- | :---- | :---- |
-| originator | 4 | one row per originating institution | type, country, regulated status |
-| group | 15 | one row per VSLA / originating unit | formation date, cycle number and length, size, governance, meeting cadence, savings balance, coarse geography, SAVIX link |
-| member | 9 | one row per member | pseudonymous ID, join date, role, banded demographics, livelihood, prior cycles; **no name, no contact, no exact DOB** |
-| loan | 19 | one row per loan | principal, disbursement date, term, charge rate and basis, purpose, guarantee structure, borrower savings, prior-loan count |
-| event | 10 | one row per repayment, arrears, restructure, write-off, claim | loan ID, date, type, amount, balance after, DPD, who recorded it |
+| `originator` | 4 | one row per originating institution | type, country, regulated status |
+| `group` | 15 | one row per VSLA / originating unit | formation date, cycle number and length, size, governance, meeting cadence, savings balance, coarse geography, SAVIX link |
+| `member` | 9 | one row per member | pseudonymous ID, join date, role, banded demographics, livelihood, prior cycles; **no name, no contact, no exact DOB** |
+| `loan` | 19 | one row per loan | principal, disbursement date, term, charge rate and basis, purpose, guarantee structure, borrower savings, prior-loan count |
+| `event` | 10 | one row per repayment, arrears, restructure, write-off, claim | loan ID, date, type, amount, balance after, DPD, who recorded it |
 
 **48 of 57 fields are required; 45 are critical path** — meaning they cannot be reconstructed after origination. That ratio is high deliberately: a field that *can* be rebuilt later does not belong in a v0 schema.
 
-The event table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.
+The `event` table is where the value is. Static loan attributes are cheap; the payment-behaviour time series is what an underwriting model learns from and what an investor prices.
 
-For PL-2 the same shape applies with project replacing group and PPA settlement events replacing repayments — the structural analogy is deliberate and is what lets one toolkit serve both lines.
+For PL-2 the same shape applies with `project` replacing `group` and PPA settlement events replacing repayments — the structural analogy is deliberate and is what lets one toolkit serve both lines.
 
 ## Field-level rules
 
@@ -44,11 +44,11 @@ For PL-2 the same shape applies with project replacing group and PPA settlement 
 - **Money carries a currency code and a date.** No bare amounts.  
 - **Dates are ISO 8601\.** No local formats.  
 - **Nulls are distinguishable from zeros.** "No repayment recorded" and "repayment of zero" are different facts.  
-- **Every row carries schema\_version.** Without it a mixed-vintage portfolio is uninterpretable.
+- **Every row carries `schema_version`.** Without it a mixed-vintage portfolio is uninterpretable.
 
 ## Versioning
 
-data/risk-tools.csv holds the current version. This schema is a **data contract with people in the field**, so version changes are more expensive than code changes:
+`data/risk-tools.csv` holds the current version. This schema is a **data contract with people in the field**, so version changes are more expensive than code changes:
 
 | Bump | Means | Cost |
 | :---- | :---- | :---- |
@@ -65,14 +65,14 @@ Every version records: what changed, why, which vintages are affected, and how t
 | Date | Version | Change |
 | :---- | :---- | :---- |
 | 2026-07-30 | 0.0 | Initial specification. Structure and constraints only. |
-| 2026-07-30 | 0.1 | First concrete field list: 57 fields across 5 entities, with validator. Not yet field-tested — see schema/README.md for what would move it to v1. |
+| 2026-07-30 | 0.1 | First concrete field list: 57 fields across 5 entities, with validator. Not yet field-tested — see `schema/README.md` for what would move it to v1. |
 
 ## Tests
 
-**Built** (risk-tools/tools/validate\_schema.py, runs in CI):
+**Built** (`risk-tools/tools/validate_schema.py`, runs in CI):
 
-- **Schema self-check** — field IDs are unique lower\_snake\_case; every entity, type, requiredness, capture mode and privacy class is in its allowed set; enums actually declare values; derived fields carry a formula; every entity has a schema\_version field. It also enforces that every field explains why it exists — a rationale under 60 characters fails the build, which caught five lazy entries on the first run.  
-- **Dataset validation** (\--data \<dir\>) — required fields present, enums respected, ISO dates, referential integrity across all five tables.
+- **Schema self-check** — field IDs are unique lower\_snake\_case; every entity, type, requiredness, capture mode and privacy class is in its allowed set; enums actually declare values; derived fields carry a formula; every entity has a `schema_version` field. It also enforces that every field explains why it exists — a rationale under 60 characters fails the build, which caught five lazy entries on the first run.  
+- **Dataset validation** (`--data <dir>`) — required fields present, enums respected, ISO dates, referential integrity across all five tables.
 
 Still planned:
 
