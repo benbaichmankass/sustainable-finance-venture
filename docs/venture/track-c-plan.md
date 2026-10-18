@@ -2,11 +2,11 @@
 
 **Status:** Detail for a decision not yet taken (OQ-19) · **Owner:** BB · **Drafted:** 2026-09-08
 
-> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [market-scan-and-pilots.md](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
+> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [`market-scan-and-pilots.md`](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
 
-docs/venture/solo-operator-track.md set out three operating models and recommended **(c)** — run the solo design-and-arranging practice now, convert to the capital-markets structurer at deal 3–4. This document is the detail behind that recommendation, written so the option can be judged rather than taken on trust. OQ-19 remains Open.
+`docs/venture/solo-operator-track.md` set out three operating models and recommended **(c)** — run the solo design-and-arranging practice now, convert to the capital-markets structurer at deal 3–4. This document is the detail behind that recommendation, written so the option can be judged rather than taken on trust. OQ-19 remains Open.
 
-> **Steer recorded 2026-09-08: Phase 2 is the base case, not a waypoint.** Topping out as a design, standard-setting and verification practice is an acceptable end state provided it is a good business in its own right. Phase 3 is an option to be kept open only where keeping it open is free. §4, §5, §6 and §8 below are written under that frame; the sequenced decisions it produces are in [decision-register.md](http://decision-register.md).
+> **Steer recorded 2026-09-08: Phase 2 is the base case, not a waypoint.** Topping out as a design, standard-setting and verification practice is an acceptable end state provided it is a good business in its own right. Phase 3 is an option to be kept open only where keeping it open is free. §4, §5, §6 and §8 below are written under that frame; the sequenced decisions it produces are in [`decision-register.md`](http://decision-register.md).
 
 **The single largest consequence:** gate 6 below — identify and commit the retention strip — was the one line at which this business stopped being capital-light. Under a Phase-2-terminal plan that line never arrives, and **the venture has no capital requirement at all, end to end.**
 
@@ -36,10 +36,10 @@ The single most consequential item in the whole document is **§5.1, data rights
 | **Months** | 0–18 | 12–36 | 30–60 |
 | **What you are** | A design and diagnostics practice | The party that assembles facilities | The sponsor of a pooled structure |
 | **What you sell** | Readiness diagnostics; funder-paid design mandates | Retainer plus success fee on closed facilities | Structuring fee, servicing bps, retained interest |
-| **Revenue lanes** (solo-operator-track.md §3.2) | A, B | B, C | C, D |
+| **Revenue lanes** (`solo-operator-track.md` §3.2) | A, B | B, C | C, D |
 | **Capital needed** | Working capital only | Working capital only | **Retention strip — the model stops being capital-light here** |
 | **Headcount** | You, plus subcontractors | You, plus subcontractors | First hires become unavoidable |
-| **Edge theories live** (business-plan.md §5) | 7 instrumentation, 3 standard-setting | 7, 3, 6 verification | 7, 3, 6, **5 tranching precision**, 2 via partner |
+| **Edge theories live** (`business-plan.md` §5) | 7 instrumentation, 3 standard-setting | 7, 3, 6 verification | 7, 3, 6, **5 tranching precision**, 2 via partner |
 | **Regulatory footing** | Advisory, unlicensed (OQ-20) | Advisory or co-mandate with a licensed arranger | Licensed entity or a licensed partner, unavoidably |
 | **Deals** | none | Deal 1 bilateral guaranteed; deal 2 club | Deal 3 warehouse; deal 4 first pooled structure |
 
@@ -51,7 +51,7 @@ The phases **overlap deliberately**. Phase 2 starts while Phase 1 is still the i
 
 ### Phase 1 — Practice (months 0–18)
 
-Delivery is solo-operator-track.md §8 and milestones M-36…M-40. In summary:
+Delivery is `solo-operator-track.md` §8 and milestones M-36…M-40. In summary:
 
 - Months 0–1: OQ-20 answered with counsel; market chosen on commercial criteria; the offer written as a signable scope of work; entity, PI insurance, engagement template.  
 - Months 1–2: outreach wave 1 — standards bodies, then originators led with EXP-22, research institutions in parallel, capital and risk carriers last.  
@@ -63,7 +63,7 @@ Delivery is solo-operator-track.md §8 and milestones M-36…M-40. In summary:
 
 ### Phase 2 — Arranger (months 12–36)
 
-- **Deal 1** — a guarantee-wrapped bilateral facility (solo-operator-track.md §4): one investor, one originator you already diagnosed, portfolio originated to RT-1, monitored with RT-3, concessional first-loss sized against RT-5. No SPV, no rating, no true-sale opinion, no minimum pool size. Target: term sheet month 12–15, close month 18–24.  
+- **Deal 1** — a guarantee-wrapped bilateral facility (`solo-operator-track.md` §4): one investor, one originator you already diagnosed, portfolio originated to RT-1, monitored with RT-3, concessional first-loss sized against RT-5. No SPV, no rating, no true-sale opinion, no minimum pool size. Target: term sheet month 12–15, close month 18–24.  
 - **Deal 2** — the same structure with two or three originators sharing a jurisdiction and one legal opinion. This is the first structure that tests the multi-originator question, which is why **OQ-18 must be settled before deal 2 is assembled, not after.**  
 - Alongside: EXP-25 analysis completes and the working paper is drafted; engagements 4–6 run; Lane A becomes recurring rather than episodic.
 
@@ -73,7 +73,7 @@ Delivery is solo-operator-track.md §8 and milestones M-36…M-40. In summary:
 
 - **Deal 3** — a revolving warehouse, which is the first structure that needs an SPV and therefore the first that carries the fixed-cost stack RT-6 models. RT-6's own extension list already flags that a revolving warehouse recycling principal several times a year is the right model for short-tenor community assets, and that the current single-life treatment understates the fee base (M-25).  
 - **Deal 4** — the first pooled structure with a rated or privately-placed senior tranche. This is where theory 5 (tranching precision) finally monetises: the EXP-25 correlation estimate sizes first-loss, and every basis point saved on the junior layer is senior capital that clears cheaper.  
-- The venture at this point is the business in product-design/business-plan.md, reached with a track record instead of on a promise.
+- The venture at this point is the business in `product-design/business-plan.md`, reached with a track record instead of on a promise.
 
 ---
 
@@ -85,15 +85,15 @@ Under the Phase-2-terminal frame these are no longer a roadmap to be worked towa
 
 | \# | Gate | Why this threshold | Where the evidence comes from |
 | :---- | :---- | :---- | :---- |
-| **1** | **A contractible pipeline of ≥ USD 20m** across originators already diagnosed | RT-5's sweep: fixed costs dominate below \~USD 5m and flatten around USD 20–40m. Below the flattening point the SPV eats the economics. | RT-5 \--sweep, refreshed with real numbers |
+| **1** | **A contractible pipeline of ≥ USD 20m** across originators already diagnosed | RT-5's sweep: fixed costs dominate below \~USD 5m and flatten around USD 20–40m. Below the flattening point the SPV eats the economics. | RT-5 `--sweep`, refreshed with real numbers |
 | **2** | **≥ 24 months of clean repayment data**, originated to RT-1 from day one | LIT-004 and LIT-006: 2–3 years of clean repayment history before a first tranche | The Phase 2 facilities — see §5.2 |
-| **3** | **EXP-25 has returned a market-level correlation with a usable interval** | business-plan.md §5 names this as the killer of theory 5: "an interval so wide that no defensible first-loss saving exists". A wide interval is a legitimate no. | EXP-25, with the research partner |
+| **3** | **EXP-25 has returned a market-level correlation with a usable interval** | `business-plan.md` §5 names this as the killer of theory 5: "an interval so wide that no defensible first-loss saving exists". A wide interval is a legitimate no. | EXP-25, with the research partner |
 | **4** | **OQ-18 settled** — multi-originator diversifies on the right axis | LIT-036/LIT-037: the correlation channel that predicts trouble is market-level, so a regional multi-originator pool may concentrate rather than spread risk. If it does, the pool has to be multi-market, which is slower and more expensive. | EXP-25's crossed design |
-| **5** | **OQ-1 closed with counsel** — a true-sale opinion is obtainable in the chosen jurisdiction | LIT-009's six-point checklist. business-plan.md §9 lists cross-border true-sale failure as a legal risk to close **before** committing to a geography. | Counsel (PT-09) |
+| **5** | **OQ-1 closed with counsel** — a true-sale opinion is obtainable in the chosen jurisdiction | LIT-009's six-point checklist. `business-plan.md` §9 lists cross-border true-sale failure as a legal risk to close **before** committing to a geography. | Counsel (PT-09) |
 | **6** | **The retention capital is identified and committed** | Sponsoring a securitisation placed with EU/UK investors requires retaining a minimum economic interest (MEMO-3). **MEMO-3 does not record the percentage** — get it from counsel and size the ask before Phase 3, not during. This is the line where the business stops being capital-light. | Counsel (PT-09), then RT-6 |
-| **7** | **An anchor investor is secured before structuring begins** | business-plan.md §9's own mitigation for the market risk: no appetite for a novel asset class at pilot scale. Structuring on spec is the expensive way to discover this. | Phase 2 relationships |
+| **7** | **An anchor investor is secured before structuring begins** | `business-plan.md` §9's own mitigation for the market risk: no appetite for a novel asset class at pilot scale. Structuring on spec is the expensive way to discover this. | Phase 2 relationships |
 
-**Gates 3 and 4 can return a permanent no.** If the correlation interval is too wide, or the diversification runs the wrong way, Phase 3 as designed does not exist and the right answer is to stay a practice (§8). That is not a hedge — it is the falsification test business-plan.md §5 already committed to, arriving at the moment it can actually change a decision.
+**Gates 3 and 4 can return a permanent no.** If the correlation interval is too wide, or the diversification runs the wrong way, Phase 3 as designed does not exist and the right answer is to stay a practice (§8). That is not a hedge — it is the falsification test `business-plan.md` §5 already committed to, arriving at the moment it can actually change a decision.
 
 ---
 
@@ -115,7 +115,7 @@ Each item is still cheap now and expensive or impossible later.
 
 **Every engagement letter and every facility agreement must grant retained, ongoing rights to pseudonymised loan-level data for portfolio analytics and structuring — not use limited to that single engagement.**
 
-business-plan.md §5 already names the falsifier of theory 7 as "originators adopt the protocol and then decline to grant data rights". That failure does not happen at the moment of refusal; it happens at the moment you sign an engagement letter that is silent on the point, and it is discovered two years later when the data you assumed you had is not yours to pool.
+`business-plan.md` §5 already names the falsifier of theory 7 as "originators adopt the protocol and then decline to grant data rights". That failure does not happen at the moment of refusal; it happens at the moment you sign an engagement letter that is silent on the point, and it is discovered two years later when the data you assumed you had is not yours to pool.
 
 Three properties the clause needs:
 
@@ -140,11 +140,11 @@ Phase 3's first pool will most likely be built out of Phase 2's facilities. Put 
 
 ### 5.4 The published standard
 
-RT-1 v1.0 published openly, early. Adoption is the moat for theory 3, and business-plan.md §5 names the falsifier as "a DFI, network body or ratings agency publishes a competing standard first; adoption is winner-take-most". Adoption compounds and cannot be accelerated later by spending money. This is the one Phase 1 deliverable whose value is destroyed by delay rather than merely postponed.
+RT-1 v1.0 published openly, early. Adoption is the moat for theory 3, and `business-plan.md` §5 names the falsifier as "a DFI, network body or ratings agency publishes a competing standard first; adoption is winner-take-most". Adoption compounds and cannot be accelerated later by spending money. This is the one Phase 1 deliverable whose value is destroyed by delay rather than merely postponed.
 
 ### 5.5 The correlation pipeline, not the number
 
-business-plan.md §5 is explicit: the moat is "the pipeline that keeps producing it as markets shift, and the partner relationships that supply the data — treat the estimate as a product with a shelf life, not an asset." Phase 1's job is the pipeline: the data-rights clauses, the research MOU, and a reproducible estimation codebase. The number is a Phase 2 output.
+`business-plan.md` §5 is explicit: the moat is "the pipeline that keeps producing it as markets shift, and the partner relationships that supply the data — treat the estimate as a product with a shelf life, not an asset." Phase 1's job is the pipeline: the data-rights clauses, the research MOU, and a reproducible estimation codebase. The number is a Phase 2 output.
 
 ---
 
@@ -158,7 +158,7 @@ Five things that look like good early revenue and foreclose Phase 3:
 | **Equity in an originator** | Turns an asset-light practice into an investor, and creates a conflict at exactly the moment you structure that originator's book for third-party capital. |
 | **Becoming servicer of record** | Operationally heavy, needs staff, and breaks the no-hiring constraint. Supply the monitoring tooling; do not become the collections operation. |
 | **Exclusivity with one originator** | Under Phase 3 this killed the multi-originator pool. Under Phase 2 the reason changes but the answer does not: exclusivity caps your addressable market, removes the cross-client benchmarking that Lane D sells, and makes a one-person business dependent on one counterparty. |
-| **A first facility structured as a securitisation** | §4 of solo-operator-track.md and gate 1 above. Arithmetically wrong at achievable scale, and a failed first structure is more damaging than a slow one. |
+| **A first facility structured as a securitisation** | §4 of `solo-operator-track.md` and gate 1 above. Arithmetically wrong at achievable scale, and a failed first structure is more damaging than a slow one. |
 
 Re-checked 2026-09-08 against the Phase-2-terminal frame: all five hold. Only the *reason* for refusing exclusivity changes.
 
@@ -180,15 +180,15 @@ break\_even\_days        \= annual\_fixed\_cost / effective\_day\_rate
 
 runway\_months          \= starting\_cash / (annual\_fixed\_cost / 12\)
 
-The two drivers that decide Phase 1 are **effective day rate** and **utilisation**, and neither has a benchmark in this repo. Utilisation in particular is where solo practices are usually wrong: selling, writing, travelling and admin are not billable, and the gap between available days and billable days is the business. Set both from your own judgement, mark them ASSUMED, and let the break-even identity above tell you how many days you actually have to sell.
+The two drivers that decide Phase 1 are **effective day rate** and **utilisation**, and neither has a benchmark in this repo. Utilisation in particular is where solo practices are usually wrong: selling, writing, travelling and admin are not billable, and the gap between available days and billable days is the business. Set both from your own judgement, mark them `ASSUMED`, and let the break-even identity above tell you how many days you actually have to sell.
 
-**Phase 2 — arranger.** Adds retainer x months \+ success\_fee\_rate x facility\_notional. The retainer is the load-bearing term: it converts an 18-month sales cycle into billable months, and without it Phase 2 is unpaid work with a lottery ticket at the end.
+**Phase 2 — arranger.** Adds `retainer x months + success_fee_rate x facility_notional`. The retainer is the load-bearing term: it converts an 18-month sales cycle into billable months, and without it Phase 2 is unpaid work with a lottery ticket at the end.
 
 **Phase 3 — structurer.** Adds structuring fee, servicing basis points on assets under management, and the return on the retained strip — minus, for the first time, **the cost of the retention capital itself**. Gate 6 exists because that number has to be known before the phase starts.
 
-**Next step:** an RT-6 companion (or a \--services mode) covering Phases 1–2, with the same SOURCED / ASSUMED discipline as the existing config. Logged as **M-41**. Until it exists, no Phase 1 profitability claim should be made, in either direction.
+**Next step:** an RT-6 companion (or a `--services` mode) covering Phases 1–2, with the same `SOURCED` / `ASSUMED` discipline as the existing config. Logged as **M-41**. Until it exists, no Phase 1 profitability claim should be made, in either direction.
 
-Under the Phase-2-terminal frame M-41 is promoted: it is no longer a companion to RT-6 but **the only economics model that matters**, since the securitisation P\&L RT-6 currently computes may never be run in anger. It should carry a Lane D line — subscription and certification revenue that does not consume billable days — because that line is what separates a business from a job (§0 of decision-register.md), and a model without it will systematically understate the plan.
+Under the Phase-2-terminal frame M-41 is promoted: it is no longer a companion to RT-6 but **the only economics model that matters**, since the securitisation P\&L RT-6 currently computes may never be run in anger. It should carry a Lane D line — subscription and certification revenue that does not consume billable days — because that line is what separates a business from a job (§0 of `decision-register.md`), and a model without it will systematically understate the plan.
 
 ---
 
@@ -199,7 +199,7 @@ Track C has **three** decisions, not one. Treating it as a single irreversible c
 |  | When | The question | If no |
 | :---- | :---- | :---- | :---- |
 | **D0** | Now | Enter Phase 1? | Cheap and reversible. The cost of being wrong is a quarter of outreach and a counsel bill. |
-| **D1** | Month \~12 | Do Lanes A and B clear the cash floor? | The model is wrong, not slow. solo-operator-track.md §9 names the test: if no originator will pay for a diagnostic, Lane A does not exist. Restructure or stop. |
+| **D1** | Month \~12 | Do Lanes A and B clear the cash floor? | The model is wrong, not slow. `solo-operator-track.md` §9 names the test: if no originator will pay for a diagnostic, Lane A does not exist. Restructure or stop. |
 | **D2** | Month \~30–36 | Convert to Phase 3, against the seven gates? | **Stay a practice.** See below. |
 
 ### Phase 2 as the base case (confirmed 2026-09-08)
@@ -216,7 +216,7 @@ That said, a practice is not automatically a good business just because it is pr
 
 ## 9\. Risks specific to Track C
 
-These are in addition to the risks in business-plan.md §9 and solo-operator-track.md §9. They exist *because* the plan is two-phase.
+These are in addition to the risks in `business-plan.md` §9 and `solo-operator-track.md` §9. They exist *because* the plan is two-phase.
 
 | Risk | Mitigation |
 | :---- | :---- |
@@ -238,6 +238,6 @@ In order, and none of it depends on OQ-19 resolving to (c) rather than (b) — t
 3. **M-38** — outreach wave 1\.  
 4. **M-41** — the RT-6 services variant (§7), so D1 can be judged against a model rather than a feeling.  
 5. **M-42** — a one-page Phase 3 gate scorecard, checked at D2 and at each annual review, so the seven gates are tracked from the start rather than reconstructed at the end.  
-6. **M-44** — the Lane D productisation decision (open core, and which paid layer first), which under the Phase-2-terminal frame moves forward to month 6\. See decision-register.md D-16/D-17 and OQ-24.
+6. **M-44** — the Lane D productisation decision (open core, and which paid layer first), which under the Phase-2-terminal frame moves forward to month 6\. See `decision-register.md` D-16/D-17 and OQ-24.
 
-The sequenced decision list, with what blocks what, is in [decision-register.md](http://decision-register.md).  
+The sequenced decision list, with what blocks what, is in [`decision-register.md`](http://decision-register.md).  
