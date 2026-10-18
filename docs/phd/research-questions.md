@@ -1,10 +1,10 @@
 # Research questions: one project, seven ways to ask about it
 
-**Status:** v1 (2026-08-22) · **Owner:** BB · **Tracker:** data/research-questions.csv (RQ-01 … RQ-29)
+**Status:** v1 (2026-08-22) · **Owner:** BB · **Tracker:** `data/research-questions.csv` (RQ-01 … RQ-29)
 
 ## Why this document exists
 
-Three documents in this repo state the project's research question, and they do not quite agree. docs/research/working-doc.md asks how community arrangements can be *structured into securitizable assets*. docs/phd/phd-proposal-master.md asks how they should be *structured and modelled at origination*. docs/phd/research-proposal.md narrows both to climate and poverty in Africa and MENA.
+Three documents in this repo state the project's research question, and they do not quite agree. `docs/research/working-doc.md` asks how community arrangements can be *structured into securitizable assets*. `docs/phd/phd-proposal-master.md` asks how they should be *structured and modelled at origination*. `docs/phd/research-proposal.md` narrows both to climate and poverty in Africa and MENA.
 
 None of those is wrong. The problem is that a supervisor in an actuarial-science department and a supervisor in a development-economics RCT lab will not respond to the same sentence, and sending both the same paragraph guarantees that at least one of them reads it as somebody else's project.
 
@@ -50,7 +50,7 @@ Each strand carries roughly three sub-questions in the tracker (RQ-09 … RQ-29)
 
 ## Which strand leads which approach
 
-Scored programmes come from data/phd-programs.csv and the rubric in docs/phd/phd-scoring-rubric.md. The Fits\_Programs column in the tracker holds the full mapping; this is the summary.
+Scored programmes come from `data/phd-programs.csv` and the rubric in `docs/phd/phd-scoring-rubric.md`. The `Fits_Programs` column in the tracker holds the full mapping; this is the summary.
 
 | If the advisor is… | Lead with | Keep in reserve | Example programmes |
 | :---- | :---- | :---- | :---- |
@@ -77,7 +77,7 @@ The rubric already records that no single department combines all four pillars t
 ## Maintenance
 
 - New sub-questions get the next free RQ number. IDs are never reused (CLAUDE.md §3).  
-- When a strand is dropped, mark its Status Parked with a reason; do not delete the row \- the Component\_Refs and Experiment\_Refs on it are cross-referenced.  
-- Status vocabulary: Active · Lead · Parked. Exactly one row may be Lead.  
-- When a literature component (data/lit-components.csv) or experiment (data/experiments.csv) is added, check whether it belongs in a strand's refs.
+- When a strand is dropped, mark its `Status` `Parked` with a reason; do not delete the row \- the `Component_Refs` and `Experiment_Refs` on it are cross-referenced.  
+- `Status` vocabulary: `Active` · `Lead` · `Parked`. Exactly one row may be `Lead`.  
+- When a literature component (`data/lit-components.csv`) or experiment (`data/experiments.csv`) is added, check whether it belongs in a strand's refs.
 
