@@ -117,6 +117,11 @@ Task List:
 
 2026-10-05
 
-* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly   
+* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly
+
+
+2026-10-19
+
+* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.  
     
   

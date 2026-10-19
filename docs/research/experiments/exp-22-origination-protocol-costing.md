@@ -44,7 +44,7 @@ RQ-06 and the venture both rest on an untested assertion: that building for inve
 
 ## 4\. Design
 
-**Identification.** Cluster-randomised comparison of two origination protocols, per research-framework.md §4 rung 1\. Unit of randomisation is the **branch** where branch counts allow, otherwise the **loan officer**.
+**Identification.** Cluster-randomised comparison of two origination protocols, per `research-framework.md` §4 rung 1\. Unit of randomisation is the **branch** where branch counts allow, otherwise the **loan officer**.
 
 |  | Treatment | Control |
 | :---- | :---- | :---- |
@@ -88,7 +88,7 @@ Both are worth knowing and they are different experiments. **Do not pool them in
 
 **Treatment arm.** Officers originate using the full RT-1 field set, with:
 
-- the RT-1 field definitions, enumerations and validation rules (no free text where a category is meant; ISO 8601 dates; money with currency and date; nulls distinguishable from zeros; schema\_version on every row);  
+- the RT-1 field definitions, enumerations and validation rules (no free text where a category is meant; ISO 8601 dates; money with currency and date; nulls distinguishable from zeros; `schema_version` on every row);  
 - whatever capture tool the originator already uses, extended — **not** a new app. A new tool would confound protocol cost with tool-adoption cost, which is the most likely way to get a large and meaningless answer;  
 - training, delivered once, with the hours logged as a study cost.
 
@@ -121,9 +121,9 @@ Both are worth knowing and they are different experiments. **Do not pool them in
 
 - **Sources.** Origination records from both arms; timestamped capture logs; time-and-motion observation sheets; the originator's payroll and operational cost lines; a baseline document of the control protocol.  
 - **Ownership.** The originator's, under a data-sharing agreement.  
-- **Row-level borrower records** stay in the Vault's 05-raw-data and never enter the repo, in any form (CLAUDE.md §8). What returns is cost parameters, distributions and model performance statistics.  
+- **Row-level borrower records** stay in the Vault's `05-raw-data` and never enter the repo, in any form (CLAUDE.md §8). What returns is cost parameters, distributions and model performance statistics.  
 - **Officer-level data is personal data.** Time-and-motion measurement of named staff is employment-sensitive and needs explicit consent and pseudonymisation at collection, not after. It also needs the originator's HR sign-off, which is a distinct approval from the data-sharing agreement and is easy to forget until it blocks the study.  
-- The **RT-1 validator** (risk-tools/tools/validate\_schema.py) runs on the treatment arm's output as a quality measure and, usefully, as a live test of the schema itself — a field the validator constantly rejects is a schema defect, not an officer error.
+- The **RT-1 validator** (`risk-tools/tools/validate_schema.py`) runs on the treatment arm's output as a quality measure and, usefully, as a live test of the schema itself — a field the validator constantly rejects is a schema defect, not an officer error.
 
 ## 9\. Power
 
@@ -140,10 +140,10 @@ Note the asymmetry: H1 needs only enough precision to distinguish "small" from "
 
 ## 10\. Partners
 
-- **Originator:** an MFI or savings-group network with branch-level operations, or a cooperative union with an internal credit fund (§5 — different estimand). All Not contacted (M-03).  
+- **Originator:** an MFI or savings-group network with branch-level operations, or a cooperative union with an internal credit fund (§5 — different estimand). All `Not contacted` (M-03).  
 - **HR / staff representation** at the originator, for the officer-time measurement. Distinct approval; start it early.  
 - **No regulatory counterpart** expected for a protocol comparison, but confirm — OQ-1.  
-- Named individuals go in private/partner-contacts.csv, never here.
+- Named individuals go in `private/partner-contacts.csv`, never here.
 
 **The ask, and why this one is easier than EXP-25's.** This experiment gives the originator something immediately usable: a costed answer to "what would it take for our book to be investable", plus a validated field list, plus a time-and-motion baseline of their own origination process that most originators do not have. Unlike EXP-25 it requires no historical data disclosure — only permission to vary a process and to observe it. **That makes it the better first ask of a new partner**, and the relationship it builds is what makes the EXP-25 data request plausible later. Sequence outreach accordingly.
 
@@ -186,7 +186,7 @@ Moderate — more expensive than EXP-25, cheaper than any field pilot. The domin
 | Tool extension | Small if extending; large if building — avoid building (§12) |
 | Data-sharing and HR legal review | Per originator |
 
-**Target funders** (data/funders.csv): **FUND-04 FSD Africa** is the strongest fit — financial-market and capital-market development is precisely the framing, and the deliverable (a costed origination standard) is the kind of market infrastructure they fund. **FUND-01 IDRC** for the research and methods component. Both Not researched; specific calls not yet identified, and that is a gap.
+**Target funders** (`data/funders.csv`): **FUND-04 FSD Africa** is the strongest fit — financial-market and capital-market development is precisely the framing, and the deliverable (a costed origination standard) is the kind of market infrastructure they fund. **FUND-01 IDRC** for the research and methods component. Both `Not researched`; specific calls not yet identified, and that is a gap.
 
 ## 14\. What it would take to abandon this
 
@@ -200,4 +200,4 @@ Moderate — more expensive than EXP-25, cheaper than any field pilot. The domin
 
 ## Provenance
 
-Specced 2026-08-22, second entry in docs/research/experiments/. Anchors that shaped it: **LIT-031** (Root Capital CFRI — informal internal credit funds, which redefines the control arm). Depends on **RT-1** v0.1 (57 fields, 5 entities, 45 critical path) and on **OQ-3**, Partially answered. Sequencing note recorded against **EXP-25**: RQ-21 moves there. Template: docs/research/experiment-spec-template.md.  
+Specced 2026-08-22, second entry in `docs/research/experiments/`. Anchors that shaped it: **LIT-031** (Root Capital CFRI — informal internal credit funds, which redefines the control arm). Depends on **RT-1** v0.1 (57 fields, 5 entities, 45 critical path) and on **OQ-3**, `Partially answered`. Sequencing note recorded against **EXP-25**: RQ-21 moves there. Template: `docs/research/experiment-spec-template.md`.  
