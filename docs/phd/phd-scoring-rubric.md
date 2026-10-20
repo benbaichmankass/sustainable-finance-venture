@@ -1,6 +1,6 @@
 # PhD Program Scoring Rubric
 
-*How the 43 candidate programs in data/phd-programs.csv are scored and ranked for outreach. Companion to the interactive workbook (PhD-Program-Tracker.xlsx, in the project) and the landscape synthesis (phd-landscape.md). This is a decision aid, not a verdict: the scores encode the current research, and every program flagged "to verify" in Verification\_Status should be confirmed by direct email before its ranking hardens.*
+*How the 43 candidate programs in `data/phd-programs.csv` are scored and ranked for outreach. Companion to the interactive workbook (`PhD-Program-Tracker.xlsx`, in the project) and the landscape synthesis (`phd-landscape.md`). This is a decision aid, not a verdict: the scores encode the current research, and every program flagged "to verify" in `Verification_Status` should be confirmed by direct email before its ranking hardens.*
 
 ## The problem the rubric solves
 
@@ -37,7 +37,7 @@ The three factors flagged as priorities — supervisor fit, venture/pilot fit, a
 
 ## The uncertainty rule
 
-A program whose on-topic supervisor is not yet confirmed — anything marked "supervisor to verify / to identify / to secure" in Verification\_Status — is capped at 3 out of 5 on Supervisor fit, however promising the department looks. This keeps unproven fits from topping the ranking on the strength of a name we have not yet confirmed can and will supervise. In this pass the cap only moved one program (BRAC/SOAS, from 4 to 3); every other capped program was already at 3 or below, which is a sign the base scores were already honest about where the evidence is thin.
+A program whose on-topic supervisor is not yet confirmed — anything marked "supervisor to verify / to identify / to secure" in `Verification_Status` — is capped at 3 out of 5 on Supervisor fit, however promising the department looks. This keeps unproven fits from topping the ranking on the strength of a name we have not yet confirmed can and will supervise. In this pass the cap only moved one program (BRAC/SOAS, from 4 to 3); every other capped program was already at 3 or below, which is a sign the base scores were already honest about where the evidence is thin.
 
 ## Tiering
 
@@ -113,4 +113,4 @@ The Priority group is deliberately mixed by region and format so the first outre
 
 ## Caveats
 
-The scores are the author's best reading of the research as of August 2026, not measured values. Stipend figures, deadlines, part-time eligibility and individual supervisors' current capacity all shift year to year and several are still unverified (see Verification\_Status in the tracker). Treat the ranking as a prioritised worklist for confirmation and outreach, not a final answer.  
+The scores are the author's best reading of the research as of August 2026, not measured values. Stipend figures, deadlines, part-time eligibility and individual supervisors' current capacity all shift year to year and several are still unverified (see `Verification_Status` in the tracker). Treat the ranking as a prioritised worklist for confirmation and outreach, not a final answer.  
