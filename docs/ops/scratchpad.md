@@ -122,6 +122,12 @@ Task List:
 
 2026-10-19
 
-* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.  
+* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.
+
+
+2026-10-20
+
+* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  
+*   
     
   

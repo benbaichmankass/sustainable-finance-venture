@@ -2256,7 +2256,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-19",
+   "As_Of": "2026-10-20",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.39",
+   "Value": "3.45",
    "Unit": "pp",
-   "As_Of": "2026-10-15",
-   "Chg_1m": "0.56",
-   "Chg_3m": "0.27",
-   "Chg_12m": "-0.17",
+   "As_Of": "2026-10-16",
+   "Chg_1m": "0.64",
+   "Chg_3m": "0.33",
+   "Chg_12m": "-0.08",
    "Direction": "up",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4822",
+   "Value": "3.489",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-16",
-   "Chg_1m": "-0.0149",
-   "Chg_3m": "0.0323",
-   "Chg_12m": "-0.2862",
-   "Direction": "down",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "As_Of": "2026-10-19",
+   "Chg_1m": "0.0065",
+   "Chg_3m": "0.0047",
+   "Chg_12m": "-0.2792",
+   "Direction": "up",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2326,12 +2326,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-19",
+   "As_Of": "2026-10-20",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2346,10 +2346,10 @@ window.SFV_DATA = {
    "Chg_3m": "5.9",
    "Chg_12m": "7.4",
    "Direction": "up",
-   "Fetched_At": "2026-10-18T11:11:47+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
+   "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress. | last refresh failed: HTTP Error 404: Not Found"
+   "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
   },
   {
    "ID": "MAC-13",
@@ -2361,7 +2361,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.095",
    "Chg_12m": "-0.23",
    "Direction": "up",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2376,22 +2376,22 @@ window.SFV_DATA = {
    "Chg_3m": "12.8",
    "Chg_12m": "18.0",
    "Direction": "up",
-   "Fetched_At": "2026-10-18T11:11:47+00:00",
-   "Status": "stale",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
+   "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-   "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort. | last refresh failed: HTTP Error 404: Not Found"
+   "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
   },
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "5.1",
+   "Value": "5.09",
    "Unit": "%",
-   "As_Of": "2026-10-15",
-   "Chg_1m": "0.13",
-   "Chg_3m": "0.48",
-   "Chg_12m": "0.94",
+   "As_Of": "2026-10-16",
+   "Chg_1m": "0.09",
+   "Chg_3m": "0.51",
+   "Chg_12m": "0.97",
    "Direction": "up",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2406,7 +2406,7 @@ window.SFV_DATA = {
    "Chg_3m": "44.93",
    "Chg_12m": "60.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-19T13:23:02+00:00",
+   "Fetched_At": "2026-10-20T11:42:48+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -15747,9 +15747,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "PhD Program Scoring Rubric",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "ad58cb20489cddfc4a73a03aacec86bbffc34c4eceafa81f2c99a5b2001bd49f",
-   "Baseline_Repo_Hash": "ad58cb20489cddfc4a73a03aacec86bbffc34c4eceafa81f2c99a5b2001bd49f",
-   "Last_Synced_At": "2026-08-22T14:43:41Z",
+   "Baseline_Drive_Hash": "ee3fe0100115fb2b4950f87a5840839680935e0fa8fa322a8b3520aa830d573b",
+   "Baseline_Repo_Hash": "ee3fe0100115fb2b4950f87a5840839680935e0fa8fa322a8b3520aa830d573b",
+   "Last_Synced_At": "2026-10-20T13:41:51Z",
    "Status": "Synced"
   },
   {
@@ -16046,9 +16046,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "176ccf45660181a6c6b23e2d6898db9c71fa4ffcc8e17d7f48db208894b71a33",
-   "Baseline_Repo_Hash": "176ccf45660181a6c6b23e2d6898db9c71fa4ffcc8e17d7f48db208894b71a33",
-   "Last_Synced_At": "2026-10-19T17:36:35Z",
+   "Baseline_Drive_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
+   "Baseline_Repo_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
+   "Last_Synced_At": "2026-10-20T13:42:17Z",
    "Status": "Synced"
   },
   {
@@ -17478,7 +17478,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-19",
+    "2026-10-20",
     2.65
    ]
   ],
@@ -18008,7 +18008,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-19",
+    "2026-10-20",
     3.25
    ]
   ],
@@ -18158,8 +18158,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-15",
-    3.39
+    "2026-10-16",
+    3.45
    ]
   ],
   "MAC-06": [
@@ -19892,8 +19892,8 @@ window.SFV_DATA = {
     3.4901
    ],
    [
-    "2026-10-16",
-    3.4822
+    "2026-10-19",
+    3.489
    ]
   ],
   "MAC-13": [
@@ -21626,8 +21626,8 @@ window.SFV_DATA = {
     5.29
    ],
    [
-    "2026-10-15",
-    5.1
+    "2026-10-16",
+    5.09
    ]
   ],
   "MAC-16": [
@@ -22387,8 +22387,8 @@ window.SFV_DATA = {
    "docId": "",
    "title": "Scratchpad",
    "summary": "",
-   "words": 1510,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n        \n      \n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.  \n    \n  "
+   "words": 1583,
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n        \n      \n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.\n\n\n2026-10-20\n\n* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  \n*   \n    \n  "
   },
   {
    "path": "docs/ops/data-provenance.md",
@@ -22478,7 +22478,7 @@ window.SFV_DATA = {
    "title": "PhD Program Scoring Rubric",
    "summary": "",
    "words": 1657,
-   "body": "# PhD Program Scoring Rubric\n\n*How the 43 candidate programs in `data/phd-programs.csv` are scored and ranked for outreach. Companion to the interactive workbook (`PhD-Program-Tracker.xlsx`, in the project) and the landscape synthesis (`phd-landscape.md`). This is a decision aid, not a verdict: the scores encode the current research, and every program flagged \"to verify\" in `Verification_Status` should be confirmed by direct email before its ranking hardens.*\n\n## The problem the rubric solves\n\nNo single department combines the four pillars this project needs (development economics and impact evaluation; financial inclusion and microinsurance; securitization and structured finance; sustainable and blended finance). So the rubric does not look for one perfect programme. It scores each candidate on six factors, weights them toward what matters most for this project and this applicant, and groups the field so the first wave of supervisor outreach goes to the strongest combined fits rather than the single highest-prestige name.\n\n## The six criteria and their scales\n\nEach program is scored 1 to 5 on each criterion. The anchors below define what a score means so the numbers stay comparable across programs.\n\n**1\\. Supervisor fit** — a named academic actively publishing on the thesis topics (microfinance, financial inclusion, impact evaluation, microinsurance, securitization/structured finance). 5 \\= one or more verified, directly on-topic supervisors. 4 \\= a verified supervisor covering a core pillar strongly, with a caveat (e.g. an RCT/impact-evaluation lead, or a microfinance scholar whose current capacity needs confirming). 3 \\= a plausible or likely fit but no confirmed on-topic supervisor, or a verified but tangential match. 2 \\= weak. 1 \\= none identifiable.\n\n**2\\. Venture and pilot fit** — part-time or fieldwork flexibility, tolerance of running the venture in parallel, and proximity to the Israel and Africa pilot sites. 5 \\= an explicit part-time or venture-parallel route, or a \"the venture is the thesis\" alignment, plus pilot proximity. 3 \\= full-time but fieldwork-friendly and RCT-native. 1 \\= full-time residential, relocation required, venture-incompatible.\n\n**3\\. Funding and cost** — stipend, fee coverage, cost of living, and the likelihood of actually securing an award. 5 \\= a salaried or guaranteed-funded post with low or no fees. 3 \\= a competitive scholarship. 1 \\= self-funded or high total cost.\n\n**4\\. Method / impact-evaluation fit** — strength in RCT and quasi-experimental impact evaluation, the backbone of the verification-heavy design. 5 \\= a leading RCT / field-experiment group. 3 \\= solid econometrics. 1 \\= none.\n\n**5\\. Structured-finance fit** — depth in securitization, tranching, first-loss design, and actuarial / microinsurance pricing. 5 \\= specialist capital-markets or actuarial faculty. 3 \\= general finance. 1 \\= none.\n\n**6\\. Prestige and network** — reputation, DFI and industry links, placement, and credibility. 5 \\= a world-leading brand with strong development-finance ties. 1 \\= limited reach.\n\n## Weights\n\n| Criterion | Weight |\n| :---- | :---- |\n| Supervisor fit | 25% |\n| Venture and pilot fit | 25% |\n| Funding and cost | 20% |\n| Method / impact-evaluation fit | 10% |\n| Structured-finance fit | 10% |\n| Prestige and network | 10% |\n\nThe three factors flagged as priorities — supervisor fit, venture/pilot fit, and funding — carry 70% of the weight between them. Method and structured-finance fit sit at 10% each because, given that no department has everything, those gaps are expected to be filled by a co-supervisor rather than the primary programme, so they inform the choice without dominating it. Prestige is a deliberate 10%: a tie-breaker, not a driver. The weights are the single most important lever; changing them in the workbook re-ranks the field instantly, and it is worth testing (for example, raising venture/pilot fit if staying in Israel becomes non-negotiable, or funding if self-funding is ruled out).\n\n## The uncertainty rule\n\nA program whose on-topic supervisor is not yet confirmed — anything marked \"supervisor to verify / to identify / to secure\" in `Verification_Status` — is capped at 3 out of 5 on Supervisor fit, however promising the department looks. This keeps unproven fits from topping the ranking on the strength of a name we have not yet confirmed can and will supervise. In this pass the cap only moved one program (BRAC/SOAS, from 4 to 3); every other capped program was already at 3 or below, which is a sign the base scores were already honest about where the evidence is thin.\n\n## Tiering\n\nPrograms are grouped by weighted score so the ranking drives action rather than just sorting names:\n\n- **Priority** (score at or above 3.55) — the first wave of supervisor outreach.  \n- **Consider** (2.95 to 3.54) — strong on some axes with a specific caveat; a good second wave, or a first wave if a Priority program's supervisor declines.  \n- **Backup** (below 2.95) — pursue only if a specific supervisor or funding route opens up.\n\n## The ranking (default weights)\n\n**Priority (13)**\n\n| Rank | Score | Program | Region | Why it leads |\n| :---- | :---- | :---- | :---- | :---- |\n| 1 | 4.05 | University of East Anglia (PHD-15) | UK | Verschoor: weather-index insurance \\+ RCTs; int'l-eligible funding; part-time possible |\n| 1 | 4.05 | CERMi, ULB/UMONS (PHD-20) | Europe | The most on-topic microfinance research home in Europe; Belgian funded-PhD models |\n| 1 | 4.05 | IHEID Geneva, CFD (PHD-21) | Europe | Vandewalle: RCTs \\+ financial inclusion; impact-investing framing; UN/DFI ecosystem |\n| 4 | 3.95 | HUJI Business School (PHD-10) | Israel | Best Israel fit: Sade/Yafeh/Bracha, permits outside part-time work, local pilot |\n| 5 | 3.90 | SMU (PHD-31) | Asia | Hao Liang: microfinance \\+ sustainable finance; funded PhD or exec DBA |\n| 6 | 3.85 | SOAS (PHD-13) | UK | Volz; strongest UK thematic breadth; part-time route |\n| 7 | 3.85 | Manchester GDI (PHD-14) | UK | Sen/Savoia/Regasa/Barrientos; development-finance \\+ social-protection cluster |\n| 8 | 3.85 | Krea / IFMR \\+ LEAD (PHD-30) | Asia | Financial-inclusion RCT heartland; rare part-time hybrid route |\n| 9 | 3.80 | Groningen (PHD-22) | Europe | Lensink: microfinance \\+ microinsurance \\+ RCTs; Dutch salaried PhD |\n| 10 | 3.75 | Bath CDS (PHD-16) | UK | Susan Johnson: financial inclusion in Africa (FSD Kenya); part-time possible |\n| 11 | 3.60 | Antwerp IOB (PHD-23) | Europe | Cassimon: development / blended finance; applied, fieldwork-native |\n| 12 | 3.55 | KU Leuven LICOS (PHD-24) | Europe | D'Espallier: microfinance; top department; funded positions |\n| 13 | 3.55 | Wageningen (PHD-27) | Europe | Bulte: RCTs \\+ index insurance; Dutch salaried PhD |\n\n**Consider (21)**\n\n| Rank | Score | Program | Region |\n| :---- | :---- | :---- | :---- |\n| 14 | 3.50 | UNU-MERIT (PHD-26) | Europe |\n| 15 | 3.40 | Mannheim / ZEW (PHD-29) | Europe |\n| 16 | 3.30 | Geneva GFRI (PHD-07) | Europe |\n| 17 | 3.25 | Frankfurt School (PHD-25) | Europe |\n| 18 | 3.25 | Toulouse / Paris SE (PHD-41) | Europe |\n| 19 | 3.25 | Gothenburg / SSE (PHD-42) | Europe |\n| 20 | 3.20 | CERDI (PHD-28) | Europe |\n| 21 | 3.15 | LSE (PHD-05) | UK |\n| 22 | 3.15 | Bayes Actuarial (PHD-18) | UK |\n| 23 | 3.15 | IESEG / KU Leuven (PHD-08) | Europe |\n| 24 | 3.10 | TAU Coller (PHD-02) | Israel |\n| 25 | 3.10 | TAU Berglas Economics (PHD-11) | Israel |\n| 26 | 3.10 | NUS (PHD-32) | Asia |\n| 27 | 3.10 | HKUST (PHD-34) | Asia |\n| 28 | 3.05 | NTU (PHD-33) | Asia |\n| 29 | 3.05 | IE DBA (PHD-38) | Remote |\n| 30 | 3.00 | Technion DDS (PHD-12) | Israel |\n| 31 | 3.00 | Cambridge Judge (PHD-06) | UK |\n| 32 | 3.00 | Nottingham (PHD-40) | UK |\n| 33 | 2.95 | Oxford OSFG (PHD-04) | UK |\n| 34 | 2.95 | Loughborough (PHD-09) | UK |\n\n**Backup (9)**\n\n| Rank | Score | Program | Region |\n| :---- | :---- | :---- | :---- |\n| 35 | 2.85 | HUJI Bogen Economics (PHD-01) | Israel |\n| 36 | 2.80 | BRAC / SOAS joint (PHD-35) | Asia |\n| 37 | 2.80 | Open University (PHD-36) | Remote |\n| 38 | 2.80 | Henley DBA (PHD-39) | Remote |\n| 39 | 2.75 | Heriot-Watt DBA (PHD-37) | Remote |\n| 40 | 2.60 | Reading ICMA (PHD-17) | UK |\n| 41 | 2.55 | IDS / Sussex (PHD-19) | UK |\n| 42 | 2.30 | Ben-Gurion (PHD-03) | Israel |\n| 43 | 2.25 | ISS Rotterdam (PHD-43) | Europe |\n\n## How to read this\n\nThe Priority group is deliberately mixed by region and format so the first outreach wave is not a bet on one geography: it spans a funded RCT-and-insurance fit in the UK (UEA), the two best European microfinance homes (CERMi, IHEID), the strongest Israel option that lets the venture run (HUJI Business School), a part-time-friendly Asian route (Krea), and several salaried-PhD European programmes (Groningen, KU Leuven, Wageningen). Two structural notes carry over from the landscape synthesis: most of these are development-side homes that will need a finance or actuarial co-supervisor for the securitization craft, and the ranking rewards confirmed supervisors, so a \"Consider\" program can jump into Priority the moment a named supervisor there says yes. Re-score in the workbook as replies come in.\n\n## Caveats\n\nThe scores are the author's best reading of the research as of August 2026, not measured values. Stipend figures, deadlines, part-time eligibility and individual supervisors' current capacity all shift year to year and several are still unverified (see `Verification_Status` in the tracker). Treat the ranking as a prioritised worklist for confirmation and outreach, not a final answer.  \n"
+   "body": "# PhD Program Scoring Rubric\n\n*How the 43 candidate programs in data/phd-programs.csv are scored and ranked for outreach. Companion to the interactive workbook (PhD-Program-Tracker.xlsx, in the project) and the landscape synthesis (phd-landscape.md). This is a decision aid, not a verdict: the scores encode the current research, and every program flagged \"to verify\" in Verification\\_Status should be confirmed by direct email before its ranking hardens.*\n\n## The problem the rubric solves\n\nNo single department combines the four pillars this project needs (development economics and impact evaluation; financial inclusion and microinsurance; securitization and structured finance; sustainable and blended finance). So the rubric does not look for one perfect programme. It scores each candidate on six factors, weights them toward what matters most for this project and this applicant, and groups the field so the first wave of supervisor outreach goes to the strongest combined fits rather than the single highest-prestige name.\n\n## The six criteria and their scales\n\nEach program is scored 1 to 5 on each criterion. The anchors below define what a score means so the numbers stay comparable across programs.\n\n**1\\. Supervisor fit** — a named academic actively publishing on the thesis topics (microfinance, financial inclusion, impact evaluation, microinsurance, securitization/structured finance). 5 \\= one or more verified, directly on-topic supervisors. 4 \\= a verified supervisor covering a core pillar strongly, with a caveat (e.g. an RCT/impact-evaluation lead, or a microfinance scholar whose current capacity needs confirming). 3 \\= a plausible or likely fit but no confirmed on-topic supervisor, or a verified but tangential match. 2 \\= weak. 1 \\= none identifiable.\n\n**2\\. Venture and pilot fit** — part-time or fieldwork flexibility, tolerance of running the venture in parallel, and proximity to the Israel and Africa pilot sites. 5 \\= an explicit part-time or venture-parallel route, or a \"the venture is the thesis\" alignment, plus pilot proximity. 3 \\= full-time but fieldwork-friendly and RCT-native. 1 \\= full-time residential, relocation required, venture-incompatible.\n\n**3\\. Funding and cost** — stipend, fee coverage, cost of living, and the likelihood of actually securing an award. 5 \\= a salaried or guaranteed-funded post with low or no fees. 3 \\= a competitive scholarship. 1 \\= self-funded or high total cost.\n\n**4\\. Method / impact-evaluation fit** — strength in RCT and quasi-experimental impact evaluation, the backbone of the verification-heavy design. 5 \\= a leading RCT / field-experiment group. 3 \\= solid econometrics. 1 \\= none.\n\n**5\\. Structured-finance fit** — depth in securitization, tranching, first-loss design, and actuarial / microinsurance pricing. 5 \\= specialist capital-markets or actuarial faculty. 3 \\= general finance. 1 \\= none.\n\n**6\\. Prestige and network** — reputation, DFI and industry links, placement, and credibility. 5 \\= a world-leading brand with strong development-finance ties. 1 \\= limited reach.\n\n## Weights\n\n| Criterion | Weight |\n| :---- | :---- |\n| Supervisor fit | 25% |\n| Venture and pilot fit | 25% |\n| Funding and cost | 20% |\n| Method / impact-evaluation fit | 10% |\n| Structured-finance fit | 10% |\n| Prestige and network | 10% |\n\nThe three factors flagged as priorities — supervisor fit, venture/pilot fit, and funding — carry 70% of the weight between them. Method and structured-finance fit sit at 10% each because, given that no department has everything, those gaps are expected to be filled by a co-supervisor rather than the primary programme, so they inform the choice without dominating it. Prestige is a deliberate 10%: a tie-breaker, not a driver. The weights are the single most important lever; changing them in the workbook re-ranks the field instantly, and it is worth testing (for example, raising venture/pilot fit if staying in Israel becomes non-negotiable, or funding if self-funding is ruled out).\n\n## The uncertainty rule\n\nA program whose on-topic supervisor is not yet confirmed — anything marked \"supervisor to verify / to identify / to secure\" in Verification\\_Status — is capped at 3 out of 5 on Supervisor fit, however promising the department looks. This keeps unproven fits from topping the ranking on the strength of a name we have not yet confirmed can and will supervise. In this pass the cap only moved one program (BRAC/SOAS, from 4 to 3); every other capped program was already at 3 or below, which is a sign the base scores were already honest about where the evidence is thin.\n\n## Tiering\n\nPrograms are grouped by weighted score so the ranking drives action rather than just sorting names:\n\n- **Priority** (score at or above 3.55) — the first wave of supervisor outreach.  \n- **Consider** (2.95 to 3.54) — strong on some axes with a specific caveat; a good second wave, or a first wave if a Priority program's supervisor declines.  \n- **Backup** (below 2.95) — pursue only if a specific supervisor or funding route opens up.\n\n## The ranking (default weights)\n\n**Priority (13)**\n\n| Rank | Score | Program | Region | Why it leads |\n| :---- | :---- | :---- | :---- | :---- |\n| 1 | 4.05 | University of East Anglia (PHD-15) | UK | Verschoor: weather-index insurance \\+ RCTs; int'l-eligible funding; part-time possible |\n| 1 | 4.05 | CERMi, ULB/UMONS (PHD-20) | Europe | The most on-topic microfinance research home in Europe; Belgian funded-PhD models |\n| 1 | 4.05 | IHEID Geneva, CFD (PHD-21) | Europe | Vandewalle: RCTs \\+ financial inclusion; impact-investing framing; UN/DFI ecosystem |\n| 4 | 3.95 | HUJI Business School (PHD-10) | Israel | Best Israel fit: Sade/Yafeh/Bracha, permits outside part-time work, local pilot |\n| 5 | 3.90 | SMU (PHD-31) | Asia | Hao Liang: microfinance \\+ sustainable finance; funded PhD or exec DBA |\n| 6 | 3.85 | SOAS (PHD-13) | UK | Volz; strongest UK thematic breadth; part-time route |\n| 7 | 3.85 | Manchester GDI (PHD-14) | UK | Sen/Savoia/Regasa/Barrientos; development-finance \\+ social-protection cluster |\n| 8 | 3.85 | Krea / IFMR \\+ LEAD (PHD-30) | Asia | Financial-inclusion RCT heartland; rare part-time hybrid route |\n| 9 | 3.80 | Groningen (PHD-22) | Europe | Lensink: microfinance \\+ microinsurance \\+ RCTs; Dutch salaried PhD |\n| 10 | 3.75 | Bath CDS (PHD-16) | UK | Susan Johnson: financial inclusion in Africa (FSD Kenya); part-time possible |\n| 11 | 3.60 | Antwerp IOB (PHD-23) | Europe | Cassimon: development / blended finance; applied, fieldwork-native |\n| 12 | 3.55 | KU Leuven LICOS (PHD-24) | Europe | D'Espallier: microfinance; top department; funded positions |\n| 13 | 3.55 | Wageningen (PHD-27) | Europe | Bulte: RCTs \\+ index insurance; Dutch salaried PhD |\n\n**Consider (21)**\n\n| Rank | Score | Program | Region |\n| :---- | :---- | :---- | :---- |\n| 14 | 3.50 | UNU-MERIT (PHD-26) | Europe |\n| 15 | 3.40 | Mannheim / ZEW (PHD-29) | Europe |\n| 16 | 3.30 | Geneva GFRI (PHD-07) | Europe |\n| 17 | 3.25 | Frankfurt School (PHD-25) | Europe |\n| 18 | 3.25 | Toulouse / Paris SE (PHD-41) | Europe |\n| 19 | 3.25 | Gothenburg / SSE (PHD-42) | Europe |\n| 20 | 3.20 | CERDI (PHD-28) | Europe |\n| 21 | 3.15 | LSE (PHD-05) | UK |\n| 22 | 3.15 | Bayes Actuarial (PHD-18) | UK |\n| 23 | 3.15 | IESEG / KU Leuven (PHD-08) | Europe |\n| 24 | 3.10 | TAU Coller (PHD-02) | Israel |\n| 25 | 3.10 | TAU Berglas Economics (PHD-11) | Israel |\n| 26 | 3.10 | NUS (PHD-32) | Asia |\n| 27 | 3.10 | HKUST (PHD-34) | Asia |\n| 28 | 3.05 | NTU (PHD-33) | Asia |\n| 29 | 3.05 | IE DBA (PHD-38) | Remote |\n| 30 | 3.00 | Technion DDS (PHD-12) | Israel |\n| 31 | 3.00 | Cambridge Judge (PHD-06) | UK |\n| 32 | 3.00 | Nottingham (PHD-40) | UK |\n| 33 | 2.95 | Oxford OSFG (PHD-04) | UK |\n| 34 | 2.95 | Loughborough (PHD-09) | UK |\n\n**Backup (9)**\n\n| Rank | Score | Program | Region |\n| :---- | :---- | :---- | :---- |\n| 35 | 2.85 | HUJI Bogen Economics (PHD-01) | Israel |\n| 36 | 2.80 | BRAC / SOAS joint (PHD-35) | Asia |\n| 37 | 2.80 | Open University (PHD-36) | Remote |\n| 38 | 2.80 | Henley DBA (PHD-39) | Remote |\n| 39 | 2.75 | Heriot-Watt DBA (PHD-37) | Remote |\n| 40 | 2.60 | Reading ICMA (PHD-17) | UK |\n| 41 | 2.55 | IDS / Sussex (PHD-19) | UK |\n| 42 | 2.30 | Ben-Gurion (PHD-03) | Israel |\n| 43 | 2.25 | ISS Rotterdam (PHD-43) | Europe |\n\n## How to read this\n\nThe Priority group is deliberately mixed by region and format so the first outreach wave is not a bet on one geography: it spans a funded RCT-and-insurance fit in the UK (UEA), the two best European microfinance homes (CERMi, IHEID), the strongest Israel option that lets the venture run (HUJI Business School), a part-time-friendly Asian route (Krea), and several salaried-PhD European programmes (Groningen, KU Leuven, Wageningen). Two structural notes carry over from the landscape synthesis: most of these are development-side homes that will need a finance or actuarial co-supervisor for the securitization craft, and the ranking rewards confirmed supervisors, so a \"Consider\" program can jump into Priority the moment a named supervisor there says yes. Re-score in the workbook as replies come in.\n\n## Caveats\n\nThe scores are the author's best reading of the research as of August 2026, not measured values. Stipend figures, deadlines, part-time eligibility and individual supervisors' current capacity all shift year to year and several are still unverified (see Verification\\_Status in the tracker). Treat the ranking as a prioritised worklist for confirmation and outreach, not a final answer.  \n"
   },
   {
    "path": "docs/phd/phd-funding-landscape.md",
@@ -23069,7 +23069,7 @@ window.SFV_DATA = {
    "partnersByStatus": {
     "Unspecified": 23
    },
-   "totalWords": 136350
+   "totalWords": 136423
   }
  }
 };
