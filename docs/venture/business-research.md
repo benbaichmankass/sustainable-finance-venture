@@ -1,10 +1,10 @@
 # Business research — collective finance, risk intermediation and securitisation readiness
 
-**Status:** Live research unit · **Owner:** BB · **Opened:** 2026-10-08 · **Synced with Drive** (editable either side; see docs/ops/drive-sync.md) · **Trackers:** data/collective-market-map.csv (CMM), data/collective-products.csv (CPR), data/risk-allocation.csv (RA) · **Method:** docs/research/methodology-collective-screening.md · **Model:** RT-7 · **Dashboard:** the *Business research* tab
+**Status:** Live research unit · **Owner:** BB · **Opened:** 2026-10-08 · **Synced with Drive** (editable either side; see `docs/ops/drive-sync.md`) · **Trackers:** `data/collective-market-map.csv` (CMM), `data/collective-products.csv` (CPR), `data/risk-allocation.csv` (RA) · **Method:** `docs/research/methodology-collective-screening.md` · **Model:** RT-7 · **Dashboard:** the *Business research* tab
 
 > **How this doc works.** It is the narrative home of the business-research unit and it has a Google Doc twin for working on a phone or with a collaborator. Write here or there. The three trackers are the structured record: a finding about an organisation, a product or a risk goes in a tracker row with an evidence reference, and this doc points at it. Under the repo's single-source rule the Master Reference Tracker Sheet mirrors the trackers; if they disagree, the repo wins.  
 >   
-> **Provenance.** This unit was opened from the research plan that came in with the RT-7 prototype on 2026-10-07 (archive/prototype-2026-10/collective-finance-research-plan.md). Three things changed in the move: the plan's three Sheet tabs became repo trackers; Vietnam is held as a modelling case rather than a pilot setting (decision 2026-10-08, with OQ-22 still open); and securitisation is treated as a design constraint on today's products rather than a pilot objective (decision register, 2026-09-09).
+> **Provenance.** This unit was opened from the research plan that came in with the RT-7 prototype on 2026-10-07 (`archive/prototype-2026-10/collective-finance-research-plan.md`). Three things changed in the move: the plan's three Sheet tabs became repo trackers; Vietnam is held as a modelling case rather than a pilot setting (decision 2026-10-08, with OQ-22 still open); and securitisation is treated as a design constraint on today's products rather than a pilot objective (decision register, 2026-09-09).
 
 ---
 
@@ -16,19 +16,19 @@ Sub-questions, each with a home:
 
 | \# | Sub-question | Answered in |
 | :---- | :---- | :---- |
-| 1 | What collectives exist, in which sectors, geographies and legal forms? | Market map (CMM), Entity\_Type, Legal\_Form |
-| 2 | What financial and non-financial services do they provide members? | Market map, Services\_Provided |
-| 3 | How do they finance those services today? | Market map, Existing\_Funders; products (CPR), Funding\_Source |
+| 1 | What collectives exist, in which sectors, geographies and legal forms? | Market map (CMM), `Entity_Type`, `Legal_Form` |
+| 2 | What financial and non-financial services do they provide members? | Market map, `Services_Provided` |
+| 3 | How do they finance those services today? | Market map, `Existing_Funders`; products (CPR), `Funding_Source` |
 | 4 | Which lenders, insurers, buyers, exporters, fintechs, asset managers and DFIs support them? | Market map rows of those types |
 | 5 | Which risks remain unpriced, unhedged, poorly monitored or inefficiently retained? | Risk allocation (RA) |
-| 6 | Which risks can SFV measure, price, absorb, reduce or transfer uniquely? | Risk allocation, Potential\_SFV\_Intervention; RT-7 sensitivities |
+| 6 | Which risks can SFV measure, price, absorb, reduce or transfer uniquely? | Risk allocation, `Potential_SFV_Intervention`; RT-7 sensitivities |
 | 7 | What data, governance, legal rights and servicing capacity make a collective securitisation-ready? | The screening scorecard |
 
 ## 2\. Working hypothesis
 
 Collectives reduce information asymmetry and servicing cost through local knowledge, peer monitoring, aggregation, recurring transactions, marketing relationships and payment control. Most external capital providers nonetheless underwrite them as opaque single borrowers rather than decomposing member, climate, price, delivery, liquidity, governance and collateral risk.
 
-SFV's role is therefore not to supply lending capital. It is to build the **risk infrastructure** that makes collective cash flows measurable, comparable, hedgeable and financeable: the collective risk operating system, standardised risk-sharing contracts, and the readiness standard. This is Lane A, B and D of the practice in docs/venture/solo-operator-track.md, with the collective as the client type.
+SFV's role is therefore not to supply lending capital. It is to build the **risk infrastructure** that makes collective cash flows measurable, comparable, hedgeable and financeable: the collective risk operating system, standardised risk-sharing contracts, and the readiness standard. This is Lane A, B and D of the practice in `docs/venture/solo-operator-track.md`, with the collective as the client type.
 
 What the evidence already says about the hypothesis, from the literature matrix:
 
@@ -49,17 +49,17 @@ What the evidence already says about the hypothesis, from the literature matrix:
 | Mutual guarantee association | Shared guarantee | Guarantees, reserves, peer screening | A natural first-loss or partial-guarantee mechanism |
 | Platform-enabled network | Digital aggregation of farmers, buyers, lenders, insurers | Payments, scoring, embedded credit | Data and servicing partner; data rights need care |
 
-The market map's Entity\_Type uses this list, plus the provider types (specialist lender, bank or MFI, buyer or exporter, insurer, investor or fund, government or DFI program), so a longlist can hold the whole ecosystem of a region in one table.
+The market map's `Entity_Type` uses this list, plus the provider types (specialist lender, bank or MFI, buyer or exporter, insurer, investor or fund, government or DFI program), so a longlist can hold the whole ecosystem of a region in one table.
 
 ## 4\. Products and cash flows
 
-Every product row in data/collective-products.csv maps to a cash-flow chain and, where RT-7 models it, to the parameters it would calibrate (RT7\_Mapping):
+Every product row in `data/collective-products.csv` maps to a cash-flow chain and, where RT-7 models it, to the parameters it would calibrate (`RT7_Mapping`):
 
 | Product | Borrower | Repayment source | Main risks | RT-7 leg |
 | :---- | :---- | :---- | :---- | :---- |
 | Seasonal input credit | Member | Harvest proceeds | Yield, price, timing, side-selling | OpEx loan; DSCR; side-selling |
 | Harvest procurement finance | Cooperative | Buyer or export receivables | Buyer delay, volume, quality, FX | Forward book; shortfall cost; (buyer delay and FX not yet modelled: RA-07, RA-08) |
-| Asset finance | Member or cooperative | Incremental revenue or cost savings | Utilisation, asset performance, collateral recovery | CapEx loan; lgd\_capex |
+| Asset finance | Member or cooperative | Incremental revenue or cost savings | Utilisation, asset performance, collateral recovery | CapEx loan; `lgd_capex` |
 | Processing or storage CapEx | Cooperative | Processing or export margin | Throughput, energy, demand, operations | Not modelled |
 | Warehouse or inventory finance | Cooperative or trader | Sale of stored commodity | Warehouse integrity, title, quality, price | Not modelled |
 | Marketing advance | Member | Delivery to the collective | Delivery, quality, side-selling | Side-selling channel |
@@ -68,13 +68,13 @@ Every product row in data/collective-products.csv maps to a cash-flow chain and,
 
 ## 5\. Where the market fails
 
-**Fragmented underwriting.** Lenders assess a collective as one borrower. The risk-allocation tracker records, per risk, who holds it today, through what mechanism, who is left with the residual, and how observable and well priced it is. The ten RA rows seeded on 2026-10-08 are RT-7's own allocation: what the *model* assumes about who holds each risk. They are marked Basis: RT-7 v0.2 assumption and exist to be contradicted by the first partner deep dive.
+**Fragmented underwriting.** Lenders assess a collective as one borrower. The risk-allocation tracker records, per risk, who holds it today, through what mechanism, who is left with the residual, and how observable and well priced it is. The ten RA rows seeded on 2026-10-08 are RT-7's own allocation: what the *model* assumes about who holds each risk. They are marked `Basis: RT-7 v0.2 assumption` and exist to be contradicted by the first partner deep dive.
 
 **Seasonal liquidity mismatch.** Collectives need cash at harvest to buy members' crop and receive export proceeds later. The timing gap, its bridge finance today and its cost are deep-dive fields.
 
 **Credit and risk transfer are structured separately.** Operating loans, climate triggers, price floors, delivery commitments, collection-account control, buyer receivables and group reserves are rarely designed together. RT-7 is the first place in this repo where they sit in one loss chain, and its first finding is that the delivery channel, not credit, drives the tail.
 
-**Data not translated into underwriting.** Repayment history, delivery data, quality scores, savings records, attendance and agronomic data exist inside collectives and are not auditable risk features. The data-availability fields and the data-catalog.csv rows DS-07 and DS-08 are where that mapping goes.
+**Data not translated into underwriting.** Repayment history, delivery data, quality scores, savings records, attendance and agronomic data exist inside collectives and are not auditable risk features. The data-availability fields and the `data-catalog.csv` rows DS-07 and DS-08 are where that mapping goes.
 
 **No standardisation.** Definitions, eligibility, reporting, loss waterfalls, reserve policy, audit trails. RT-1 is the origination half of that standard; the readiness scorecard is the institutional half.
 
@@ -92,8 +92,8 @@ Every product row in data/collective-products.csv maps to a cash-flow chain and,
 
 | Phase | Does | Output |
 | :---- | :---- | :---- |
-| **1\. Desk mapping** | Longlist collective types and providers in the pilot settings; one source-backed row per entity and product; 3–5 priority organisations per country | Market map and product rows at Longlist or Desk reviewed |
-| **2\. Organisational deep dives** | Legal form, governance, members, services, the full cash-flow cycle from input purchase to member settlement, funding, performance history, buyer contracts, warehouse arrangements, price-risk management | Rows at Deep dive; new literature rows where a document is public |
+| **1\. Desk mapping** | Longlist collective types and providers in the pilot settings; one source-backed row per entity and product; 3–5 priority organisations per country | Market map and product rows at `Longlist` or `Desk reviewed` |
+| **2\. Organisational deep dives** | Legal form, governance, members, services, the full cash-flow cycle from input purchase to member settlement, funding, performance history, buyer contracts, warehouse arrangements, price-risk management | Rows at `Deep dive`; new literature rows where a document is public |
 | **3\. Risk and data audit** | Every material risk in the member-to-buyer chain, its owner and residual holder, what data exist and under what consent; score the scorecard; find the smallest intervention that materially improves underwriting | RA rows per partner; scored CMM rows |
 | **4\. Product design** | One narrow, testable risk layer per partner: trigger, attachment, pricing logic, exclusions, data requirements, servicing duties, alignment mechanisms | A product-line doc or a new PL row; RT-7 run on the partner's parameters |
 | **5\. Pilot-partnership design** | The minimum partner configuration: collective \+ local originator \+ buyer where relevant \+ insurer or risk-capital provider \+ SFV's risk, data and structuring layer; who originates, services, controls collections, bears first loss, reports | Partner rows; milestones |
@@ -116,7 +116,7 @@ Gates 2 and 3 are what RT-7's outputs are organised around: EL, UL and the stres
 
 ## 9\. Governance principles
 
-- Separate **observed data** from assumptions, expert judgement and scenario parameters (docs/ops/data-provenance.md).  
+- Separate **observed data** from assumptions, expert judgement and scenario parameters (`docs/ops/data-provenance.md`).  
 - Participation in a collective is not proof of creditworthiness.  
 - Evaluate member impact: affordability, coercion, exclusion, asset repossession, debt stress. RT-7 treats household consumption as senior to debt service for this reason.  
 - Consent and data rights before any member-level information is used; row-level data never enters the repo.  
@@ -126,9 +126,9 @@ Gates 2 and 3 are what RT-7's outputs are organised around: EL, UL and the stres
 ## 10\. Immediate next actions
 
 1. Country longlists for Colombia and Ethiopia: one market-map row per organisation, with a source. The four rows seeded from the matrix are the start, not the longlist.  
-2. Select 3–5 deep-dive targets per country and set Research\_Status accordingly.  
+2. Select 3–5 deep-dive targets per country and set `Research_Status` accordingly.  
 3. Score nothing until a deep dive; then score, and check whether the band cutoffs separate anything.  
-4. Translate the first deep dive into RT-7 parameters and record each promotion from assumption in the parameter tracker.  
+4. Translate the first deep dive into RT-7 parameters and record each promotion from `assumption` in the parameter tracker.  
 5. Decide the allocation of forward-book risk between buyer, collective and lender (RA-05); it is the model's largest open question and a contract-drafting question, not a modelling one.
 
 ## Open questions this unit feeds
