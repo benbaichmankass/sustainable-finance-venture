@@ -128,7 +128,7 @@ That means its content ships twice — once as structured `literature` rows the 
 
 The real cost is smaller than the raw figure suggests, because duplicated prose compresses well. At 44 anchors the payload is about 1.18 MB raw and **371 KB gzipped**, which is what actually crosses the wire. Worth re-measuring if the matrix approaches its 206-anchor target:
 
-gzip \-c dashboard/data.js | wc \-c
+gzip \-c dashboard/data.js \| wc \-c
 
 If it ever does become a problem, the fix is lazy-loading doc bodies, not dropping the document. `build.py` keeps a `SKIP_PATHS` hook for genuinely excludable paths; it is empty.
 

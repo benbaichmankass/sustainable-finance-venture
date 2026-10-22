@@ -22,7 +22,7 @@ The claim the project tests, stated as a chain so that each link can be attacked
 
    local information)              sizes that formal lenders cannot match
 
-            |
+            \|
 
             v
 
@@ -32,7 +32,7 @@ The claim the project tests, stated as a chain so that each link can be attacked
 
    capture at point of sale)
 
-            |
+            \|
 
             v
 
@@ -42,7 +42,7 @@ The claim the project tests, stated as a chain so that each link can be attacked
 
    premium financed in)             better household outcomes in the tail
 
-            |
+            \|
 
             v
 
@@ -52,7 +52,7 @@ The claim the project tests, stated as a chain so that each link can be attacked
 
    geographies, perils)             capital priced in
 
-            |
+            \|
 
             v
 

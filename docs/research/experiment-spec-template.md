@@ -100,7 +100,7 @@ Fill it honestly. An empty section is information; a plausible-sounding guess is
 
 \# EXP-NN — \<short name\>
 
-\*\*Status:\*\* \<Idea | Specified | Shortlisted | Pre-registered | Running | Complete\>
+\*\*Status:\*\* \<Idea \| Specified \| Shortlisted \| Pre-registered \| Running \| Complete\>
 
 \*\*Serves:\*\* RQ-NN (lead), RQ-NN (secondary) · \*\*Composite:\*\* N.NN (\<band\>)
 

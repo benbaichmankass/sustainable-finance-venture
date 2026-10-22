@@ -96,9 +96,9 @@ python3 dashboard/build.py \--public
 
 Then run the audit — the `publish-check` skill automates most of it:
 
-grep \-rn "drive\\.google\\.com\\|docs\\.google\\.com" \--include="\*.md" \--include="\*.csv" . | grep \-v "^./private/"
+grep \-rn "drive\\.google\\.com\\\|docs\\.google\\.com" \--include="\*.md" \--include="\*.csv" . \| grep \-v "^./private/"
 
-grep \-l "Contact\_Person\\|Private\_Notes\\|Application\_Status" data/\*.csv
+grep \-l "Contact\_Person\\\|Private\_Notes\\\|Application\_Status" data/\*.csv
 
 git ls-files private/          \# expect only README.md and \*.example.csv
 
