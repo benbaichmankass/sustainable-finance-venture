@@ -32,7 +32,7 @@ Every alert carries: what fired, the threshold crossed, the trend that led to it
 
 ### Environmental layer
 
-Community portfolios fail in correlated ways. A drought, a price spike, a remittance disruption hits every group in a region simultaneously — which is exactly the risk that diversification within a single product line does not address. The monitoring system should ingest the indicators tracked in data/macro-indicators.csv so that a regional cluster of alerts is interpreted as one shock rather than fifteen unrelated problems.
+Community portfolios fail in correlated ways. A drought, a price spike, a remittance disruption hits every group in a region simultaneously — which is exactly the risk that diversification within a single product line does not address. The monitoring system should ingest the indicators tracked in `data/macro-indicators.csv` so that a regional cluster of alerts is interpreted as one shock rather than fifteen unrelated problems.
 
 ## Versioning
 
