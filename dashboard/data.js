@@ -2251,12 +2251,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-10-27",
+   "As_Of": "2026-10-28",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-27",
+   "As_Of": "2026-10-28",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.64",
+   "Value": "3.71",
    "Unit": "pp",
-   "As_Of": "2026-10-23",
-   "Chg_1m": "0.86",
-   "Chg_3m": "0.58",
-   "Chg_12m": "0.25",
+   "As_Of": "2026-10-26",
+   "Chg_1m": "0.89",
+   "Chg_3m": "0.61",
+   "Chg_12m": "0.4",
    "Direction": "up",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4458",
+   "Value": "3.4003",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-26",
-   "Chg_1m": "-0.0191",
-   "Chg_3m": "-0.0288",
-   "Chg_12m": "-0.4162",
+   "As_Of": "2026-10-27",
+   "Chg_1m": "-0.0591",
+   "Chg_3m": "-0.0589",
+   "Chg_12m": "-0.4592",
    "Direction": "down",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2326,12 +2326,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-27",
+   "As_Of": "2026-10-28",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2361,7 +2361,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.029",
    "Chg_12m": "-0.245",
    "Direction": "up",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2386,12 +2386,12 @@ window.SFV_DATA = {
    "Label": "US 10-year Treasury yield",
    "Value": "5.0",
    "Unit": "%",
-   "As_Of": "2026-10-23",
-   "Chg_1m": "0.04",
-   "Chg_3m": "0.37",
-   "Chg_12m": "0.87",
-   "Direction": "up",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "As_Of": "2026-10-26",
+   "Chg_1m": "-0.11",
+   "Chg_3m": "0.33",
+   "Chg_12m": "0.86",
+   "Direction": "down",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2406,7 +2406,7 @@ window.SFV_DATA = {
    "Chg_3m": "30.21",
    "Chg_12m": "47.99",
    "Direction": "down",
-   "Fetched_At": "2026-10-27T12:17:04+00:00",
+   "Fetched_At": "2026-10-28T12:59:36+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -16241,9 +16241,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Memo 4: The repayment mechanism and its critics",
    "Category": "Synthesis memos",
-   "Baseline_Drive_Hash": "c3479e9a91c2a03ee291c55ec6c00e28dfc76a38ba7838c4fe727b9806a7f61c",
-   "Baseline_Repo_Hash": "c3479e9a91c2a03ee291c55ec6c00e28dfc76a38ba7838c4fe727b9806a7f61c",
-   "Last_Synced_At": "2026-10-28T06:06:10Z",
+   "Baseline_Drive_Hash": "2b85f93efc2502c5edcf2d305d7a1c3492840b75889ce5765f50ad05b1a7ceea",
+   "Baseline_Repo_Hash": "2b85f93efc2502c5edcf2d305d7a1c3492840b75889ce5765f50ad05b1a7ceea",
+   "Last_Synced_At": "2026-10-28T13:15:52Z",
    "Status": "Synced"
   },
   {
@@ -16900,7 +16900,7 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-10-27",
+    "2026-10-28",
     4.0
    ]
   ],
@@ -17478,7 +17478,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-27",
+    "2026-10-28",
     2.65
    ]
   ],
@@ -18008,7 +18008,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-27",
+    "2026-10-28",
     3.25
    ]
   ],
@@ -18158,8 +18158,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-23",
-    3.64
+    "2026-10-26",
+    3.71
    ]
   ],
   "MAC-06": [
@@ -19892,8 +19892,8 @@ window.SFV_DATA = {
     3.4901
    ],
    [
-    "2026-10-26",
-    3.4458
+    "2026-10-27",
+    3.4003
    ]
   ],
   "MAC-13": [
@@ -21626,7 +21626,7 @@ window.SFV_DATA = {
     5.29
    ],
    [
-    "2026-10-23",
+    "2026-10-26",
     5.0
    ]
   ],
@@ -22598,7 +22598,7 @@ window.SFV_DATA = {
    "title": "Memo 4: The repayment mechanism and its critics",
    "summary": "",
    "words": 733,
-   "body": "# Memo 4: The repayment mechanism and its critics\n\n**Status:** Outline — not yet written · **Covers:** LC-02 (Group-lending mechanisms: information, sanction, repeat interaction), LC-13 (Microcredit impact evidence and the meta-analytic record), LC-17 (Over-indebtedness, consumer protection and credit ethics), LC-18 (Financialisation of community institutions), LC-21 (Microsavings and household financial behaviour), LC-23 (Gender, group composition and intra-household allocation) · **Last updated:** 2026-08-22\n\n> **This is a stub, and deliberately so.** The memo has a row in data/synthesis-memos.csv and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.\n\nThis memo is about the *mechanism*, not the impact. Group lending works, where it works, through information the lender does not have and sanctions the lender cannot apply. Whether that mechanism survives being financed from outside is the question the whole venture turns on, and it is not yet answered here.\n\n## Components feeding this memo\n\n| Component | Priority | Status | Anchors | Target |\n| :---- | :---- | :---- | :---- | :---- |\n| **LC-02** Group-lending mechanisms: information, sanction, repeat interaction | P1 | Partially covered | LIT-020, LIT-021, LIT-022, LIT-023 | 12 |\n| **LC-13** Microcredit impact evidence and the meta-analytic record | P2 | Partially covered | LIT-003 | 10 |\n| **LC-17** Over-indebtedness, consumer protection and credit ethics | P2 | Not started | — | 6 |\n| **LC-18** Financialisation of community institutions | P2 | Partially covered | LIT-023 | 8 |\n| **LC-21** Microsavings and household financial behaviour | P3 | Not started | — | 6 |\n| **LC-23** Gender, group composition and intra-household allocation | P3 | Not started | — | 6 |\n\n**6 anchor slots filled** across 6 components.\n\n## What is already established\n\n- LC-02 is the load-bearing component and is furthest from done — 4 anchors of 12\\.  \n- LIT-022 (19th-century German rural credit cooperatives) is already the sharpest counterweight on file: the longest-running successful joint-liability institution financed its loans from LOCAL DEPOSITS. It was self-funded. The structure with the best track record did not take external wholesale capital into the group layer — which is exactly what this project proposes to do.  \n- That observation is currently sitting in MEMO-1 rather than here, and it belongs in both. It is also the intellectual origin of RQ-04's funding-source randomisation.\n\n## What has to happen before this can be drafted\n\n- **LC-02** (P1) — 8 more anchors. Search terms on file: joint liability; group lending; peer monitoring; peer screening; social collateral; dynamic incentives; individual liability conversion; SHG bank linkage; social capital microfinance  \n- **LC-13** (P2) — 9 more anchors. Search terms on file: microcredit randomized evaluations; miracle of microfinance; Bayesian hierarchical microcredit; Meager microcredit; microfinance systematic review; heterogeneous treatment effects microcredit  \n- **LC-17** (P2) — 6 more anchors. Search terms on file: microfinance over-indebtedness; client protection principles; microinsurance mis-selling; consumer protection financial inclusion; multiple borrowing microfinance; responsible finance  \n- **LC-18** (P2) — 7 more anchors. Search terms on file: financialisation of development; mission drift microfinance; commercialisation microfinance; formalising informal finance; cooperative demutualisation; social capital erosion credit  \n- **LC-21** (P3) — 6 more anchors. Search terms on file: microsavings randomized; commitment savings; savings constraints poor; mental accounting savings; behavioural barriers saving  \n- **LC-23** (P3) — 6 more anchors. Search terms on file: women's savings groups; gender microfinance empowerment; intra-household bargaining credit; group composition homogeneity; female borrower repayment\n\n## Sources on file\n\n- **LIT-020** — Gine & Karlan 2009 \\- Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014\\) (Reviewed)  \n- **LIT-021** — Feigenberg, Field & Pande 2010 \\- Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483) (Reviewed)  \n- **LIT-022** — Ghatak & Guinnane 1999 \\- The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228) (Reviewed)  \n- **LIT-023** — Tankha 2012 \\- Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE) (Reviewed)  \n- **LIT-003** — Duvendack et al. \\- What is the evidence of microfinance impact (Reviewed)\n\n"
+   "body": "# Memo 4: The repayment mechanism and its critics\n\n**Status:** Outline — not yet written · **Covers:** LC-02 (Group-lending mechanisms: information, sanction, repeat interaction), LC-13 (Microcredit impact evidence and the meta-analytic record), LC-17 (Over-indebtedness, consumer protection and credit ethics), LC-18 (Financialisation of community institutions), LC-21 (Microsavings and household financial behaviour), LC-23 (Gender, group composition and intra-household allocation) · **Last updated:** 2026-08-22\n\n> **This is a stub, and deliberately so.** The memo has a row in `data/synthesis-memos.csv` and a path the dashboard links to, so the file has to exist. What it must not do is pretend to a synthesis that has not happened. What follows is the scope, the evidence already on file, and what is missing — which is information. A plausible-sounding summary would not be.\n\nThis memo is about the *mechanism*, not the impact. Group lending works, where it works, through information the lender does not have and sanctions the lender cannot apply. Whether that mechanism survives being financed from outside is the question the whole venture turns on, and it is not yet answered here.\n\n## Components feeding this memo\n\n| Component | Priority | Status | Anchors | Target |\n| :---- | :---- | :---- | :---- | :---- |\n| **LC-02** Group-lending mechanisms: information, sanction, repeat interaction | P1 | Partially covered | LIT-020, LIT-021, LIT-022, LIT-023 | 12 |\n| **LC-13** Microcredit impact evidence and the meta-analytic record | P2 | Partially covered | LIT-003 | 10 |\n| **LC-17** Over-indebtedness, consumer protection and credit ethics | P2 | Not started | — | 6 |\n| **LC-18** Financialisation of community institutions | P2 | Partially covered | LIT-023 | 8 |\n| **LC-21** Microsavings and household financial behaviour | P3 | Not started | — | 6 |\n| **LC-23** Gender, group composition and intra-household allocation | P3 | Not started | — | 6 |\n\n**6 anchor slots filled** across 6 components.\n\n## What is already established\n\n- LC-02 is the load-bearing component and is furthest from done — 4 anchors of 12\\.  \n- LIT-022 (19th-century German rural credit cooperatives) is already the sharpest counterweight on file: the longest-running successful joint-liability institution financed its loans from LOCAL DEPOSITS. It was self-funded. The structure with the best track record did not take external wholesale capital into the group layer — which is exactly what this project proposes to do.  \n- That observation is currently sitting in MEMO-1 rather than here, and it belongs in both. It is also the intellectual origin of RQ-04's funding-source randomisation.\n\n## What has to happen before this can be drafted\n\n- **LC-02** (P1) — 8 more anchors. Search terms on file: joint liability; group lending; peer monitoring; peer screening; social collateral; dynamic incentives; individual liability conversion; SHG bank linkage; social capital microfinance  \n- **LC-13** (P2) — 9 more anchors. Search terms on file: microcredit randomized evaluations; miracle of microfinance; Bayesian hierarchical microcredit; Meager microcredit; microfinance systematic review; heterogeneous treatment effects microcredit  \n- **LC-17** (P2) — 6 more anchors. Search terms on file: microfinance over-indebtedness; client protection principles; microinsurance mis-selling; consumer protection financial inclusion; multiple borrowing microfinance; responsible finance  \n- **LC-18** (P2) — 7 more anchors. Search terms on file: financialisation of development; mission drift microfinance; commercialisation microfinance; formalising informal finance; cooperative demutualisation; social capital erosion credit  \n- **LC-21** (P3) — 6 more anchors. Search terms on file: microsavings randomized; commitment savings; savings constraints poor; mental accounting savings; behavioural barriers saving  \n- **LC-23** (P3) — 6 more anchors. Search terms on file: women's savings groups; gender microfinance empowerment; intra-household bargaining credit; group composition homogeneity; female borrower repayment\n\n## Sources on file\n\n- **LIT-020** — Gine & Karlan 2009 \\- Group versus Individual Liability: Long Term Evidence from Philippine Microcredit Lending Groups (Yale EGC WP 970; earlier trial as World Bank WPS4008, 2006; published Journal of Development Economics, 2014\\) (`Reviewed`)  \n- **LIT-021** — Feigenberg, Field & Pande 2010 \\- Building Social Capital through Microfinance (NBER WP 16018; published as 'The Economic Returns to Social Interaction', Review of Economic Studies 80(4), 2013, 1459-1483) (`Reviewed`)  \n- **LIT-022** — Ghatak & Guinnane 1999 \\- The economics of lending with joint liability: theory and practice (Journal of Development Economics 60(1), 195-228) (`Reviewed`)  \n- **LIT-023** — Tankha 2012 \\- Banking on Self-help Groups: Twenty Years On (ACCESS Development Services / SAGE) (`Reviewed`)  \n- **LIT-003** — Duvendack et al. \\- What is the evidence of microfinance impact (`Reviewed`)\n\n"
   },
   {
    "path": "literature/notes/memo-5-insurance-bundling-resilience.md",
