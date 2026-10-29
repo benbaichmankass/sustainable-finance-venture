@@ -2251,12 +2251,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-10-28",
+   "As_Of": "2026-10-29",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-28",
+   "As_Of": "2026-10-29",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.71",
+   "Value": "3.69",
    "Unit": "pp",
-   "As_Of": "2026-10-26",
-   "Chg_1m": "0.89",
-   "Chg_3m": "0.61",
-   "Chg_12m": "0.4",
+   "As_Of": "2026-10-27",
+   "Chg_1m": "0.76",
+   "Chg_3m": "0.6",
+   "Chg_12m": "0.38",
    "Direction": "up",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.4003",
+   "Value": "3.4801",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-27",
-   "Chg_1m": "-0.0591",
-   "Chg_3m": "-0.0589",
-   "Chg_12m": "-0.4592",
+   "As_Of": "2026-10-28",
+   "Chg_1m": "-0.0053",
+   "Chg_3m": "0.0054",
+   "Chg_12m": "-0.3373",
    "Direction": "down",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2326,12 +2326,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-10-28",
+   "As_Of": "2026-10-29",
    "Chg_1m": "0.0",
    "Chg_3m": "-0.25",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2354,14 +2354,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.078",
+   "Value": "3.128",
    "Unit": "ILS per USD",
-   "As_Of": "2026-10-26",
-   "Chg_1m": "0.031",
-   "Chg_3m": "0.029",
-   "Chg_12m": "-0.245",
+   "As_Of": "2026-10-28",
+   "Chg_1m": "0.095",
+   "Chg_3m": "0.067",
+   "Chg_12m": "-0.178",
    "Direction": "up",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2384,14 +2384,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-15",
    "Label": "US 10-year Treasury yield",
-   "Value": "5.0",
+   "Value": "4.99",
    "Unit": "%",
-   "As_Of": "2026-10-26",
-   "Chg_1m": "-0.11",
-   "Chg_3m": "0.33",
-   "Chg_12m": "0.86",
+   "As_Of": "2026-10-27",
+   "Chg_1m": "-0.19",
+   "Chg_3m": "0.28",
+   "Chg_12m": "0.94",
    "Direction": "down",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2399,14 +2399,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-16",
    "Label": "Brent crude oil price",
-   "Value": "115.22",
+   "Value": "123.1",
    "Unit": "USD/barrel",
-   "As_Of": "2026-10-20",
-   "Chg_1m": "-4.44",
-   "Chg_3m": "30.21",
-   "Chg_12m": "47.99",
-   "Direction": "down",
-   "Fetched_At": "2026-10-28T12:59:36+00:00",
+   "As_Of": "2026-10-27",
+   "Chg_1m": "7.09",
+   "Chg_3m": "22.79",
+   "Chg_12m": "62.02",
+   "Direction": "up",
+   "Fetched_At": "2026-10-29T13:09:35+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -16033,9 +16033,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Minimum viable origination schema for future poolability",
    "Category": "Risk tools",
-   "Baseline_Drive_Hash": "ccce871f5c074430bc74a2a4bec6563b8442538b595eb1bc5d608b7ec8000c0a",
-   "Baseline_Repo_Hash": "ccce871f5c074430bc74a2a4bec6563b8442538b595eb1bc5d608b7ec8000c0a",
-   "Last_Synced_At": "2026-10-29T10:23:11Z",
+   "Baseline_Drive_Hash": "fef308370f2867231f601961cffee73b860ab8f94c66a135d69b850c006d0861",
+   "Baseline_Repo_Hash": "fef308370f2867231f601961cffee73b860ab8f94c66a135d69b850c006d0861",
+   "Last_Synced_At": "2026-10-29T17:01:14Z",
    "Status": "Synced"
   },
   {
@@ -16046,9 +16046,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
-   "Baseline_Repo_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
-   "Last_Synced_At": "2026-10-20T13:42:17Z",
+   "Baseline_Drive_Hash": "7ddd1eac88b970a691c858765bdd15d445023eea03d428b2253f6b2dee8d380b",
+   "Baseline_Repo_Hash": "7ddd1eac88b970a691c858765bdd15d445023eea03d428b2253f6b2dee8d380b",
+   "Last_Synced_At": "2026-10-29T17:01:16Z",
    "Status": "Synced"
   },
   {
@@ -16900,7 +16900,7 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-10-28",
+    "2026-10-29",
     4.0
    ]
   ],
@@ -17478,7 +17478,7 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-10-28",
+    "2026-10-29",
     2.65
    ]
   ],
@@ -18008,7 +18008,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-10-28",
+    "2026-10-29",
     3.25
    ]
   ],
@@ -18158,8 +18158,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-26",
-    3.71
+    "2026-10-27",
+    3.69
    ]
   ],
   "MAC-06": [
@@ -19892,8 +19892,8 @@ window.SFV_DATA = {
     3.4901
    ],
    [
-    "2026-10-27",
-    3.4003
+    "2026-10-28",
+    3.4801
    ]
   ],
   "MAC-13": [
@@ -20470,8 +20470,8 @@ window.SFV_DATA = {
     3.063
    ],
    [
-    "2026-10-26",
-    3.078
+    "2026-10-28",
+    3.128
    ]
   ],
   "MAC-14": [
@@ -21626,8 +21626,8 @@ window.SFV_DATA = {
     5.29
    ],
    [
-    "2026-10-26",
-    5.0
+    "2026-10-27",
+    4.99
    ]
   ],
   "MAC-16": [
@@ -22204,8 +22204,8 @@ window.SFV_DATA = {
     115.91
    ],
    [
-    "2026-10-20",
-    115.22
+    "2026-10-27",
+    123.1
    ]
   ]
  },
@@ -22388,7 +22388,7 @@ window.SFV_DATA = {
    "title": "Scratchpad",
    "summary": "",
    "words": 1583,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n        \n      \n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.\n\n\n2026-10-20\n\n* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  \n*   \n    \n  "
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (DRV-34) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per CLAUDE.md §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in private/partner-contacts.csv. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's 05-raw-data. See docs/ops/publishing.md.\n\nIf an idea can't be written without crossing one of those lines, put it in private/ and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in docs/phd/application-pack.md \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n        \n      \n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.\n\n\n2026-10-20\n\n* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  \n*   \n    \n  "
   },
   {
    "path": "docs/ops/data-provenance.md",
@@ -22758,7 +22758,7 @@ window.SFV_DATA = {
    "title": "Minimum viable origination schema for future poolability",
    "summary": "",
    "words": 873,
-   "body": "# Minimum viable origination schema for future poolability\n\n**Schema:** rt-1-origination-schema.csv · **Version 0.1** · **Status: v0, not yet field-tested**\n\n## The philosophy\n\nThis schema exists to answer one question: **what must be captured at origination so that a pool of these assets is legible to an investor later, without retrofitting?**\n\nEverything follows from a single asymmetry. Most mistakes in this project are recoverable — a wrong assumption in the business plan gets revised, a bad literature summary gets corrected. **A field not captured at origination is gone forever.** You cannot go back to a village in 2029 and ask what a borrower's savings balance was on the day of a 2027 disbursement. A field added in year two produces a portfolio with two years of nulls, which to a rating agency is a portfolio with no history.\n\nSo the design rule is not \"capture everything useful.\" It is **capture everything irreplaceable, and nothing else.**\n\n## Three constraints, one of them binding\n\n**1\\. ABS legibility.** The end state is a loan-level data tape an investor will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they are a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised records, delegated to local authorities and NGOs. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already gets.\n\n**3\\. Privacy.** Personal data lives in the Vault, never the repo. The schema separates a stable pseudonymous ID from the identifying record, so analysis and pooling run on the pseudonymous layer alone.\n\n**Constraint 2 is binding.** It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting. Every field here was tested against the question \"could a group secretary record this, in a meeting, without a laptop?\" Fields that failed are not in the schema, however useful they would have been.\n\nThat is why there is no GPS coordinate, no exact date of birth, no itemised household income, and no free-text notes field.\n\n## What \"minimum viable\" cost us\n\nDeliberate omissions, recorded so they are choices rather than oversights:\n\n| Not captured | Why not |\n| :---- | :---- |\n| Exact location (GPS/village) | Identifies a group. admin1 is required and admin2 optional; that is enough to model a regional drought without exposing anyone. |\n| Exact date of birth | Age bands give the cohort analysis its value with none of the identifiability. |\n| Household income | Not reliably measurable in a meeting. A number that is collected but wrong is worse than a gap, because it gets modelled. |\n| Free-text notes | Unpoolable. Anything worth analysing gets an enum or it does not get captured. |\n| Detailed impact outcomes | Belongs to RT-4 under a pre-registered design, not to origination. Collecting outcome data casually is how impact claims lose credibility. |\n\n## The two things that carry the most weight\n\n**The event table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.\n\n**schema\\_version on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.\n\n## Reading the schema file\n\n| Column |  |\n| :---- | :---- |\n| Entity | Which table: originator, group, member, loan, event |\n| Required | required fields block a record; optional fields are collected where cheap |\n| Capture | origination (fixed at disbursement), updated (changes over time), derived (computed, never entered) |\n| Privacy | public · private (pseudonymous, repo-safe) · sensitive (aggregate only, never row-level) · derived |\n| Critical\\_Path | yes \\= cannot be reconstructed later. **These are the fields worth arguing about.** |\n| Validation | The rule validate\\_schema.py enforces |\n| Why\\_It\\_Matters | Why the field earns its place. A field that cannot fill this column should not exist. |\n\n45 of 57 fields are critical path. That ratio is high on purpose: a field that *can* be reconstructed later is a field that does not need to be in a v0 schema.\n\n## Status and what would change it\n\nThis is **v0**. It has been designed against the literature and validated for internal consistency — it has **not** been tested with a real group, and no field data has been collected against it.\n\nWhat would move it to v1:\n\n1. A group secretary completing a full cycle of records with it, and telling us which fields they skipped.  \n2. A SAVIX mapping exercise — if existing MIS data maps in cleanly, the pilot cohort could be hundreds of groups rather than twenty.  \n3. A structuring conversation confirming these fields are what an investor would actually want (PT-08).\n\nUntil then, treat the field list as a serious proposal, not a settled contract.  \n"
+   "body": "# Minimum viable origination schema for future poolability\n\n**Schema:** `rt-1-origination-schema.csv` · **Version 0.1** · **Status: v0, not yet field-tested**\n\n## The philosophy\n\nThis schema exists to answer one question: **what must be captured at origination so that a pool of these assets is legible to an investor later, without retrofitting?**\n\nEverything follows from a single asymmetry. Most mistakes in this project are recoverable — a wrong assumption in the business plan gets revised, a bad literature summary gets corrected. **A field not captured at origination is gone forever.** You cannot go back to a village in 2029 and ask what a borrower's savings balance was on the day of a 2027 disbursement. A field added in year two produces a portfolio with two years of nulls, which to a rating agency is a portfolio with no history.\n\nSo the design rule is not \"capture everything useful.\" It is **capture everything irreplaceable, and nothing else.**\n\n## Three constraints, one of them binding\n\n**1\\. ABS legibility.** The end state is a loan-level data tape an investor will accept. The benchmark is the European DataWarehouse loan-level templates (RES-28) — not because we will report to them, but because they are a settled answer to \"what does an investor need to know about each loan.\"\n\n**2\\. Field-workability.** Per LIT-014, savings-group regulation is heading toward light-touch registration with digitised records, delegated to local authorities and NGOs. Every required field must be capturable by a group secretary with a phone, in a meeting, without training beyond what the group already gets.\n\n**3\\. Privacy.** Personal data lives in the Vault, never the repo. The schema separates a stable pseudonymous ID from the identifying record, so analysis and pooling run on the pseudonymous layer alone.\n\n**Constraint 2 is binding.** It is easy to design a schema that satisfies 1 and 3 and is unusable in a village meeting. Every field here was tested against the question \"could a group secretary record this, in a meeting, without a laptop?\" Fields that failed are not in the schema, however useful they would have been.\n\nThat is why there is no GPS coordinate, no exact date of birth, no itemised household income, and no free-text notes field.\n\n## What \"minimum viable\" cost us\n\nDeliberate omissions, recorded so they are choices rather than oversights:\n\n| Not captured | Why not |\n| :---- | :---- |\n| Exact location (GPS/village) | Identifies a group. `admin1` is required and `admin2` optional; that is enough to model a regional drought without exposing anyone. |\n| Exact date of birth | Age bands give the cohort analysis its value with none of the identifiability. |\n| Household income | Not reliably measurable in a meeting. A number that is collected but wrong is worse than a gap, because it gets modelled. |\n| Free-text notes | Unpoolable. Anything worth analysing gets an enum or it does not get captured. |\n| Detailed impact outcomes | Belongs to RT-4 under a pre-registered design, not to origination. Collecting outcome data casually is how impact claims lose credibility. |\n\n## The two things that carry the most weight\n\n**The `event` table.** Static loan attributes are cheap and largely reconstructible from a contract. The payment-behaviour time series is not, and it is what an underwriting model learns from and an investor prices. If only one table survives contact with the field, this is the one that matters.\n\n**`schema_version` on every row.** Unglamorous and non-negotiable. A mixed-vintage portfolio without version stamps cannot be interpreted, and the stamp cannot be backfilled — by then nobody knows which rules a given record was captured under.\n\n## Reading the schema file\n\n| Column |  |\n| :---- | :---- |\n| `Entity` | Which table: `originator`, `group`, `member`, `loan`, `event` |\n| `Required` | `required` fields block a record; `optional` fields are collected where cheap |\n| `Capture` | `origination` (fixed at disbursement), `updated` (changes over time), `derived` (computed, never entered) |\n| `Privacy` | `public` · `private` (pseudonymous, repo-safe) · `sensitive` (aggregate only, never row-level) · `derived` |\n| `Critical_Path` | `yes` \\= cannot be reconstructed later. **These are the fields worth arguing about.** |\n| `Validation` | The rule `validate_schema.py` enforces |\n| `Why_It_Matters` | Why the field earns its place. A field that cannot fill this column should not exist. |\n\n45 of 57 fields are critical path. That ratio is high on purpose: a field that *can* be reconstructed later is a field that does not need to be in a v0 schema.\n\n## Status and what would change it\n\nThis is **v0**. It has been designed against the literature and validated for internal consistency — it has **not** been tested with a real group, and no field data has been collected against it.\n\nWhat would move it to v1:\n\n1. A group secretary completing a full cycle of records with it, and telling us which fields they skipped.  \n2. A SAVIX mapping exercise — if existing MIS data maps in cleanly, the pilot cohort could be hundreds of groups rather than twenty.  \n3. A structuring conversation confirming these fields are what an investor would actually want (PT-08).\n\nUntil then, treat the field list as a serious proposal, not a settled contract.  \n"
   },
   {
    "path": "risk-tools/README.md",
