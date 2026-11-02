@@ -106,14 +106,14 @@ Task List:
 - [ ] Project/product architecture \- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   
 - [ ] Financial modeling of cash flows and balance sheets  
 - [ ] Research potential partners:  
-      - [ ] Investors   
-      - [ ] NGOs  
-      - [ ] Collectives  
-      - [ ] Microfinance institutions to partner with  
+  - [ ] Investors   
+  - [ ] NGOs  
+  - [ ] Collectives  
+  - [ ] Microfinance institutions to partner with  
 - [ ] Impact \- definitions and measurements  
 - [ ]   
-        
-      
+  
+
 
 2026-10-05
 

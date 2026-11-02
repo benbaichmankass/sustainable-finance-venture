@@ -2251,12 +2251,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-11-01",
+   "As_Of": "2026-11-02",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-10-31",
+   "As_Of": "2026-11-02",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.74",
+   "Value": "3.88",
    "Unit": "pp",
-   "As_Of": "2026-10-29",
-   "Chg_1m": "0.64",
-   "Chg_3m": "0.63",
-   "Chg_12m": "0.33",
+   "As_Of": "2026-10-30",
+   "Chg_1m": "0.69",
+   "Chg_3m": "0.75",
+   "Chg_12m": "0.41",
    "Direction": "up",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.21",
    "Chg_12m": "2.42",
    "Direction": "up",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.495",
+   "Value": "3.521",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-10-30",
-   "Chg_1m": "0.0049",
-   "Chg_3m": "-0.0276",
-   "Chg_12m": "-0.3411",
+   "As_Of": "2026-11-02",
+   "Chg_1m": "0.0455",
+   "Chg_3m": "0.0096",
+   "Chg_12m": "-0.2985",
    "Direction": "up",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2332,9 +2332,9 @@ window.SFV_DATA = {
    "Chg_12m": "-0.75",
    "Direction": "flat",
    "Fetched_At": "2026-11-01T13:44:10+00:00",
-   "Status": "ok",
+   "Status": "stale",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
-   "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
+   "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure. | last refresh failed: The read operation timed out"
   },
   {
    "ID": "MAC-06",
@@ -2362,9 +2362,9 @@ window.SFV_DATA = {
    "Chg_12m": "-0.163",
    "Direction": "up",
    "Fetched_At": "2026-11-01T13:44:10+00:00",
-   "Status": "ok",
+   "Status": "stale",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
-   "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
+   "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated. | last refresh failed: <urlopen error _ssl.c:1126: The handshake operation timed out>"
   },
   {
    "ID": "MAC-14",
@@ -2391,7 +2391,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.33",
    "Chg_12m": "0.93",
    "Direction": "down",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2406,7 +2406,7 @@ window.SFV_DATA = {
    "Chg_3m": "22.79",
    "Chg_12m": "62.02",
    "Direction": "up",
-   "Fetched_At": "2026-11-01T13:44:10+00:00",
+   "Fetched_At": "2026-11-02T16:01:15+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -16046,9 +16046,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Scratchpad",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
-   "Baseline_Repo_Hash": "172619394f4f1ea661cfc5de3138acb5e4a0fd7d22828e2718f47e39593001aa",
-   "Last_Synced_At": "2026-10-29T21:55:07Z",
+   "Baseline_Drive_Hash": "de3f61f6e512045ad8886d912577eecac9a50045fcf6738bfa99e9cbafb110a6",
+   "Baseline_Repo_Hash": "de3f61f6e512045ad8886d912577eecac9a50045fcf6738bfa99e9cbafb110a6",
+   "Last_Synced_At": "2026-11-02T18:34:43Z",
    "Status": "Synced"
   },
   {
@@ -16900,15 +16900,11 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-11-01",
+    "2026-11-02",
     4.0
    ]
   ],
   "MAC-02": [
-   [
-    "2014-11-30",
-    0.05
-   ],
    [
     "2014-12-31",
     0.05
@@ -17480,6 +17476,10 @@ window.SFV_DATA = {
    [
     "2026-10-31",
     2.65
+   ],
+   [
+    "2026-11-02",
+    2.65
    ]
   ],
   "MAC-03": [
@@ -18018,10 +18018,6 @@ window.SFV_DATA = {
   ],
   "MAC-04": [
    [
-    "2023-10-31",
-    5.99
-   ],
-   [
     "2023-11-30",
     5.68
    ],
@@ -18162,8 +18158,8 @@ window.SFV_DATA = {
     3.19
    ],
    [
-    "2026-10-29",
-    3.74
+    "2026-10-30",
+    3.88
    ]
   ],
   "MAC-06": [
@@ -19324,10 +19320,6 @@ window.SFV_DATA = {
   ],
   "MAC-12": [
    [
-    "2014-11-28",
-    4.8592
-   ],
-   [
     "2014-12-31",
     4.72
    ],
@@ -19898,6 +19890,10 @@ window.SFV_DATA = {
    [
     "2026-10-30",
     3.495
+   ],
+   [
+    "2026-11-02",
+    3.521
    ]
   ],
   "MAC-13": [
@@ -22392,7 +22388,7 @@ window.SFV_DATA = {
    "title": "Scratchpad",
    "summary": "",
    "words": 1583,
-   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n      - [ ] Investors   \n      - [ ] NGOs  \n      - [ ] Collectives  \n      - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n        \n      \n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.\n\n\n2026-10-20\n\n* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  \n*   \n    \n  "
+   "body": "# Scratchpad\n\n**Status:** Live capture doc · **Synced with Drive** (`DRV-34`) — edit either side\n\nA holding pen for half-formed ideas. Write here when you have a thought worth keeping but not yet worth filing. Nothing here is a commitment, a finding, or a decision — it is raw input waiting to be triaged.\n\n## How to use it\n\n- **Just write.** One idea per bullet, newest section at the top. No formatting discipline required, no IDs.  \n- **Date the section** you're writing under so we can tell a stale idea from a fresh one.  \n- **Editable from either side.** This doc has a Google Doc twin in the workfolder, reconciled in whichever direction actually changed. Editing here syncs on the commit; editing in the Doc can take a couple of hours to come back, because that direction is polled. Writing on a phone is the point — just don't expect it to appear in the repo instantly.  \n- **Don't edit both sides at once.** If the Doc and the repo file both change between sync runs, the sync stops and opens a conflict issue rather than guessing. Pick a side per sitting.\n\n## How ideas leave\n\nNothing stays here permanently. When we go over the list, each item either dies or moves to its real home per `CLAUDE.md` §3 — a literature row, an open question, a partner row, a milestone, a memo, a product-line doc. Once it's filed with an ID, delete it from here. A long scratchpad means we're behind on triage, not that we're productive.\n\n## What not to write here\n\nThis file is public. Two things belong elsewhere, no exceptions:\n\n- **A person's name attached to our relationship with them** — what they said, whether they replied, what we want from them. That goes in `private/partner-contacts.csv`. An organization named as a candidate partner, with the reasoning, is fine here.  \n- **Anything identifying a research participant**, in any form, aggregated or not. That lives in the Vault's `05-raw-data`. See `docs/ops/publishing.md`.\n\nIf an idea can't be written without crossing one of those lines, put it in `private/` and leave a pointer here.\n\n---\n\n## 2026-08-06\n\n*Nothing untriaged. Last cleared 2026-08-06: \"testing the mechanism of community based risk management\" was filed as **OQ-12** (information vs social cost as the driver of repayment, and whether it survives securitisation).*\n\n## 2026-08-22\n\n*Nothing untriaged.*\n\n**Cleared 2026-08-22** \\- the 2026-08-19 entries were filed:\n\n- *Coffee growers as a target population* (insurance, price stabilisation, agribusiness and resilience credit, supporting organisations) became three experiment rows \\- **EXP-09** (cooperative price stabilisation plus climate cover), **EXP-10** (leaf-rust and heat index cover), **EXP-11** (certification and traceability data as an origination schema) \\- plus literature component **LC-24** (coffee-sector economics and cooperative finance). The Sweet Maria's coffee-origins reference is **RES-32**, with the URL left blank pending manual verification.  \n- *Places I want to apply to* (HUJI, Groningen, TAU, Copenhagen, ZEW, Bocconi) mapped onto existing tracker rows PHD-10, PHD-22, PHD-02, PHD-49, PHD-29 and PHD-51, and is recorded as BB's own shortlist in `docs/phd/application-pack.md` \\- including where it disagrees with the scoring rubric, which is the part worth thinking about.\n\n## 2026-09-14\n\nDraft Business Plan\n\n1. Executive Summary: A quick snapshot of your business, mission statement, and main goals.   \n   1. Mission Statement\n\nOur mission is to decrease global poverty and climate change risk through localized financial empowerment to support sustainable, stable economic and social development. Around the world, there are numerous challenges and barriers to sustainable development that can be solved today with proven solutions, but persist because of a lack of investment in those solutions. We believe through innovative financial structures and risk management tools, we can turn those problems into investment opportunities that will attract the capital needed to make a real impact on sustainable development. \n\n2. Goals\n\nOur goal is to create financial structures and products that can help financially disenfranchised communities raise the capital they need to support their own sustainable development path and fortify their resilience in the face of climate risks. \n\n2. Company Description: Details about what your business does, the problems it solves, and what makes it unique.  \n   1. Strategy\n\nOur strategy is to carve out a niche for managing previously unmanaged risks to investments in developing regions and for innovative financial products. There is vast underinvestment into various areas and sectors because of risks that are not insurmountable but simply unpriced. By applying a collaborative, integrated approach that relies on communities to absorb idiosyncratic risks at the case level basis, developing new project finance structures and products, and employing emerging technologies, these risks can be priced and managed effectively in order to turn these challenges into profitable, marketable investments. \n\n2. Economics (Financial Viability)\n\nThe business economics of this venture rely on two main pillars:\n\n1. Absorbing risk at a premium  \n   2. Capturing some of the growth generated from financial enablement through ancillary investments (e.g. facilitating futures trading for agricultural products).   \n   3. Operating Model\n\nThis firm’s role will manage loan projects by scoping and defining the structural risks associated with a project, then match investors with collectives that will receive bulk financing and manage the specific loans to members. The firm will supervise the collectives and manage the bulk loans between the investors and the collectives, as well as supervising and assisting the collectives in the administration of loans to members. The firm will develop risk management tools for the collectives to use in loan administration. These tools will support the management of risk, both at the bulk-liability level to create reliable performance for investors, as well as at the individual-loan level to help the collectives manage the idiosyncratic risks posed to their common capital pool. \n\n4. Risk Management  \n   5. Loan Supervision\n\n3. Market Analysis: Research on your industry, target audience, and main competitors.\n\n4. Organization and Management: Your company's legal structure and the background of your leadership team.\n\n5. Service or Product Line: A clear explanation of what you sell, product lifecycles, and pricing models.\n\nThe first pilot products will be short-term loans aimed at optimizing business cycle productivity for small businesses and farms. The goal of these products will be to serve as relatively short-term cyclical investments that can serve as a proof of concept for development impact and financial viability in an iterative process. These will be divided into 2 main categories:\n\n1. Operating Loans \n\nTo improve the operating margins of businesses over the course of a financial/business cycle (e.g. assisting in covering cash gaps that force businesses into non-growth oriented decisions, allowing farmers to buy better inputs and arbitrage their marketable products, etc)\n\n2.  Capital Loans \n\nTo help small ventures expand, with a focus on specific investments in collateralized assets, especially those that have clear paths to profitability,  e.g. solar and battery installations, machinery, water infrastructure, etc). \n\n6. Marketing and Sales Strategy: Marketing will be focused on the two main main categories of customers:  \n   1. Investors \n\nThis will include capital funds focused on development and climate oriented investments, as well as development banks or other NGOs that invest in development oriented projects. \n\n2. Collectives \n\nThis will include both existing collectives that would benefit from these financial products, as well as non-profit organizations that assist small businesses in creating collectives.\n\n7. Funding Request: The amount of money you need and how you plan to use it \n\n8. Financial Projections: Expected income statements, cash flow statements, and startup costs. \n\nTask List:\n\n- [ ] Pilot projects \\- research and choose a limited number of use cases, come up with project structure and work plan  \n- [ ] Risk management \\- risk matrix, models and mitigation tools  \n- [ ] Project/product architecture \\- high level workflows and details of project SPV, partner shares, steps, milestones, etc.   \n- [ ] Financial modeling of cash flows and balance sheets  \n- [ ] Research potential partners:  \n  - [ ] Investors   \n  - [ ] NGOs  \n  - [ ] Collectives  \n  - [ ] Microfinance institutions to partner with  \n- [ ] Impact \\- definitions and measurements  \n- [ ]   \n  \n\n\n2026-10-05\n\n* The underlying business strategy is absorbing risk at a premium, so we need to create a cohesive model for mapping project risk in order to structure and price it correctly\n\n\n2026-10-19\n\n* So I'm like the securitization side. We need to have like a design for creating a protocols of managing data needed to sustain like that making different business processes basically using like standard practices like ISO or other PMI. Kind of you know industry standards and cleaning from them the necessary data points that would be needed in order to do continuous risk monitoring or those kinds of business activities that could be used to support the they do need to feel like what stakeholds would need to be responsible for reporting. How often things like that? Like how do we create? Like we need the sort of guidelines for how we go about creating those kinds of protocols so that we can use that as the basis for creating different types of of like actual financial products that would be part of this project.\n\n\n2026-10-20\n\n* I want to add this [Study Guide](https://docs.google.com/spreadsheets/d/16hxWYQkeKEqKAeSvSKc8srdj4wzRL58OzlQoJ5LhoqI/edit?usp=sharing) to UI to help keep an organized register of learning resources and to stay on top of what learning I’ve actually completed. This should also be linked so I can update the sheet and then see the list and statuses on the UI, including the links to I can manage my progress and use it to decide what learning areas to focus on  \n*   \n    \n  "
   },
   {
    "path": "docs/ops/data-provenance.md",
