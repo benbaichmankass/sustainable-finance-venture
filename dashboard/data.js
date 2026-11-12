@@ -2251,12 +2251,12 @@ window.SFV_DATA = {
    "Label": "US federal funds target rate (upper)",
    "Value": "4.0",
    "Unit": "%",
-   "As_Of": "2026-11-11",
+   "As_Of": "2026-11-12",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.25",
    "Direction": "flat",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU&cosd=2013-01-01",
    "Note": "FRED series DFEDTARU."
@@ -2266,12 +2266,12 @@ window.SFV_DATA = {
    "Label": "ECB main refinancing operations rate",
    "Value": "2.65",
    "Unit": "%",
-   "As_Of": "2026-11-11",
+   "As_Of": "2026-11-12",
    "Chg_1m": "0.0",
    "Chg_3m": "0.25",
    "Chg_12m": "0.5",
    "Direction": "flat",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.4F.KR.MRR_FR.LEV?lastNObservations=5000&format=jsondata",
    "Note": "ECB Data Portal, daily level."
@@ -2279,14 +2279,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-04",
    "Label": "ICE BofA EM high-yield corporate OAS",
-   "Value": "3.94",
+   "Value": "3.81",
    "Unit": "pp",
-   "As_Of": "2026-11-09",
-   "Chg_1m": "0.6",
-   "Chg_3m": "1.06",
-   "Chg_12m": "0.48",
+   "As_Of": "2026-11-11",
+   "Chg_1m": "0.51",
+   "Chg_3m": "1.0",
+   "Chg_12m": "0.38",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLEMHBHYCRPIOAS&cosd=2013-01-01",
    "Note": "Option-adjusted spread. Wider = investors demanding more to hold EM credit risk. FRED serves this series from 2023-07 only, whatever start date is requested - so its chart is a shorter window than the others. The footer on each chart states its own range."
@@ -2301,7 +2301,7 @@ window.SFV_DATA = {
    "Chg_3m": "1.07",
    "Chg_12m": "2.89",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
    "Note": "3-month running mean anomaly, one observation per overlapping season. Above +0.5 El Nino, below -0.5 La Nina."
@@ -2309,14 +2309,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-12",
    "Label": "EUR/ILS reference rate",
-   "Value": "3.5507",
+   "Value": "3.5495",
    "Unit": "ILS per EUR",
-   "As_Of": "2026-11-10",
-   "Chg_1m": "0.1247",
-   "Chg_3m": "0.0836",
-   "Chg_12m": "-0.206",
+   "As_Of": "2026-11-12",
+   "Chg_1m": "0.1091",
+   "Chg_3m": "0.0981",
+   "Chg_12m": "-0.2072",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://data-api.ecb.europa.eu/service/data/EXR/D.ILS.EUR.SP00.A?lastNObservations=5000&format=jsondata",
    "Note": "ECB daily reference rate. Relevant to a euro-denominated tranche placed with EU investors."
@@ -2326,12 +2326,12 @@ window.SFV_DATA = {
    "Label": "Bank of Israel policy rate",
    "Value": "3.25",
    "Unit": "%",
-   "As_Of": "2026-11-11",
+   "As_Of": "2026-11-12",
    "Chg_1m": "0.0",
    "Chg_3m": "0.0",
    "Chg_12m": "-0.75",
    "Direction": "flat",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI nominal interest rate, series MNT_RIB_BOI_D. The local funding cost for the Israel pilot and the discount rate on any shekel structure."
@@ -2346,7 +2346,7 @@ window.SFV_DATA = {
    "Chg_3m": "5.9",
    "Chg_12m": "7.4",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "Nominal headline index. Monthly back to 1990 - the longest history in this set, and the most direct macro link to PL-1 repayment stress."
@@ -2354,14 +2354,14 @@ window.SFV_DATA = {
   {
    "ID": "MAC-13",
    "Label": "USD/ILS representative rate",
-   "Value": "3.172",
+   "Value": "3.191",
    "Unit": "ILS per USD",
-   "As_Of": "2026-11-11",
-   "Chg_1m": "0.117",
-   "Chg_3m": "0.159",
-   "Chg_12m": "-0.139",
+   "As_Of": "2026-11-12",
+   "Chg_1m": "0.113",
+   "Chg_3m": "0.185",
+   "Chg_12m": "-0.098",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/EXR/1.0/RER_USD_ILS/?format=sdmx-json&lastNObservations=4000",
    "Note": "BOI representative rate. The dominant pair for the Israel pilot - most hard-currency tranching would be dollar-denominated."
@@ -2376,7 +2376,7 @@ window.SFV_DATA = {
    "Chg_3m": "12.8",
    "Chg_12m": "18.0",
    "Direction": "up",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
    "Note": "The sub-index that tracks staple grains specifically. Moves ahead of and more sharply than the headline for the households in the PL-1 cohort."
@@ -2391,7 +2391,7 @@ window.SFV_DATA = {
    "Chg_3m": "0.25",
    "Chg_12m": "0.86",
    "Direction": "down",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2013-01-01",
    "Note": "The long-rate anchor. Fed funds prices the short end; a 15-25 year PL-2 PPA asset is discounted off something much closer to this."
@@ -2406,7 +2406,7 @@ window.SFV_DATA = {
    "Chg_3m": "10.08",
    "Chg_12m": "40.71",
    "Direction": "down",
-   "Fetched_At": "2026-11-11T14:27:32+00:00",
+   "Fetched_At": "2026-11-12T15:19:43+00:00",
    "Status": "ok",
    "Source_URL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2013-01-01",
    "Note": "Europe Brent spot, FRED DCOILBRENTEU. Sits behind both the tariff environment for PL-2 and the fuel and fertiliser costs feeding into MAC-06."
@@ -15786,9 +15786,9 @@ window.SFV_DATA = {
    "Parent_ID": "DRV-01",
    "Title": "Research Agenda: Literature Review Plan",
    "Category": "Planning",
-   "Baseline_Drive_Hash": "8e7f6f22ac7478f79af592b9969a4de171f4f6e947da9401879913ac7b9b791c",
-   "Baseline_Repo_Hash": "8e7f6f22ac7478f79af592b9969a4de171f4f6e947da9401879913ac7b9b791c",
-   "Last_Synced_At": "2026-11-12T15:00:47Z",
+   "Baseline_Drive_Hash": "328c7d1104073a8cafde2ebfdbb3dfa3d87e701e61c29e39b7009296e665678c",
+   "Baseline_Repo_Hash": "328c7d1104073a8cafde2ebfdbb3dfa3d87e701e61c29e39b7009296e665678c",
+   "Last_Synced_At": "2026-11-12T21:10:50Z",
    "Status": "Synced"
   },
   {
@@ -16192,7 +16192,7 @@ window.SFV_DATA = {
    "Baseline_Drive_Hash": "a426174c3e36b44fcd296a2f7f319c8473d0103ced19c73ffc62f41f55ecfb48",
    "Baseline_Repo_Hash": "7ac8d941eec62c4361c285537a969a5aac999dd401fcb699c4c1102b98b4acbf",
    "Last_Synced_At": "2026-09-10T13:10:41Z",
-   "Status": "Error"
+   "Status": "Synced"
   },
   {
    "ID": "DRV-46",
@@ -16900,7 +16900,7 @@ window.SFV_DATA = {
     4.0
    ],
    [
-    "2026-11-11",
+    "2026-11-12",
     4.0
    ]
   ],
@@ -17478,15 +17478,11 @@ window.SFV_DATA = {
     2.65
    ],
    [
-    "2026-11-11",
+    "2026-11-12",
     2.65
    ]
   ],
   "MAC-03": [
-   [
-    "2015-11-30",
-    0.1
-   ],
    [
     "2015-12-31",
     0.1
@@ -18012,7 +18008,7 @@ window.SFV_DATA = {
     3.25
    ],
    [
-    "2026-11-11",
+    "2026-11-12",
     3.25
    ]
   ],
@@ -18162,8 +18158,8 @@ window.SFV_DATA = {
     3.88
    ],
    [
-    "2026-11-09",
-    3.94
+    "2026-11-11",
+    3.81
    ]
   ],
   "MAC-06": [
@@ -19896,8 +19892,8 @@ window.SFV_DATA = {
     3.495
    ],
    [
-    "2026-11-10",
-    3.5507
+    "2026-11-12",
+    3.5495
    ]
   ],
   "MAC-13": [
@@ -20474,8 +20470,8 @@ window.SFV_DATA = {
     3.118
    ],
    [
-    "2026-11-11",
-    3.172
+    "2026-11-12",
+    3.191
    ]
   ],
   "MAC-14": [
@@ -22722,7 +22718,7 @@ window.SFV_DATA = {
    "title": "Research Agenda: the literature review plan",
    "summary": "",
    "words": 1766,
-   "body": "# Research Agenda: the literature review plan\n\n**Status:** v2 (2026-08-22) · **Owner:** BB · **Tracker:** data/lit-components.csv (LC-01 … LC-26) **Supersedes:** v1 (four-axis plan, 2026-07). The axes are kept as a classification; they are no longer the unit of work.\n\n## Objective\n\nBuild a literature base that supports three different consumers: a PhD proposal a supervisor will take seriously, product and pilot design decisions, and an investor-grade thesis. Those are not the same reading list, but they overlap enough to be built once.\n\n## What changed from v1, and why\n\nv1 organised the review into four broad axes \\- community finance, microfinance impact, securitisation, blended finance. That was the right shape for a first pass and it worked: 23 anchors and three reviewed memos came out of it.\n\nIt has stopped being useful for one specific reason: **an axis does not tell you what to read next.** \"Securitisation\" spans rating criteria, true-sale law, African market depth and portfolio correlation \\- four bodies of work with different questions, different sources and very different urgency. Meanwhile three gaps flagged in docs/phd/research-proposal.md §1 sat unaddressed for weeks precisely because no axis owned them.\n\nv2 replaces the axis with the **component** as the unit of work. A component is scoped so that reading it produces a working command of one identifiable body of knowledge, and so that its completion is a checkable event rather than a feeling.\n\nEach component carries: why it matters to *this* project, which research-question strands it serves, the specific questions it must answer, search terms, its current anchors, a target, and the memo it feeds.\n\n## The components\n\nFull detail in data/lit-components.csv. Summary:\n\n### P1 \\- needed before the proposal goes out (10 components, 96 anchors cumulative)\n\n| ID | Component | Have | Target |\n| :---- | :---- | :---- | :---- |\n| LC-01 | Savings groups and community finance institutions | 4 | 10 |\n| LC-02 | Group-lending mechanisms: information, sanction, repeat interaction | 4 | 12 |\n| LC-03 | Index and parametric insurance: demand, basis risk, impact | 4 | 12 |\n| LC-04 | Bundled credit and insurance: theory and evidence | 4 | 10 |\n| LC-05 | Resilience and consumption-smoothing outcome measurement | 0 | 8 |\n| LC-06 | Climate and adaptation finance: gap sizing and instruments | 0 | 8 |\n| LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |\n| LC-08 | Portfolio correlation and covariate risk in microfinance | 2 | 8 |\n| LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |\n| LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |\n\n**LC-04 was the most important empty cell in this repo, and reading it first paid off immediately.** The master proposal asserted that the literature raises but rarely tests loan-insurance bundling. **That assertion is false.** Bundling has been tested experimentally at least twice and compulsory bundling suppressed demand both times \\- LIT-024 (Malawi, take-up 13 points lower off a 33.0% base) and LIT-025 (India, a 16-point rise in microfinance drop-out, measured on the lender's own book). LIT-026 is the counterweight: risk rather than capital binds, and demand for *separately* offered index insurance is strong. The distinction that reconciles them \\- offered separately versus compulsorily priced into the loan \\- is the finding, and the proposal's novelty claim has to move. Logged as **OQ-17**; synthesis in **MEMO-5**. Four anchors of ten, all still To read because only abstracts were verified.\n\n**LC-24 joined this tier on 2026-08-22, and the reason is worth stating.** It is here because coffee has *not* been chosen, not because it has. The coffee cluster (EXP-09, EXP-10, EXP-11) outscores every other field candidate, and those scores rest on two assumptions nobody has tested: that producer cooperative federations and value-chain lenders are reachable as partners, and that existing certification and traceability records could carry underwriting rather than only provenance. Reading is the cheap way to test both before a field programme commits to them. If the assumptions hold, the cluster leads the field-anchor choice (OQ-16); if not, the scores were wrong.\n\n**That framing is now out of date, and the change is worth recording honestly.** On 2026-08-22 OQ-16 was decided in coffee's favour *before* LC-24 was read. The component is unchanged in content but has changed in function: it no longer tests an assumption ahead of a decision, it audits one behind it. If the two assumptions above do not hold, the finding forces the anchor decision to be reversed. That is a worse position than the one this tier was designed to avoid, and it is why LC-24 now sits first in the P1 queue.\n\n### P2 \\- needed for the thesis, not for the first email (11 components, 80 anchors)\n\nLC-10 securitisation law and true sale · LC-11 African and EM capital-market depth · LC-12 blended finance and first-loss · LC-13 microcredit impact and the meta-analytic record · LC-14 digital financial rails and data capture · LC-15 PAYGO and energy-access receivables · LC-16 agricultural value chains, warehouse receipts and price risk · LC-17 over-indebtedness and consumer protection · LC-18 financialisation of community institutions · LC-19 regulation of savings groups and microinsurance · LC-20 microfinance cost-to-serve and unit economics.\n\n**LC-18 is the one to not skip.** It holds the critique that external capital corrodes the institutions it enters. A proposal that does not engage it reads as naive, and RQ-04 is built on taking it seriously rather than dismissing it.\n\n### P3 \\- context (5 components, 30 anchors)\n\nLC-21 microsavings and household financial behaviour · LC-22 remittances and migrant financial arrangements · LC-23 gender and group composition · LC-25 data governance and consent · LC-26 impact-evaluation method advances.\n\nLC-26 is worth pulling forward despite the tier: it holds the power, clustering and multiple-hypothesis material, and the research framework's section 6 cannot be calibrated without it.\n\n## Pace, and an honest word about the numbers\n\n206 cumulative target anchors. Of those, 55 slots are already filled, by 44 distinct sources \\- several sources serve more than one component, which is why the two numbers differ. That is a full PhD-scale literature base and it is not a six-week job.\n\nThe near-term job is **P1: 96 targets, 37 filled, so 59 new rows.** At the 12 to 15 sources a week this repo's workflow has actually sustained, that is six to seven weeks of reading. The two-pass structure from v1 still applies and is what makes the number tractable:\n\n- **Pass 1, breadth.** Abstract, introduction, conclusion, methods and limitations. Enough to write an honest matrix row and know whether the source matters. Most rows never get more than this, and that is fine \\- the row says so.  \n- **Pass 2, depth.** 15 to 20 anchors total across all components get a full read with detailed notes on design and assumptions. These are the sources the proposal argues *with* rather than merely cites.\n\nDo not let the target numbers turn into a quota. A component with six honest rows and a clearly stated gap is worth more than ten rows padded to hit a number, and CLAUDE.md §6 is not negotiable: **nothing is logged that has not been read.**\n\n## Workflow\n\n**Adding a source** \\- use the add-literature skill. It enforces the field standard, the ID scheme and the no-fabrication rule. Every row gets Axis (the v1 classification, retained) and should be cross-referenced from its component's row.\n\n**Working a component** \\- read its Questions\\_To\\_Answer first; those are what the component is *for*. Use Search\\_Terms as the starting query set, then forward and backward citation search from whatever anchor turns out to be central. When the component's questions can be answered without hedging, mark it Reviewed.\n\n**Component status vocabulary:** Not started · Partially covered · In progress · Reviewed.\n\n## Synthesis memos\n\nMemos 1 to 3 exist and are Reviewed. v2 maps every component to a memo, extending the set to nine:\n\n| Memo | Covers | State |\n| :---- | :---- | :---- |\n| MEMO-1 | LC-01 \\- what savings groups achieve and where they fail | Reviewed, extend with LC-01 |\n| MEMO-2 | LC-13 \\- microfinance impact evidence | Reviewed, extend with LC-13 |\n| MEMO-3 | LC-12 partial \\- securitisation and blended finance as applied | Reviewed |\n| MEMO-4 | LC-02, LC-13, LC-17, LC-18, LC-21, LC-23 \\- the mechanism and its critics | To draft |\n| MEMO-5 | LC-03, LC-04, LC-05 \\- insurance, bundling and what resilience means | **Drafted (partial)** \\- LC-04 read, LC-03 and LC-05 outstanding |\n| MEMO-6 | LC-06, LC-26 \\- the climate financing gap and how to measure a response | To draft (P1) |\n| MEMO-7 | LC-07, LC-08, LC-09 \\- can these cash flows be modelled | To draft (P1) |\n| MEMO-8 | LC-10, LC-11, LC-19 \\- the legal and market preconditions | To draft |\n| MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 \\- sector and infrastructure notes | To draft \\- its LC-24 section is P1 and lands earlier than the rest |\n\nEvery memo carries an explicit \"implications for this project\" section. When a memo's conclusions change, update the memo, its synthesis-memos.csv row and any open question that cited it \\- CLAUDE.md §7 flags these three as the ones that drift.\n\n## Source access\n\n- **Open access first**, and by preference: World Bank, OECD, IFC, CGAP, J-PAL, FinDev Gateway, IPA, 3ie, UNEP, IAIS. They are citable by anyone reading this repo later, which matters for a public repo.  \n- **Working-paper versions** (NBER, IZA, SSRN, RePEc, institutional repositories) are usually available where the journal version is not, and are acceptable as anchors provided the row records which version was read.  \n- **Paywalled** sources need institutional access. This is one of the concrete, unglamorous arguments for the PhD affiliation, and worth noting: LC-07 and LC-08 in particular sit largely behind finance-journal paywalls.  \n- Track citations forward and backward from anchors rather than relying on search alone; the highest-value sources for LC-04 in particular are unlikely to surface from a keyword query.\n\n## Status\n\n- [x] v1 four-axis Tier-1 scan complete (23 anchors)  \n- [x] Memos 1 to 3 drafted and reviewed  \n- [x] Component breakdown defined (LC-01 … LC-26)  \n- [ ] P1 components read (0 of 10 complete; LC-04 and LC-03 partially covered)  \n- [ ] Memos 5, 6, 7 drafted \\- the P1 outputs  \n- [ ] Deep-read anchor set selected (target 15 to 20\\)  \n- [ ] P2 components read  \n- [ ] Memos 4, 8, 9 drafted\n\n"
+   "body": "# Research Agenda: the literature review plan\n\n**Status:** v2 (2026-08-22) · **Owner:** BB · **Tracker:** `data/lit-components.csv` (LC-01 … LC-26) **Supersedes:** v1 (four-axis plan, 2026-07). The axes are kept as a classification; they are no longer the unit of work.\n\n## Objective\n\nBuild a literature base that supports three different consumers: a PhD proposal a supervisor will take seriously, product and pilot design decisions, and an investor-grade thesis. Those are not the same reading list, but they overlap enough to be built once.\n\n## What changed from v1, and why\n\nv1 organised the review into four broad axes \\- community finance, microfinance impact, securitisation, blended finance. That was the right shape for a first pass and it worked: 23 anchors and three reviewed memos came out of it.\n\nIt has stopped being useful for one specific reason: **an axis does not tell you what to read next.** \"Securitisation\" spans rating criteria, true-sale law, African market depth and portfolio correlation \\- four bodies of work with different questions, different sources and very different urgency. Meanwhile three gaps flagged in `docs/phd/research-proposal.md` §1 sat unaddressed for weeks precisely because no axis owned them.\n\nv2 replaces the axis with the **component** as the unit of work. A component is scoped so that reading it produces a working command of one identifiable body of knowledge, and so that its completion is a checkable event rather than a feeling.\n\nEach component carries: why it matters to *this* project, which research-question strands it serves, the specific questions it must answer, search terms, its current anchors, a target, and the memo it feeds.\n\n## The components\n\nFull detail in `data/lit-components.csv`. Summary:\n\n### P1 \\- needed before the proposal goes out (10 components, 96 anchors cumulative)\n\n| ID | Component | Have | Target |\n| :---- | :---- | :---- | :---- |\n| LC-01 | Savings groups and community finance institutions | 4 | 10 |\n| LC-02 | Group-lending mechanisms: information, sanction, repeat interaction | 4 | 12 |\n| LC-03 | Index and parametric insurance: demand, basis risk, impact | 4 | 12 |\n| LC-04 | Bundled credit and insurance: theory and evidence | 4 | 10 |\n| LC-05 | Resilience and consumption-smoothing outcome measurement | 0 | 8 |\n| LC-06 | Climate and adaptation finance: gap sizing and instruments | 0 | 8 |\n| LC-07 | Credit-risk modelling in thin-data settings | 0 | 10 |\n| LC-08 | Portfolio correlation and covariate risk in microfinance | 2 | 8 |\n| LC-09 | Securitisation eligibility, data tapes and rating criteria | 3 | 10 |\n| LC-24 | Coffee-sector economics and cooperative finance | 0 | 8 |\n\n**LC-04 was the most important empty cell in this repo, and reading it first paid off immediately.** The master proposal asserted that the literature raises but rarely tests loan-insurance bundling. **That assertion is false.** Bundling has been tested experimentally at least twice and compulsory bundling suppressed demand both times \\- LIT-024 (Malawi, take-up 13 points lower off a 33.0% base) and LIT-025 (India, a 16-point rise in microfinance drop-out, measured on the lender's own book). LIT-026 is the counterweight: risk rather than capital binds, and demand for *separately* offered index insurance is strong. The distinction that reconciles them \\- offered separately versus compulsorily priced into the loan \\- is the finding, and the proposal's novelty claim has to move. Logged as **OQ-17**; synthesis in **MEMO-5**. Four anchors of ten, all still `To read` because only abstracts were verified.\n\n**LC-24 joined this tier on 2026-08-22, and the reason is worth stating.** It is here because coffee has *not* been chosen, not because it has. The coffee cluster (EXP-09, EXP-10, EXP-11) outscores every other field candidate, and those scores rest on two assumptions nobody has tested: that producer cooperative federations and value-chain lenders are reachable as partners, and that existing certification and traceability records could carry underwriting rather than only provenance. Reading is the cheap way to test both before a field programme commits to them. If the assumptions hold, the cluster leads the field-anchor choice (OQ-16); if not, the scores were wrong.\n\n**That framing is now out of date, and the change is worth recording honestly.** On 2026-08-22 OQ-16 was decided in coffee's favour *before* LC-24 was read. The component is unchanged in content but has changed in function: it no longer tests an assumption ahead of a decision, it audits one behind it. If the two assumptions above do not hold, the finding forces the anchor decision to be reversed. That is a worse position than the one this tier was designed to avoid, and it is why LC-24 now sits first in the P1 queue.\n\n### P2 \\- needed for the thesis, not for the first email (11 components, 80 anchors)\n\nLC-10 securitisation law and true sale · LC-11 African and EM capital-market depth · LC-12 blended finance and first-loss · LC-13 microcredit impact and the meta-analytic record · LC-14 digital financial rails and data capture · LC-15 PAYGO and energy-access receivables · LC-16 agricultural value chains, warehouse receipts and price risk · LC-17 over-indebtedness and consumer protection · LC-18 financialisation of community institutions · LC-19 regulation of savings groups and microinsurance · LC-20 microfinance cost-to-serve and unit economics.\n\n**LC-18 is the one to not skip.** It holds the critique that external capital corrodes the institutions it enters. A proposal that does not engage it reads as naive, and RQ-04 is built on taking it seriously rather than dismissing it.\n\n### P3 \\- context (5 components, 30 anchors)\n\nLC-21 microsavings and household financial behaviour · LC-22 remittances and migrant financial arrangements · LC-23 gender and group composition · LC-25 data governance and consent · LC-26 impact-evaluation method advances.\n\nLC-26 is worth pulling forward despite the tier: it holds the power, clustering and multiple-hypothesis material, and the research framework's section 6 cannot be calibrated without it.\n\n## Pace, and an honest word about the numbers\n\n206 cumulative target anchors. Of those, 55 slots are already filled, by 44 distinct sources \\- several sources serve more than one component, which is why the two numbers differ. That is a full PhD-scale literature base and it is not a six-week job.\n\nThe near-term job is **P1: 96 targets, 37 filled, so 59 new rows.** At the 12 to 15 sources a week this repo's workflow has actually sustained, that is six to seven weeks of reading. The two-pass structure from v1 still applies and is what makes the number tractable:\n\n- **Pass 1, breadth.** Abstract, introduction, conclusion, methods and limitations. Enough to write an honest matrix row and know whether the source matters. Most rows never get more than this, and that is fine \\- the row says so.  \n- **Pass 2, depth.** 15 to 20 anchors total across all components get a full read with detailed notes on design and assumptions. These are the sources the proposal argues *with* rather than merely cites.\n\nDo not let the target numbers turn into a quota. A component with six honest rows and a clearly stated gap is worth more than ten rows padded to hit a number, and CLAUDE.md §6 is not negotiable: **nothing is logged that has not been read.**\n\n## Workflow\n\n**Adding a source** \\- use the `add-literature` skill. It enforces the field standard, the ID scheme and the no-fabrication rule. Every row gets `Axis` (the v1 classification, retained) and should be cross-referenced from its component's row.\n\n**Working a component** \\- read its `Questions_To_Answer` first; those are what the component is *for*. Use `Search_Terms` as the starting query set, then forward and backward citation search from whatever anchor turns out to be central. When the component's questions can be answered without hedging, mark it `Reviewed`.\n\n**Component status vocabulary:** `Not started` · `Partially covered` · `In progress` · `Reviewed`.\n\n## Synthesis memos\n\nMemos 1 to 3 exist and are Reviewed. v2 maps every component to a memo, extending the set to nine:\n\n| Memo | Covers | State |\n| :---- | :---- | :---- |\n| MEMO-1 | LC-01 \\- what savings groups achieve and where they fail | Reviewed, extend with LC-01 |\n| MEMO-2 | LC-13 \\- microfinance impact evidence | Reviewed, extend with LC-13 |\n| MEMO-3 | LC-12 partial \\- securitisation and blended finance as applied | Reviewed |\n| MEMO-4 | LC-02, LC-13, LC-17, LC-18, LC-21, LC-23 \\- the mechanism and its critics | To draft |\n| MEMO-5 | LC-03, LC-04, LC-05 \\- insurance, bundling and what resilience means | **Drafted (partial)** \\- LC-04 read, LC-03 and LC-05 outstanding |\n| MEMO-6 | LC-06, LC-26 \\- the climate financing gap and how to measure a response | To draft (P1) |\n| MEMO-7 | LC-07, LC-08, LC-09 \\- can these cash flows be modelled | To draft (P1) |\n| MEMO-8 | LC-10, LC-11, LC-19 \\- the legal and market preconditions | To draft |\n| MEMO-9 | LC-14, LC-15, LC-16, LC-20, LC-22, LC-24, LC-25 \\- sector and infrastructure notes | To draft \\- its LC-24 section is P1 and lands earlier than the rest |\n\nEvery memo carries an explicit \"implications for this project\" section. When a memo's conclusions change, update the memo, its `synthesis-memos.csv` row and any open question that cited it \\- CLAUDE.md §7 flags these three as the ones that drift.\n\n## Source access\n\n- **Open access first**, and by preference: World Bank, OECD, IFC, CGAP, J-PAL, FinDev Gateway, IPA, 3ie, UNEP, IAIS. They are citable by anyone reading this repo later, which matters for a public repo.  \n- **Working-paper versions** (NBER, IZA, SSRN, RePEc, institutional repositories) are usually available where the journal version is not, and are acceptable as anchors provided the row records which version was read.  \n- **Paywalled** sources need institutional access. This is one of the concrete, unglamorous arguments for the PhD affiliation, and worth noting: LC-07 and LC-08 in particular sit largely behind finance-journal paywalls.  \n- Track citations forward and backward from anchors rather than relying on search alone; the highest-value sources for LC-04 in particular are unlikely to surface from a keyword query.\n\n## Status\n\n- [x] v1 four-axis Tier-1 scan complete (23 anchors)  \n- [x] Memos 1 to 3 drafted and reviewed  \n- [x] Component breakdown defined (LC-01 … LC-26)  \n- [ ] P1 components read (0 of 10 complete; LC-04 and LC-03 partially covered)  \n- [ ] Memos 5, 6, 7 drafted \\- the P1 outputs  \n- [ ] Deep-read anchor set selected (target 15 to 20\\)  \n- [ ] P2 components read  \n- [ ] Memos 4, 8, 9 drafted\n\n"
   },
   {
    "path": "docs/research/research-framework.md",
