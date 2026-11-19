@@ -49,7 +49,7 @@ At which levels — borrower, group, branch, agro-climatic zone, lender, market 
 
 ## 4\. Design
 
-**Not a trial.** This is a retrospective multi-level variance-components study on administrative panels. The identification hierarchy in research-framework.md §4 governs the field pilots and does not apply here; there is no assignment mechanism and no causal claim about an intervention. The claim is descriptive and structural, and should be presented that way.
+**Not a trial.** This is a retrospective multi-level variance-components study on administrative panels. The identification hierarchy in `research-framework.md` §4 governs the field pilots and does not apply here; there is no assignment mechanism and no causal claim about an intervention. The claim is descriptive and structural, and should be presented that way.
 
 **Estimand.** A variance decomposition of the loan-level default indicator across a nested and partially crossed hierarchy:
 
@@ -104,7 +104,7 @@ None. Retrospective study on data that already exists. No control arm, no delive
 
 - **Sources.** Partner management-information-system extracts; agro-climatic zone from public gridded climate data joined on location; market penetration from public sector statistics.  
 - **Ownership.** The partner's. Governed by a data-sharing agreement per originator.  
-- **Row-level records** stay in the Vault's 05-raw-data and never enter the repo — not as a CSV, not as a summary table, not in the dashboard (CLAUDE.md §8). What returns to the repo is estimated parameters and their uncertainty.  
+- **Row-level records** stay in the Vault's `05-raw-data` and never enter the repo — not as a CSV, not as a summary table, not in the dashboard (CLAUDE.md §8). What returns to the repo is estimated parameters and their uncertainty.  
 - **Minimum fields:** loan identifier, group/branch identifier, origination date, maturity, amount, repayment or arrears history sufficient to construct the default indicator, censoring status, and a location at least as fine as district.  
 - **Personal identifiers are neither needed nor requested.** The ask is pseudonymised. This is worth stating in the first email — it materially lowers the barrier to a yes.
 
@@ -125,10 +125,10 @@ A precision analysis — what interval width is achievable for a given number of
 
 ## 10\. Partners
 
-- **Origination data:** MFI networks, savings-group networks, cooperative unions and value-chain lenders. All Not contacted (M-03). **Two per market is the design minimum.**  
+- **Origination data:** MFI networks, savings-group networks, cooperative unions and value-chain lenders. All `Not contacted` (M-03). **Two per market is the design minimum.**  
 - **Sector repositories:** as a fallback source of aggregate panels, and as a route to introductions.  
 - **No regulatory counterpart required** for pseudonymised retrospective data in most jurisdictions, but confirm per market — this is a question for OQ-1's counsel scan.  
-- Named individuals go in private/partner-contacts.csv, never here.
+- Named individuals go in `private/partner-contacts.csv`, never here.
 
 **The ask, sharpened by this respec.** The request is no longer "share your portfolio data". It is: *pseudonymised loan-level records covering a period that includes a shock, from two lenders in the same market*. That is a more specific request, which is usually easier to grant, and it comes with something to offer in return — every participating lender gets its own decomposition back, which is a number none of them currently has about their own book.
 
@@ -169,7 +169,7 @@ Cheap by design — the dominant costs are legal and human, not fieldwork.
 | Compute | Negligible |
 | Travel for partner relationship-building | Modest, but probably decisive for getting a yes |
 
-**Target funders** (data/funders.csv): **FUND-04 FSD Africa** — financial-sector development is exactly this, and they have convening power with African originators, which is worth more than the money here. **FUND-02 3ie** and **FUND-01 IDRC** for the research component. **FUND-03 J-PAL K-CAI** is a weaker fit for a non-experimental study and should not be led with. Specific calls to be identified — none logged yet.
+**Target funders** (`data/funders.csv`): **FUND-04 FSD Africa** — financial-sector development is exactly this, and they have convening power with African originators, which is worth more than the money here. **FUND-02 3ie** and **FUND-01 IDRC** for the research component. **FUND-03 J-PAL K-CAI** is a weaker fit for a non-experimental study and should not be led with. Specific calls to be identified — none logged yet.
 
 ## 14\. What it would take to abandon this
 
@@ -183,4 +183,4 @@ Cheap by design — the dominant costs are legal and human, not fieldwork.
 
 ## Provenance
 
-Respecced 2026-08-22 following the LC-08 first pass. Anchors that changed the design: **LIT-036** (CGAP Focus Note 61), **LIT-037** (CGAP over-indebtedness survey), **LIT-038** (Pluto–Tasche for low-default portfolios), **LIT-031** (Root Capital CFRI), **LIT-035** (ICO), **LIT-030** (basis risk). Bears on **OQ-17** candidate relocation (b), **OQ-2**, and **RT-5**'s correlation input. Template: docs/research/experiment-spec-template.md.  
+Respecced 2026-08-22 following the LC-08 first pass. Anchors that changed the design: **LIT-036** (CGAP Focus Note 61), **LIT-037** (CGAP over-indebtedness survey), **LIT-038** (Pluto–Tasche for low-default portfolios), **LIT-031** (Root Capital CFRI), **LIT-035** (ICO), **LIT-030** (basis risk). Bears on **OQ-17** candidate relocation (b), **OQ-2**, and **RT-5**'s correlation input. Template: `docs/research/experiment-spec-template.md`.  
