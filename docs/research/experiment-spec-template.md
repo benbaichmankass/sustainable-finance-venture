@@ -1,6 +1,6 @@
 # Experiment specs: the scoring rubric and the write-up template
 
-**Status:** v1 (2026-08-22) · **Owner:** BB **Tracker:** `data/experiments.csv` (EXP-01 … EXP-30) · **Scorer:** `scripts/score_experiments.py`
+**Status:** v1 (2026-08-22) · **Owner:** BB **Tracker:** data/experiments.csv (EXP-01 … EXP-30) · **Scorer:** scripts/score\_experiments.py
 
 Two things live here: how a candidate experiment gets scored, and what a shortlisted one has to say for itself when it is written up properly.
 
@@ -12,7 +12,7 @@ Two things live here: how a candidate experiment gets scored, and what a shortli
 
 Thirty candidates and room for three or four. Scoring does not make the choice, but it makes the choice *arguable*: a reader can see which criterion drove a ranking and disagree with the weight rather than with a hunch.
 
-**These scores are our judgement, not findings.** Nothing in the score columns comes from a source. They are recorded so they can be challenged, and re-running `scripts/score_experiments.py` after changing one is a five-second operation.
+**These scores are our judgement, not findings.** Nothing in the score columns comes from a source. They are recorded so they can be challenged, and re-running scripts/score\_experiments.py after changing one is a five-second operation.
 
 ### The five criteria
 
@@ -58,7 +58,7 @@ Each scored 1 to 5\. The anchors matter more than the number.
 | 2 | Multi-arm field operation with product delivery and shock-triggered rounds |
 | 1 | Capital-intensive or infrastructure-dependent |
 
-**Grant\_Exposure** \- fit with funders in `data/funders.csv`.
+**Grant\_Exposure** \- fit with funders in data/funders.csv.
 
 |  |  |
 | :---- | :---- |
@@ -80,11 +80,11 @@ Each scored 1 to 5\. The anchors matter more than the number.
 
 Significance leads because OQ-9 resolved this programme as research-first. Feasibility sits close behind because the binding constraint is one person and four years, and the earlier version of this tracker ignored that entirely.
 
-Bands: `Flagship candidate` at 4.00 and above · `Strong` 3.40 to 3.99 · `Reserve` 2.80 to 3.39 · `Park` below 2.80.
+Bands: Flagship candidate at 4.00 and above · Strong 3.40 to 3.99 · Reserve 2.80 to 3.39 · Park below 2.80.
 
 ### Two things the rubric does not do
 
-**It does not decide.** `Priority_Band` is the rubric's view. `Status` is the decision, and they are allowed to disagree. They did: the pass put the OQ-11 flagship trio in the `Reserve` band while it still read `Selected`, and that disagreement is what forced OQ-15.
+**It does not decide.** Priority\_Band is the rubric's view. Status is the decision, and they are allowed to disagree. They did: the pass put the OQ-11 flagship trio in the Reserve band while it still read Selected, and that disagreement is what forced OQ-15.
 
 **It systematically favours desk studies**, because feasibility at 30% rewards not needing a field site. That is a real constraint, not a bug \- but a portfolio built only from the top of the ranking would be a thesis with no field component, and several of the high scorers re-analyse data that only exists because somebody else ran the field pilot.
 
@@ -94,7 +94,7 @@ Bands: `Flagship candidate` at 4.00 and above · `Strong` 3.40 to 3.99 · `Reser
 
 ## Part 2 \- the write-up template
 
-A tracker row says enough to compare candidates. It does not say enough to design one, defend it to a supervisor, or drop it into a proposal. Any experiment that reaches shortlist gets expanded against this shape, as `docs/research/experiments/exp-NN-short-name.md`.
+A tracker row says enough to compare candidates. It does not say enough to design one, defend it to a supervisor, or drop it into a proposal. Any experiment that reaches shortlist gets expanded against this shape, as docs/research/experiments/exp-NN-short-name.md.
 
 Fill it honestly. An empty section is information; a plausible-sounding guess is not.
 
@@ -194,9 +194,9 @@ Three to five, no more. A proposal that specs everything reads as a candidate wh
 
 Priority order for specs, settled by OQ-15:
 
-1. **EXP-25** \- default correlation on partner MIS. Tests whether the risk is covariate rather than idiosyncratic, which is the falsification test the whole pooling thesis turns on. **`Specified` 2026-08-22** \- `docs/research/experiments/exp-25-default-correlation.md`. Note that writing the spec changed the experiment: the LC-08 read showed a single pooled correlation would hide the finding, because the covariate component arrives through two separable channels and only one of them is diversifiable. The estimand is now a variance decomposition, and the design needs two lenders per market to identify the institutional channel at all. That is the case for speccing early \- the tracker row survived four months of comparison without anyone noticing it asked the wrong question.  
-2. **EXP-22** \- securitisation-ready origination protocol with activity-based costing. Tests whether investability costs more than it unlocks. **`Specified` 2026-08-22** \- `docs/research/experiments/exp-22-origination-protocol-costing.md`. Writing it up caught two defects the tracker row had carried unnoticed: it named *two* primary outcomes running on incompatible clocks, and it assumed the control arm was a coherent protocol, which LIT-031 shows is not true where the originator is a cooperative internal credit fund. Both are the kind of thing only the template's one-primary-outcome rule and its "who is the control arm" question surface.  
-3. **The field anchor** \- one of EXP-01, EXP-06, EXP-09 or EXP-10, once OQ-16 resolves. Cannot be specced until it is chosen, and it should carry the second randomisation layer from `docs/research/research-framework.md` §3.  
+1. **EXP-25** \- default correlation on partner MIS. Tests whether the risk is covariate rather than idiosyncratic, which is the falsification test the whole pooling thesis turns on. **Specified 2026-08-22** \- docs/research/experiments/exp-25-default-correlation.md. Note that writing the spec changed the experiment: the LC-08 read showed a single pooled correlation would hide the finding, because the covariate component arrives through two separable channels and only one of them is diversifiable. The estimand is now a variance decomposition, and the design needs two lenders per market to identify the institutional channel at all. That is the case for speccing early \- the tracker row survived four months of comparison without anyone noticing it asked the wrong question.  
+2. **EXP-22** \- securitisation-ready origination protocol with activity-based costing. Tests whether investability costs more than it unlocks. **Specified 2026-08-22** \- docs/research/experiments/exp-22-origination-protocol-costing.md. Writing it up caught two defects the tracker row had carried unnoticed: it named *two* primary outcomes running on incompatible clocks, and it assumed the control arm was a coherent protocol, which LIT-031 shows is not true where the originator is a cooperative internal credit fund. Both are the kind of thing only the template's one-primary-outcome rule and its "who is the control arm" question surface.  
+3. **The field anchor** \- one of EXP-01, EXP-06, EXP-09 or EXP-10, once OQ-16 resolves. Cannot be specced until it is chosen, and it should carry the second randomisation layer from docs/research/research-framework.md §3.  
 4. Optionally, the investor-side study (EXP-23), which is unusual enough to be memorable in a proposal and costs almost nothing to run.
 
 Specs 1 and 2 can be written now \- neither is waiting on a decision, only on partner data access (M-32). **Both are done.** Next is the field anchor, which cannot be specced until OQ-16's residual resolves, then optionally EXP-23.
