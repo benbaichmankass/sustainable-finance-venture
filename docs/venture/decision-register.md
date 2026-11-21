@@ -2,9 +2,9 @@
 
 **Status:** Live register · **Owner:** BB · **Drafted:** 2026-09-08
 
-> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [market-scan-and-pilots.md](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
+> **Scope correction, 2026-09-09.** This document was written with the repo's research apparatus attached. The business scoping — where to play, who it reaches, and what the first pilots are — is now in [`market-scan-and-pilots.md`](http://market-scan-and-pilots.md). What survives here: the revenue lanes, the data-rights clause, and the blocking decisions. What is parked: the experimental designs. Read the market scan first.
 
-Every decision the work plan needs, sequenced by **when it binds** rather than by importance. Companion to docs/venture/track-c-plan.md; open questions carrying the substance live in data/open-questions.csv.
+Every decision the work plan needs, sequenced by **when it binds** rather than by importance. Companion to `docs/venture/track-c-plan.md`; open questions carrying the substance live in `data/open-questions.csv`.
 
 ---
 
@@ -14,11 +14,11 @@ Every decision the work plan needs, sequenced by **when it binds** rather than b
 
 Four things change once that is the frame, and they change the decision list rather than merely its tone:
 
-**1\. The business has no capital requirement at all.** Gate 6 of track-c-plan.md §4 — identify and commit the retention strip — was the single line where the model stopped being capital-light. Under a Phase-2-terminal plan that line never arrives. The venture is funded by fees from end to end.
+**1\. The business has no capital requirement at all.** Gate 6 of `track-c-plan.md` §4 — identify and commit the retention strip — was the single line where the model stopped being capital-light. Under a Phase-2-terminal plan that line never arrives. The venture is funded by fees from end to end.
 
-**2\. Lane D stops being a "year 2+" afterthought and becomes the strategic core.** This is the most important consequence and it reorders the register. solo-operator-track.md §3.2 lists four revenue lanes; A (diagnostics), B (design mandates) and C (arranging) are all **linear in your calendar**. At two to three concurrent engagements, that is a well-paid job with a hard ceiling. Lane D — the published standard, the tooling, verification and attestation subscriptions — is the only leg that earns without consuming a day. Under Phase 3, Lane D was a bonus. Under Phase 2 as the end state, **Lane D is the difference between a business and a job**, and the decisions that shape it (D-16, D-17) move from month 18 to month 6\.
+**2\. Lane D stops being a "year 2+" afterthought and becomes the strategic core.** This is the most important consequence and it reorders the register. `solo-operator-track.md` §3.2 lists four revenue lanes; A (diagnostics), B (design mandates) and C (arranging) are all **linear in your calendar**. At two to three concurrent engagements, that is a well-paid job with a hard ceiling. Lane D — the published standard, the tooling, verification and attestation subscriptions — is the only leg that earns without consuming a day. Under Phase 3, Lane D was a bonus. Under Phase 2 as the end state, **Lane D is the difference between a business and a job**, and the decisions that shape it (D-16, D-17) move from month 18 to month 6\.
 
-**3\. Some carry-forward items get more important, not less.** Re-derived in track-c-plan.md §5.
+**3\. Some carry-forward items get more important, not less.** Re-derived in `track-c-plan.md` §5.
 
 **4\. Two gates stop being gates.** The correlation estimate and OQ-18 mattered because they sized tranches. They are now research and credibility assets — valuable, not load-bearing.
 
@@ -45,7 +45,7 @@ This register lists **decisions**. Where one waits on a question, the question i
 | **D-04** | Regulatory posture: advisory-only, appointed representative, or licensed | Yes | OQ-20, counsel |
 | **D-05** | Offer design and pricing | Yes, but resets positioning | **OQ-23** |
 | **D-06** | Data-rights clause scope | **No — irreversible per client** | M-42, counsel |
-| **D-07** | Adopt the prohibition list | Yes | track-c-plan.md §6 |
+| **D-07** | Adopt the prohibition list | Yes | `track-c-plan.md` §6 |
 | **D-08** | Runway: how much cash, over how long, before D1 can stop it | — | — |
 
 ### D-01 · How much to pay for the Phase 3 option
@@ -64,20 +64,20 @@ Everything downstream sits on it: travel cost is your main variable expense, and
 - travel cost and time-zone you can sustain solo;  
 - and — only if you still want the research paper — two lenders in one market.
 
-Israel's original justification in business-plan.md §7 was logistical proximity for a research-first configuration. That justification is weaker for a fee-earning practice and stronger for cash-flow reasons. It deserves a fresh look rather than inheritance. **Logged as OQ-22.**
+Israel's original justification in `business-plan.md` §7 was logistical proximity for a research-first configuration. That justification is weaker for a fee-earning practice and stronger for cash-flow reasons. It deserves a fresh look rather than inheritance. **Logged as OQ-22.**
 
 ### D-05 · Offer design and pricing
 
 Two sub-decisions, both yours alone, and neither has a benchmark anywhere in this repo:
 
 - **Fee basis** — day rate, fixed fee per deliverable, or retainer. Fixed fee per deliverable is usually right for a diagnostic: it prices the outcome rather than your hours, and it stops a solo operator's utilisation problem from becoming the client's discount.  
-- **The number.** Together with utilisation this decides Phase 1, and M-41's model cannot be run until you set both. Mark them ASSUMED and move.
+- **The number.** Together with utilisation this decides Phase 1, and M-41's model cannot be run until you set both. Mark them `ASSUMED` and move.
 
 **Logged as OQ-23**, together with D-10.
 
 ### D-06 · Data-rights clause scope — the only irreversible one at Gate 0
 
-The clause itself is settled (track-c-plan.md §5.1, M-42). What is a decision is **how far it reaches**, and there is a real tradeoff: a broad grant covering pooling and third-party structuring is what Lane D needs, and it is also the clause most likely to get escalated to a client's board or data-protection officer and slow a first sale.
+The clause itself is settled (`track-c-plan.md` §5.1, M-42). What is a decision is **how far it reaches**, and there is a real tradeoff: a broad grant covering pooling and third-party structuring is what Lane D needs, and it is also the clause most likely to get escalated to a client's board or data-protection officer and slow a first sale.
 
 Under a Phase-2-terminal frame the answer gets *easier*, not harder: you no longer need rights broad enough to securitise. You need rights broad enough to **benchmark across clients and publish aggregates** — which is a materially smaller ask, easier to grant, and is exactly what Lane D sells. Draft to that scope, not the maximal one.
 
@@ -107,7 +107,7 @@ Four are now tracked and they behave very differently as buyers: VSLA networks (
 
 ### D-10 · Entry product — the one I would most encourage you to re-examine
 
-solo-operator-track.md §5.1 proposes selling EXP-22 as the first paid engagement. Worth being honest about the risk in that: **EXP-22 is a cluster-randomised experiment with activity-based costing.** It requires branch-level randomisation, timestamped capture logs, and HR or staff-representation approval for officer time measurement. That is a research design, and asking a first-time client to host one is a heavy first sale.
+`solo-operator-track.md` §5.1 proposes selling EXP-22 as the first paid engagement. Worth being honest about the risk in that: **EXP-22 is a cluster-randomised experiment with activity-based costing.** It requires branch-level randomisation, timestamped capture logs, and HR or staff-representation approval for officer time measurement. That is a research design, and asking a first-time client to host one is a heavy first sale.
 
 The alternative is a **lighter readiness assessment** — the RT-1 field list scored against their current capture, a gap list, a costed remediation plan — sold in two to three weeks, with EXP-22 positioned as the upsell for a client who wants the number rather than the direction.
 
@@ -115,13 +115,13 @@ Lighter is easier to sell, produces a case study sooner, and still field-tests t
 
 ### D-12 · Product lines under the solo constraint
 
-Insurance requires a licensed risk carrier (PT-17 and that whole partner class). That is an extra relationship, an extra regulatory surface, and an extra sales cycle. **PL-2 (agrivoltaic project finance) is a further question again** — different buyer, 15–25 year tenor, permitting-heavy, and essentially unrelated to the practice's day-to-day work. business-plan.md keeps it because the toolkit is shared and the two lines are uncorrelated; under a solo services practice that argument is much weaker, since the shared toolkit does not reduce the sales effort.
+Insurance requires a licensed risk carrier (PT-17 and that whole partner class). That is an extra relationship, an extra regulatory surface, and an extra sales cycle. **PL-2 (agrivoltaic project finance) is a further question again** — different buyer, 15–25 year tenor, permitting-heavy, and essentially unrelated to the practice's day-to-day work. `business-plan.md` keeps it because the toolkit is shared and the two lines are uncorrelated; under a solo services practice that argument is much weaker, since the shared toolkit does not reduce the sales effort.
 
 Deciding to park PL-2 for the practice's first two years is legitimate and should be explicit rather than by neglect. **Logged as OQ-25.**
 
 ### D-15 · The PhD application track
 
-M-06, M-11 and M-29 (supervisor outreach, applications, the application pack) are live milestones competing for the same calendar as outreach wave 1\. Running both halves both. The decision is to **park them explicitly** — status Blocked, not deleted, with the publication route preserved via D-14 — or to keep one narrow thread alive. **Logged as OQ-26.**
+M-06, M-11 and M-29 (supervisor outreach, applications, the application pack) are live milestones competing for the same calendar as outreach wave 1\. Running both halves both. The decision is to **park them explicitly** — status `Blocked`, not deleted, with the publication route preserved via D-14 — or to keep one narrow thread alive. **Logged as OQ-26.**
 
 ---
 
@@ -138,10 +138,10 @@ M-06, M-11 and M-29 (supervisor outreach, applications, the application pack) ar
 
 Under a Phase-2-terminal plan these are the most consequential decisions in the register, which is why the frame in §0 matters so much. They are in tension:
 
-- **Theory 3 (standard-setting) says publish.** Adoption is the moat, adoption requires giving it away, and business-plan.md §5 names the falsifier as someone else publishing a competing standard first — adoption is winner-take-most, so being early beats being complete.  
+- **Theory 3 (standard-setting) says publish.** Adoption is the moat, adoption requires giving it away, and `business-plan.md` §5 names the falsifier as someone else publishing a competing standard first — adoption is winner-take-most, so being early beats being complete.  
 - **Revenue says licence.** A published standard earns nothing directly.
 
-The resolution most standards businesses reach is **open core**: the *schema* is published free and unencumbered, because adoption is the whole point; the *tooling* (RT-2 scorecard, RT-3 monitor), the **certification** that an originator's book conforms, and the **verification attestation** that investors rely on are the paid layer. Theory 6 (verification) is what monetises theory 3, and business-plan.md already notes it needs no new capability.
+The resolution most standards businesses reach is **open core**: the *schema* is published free and unencumbered, because adoption is the whole point; the *tooling* (RT-2 scorecard, RT-3 monitor), the **certification** that an originator's book conforms, and the **verification attestation** that investors rely on are the paid layer. Theory 6 (verification) is what monetises theory 3, and `business-plan.md` already notes it needs no new capability.
 
 **D-17 then asks which paid layer comes first.** Certification is the cheapest to stand up and the closest to what a diagnostic already produces — arguably it is just the diagnostic, repeated annually, under a name that makes the recurrence obvious. **Logged as OQ-24.**
 
